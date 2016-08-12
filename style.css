@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+}
+body div.sort-container {
+  padding-bottom: 80px;
+  display: flex;
+}
+body div.sort-container md-card {
+  min-width: 360px;
+  flex: 1;
+}
+body div.sort-container md-card md-toolbar.handle {
+  min-height: auto;
+  padding: 8px;
+}
+body div.sort-container md-card md-toolbar.handle:hover {
+  cursor: move;
+}
+body div.sort-container md-card md-toolbar.handle div {
+  line-height: 40px;
+  padding-left: 5px;
+}
+body div.sort-container md-card md-toolbar.handle .md-icon-button {
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+body div.sort-container md-card section {
+  padding: 5px;
+  box-sizing: border-box;
+}
+body div.sort-container md-card section.info input.class {
+  width: 100px;
+}
+body div.sort-container md-card section.info input.background {
+  width: 120px;
+}
+body div.sort-container md-card section.info input.race {
+  width: 120px;
+}
+body div.sort-container md-card section.info input.alignment {
+  width: 50px;
+}
+body div.sort-container md-card section.stats {
+  display: flex;
+}
+body div.sort-container md-card section.stats input.exp {
+  width: 90px;
+}
+body div.sort-container md-card section.stats input.level {
+  width: 50px;
+}
+body div.sort-container md-card section.stats input.pb {
+  width: 50px;
+}
+body div.sort-container md-card section.stats div.abilities md-input-container input {
+  float: none;
+  max-width: 50px;
+}
+body div.sort-container md-card section.stats div.abilities md-input-container div.small {
+  font-size: 12px;
+  padding: 2px;
+}
+body div.sort-container md-card section.stats div.savingThrows div {
+  max-width: 50px;
+  margin-right: 4px;
+  float: left;
+  padding: 2px;
+}
+body div.sort-container md-card section.stats div.savingThrows div label {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body div.sort-container md-card section.stats div.savingThrows div input {
+  margin-top: 7px;
+  margin-bottom: 3px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+body .md-fab {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #2196F3 !important;
+}
+.placeholder {
+  background: #fff;
+  border: 2px dashed #ddd;
+  flex: 1;
+}
+md-input-container {
+  margin-bottom: 0;
+  vertical-align: initial;
+}
+md-input-container .md-input,
+md-input-container md-select {
+  float: none;
+}

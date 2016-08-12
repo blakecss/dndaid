@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  div.sort-container {
+    padding-bottom: 80px;
+    display: flex;
+    md-card {
+      min-width: 360px;
+      flex: 1;
+      md-toolbar.handle {
+        min-height: auto;
+        padding: 8px;
+        &:hover {
+          cursor: move;
+        }
+        div {
+          line-height: 40px;
+          padding-left: 5px;
+        }
+        .md-icon-button {
+          position: absolute;
+          top: 8px;
+          right: 0;
+        }
+      }
+      section {
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      section.info {
+        input.class {
+          width: 100px;
+        }
+        input.background {
+          width: 120px;
+        }
+        input.race {
+          width: 120px;
+        }
+        input.alignment {
+          width: 50px;
+        }
+      }
+      section.stats {
+        display: flex;
+        input.exp {
+          width: 90px;
+        }
+        input.level {
+          width: 50px;
+        }
+        input.pb {
+          width: 50px;
+        }
+        div.abilities md-input-container {
+          input {
+            float: none;
+            max-width: 50px;
+          }
+          div.small {
+            font-size: 12px;
+            padding: 2px;
+          }
+        }
+        div.savingThrows div {
+          max-width: 50px;
+          margin-right: 4px;
+          float: left;
+          padding: 2px;
+          label {
+            color: rgba(0,0,0,0.54);
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          input {
+            margin-top: 7px;
+            margin-bottom: 3px;
+            width: 100%;
+            border: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.12);
+          }
+        }
+      }
+    }
+  }
+  .md-fab {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #2196F3 !important;
+  }
+}
+
+.placeholder {
+  background: #fff;
+  border: 2px dashed #ddd;
+  flex: 1;
+}
+
+md-input-container {
+  margin-bottom: 0;
+  vertical-align: initial;
+  .md-input, md-select {
+    float: none;
+  }
+}
