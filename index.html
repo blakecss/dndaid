@@ -9,7 +9,7 @@
     <md-card ng-repeat="character in characters" class="sortable" ng-controller="characterController">
       <md-toolbar class="handle">
         <div>{{name || charID}}</div>
-        <md-button class="md-icon-button" ng-click="deleteChar()">
+        <md-button class="md-icon-button" ng-click="deleteChar()" aria-label="Delete Character">
           <svg width="100%" height="100%" viewBox="0 0 20 20">
             <line x1="4" y1="4" x2="16" y2="16" style="stroke:#fff;stroke-width:1" />
             <line x1="4" y1="16" x2="16" y2="4" style="stroke:#fff;stroke-width:1" />
@@ -23,29 +23,33 @@
           <input ng-model="name" type="text"/>
         </md-input-container>
         <md-input-container>
+          <label>Race</label>
+          <md-select class="race" ng-model="race">
+            <md-option ng-repeat="race in races">{{race.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
           <label>Class</label>
-          <input class="class" ng-model="class" type="text"/>
+          <md-select class="class" ng-model="class">
+            <md-option ng-repeat="class in classes">{{class.name}}</md-option>
+          </md-select>
         </md-input-container>
         <md-input-container>
           <label>Background</label>
           <input class="background" ng-model="background" type="text"/>
         </md-input-container>
         <md-input-container>
-          <label>Race</label>
-          <input class="race" ng-model="race" type="text"/>
-        </md-input-container>
-        <md-input-container>
           <label>Alignment</label>
           <md-select class="alignment" ng-model="alignment">
-            <md-option value="LG">LG</md-option>
-            <md-option value="NG">NG</md-option>
-            <md-option value="CG">CG</md-option>
-            <md-option value="LN">LN</md-option>
-            <md-option value="N">N</md-option>
-            <md-option value="CN">CN</md-option>
-            <md-option value="LE">LE</md-option>
-            <md-option value="NE">NE</md-option>
-            <md-option value="CE">CE</md-option>
+            <md-option>LG</md-option>
+            <md-option>NG</md-option>
+            <md-option>CG</md-option>
+            <md-option>LN</md-option>
+            <md-option>N</md-option>
+            <md-option>CN</md-option>
+            <md-option>LE</md-option>
+            <md-option>NE</md-option>
+            <md-option>CE</md-option>
           </md-select>
         </md-input-container>
       </section>
@@ -66,80 +70,41 @@
           </md-input-container>
         </div>
         <div flex="100" class="abilities">
-          <md-input-container>
-            <label>STR</label>
-            <input ng-model="str" type="number" min="0"/>
-            <div class="small">{{strMod}}</div>
-          </md-input-container>
-          <md-input-container>
-            <label>DEX</label>
-            <input ng-model="dex" type="number" min="0"/>
-            <div class="small">{{dexMod}}</div>
-          </md-input-container>
-          <md-input-container>
-            <label>CON</label>
-            <input ng-model="con" type="number" min="0"/>
-            <div class="small">{{conMod}}</div>
-          </md-input-container>
-          <md-input-container>
-            <label>INT</label>
-            <input ng-model="int" type="number" min="0"/>
-            <div class="small">{{intMod}}</div>
-          </md-input-container>
-          <md-input-container>
-            <label>WIS</label>
-            <input ng-model="wis" type="number" min="0"/>
-            <div class="small">{{wisMod}}</div>
-          </md-input-container>
-          <md-input-container>
-            <label>CHA</label>
-            <input ng-model="cha" type="number" min="0"/>
-            <div class="small">{{chaMod}}</div>
+          <h4>Abilities</h4>
+          <md-input-container ng-repeat="ability in abilities">
+            <label>{{ability.abbr}}</label>
+            <input ng-model="$parent[ability.abbr]" type="number" min="0"/>
+            <div class="small">{{calcMod(ability.abbr)}}</div>
           </md-input-container>
         </div>
         <div flex="100" class="savingThrows">
-          <div>
-            <label>STR</label>
-            <input type="number" value="{{strSaving()}}" readonly/>
-            <md-checkbox ng-model="strSavingP"></md-checkbox>
-          </div>
-          <div>
-            <label>DEX</label>
-            <input type="number" value="{{dexSaving()}}" readonly/>
-            <md-checkbox ng-model="dexSavingP"></md-checkbox>
-          </div>
-          <div>
-            <label>CON</label>
-            <input type="number" value="{{conSaving()}}" readonly/>
-            <md-checkbox ng-model="conSavingP"></md-checkbox>
-          </div>
-          <div>
-            <label>INT</label>
-            <input type="number" value="{{intSaving()}}" readonly/>
-            <md-checkbox ng-model="intSavingP"></md-checkbox>
-          </div>
-          <div>
-            <label>WIS</label>
-            <input type="number" value="{{wisSaving()}}" readonly/>
-            <md-checkbox ng-model="wisSavingP"></md-checkbox>
-          </div>
-          <div>
-            <label>CHA</label>
-            <input type="number" value="{{chaSaving()}}" readonly/>
-            <md-checkbox ng-model="chaSavingP"></md-checkbox>
+          <h4>Saving Throws</h4>
+          <div ng-repeat="ability in abilities">
+            <label>{{ability.abbr}}</label>
+            <input type="number" value="{{calcSaving(ability.abbr)}}" readonly/>
+            <md-checkbox ng-model="$parent[ability.abbr+'SavingP']" aria-label="{{ability.name}} Saving Throw Proficiency"></md-checkbox>
           </div>
         </div>
         <div flex="100" class="skills">
+          <h4>Skills</h4>
           <div ng-repeat="skill in skills">
-            <label>{{skill}}</label>
-            <input type="number" value="{{acro()}}" readonly/>
+            <label>{{skill.name}}</label>
+            <input type="number" value="{{calcSkill(skill)}}" readonly/>
+            <md-checkbox ng-model="$parent[skill.abbr+'P']" aria-label="{{skill.name}} Proficiency"></md-checkbox>
           </div>
         </div>
-        <p>Acro: {{acro()}}</p>
         <div class="health">
           <md-input-container>
             <label>AC</label>
             <input ng-model="ac" type="number" min="0"/>
+          </md-input-container>
+          <md-input-container>
+            <label>Speed</label>
+            <input ng-model="speed" type="number" min="0" readonly/>
+          </md-input-container>
+          <md-input-container>
+            <label>Size</label>
+            <input ng-model="size" type="number" min="0" readonly/>
           </md-input-container>
         </div>
       </section>
@@ -148,15 +113,84 @@
       </section>
       <section class="spells">
         <h3>Spells</h3>
+        <md-input-container>
+          <h4>Cantrips</h4>
+          <md-select ng-model="cantrip">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'cantrip'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 1</h4>
+          <md-select ng-model="lvl1spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'1st-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 2</h4>
+          <md-select ng-model="lvl1spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'1st-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 3</h4>
+          <md-select ng-model="lvl3spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'3rd-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 4</h4>
+          <md-select ng-model="lvl4spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'4th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 5</h4>
+          <md-select ng-model="lvl5spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'5th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 6</h4>
+          <md-select ng-model="lvl6spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'6th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 7</h4>
+          <md-select ng-model="lvl7spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'7th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 8</h4>
+          <md-select ng-model="lvl8spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'8th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <h4>Level 9</h4>
+          <md-select ng-model="lvl9spell">
+            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'9th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          </md-select>
+        </md-input-container>
       </section>
     </md-card>
   </div>
-  <md-button class="md-fab md-blue" ng-click="addChar()">
-    <svg width="100%" height="100%" viewBox="0 0 20 20">
-      <line x1="10" y1="4" x2="10" y2="16" style="stroke:#fff;stroke-width:1" />
-      <line x1="4" y1="10" x2="16" y2="10" style="stroke:#fff;stroke-width:1" />
-    </svg>
-  </md-button>
+  <md-fab-speed-dial md-direction="up" class="md-scale">
+    <md-fab-trigger>
+      <md-button class="md-fab" aria-label="Add Character">
+        <md-icon md-svg-src="icons/plus.svg" aria-label="Add"></md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+      <md-button ng-click="addChar()" class="md-fab md-raised md-mini" aria-label="Add Character">
+        <md-icon md-svg-src="icons/player.svg" aria-label="Add Player"></md-icon>
+      </md-button>
+      <md-button ng-click="addMonster()" class="md-fab md-raised md-mini" aria-label="Add Monster">
+        <md-icon md-svg-src="icons/monster.svg" aria-label="Add Monster"></md-icon>
+      </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
@@ -165,5 +199,6 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
   <script src="script.js"></script>
+  <script src="spells.json"></script>
 </body>
 </html>

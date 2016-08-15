@@ -4,7 +4,7 @@ body {
     padding-bottom: 80px;
     display: flex;
     md-card {
-      min-width: 360px;
+      min-width: 280px;
       flex: 1;
       md-toolbar.handle {
         min-height: auto;
@@ -54,7 +54,7 @@ body {
         div.abilities md-input-container {
           input {
             float: none;
-            max-width: 50px;
+            max-width: 40px;
           }
           div.small {
             font-size: 12px;
@@ -62,8 +62,8 @@ body {
           }
         }
         div.savingThrows div {
-          max-width: 50px;
-          margin-right: 4px;
+          max-width: 40px;
+          padding: 2px;
           float: left;
           padding: 2px;
           label {
@@ -81,15 +81,39 @@ body {
             border-bottom: 1px solid rgba(0,0,0,0.12);
           }
         }
+        div.skills div {
+          float: left;
+          margin: 0 20px 15px 0;
+          label {
+            display: block;
+            color: rgba(0,0,0,0.54);
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          md-checkbox {
+            margin-bottom: 0;
+          }
+          input {
+            max-width: 40px;
+            margin-top: 7px;
+            border: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.12);
+          }
+        }
       }
     }
   }
-  .md-fab {
+  md-fab-speed-dial {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    background: #2196F3 !important;
   }
+}
+
+h4 {
+  margin: 15px 0 5px 0;
 }
 
 .placeholder {

@@ -4,7 +4,11 @@ var app = angular.module('DNDApp', ['ngMaterial', 'ngMessages']);
 app.controller('charactersController', ['$scope', function charactersController($scope) {
   $scope.characters = [];
   $scope.idCounter = 0;
-  //$scope.skills = [{name: 'strength'}, {name: 'dexterity'}, {name: 'constitution'}, {name: 'intelligence'}, {name: 'wisdom'}, {name: 'charisma'}];
+  $scope.races = [{name:'Hill Dwarf'}, {name:'Mountain Dwarf'}, {name:'High Elf'}, {name:'Wood Elf'}, {name:'Dark Elf'}, {name:'Lightfoot Halfling'}, {name:'Stout Halfling'}, {name:'Human'}, {name:'Dragonborn'}, {name:'Forest Gnome'}, {name:'Rock Gnome'}, {name:'Half-Elf'}, {name:'Half-Orc'}, {name:'Tiefling'}];
+  $scope.classes = [{name:'Barbarian'}, {name:'Bard'}, {name:'Cleric'}, {name:'Druid'}, {name:'Fighter'}, {name:'Fighter'}, {name:'Monk'}, {name:'Paladin'}, {name:'Ranger'}, {name:'Rogue'}, {name:'Sorcerer'}, {name:'Warlock'}, {name:'Wizard'}];
+  $scope.abilities = [{name:'Strength', abbr:'str'}, {name:'Dexerity', abbr:'dex'}, {name:'Constitution', abbr:'con'}, {name:'Intelligence', abbr:'int'}, {name:'Wisdom', abbr:'wis'}, {name:'Charisma', abbr:'cha'}];
+  $scope.skills = [{name:'Acrobatics', abbr:'acro', relAbility:'dex'}, {name:'Animal Handling', abbr:'anim', relAbility:'wis'}, {name:'Arcana', abbr:'arca', relAbility:'int'}, {name:'Athletics', abbr:'athl', relAbility:'str'}, {name:'Deception', abbr:'dece', relAbility:'cha'}, {name:'History', abbr:'hist', relAbility:'int'}, {name:'Insight', abbr:'insi', relAbility:'wis'}, {name:'Intimidation', abbr:'inti', relAbility:'cha'}, {name:'Investigation', abbr:'inve', relAbility:'int'}, {name:'Medicine', abbr:'medi', relAbility:'wis'}, {name:'Nature', abbr:'natu', relAbility:'int'}, {name:'Perception', abbr:'perc', relAbility:'wis'}, {name:'Performance', abbr:'perf', relAbility:'cha'}, {name:'Persuasion', abbr:'pers', relAbility:'cha'}, {name:'Religion', abbr:'reli', relAbility:'int'}, {name:'Sleight of Hand', abbr:'slei', relAbility:'dex'}, {name:'Stealth', abbr:'stea', relAbility:'dex'}, {name:'Survival', abbr:'surv', relAbility:'wis'}];
+  $scope.spells = jsonSpellData;
   $scope.addChar = function() {
     $scope.idCounter++;
     $scope.characters.push($scope.idCounter);
@@ -15,6 +19,71 @@ app.controller('characterController', ['$scope', '$mdDialog', function character
   $scope.charID = $scope.$parent.idCounter;
   // Init character info
   $scope.name = ''; $scope.class = ''; $scope.background = ''; $scope.race = ''; $scope.alignment = '';
+  $scope.$watch('race', function(newVal, oldVal) {
+    switch (newVal) {
+      case 'Hill Dwarf':
+        $scope.size = 'Medium';
+        $scope.speed = 25;
+        break;
+      case 'Mountain Dwarf':
+        $scope.size = 'Medium';
+        $scope.speed = 25;
+        break;
+      case 'High Elf':
+        $scope.size = 'Medium';
+        $scope.speed = 30;
+        break;
+      case 'Wood Elf':
+        $scope.size = 'Medium';
+        $scope.speed = 35;
+        break;
+      case 'Dark Elf':
+        $scope.size = 'Medium';
+        $scope.speed = 30;
+        break;
+      case 'Lightfoot Halfling':
+        $scope.size = 'Small';
+        $scope.speed = 25;
+        break;
+      case 'Stout Halfling':
+        $scope.size = 'Small';
+        $scope.speed = 25;
+        break;
+      case 'Human':
+        $scope.size = 'Medium';
+        $scope.speed = 30;
+        break;
+      case 'Dragonborn':
+        $scope.size = 'Medium';
+        $scope.speed = 30;
+        break;
+      case 'Forest Gnome':
+        $scope.size = 'Small';
+        $scope.speed = 25;
+        break;
+      case 'Rock Gnome':
+        $scope.size = 'Small';
+        $scope.speed = 25;
+        break;
+      case 'Half-Elf':
+        $scope.size = 'Medium';
+        $scope.speed = 30;
+        break;
+      case 'Half-Orc':
+        $scope.size = 'Medium';
+        $scope.speed = 30;
+        break;
+      case 'Tiefling':
+        $scope.size = 'Medium';
+        $scope.speed = 30;
+        break;
+      default:
+        $scope.size = '';
+        $scope.speed = '';
+        break;
+    }
+  });
+
   // Init stats
   $scope.exp = 0;
   $scope.level = 1;
@@ -83,56 +152,36 @@ app.controller('characterController', ['$scope', '$mdDialog', function character
     }
   });
 
-  // Init abilities
+  // Abilities
   $scope.str = 0; $scope.dex = 0; $scope.con = 0; $scope.int = 0; $scope.wis = 0; $scope.cha = 0;
-  // Watcher for ability modifiers
-  $scope.$watchGroup(['str', 'dex', 'con', 'int', 'wis', 'cha'], function(newVals, oldVals) {
-    var newVals = newVals.map(function(val) {
-      return Math.floor((val - 10) / 2);
-    });
-    $scope.strMod = newVals[0]>=0 ? +newVals[0] : newVals[0];
-    $scope.dexMod = newVals[1]>=0 ? +newVals[1] : newVals[1];
-    $scope.conMod = newVals[2]>=0 ? +newVals[2] : newVals[2];
-    $scope.intMod = newVals[3]>=0 ? +newVals[3] : newVals[3];
-    $scope.wisMod = newVals[4]>=0 ? +newVals[4] : newVals[4];
-    $scope.chaMod = newVals[5]>=0 ? +newVals[5] : newVals[5];
-  });
-
-  // Init saving throws
-  $scope.strSaving = 0; $scope.dexSaving = 0; $scope.conSaving = 0; $scope.intSaving = 0; $scope.wisSaving = 0; //$scope.chaSaving = 0;
-  // Saving throw functions
-  $scope.strSaving = function() {
-    var mod = $scope.strSavingP ? $scope.strMod + $scope.pb : $scope.strMod;
-    return mod;
-  };
-  $scope.dexSaving = function() {
-    var mod = $scope.dexSavingP ? $scope.dexMod + $scope.pb : $scope.dexMod;
-    return mod;
-  };
-  $scope.conSaving = function() {
-    var mod = $scope.conSavingP ? $scope.conMod + $scope.pb : $scope.conMod;
-    return mod;
-  };
-  $scope.intSaving = function() {
-    var mod = $scope.intSavingP ? $scope.intMod + $scope.pb : $scope.intMod;
-    return mod;
-  };
-  $scope.wisSaving = function() {
-    var mod = $scope.wisSavingP ? $scope.wisMod + $scope.pb : $scope.wisMod;
-    return mod;
-  };
-  $scope.chaSaving = function() {
-    var mod = $scope.chaSavingP ? $scope.chaMod + $scope.pb : $scope.chaMod;
-    return mod;
+  $scope.calcMod = function(ability) {
+    var mod = ability + 'Mod';
+    $scope[mod] = Math.floor(($scope[ability] - 10) / 2);
+    return $scope[mod];
   };
 
-  // Init skills
-  $scope.skills = ['Acrobatics', 'Animal Handling'];
-  $scope.Acrobatics = 1;
-  $scope.acro = function() {
-    var mod = $scope.dexMod;
-    return mod;
+  // Saving throws
+  $scope.calcSaving = function(ability) {
+    var mod = $scope[ability + 'Mod'];
+    var savingP = $scope[ability + 'SavingP'];
+    var saving = savingP ? mod + $scope.pb : mod;
+    return saving;
+  };
+
+  // Skills
+  $scope.calcSkill = function(skillObj) {
+    var mod = $scope[skillObj.relAbility + 'Mod'];
+    var skillP = $scope[skillObj.abbr + 'P'];
+    var skill = skillP ? mod + $scope.pb : mod;
+    return skill;
   }
+
+  $scope.speed = function() {
+    return $scope.race.speed;
+  };
+
+  // Spells
+  $scope.cantrip = ''; $scope.lvl1spell = ''; $scope.lvl2spell = ''; $scope.lvl3spell = ''; $scope.lvl4spell = ''; $scope.lvl5spell = ''; $scope.lvl6spell = ''; $scope.lvl7spell = ''; $scope.lvl8spell = ''; $scope.lvl9spell = '';
 
   $scope.deleteChar = function() {
     var confirm = $mdDialog.confirm().title('Delete ' + ($scope.name=='' ? ('character ' + $scope.charID) : $scope.name) + '?').cancel('Cancel').ok('Delete');

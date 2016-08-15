@@ -6,7 +6,7 @@ body div.sort-container {
   display: flex;
 }
 body div.sort-container md-card {
-  min-width: 360px;
+  min-width: 280px;
   flex: 1;
 }
 body div.sort-container md-card md-toolbar.handle {
@@ -55,15 +55,14 @@ body div.sort-container md-card section.stats input.pb {
 }
 body div.sort-container md-card section.stats div.abilities md-input-container input {
   float: none;
-  max-width: 50px;
+  max-width: 40px;
 }
 body div.sort-container md-card section.stats div.abilities md-input-container div.small {
   font-size: 12px;
   padding: 2px;
 }
 body div.sort-container md-card section.stats div.savingThrows div {
-  max-width: 50px;
-  margin-right: 4px;
+  max-width: 40px;
   float: left;
   padding: 2px;
 }
@@ -81,11 +80,34 @@ body div.sort-container md-card section.stats div.savingThrows div input {
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
-body .md-fab {
+body div.sort-container md-card section.stats div.skills div {
+  float: left;
+  margin: 0 20px 15px 0;
+}
+body div.sort-container md-card section.stats div.skills div label {
+  display: block;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body div.sort-container md-card section.stats div.skills div md-checkbox {
+  margin-bottom: 0;
+}
+body div.sort-container md-card section.stats div.skills div input {
+  max-width: 40px;
+  margin-top: 7px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+body md-fab-speed-dial {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background: #2196F3 !important;
+}
+h4 {
+  margin: 15px 0 5px 0;
 }
 .placeholder {
   background: #fff;
