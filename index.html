@@ -8,13 +8,16 @@
   <div class="sort-container" layout="row" layout-wrap>
     <md-card ng-repeat="character in characters" class="sortable" ng-controller="characterController">
       <md-toolbar class="handle">
-        <div>{{name || charID}}</div>
-        <md-button class="md-icon-button" ng-click="deleteChar()" aria-label="Delete Character">
-          <svg width="100%" height="100%" viewBox="0 0 20 20">
-            <line x1="4" y1="4" x2="16" y2="16" style="stroke:#fff;stroke-width:1" />
-            <line x1="4" y1="16" x2="16" y2="4" style="stroke:#fff;stroke-width:1" />
-          </svg>
-        </md-button>
+        <div class="md-toolbar-tools">
+          <h2>{{name || charID}}</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="deleteChar()" aria-label="Delete Character">
+            <svg aria-label="Close Dialog" viewBox="0 0 20 20">
+              <line x1="4" y1="4" x2="16" y2="16" style="stroke:#fff;stroke-width:1" />
+              <line x1="4" y1="16" x2="16" y2="4" style="stroke:#fff;stroke-width:1" />
+            </svg>
+          </md-button>
+        </div>
       </md-toolbar>
       <section class="info">
         <h3>Info</h3>
@@ -115,62 +118,62 @@
         <h3>Spells</h3>
         <md-input-container>
           <h4>Cantrips</h4>
-          <md-select ng-model="cantrip">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'cantrip'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Cantrips" ng-model="cantrip">
+            <md-option ng-repeat="spell in spells | filter:{level:'cantrip'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 1</h4>
-          <md-select ng-model="lvl1spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'1st-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 1 Spells" ng-model="lvl1spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 2</h4>
-          <md-select ng-model="lvl1spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'1st-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 2 Spells" ng-model="lvl2spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'2nd-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 3</h4>
-          <md-select ng-model="lvl3spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'3rd-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 3 Spells" ng-model="lvl3spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'3rd-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 4</h4>
-          <md-select ng-model="lvl4spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'4th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 4 Spells" ng-model="lvl4spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'4th-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 5</h4>
-          <md-select ng-model="lvl5spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'5th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 5 Spells" ng-model="lvl5spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'5th-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 6</h4>
-          <md-select ng-model="lvl6spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'6th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 6 Spells" ng-model="lvl6spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'6th-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 7</h4>
-          <md-select ng-model="lvl7spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'7th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 7 Spells" ng-model="lvl7spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'7th-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 8</h4>
-          <md-select ng-model="lvl8spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'8th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 8 Spells" ng-model="lvl8spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'8th-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
         <md-input-container>
           <h4>Level 9</h4>
-          <md-select ng-model="lvl9spell">
-            <md-option ng-repeat="spell in spells | filter:{page:'phb'} | filter:{level:'9th-level'} | filter:{class:class}" value="{{spell.name}}">{{spell.name}}</md-option>
+          <md-select aria-label="Level 9 Spells" ng-model="lvl9spell">
+            <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:class}">{{spell.name}}</md-option>
           </md-select>
         </md-input-container>
       </section>
@@ -179,15 +182,22 @@
   <md-fab-speed-dial md-direction="up" class="md-scale">
     <md-fab-trigger>
       <md-button class="md-fab" aria-label="Add Character">
-        <md-icon md-svg-src="icons/plus.svg" aria-label="Add"></md-icon>
+        <svg width="80%" height="80%" viewBox="0 0 24 24">
+          <line x1="12" y1="2" x2="12" y2="22" style="stroke:#fff;stroke-width:1" />
+          <line x1="2" y1="12" x2="22" y2="12" style="stroke:#fff;stroke-width:1" />
+        </svg>
       </md-button>
     </md-fab-trigger>
     <md-fab-actions>
       <md-button ng-click="addChar()" class="md-fab md-raised md-mini" aria-label="Add Character">
-        <md-icon md-svg-src="icons/player.svg" aria-label="Add Player"></md-icon>
+        <svg width="80%" height="80%" viewBox="0 0 24 24">
+          <path d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z"/>
+        </svg>
       </md-button>
       <md-button ng-click="addMonster()" class="md-fab md-raised md-mini" aria-label="Add Monster">
-        <md-icon md-svg-src="icons/monster.svg" aria-label="Add Monster"></md-icon>
+        <svg width="80%" height="80%" viewBox="0 0 24 24">
+          <path d="M12 3.385c-4.681 0-8.475 3.794-8.475 8.475 0 3.229 1.818 6.019 4.475 7.449v2.582c.672.906 2 1.109 2 1.109v-2h1v1.999h2v-1.999h1v2s1.328-.203 2-1.109v-2.582c2.657-1.431 4.475-4.22 4.475-7.449 0-4.681-3.794-8.475-8.475-8.475zm-4 11.615c-1.381 0-2.5-1.119-2.5-2.5 0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5c0 1.381-1.119 2.5-2.5 2.5zm2 2l2-2.541 2 2.541h-4zm6-2c-1.38 0-2.5-1.119-2.5-2.5 0-1.38 1.12-2.5 2.5-2.5 1.381 0 2.5 1.12 2.5 2.5 0 1.381-1.119 2.5-2.5 2.5zm4.54 2.904l3.46 3.46-2.636 2.636-3.48-3.48c1.035-.705 1.931-1.595 2.656-2.616zm-17.2-11.928l-3.34-3.339 2.636-2.637 3.32 3.32c-1.021.724-1.911 1.621-2.616 2.656zm14.704-2.656l3.32-3.32 2.636 2.637-3.34 3.339c-.705-1.035-1.595-1.932-2.616-2.656zm-11.928 17.2l-3.48 3.48-2.636-2.636 3.46-3.46c.725 1.021 1.621 1.911 2.656 2.616z"/>
+        </svg>
       </md-button>
     </md-fab-actions>
   </md-fab-speed-dial>
@@ -200,5 +210,6 @@
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
   <script src="script.js"></script>
   <script src="spells.json"></script>
+  <script src="monsters.json"></script>
 </body>
 </html>

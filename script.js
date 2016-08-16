@@ -1,7 +1,7 @@
 
 var app = angular.module('DNDApp', ['ngMaterial', 'ngMessages']);
 
-app.controller('charactersController', ['$scope', function charactersController($scope) {
+app.controller('charactersController', ['$scope', '$mdDialog', function charactersController($scope, $mdDialog) {
   $scope.characters = [];
   $scope.idCounter = 0;
   $scope.races = [{name:'Hill Dwarf'}, {name:'Mountain Dwarf'}, {name:'High Elf'}, {name:'Wood Elf'}, {name:'Dark Elf'}, {name:'Lightfoot Halfling'}, {name:'Stout Halfling'}, {name:'Human'}, {name:'Dragonborn'}, {name:'Forest Gnome'}, {name:'Rock Gnome'}, {name:'Half-Elf'}, {name:'Half-Orc'}, {name:'Tiefling'}];
@@ -9,9 +9,80 @@ app.controller('charactersController', ['$scope', function charactersController(
   $scope.abilities = [{name:'Strength', abbr:'str'}, {name:'Dexerity', abbr:'dex'}, {name:'Constitution', abbr:'con'}, {name:'Intelligence', abbr:'int'}, {name:'Wisdom', abbr:'wis'}, {name:'Charisma', abbr:'cha'}];
   $scope.skills = [{name:'Acrobatics', abbr:'acro', relAbility:'dex'}, {name:'Animal Handling', abbr:'anim', relAbility:'wis'}, {name:'Arcana', abbr:'arca', relAbility:'int'}, {name:'Athletics', abbr:'athl', relAbility:'str'}, {name:'Deception', abbr:'dece', relAbility:'cha'}, {name:'History', abbr:'hist', relAbility:'int'}, {name:'Insight', abbr:'insi', relAbility:'wis'}, {name:'Intimidation', abbr:'inti', relAbility:'cha'}, {name:'Investigation', abbr:'inve', relAbility:'int'}, {name:'Medicine', abbr:'medi', relAbility:'wis'}, {name:'Nature', abbr:'natu', relAbility:'int'}, {name:'Perception', abbr:'perc', relAbility:'wis'}, {name:'Performance', abbr:'perf', relAbility:'cha'}, {name:'Persuasion', abbr:'pers', relAbility:'cha'}, {name:'Religion', abbr:'reli', relAbility:'int'}, {name:'Sleight of Hand', abbr:'slei', relAbility:'dex'}, {name:'Stealth', abbr:'stea', relAbility:'dex'}, {name:'Survival', abbr:'surv', relAbility:'wis'}];
   $scope.spells = jsonSpellData;
+  $scope.monsters = jsonMonsterData;
+  $scope.searchText = 'init';
+  $scope.querySearch = function (query) {
+    return query ? $scope.monsters.filter('uppercase') : $scope.monsters;
+  }
+  $scope.createFilterFor
   $scope.addChar = function() {
     $scope.idCounter++;
     $scope.characters.push($scope.idCounter);
+  };
+  $scope.addMonster = function() {
+    $scope.idCounter++;
+    $mdDialog.show({
+      autoWrap: false,
+      clickOutsideToClose: true,
+      scope: $scope,
+      preserveScope: true,
+      controller: function DialogController($scope, $mdDialog) {
+        $scope.querySearch = function(query) {
+          var results = [];
+          angular.forEach($scope.monsters, function(value, key) {
+            if (value.name == query) {
+              results.push(value);
+            }
+          });
+          alert(results);
+          return results;
+
+        };
+        $scope.closeDialog = function() {
+          $mdDialog.cancel();
+        }
+      },
+      template:
+      '<md-dialog aria-label="Add Monster" ng-cloak>'+
+        '<form>'+
+          '<md-toolbar>'+
+            '<div class="md-toolbar-tools">'+
+              '<h2>Add Monster</h2>'+
+              '<span flex></span>'+
+              '<md-button class="md-icon-button" ng-click="closeDialog()">'+
+                '<svg aria-label="Close Dialog" viewBox="0 0 20 20">'+
+                  '<line x1="4" y1="4" x2="16" y2="16" style="stroke:#fff;stroke-width:1" />'+
+                  '<line x1="4" y1="16" x2="16" y2="4" style="stroke:#fff;stroke-width:1" />'+
+                '</svg>'+
+              '</md-button>'+
+            '</div>'+
+          '</md-toolbar>'+
+          '<md-dialog-content>'+
+            '<div class="md-dialog-content">'+
+              '<md-autocomplete '+
+                'md-selected-item="selectedItem" '+
+                'md-search-text="searchText" '+
+                'md-items="monster in querySearch(searchText)" '+
+                'md-item-text="monster.name" '+
+                //'md-min-length="0"'+
+                'placeholder="Pick a monster">'+
+                //'<md-item-template>'+
+                '<span md-highlight-text="searchText">{{monster.name}}</span>'+
+                //'</md-item-template>'+
+                //'<md-not-found>'+
+                //  'No monsters matching "{{searchText}}" were found.'+
+                //'</md-not-found>'+
+              '</md-autocomplete>'+
+            '</div>'+
+          '</md-dialog-content>'+
+        '</form>'+
+      '</md-dialog>'
+    })
+    .then(function(answer) {
+      alert('cool');
+    }, function() {
+      alert('bad');
+    });
   };
 }]);
 

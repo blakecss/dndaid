@@ -9,21 +9,8 @@ body div.sort-container md-card {
   min-width: 280px;
   flex: 1;
 }
-body div.sort-container md-card md-toolbar.handle {
-  min-height: auto;
-  padding: 8px;
-}
 body div.sort-container md-card md-toolbar.handle:hover {
   cursor: move;
-}
-body div.sort-container md-card md-toolbar.handle div {
-  line-height: 40px;
-  padding-left: 5px;
-}
-body div.sort-container md-card md-toolbar.handle .md-icon-button {
-  position: absolute;
-  top: 8px;
-  right: 0;
 }
 body div.sort-container md-card section {
   padding: 5px;
