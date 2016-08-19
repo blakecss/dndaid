@@ -1,0 +1,169 @@
+<section class="info">
+  <h3>Info</h3>
+  <div class="content">
+    <md-input-container>
+      <label>Name</label>
+      <input ng-model="char.name" type="text"/>
+    </md-input-container>
+    <md-input-container>
+      <label>Race</label>
+      <md-select class="race" ng-model="char.race">
+        <md-option ng-repeat="race in races">{{race.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <label>Class</label>
+      <md-select class="class" ng-model="char.class">
+        <md-option ng-repeat="class in classes">{{class.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <label>Background</label>
+      <input class="background" ng-model="char.background" type="text"/>
+    </md-input-container>
+    <md-input-container>
+      <label>Alignment</label>
+      <md-select class="alignment" ng-model="char.alignment">
+        <md-option>LG</md-option>
+        <md-option>NG</md-option>
+        <md-option>CG</md-option>
+        <md-option>LN</md-option>
+        <md-option>N</md-option>
+        <md-option>CN</md-option>
+        <md-option>LE</md-option>
+        <md-option>NE</md-option>
+        <md-option>CE</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <label>Size</label>
+      <input ng-model="char.size" type="text" min="0" readonly/>
+    </md-input-container>
+  </div>
+</section>
+<section class="stats">
+  <h3>Stats</h3>
+  <div class="content">
+    <div class="leveling">
+      <h4>Leveling</h4>
+      <md-input-container>
+        <label>Exp</label></label>
+        <input class="exp" ng-model="char.exp" type="number" min="0"/>
+      </md-input-container>
+      <md-input-container>
+        <label>Level</label>
+        <input class="level" ng-model="char.level" type="number" min="0"/>
+      </md-input-container>
+      <md-input-container>
+        <label>PB</label>
+        <input class="pb" ng-model="char.pb" type="number" min="0" readonly/>
+      </md-input-container>
+    </div>
+    <div class="abilities">
+      <h4>Abilities</h4>
+      <md-input-container ng-repeat="ability in abilities">
+        <label>{{ability.abbr}}</label>
+        <input ng-model="char[ability.abbr]" type="number" min="0"/>
+        <div class="small">{{calcMod(ability.abbr)}}</div>
+      </md-input-container>
+    </div>
+    <div class="saving-throws">
+      <h4>Saving Throws</h4>
+      <div ng-repeat="ability in abilities">
+        <label>{{ability.abbr}}</label>
+        <input type="number" value="{{calcSaving(ability.abbr)}}" readonly/>
+        <md-checkbox ng-model="char[ability.abbr+'SavingP']" aria-label="{{ability.name}} Saving Throw Proficiency"></md-checkbox>
+      </div>
+    </div>
+    <div class="skills">
+      <h4>Skills</h4>
+      <div ng-repeat="skill in skills">
+        <label>{{skill.name}}</label>
+        <input type="number" value="{{calcSkill(skill)}}" readonly/>
+        <md-checkbox ng-model="char[skill.abbr+'P']" aria-label="{{skill.name}} Proficiency"></md-checkbox>
+      </div>
+    </div>
+    <div class="health">
+      <h4>Health</h4>
+      <md-input-container>
+        <label>AC</label>
+        <input ng-model="char.ac" type="number" min="0"/>
+      </md-input-container>
+      <md-input-container>
+        <label>Speed</label>
+        <input ng-model="char.speed" type="number" min="0" readonly/>
+      </md-input-container>
+    </div>
+  </div>
+</section>
+<section class="inventory">
+  <h3>Inventory</h3>
+  <div class="content">
+    <p>Nothing here yet</p>
+  </div>
+</section>
+<section class="spells">
+  <h3>Spells</h3>
+  <div class="content">
+    <md-input-container>
+      <h4>Cantrips</h4>
+      <md-select aria-label="Cantrips" ng-model="char.cantrip">
+        <md-option ng-repeat="spell in spells | filter:{level:'cantrip'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 1</h4>
+      <md-select aria-label="Level 1 Spells" ng-model="char.lvl1spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 2</h4>
+      <md-select aria-label="Level 2 Spells" ng-model="char.lvl2spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'2nd-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 3</h4>
+      <md-select aria-label="Level 3 Spells" ng-model="char.lvl3spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'3rd-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 4</h4>
+      <md-select aria-label="Level 4 Spells" ng-model="char.lvl4spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'4th-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 5</h4>
+      <md-select aria-label="Level 5 Spells" ng-model="char.lvl5spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'5th-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 6</h4>
+      <md-select aria-label="Level 6 Spells" ng-model="char.lvl6spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'6th-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 7</h4>
+      <md-select aria-label="Level 7 Spells" ng-model="char.lvl7spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'7th-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 8</h4>
+      <md-select aria-label="Level 8 Spells" ng-model="char.lvl8spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'8th-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <h4>Level 9</h4>
+      <md-select aria-label="Level 9 Spells" ng-model="char.lvl9spell">
+        <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:class}">{{spell.name}}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+</section>

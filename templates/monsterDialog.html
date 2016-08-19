@@ -1,0 +1,34 @@
+<md-dialog aria-label="Choose Monster" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Choose a monster</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="closeDialog()">
+        <md-icon md-svg-icon="icons/close.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <form>
+        <md-autocomplete
+          md-autofocus="true"
+          md-select-on-match="true"
+          md-min-length="0"
+          md-selected-item="selectedMonster"
+          md-search-text="monsterSearchText"
+          md-items="monster in monsterSearch(monsterSearchText)"
+          md-item-text="monster.name"
+          placeholder="Start typing a monster's name...">
+          <md-item-template>
+            <span class="item-title">{{monster.name}}</span>
+            <span class="item-challenge">Challenge Rating: {{monster.challenge_rating}}</span>
+          </md-item-template>
+        </md-autocomplete>
+      </form>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions>
+    <md-button aria-label="Add Monster" ng-click="addMonster(selectedMonster);">Add Monster</md-button>
+  </md-dialog-actions>
+</md-dialog>

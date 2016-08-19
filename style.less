@@ -1,92 +1,135 @@
+@blue500: #2196F3;
+@blue100: #BBDEFB;
+@orange500: #FF9800;
+@orange100: #FFE0B2;
+
 body {
   margin: 0;
-  div.sort-container {
-    padding-bottom: 80px;
-    display: flex;
+  header {
+    md-toolbar {
+      background: @blue500 !important;
+    }
+  }
+  div.ui-sortable {
+    padding: 0 0 80px 0;
     md-card {
       min-width: 280px;
       flex: 1;
+      &.monster {
+        md-toolbar {
+          background: @orange500;
+        }
+        h3 {
+          background: @orange100;
+        }
+      }
+      &.player {
+        md-toolbar {
+          background: @blue500;
+        }
+        h3 {
+          background: @blue100;
+        }
+      }
       md-toolbar.handle:hover {
         cursor: move;
       }
-      section {
-        padding: 5px;
-        box-sizing: border-box;
-      }
-      section.info {
-        input.class {
-          width: 100px;
-        }
-        input.background {
-          width: 120px;
-        }
-        input.race {
-          width: 120px;
-        }
-        input.alignment {
-          width: 50px;
-        }
-      }
-      section.stats {
-        display: flex;
-        input.exp {
-          width: 90px;
-        }
-        input.level {
-          width: 50px;
-        }
-        input.pb {
-          width: 50px;
-        }
-        div.abilities md-input-container {
-          input {
-            float: none;
-            max-width: 40px;
+      md-card-content {
+        padding: 0;
+        section {
+          box-sizing: border-box;
+          h3 {
+            border-bottom: 1px solid #ddd;
+            margin: 0;
+            padding: 5px;
           }
-          div.small {
-            font-size: 12px;
-            padding: 2px;
+          div.content {
+            padding: 5px;
           }
-        }
-        div.savingThrows div {
-          max-width: 40px;
-          padding: 2px;
-          float: left;
-          padding: 2px;
-          label {
-            color: rgba(0,0,0,0.54);
-            font-size: 12px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+          &.info {
+            input.class {
+              width: 100px;
+            }
+            input.background {
+              width: 120px;
+            }
+            input.race {
+              width: 120px;
+            }
+            input.alignment {
+              width: 50px;
+            }
           }
-          input {
-            margin-top: 7px;
-            margin-bottom: 3px;
-            width: 100%;
-            border: 0;
-            border-bottom: 1px solid rgba(0,0,0,0.12);
+          &.stats {
+            input.exp {
+              width: 90px;
+            }
+            input.level {
+              width: 50px;
+            }
+            input.pb {
+              width: 50px;
+            }
+            div.abilities md-input-container {
+              input {
+                float: none;
+                max-width: 40px;
+              }
+              div.small {
+                font-size: 12px;
+                padding: 2px;
+              }
+            }
+            div.saving-throws {
+              &:after {
+                content: ' ';
+                clear: both;
+                display: block;
+              }
+              div {
+                max-width: 40px;
+                padding: 2px;
+                float: left;
+                padding: 2px;
+                label {
+                  color: rgba(0,0,0,0.54);
+                  font-size: 12px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                input {
+                  margin-top: 7px;
+                  margin-bottom: 3px;
+                  width: 100%;
+                  border: 0;
+                  border-bottom: 1px solid rgba(0,0,0,0.12);
+                }
+              }
+            }
+            div.skills div {
+              float: left;
+              margin: 0 20px 15px 0;
+              label {
+                display: block;
+                color: rgba(0,0,0,0.54);
+                font-size: 12px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+              md-checkbox {
+                margin-bottom: 0;
+              }
+              input {
+                max-width: 40px;
+                margin-top: 7px;
+                border: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.12);
+              }
+            }
           }
-        }
-        div.skills div {
-          float: left;
-          margin: 0 20px 15px 0;
-          label {
-            display: block;
-            color: rgba(0,0,0,0.54);
-            font-size: 12px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-          md-checkbox {
-            margin-bottom: 0;
-          }
-          input {
-            max-width: 40px;
-            margin-top: 7px;
-            border: 0;
-            border-bottom: 1px solid rgba(0,0,0,0.12);
+          &.spells {
           }
         }
       }
@@ -96,11 +139,18 @@ body {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    md-fab-trigger button {
+      background: @blue500 !important;
+    }
+    md-fab-actions button.md-mini md-icon {
+      width: 80%;
+      height: 80%;
+    }
   }
 }
 
-h4 {
-  margin: 15px 0 5px 0;
+h3, h4 {
+  margin: 10px 0 5px 0;
 }
 
 .placeholder {
@@ -109,10 +159,41 @@ h4 {
   flex: 1;
 }
 
+.uc {
+  text-transform: uppercase;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+md-dialog {
+  md-toolbar {
+    background: @blue500 !important;
+  }
+  md-autocomplete {
+    min-width: 300px;
+  }
+}
+
+.md-autocomplete-suggestions li {
+  line-height: 18px;
+  padding-top: 12px;
+  span.item-title {
+    display: block;
+  }
+  span.item-challenge {
+    font-size: 12px;
+  }
+}
+
 md-input-container {
   margin-bottom: 0;
   vertical-align: initial;
   .md-input, md-select {
     float: none;
+  }
+  .md-errors-spacer {
+    min-height: 10px;
   }
 }

@@ -1,271 +1,343 @@
 
-var app = angular.module('DNDApp', ['ngMaterial', 'ngMessages']);
+var app = angular.module('DNDApp', ['ngMaterial', 'ngMessages', 'ngSanitize', 'ui.sortable']);
 
-app.controller('charactersController', ['$scope', '$mdDialog', function charactersController($scope, $mdDialog) {
+app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', function charactersController($scope, filterFilter, $mdDialog) {
+  $scope.sortableOptions = {
+    'handle': '.handle',
+    'placeholder': 'placeholder',
+    'tolerance': 'pointer',
+    'ui-floating': true
+  };
   $scope.characters = [];
   $scope.idCounter = 0;
   $scope.races = [{name:'Hill Dwarf'}, {name:'Mountain Dwarf'}, {name:'High Elf'}, {name:'Wood Elf'}, {name:'Dark Elf'}, {name:'Lightfoot Halfling'}, {name:'Stout Halfling'}, {name:'Human'}, {name:'Dragonborn'}, {name:'Forest Gnome'}, {name:'Rock Gnome'}, {name:'Half-Elf'}, {name:'Half-Orc'}, {name:'Tiefling'}];
   $scope.classes = [{name:'Barbarian'}, {name:'Bard'}, {name:'Cleric'}, {name:'Druid'}, {name:'Fighter'}, {name:'Fighter'}, {name:'Monk'}, {name:'Paladin'}, {name:'Ranger'}, {name:'Rogue'}, {name:'Sorcerer'}, {name:'Warlock'}, {name:'Wizard'}];
-  $scope.abilities = [{name:'Strength', abbr:'str'}, {name:'Dexerity', abbr:'dex'}, {name:'Constitution', abbr:'con'}, {name:'Intelligence', abbr:'int'}, {name:'Wisdom', abbr:'wis'}, {name:'Charisma', abbr:'cha'}];
-  $scope.skills = [{name:'Acrobatics', abbr:'acro', relAbility:'dex'}, {name:'Animal Handling', abbr:'anim', relAbility:'wis'}, {name:'Arcana', abbr:'arca', relAbility:'int'}, {name:'Athletics', abbr:'athl', relAbility:'str'}, {name:'Deception', abbr:'dece', relAbility:'cha'}, {name:'History', abbr:'hist', relAbility:'int'}, {name:'Insight', abbr:'insi', relAbility:'wis'}, {name:'Intimidation', abbr:'inti', relAbility:'cha'}, {name:'Investigation', abbr:'inve', relAbility:'int'}, {name:'Medicine', abbr:'medi', relAbility:'wis'}, {name:'Nature', abbr:'natu', relAbility:'int'}, {name:'Perception', abbr:'perc', relAbility:'wis'}, {name:'Performance', abbr:'perf', relAbility:'cha'}, {name:'Persuasion', abbr:'pers', relAbility:'cha'}, {name:'Religion', abbr:'reli', relAbility:'int'}, {name:'Sleight of Hand', abbr:'slei', relAbility:'dex'}, {name:'Stealth', abbr:'stea', relAbility:'dex'}, {name:'Survival', abbr:'surv', relAbility:'wis'}];
+  $scope.abilities = [{name:'strength', abbr:'str'}, {name:'dexterity', abbr:'dex'}, {name:'constitution', abbr:'con'}, {name:'intelligence', abbr:'int'}, {name:'wisdom', abbr:'wis'}, {name:'charisma', abbr:'cha'}];
+  $scope.skills = [{name:'acrobatics', abbr:'acro', relAbility:'dex'}, {name:'animal handling', abbr:'anim', relAbility:'wis'}, {name:'arcana', abbr:'arca', relAbility:'int'}, {name:'athletics', abbr:'athl', relAbility:'str'}, {name:'deception', abbr:'dece', relAbility:'cha'}, {name:'history', abbr:'hist', relAbility:'int'}, {name:'insight', abbr:'insi', relAbility:'wis'}, {name:'intimidation', abbr:'inti', relAbility:'cha'}, {name:'investigation', abbr:'inve', relAbility:'int'}, {name:'medicine', abbr:'medi', relAbility:'wis'}, {name:'nature', abbr:'natu', relAbility:'int'}, {name:'perception', abbr:'perc', relAbility:'wis'}, {name:'performance', abbr:'perf', relAbility:'cha'}, {name:'persuasion', abbr:'pers', relAbility:'cha'}, {name:'religion', abbr:'reli', relAbility:'int'}, {name:'sleight of hand', abbr:'slei', relAbility:'dex'}, {name:'stealth', abbr:'stea', relAbility:'dex'}, {name:'survival', abbr:'surv', relAbility:'wis'}];
   $scope.spells = jsonSpellData;
   $scope.monsters = jsonMonsterData;
-  $scope.searchText = 'init';
-  $scope.querySearch = function (query) {
-    return query ? $scope.monsters.filter('uppercase') : $scope.monsters;
-  }
-  $scope.createFilterFor
-  $scope.addChar = function() {
+  $scope.addPlayer = function() {
     $scope.idCounter++;
-    $scope.characters.push($scope.idCounter);
+    $scope.characters.push({id: $scope.idCounter, type: "player", preset: ''});
   };
-  $scope.addMonster = function() {
+  $scope.addMonster = function(monster) {
     $scope.idCounter++;
-    $mdDialog.show({
-      autoWrap: false,
-      clickOutsideToClose: true,
-      scope: $scope,
-      preserveScope: true,
-      controller: function DialogController($scope, $mdDialog) {
-        $scope.querySearch = function(query) {
-          var results = [];
-          angular.forEach($scope.monsters, function(value, key) {
-            if (value.name == query) {
-              results.push(value);
-            }
-          });
-          alert(results);
-          return results;
-
-        };
-        $scope.closeDialog = function() {
-          $mdDialog.cancel();
-        }
-      },
-      template:
-      '<md-dialog aria-label="Add Monster" ng-cloak>'+
-        '<form>'+
-          '<md-toolbar>'+
-            '<div class="md-toolbar-tools">'+
-              '<h2>Add Monster</h2>'+
-              '<span flex></span>'+
-              '<md-button class="md-icon-button" ng-click="closeDialog()">'+
-                '<svg aria-label="Close Dialog" viewBox="0 0 20 20">'+
-                  '<line x1="4" y1="4" x2="16" y2="16" style="stroke:#fff;stroke-width:1" />'+
-                  '<line x1="4" y1="16" x2="16" y2="4" style="stroke:#fff;stroke-width:1" />'+
-                '</svg>'+
-              '</md-button>'+
-            '</div>'+
-          '</md-toolbar>'+
-          '<md-dialog-content>'+
-            '<div class="md-dialog-content">'+
-              '<md-autocomplete '+
-                'md-selected-item="selectedItem" '+
-                'md-search-text="searchText" '+
-                'md-items="monster in querySearch(searchText)" '+
-                'md-item-text="monster.name" '+
-                //'md-min-length="0"'+
-                'placeholder="Pick a monster">'+
-                //'<md-item-template>'+
-                '<span md-highlight-text="searchText">{{monster.name}}</span>'+
-                //'</md-item-template>'+
-                //'<md-not-found>'+
-                //  'No monsters matching "{{searchText}}" were found.'+
-                //'</md-not-found>'+
-              '</md-autocomplete>'+
-            '</div>'+
-          '</md-dialog-content>'+
-        '</form>'+
-      '</md-dialog>'
-    })
-    .then(function(answer) {
-      alert('cool');
-    }, function() {
-      alert('bad');
+    $scope.characters.push({id: $scope.idCounter, type: "monster", presets: monster});
+    $mdDialog.hide();
+  };
+  $scope.deleteChar = function(id, name) {
+    var confirm = $mdDialog.confirm().title('Delete ' + (name=='' ? ('character ' + id) : name) + '?').cancel('Cancel').ok('Delete');
+    $mdDialog.show(confirm).then(function() {
+      var i = $scope.characters.findIndex(c => c.id==id);
+      $scope.characters.splice(i, 1);
     });
   };
+  $scope.showSpell = function(s) {
+    if (s) {
+      $mdDialog.show({
+        scope: $scope,
+        preserveScope: true,
+        templateUrl: 'templates/spellDialog.html'
+      });
+    }
+  };
+  $scope.spellSearch = function(query) {
+    if (query=='') {
+      return $scope.spells;
+    } else {
+      return filterFilter($scope.spells, {name: query});
+    }
+  };
+  $scope.selectMonster = function() {
+    $mdDialog.show({
+      autoWrap: false,
+      scope: $scope,
+      preserveScope: true,
+      controller: function DialogController($scope, filterFilter, $mdDialog) {
+        $scope.monsterSearch = function(query) {
+          if (query=='') {
+            return $scope.monsters;
+          } else {
+            return filterFilter($scope.monsters, {name: query});
+          }
+        };
+        //$scope.closeDialog = function() {
+        //  $mdDialog.cancel();
+        //}
+      },
+      templateUrl: 'templates/monsterDialog.html'
+    });
+  };
+  $scope.closeDialog = function() {
+    $mdDialog.cancel();
+  }
 }]);
 
-app.controller('characterController', ['$scope', '$mdDialog', function characterController($scope, $mdDialog) {
+app.controller('characterController', ['$scope', function characterController($scope) {
   $scope.charID = $scope.$parent.idCounter;
+  $scope.char = {};
+
   // Init character info
-  $scope.name = ''; $scope.class = ''; $scope.background = ''; $scope.race = ''; $scope.alignment = '';
   $scope.$watch('race', function(newVal, oldVal) {
     switch (newVal) {
       case 'Hill Dwarf':
-        $scope.size = 'Medium';
-        $scope.speed = 25;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 25;
         break;
       case 'Mountain Dwarf':
-        $scope.size = 'Medium';
-        $scope.speed = 25;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 25;
         break;
       case 'High Elf':
-        $scope.size = 'Medium';
-        $scope.speed = 30;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 30;
         break;
       case 'Wood Elf':
-        $scope.size = 'Medium';
-        $scope.speed = 35;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 35;
         break;
       case 'Dark Elf':
-        $scope.size = 'Medium';
-        $scope.speed = 30;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 30;
         break;
       case 'Lightfoot Halfling':
-        $scope.size = 'Small';
-        $scope.speed = 25;
+        $scope.char.size = 'Small';
+        $scope.char.speed = 25;
         break;
       case 'Stout Halfling':
-        $scope.size = 'Small';
-        $scope.speed = 25;
+        $scope.char.size = 'Small';
+        $scope.char.speed = 25;
         break;
       case 'Human':
-        $scope.size = 'Medium';
-        $scope.speed = 30;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 30;
         break;
       case 'Dragonborn':
-        $scope.size = 'Medium';
-        $scope.speed = 30;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 30;
         break;
       case 'Forest Gnome':
-        $scope.size = 'Small';
-        $scope.speed = 25;
+        $scope.char.size = 'Small';
+        $scope.char.speed = 25;
         break;
       case 'Rock Gnome':
-        $scope.size = 'Small';
-        $scope.speed = 25;
+        $scope.char.size = 'Small';
+        $scope.char.speed = 25;
         break;
       case 'Half-Elf':
-        $scope.size = 'Medium';
-        $scope.speed = 30;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 30;
         break;
       case 'Half-Orc':
-        $scope.size = 'Medium';
-        $scope.speed = 30;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 30;
         break;
       case 'Tiefling':
-        $scope.size = 'Medium';
-        $scope.speed = 30;
+        $scope.char.size = 'Medium';
+        $scope.char.speed = 30;
         break;
       default:
-        $scope.size = '';
-        $scope.speed = '';
+        $scope.char.size = '';
+        $scope.char.speed = '';
         break;
     }
   });
 
   // Init stats
-  $scope.exp = 0;
-  $scope.level = 1;
-  $scope.pb = 2;
-  $scope.$watch('exp', function() {
-    if ($scope.exp >= 335000) {
-      $scope.level = 20;
-      $scope.pb = 6;
-    } else if ($scope.exp < 335000 && $scope.exp >= 305000) {
-      $scope.level = 19;
-      $scope.pb = 6;
-    } else if ($scope.exp < 305000 && $scope.exp >= 265000) {
-      $scope.level = 18;
-      $scope.pb = 6;
-    } else if ($scope.exp < 265000 && $scope.exp >= 225000) {
-      $scope.level = 17;
-      $scope.pb = 6;
-    } else if ($scope.exp < 225000 && $scope.exp >= 195000) {
-      $scope.level = 16;
-      $scope.pb = 5;
-    } else if ($scope.exp < 195000 && $scope.exp >= 165000) {
-      $scope.level = 15;
-      $scope.pb = 5;
-    } else if ($scope.exp < 165000 && $scope.exp >= 140000) {
-      $scope.level = 14;
-      $scope.pb = 5;
-    } else if ($scope.exp < 140000 && $scope.exp >= 120000) {
-      $scope.level = 13;
-      $scope.pb = 5;
-    } else if ($scope.exp < 120000 && $scope.exp >= 100000) {
-      $scope.level = 12;
-      $scope.pb = 4;
-    } else if ($scope.exp < 100000 && $scope.exp >= 85000) {
-      $scope.level = 11;
-      $scope.pb = 4;
-    } else if ($scope.exp < 85000 && $scope.exp >= 64000) {
-      $scope.level = 10;
-      $scope.pb = 4;
-    } else if ($scope.exp < 64000 && $scope.exp >= 48000) {
-      $scope.level = 9;
-      $scope.pb = 4;
-    } else if ($scope.exp < 48000 && $scope.exp >= 34000) {
-      $scope.level = 8;
-      $scope.pb = 3;
-    } else if ($scope.exp < 34000 && $scope.exp >= 23000) {
-      $scope.level = 7;
-      $scope.pb = 3;
-    } else if ($scope.exp < 23000 && $scope.exp >= 14000) {
-      $scope.level = 6;
-      $scope.pb = 3;
-    } else if ($scope.exp < 14000 && $scope.exp >= 6500) {
-      $scope.level = 5;
-      $scope.pb = 3;
-    } else if ($scope.exp < 6500 && $scope.exp >= 2700) {
-      $scope.level = 4;
-      $scope.pb = 2;
-    } else if ($scope.exp < 2700 && $scope.exp >= 900) {
-      $scope.level = 3;
-      $scope.pb = 2;
-    } else if ($scope.exp < 900 && $scope.exp >= 300) {
-      $scope.level = 2;
-      $scope.pb = 2;
+  $scope.char.exp = 0;
+  $scope.char.level = 1;
+  $scope.char.pb = 2;
+  $scope.$watch('char.exp', function() {
+    if ($scope.char.exp >= 335000) {
+      $scope.char.level = 20;
+      $scope.char.pb = 6;
+    } else if ($scope.char.exp < 335000 && $scope.char.exp >= 305000) {
+      $scope.char.level = 19;
+      $scope.char.pb = 6;
+    } else if ($scope.char.exp < 305000 && $scope.char.exp >= 265000) {
+      $scope.char.level = 18;
+      $scope.char.pb = 6;
+    } else if ($scope.char.exp < 265000 && $scope.char.exp >= 225000) {
+      $scope.char.level = 17;
+      $scope.char.pb = 6;
+    } else if ($scope.char.exp < 225000 && $scope.char.exp >= 195000) {
+      $scope.char.level = 16;
+      $scope.char.pb = 5;
+    } else if ($scope.char.exp < 195000 && $scope.char.exp >= 165000) {
+      $scope.char.level = 15;
+      $scope.char.pb = 5;
+    } else if ($scope.char.exp < 165000 && $scope.char.exp >= 140000) {
+      $scope.char.level = 14;
+      $scope.char.pb = 5;
+    } else if ($scope.char.exp < 140000 && $scope.char.exp >= 120000) {
+      $scope.char.level = 13;
+      $scope.char.pb = 5;
+    } else if ($scope.char.exp < 120000 && $scope.char.exp >= 100000) {
+      $scope.char.level = 12;
+      $scope.char.pb = 4;
+    } else if ($scope.char.exp < 100000 && $scope.char.exp >= 85000) {
+      $scope.char.level = 11;
+      $scope.char.pb = 4;
+    } else if ($scope.char.exp < 85000 && $scope.char.exp >= 64000) {
+      $scope.char.level = 10;
+      $scope.char.pb = 4;
+    } else if ($scope.char.exp < 64000 && $scope.char.exp >= 48000) {
+      $scope.char.level = 9;
+      $scope.char.pb = 4;
+    } else if ($scope.char.exp < 48000 && $scope.char.exp >= 34000) {
+      $scope.char.level = 8;
+      $scope.char.pb = 3;
+    } else if ($scope.char.exp < 34000 && $scope.char.exp >= 23000) {
+      $scope.char.level = 7;
+      $scope.char.pb = 3;
+    } else if ($scope.char.exp < 23000 && $scope.char.exp >= 14000) {
+      $scope.char.level = 6;
+      $scope.char.pb = 3;
+    } else if ($scope.char.exp < 14000 && $scope.char.exp >= 6500) {
+      $scope.char.level = 5;
+      $scope.char.pb = 3;
+    } else if ($scope.char.exp < 6500 && $scope.char.exp >= 2700) {
+      $scope.char.level = 4;
+      $scope.char.pb = 2;
+    } else if ($scope.char.exp < 2700 && $scope.char.exp >= 900) {
+      $scope.char.level = 3;
+      $scope.char.pb = 2;
+    } else if ($scope.char.exp < 900 && $scope.char.exp >= 300) {
+      $scope.char.level = 2;
+      $scope.char.pb = 2;
     } else {
-      $scope.level = 1;
-      $scope.pb = 2;
+      $scope.char.level = 1;
+      $scope.char.pb = 2;
     }
   });
 
   // Abilities
-  $scope.str = 0; $scope.dex = 0; $scope.con = 0; $scope.int = 0; $scope.wis = 0; $scope.cha = 0;
+  $scope.char.str = 0; $scope.char.dex = 0; $scope.char.con = 0; $scope.char.int = 0; $scope.char.wis = 0; $scope.char.cha = 0;
   $scope.calcMod = function(ability) {
     var mod = ability + 'Mod';
-    $scope[mod] = Math.floor(($scope[ability] - 10) / 2);
-    return $scope[mod];
+    $scope.char[mod] = Math.floor(($scope.char[ability] - 10) / 2);
+    return $scope.char[mod];
   };
 
   // Saving throws
   $scope.calcSaving = function(ability) {
-    var mod = $scope[ability + 'Mod'];
-    var savingP = $scope[ability + 'SavingP'];
-    var saving = savingP ? mod + $scope.pb : mod;
+    var mod = $scope.char[ability + 'Mod'];
+    var savingP = $scope.char[ability + 'SavingP'];
+    var saving = savingP ? mod + $scope.char.pb : mod;
     return saving;
   };
 
   // Skills
   $scope.calcSkill = function(skillObj) {
-    var mod = $scope[skillObj.relAbility + 'Mod'];
-    var skillP = $scope[skillObj.abbr + 'P'];
-    var skill = skillP ? mod + $scope.pb : mod;
+    var mod = $scope.char[skillObj.relAbility + 'Mod'];
+    var skillP = $scope.char[skillObj.abbr + 'P'];
+    var skill = skillP ? mod + $scope.char.pb : mod;
     return skill;
   }
 
-  $scope.speed = function() {
-    return $scope.race.speed;
-  };
-
   // Spells
-  $scope.cantrip = ''; $scope.lvl1spell = ''; $scope.lvl2spell = ''; $scope.lvl3spell = ''; $scope.lvl4spell = ''; $scope.lvl5spell = ''; $scope.lvl6spell = ''; $scope.lvl7spell = ''; $scope.lvl8spell = ''; $scope.lvl9spell = '';
 
-  $scope.deleteChar = function() {
-    var confirm = $mdDialog.confirm().title('Delete ' + ($scope.name=='' ? ('character ' + $scope.charID) : $scope.name) + '?').cancel('Cancel').ok('Delete');
-    $mdDialog.show(confirm).then(function() {
-      var i = $scope.$parent.characters.indexOf($scope.charID);
-      $scope.$parent.characters.splice(i, 1);
+  // Monsters
+  angular.forEach($scope.$parent.characters, function(value, key) {
+    if (value.id == $scope.charID) {
+      $scope.type = value.type;
+      angular.forEach(value.presets, function(value, key) {
+        $scope.char[key] = value;
+      });
+    }
+  });
+
+  $scope.savingThrows = function() {
+    var savingStr = '';
+    angular.forEach($scope.$parent.abilities, function(value, key) {
+      if ($scope.char[value.name+'_save']) {
+        savingStr += (value.abbr + ' +' + $scope.char[value.name+'_save'] + ', ');
+      }
     });
+    return savingStr.substr(0, savingStr.length-2);;
   };
-}]);
 
-$(".sort-container").sortable({
-  cursor: "move",
-  handle: ".handle",
-  placeholder: "placeholder",
-  tolerance: "pointer"
-});
+  $scope.skills = function() {
+    var skillsStr = '';
+    angular.forEach($scope.$parent.skills, function(value, key) {
+      if ($scope.char[value.name]) {
+        skillsStr += (value.name + ' +' + $scope.char[value.name] + ', ');
+      }
+    });
+    return skillsStr.substr(0, skillsStr.length-2);;
+  };
+
+  $scope.expEarned = function() {
+    if ($scope.char.challenge_rating=='0') {
+      return '10 XP';
+    } else if ($scope.char.challenge_rating=='1/8') {
+      return '25 XP';
+    } else if ($scope.char.challenge_rating=='1/4') {
+      return '50 XP';
+    } else if ($scope.char.challenge_rating=='1/2') {
+      return '100 XP';
+    } else if ($scope.char.challenge_rating=='1') {
+      return '200 XP';
+    } else if ($scope.char.challenge_rating=='2') {
+      return '450 XP';
+    } else if ($scope.char.challenge_rating=='3') {
+      return '700 XP';
+    } else if ($scope.char.challenge_rating=='4') {
+      return '1100 XP';
+    } else if ($scope.char.challenge_rating=='5') {
+      return '1800 XP';
+    } else if ($scope.char.challenge_rating=='6') {
+      return '2300 XP';
+    } else if ($scope.char.challenge_rating=='7') {
+      return '2900 XP';
+    } else if ($scope.char.challenge_rating=='8') {
+      return '3900 XP';
+    } else if ($scope.char.challenge_rating=='9') {
+      return '5000 XP';
+    } else if ($scope.char.challenge_rating=='10') {
+      return '5900 XP';
+    } else if ($scope.char.challenge_rating=='11') {
+      return '7200 XP';
+    } else if ($scope.char.challenge_rating=='12') {
+      return '8400 XP';
+    } else if ($scope.char.challenge_rating=='13') {
+      return '10000 XP';
+    } else if ($scope.char.challenge_rating=='14') {
+      return '11500 XP';
+    } else if ($scope.char.challenge_rating=='15') {
+      return '13000 XP';
+    } else if ($scope.char.challenge_rating=='16') {
+      return '15000 XP';
+    } else if ($scope.char.challenge_rating=='17') {
+      return '18000 XP';
+    } else if ($scope.char.challenge_rating=='18') {
+      return '20000 XP';
+    } else if ($scope.char.challenge_rating=='19') {
+      return '22000 XP';
+    } else if ($scope.char.challenge_rating=='20') {
+      return '25000 XP';
+    } else if ($scope.char.challenge_rating=='21') {
+      return '33000 XP';
+    } else if ($scope.char.challenge_rating=='22') {
+      return '41000 XP';
+    } else if ($scope.char.challenge_rating=='23') {
+      return '50000 XP';
+    } else if ($scope.char.challenge_rating=='24') {
+      return '62000 XP';
+    } else if ($scope.char.challenge_rating=='25') {
+      return '75000 XP';
+    } else if ($scope.char.challenge_rating=='26') {
+      return '90000 XP';
+    } else if ($scope.char.challenge_rating=='27') {
+      return '105000 XP';
+    } else if ($scope.char.challenge_rating=='28') {
+      return '120000 XP';
+    } else if ($scope.char.challenge_rating=='29') {
+      return '135000 XP';
+    } else if ($scope.char.challenge_rating=='30') {
+      return '155000 XP';
+    } else {
+      return '0 XP';
+    }
+  }
+}]);
