@@ -31,19 +31,19 @@
     </div>
   </div>
 </section>
-<section class="special-abilities">
+<section ng-show="char.special_abilities" class="special-abilities">
   <h3>Special Abilities</h3>
   <div class="content">
     <p ng-repeat="action in char.special_abilities"><b><i>{{action.name}}:</i></b> {{action.desc}}</p>
   </div>
 </section>
-<section class="actions">
+<section ng-show="char.actions" class="actions">
   <h3>Actions</h3>
   <div class="content">
     <p ng-repeat="action in char.actions"><b><i>{{action.name}}:</i></b> {{action.desc}}</p>
   </div>
 </section>
-<section class="legendary-actions">
+<section ng-show="char.legendary_actions" class="legendary-actions">
   <h3>Legendary Actions</h3>
   <div class="content">
     <p ng-repeat="action in char.legendary_actions"><b><i>{{action.name}}:</i></b> {{action.desc}}</p>

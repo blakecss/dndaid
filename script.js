@@ -35,6 +35,7 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
   $scope.showSpell = function(s) {
     if (s) {
       $mdDialog.show({
+        autoWrap: false,
         scope: $scope,
         preserveScope: true,
         templateUrl: 'templates/spellDialog.html'
@@ -341,3 +342,7 @@ app.controller('characterController', ['$scope', function characterController($s
     }
   }
 }]);
+
+$('body').on('click', 'section h3', function() {
+  $(this).find(' + div.content').slideToggle();
+});
