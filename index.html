@@ -10,7 +10,21 @@
       <div class="md-toolbar-tools">
         <h2>DnD Aid</h2>
         <span flex></span>
-        <md-autocomplete style="min-width: 300px"
+        <md-autocomplete class="itemRef"
+          md-min-length="0"
+          md-selected-item="selectedItem"
+          md-require-match="true"
+          md-selected-item-change="showItem(item)"
+          md-search-text="itemSearchText"
+          md-items="item in itemSearch(itemSearchText)"
+          md-item-text="item.name"
+          md-require-match="true"
+          placeholder="Item Reference">
+          <md-item-template>
+            <span class="item-title">{{item.name}}</span>
+          </md-item-template>
+        </md-autocomplete>
+        <md-autocomplete class="spellRef"
           md-min-length="0"
           md-selected-item="selectedSpell"
           md-require-match="true"

@@ -13,14 +13,14 @@
   <div class="content">
     <div class="abilities">
       <md-input-container ng-repeat="ability in abilities">
-        <label>{{ability.abbr}}</label>
+        <label class="uc">{{ability.abbr}}</label>
         <input ng-model="char[ability.abbr]" type="number" min="0"/>
         <div class="small">{{calcMod(ability.abbr)}}</div>
       </md-input-container>
     </div>
     <div class="monster-stats">
       <p ng-show="savingThrows()"><b>Saving Throws</b> <span class="uc">{{savingThrows()}}</span></p>
-      <p ng-show="skills()" class="cap"><b>Skills</b> {{skills()}}</p>
+      <p ng-show="monsterSkills()" class="cap"><b>Skills</b> {{monsterSkills()}}</p>
       <p ng-show="char.damage_vulnerabilities"><b>Damage Vulnerabilities</b> {{char.damage_vulnerabilities}}</p>
       <p ng-show="char.damage_resistances"><b>Damage Resistances</b> {{char.damage_resistances}}</p>
       <p ng-show="char.damage_immunities"><b>Damage Immunities</b> {{char.damage_immunities}}</p>

@@ -11,7 +11,7 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
   $scope.characters = [];
   $scope.idCounter = 0;
   $scope.races = [{name:'Hill Dwarf'}, {name:'Mountain Dwarf'}, {name:'High Elf'}, {name:'Wood Elf'}, {name:'Dark Elf'}, {name:'Lightfoot Halfling'}, {name:'Stout Halfling'}, {name:'Human'}, {name:'Dragonborn'}, {name:'Forest Gnome'}, {name:'Rock Gnome'}, {name:'Half-Elf'}, {name:'Half-Orc'}, {name:'Tiefling'}];
-  $scope.classes = [{name:'Barbarian'}, {name:'Bard'}, {name:'Cleric'}, {name:'Druid'}, {name:'Fighter'}, {name:'Fighter'}, {name:'Monk'}, {name:'Paladin'}, {name:'Ranger'}, {name:'Rogue'}, {name:'Sorcerer'}, {name:'Warlock'}, {name:'Wizard'}];
+  $scope.classes = [{name:'Barbarian'}, {name:'Bard'}, {name:'Cleric'}, {name:'Druid'}, {name:'Fighter'}, {name:'Monk'}, {name:'Paladin'}, {name:'Ranger'}, {name:'Rogue'}, {name:'Sorcerer'}, {name:'Warlock'}, {name:'Wizard'}];
   $scope.abilities = [{name:'strength', abbr:'str'}, {name:'dexterity', abbr:'dex'}, {name:'constitution', abbr:'con'}, {name:'intelligence', abbr:'int'}, {name:'wisdom', abbr:'wis'}, {name:'charisma', abbr:'cha'}];
   $scope.skills = [{name:'acrobatics', abbr:'acro', relAbility:'dex'}, {name:'animal handling', abbr:'anim', relAbility:'wis'}, {name:'arcana', abbr:'arca', relAbility:'int'}, {name:'athletics', abbr:'athl', relAbility:'str'}, {name:'deception', abbr:'dece', relAbility:'cha'}, {name:'history', abbr:'hist', relAbility:'int'}, {name:'insight', abbr:'insi', relAbility:'wis'}, {name:'intimidation', abbr:'inti', relAbility:'cha'}, {name:'investigation', abbr:'inve', relAbility:'int'}, {name:'medicine', abbr:'medi', relAbility:'wis'}, {name:'nature', abbr:'natu', relAbility:'int'}, {name:'perception', abbr:'perc', relAbility:'wis'}, {name:'performance', abbr:'perf', relAbility:'cha'}, {name:'persuasion', abbr:'pers', relAbility:'cha'}, {name:'religion', abbr:'reli', relAbility:'int'}, {name:'sleight of hand', abbr:'slei', relAbility:'dex'}, {name:'stealth', abbr:'stea', relAbility:'dex'}, {name:'survival', abbr:'surv', relAbility:'wis'}];
   $scope.spells = jsonSpellData;
@@ -26,7 +26,7 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
     $mdDialog.hide();
   };
   $scope.deleteChar = function(id, name) {
-    var confirm = $mdDialog.confirm().title('Delete ' + (name=='' ? ('character ' + id) : name) + '?').cancel('Cancel').ok('Delete');
+    var confirm = $mdDialog.confirm().title('Delete ' + (!name ? ('character ' + id) : name) + '?').cancel('Cancel').ok('Delete');
     $mdDialog.show(confirm).then(function() {
       var i = $scope.characters.findIndex(c => c.id==id);
       $scope.characters.splice(i, 1);
@@ -49,6 +49,13 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
       return filterFilter($scope.spells, {name: query});
     }
   };
+  $scope.findSpell = function(query) {
+    if (!query) {
+      return '';
+    } else {
+      return filterFilter($scope.spells, {name: query});
+    }
+  }
   $scope.selectMonster = function() {
     $mdDialog.show({
       autoWrap: false,
@@ -78,71 +85,121 @@ app.controller('characterController', ['$scope', function characterController($s
   $scope.charID = $scope.$parent.idCounter;
   $scope.char = {};
 
+  $scope.char.speed = 0;
+  $scope.char.curHP = 0;
+  $scope.char.maxHP = 0;
+
+
+
+  $scope.char.cantripSlots, $scope.char.lvl1Slots, $scope.char.lvl2Slots, $scope.char.lvl3Slots, $scope.char.lvl4Slots, $scope.char.lvl5Slots, $scope.char.lvl6Slots, $scope.char.lvl7Slots, $scope.char.lvl8Slots, $scope.char.lvl9Slots = 0;
   // Init character info
-  $scope.$watch('race', function(newVal, oldVal) {
-    switch (newVal) {
-      case 'Hill Dwarf':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 25;
-        break;
-      case 'Mountain Dwarf':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 25;
-        break;
-      case 'High Elf':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 30;
-        break;
-      case 'Wood Elf':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 35;
-        break;
-      case 'Dark Elf':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 30;
-        break;
-      case 'Lightfoot Halfling':
-        $scope.char.size = 'Small';
-        $scope.char.speed = 25;
-        break;
-      case 'Stout Halfling':
-        $scope.char.size = 'Small';
-        $scope.char.speed = 25;
-        break;
-      case 'Human':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 30;
-        break;
-      case 'Dragonborn':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 30;
-        break;
-      case 'Forest Gnome':
-        $scope.char.size = 'Small';
-        $scope.char.speed = 25;
-        break;
-      case 'Rock Gnome':
-        $scope.char.size = 'Small';
-        $scope.char.speed = 25;
-        break;
-      case 'Half-Elf':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 30;
-        break;
-      case 'Half-Orc':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 30;
-        break;
-      case 'Tiefling':
-        $scope.char.size = 'Medium';
-        $scope.char.speed = 30;
-        break;
-      default:
-        $scope.char.size = '';
-        $scope.char.speed = '';
-        break;
+  $scope.$watch('char.race', function(newVal, oldVal) {
+    if (newVal=='Hill Dwarf') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 25;
+    } else if (newVal=='Mountain Dwarf') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 25;
+    } else if (newVal=='High Elf') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 30;
+    } else if (newVal=='Wood Elf') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 35;
+    } else if (newVal=='Dark Elf') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 30;
+    } else if (newVal=='Lightfoot Halfling') {
+      $scope.char.size = 'Small';
+      $scope.char.speed = 25;
+    } else if (newVal=='Stout Halfling') {
+      $scope.char.size = 'Small';
+      $scope.char.speed = 25;
+    } else if (newVal=='Human') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 30;
+    } else if (newVal=='Dragonborn') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 30;
+    } else if (newVal=='Forest Gnome') {
+      $scope.char.size = 'Small';
+      $scope.char.speed = 25;
+    } else if (newVal=='Rock Gnome') {
+      $scope.char.size = 'Small';
+      $scope.char.speed = 25;
+    } else if (newVal=='Half-Elf') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 30;
+    } else if (newVal=='Half-Orc') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 30;
+    } else if (newVal=='Tiefling') {
+      $scope.char.size = 'Medium';
+      $scope.char.speed = 30;
     }
   });
+  $scope.$watch('[char.level, char.class]', function(newVal, oldVal) {
+    if (newVal[1]=='Barbarian') {
+      $scope.char.hitDie = newVal[0]+'d12';
+      $scope.char.cantripSlots = 0;
+      $scope.char.level1Slots = 0;
+      $scope.char.level2Slots = 0;
+      $scope.char.level3Slots = 0;
+      $scope.char.level4Slots = 0;
+      $scope.char.level5Slots = 0;
+      $scope.char.level6Slots = 0;
+      $scope.char.level7Slots = 0;
+      $scope.char.level8Slots = 0;
+      $scope.char.level9Slots = 0;
+    } else if (newVal[1]=='Bard') {
+      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.cantripSlots = 2;
+      $scope.char.level1Slots = 2;
+    } else if (newVal[1]=='Cleric') {
+      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.cantripSlots = 3;
+      $scope.char.level1Slots = 2;
+    } else if (newVal[1]=='Druid') {
+      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.cantripSlots = 2;
+      $scope.char.level1Slots = 2;
+    } else if (newVal[1]=='Fighter') {
+      $scope.char.hitDie = newVal[0]+'d10';
+      $scope.char.cantripSlots = 0;
+      $scope.char.level1Slots = 0;
+    } else if (newVal[1]=='Monk') {
+      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.cantripSlots = 0;
+      $scope.char.level1Slots = 0;
+    } else if (newVal[1]=='Paladin') {
+      $scope.char.hitDie = newVal[0]+'d10';
+      $scope.char.cantripSlots = 0;
+      $scope.char.level1Slots = 0;
+    } else if (newVal[1]=='Ranger') {
+      $scope.char.hitDie = newVal[0]+'d10';
+      $scope.char.cantripSlots = 0;
+      $scope.char.level1Slots = 0;
+    } else if (newVal[1]=='Rogue') {
+      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.cantripSlots = 2;
+      $scope.char.level1Slots = 1;
+    } else if (newVal[1]=='Sorcerer') {
+      $scope.char.hitDie = newVal[0]+'d6';
+      $scope.char.cantripSlots = 4;
+      $scope.char.level1Slots = 2;
+    } else if (newVal[1]=='Warlock') {
+      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.cantripSlots = 2;
+      $scope.char.level1Slots = 1;
+    } else if (newVal[1]=='Wizard') {
+      $scope.char.hitDie = newVal[0]+'d6';
+      $scope.char.cantripSlots = 3;
+      $scope.char.level1Slots = 2;
+    }
+  });
+  $scope.numToArray = function(num) {
+    return new Array(num);
+  };
 
   // Init stats
   $scope.char.exp = 0;
@@ -212,6 +269,7 @@ app.controller('characterController', ['$scope', function characterController($s
     }
   });
 
+  // TODO: Change these to an array and set a single watcher for all of them
   // Abilities
   $scope.char.str = 0; $scope.char.dex = 0; $scope.char.con = 0; $scope.char.int = 0; $scope.char.wis = 0; $scope.char.cha = 0;
   $scope.calcMod = function(ability) {
@@ -258,7 +316,7 @@ app.controller('characterController', ['$scope', function characterController($s
     return savingStr.substr(0, savingStr.length-2);;
   };
 
-  $scope.skills = function() {
+  $scope.monsterSkills = function() {
     var skillsStr = '';
     angular.forEach($scope.$parent.skills, function(value, key) {
       if ($scope.char[value.name]) {
