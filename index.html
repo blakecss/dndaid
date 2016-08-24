@@ -22,6 +22,7 @@
           placeholder="Item Reference">
           <md-item-template>
             <span class="item-title">{{item.name}}</span>
+            <span class="item-sub">{{item.damage_die}} {{item.damage_type}}</span>
           </md-item-template>
         </md-autocomplete>
         <md-autocomplete class="spellRef"
@@ -36,7 +37,7 @@
           placeholder="Spell Reference">
           <md-item-template>
             <span class="item-title">{{spell.name}}</span>
-            <span class="item-challenge">{{spell.class}}</span>
+            <span class="item-sub">{{spell.class}}</span>
           </md-item-template>
         </md-autocomplete>
       </div>
@@ -89,6 +90,7 @@
   <script src="node_modules\angular-ui-sortable\dist\sortable.min.js"></script>
   <script src="data/spells.json"></script>
   <script src="data/monsters.json"></script>
+  <script src="data/inventory.json"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,365 @@
+var jsonInventoryData = [
+  {
+    "name": "Club",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d4",
+    "damage_type": "bludgeoning",
+    "weight": "2 lb.",
+    "cost": "1 sp",
+    "properties": "Light"
+  },
+  {
+    "name": "Dagger",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d4",
+    "damage_type": "piercing",
+    "weight": "1 lb.",
+    "cost": "2 gp",
+    "properties": "Finesse, light, thrown (range 20/60)"
+  },
+  {
+    "name": "Greatclub",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d8",
+    "damage_type": "bludgeoning",
+    "weight": "10 lb.",
+    "cost": "2 sp",
+    "properties": "Two-handed"
+  },
+  {
+    "name": "Handaxe",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d6",
+    "damage_type": "slashing",
+    "weight": "2 lb.",
+    "cost": "5 gp",
+    "properties": "Light, thrown (range 20/60)"
+  },
+  {
+    "name": "Javelin",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d6",
+    "damage_type": "piercing",
+    "weight": "2 lb.",
+    "cost": "5 sp",
+    "properties": "Thrown (range 30/120)"
+  },
+  {
+    "name": "Light Hammer",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d4",
+    "damage_type": "bludgeoning",
+    "weight": "2 lb.",
+    "cost": "2 gp",
+    "properties": "Light thrown (range 20/60)"
+  },
+  {
+    "name": "Mace",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d6",
+    "damage_type": "bludgeoning",
+    "weight": "4 lb.",
+    "cost": "5 gp"
+  },
+  {
+    "name": "Quarterstaff",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d6",
+    "damage_type": "bludgeoning",
+    "weight": "4 lb.",
+    "cost": "2 sp",
+    "properties": "Versatile (1d8)"
+  },
+  {
+    "name": "Sickle",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d4",
+    "damage_type": "slashing",
+    "weight": "2 lb.",
+    "cost": "1 gp",
+    "properties": "Light"
+  },
+  {
+    "name": "Spear",
+    "type": "weapon",
+    "subtype": "simple melee",
+    "damage_die": "1d6",
+    "damage_type": "piercing",
+    "weight": "3 lb.",
+    "cost": "1 gp",
+    "properties": "Thrown (range 20/60), versatile (1d8)"
+  },
+  {
+    "name": "Light Crossbow",
+    "type": "weapon",
+    "subtype": "simple ranged",
+    "damage_die": "1d8",
+    "damage_type": "piercing",
+    "weight": "5 lb.",
+    "cost": "25 gp",
+    "properties": "Ammunition (range 80/320), loading, two-handed"
+  },
+  {
+    "name": "Dart",
+    "type": "weapon",
+    "subtype": "simple ranged",
+    "damage_die": "1d4",
+    "damage_type": "piercing",
+    "weight": "1/4 lb.",
+    "cost": "5 cp",
+    "properties": "Finesse, thrown (range 20/60)"
+  },
+  {
+    "name": "Shortbow",
+    "type": "weapon",
+    "subtype": "simple ranged",
+    "damage_die": "1d6",
+    "damage_type": "piercing",
+    "weight": "2 lb.",
+    "cost": "25 gp",
+    "properties": "Ammunition (range 80/320), two-handed"
+  },
+  {
+    "name": "Sling",
+    "type": "weapon",
+    "subtype": "simple ranged",
+    "damage_die": "1d4",
+    "damage_type": "bludgeoning",
+    "cost": "1sp",
+    "properties": "Ammunition (range 30/120)"
+  },
+  {
+    "name": "Battleaxe",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d8",
+    "damage_type": "slashing",
+    "weight": "4 lb.",
+    "cost": "10 gp",
+    "properties": "Versatile (1d10)"
+  },
+  {
+    "name": "Flail",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d8",
+    "damage_type": "bludgeoning",
+    "weight": "2 lb.",
+    "cost": "10 gp"
+  },
+  {
+    "name": "Glaive",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d10",
+    "damage_type": "slashing",
+    "weight": "6 lb.",
+    "cost": "20 gp",
+    "properties": "Heavy, reach, two-handed"
+  },
+  {
+    "name": "Greataxe",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d12",
+    "damage_type": "slashing",
+    "weight": "7 lb.",
+    "cost": "30 gp",
+    "properties": "Heavy, two-handed"
+  },
+  {
+    "name": "Greatsword",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "2d6",
+    "damage_type": "slashing",
+    "weight": "6 lb.",
+    "cost": "50 gp",
+    "properties": "Heavy, two-handed"
+  },
+  {
+    "name": "Halberd",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d10",
+    "damage_type": "slashing",
+    "weight": "6 lb.",
+    "cost": "20 gp",
+    "properties": "Heavy, reach, two-handed"
+  },
+  {
+    "name": "Lance",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d12",
+    "damage_type": "piercing",
+    "weight": "6 lb.",
+    "cost": "10 gp",
+    "properties": "Reach, special"
+  },
+  {
+    "name": "Longsword",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d8",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "cost": "15 gp",
+    "properties": "Versatile (1d10)"
+  },
+  {
+    "name": "Maul",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "2d6",
+    "damage_type": "bludgeoning",
+    "weight": "10 lb.",
+    "cost": "10 gp",
+    "properties": "Heavy, two-handed"
+  },
+  {
+    "name": "Morningstar",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d8",
+    "damage_type": "piercing",
+    "weight": "4 lb.",
+    "cost": "15 gp"
+  },
+  {
+    "name": "Pike",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d10",
+    "damage_type": "piercing",
+    "weight": "18 lb.",
+    "cost": "5 gp",
+    "properties": "Heavy, reach, two-handed"
+  },
+  {
+    "name": "Rapier",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d8",
+    "damage_type": "piercing",
+    "weight": "2 lb.",
+    "cost": "25 gp",
+    "properties": "Finesse"
+  },
+  {
+    "name": "Scimitar",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d6",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "cost": "25 gp",
+    "properties": "Finesse, light"
+  },
+  {
+    "name": "Shortsword",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d6",
+    "damage_type": "piercing",
+    "weight": "2 lb.",
+    "cost": "10 gp",
+    "properties": "Finesse, light"
+  },
+  {
+    "name": "Trident",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d6",
+    "damage_type": "piercing",
+    "weight": "4 lb.",
+    "cost": "5 gp",
+    "properties": "Thrown(range 20/60), versatile(1d8)"
+  },
+  {
+    "name": "War pick",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d8",
+    "damage_type": "piercing",
+    "weight": "2 lb.",
+    "cost": "5 gp"
+  },
+  {
+    "name": "Warhammer",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d8",
+    "damage_type": "bludgeoning",
+    "weight": "2 lb.",
+    "cost": "15 gp",
+    "properties": "Versatile(1d10)"
+  },
+  {
+    "name": "Whip",
+    "type": "weapon",
+    "subtype": "martial melee",
+    "damage_die": "1d4",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "cost": "2 gp",
+    "properties": "Finesse, reach"
+  },
+  {
+    "name": "Blowgun",
+    "type": "weapon",
+    "subtype": "martial ranged",
+    "damage_die": "1",
+    "damage_type": "piercing",
+    "weight": "1 lb.",
+    "cost": "10 gp",
+    "properties": "Ammunition (range 25/100), loading"
+  },
+  {
+    "name": "Hand Crossbow",
+    "type": "weapon",
+    "subtype": "martial ranged",
+    "damage_die": "1d6",
+    "damage_type": "piercing",
+    "weight": "3 lb.",
+    "cost": "75 gp",
+    "properties": "Ammunition (range 30/120), light, loading"
+  },
+  {
+    "name": "Heavy Crossbow",
+    "type": "weapon",
+    "subtype": "martial ranged",
+    "damage_die": "1d10",
+    "damage_type": "piercing",
+    "weight": "18 lb.",
+    "cost": "50 gp",
+    "properties": "Ammunition (range 100/400), heavy, loading, two-handed"
+  },
+  {
+    "name": "Longbow",
+    "type": "weapon",
+    "subtype": "martial ranged",
+    "damage_die": "1d8",
+    "damage_type": "piercing",
+    "weight": "2 lb.",
+    "cost": "50 gp",
+    "properties": "Ammunition (range 150/600), heavy, two-handed"
+  },
+  {
+    "name": "Net",
+    "type": "weapon",
+    "subtype": "martial ranged",
+    "weight": "3 lb.",
+    "cost": "1 gp",
+    "properties": "Special, thrown (range 5/15)"
+  }
+]

@@ -1,0 +1,18 @@
+<md-dialog aria-label="Show Item" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{selectedItem.name}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="closeDialog()">
+        <md-icon md-svg-icon="icons/close.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <p class="cap">{{selectedItem.subtype}} {{selectedItem.type}}</p>
+      <p>{{selectedItem.damage_die}} {{selectedItem.damage_type}}</p>
+      <p><b>Cost: </b>{{selectedItem.cost}}&nbsp;&nbsp;&nbsp;<b>Weight: </b>{{selectedItem.weight}}</p>
+    </div>
+  </md-dialog-content>
+</md-dialog>

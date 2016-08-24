@@ -159,6 +159,15 @@ h4 {
 md-dialog md-toolbar {
   background: #2196F3 !important;
 }
+md-dialog div.md-dialog-content {
+  padding: 16px;
+}
+md-dialog div.md-dialog-content *:first-child {
+  margin-top: 0;
+}
+md-dialog div.md-dialog-content *:last-child {
+  margin-bottom: 0;
+}
 md-dialog md-autocomplete {
   min-width: 300px;
 }
@@ -169,7 +178,7 @@ md-dialog md-autocomplete {
 .md-autocomplete-suggestions li span.item-title {
   display: block;
 }
-.md-autocomplete-suggestions li span.item-challenge {
+.md-autocomplete-suggestions li span.item-sub {
   font-size: 12px;
 }
 md-input-container {

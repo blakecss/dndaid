@@ -16,6 +16,9 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
   $scope.skills = [{name:'acrobatics', abbr:'acro', relAbility:'dex'}, {name:'animal handling', abbr:'anim', relAbility:'wis'}, {name:'arcana', abbr:'arca', relAbility:'int'}, {name:'athletics', abbr:'athl', relAbility:'str'}, {name:'deception', abbr:'dece', relAbility:'cha'}, {name:'history', abbr:'hist', relAbility:'int'}, {name:'insight', abbr:'insi', relAbility:'wis'}, {name:'intimidation', abbr:'inti', relAbility:'cha'}, {name:'investigation', abbr:'inve', relAbility:'int'}, {name:'medicine', abbr:'medi', relAbility:'wis'}, {name:'nature', abbr:'natu', relAbility:'int'}, {name:'perception', abbr:'perc', relAbility:'wis'}, {name:'performance', abbr:'perf', relAbility:'cha'}, {name:'persuasion', abbr:'pers', relAbility:'cha'}, {name:'religion', abbr:'reli', relAbility:'int'}, {name:'sleight of hand', abbr:'slei', relAbility:'dex'}, {name:'stealth', abbr:'stea', relAbility:'dex'}, {name:'survival', abbr:'surv', relAbility:'wis'}];
   $scope.spells = jsonSpellData;
   $scope.monsters = jsonMonsterData;
+  $scope.inventory = jsonInventoryData;
+
+  // Character add/remove
   $scope.addPlayer = function() {
     $scope.idCounter++;
     $scope.characters.push({id: $scope.idCounter, type: "player", preset: ''});
@@ -32,6 +35,8 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
       $scope.characters.splice(i, 1);
     });
   };
+
+  // Spell search
   $scope.showSpell = function(s) {
     if (s) {
       $mdDialog.show({
@@ -56,6 +61,27 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
       return filterFilter($scope.spells, {name: query});
     }
   }
+
+  // Item search
+  $scope.showItem = function(s) {
+    if (s) {
+      $mdDialog.show({
+        autoWrap: false,
+        scope: $scope,
+        preserveScope: true,
+        templateUrl: 'templates/itemDialog.html'
+      });
+    }
+  };
+  $scope.itemSearch = function(query) {
+    if (query=='') {
+      return $scope.inventory;
+    } else {
+      return filterFilter($scope.inventory, {name: query});
+    }
+  };
+
+  // Monster search
   $scope.selectMonster = function() {
     $mdDialog.show({
       autoWrap: false,
@@ -69,9 +95,6 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
             return filterFilter($scope.monsters, {name: query});
           }
         };
-        //$scope.closeDialog = function() {
-        //  $mdDialog.cancel();
-        //}
       },
       templateUrl: 'templates/monsterDialog.html'
     });
@@ -88,8 +111,6 @@ app.controller('characterController', ['$scope', function characterController($s
   $scope.char.speed = 0;
   $scope.char.curHP = 0;
   $scope.char.maxHP = 0;
-
-
 
   $scope.char.cantripSlots, $scope.char.lvl1Slots, $scope.char.lvl2Slots, $scope.char.lvl3Slots, $scope.char.lvl4Slots, $scope.char.lvl5Slots, $scope.char.lvl6Slots, $scope.char.lvl7Slots, $scope.char.lvl8Slots, $scope.char.lvl9Slots = 0;
   // Init character info
@@ -314,16 +335,6 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     });
     return savingStr.substr(0, savingStr.length-2);;
-  };
-
-  $scope.monsterSkills = function() {
-    var skillsStr = '';
-    angular.forEach($scope.$parent.skills, function(value, key) {
-      if ($scope.char[value.name]) {
-        skillsStr += (value.name + ' +' + $scope.char[value.name] + ', ');
-      }
-    });
-    return skillsStr.substr(0, skillsStr.length-2);;
   };
 
   $scope.expEarned = function() {
