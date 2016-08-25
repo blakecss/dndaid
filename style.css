@@ -40,7 +40,6 @@ body div.ui-sortable md-card md-card-content section {
   box-sizing: border-box;
 }
 body div.ui-sortable md-card md-card-content section h3 {
-  border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 5px;
 }

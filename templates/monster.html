@@ -5,7 +5,7 @@
       <label>Name</label>
       <input ng-model="char.name" type="text"/>
     </md-input-container>
-    <p>{{char.size}} {{char.type}}{{(' ('+char.subtype+')') || ''}}, {{char.alignment}}</p>
+    <p style="margin-top: 0;">{{char.size}} {{char.type}}{{(' ('+char.subtype+')') || ''}}, {{char.alignment}}</p>
   </div>
 </section>
 <section class="stats">
@@ -19,17 +19,15 @@
       </md-input-container>
     </div>
     <div class="monster-stats">
-      <p ng-show="savingThrows()"><b>Saving Throws</b> <span class="uc">{{savingThrows()}}</span></p>
-      <p ng-show="savingThrows()"><b>Saving Throws</b> <span class="uc">{{savingThrows()}}</span></p>
+      <p ng-show="char.saves"><b>Saving Throws</b> <span class="uc" ng-repeat="save in char.saves">{{save.name}} +{{save.val}}{{$last ? '' : ', '}}</span></p>
       <p ng-show="char.skills" class="cap"><b>Skills</b> <span ng-repeat="skill in char.skills"> {{skill.name}} +{{skill.val}}{{$last ? '' : ', '}}</span></p>
-      <!--<p ng-show="monsterSkills()" class="cap"><b>Skills</b> {{monsterSkills()}}</p>-->
       <p ng-show="char.damage_vulnerabilities"><b>Damage Vulnerabilities</b> {{char.damage_vulnerabilities}}</p>
       <p ng-show="char.damage_resistances"><b>Damage Resistances</b> {{char.damage_resistances}}</p>
       <p ng-show="char.damage_immunities"><b>Damage Immunities</b> {{char.damage_immunities}}</p>
       <p ng-show="char.condition_immunities"><b>Condition Immunities</b> {{char.condition_immunities}}</p>
       <p ng-show="char.senses"><b>Senses</b> {{char.senses}}</p>
       <p ng-show="char.languages"><b>Languages</b> {{char.languages}}</p>
-      <p><b>Challenge</b> {{char.challenge_rating}} ({{expEarned()}})</p>
+      <p><b>Challenge</b> {{char.challenge_rating}}</p>
     </div>
   </div>
 </section>
