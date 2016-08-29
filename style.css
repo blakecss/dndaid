@@ -1,13 +1,10 @@
 body {
   margin: 0;
 }
-body header md-toolbar {
-  background: #2196F3 !important;
-}
-body header md-toolbar md-autocomplete.spellRef {
+body header md-autocomplete.spellRef {
   min-width: 250px;
 }
-body header md-toolbar md-autocomplete.itemRef {
+body header md-autocomplete.itemRef {
   min-width: 250px;
   margin-right: 10px;
 }
@@ -133,9 +130,6 @@ body md-fab-speed-dial {
   bottom: 10px;
   right: 10px;
 }
-body md-fab-speed-dial md-fab-trigger button {
-  background: #2196F3 !important;
-}
 body md-fab-speed-dial md-fab-actions button.md-mini md-icon {
   width: 80%;
   height: 80%;
@@ -154,9 +148,6 @@ h4 {
 }
 .cap {
   text-transform: capitalize;
-}
-md-dialog md-toolbar {
-  background: #2196F3 !important;
 }
 md-dialog div.md-dialog-content {
   padding: 16px;
@@ -210,4 +201,28 @@ div.faux input:focus {
 }
 .html p {
   display: inline;
+}
+md-toast {
+  margin-top: 64px;
+}
+md-toast div.md-toast-content {
+  background: rgba(50, 50, 50, 0.7);
+  flex-wrap: wrap;
+  height: auto;
+  max-width: 304px;
+}
+md-toast div.md-toast-content .md-icon-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+md-toast div.md-toast-content md-input-container label {
+  color: #fff !important;
+}
+md-toast div.md-toast-content md-input-container input {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+md-toast div.md-toast-content md-input-container input:focus {
+  outline: 0;
 }

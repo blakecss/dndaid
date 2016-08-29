@@ -1,7 +1,21 @@
 
 var app = angular.module('DNDApp', ['ngMaterial', 'ngMessages', 'ngSanitize', 'ui.sortable']);
 
-app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', function charactersController($scope, filterFilter, $mdDialog) {
+app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue', {
+      'default': '500',
+      'hue-1': '100',
+      'hue-2': '700',
+      'hue-3': 'A100'
+    })
+    .accentPalette('orange');
+});
+
+app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', '$mdToast', function charactersController($scope, filterFilter, $mdDialog, $mdToast) {
+  $scope.dieNum = 1;
+  $scope.dieSides = 20;
+  $scope.rollResult = '?';
   $scope.sortableOptions = {
     'handle': '.handle',
     'placeholder': 'placeholder',
@@ -80,6 +94,25 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', f
       return filterFilter($scope.inventory, {name: query});
     }
   };
+
+  // Dice Roller
+  $scope.showDice = function() {
+    $mdToast.show({
+      scope: $scope,
+      preserveScope: true,
+      templateUrl: 'templates/dice.html',
+      hideDelay: 0,
+      position: 'top right'
+    });
+  };
+  $scope.closeDice = function() {
+    $mdToast.hide();
+  };
+  $scope.rollDice = function() {
+    var highest = $scope.dieNum * $scope.dieSides;
+    $scope.rollResult = Math.floor((Math.random() * highest) + 1);
+  };
+
 
   // Monster search
   $scope.selectMonster = function() {

@@ -6,15 +6,12 @@
 body {
   margin: 0;
   header {
-    md-toolbar {
-      background: @blue500 !important;
-      md-autocomplete.spellRef {
-        min-width: 250px
-      }
-      md-autocomplete.itemRef {
-        min-width: 250px;
-        margin-right: 10px;
-      }
+    md-autocomplete.spellRef {
+      min-width: 250px
+    }
+    md-autocomplete.itemRef {
+      min-width: 250px;
+      margin-right: 10px;
     }
   }
   div.ui-sortable {
@@ -160,7 +157,7 @@ body {
     bottom: 10px;
     right: 10px;
     md-fab-trigger button {
-      background: @blue500 !important;
+      //background: @blue500 !important;
     }
     md-fab-actions button.md-mini md-icon {
       width: 80%;
@@ -188,9 +185,6 @@ h3, h4 {
 }
 
 md-dialog {
-  md-toolbar {
-    background: @blue500 !important;
-  }
   div.md-dialog-content {
     padding: 16px;
   }
@@ -249,4 +243,31 @@ div.faux {
 
 .html p {
   display: inline;
+}
+
+md-toast {
+  margin-top: 64px;
+  div.md-toast-content {
+    background: rgba(50,50,50,0.7);
+    flex-wrap: wrap;
+    height: auto;
+    max-width: 304px;
+    .md-icon-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    md-input-container {
+      label {
+        color: #fff !important;
+      }
+      input {
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+  }
 }
