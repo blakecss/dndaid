@@ -68,7 +68,7 @@ var jsonMonsterData = [
     "alignment": "lawful evil",
     "armor_class": 17,
     "hit_points": 135,
-    "hit_dice": "18d10",
+    "hit_dice": "18d10 + 36",
     "speed": "10 ft., swim 40 ft.",
     "str": 21,
     "dex": 9,
@@ -1308,6 +1308,46 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Allosaurus",
+    "size": "Large",
+    "type": "beast",
+    "alignment": "unaligned",
+    "armor_class": 13,
+    "hit_points": 51,
+    "hit_dice": "6d10 + 18",
+    "speed": "60 ft.",
+    "str": 19,
+    "dex": 13,
+    "con": 17,
+    "int": 2,
+    "wis": 12,
+    "cha": 5,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 5
+      }
+    ],
+    "senses": "passive Perception 15",
+    "challenge_rating": "2 (450 XP)",
+    "special_abilities": [
+      {
+        "name": "Pounce",
+        "desc": "If the allosaurus moves at least 30 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the allosaurus can make one bite attack against it as a bonus action."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage."
+      }
+    ]
+  },
+  {
     "name": "Ancient Black Dragon",
     "size": "Gargantuan",
     "type": "dragon",
@@ -1351,7 +1391,6 @@ var jsonMonsterData = [
       }
     ],
     "damage_immunities": "acid",
-    "condition_immunities": "",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 26",
     "languages": "Common, Draconic",
     "challenge_rating": "21 (27500 XP)",
@@ -2481,6 +2520,30 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Ankylosaurus",
+    "size": "Huge",
+    "type": "beast",
+    "alignment": "unaligned",
+    "armor_class": 15,
+    "hit_points": 68,
+    "hit_dice": "8d12 + 16",
+    "speed": "30 ft.",
+    "str": 19,
+    "dex": 11,
+    "con": 15,
+    "int": 2,
+    "wis": 12,
+    "cha": 5,
+    "senses": "passive Perception 11",
+    "challenge_rating": "3 (700 XP)",
+    "actions": [
+      {
+        "name": "Tail",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 18 (4d6 + 4) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone."
+      }
+    ]
+  },
+  {
     "name": "Ape",
     "size": "Medium",
     "type": "beast",
@@ -3172,6 +3235,78 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Barlgura",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 68,
+    "hit_dice": "8d10 + 24",
+    "speed": "30 ft., climb 30 ft.",
+    "str": 18,
+    "dex": 15,
+    "con": 16,
+    "int": 7,
+    "wis": 14,
+    "cha": 9,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 5
+      },
+      {
+        "name": "con",
+        "val": 6
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 5
+      }
+    ],
+    "damage_resistances": "cold, fire, lightning",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 15",
+    "languages": "Abyssal, telepathy 120 ft.",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The barlgura's spellcasting ability is Wisdom (spell save DC 13). The barlgura can innately cast the following spells, requiring no material components:\n\nl/day each: entangle, phantasmal force\n2/day each: disguise self, invisibility (self only)"
+      },
+      {
+        "name": "Reckless",
+        "desc": "At the start of its turn, the barlgura can gain advantage on all melee weapon attack rolls it makes during
+that turn, but attack rolls against it have advantage until the start of its next turn."
+      },
+      {
+        "name": "Running Leap",
+        "desc": "The barlgura's long jump is up to 40 feet and its high jump is up to 20 feet when it has a running start."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The barlgura makes three attacks: one with its bite and two with its fists."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1dlO + 4) bludgeoning damage."
+      }
+    ]
+  },
+  {
     "name": "Basilisk",
     "size": "Medium",
     "type": "monstrosity",
@@ -3404,7 +3539,7 @@ var jsonMonsterData = [
       },
       {
         "name": "Eye Rays",
-        "desc": "The beholder shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it: 1. Charm Ray. The targeted creature must succeed on a DC 16 Wisdom saving throw or be charmed by the beholder for 1 hour, or until the beholder harms the creature. 2. Paralyzing Ray. The targeted creature must succeed on a DC 16 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 3. Fear Ray. The targeted creature must succeed on a DC 16 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 4. Slowing Ray. The targeted creature must succeed on a DC 16 Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 5. Enervation Ray. The targeted creature must make a DC 16 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one. 6. Telekinetic Ray. If the target is a creature, it must succeed on a DC 16 Strength saving throw or the beholder moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the beholder's next turn or until the beholder is incapacitated. If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The beholder can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container. 7. Sleep Ray. The targeted creature must succeed on a DC 16 Wisdom saving throw or fall asleep and remain unconscious for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead. 8. Petrification Ray. The targeted creature must make a DC 16 Dexterity saving throw. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the greater restoration spell or other magic. 9. Disintegration Ray. If the target is a creature, it must succeed on a DC 16 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smaller non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it. 10. Death Ray. The targeted creature must succeed on a DC 16 Dexterity saving throw or take 55 (10d10) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+        "desc": "The beholder shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:\n\n1. Charm Ray. The targeted creature must succeed on a DC 16 Wisdom saving throw or be charmed by the beholder for 1 hour, or until the beholder harms the creature.\n2. Paralyzing Ray. The targeted creature must succeed on a DC 16 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n3. Fear Ray. The targeted creature must succeed on a DC 16 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n4. Slowing Ray. The targeted creature must succeed on a DC 16 Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n5. Enervation Ray. The targeted creature must make a DC 16 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one.\n6. Telekinetic Ray. If the target is a creature, it must succeed on a DC 16 Strength saving throw or the beholder moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the beholder's next turn or until the beholder is incapacitated. If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The beholder can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container.\n7. Sleep Ray. The targeted creature must succeed on a DC 16 Wisdom saving throw or fall asleep and remain unconscious for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead.\n8. Petrification Ray. The targeted creature must make a DC 16 Dexterity saving throw. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the greater restoration spell or other magic.\n9. Disintegration Ray. If the target is a creature, it must succeed on a DC 16 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smaller non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it.\n10. Death Ray. The targeted creature must succeed on a DC 16 Dexterity saving throw or take 55 (10d10) necrotic damage. The target dies if the ray reduces it to 0 hit points."
       }
     ],
     "legendary_actions": [
@@ -4160,6 +4295,64 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Bullywug",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "bullywug",
+    "alignment": "neutral evil",
+    "armor_class": 15,
+    "hit_points": 11,
+    "hit_dice": "2d8 + 2",
+    "speed": "20 ft., swim 40 ft.",
+    "str": 12,
+    "dex": 12,
+    "con": 13,
+    "int": 7,
+    "wis": 10,
+    "cha": 7,
+    "skills": [
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
+    "senses": "passive Perception 10",
+    "languages": "Bullywug",
+    "challenge_rating": "1/4 (50 XP)",
+    "special_abilities": [
+      {
+        "name": "Amphibious",
+        "desc": "The bullywug can breathe air and water."
+      },
+      {
+        "name": "Speak with Frogs and Toads",
+        "desc": "The bullywug can communicate simple concepts to frogs and toads when it speaks in Bullywug."
+      },
+      {
+        "name": "Swamp Camouflage",
+        "desc": "The bullywug has advantage on Dexterity (Stealth) checks made to hide in swampy terrain."
+      },
+      {
+        "name": "Standing Leap",
+        "desc": "The bullywug's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The bullywug makes two melee attacks: one with its bite and one with its spear."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage."
+      },
+      {
+        "name": "Spear",
+        "desc": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack."
+      }
+    ]
+  },
+  {
     "name": "Cambion",
     "size": "Medium",
     "type": "fiend",
@@ -4520,6 +4713,65 @@ var jsonMonsterData = [
       {
         "name": "Unnerving Mask",
         "desc": "When a creature the devil can see starts its turn within 30 feet of the devil, the devil can create the illusion that it looks like one of the creature's departed loved ones or bitter enemies. If the creature can see the devil, it must succeed on a DC 14 Wisdom saving throw or be frightened until the end of its turn."
+      }
+    ]
+  },
+  {
+    "name": "Chasme",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 84,
+    "hit_dice": "13d10 + 13",
+    "speed": "20 ft., fly 60 ft.",
+    "str": 15,
+    "dex": 15,
+    "con": 12,
+    "int": 11,
+    "wis": 14,
+    "cha": 10,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 5
+      },
+      {
+        "name": "wis",
+        "val": 5
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 5
+      }
+    ],
+    "damage_resistances": "cold, fire, lightning",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "blindsight 10 ft., darkvision 120 ft., passive Perception 15",
+    "languages": "Abyssal, telepathy 120 ft.",
+    "challenge_rating": "6 (2300 XP)",
+    "special_abilities": [
+      {
+        "name": "Drone",
+        "desc": " The chasme produces a horrid droning sound to which demons are immune. Any other creature that starts its turn with in 30 feet of the chasme must succeed on a DC 12 Constitution saving throw or fall unconscious for 10 minutes. A creature that can't hear the drone automatically succeeds on the save. The effect on the creature ends if it takes damage or if another creature takes an action to splash it with holy water. If a creature's saving throw is successful or the effect ends for it, it is immune to the drone for the next 24 hours."
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The chasme has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Spider Climb",
+        "desc": "The chasme can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Proboscis",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 16 (4d6 + 2) piercing damage plus 24 (7d6) necrotic damage, and the target's hit point maximum is reduced by an amount equal to the necrotic damage taken. If this effect reduces a creature's hit point maximum to 0, the creature dies. This reduction to a creature's hit point maximum lasts until the creature finishes a long rest or until it is affected by a spell like greater restoration."
       }
     ]
   },
@@ -5043,6 +5295,39 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Crawling Claw",
+    "size": "Tiny",
+    "type": "undead",
+    "alignment": "neutral evil",
+    "armor_class": 12,
+    "hit_points": 2,
+    "hit_dice": "1d4",
+    "speed": "20 ft., swim 20 ft.",
+    "str": 13,
+    "dex": 14,
+    "con": 11,
+    "int": 5,
+    "wis": 10,
+    "cha": 4,
+    "damage_immunities": "poison",
+    "condition_immunities": "charmed, exhaustion, poisoned",
+    "senses": "blindsight 30 ft., passive Perception 10",
+    "languages": "understands Common but can't speak",
+    "challenge_rating": "0 (10 XP)",
+    "special_abilities": [
+      {
+        "name": "Turn Immunity",
+        "desc": "The claw is immune to effects that turn undead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning or slashing damage (claw's choice)."
+      }
+    ]
+  },
+  {
     "name": "Crocodile",
     "size": "Large",
     "type": "beast",
@@ -5175,6 +5460,45 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Cyclops",
+    "size": "Huge",
+    "type": "giant",
+    "alignment": "chaotic neutral",
+    "armor_class": 14,
+    "hit_points": 138,
+    "hit_dice": "12d12 + 60",
+    "speed": "30 ft.",
+    "str": 22,
+    "dex": 11,
+    "con": 20,
+    "int": 8,
+    "wis": 6,
+    "cha": 10,
+    "senses": "passive Perception 8",
+    "languages": "Giant",
+    "challenge_rating": "6 (2300 XP)",
+    "special_abilities": [
+      {
+        "name": "Poor Depth Perception",
+        "desc": "The cyclops has disadvantage on any attack roll against a target more than 30 feet away."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The cyclops makes two greatclub attacks."
+      },
+      {
+        "name": "Greatclub",
+        "desc": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage."
+      },
+      {
+        "name": "Rock",
+        "desc": "Ranged Weapon Attack: +9 to hit, range 30/120 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage."
+      }
+    ]
+  },
+  {
     "name": "Darkmantle",
     "size": "Small",
     "type": "monstrosity",
@@ -5263,6 +5587,77 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Death Knight",
+    "size": "Medium",
+    "type": "undead",
+    "alignment": "chaotic evil",
+    "armor_class": 20,
+    "hit_points": 180,
+    "hit_dice": "19d8 + 95",
+    "speed": "30 ft.",
+    "str": 20,
+    "dex": 11,
+    "con": 20,
+    "int": 12,
+    "wis": 16,
+    "cha": 18,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 9
+      },
+      {
+        "name": "cha",
+        "val": 10
+      }
+    ],
+    "damage_immunities": "mecrotic, poison",
+    "condition_immunities": "exhaustion, frightened, poisoned",
+    "senses": "darkvision 120 ft., passive Perception 13",
+    "languages": "Abyssal, Common",
+    "challenge_rating": "17 (18000 XP)",
+    "special_abilities": [
+      {
+        "name": "Magic Resistance",
+        "desc": "The death knight has advantage on saving throws again st spells and other magical effects."
+      },
+      {
+        "name": "Marshal Undead",
+        "desc": " Unless the death knight is incapacitated, it and undead creatures of its choice within 60 feet of it have
+advantage on saving throws against features that turn undead."
+      },
+      {
+        "name": "Spellcasting",
+        "desc": "The death knight is a 19th-level spellcaster. Its spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). It has the following paladin spells prepared:\n\n1st level (4 slots): command, compelled duel, searing smite\n2nd level (3 slots): hold person, magic weapon\n3rd level (3 slots): dispel magic, elemental weapon\n4th level (3 slots): banishment, staggering smite\n5th level (2 slots): destructive wave (necrotic)."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The death knight makes three longsword attacks."
+      },
+      {
+        "name": "Longsword",
+        "desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) slashing damage, or 10 (1d10 +
+5) slashing damage if used with two hands, plus 18 (4d8) necrotic damage."
+      },
+      {
+        "name": "Hellfire Orb (1/Day)",
+        "desc": "The death knight hurls a magical ball of fire that explodes at a point it can see within 120 feet of it. Each creature in a 20-foot·radius sphere centered on that point must make a DC 18 Dexterity saving throw. The sphere spreads around corners. A creature takes 35 (10d6) fire damage and 35 (10d6) necrotic damage on a failed save, or half as much damage on a successful one."
+      }
+    ],
+    "reaction": [
+      {
+        "name": "Parry",
+        "desc": "The death knight adds 6 to its AC against one melee attack that would hit it. To do so, the death knight must see the attacker and be wielding a melee weapon."
+      }
+    ]
+  },
+  {
     "name": "Death Tyrant",
     "size": "Large",
     "type": "undead",
@@ -5323,7 +5718,7 @@ var jsonMonsterData = [
       },
       {
         "name": "Eye Rays",
-        "desc": "The death tyrant shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it: 1. Charm Ray. The targeted creature must succeed on a DC 17 Wisdom saving throw or be charmed by the tyrant for 1 hour, or until the tyrant harms the creature. 2. Paralyzing Ray. The targeted creature must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 3. Fear Ray. The targeted creature must succeed on a DC 17 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 4. Slowing Ray. The targeted creature must succeed on a DC 17 Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 5. Enervation Ray. The targeted creature must make a DC 17 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one. 6. Telekinetic Ray. If the target is a creature, it must succeed on a DC 17 Strength saving throw or the tyrant moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the tyrant's next turn or until the tyrant is incapacitated. If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The tyrant can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container. 7. Sleep Ray. The targeted creature must succeed on a DC 17 Wisdom saving throw or fall asleep and remain unconscious for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead. 8. Petrification Ray. The targeted creature must make a DC 17 Dexterity saving throw. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the greater restoration spell or other magic. 9. Disintegration Ray. If the target is a creature, it must succeed on a DC 17 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smaller non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it. 10. Death Ray. The targeted creature must succeed on a DC 17 Dexterity saving throw or take 55 (10d10) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+        "desc": "The death tyrant shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:\n\n1. Charm Ray. The targeted creature must succeed on a DC 17 Wisdom saving throw or be charmed by the tyrant for 1 hour, or until the tyrant harms the creature.\n2. Paralyzing Ray. The targeted creature must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n3. Fear Ray. The targeted creature must succeed on a DC 17 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n4. Slowing Ray. The targeted creature must succeed on a DC 17 Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n5. Enervation Ray. The targeted creature must make a DC 17 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one.\n6. Telekinetic Ray. If the target is a creature, it must succeed on a DC 17 Strength saving throw or the tyrant moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the tyrant's next turn or until the tyrant is incapacitated. If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The tyrant can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container.\n7. Sleep Ray. The targeted creature must succeed on a DC 17 Wisdom saving throw or fall asleep and remain unconscious for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead.\n8. Petrification Ray. The targeted creature must make a DC 17 Dexterity saving throw. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the greater restoration spell or other magic.\n9. Disintegration Ray. If the target is a creature, it must succeed on a DC 17 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smaller non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it.\n10. Death Ray. The targeted creature must succeed on a DC 17 Dexterity saving throw or take 55 (10d10) necrotic damage. The target dies if the ray reduces it to 0 hit points."
       }
     ],
     "legendar_actions": [
@@ -5412,6 +5807,89 @@ var jsonMonsterData = [
       {
         "name": "Bite",
         "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Demilich",
+    "size": "Tiny",
+    "type": "undead",
+    "alignment": "neutral evil",
+    "armor_class": 20,
+    "hit_points": 80,
+    "hit_dice": "20d4",
+    "speed": "0 ft., fly 30 ft. (hover)",
+    "str": 1,
+    "dex": 20,
+    "con": 10,
+    "int": 20,
+    "wis": 17,
+    "cha": 20,
+    "saves": [
+      {
+        "name": "con",
+        "val": 6
+      },
+      {
+        "name": "int",
+        "val": 11
+      },
+      {
+        "name": "wis",
+        "val": 9
+      },
+      {
+        "name": "cha",
+        "val": 11
+      }
+    ],
+    "damage_resistances": "bludgeoning, piercing, and slashing from magic weapons",
+    "damage_immunities": "necrotic, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "condition_immunities": "charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned, prone, stunned",
+    "senses": "truesight 120 ft., passive Perception 13",
+    "challenge_rating": "18 (20000 XP)",
+    "actions": [
+      {
+        "name": "Avoidance",
+        "desc": "If the demilich is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "Legendary Resistance (3/Day)",
+        "desc": "If the demilich fails a saving throw, it can choose to succeed instead."
+      },
+      {
+        "name": "Turn Immunity",
+        "desc": "The demilich is immune to effects that turn undead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Howl (Recharge 5-6)",
+        "desc": "The demilich emits a bloodcurdling howl. Each creature within 30 feet of the demilich that can hear the howl must succeed on a DC 15 Constitution saving throw or drop to 0 hit points. On a successful save, the creature is frightened until the end of its next turn."
+      },
+      {
+        "name": "Life Drain",
+        "desc": "The demilich targets up to three creatures that it can see within 10 feet of it. Each target must succeed on a DC 19 Constitution saving throw or take 21 (6d6) necrotic damage, and the demilich regains hit points equal to the total damage dealt to all targets."
+      }
+    ],
+    "legendary_actions": [
+      {
+        "name": "Flight",
+        "desc": "The demilich flies up to half its flying speed."
+      },
+      {
+        "name": "Cloud of Dust",
+        "desc": "The demilich magically swirls its dusty remains. Each creature within 10 feet of the demilich, including around a corner, must succeed on a DC 15 Constitution saving throw or be blinded until the end of the demilich's next turn. A creature that succeeds on the saving throw is immune to this effect until the end of the demilich's next turn."
+      },
+      {
+        "name": "Energy Drain (Costs 2 Actions)",
+        "desc": "Each creature within 30 feet of the demilich must make a DC 15 Constitution saving throw. On a failed save, the creature's hit point maximum is magically reduced by 10 (3d6). If a creature's hit point maximum is reduced to 0 by this effect, the creature dies. A creature's hit point maximum can be restored with the greater restoration spell or similar magic."
+      },
+      {
+        "name": "Vile curse (Costs 3 Actions)",
+        "desc": "The demilich targets one creature it can see within 30 feet of it. The target must succeed on a
+DC 15 Wisdom saving throw or be magically cursed. Until the curse ends, the target has disadvantage on attack rolls and
+saving throws. The target can repeat the saving throw at the end of each of its turns, ending the curse on a success."
       }
     ]
   },
@@ -5529,6 +6007,44 @@ var jsonMonsterData = [
       {
         "name": "Bite",
         "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone."
+      }
+    ]
+  },
+  {
+    "name": "Displacer Beast",
+    "size": "Large",
+    "type": "monstrosity",
+    "alignment": "lawful evil",
+    "armor_class": 13,
+    "hit_points": 85,
+    "hit_dice": "10d10 + 30",
+    "speed": "40 ft.",
+    "str": 18,
+    "dex": 15,
+    "con": 16,
+    "int": 6,
+    "wis": 12,
+    "cha": 8,
+    "senses": "darkvision 60 ft.passive Perception 11",
+    "challenge_rating": "3 (700 XP)",
+    "special_abilities": [
+      {
+        "name": "Avoidance",
+        "desc": " If the displacer beast is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "Displacement",
+        "desc": "The displacer beast projects a magical illusion that makes it appear to be standing near its actual location, causing attack rolls against it to have disadvantage. If it is hit by an attack, this trait is disrupted until the end of its next turn. This trait is also disrupted while the displacer beast is incapacitated or has a speed of 0."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The displacer beast makes two attacks with its tentacle."
+      },
+      {
+        "name": "Tentacle",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 7 (1d6 + 4) bludgeoning damage plus 3 (1d6) piercing damage."
       }
     ]
   },
@@ -8658,6 +9174,89 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Goristro",
+    "size": "Huge",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 19,
+    "hit_points": 310,
+    "hit_dice": "23d12 + 161",
+    "speed": "40 ft.",
+    "str": 25,
+    "dex": 11,
+    "con": 25,
+    "int": 6,
+    "wis": 13,
+    "cha": 14,
+    "saves": [
+      {
+        "name": "str",
+        "val": 13
+      },
+      {
+        "name": "dex",
+        "val": 6
+      },
+      {
+        "name": "con",
+        "val": 13
+      },
+      {
+        "name": "wis",
+        "val": 7
+      },
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 7
+      },
+    ],
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 120 ft., passive Perception 17",
+    "languages": "Abyssal",
+    "challenge_rating": "17 (18000 XP)",
+    "special_abilities": [
+      {
+        "name": "Charge",
+        "desc": " If the goristro moves at least 15 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 38 (7d10) piercing damage. If the target is a creature, it must succeed on a DC 21 Strength saving throw or be pushed up to 20 feet away and knocked prone."
+      },
+      {
+        "name": "Labyrinthine Recall",
+        "desc": "The goristro can perfectly recall any path it has traveled."
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The goristro has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Siege Monster",
+        "desc": "The goristro deals double damage to objects and structures."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": " The goristro makes three attacks: two with its fists and one with its hoof."
+      },
+      {
+        "name": "Fist",
+        "desc": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target.Hit: 20 (3d8 + 7) bludgeoning damage."
+      },
+      {
+        "name": "Hoof",
+        "desc": "Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 23 (3d10 + 7) bludgeoning damage. If the target is a creature, it must succeed on a DC 21 Strength saving throw or be knocked prone."
+      },
+      {
+        "name": "Gore",
+        "desc": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 45 (7dl0 + 7) piercing damage."
+      }
+    ]
+  },
+  {
     "name": "Gorgon",
     "size": "Large",
     "type": "monstrosity",
@@ -10909,7 +11508,7 @@ var jsonMonsterData = [
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage, or 7 (ld10 + 2) piercing damage in crocodile form. If the lizardfolk is in crocodile form and the target is a Large or smaller creature, the target is grappled (escape DC 12). Until this grapple ends, the target is restrained, and the lizardfolk can't bite another target. If the lizardfolk reverts to its true form, the grapple ends."
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage, or 7 (1d10 + 2) piercing damage in crocodile form. If the lizardfolk is in crocodile form and the target is a Large or smaller creature, the target is grappled (escape DC 12). Until this grapple ends, the target is restrained, and the lizardfolk can't bite another target. If the lizardfolk reverts to its true form, the grapple ends."
       },
       {
         "name": "Claws (Lizardfolk Form Only)",
@@ -11174,6 +11773,35 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Manes",
+    "size": "Small",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 9,
+    "hit_points": 9,
+    "hit_dice": "2d6 + 2",
+    "speed": "20 ft.",
+    "str": 10,
+    "dex": 9,
+    "con": 13,
+    "int": 3,
+    "wis": 8,
+    "cha": 4,
+    "damage_resistances": "cold, fire, lightning",
+    "damage_immunities": "poison",
+    "condition_immunities": "charmed, frightened, poisoned",
+    "senses": "darkvision 60 ft., passive Perception 9",
+    "languages": "understands Abyssal but can't speak",
+    "challenge_rating": "1/8 (25 XP)",
+    "actions": [
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 5 (2d4) slashing damage."
+      }
+    ]
+  },
+  {
     "name": "Manticore",
     "size": "Large",
     "type": "monstrosity",
@@ -11190,7 +11818,7 @@ var jsonMonsterData = [
     "cha": 8,
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Common",
-    "challenge_rating": "3",
+    "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
         "name": "Tail Spike Regrowth",
@@ -11948,6 +12576,36 @@ var jsonMonsterData = [
       {
         "name": "Variant: Summon Demon (1/Day)",
         "desc": "The demon chooses what to summon and attempts a magical summoning.\nA nalfeshnee has a 50 percent chance of summoning 1d4 vrocks, 1d3 hezrous, 1d2 glabrezus, or one nalfeshnee.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+      }
+    ]
+  },
+  {
+    "name": "Needle Blight",
+    "size": "Medium",
+    "type": "plant",
+    "alignment": "neutral evil",
+    "armor_class": 12,
+    "hit_points": 11,
+    "hit_dice": "2d8 + 2",
+    "speed": "30 ft.",
+    "str": 12,
+    "dex": 12,
+    "con": 13,
+    "int": 4,
+    "wis": 8,
+    "cha": 3,
+    "condition_immunities": "blinded, deafened",
+    "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 9",
+    "languages": "understands Common but can't speak",
+    "challenge_rating": "1/4 (50 XP)",
+    "actions": [
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) piercing damage."
+      },
+      {
+        "name": "Needles",
+        "desc": "Ranged Weapon Attack: +3 to hit, range 30/60 ft., one target. Hit: 8 (2d6 + 1) piercing damage."
       }
     ]
   },
@@ -13105,6 +13763,42 @@ var jsonMonsterData = [
       {
         "name": "Claws",
         "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage."
+      }
+    ]
+  },
+  {
+    "name": "Pteranodon",
+    "size": "Medium",
+    "type": "beast",
+    "alignment": "unaligned",
+    "armor_class": 13,
+    "hit_points": 13,
+    "hit_dice": "3d8",
+    "speed": "10 ft., fly 60 ft.",
+    "str": 12,
+    "dex": 15,
+    "con": 10,
+    "int": 2,
+    "wis": 9,
+    "cha": 5,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 1
+      }
+    ],
+    "senses": "passive Perception 11",
+    "challenge_rating": "1/4 (50 XP)",
+    "special_abilities": [
+      {
+        "name": "Flyby",
+        "desc": "The pteranodon doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) piercing damage."
       }
     ]
   },
@@ -14521,6 +15215,66 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Shadow Demon",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 13,
+    "hit_points": 66,
+    "hit_dice": "12d8 + 12",
+    "speed": "30 ft., fly 30 ft.",
+    "str": 1,
+    "dex": 17,
+    "con": 12,
+    "int": 14,
+    "wis": 13,
+    "cha": 14,
+    "skills": [
+      {
+        "name": "dex",
+        "val": 5
+      },
+      {
+        "name": "cha",
+        "val": 4
+      }
+    ],
+    "skills": [
+      {
+        "name": "stealth",
+        "val": 7
+      }
+    ],
+    "damage_vulnerabilities": "radiant",
+    "damage_resistances": "acid, fire, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "cold, lightning, poison",
+    "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
+    "senses": "darkvision 120 ft., passive Perception 11",
+    "languages": "Abyssal, telepathy 120 ft.",
+    "challenge_rating": "4 (1100 XP)",
+    "special_abilities": [
+      {
+        "name": "Incorporeal Movement",
+        "desc": " The demon can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object."
+      },
+      {
+        "name": "Light Sensitivity",
+        "desc": "While in bright light, the demon has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      },
+      {
+        "name": "Shadow Stealth",
+        "desc": "While in dim light or darkness, the demon can take the Hide action as a bonus action."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 10 (2d6 + 3) psychic damage or, if the demon had advantage on the attack roll, 17 (4d6 + 3) psychic damage."
+      }
+    ]
+  },
+  {
     "name": "Shambling Mound",
     "size": "Large",
     "type": "plant",
@@ -14866,7 +15620,7 @@ var jsonMonsterData = [
       },
       {
         "name": "Eye Rays",
-        "desc": "The spectator shoots up to two of the following magical eye rays at one or two creatures it can see within 90 feet of it. It can use each ray only once on a turn. 7. Confusion Ray. The target must succeed on a DC 13 Wisdom saving throw, or it can't take reactions until the end of its next turn. On its turn, the target can't move, and it uses its action to make a melee or ranged attack against a randomly determined creature within range. If the target can't attack, it does nothing on its turn. 2. Paralyzing Ray. The target must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 3. Fear Ray. The target must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the spectator is visible to the target, ending the effect on itself on a success. 4. Wounding Ray. The target must make a DC 13 Constitution saving throw, taking 16 (3d10) necrotic damage on a failed save, or half as much damage on a successful one."
+        "desc": "The spectator shoots up to two of the following magical eye rays at one or two creatures it can see within 90 feet of it. It can use each ray only once on a turn.\n\n1. Confusion Ray. The target must succeed on a DC 13 Wisdom saving throw, or it can't take reactions until the end of its next turn. On its turn, the target can't move, and it uses its action to make a melee or ranged attack against a randomly determined creature within range. If the target can't attack, it does nothing on its turn.\n2. Paralyzing Ray. The target must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n3. Fear Ray. The target must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the spectator is visible to the target, ending the effect on itself on a success.\n4. Wounding Ray. The target must make a DC 13 Constitution saving throw, taking 16 (3d10) necrotic damage on a failed save, or half as much damage on a successful one."
       },
       {
         "name": "Create Food and Water",
@@ -14959,6 +15713,64 @@ var jsonMonsterData = [
       {
         "name": "Bite",
         "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 9 Constitution saving throw or take 2 (1d4) poison damage."
+      }
+    ]
+  },
+  {
+    "name": "Spined Devil",
+    "size": "Small",
+    "type": "fiend",
+    "alignment": "lawful evil",
+    "armor_class": 13,
+    "hit_points": 22,
+    "hit_dice": "5d6 + 5",
+    "speed": "20 ft., fly 40 ft.",
+    "str": 10,
+    "dex": 15,
+    "con": 12,
+    "int": 11,
+    "wis": 14,
+    "cha": 8,
+    "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+    "damage_immunities": "fire, poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 120 ft., passive Perception 12",
+    "languages": "Infernal, telepathy 120 ft.",
+    "challenge_rating": "2 (450 XP)",
+    "special_abilities": [
+      {
+        "name": "Devil's Sight",
+        "desc": "Magical darkness doesn't impede the devil's darkvision."
+      },
+      {
+        "name": "Flyby",
+        "desc": "The devil doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      },
+      {
+        "name": "Limited Spines",
+        "desc": "The devil has twelve tail spines. Used spines regrow by the time the devil finishes a long rest."
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The devil has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The devil makes two attacks; one with its bite and one with its fork or two with its tail spines."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 5 (2d4) slashing damage."
+      },
+      {
+        "name": "Fork",
+        "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage."
+      },
+      {
+        "name": "Tail Spines",
+        "desc": "Ranged Weapon Attack: +4 to hit, range 20/80 ft., one target. Hit: 4 (1d4 + 2) piercing damage plus 3 (1d6) fire damage."
       }
     ]
   },
@@ -16119,6 +16931,45 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Twig Blight",
+    "size": "Small",
+    "type": "plant",
+    "alignment": "neutral evil",
+    "armor_class": 13,
+    "hit_points": 4,
+    "hit_dice": "1d6 + 1",
+    "speed": "20 ft.",
+    "str": 6,
+    "dex": 13,
+    "con": 12,
+    "int": 4,
+    "wis": 8,
+    "cha": 3,
+    "skills": [
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
+    "damage_vulnerabilities": "fire",
+    "condition_immunities": "blinded, deafened",
+    "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 9",
+    "languages": "understands Common but can't speak",
+    "challenge_rating": "1/8 (25 XP)",
+    "special_abilities": [
+      {
+        "name": "False Appearance",
+        "desc": "While the blight remains motionless, it is indistinguishable from a dead shrub."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage."
+      }
+    ]
+  },
+  {
     "name": "Tyrannosaurus Rex",
     "size": "Huge",
     "type": "beast",
@@ -16160,11 +17011,10 @@ var jsonMonsterData = [
     "name": "Unicorn",
     "size": "Large",
     "type": "celestial",
-    "subtype": "",
     "alignment": "lawful good",
     "armor_class": 12,
     "hit_points": 67,
-    "hit_dice": "9d10",
+    "hit_dice": "9d10 + 18",
     "speed": "50 ft.",
     "str": 18,
     "dex": 14,
@@ -16172,82 +17022,63 @@ var jsonMonsterData = [
     "int": 11,
     "wis": 17,
     "cha": 16,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
     "damage_immunities": "poison",
     "condition_immunities": "charmed, paralyzed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "Celestial, Elvish, Sylvan, telepathy 60 ft.",
-    "challenge_rating": "5",
+    "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
         "name": "Charge",
-        "desc": "If the unicorn moves at least 20 ft. straight toward a target and then hits it with a horn attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-        "attack_bonus": 0,
-        "damage_dice": "2d8"
+        "desc": "If the unicorn moves at least 20 ft. straight toward a target and then hits it with a horn attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone."
       },
       {
         "name": "Innate Spellcasting",
-        "desc": "The unicorn's innate spellcasting ability is Charisma (spell save DC 14). The unicorn can innately cast the following spells, requiring no components:\n\nAt will: detect evil and good, druidcraft, pass without trace\n1/day each: calm emotions, dispel evil and good, entangle",
-        "attack_bonus": 0
+        "desc": "The unicorn's innate spellcasting ability is Charisma (spell save DC 14). The unicorn can innately cast the following spells, requiring no components:\n\nAt will: detect evil and good, druidcraft, pass without trace\n1/day each: calm emotions, dispel evil and good, entangle"
       },
       {
         "name": "Magic Resistance",
-        "desc": "The unicorn has advantage on saving throws against spells and other magical effects.",
-        "attack_bonus": 0
+        "desc": "The unicorn has advantage on saving throws against spells and other magical effects."
       },
       {
         "name": "Magic Weapons",
-        "desc": "The unicorn's weapon attacks are magical.",
-        "attack_bonus": 0
+        "desc": "The unicorn's weapon attacks are magical."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The unicorn makes two attacks: one with its hooves and one with its horn.",
-        "attack_bonus": 0
+        "desc": "The unicorn makes two attacks: one with its hooves and one with its horn."
       },
       {
         "name": "Hooves",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft ., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft ., one target. Hit: 11 (2d6 + 4) bludgeoning damage."
       },
       {
         "name": "Horn",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft ., one target. Hit: 8 (1d8 + 4) piercing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "1d8",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft ., one target. Hit: 8 (1d8 + 4) piercing damage."
       },
       {
         "name": "Healing Touch (3/Day)",
-        "desc": "The unicorn touches another creature with its horn. The target magically regains 11 (2d8 + 2) hit points. In addition, the touch removes all diseases and neutralizes all poisons afflicting the target.",
-        "attack_bonus": 0
+        "desc": "The unicorn touches another creature with its horn. The target magically regains 11 (2d8 + 2) hit points. In addition, the touch removes all diseases and neutralizes all poisons afflicting the target."
       },
       {
         "name": "Teleport (1/Day)",
-        "desc": "The unicorn magically teleports itself and up to three willing creatures it can see within 5 ft. of it, along with any equipment they are wearing or carrying, to a location the unicorn is familiar with, up to 1 mile away.",
-        "attack_bonus": 0
+        "desc": "The unicorn magically teleports itself and up to three willing creatures it can see within 5 ft. of it, along with any equipment they are wearing or carrying, to a location the unicorn is familiar with, up to 1 mile away."
       }
     ],
     "legendary_actions": [
       {
         "name": "Hooves",
-        "desc": "The unicorn makes one attack with its hooves.",
-        "attack_bonus": 0
+        "desc": "The unicorn makes one attack with its hooves."
       },
       {
         "name": "Shimmering Shield (Costs 2 Actions)",
-        "desc": "The unicorn creates a shimmering, magical field around itself or another creature it can see within 60 ft. of it. The target gains a +2 bonus to AC until the end of the unicorn's next turn.",
-        "attack_bonus": 0
+        "desc": "The unicorn creates a shimmering, magical field around itself or another creature it can see within 60 ft. of it. The target gains a +2 bonus to AC until the end of the unicorn's next turn."
       },
       {
         "name": "Heal Self (Costs 3 Actions)",
-        "desc": "The unicorn magically regains 11 (2d8 + 2) hit points.",
-        "attack_bonus": 0
+        "desc": "The unicorn magically regains 11 (2d8 + 2) hit points."
       }
     ]
   },
@@ -16259,7 +17090,7 @@ var jsonMonsterData = [
     "alignment": "lawful evil",
     "armor_class": 16,
     "hit_points": 144,
-    "hit_dice": "17d8",
+    "hit_dice": "17d8 + 68",
     "speed": "30 ft.",
     "str": 18,
     "dex": 18,
@@ -16267,96 +17098,94 @@ var jsonMonsterData = [
     "int": 17,
     "wis": 15,
     "cha": 18,
-    "dexterity_save": 9,
-    "wisdom_save": 7,
-    "charisma_save": 9,
-    "perception": 7,
-    "stealth": 9,
-    "damage_vulnerabilities": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 9
+      },
+      {
+        "name": "wis",
+        "val": 7
+      },
+      {
+        "name": "cha",
+        "val": 9
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 7
+      },
+      {
+        "name": "stealth",
+        "val": 9
+      }
+    ],
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
-    "damage_immunities": "",
-    "condition_immunities": "",
     "senses": "darkvision 120 ft., passive Perception 17",
     "languages": "the languages it knew in life",
-    "challenge_rating": "13",
+    "challenge_rating": "13 (10000 XP)",
     "special_abilities": [
       {
         "name": "Shapechanger",
-        "desc": "If the vampire isn't in sun light or running water, it can use its action to polymorph into a Tiny bat or a Medium cloud of mist, or back into its true form.\nWhile in bat form, the vampire can't speak, its walking speed is 5 feet, and it has a flying speed of 30 feet. Its statistics, other than its size and speed, are unchanged. Anything it is wearing transforms with it, but nothing it is carrying does. It reverts to its true form if it dies.\nWhile in mist form, the vampire can't take any actions, speak, or manipulate objects. It is weightless, has a flying speed of 20 feet, can hover, and can enter a hostile creature's space and stop there. In addition, if air can pass through a space, the mist can do so without squeezing, and it can't pass through water. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to all nonmagical damage, except the damage it takes from sunlight.",
-        "attack_bonus": 0
+        "desc": "If the vampire isn't in sun light or running water, it can use its action to polymorph into a Tiny bat or a Medium cloud of mist, or back into its true form.\nWhile in bat form, the vampire can't speak, its walking speed is 5 feet, and it has a flying speed of 30 feet. Its statistics, other than its size and speed, are unchanged. Anything it is wearing transforms with it, but nothing it is carrying does. It reverts to its true form if it dies.\nWhile in mist form, the vampire can't take any actions, speak, or manipulate objects. It is weightless, has a flying speed of 20 feet, can hover, and can enter a hostile creature's space and stop there. In addition, if air can pass through a space, the mist can do so without squeezing, and it can't pass through water. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to all nonmagical damage, except the damage it takes from sunlight."
       },
       {
         "name": "Legendary Resistance (3/Day)",
-        "desc": "If the vampire fails a saving throw, it can choose to succeed instead.",
-        "attack_bonus": 0
+        "desc": "If the vampire fails a saving throw, it can choose to succeed instead."
       },
       {
         "name": "Misty Escape",
-        "desc": "When it drops to 0 hit points outside its resting place, the vampire transforms into a cloud of mist (as in the Shapechanger trait) instead of falling unconscious, provided that it isn't in sunlight or running water. If it can't transform, it is destroyed.\nWhile it has 0 hit points in mist form, it can't revert to its vampire form, and it must reach its resting place within 2 hours or be destroyed. Once in its resting place, it reverts to its vampire form. It is then paralyzed until it regains at least 1 hit point. After spending 1 hour in its resting place with 0 hit points, it regains 1 hit point.",
-        "attack_bonus": 0
+        "desc": "When it drops to 0 hit points outside its resting place, the vampire transforms into a cloud of mist (as in the Shapechanger trait) instead of falling unconscious, provided that it isn't in sunlight or running water. If it can't transform, it is destroyed.\nWhile it has 0 hit points in mist form, it can't revert to its vampire form, and it must reach its resting place within 2 hours or be destroyed. Once in its resting place, it reverts to its vampire form. It is then paralyzed until it regains at least 1 hit point. After spending 1 hour in its resting place with 0 hit points, it regains 1 hit point."
       },
       {
         "name": "Regeneration",
-        "desc": "The vampire regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn.",
-        "attack_bonus": 0
+        "desc": "The vampire regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn."
       },
       {
         "name": "Spider Climb",
-        "desc": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
-        "attack_bonus": 0
+        "desc": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
       },
       {
         "name": "Vampire Weaknesses",
-        "desc": "The vampire has the following flaws:\nForbiddance. The vampire can't enter a residence without an invitation from one of the occupants.\nHarmed by Running Water. The vampire takes 20 acid damage if it ends its turn in running water.\nStake to the Heart. If a piercing weapon made of wood is driven into the vampire's heart while the vampire is incapacitated in its resting place, the vampire is paralyzed until the stake is removed.\nSunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks.",
-        "attack_bonus": 0
+        "desc": "The vampire has the following flaws:\nForbiddance. The vampire can't enter a residence without an invitation from one of the occupants.\nHarmed by Running Water. The vampire takes 20 acid damage if it ends its turn in running water.\nStake to the Heart. If a piercing weapon made of wood is driven into the vampire's heart while the vampire is incapacitated in its resting place, the vampire is paralyzed until the stake is removed.\nSunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks."
       }
     ],
     "actions": [
       {
         "name": "Multiattack (Vampire Form Only)",
-        "desc": "The vampire makes two attacks, only one of which can be a bite attack.",
-        "attack_bonus": 0
+        "desc": "The vampire makes two attacks, only one of which can be a bite attack."
       },
       {
         "name": "Unarmed Strike (Vampire Form Only)",
-        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one creature. Hit: 8 (1d8 + 4) bludgeoning damage. Instead of dealing damage, the vampire can grapple the target (escape DC 18).",
-        "attack_bonus": 9,
-        "damage_dice": "1d8",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one creature. Hit: 8 (1d8 + 4) bludgeoning damage. Instead of dealing damage, the vampire can grapple the target (escape DC 18)."
       },
       {
         "name": "Bite (Bat or Vampire Form Only)",
-        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 7 (1d6 + 4) piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. A humanoid slain in this way and then buried in the ground rises the following night as a vampire spawn under the vampire's control.",
-        "attack_bonus": 9,
-        "damage_dice": "1d6 + 3d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 7 (1d6 + 4) piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. A humanoid slain in this way and then buried in the ground rises the following night as a vampire spawn under the vampire's control."
       },
       {
         "name": "Charm",
-        "desc": "The vampire targets one humanoid it can see within 30 ft. of it. If the target can see the vampire, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the vampire. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the vampire's requests or actions in the most favorable way it can, and it is a willing target for the vampire's bit attack.\nEach time the vampire or the vampire's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the vampire is destroyed, is on a different plane of existence than the target, or takes a bonus action to end the effect.",
-        "attack_bonus": 0
+        "desc": "The vampire targets one humanoid it can see within 30 ft. of it. If the target can see the vampire, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the vampire. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the vampire's requests or actions in the most favorable way it can, and it is a willing target for the vampire's bit attack.\nEach time the vampire or the vampire's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the vampire is destroyed, is on a different plane of existence than the target, or takes a bonus action to end the effect."
       },
       {
         "name": "Children of the Night (1/Day)",
-        "desc": "The vampire magically calls 2d4 swarms of bats or rats, provided that the sun isn't up. While outdoors, the vampire can call 3d6 wolves instead. The called creatures arrive in 1d4 rounds, acting as allies of the vampire and obeying its spoken commands. The beasts remain for 1 hour, until the vampire dies, or until the vampire dismisses them as a bonus action.",
-        "attack_bonus": 0
+        "desc": "The vampire magically calls 2d4 swarms of bats or rats, provided that the sun isn't up. While outdoors, the vampire can call 3d6 wolves instead. The called creatures arrive in 1d4 rounds, acting as allies of the vampire and obeying its spoken commands. The beasts remain for 1 hour, until the vampire dies, or until the vampire dismisses them as a bonus action."
       }
     ],
     "legendary_actions": [
       {
         "name": "Move",
-        "desc": "The vampire moves up to its speed without provoking opportunity attacks.",
-        "attack_bonus": 0
+        "desc": "The vampire moves up to its speed without provoking opportunity attacks."
       },
       {
         "name": "Unarmed Strike",
-        "desc": "The vampire makes one unarmed strike.",
-        "attack_bonus": 0
+        "desc": "The vampire makes one unarmed strike."
       },
       {
         "name": "Bite (Costs 2 Actions)",
-        "desc": "The vampire makes one bite attack.",
-        "attack_bonus": 0
+        "desc": "The vampire makes one bite attack."
       }
     ]
   },
@@ -16364,11 +17193,10 @@ var jsonMonsterData = [
     "name": "Vampire Spawn",
     "size": "Medium",
     "type": "undead",
-    "subtype": "",
     "alignment": "neutral evil",
     "armor_class": 15,
     "hit_points": 82,
-    "hit_dice": "11d8",
+    "hit_dice": "11d8 + 33",
     "speed": "30 ft.",
     "str": 16,
     "dex": 16,
@@ -16376,51 +17204,200 @@ var jsonMonsterData = [
     "int": 11,
     "wis": 10,
     "cha": 12,
-    "dexterity_save": 6,
-    "wisdom_save": 3,
-    "perception": 3,
-    "stealth": 6,
-    "damage_vulnerabilities": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 3
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 6
+      }
+    ],
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
-    "damage_immunities": "",
-    "condition_immunities": "",
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "the languages it knew in life",
-    "challenge_rating": "5",
+    "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
         "name": "Regeneration",
-        "desc": "The vampire regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn.",
-        "attack_bonus": 0
+        "desc": "The vampire regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn."
       },
       {
         "name": "Spider Climb",
-        "desc": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
-        "attack_bonus": 0
+        "desc": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
       },
       {
         "name": "Vampire Weaknesses",
-        "desc": "The vampire has the following flaws:\nForbiddance. The vampire can't enter a residence without an invitation from one of the occupants.\nHarmed by Running Water. The vampire takes 20 acid damage when it ends its turn in running water.\nStake to the Heart. The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is incapacitated in its resting place.\nSunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks.",
-        "attack_bonus": 0
+        "desc": "The vampire has the following flaws:\nForbiddance. The vampire can't enter a residence without an invitation from one of the occupants.\nHarmed by Running Water. The vampire takes 20 acid damage when it ends its turn in running water.\nStake to the Heart. The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is incapacitated in its resting place.\nSunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The vampire makes two attacks, only one of which can be a bite attack.",
-        "attack_bonus": 0
+        "desc": "The vampire makes two attacks, only one of which can be a bite attack."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 6 (1d6 + 3) piercing damage plus 7 (2d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
-        "attack_bonus": 61
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 6 (1d6 + 3) piercing damage plus 7 (2d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
       },
       {
         "name": "Claws",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 8 (2d4 + 3) slashing damage. Instead of dealing damage, the vampire can grapple the target (escape DC 13).",
-        "attack_bonus": 6,
-        "damage_dice": "2d4",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 8 (2d4 + 3) slashing damage. Instead of dealing damage, the vampire can grapple the target (escape DC 13)."
+      }
+    ]
+  },
+  {
+    "name": "Vampire Spellcaster",
+    "size": "Medium",
+    "type": "undead",
+    "alignment": "neutral evil",
+    "armor_class": 15,
+    "hit_points": 82,
+    "hit_dice": "11d8 + 33",
+    "speed": "30 ft.",
+    "str": 16,
+    "dex": 16,
+    "con": 16,
+    "int": 11,
+    "wis": 10,
+    "cha": 12,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 3
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 6
+      }
+    ],
+    "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "senses": "darkvision 60 ft., passive Perception 13",
+    "languages": "the languages it knew in life",
+    "challenge_rating": "15 (13000 XP)",
+    "special_abilities": [
+      {
+        "name": "Regeneration",
+        "desc": "The vampire regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn."
+      },
+      {
+        "name": "Spider Climb",
+        "desc": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Vampire Weaknesses",
+        "desc": "The vampire has the following flaws:\nForbiddance. The vampire can't enter a residence without an invitation from one of the occupants.\nHarmed by Running Water. The vampire takes 20 acid damage when it ends its turn in running water.\nStake to the Heart. The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is incapacitated in its resting place.\nSunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks."
+      },
+      {
+        "name": "Spellcasting",
+        "desc": "The vampire is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 15, +7 to hit with spell attacks). The vampire has the following wizard spells prepared:\n\nCantrips (at will): mage hand, prestidigitation, ray of frost\n1st level (4 slots): comprehend languages, fogcloud, sleep\n2nd level (3 slots): detect thoughts, gust of wind, mirror image\n3rd level (3 slots): animate dead, bestow curse, nondetection\n4th level (3 slots): blight, greater invisibility\n5th level (1 slot): dominate person"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The vampire makes two attacks, only one of which can be a bite attack."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 6 (1d6 + 3) piercing damage plus 7 (2d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+      },
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 8 (2d4 + 3) slashing damage. Instead of dealing damage, the vampire can grapple the target (escape DC 13)."
+      }
+    ]
+  },
+  {
+    "name": "Vampire Warrior",
+    "size": "Medium",
+    "type": "undead",
+    "alignment": "neutral evil",
+    "armor_class": 18,
+    "hit_points": 82,
+    "hit_dice": "11d8 + 33",
+    "speed": "30 ft.",
+    "str": 16,
+    "dex": 16,
+    "con": 16,
+    "int": 11,
+    "wis": 10,
+    "cha": 12,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 3
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 6
+      }
+    ],
+    "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "senses": "darkvision 60 ft., passive Perception 13",
+    "languages": "the languages it knew in life",
+    "challenge_rating": "15 (13000 XP)",
+    "special_abilities": [
+      {
+        "name": "Regeneration",
+        "desc": "The vampire regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn."
+      },
+      {
+        "name": "Spider Climb",
+        "desc": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Vampire Weaknesses",
+        "desc": "The vampire has the following flaws:\nForbiddance. The vampire can't enter a residence without an invitation from one of the occupants.\nHarmed by Running Water. The vampire takes 20 acid damage when it ends its turn in running water.\nStake to the Heart. The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is incapacitated in its resting place.\nSunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The vampire makes two greatsword attacks."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 6 (1d6 + 3) piercing damage plus 7 (2d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+      },
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 8 (2d4 + 3) slashing damage. Instead of dealing damage, the vampire can grapple the target (escape DC 13)."
+      },
+      {
+        "name": "Greatsword",
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one creature. Hit: 11 (2d6 + 4) slashing damage."
       }
     ]
   },
@@ -16440,41 +17417,79 @@ var jsonMonsterData = [
     "int": 10,
     "wis": 11,
     "cha": 10,
-    "athletics": 5,
-    "perception": 2,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
+    "skills": [
+      {
+        "name": "athletics",
+        "val": 5
+      },
+      {
+        "name": "perception",
+        "val": 2
+      }
+    ],
     "senses": "passive Perception 12",
     "languages": "any one language (usually Common)",
-    "challenge_rating": "3",
+    "challenge_rating": "3 (700 XP)",
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.",
-        "attack_bonus": 0
+        "desc": "The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack."
       },
       {
         "name": "Longsword",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.",
-        "attack_bonus": 5,
-        "damage_dice": "1d8",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands."
       },
       {
         "name": "Shortsword",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
-        "attack_bonus": 5,
-        "damage_dice": "1d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage."
       },
       {
         "name": "Heavy Crossbow",
-        "desc": "Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage.",
-        "attack_bonus": 3,
-        "damage_dice": "1d10",
-        "damage_bonus": 1
+        "desc": "Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Vine Blight",
+    "size": "Medium",
+    "type": "plant",
+    "alignment": "neutral evil",
+    "armor_class": 12,
+    "hit_points": 26,
+    "hit_dice": "4d8 + 8",
+    "speed": "10 ft.",
+    "str": 15,
+    "dex": 8,
+    "con": 14,
+    "int": 5,
+    "wis": 10,
+    "cha": 3,
+    "skills": [
+      {
+        "name": "stealth",
+        "val": 1
+      }
+    ],
+    "condition_immunities": "blinded, deafened",
+    "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 10",
+    "languages": "Common",
+    "challenge_rating": "1/2 (100 XP)",
+    "special_abilities": [
+      {
+        "name": "False Appearance",
+        "desc": "While the blight remains motionless, it is indistinguishable from a tangle of vines."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Constrict",
+        "desc": "Melee Weapon Attack: +4 to hit, reach 10 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage, and a Large or smaller target is grappled (escape DC 12). Until this grapple ends, the target is restrained, and the blight can't constrict another target."
+      },
+      {
+        "name": "Entangling Plants (Recharge 5-6)",
+        "desc": "Grasping roots and vines sprout in a 15-foot radius centered on the blight, withering away after 1 minute. For the duration, that area is difficult terrain for non plant creatures. In addition, each creature
+of the blight's choice in that area when th e plants appear must succeed on a DC 12 Strength saving throw or become
+restrained. A creature can use its action to make a DC 12 Strength check, freeing itself or another entangled creature within reach on a success."
       }
     ]
   },
@@ -16482,7 +17497,6 @@ var jsonMonsterData = [
     "name": "Violet Fungus",
     "size": "Medium",
     "type": "plant",
-    "subtype": "",
     "alignment": "unaligned",
     "armor_class": 5,
     "hit_points": 18,
@@ -16494,31 +17508,23 @@ var jsonMonsterData = [
     "int": 1,
     "wis": 3,
     "cha": 1,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
     "condition_immunities": "blinded, deafened, frightened",
     "senses": "blindsight 30 ft. (blind beyond this radius), passive Perception 6",
-    "languages": "",
-    "challenge_rating": "1/4",
+    "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
       {
         "name": "False Appearance",
-        "desc": "While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus.",
-        "attack_bonus": 0
+        "desc": "While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The fungus makes 1d4 Rotting Touch attacks.",
-        "attack_bonus": 0
+        "desc": "The fungus makes 1d4 Rotting Touch attacks."
       },
       {
         "name": "Rotting Touch",
-        "desc": "Melee Weapon Attack: +2 to hit, reach 10 ft., one creature. Hit: 4 (1d8) necrotic damage.",
-        "attack_bonus": 2,
-        "damage_dice": "1d8"
+        "desc": "Melee Weapon Attack: +2 to hit, reach 10 ft., one creature. Hit: 4 (1d8) necrotic damage."
       }
     ]
   },
@@ -16530,7 +17536,7 @@ var jsonMonsterData = [
     "alignment": "chaotic evil",
     "armor_class": 15,
     "hit_points": 104,
-    "hit_dice": "11d10",
+    "hit_dice": "11d10 + 44",
     "speed": "40 ft., fly 60 ft.",
     "str": 17,
     "dex": 15,
@@ -16538,57 +17544,56 @@ var jsonMonsterData = [
     "int": 8,
     "wis": 13,
     "cha": 8,
-    "dexterity_save": 5,
-    "wisdom_save": 4,
-    "charisma_save": 2,
-    "damage_vulnerabilities": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 5
+      },
+      {
+        "name": "wis",
+        "val": 4
+      },
+      {
+        "name": "cha",
+        "val": 2
+      }
+    ],
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 11",
     "languages": "Abyssal, telepathy 120 ft.",
-    "challenge_rating": "6",
+    "challenge_rating": "6 (2300 XP)",
     "special_abilities": [
       {
         "name": "Magic Resistance",
-        "desc": "The vrock has advantage on saving throws against spells and other magical effects.",
-        "attack_bonus": 0
+        "desc": "The vrock has advantage on saving throws against spells and other magical effects."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The vrock makes two attacks: one with its beak and one with its talons.",
-        "attack_bonus": 0
+        "desc": "The vrock makes two attacks: one with its beak and one with its talons."
       },
       {
         "name": "Beak",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.",
-        "attack_bonus": 6,
-        "damage_dice": "2d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage."
       },
       {
         "name": "Talons",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage.",
-        "attack_bonus": 6,
-        "damage_dice": "2d10",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage."
       },
       {
         "name": "Spores (Recharge 6)",
-        "desc": "A 15-foot-radius cloud of toxic spores extends out from the vrock. The spores spread around corners. Each creature in that area must succeed on a DC 14 Constitution saving throw or become poisoned. While poisoned in this way, a target takes 5 (1d10) poison damage at the start of each of its turns. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Emptying a vial of holy water on the target also ends the effect on it.",
-        "attack_bonus": 0
+        "desc": "A 15-foot-radius cloud of toxic spores extends out from the vrock. The spores spread around corners. Each creature in that area must succeed on a DC 14 Constitution saving throw or become poisoned. While poisoned in this way, a target takes 5 (1d10) poison damage at the start of each of its turns. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Emptying a vial of holy water on the target also ends the effect on it."
       },
       {
         "name": "Stunning Screech (1/Day)",
-        "desc": "The vrock emits a horrific screech. Each creature within 20 feet of it that can hear it and that isn't a demon must succeed on a DC 14 Constitution saving throw or be stunned until the end of the vrock's next turn .",
-        "attack_bonus": 0
+        "desc": "The vrock emits a horrific screech. Each creature within 20 feet of it that can hear it and that isn't a demon must succeed on a DC 14 Constitution saving throw or be stunned until the end of the vrock's next turn."
       },
       {
         "name": "Variant: Summon Demon (1/Day)",
-        "desc": "The demon chooses what to summon and attempts a magical summoning.\nA vrock has a 30 percent chance of summoning 2d4 dretches or one vrock.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-        "attack_bonus": 0
+        "desc": "The demon chooses what to summon and attempts a magical summoning.\nA vrock has a 30 percent chance of summoning 2d4 dretches or one vrock.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
       }
     ]
   },
@@ -16596,11 +17601,10 @@ var jsonMonsterData = [
     "name": "Vulture",
     "size": "Medium",
     "type": "beast",
-    "subtype": "",
     "alignment": "unaligned",
     "armor_class": 10,
     "hit_points": 5,
-    "hit_dice": "1d8",
+    "hit_dice": "1d8 + 1",
     "speed": "10 ft., fly 50 ft.",
     "str": 7,
     "dex": 10,
@@ -16608,32 +17612,28 @@ var jsonMonsterData = [
     "int": 2,
     "wis": 12,
     "cha": 4,
-    "perception": 3,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      }
+    ],
     "senses": "passive Perception 13",
-    "languages": "",
-    "challenge_rating": "0",
+    "challenge_rating": "0 (10 XP)",
     "special_abilities": [
       {
         "name": "Keen Sight and Smell",
-        "desc": "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.",
-        "attack_bonus": 0
+        "desc": "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell."
       },
       {
         "name": "Pack Tactics",
-        "desc": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
-        "attack_bonus": 0
+        "desc": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 ft. of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "name": "Beak",
-        "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
-        "attack_bonus": 2,
-        "damage_dice": "1d4"
+        "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage."
       }
     ]
   },
@@ -16641,11 +17641,10 @@ var jsonMonsterData = [
     "name": "Warhorse",
     "size": "Large",
     "type": "beast",
-    "subtype": "",
     "alignment": "unaligned",
     "armor_class": 11,
     "hit_points": 19,
-    "hit_dice": "3d10",
+    "hit_dice": "3d10 + 3",
     "speed": "60 ft.",
     "str": 18,
     "dex": 12,
@@ -16653,27 +17652,18 @@ var jsonMonsterData = [
     "int": 2,
     "wis": 12,
     "cha": 7,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
     "senses": "passive Perception 11",
-    "languages": "",
-    "challenge_rating": "1/2",
+    "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
       {
         "name": "Trampling Charge",
-        "desc": "If the horse moves at least 20 ft. straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.",
-        "attack_bonus": 0
+        "desc": "If the horse moves at least 20 ft. straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action."
       }
     ],
     "actions": [
       {
         "name": "Hooves",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
-        "attack_bonus": 6,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage."
       }
     ]
   },
@@ -16681,11 +17671,10 @@ var jsonMonsterData = [
     "name": "Warhorse Skeleton",
     "size": "Large",
     "type": "undead",
-    "subtype": "",
     "alignment": "lawful evil",
     "armor_class": 13,
     "hit_points": 22,
-    "hit_dice": "3d10",
+    "hit_dice": "3d10 + 6",
     "speed": "60 ft.",
     "str": 18,
     "dex": 12,
@@ -16694,19 +17683,14 @@ var jsonMonsterData = [
     "wis": 8,
     "cha": 5,
     "damage_vulnerabilities": "bludgeoning",
-    "damage_resistances": "",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
-    "languages": "",
-    "challenge_rating": "1/2",
+    "challenge_rating": "1/2 (100 XP)",
     "actions": [
       {
         "name": "Hooves",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
-        "attack_bonus": 6,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage."
       }
     ]
   },
@@ -16714,11 +17698,10 @@ var jsonMonsterData = [
     "name": "Water Elemental",
     "size": "Large",
     "type": "elemental",
-    "subtype": "",
     "alignment": "neutral",
     "armor_class": 14,
     "hit_points": 114,
-    "hit_dice": "12d10",
+    "hit_dice": "12d10 + 48",
     "speed": "30 ft., swim 90 ft.",
     "str": 18,
     "dex": 14,
@@ -16726,42 +17709,34 @@ var jsonMonsterData = [
     "int": 5,
     "wis": 10,
     "cha": 8,
-    "damage_vulnerabilities": "",
     "damage_resistances": "acid; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Aquan",
-    "challenge_rating": "5",
+    "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
         "name": "Water Form",
-        "desc": "The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing.",
-        "attack_bonus": 0
+        "desc": "The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
       },
       {
         "name": "Freeze",
-        "desc": "If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 ft. until the end of its next turn.",
-        "attack_bonus": 0
+        "desc": "If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 ft. until the end of its next turn."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The elemental makes two slam attacks.",
-        "attack_bonus": 0
+        "desc": "The elemental makes two slam attacks."
       },
       {
         "name": "Slam",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d8",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage."
       },
       {
         "name": "Whelm (Recharge 4-6)",
-        "desc": "Each creature in the elemental's space must make a DC 15 Strength saving throw. On a failure, a target takes 13 (2d8 + 4) bludgeoning damage. If it is Large or smaller, it is also grappled (escape DC 14). Until this grapple ends, the target is restrained and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the elemental's space.\nThe elemental can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the elemental's turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning damage. A creature within 5 feet of the elemental can pull a creature or object out of it by taking an action to make a DC 14 Strength and succeeding.",
-        "attack_bonus": 0
+        "desc": "Each creature in the elemental's space must make a DC 15 Strength saving throw. On a failure, a target takes 13 (2d8 + 4) bludgeoning damage. If it is Large or smaller, it is also grappled (escape DC 14). Until this grapple ends, the target is restrained and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the elemental's space.\nThe elemental can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the elemental's turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning damage. A creature within 5 feet of the elemental can pull a creature or object out of it by taking an action to make a DC 14 Strength and succeeding."
       }
     ]
   },
@@ -16769,11 +17744,10 @@ var jsonMonsterData = [
     "name": "Weasel",
     "size": "Tiny",
     "type": "beast",
-    "subtype": "",
     "alignment": "unaligned",
     "armor_class": 13,
     "hit_points": 1,
-    "hit_dice": "1d4",
+    "hit_dice": "1d4 - 1",
     "speed": "30 ft.",
     "str": 3,
     "dex": 16,
@@ -16781,28 +17755,28 @@ var jsonMonsterData = [
     "int": 2,
     "wis": 12,
     "cha": 3,
-    "perception": 3,
-    "stealth": 5,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 5
+      }
+    ],
     "senses": "passive Perception 13",
-    "languages": "",
-    "challenge_rating": "0",
+    "challenge_rating": "0 (10 XP)",
     "special_abilities": [
       {
         "name": "Keen Hearing and Smell",
-        "desc": "The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-        "attack_bonus": 0
+        "desc": "The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell."
       }
     ],
     "actions": [
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.",
-        "attack_bonus": 5,
-        "damage_bonus": 1
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage."
       }
     ]
   },
@@ -16814,7 +17788,7 @@ var jsonMonsterData = [
     "alignment": "neutral good",
     "armor_class": 10,
     "hit_points": 135,
-    "hit_dice": "18d8",
+    "hit_dice": "18d8 + 54",
     "speed": "30 ft. (40 ft., climb 30 ft. in bear or hybrid form)",
     "str": 19,
     "dex": 10,
@@ -16822,52 +17796,42 @@ var jsonMonsterData = [
     "int": 11,
     "wis": 12,
     "cha": 12,
-    "perception": 7,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 7
+      }
+    ],
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
-    "condition_immunities": "",
     "senses": "passive Perception 17",
     "languages": "Common (can't speak in bear form)",
-    "challenge_rating": "5",
+    "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
         "name": "Shapechanger",
-        "desc": "The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it. is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
-        "attack_bonus": 0
+        "desc": "The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it. is wearing or carrying isn't transformed. It reverts to its true form if it dies."
       },
       {
         "name": "Keen Smell",
-        "desc": "The werebear has advantage on WisGlom (Perception) checks that rely on smell.",
-        "attack_bonus": 0
+        "desc": "The werebear has advantage on WisGlom (Perception) checks that rely on smell."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "In bear form, the werebear makes two claw attacks. In humanoid form, it makes two greataxe attacks. In hybrid form, it can attack like a bear or a humanoid.",
-        "attack_bonus": 0
+        "desc": "In bear form, the werebear makes two claw attacks. In humanoid form, it makes two greataxe attacks. In hybrid form, it can attack like a bear or a humanoid."
       },
       {
         "name": "Bite (Bear or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with were bear lycanthropy.",
-        "attack_bonus": 7,
-        "damage_dice": "2d10",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with were bear lycanthropy."
       },
       {
         "name": "Claw (Bear or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d8",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage."
       },
       {
         "name": "Greataxe (Humanoid or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "1d12",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage."
       }
     ]
   },
@@ -16879,7 +17843,7 @@ var jsonMonsterData = [
     "alignment": "neutral evil",
     "armor_class": 10,
     "hit_points": 78,
-    "hit_dice": "12d8",
+    "hit_dice": "12d8 + 24",
     "speed": "30 ft. (40 ft. in boar form)",
     "str": 17,
     "dex": 10,
@@ -16887,51 +17851,42 @@ var jsonMonsterData = [
     "int": 10,
     "wis": 11,
     "cha": 8,
-    "perception": 2,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 2
+      }
+    ],
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
-    "condition_immunities": "",
     "senses": "passive Perception 12",
     "languages": "Common (can't speak in boar form)",
-    "challenge_rating": "4",
+    "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
         "name": "Shapechanger",
-        "desc": "The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
-        "attack_bonus": 0
+        "desc": "The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
       },
       {
         "name": "Charge (Boar or Hybrid Form Only)",
-        "desc": "If the wereboar moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-        "attack_bonus": 0,
-        "damage_dice": "2d6"
+        "desc": "If the wereboar moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone."
       },
       {
         "name": "Relentless (Recharges after a Short or Long Rest)",
-        "desc": "If the wereboar takes 14 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
-        "attack_bonus": 0
+        "desc": "If the wereboar takes 14 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead."
       }
     ],
     "actions": [
       {
         "name": "Multiattack (Humanoid or Hybrid Form Only)",
-        "desc": "The wereboar makes two attacks, only one of which can be with its tusks.",
-        "attack_bonus": 0
+        "desc": "The wereboar makes two attacks, only one of which can be with its tusks."
       },
       {
         "name": "Maul (Humanoid or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.",
-        "attack_bonus": 5,
-        "damage_dice": "2d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage."
       },
       {
         "name": "Tusks (Boar or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy.",
-        "attack_bonus": 5,
-        "damage_dice": "2d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy."
       }
     ]
   },
@@ -16943,7 +17898,7 @@ var jsonMonsterData = [
     "alignment": "lawful evil",
     "armor_class": 12,
     "hit_points": 33,
-    "hit_dice": "6d8",
+    "hit_dice": "6d8 + 6",
     "speed": "30 ft.",
     "str": 10,
     "dex": 15,
@@ -16951,53 +17906,46 @@ var jsonMonsterData = [
     "int": 11,
     "wis": 10,
     "cha": 8,
-    "perception": 2,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 2
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
-    "condition_immunities": "",
     "senses": "darkvision 60 ft. (rat form only), passive Perception 12",
     "languages": "Common (can't speak in rat form)",
-    "challenge_rating": "2",
+    "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
         "name": "Shapechanger",
-        "desc": "The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
-        "attack_bonus": 0
+        "desc": "The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
       },
       {
         "name": "Keen Smell",
-        "desc": "The wererat has advantage on Wisdom (Perception) checks that rely on smell.",
-        "attack_bonus": 0
+        "desc": "The wererat has advantage on Wisdom (Perception) checks that rely on smell."
       }
     ],
     "actions": [
       {
         "name": "Multiattack (Humanoid or Hybrid Form Only)",
-        "desc": "The wererat makes two attacks, only one of which can be a bite.",
-        "attack_bonus": 0
+        "desc": "The wererat makes two attacks, only one of which can be a bite."
       },
       {
         "name": "Bite (Rat or Hybrid Form Only).",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.",
-        "attack_bonus": 4,
-        "damage_dice": "1d4",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy."
       },
       {
         "name": "Shortsword (Humanoid or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-        "attack_bonus": 4,
-        "damage_dice": "1d6",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
       },
       {
         "name": "Hand Crossbow (Humanoid or Hybrid Form Only)",
-        "desc": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-        "attack_bonus": 4,
-        "damage_dice": "1d6",
-        "damage_bonus": 2
+        "desc": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
       }
     ]
   },
@@ -17009,7 +17957,7 @@ var jsonMonsterData = [
     "alignment": "neutral",
     "armor_class": 12,
     "hit_points": 120,
-    "hit_dice": "16d8",
+    "hit_dice": "16d8 + 48",
     "speed": "30 ft. (40 ft. in tiger form)",
     "str": 17,
     "dex": 15,
@@ -17017,65 +17965,54 @@ var jsonMonsterData = [
     "int": 10,
     "wis": 13,
     "cha": 11,
-    "perception": 5,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
-    "condition_immunities": "",
     "senses": "darkvision 60 ft., passive Perception 15",
     "languages": "Common (can't speak in tiger form)",
-    "challenge_rating": "4",
+    "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
         "name": "Shapechanger",
-        "desc": "The weretiger can use its action to polymorph into a tiger-humanoid hybrid or into a tiger, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
-        "attack_bonus": 0
+        "desc": "The weretiger can use its action to polymorph into a tiger-humanoid hybrid or into a tiger, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
       },
       {
         "name": "Keen Hearing and Smell",
-        "desc": "The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-        "attack_bonus": 0
+        "desc": "The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell."
       },
       {
         "name": "Pounce (Tiger or Hybrid Form Only)",
-        "desc": "If the weretiger moves at least 15 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the weretiger can make one bite attack against it as a bonus action.",
-        "attack_bonus": 0
+        "desc": "If the weretiger moves at least 15 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the weretiger can make one bite attack against it as a bonus action."
       }
     ],
     "actions": [
       {
         "name": "Multiattack (Humanoid or Hybrid Form Only)",
-        "desc": "In humanoid form, the weretiger makes two scimitar attacks or two longbow attacks. In hybrid form, it can attack like a humanoid or make two claw attacks.",
-        "attack_bonus": 0
+        "desc": "In humanoid form, the weretiger makes two scimitar attacks or two longbow attacks. In hybrid form, it can attack like a humanoid or make two claw attacks."
       },
       {
         "name": "Bite (Tiger or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 13 Constitution saving throw or be cursed with weretiger lycanthropy.",
-        "attack_bonus": 5,
-        "damage_dice": "1d10",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 13 Constitution saving throw or be cursed with weretiger lycanthropy."
       },
       {
         "name": "Claw (Tiger or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.",
-        "attack_bonus": 5,
-        "damage_dice": "1d8",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage."
       },
       {
         "name": "Scimitar (Humanoid or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
-        "attack_bonus": 5,
-        "damage_dice": "1d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage."
       },
       {
         "name": "Longbow (Humanoid or Hybrid Form Only)",
-        "desc": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
-        "attack_bonus": 4,
-        "damage_dice": "1d8",
-        "damage_bonus": 2
+        "desc": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage."
       }
     ]
   },
@@ -17087,7 +18024,7 @@ var jsonMonsterData = [
     "alignment": "chaotic evil",
     "armor_class": 11,
     "hit_points": 58,
-    "hit_dice": "9d8",
+    "hit_dice": "9d8 + 18",
     "speed": "30 ft. (40 ft. in wolf form)",
     "str": 15,
     "dex": 13,
@@ -17095,52 +18032,42 @@ var jsonMonsterData = [
     "int": 10,
     "wis": 11,
     "cha": 10,
-    "perception": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 4
+      }
+    ],
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
-    "condition_immunities": "",
     "senses": "passive Perception 14",
     "languages": "Common (can't speak in wolf form)",
-    "challenge_rating": "3",
+    "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
         "name": "Shapechanger",
-        "desc": "The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
-        "attack_bonus": 0
+        "desc": "The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
       },
       {
         "name": "Keen Hearing and Smell",
-        "desc": "The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-        "attack_bonus": 0
+        "desc": "The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
       }
     ],
     "actions": [
       {
         "name": "Multiattack (Humanoid or Hybrid Form Only)",
-        "desc": "The werewolf makes two attacks: one with its bite and one with its claws or spear.",
-        "attack_bonus": 0
+        "desc": "The werewolf makes two attacks: one with its bite and one with its claws or spear."
       },
       {
         "name": "Bite (Wolf or Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy.",
-        "attack_bonus": 4,
-        "damage_dice": "1d8",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy."
       },
       {
         "name": "Claws (Hybrid Form Only)",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4 + 2) slashing damage.",
-        "attack_bonus": 4,
-        "damage_dice": "2d4",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4 + 2) slashing damage."
       },
       {
         "name": "Spear (Humanoid Form Only)",
-        "desc": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.",
-        "attack_bonus": 4,
-        "damage_dice": "1d6",
-        "damage_bonus": -2
+        "desc": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack."
       }
     ]
   },
@@ -17148,11 +18075,10 @@ var jsonMonsterData = [
     "name": "White Dragon Wyrmling",
     "size": "Medium",
     "type": "dragon",
-    "subtype": "",
     "alignment": "chaotic evil",
     "armor_class": 16,
     "hit_points": 32,
-    "hit_dice": "5d8",
+    "hit_dice": "5d8 + 10",
     "speed": "30 ft., burrow 15 ft., fly 60 ft., swim 30 ft.",
     "str": 14,
     "dex": 10,
@@ -17160,32 +18086,46 @@ var jsonMonsterData = [
     "int": 5,
     "wis": 10,
     "cha": 11,
-    "dexterity_save": 2,
-    "constitution_save": 4,
-    "wisdom_save": 2,
-    "charisma_save": 2,
-    "perception": 4,
-    "stealth": 2,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 2
+      },
+      {
+        "name": "con",
+        "val": 4
+      },
+      {
+        "name": "wis",
+        "val": 2
+      },
+      {
+        "name": "cha",
+        "val": 2
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 4
+      },
+      {
+        "name": "stealth",
+        "val": 2
+      }
+    ],
     "damage_immunities": "cold",
-    "condition_immunities": "",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
-    "challenge_rating": "2",
+    "challenge_rating": "2 (450 XP)",
     "actions": [
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 2 (1d4) cold damage.",
-        "attack_bonus": 4,
-        "damage_dice": "1d10 + 1d4",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 2 (1d4) cold damage."
       },
       {
         "name": "Cold Breath (Recharge 5-6)",
-        "desc": "The dragon exhales an icy blast of hail in a 15-foot cone. Each creature in that area must make a DC 12 Constitution saving throw, taking 22 (5d8) cold damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 0,
-        "damage_dice": "5d8"
+        "desc": "The dragon exhales an icy blast of hail in a 15-foot cone. Each creature in that area must make a DC 12 Constitution saving throw, taking 22 (5d8) cold damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
@@ -17193,11 +18133,10 @@ var jsonMonsterData = [
     "name": "Wight",
     "size": "Medium",
     "type": "undead",
-    "subtype": "",
     "alignment": "neutral evil",
     "armor_class": 14,
     "hit_points": 45,
-    "hit_dice": "6d8",
+    "hit_dice": "6d8 + 18",
     "speed": "30 ft.",
     "str": 15,
     "dex": 14,
@@ -17205,48 +18144,43 @@ var jsonMonsterData = [
     "int": 10,
     "wis": 13,
     "cha": 15,
-    "perception": 3,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "the languages it knew in life",
-    "challenge_rating": "3",
+    "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
         "name": "Sunlight Sensitivity",
-        "desc": "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
-        "attack_bonus": 0
+        "desc": "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The wight makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack.",
-        "attack_bonus": 0
+        "desc": "The wight makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack."
       },
       {
         "name": "Life Drain",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.\nA humanoid slain by this attack rises 24 hours later as a zombie under the wight's control, unless the humanoid is restored to life or its body is destroyed. The wight can have no more than twelve zombies under its control at one time.",
-        "attack_bonus": 4,
-        "damage_dice": "1d6",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.\nA humanoid slain by this attack rises 24 hours later as a zombie under the wight's control, unless the humanoid is restored to life or its body is destroyed. The wight can have no more than twelve zombies under its control at one time."
       },
       {
         "name": "Longsword",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage, or 7 (1d10 + 2) slashing damage if used with two hands.",
-        "attack_bonus": 4,
-        "damage_dice": "1d8",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage, or 7 (1d10 + 2) slashing damage if used with two hands."
       },
       {
         "name": "Longbow",
-        "desc": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
-        "attack_bonus": 4,
-        "damage_dice": "1d8",
-        "damage_bonus": 2
+        "desc": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage."
       }
     ]
   },
@@ -17254,7 +18188,6 @@ var jsonMonsterData = [
     "name": "Will-o'-Wisp",
     "size": "Tiny",
     "type": "undead",
-    "subtype": "",
     "alignment": "chaotic evil",
     "armor_class": 19,
     "hit_points": 22,
@@ -17266,46 +18199,38 @@ var jsonMonsterData = [
     "int": 13,
     "wis": 14,
     "cha": 11,
-    "damage_vulnerabilities": "",
     "damage_resistances": "acid, cold, fire, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "lightning, poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, poisoned, prone, restrained, unconscious",
     "senses": "darkvision 120 ft., passive Perception 12",
     "languages": "the languages it knew in life",
-    "challenge_rating": "2",
+    "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
         "name": "Consume Life",
-        "desc": "As a bonus action, the will-o'-wisp can target one creature it can see within 5 ft. of it that has 0 hit points and is still alive. The target must succeed on a DC 10 Constitution saving throw against this magic or die. If the target dies, the will-o'-wisp regains 10 (3d6) hit points.",
-        "attack_bonus": 0
+        "desc": "As a bonus action, the will-o'-wisp can target one creature it can see within 5 ft. of it that has 0 hit points and is still alive. The target must succeed on a DC 10 Constitution saving throw against this magic or die. If the target dies, the will-o'-wisp regains 10 (3d6) hit points."
       },
       {
         "name": "Ephemeral",
-        "desc": "The will-o'-wisp can't wear or carry anything.",
-        "attack_bonus": 0
+        "desc": "The will-o'-wisp can't wear or carry anything."
       },
       {
         "name": "Incorporeal Movement",
-        "desc": "The will-o'-wisp can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
-        "attack_bonus": 0
+        "desc": "The will-o'-wisp can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object."
       },
       {
         "name": "Variable Illumination",
-        "desc": "The will-o'-wisp sheds bright light in a 5- to 20-foot radius and dim light for an additional number of ft. equal to the chosen radius. The will-o'-wisp can alter the radius as a bonus action.",
-        "attack_bonus": 0
+        "desc": "The will-o'-wisp sheds bright light in a 5- to 20-foot radius and dim light for an additional number of ft. equal to the chosen radius. The will-o'-wisp can alter the radius as a bonus action."
       }
     ],
     "actions": [
       {
         "name": "Shock",
-        "desc": "Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d8) lightning damage.",
-        "attack_bonus": 4,
-        "damage_dice": "2d8"
+        "desc": "Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d8) lightning damage."
       },
       {
         "name": "Invisibility",
-        "desc": "The will-o'-wisp and its light magically become invisible until it attacks or uses its Consume Life, or until its concentration ends (as if concentrating on a spell).",
-        "attack_bonus": 0
+        "desc": "The will-o'-wisp and its light magically become invisible until it attacks or uses its Consume Life, or until its concentration ends (as if concentrating on a spell)."
       }
     ]
   },
@@ -17353,11 +18278,10 @@ var jsonMonsterData = [
     "name": "Winter Wolf",
     "size": "Large",
     "type": "monstrosity",
-    "subtype": "",
     "alignment": "neutral evil",
     "armor_class": 13,
     "hit_points": 75,
-    "hit_dice": "10d10",
+    "hit_dice": "10d10 + 20",
     "speed": "50 ft.",
     "str": 18,
     "dex": 13,
@@ -17365,45 +18289,42 @@ var jsonMonsterData = [
     "int": 7,
     "wis": 12,
     "cha": 8,
-    "perception": 5,
-    "stealth": 3,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
     "damage_immunities": "cold",
-    "condition_immunities": "",
     "senses": "passive Perception 15",
     "languages": "Common, Giant, Winter Wolf",
-    "challenge_rating": "3",
+    "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
         "name": "Keen Hearing and Smell",
-        "desc": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-        "attack_bonus": 0
+        "desc": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
       },
       {
         "name": "Pack Tactics",
-        "desc": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
-        "attack_bonus": 0
+        "desc": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated."
       },
       {
         "name": "Snow Camouflage",
-        "desc": "The wolf has advantage on Dexterity (Stealth) checks made to hide in snowy terrain.",
-        "attack_bonus": 0
+        "desc": "The wolf has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
       }
     ],
     "actions": [
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
-        "attack_bonus": 6,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone."
       },
       {
         "name": "Cold Breath (Recharge 5-6)",
-        "desc": "The wolf exhales a blast of freezing wind in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 0,
-        "damage_dice": "4d8"
+        "desc": "The wolf exhales a blast of freezing wind in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
@@ -17411,11 +18332,10 @@ var jsonMonsterData = [
     "name": "Wolf",
     "size": "Medium",
     "type": "beast",
-    "subtype": "",
     "alignment": "unaligned",
     "armor_class": 13,
     "hit_points": 11,
-    "hit_dice": "2d8",
+    "hit_dice": "2d8 + 2",
     "speed": "40 ft.",
     "str": 12,
     "dex": 15,
@@ -17423,34 +18343,32 @@ var jsonMonsterData = [
     "int": 3,
     "wis": 12,
     "cha": 6,
-    "perception": 3,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "senses": "passive Perception 13",
-    "languages": "",
-    "challenge_rating": "1/4",
+    "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
       {
         "name": "Keen Hearing and Smell",
-        "desc": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-        "attack_bonus": 0
+        "desc": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
       },
       {
         "name": "Pack Tactics",
-        "desc": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
-        "attack_bonus": 0
+        "desc": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
-        "attack_bonus": 4,
-        "damage_dice": "2d4",
-        "damage_bonus": 2
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone."
       }
     ]
   },
@@ -17458,11 +18376,10 @@ var jsonMonsterData = [
     "name": "Worg",
     "size": "Large",
     "type": "monstrosity",
-    "subtype": "",
     "alignment": "neutral evil",
     "armor_class": 13,
     "hit_points": 26,
-    "hit_dice": "4d10",
+    "hit_dice": "4d10 + 4",
     "speed": "50 ft.",
     "str": 16,
     "dex": 13,
@@ -17470,28 +18387,25 @@ var jsonMonsterData = [
     "int": 7,
     "wis": 11,
     "cha": 8,
-    "perception": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 4
+      }
+    ],
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Goblin, Worg",
-    "challenge_rating": "1/2",
+    "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
       {
         "name": "Keen Hearing and Smell",
-        "desc": "The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-        "attack_bonus": 0
+        "desc": "The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell."
       }
     ],
     "actions": [
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-        "attack_bonus": 5,
-        "damage_dice": "2d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone."
       }
     ]
   },
@@ -17499,11 +18413,10 @@ var jsonMonsterData = [
     "name": "Wraith",
     "size": "Medium",
     "type": "undead",
-    "subtype": "",
     "alignment": "neutral evil",
     "armor_class": 13,
     "hit_points": 67,
-    "hit_dice": "9d8",
+    "hit_dice": "9d8 + 27",
     "speed": "0 ft., fly 60 ft. (hover)",
     "str": 6,
     "dex": 16,
@@ -17511,37 +18424,30 @@ var jsonMonsterData = [
     "int": 12,
     "wis": 14,
     "cha": 15,
-    "damage_vulnerabilities": "",
     "damage_resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
     "senses": "darkvision 60 ft., passive Perception 12",
     "languages": "the languages it knew in life",
-    "challenge_rating": "5",
+    "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
         "name": "Incorporeal Movement",
-        "desc": "The wraith can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
-        "attack_bonus": 0
+        "desc": "The wraith can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object."
       },
       {
         "name": "Sunlight Sensitivity",
-        "desc": "While in sunlight, the wraith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
-        "attack_bonus": 0
+        "desc": "While in sunlight, the wraith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
       }
     ],
     "actions": [
       {
         "name": "Life Drain",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 21 (4d8 + 3) necrotic damage. The target must succeed on a DC 14 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
-        "attack_bonus": 6,
-        "damage_dice": "4d8",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 21 (4d8 + 3) necrotic damage. The target must succeed on a DC 14 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
       },
       {
         "name": "Create Specter",
-        "desc": "The wraith targets a humanoid within 10 feet of it that has been dead for no longer than 1 minute and died violently. The target's spirit rises as a specter in the space of its corpse or in the nearest unoccupied space. The specter is under the wraith's control. The wraith can have no more than seven specters under its control at one time.",
-        "attack_bonus": 0
+        "desc": "The wraith targets a humanoid within 10 feet of it that has been dead for no longer than 1 minute and died violently. The target's spirit rises as a specter in the space of its corpse or in the nearest unoccupied space. The specter is under the wraith's control. The wraith can have no more than seven specters under its control at one time."
       }
     ]
   },
@@ -17549,11 +18455,10 @@ var jsonMonsterData = [
     "name": "Wyvern",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "unaligned",
     "armor_class": 13,
     "hit_points": 110,
-    "hit_dice": "13d10",
+    "hit_dice": "13d10 + 39",
     "speed": "20 ft., fly 80 ft.",
     "str": 19,
     "dex": 10,
@@ -17561,40 +18466,30 @@ var jsonMonsterData = [
     "int": 5,
     "wis": 12,
     "cha": 6,
-    "perception": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 4
+      }
+    ],
     "senses": "darkvision 60 ft., passive Perception 14",
-    "languages": "",
-    "challenge_rating": "6",
+    "challenge_rating": "6 (2300 XP)",
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The wyvern makes two attacks: one with its bite and one with its stinger. While flying, it can use its claws in place of one other attack.",
-        "attack_bonus": 0
+        "desc": "The wyvern makes two attacks: one with its bite and one with its stinger. While flying, it can use its claws in place of one other attack."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage."
       },
       {
         "name": "Claws",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d8",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage."
       },
       {
         "name": "Stinger",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage. The target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage. The target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
@@ -17602,11 +18497,10 @@ var jsonMonsterData = [
     "name": "Xorn",
     "size": "Medium",
     "type": "elemental",
-    "subtype": "",
     "alignment": "neutral",
     "armor_class": 19,
     "hit_points": 73,
-    "hit_dice": "7d8",
+    "hit_dice": "7d8 + 42",
     "speed": "20 ft., burrow 20 ft.",
     "str": 17,
     "dex": 10,
@@ -17614,51 +18508,133 @@ var jsonMonsterData = [
     "int": 11,
     "wis": 10,
     "cha": 11,
-    "perception": 6,
-    "stealth": 3,
-    "damage_vulnerabilities": "",
+    "skills": [
+      {
+        "name": "perception",
+        "val": 6
+      },
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
     "damage_resistances": "piercing and slashing from nonmagical weapons that aren't adamantine",
-    "damage_immunities": "",
-    "condition_immunities": "",
     "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 16",
     "languages": "Terran",
-    "challenge_rating": "5",
+    "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
         "name": "Earth Glide",
-        "desc": "The xorn can burrow through nonmagical, unworked earth and stone. While doing so, the xorn doesn't disturb the material it moves through.",
-        "attack_bonus": 0
+        "desc": "The xorn can burrow through nonmagical, unworked earth and stone. While doing so, the xorn doesn't disturb the material it moves through."
       },
       {
         "name": "Stone Camouflage",
-        "desc": "The xorn has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
-        "attack_bonus": 0
+        "desc": "The xorn has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
       },
       {
         "name": "Treasure Sense",
-        "desc": "The xorn can pinpoint, by scent, the location of precious metals and stones, such as coins and gems, within 60 ft. of it.",
-        "attack_bonus": 0
+        "desc": "The xorn can pinpoint, by scent, the location of precious metals and stones, such as coins and gems, within 60 ft. of it."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The xorn makes three claw attacks and one bite attack.",
-        "attack_bonus": 0
+        "desc": "The xorn makes three claw attacks and one bite attack."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (3d6 + 3) piercing damage.",
-        "attack_bonus": 6,
-        "damage_dice": "3d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (3d6 + 3) piercing damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
-        "attack_bonus": 6,
-        "damage_dice": "1d6",
-        "damage_bonus": 3
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage."
+      }
+    ]
+  },
+  {
+    "name": "Yochlol",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "demon, shapechanger",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 136,
+    "hit_dice": "16d8 + 64",
+    "speed": "30 ft., climb 30 ft.",
+    "str": 15,
+    "dex": 14,
+    "con": 18,
+    "int": 13,
+    "wis": 15,
+    "cha": 15,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 6
+      },
+      {
+        "name": "int",
+        "val": 5
+      },
+      {
+        "name": "wis",
+        "val": 6
+      },
+      {
+        "name": "cha",
+        "val": 6
+      }
+    ],
+    "skills": [
+      {
+        "name": "deception",
+        "val": 10
+      },
+      {
+        "name": "insight",
+        "val": 6
+      }
+    ],
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 120 ft., passive Perception 12",
+    "languages": "Abyssal, Elvish, Undercommon",
+    "challenge_rating": "10 (5900 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": "The yochlol can use its action to polymorph into a form that resembles a female drow or giant spider, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The yochlol has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Spider Climb",
+        "desc": " The yochlol can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The yochlol's spellcasting ability is Charisma (spell save DC 14). The yochlol can innately cast the following spells, requiring no material components:\n\nAt will: detect thoughts, web\n1/day: dominate person"
+      },
+      {
+        "name": "Web Walker",
+        "desc": "The yochlol ignores movement restrictions caused by webbing."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The yochlol makes two melee attacks."
+      },
+      {
+        "name": "Slam (Bite in Spider Form)",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft. (10 ft. in demon form}, one target. Hit: 5 (1d6 + 2) bludgeoning (piercing in spider form) damage plus 21 (6d6) poison damage."
+      },
+      {
+        "name": "Mist Form",
+        "desc": "The yochlol transforms into toxic mist or reverts to its true form. Any equipment it is wearing or carrying is also transformed. It reverts to its true form if it dies. While in mist form, the yochlol is incapacitated and can't speak. It has a flying speed of 30 feet, can hover, and can pass through any space that isn't airtight. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to nonmagical damage. While in mist form, the yochlol can enter a creature's space and stop there. Each time that creature starts its turn with the yochlol in its space, the creature must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. While poisoned in this way, the target is incapacitated."
       }
     ]
   },
@@ -17666,11 +18642,10 @@ var jsonMonsterData = [
     "name": "Young Black Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "chaotic evil",
     "armor_class": 18,
     "hit_points": 127,
-    "hit_dice": "15d10",
+    "hit_dice": "15d10 + 45",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
     "str": 19,
     "dex": 14,
@@ -17678,51 +18653,60 @@ var jsonMonsterData = [
     "int": 12,
     "wis": 11,
     "cha": 15,
-    "dexterity_save": 5,
-    "constitution_save": 6,
-    "wisdom_save": 3,
-    "charisma_save": 5,
-    "perception": 6,
-    "stealth": 5,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 5
+      },
+      {
+        "name": "con",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 3
+      },
+      {
+        "name": "cha",
+        "val": 5
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 6
+      },
+      {
+        "name": "stealth",
+        "val": 5
+      }
+    ],
     "damage_immunities": "acid",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 16",
     "languages": "Common, Draconic",
-    "challenge_rating": "7",
+    "challenge_rating": "7 (2900 XP)",
     "special_abilities": [
       {
         "name": "Amphibious",
-        "desc": "The dragon can breathe air and water.",
-        "attack_bonus": 0
+        "desc": "The dragon can breathe air and water."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) acid damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d10 + 1d8",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) acid damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage."
       },
       {
         "name": "Acid Breath (Recharge 5-6)",
-        "desc": "The dragon exhales acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 49 (11d8) acid damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 0,
-        "damage_dice": "11d8"
+        "desc": "The dragon exhales acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 49 (11d8) acid damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
@@ -17730,11 +18714,10 @@ var jsonMonsterData = [
     "name": "Young Blue Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "lawful evil",
     "armor_class": 18,
     "hit_points": 152,
-    "hit_dice": "16d10",
+    "hit_dice": "16d10 + 64",
     "speed": "40 ft., burrow 40 ft., fly 80 ft.",
     "str": 21,
     "dex": 10,
@@ -17742,44 +18725,54 @@ var jsonMonsterData = [
     "int": 14,
     "wis": 13,
     "cha": 17,
-    "dexterity_save": 4,
-    "constitution_save": 8,
-    "wisdom_save": 5,
-    "charisma_save": 7,
-    "perception": 9,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 4
+      },
+      {
+        "name": "con",
+        "val": 8
+      },
+      {
+        "name": "wis",
+        "val": 5
+      },
+      {
+        "name": "cha",
+        "val": 7
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 9
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "lightning",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 19",
     "languages": "Common, Draconic",
-    "challenge_rating": "9",
+    "challenge_rating": "9 (5000 XP)",
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage plus 5 (1d10) lightning damage.",
-        "attack_bonus": 9,
-        "damage_dice": "2d10 + 1d10",
-        "damage_bonus": 5
+        "desc": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage plus 5 (1d10) lightning damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
-        "attack_bonus": 9,
-        "damage_dice": "2d6",
-        "damage_bonus": 5
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage."
       },
       {
         "name": "Lightning Breath (Recharge 5-6)",
-        "desc": "The dragon exhales lightning in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 0,
-        "damage_dice": "10d10"
+        "desc": "The dragon exhales lightning in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
@@ -17787,11 +18780,10 @@ var jsonMonsterData = [
     "name": "Young Brass Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "chaotic good",
     "armor_class": 17,
     "hit_points": 110,
-    "hit_dice": "13d10",
+    "hit_dice": "13d10 + 39",
     "speed": "40 ft., burrow 20 ft., fly 80 ft.",
     "str": 19,
     "dex": 10,
@@ -17799,45 +18791,58 @@ var jsonMonsterData = [
     "int": 12,
     "wis": 11,
     "cha": 15,
-    "dexterity_save": 3,
-    "constitution_save": 6,
-    "wisdom_save": 3,
-    "charisma_save": 5,
-    "perception": 6,
-    "persuasion": 5,
-    "stealth": 3,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 3
+      },
+      {
+        "name": "con",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 3
+      },
+      {
+        "name": "cha",
+        "val": 5
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 6
+      },
+      {
+        "name": "persuasion",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
     "damage_immunities": "fire",
-    "condition_immunities": "",
-    "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 16",
+    "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 20",
     "languages": "Common, Draconic",
-    "challenge_rating": "6",
+    "challenge_rating": "6 (2300 XP)",
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d10",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage."
       },
       {
         "name": "Breath Weapons (Recharge 5-6)",
-        "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.\nSleep Breath. The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
-        "attack_bonus": 0,
-        "damage_dice": "12d6"
+        "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.\nSleep Breath. The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
       }
     ]
   },
@@ -17845,11 +18850,10 @@ var jsonMonsterData = [
     "name": "Young Bronze Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "lawful good",
     "armor_class": 18,
     "hit_points": 142,
-    "hit_dice": "15d10",
+    "hit_dice": "15d10 + 60",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
     "str": 21,
     "dex": 10,
@@ -17857,52 +18861,64 @@ var jsonMonsterData = [
     "int": 14,
     "wis": 13,
     "cha": 17,
-    "dexterity_save": 3,
-    "constitution_save": 7,
-    "wisdom_save": 4,
-    "charisma_save": 6,
-    "insight": 4,
-    "perception": 7,
-    "stealth": 3,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 3
+      },
+      {
+        "name": "con",
+        "val": 7
+      },
+      {
+        "name": "wis",
+        "val": 5
+      },
+      {
+        "name": "cha",
+        "val": 6
+      }
+    ],
+    "skills": [
+      {
+        "name": "insight",
+        "val": 4
+      },
+      {
+        "name": "perception",
+        "val": 7
+      },
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
     "damage_immunities": "lightning",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 17",
     "languages": "Common, Draconic",
-    "challenge_rating": "8",
+    "challenge_rating": "8 (3900 XP)",
     "special_abilities": [
       {
         "name": "Amphibious",
-        "desc": "The dragon can breathe air and water.",
-        "attack_bonus": 0
+        "desc": "The dragon can breathe air and water."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage.",
-        "attack_bonus": 8,
-        "damage_dice": "2d10",
-        "damage_bonus": 5
+        "desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage."
       },
       {
         "name": "Claw",
         "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
-        "attack_bonus": 8,
-        "damage_dice": "2d6",
-        "damage_bonus": 5
       },
       {
         "name": "Breath Weapons (Recharge 5-6)",
-        "desc": "The dragon uses one of the following breath weapons.\nLightning Breath. The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.\nRepulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon.",
-        "attack_bonus": 0,
-        "damage_dice": "10d10"
+        "desc": "The dragon uses one of the following breath weapons.\nLightning Breath. The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.\nRepulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon."
       }
     ]
   },
@@ -17910,11 +18926,10 @@ var jsonMonsterData = [
     "name": "Young Copper Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "chaotic good",
     "armor_class": 17,
     "hit_points": 119,
-    "hit_dice": "14d10",
+    "hit_dice": "14d10 + 42",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
     "str": 19,
     "dex": 12,
@@ -17922,45 +18937,58 @@ var jsonMonsterData = [
     "int": 16,
     "wis": 13,
     "cha": 15,
-    "dexterity_save": 4,
-    "constitution_save": 6,
-    "wisdom_save": 4,
-    "charisma_save": 5,
-    "deception": 5,
-    "perception": 7,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 4
+      },
+      {
+        "name": "con",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 4
+      },
+      {
+        "name": "cha",
+        "val": 5
+      }
+    ],
+    "skills": [
+      {
+        "name": "deception",
+        "val": 5
+      },
+      {
+        "name": "perception",
+        "val": 7
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "acid",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 17",
     "languages": "Common, Draconic",
-    "challenge_rating": "7",
+    "challenge_rating": "7 (2900 XP)",
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d10",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage."
       },
       {
         "name": "Breath Weapons (Recharge 5-6)",
-        "desc": "The dragon uses one of the following breath weapons.\nAcid Breath. The dragon exhales acid in an 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 40 (9d8) acid damage on a failed save, or half as much damage on a successful one.\nSlowing Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
-        "attack_bonus": 0,
-        "damage_dice": "9d8"
+        "desc": "The dragon uses one of the following breath weapons.\nAcid Breath. The dragon exhales acid in an 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 40 (9d8) acid damage on a failed save, or half as much damage on a successful one.\nSlowing Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save."
       }
     ]
   },
@@ -17968,11 +18996,10 @@ var jsonMonsterData = [
     "name": "Young Gold Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "lawful good",
     "armor_class": 18,
     "hit_points": 178,
-    "hit_dice": "17d10",
+    "hit_dice": "17d10 + 85",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
     "str": 23,
     "dex": 14,
@@ -17980,53 +19007,68 @@ var jsonMonsterData = [
     "int": 16,
     "wis": 13,
     "cha": 20,
-    "dexterity_save": 6,
-    "constitution_save": 9,
-    "wisdom_save": 5,
-    "charisma_save": 9,
-    "insight": 5,
-    "perception": 9,
-    "persuasion": 9,
-    "stealth": 6,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 6
+      },
+      {
+        "name": "con",
+        "val": 9
+      },
+      {
+        "name": "wis",
+        "val": 5
+      },
+      {
+        "name": "cha",
+        "val": 9
+      }
+    ],
+    "skills": [
+      {
+        "name": "insight",
+        "val": 5
+      },
+      {
+        "name": "perception",
+        "val": 9
+      },
+      {
+        "name": "persuasion",
+        "val": 9
+      },
+      {
+        "name": "stealth",
+        "val": 6
+      }
+    ],
     "damage_immunities": "fire",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 19",
     "languages": "Common, Draconic",
-    "challenge_rating": "10",
+    "challenge_rating": "10 (5900 XP)",
     "special_abilities": [
       {
         "name": "Amphibious",
-        "desc": "The dragon can breathe air and water.",
-        "attack_bonus": 0
+        "desc": "The dragon can breathe air and water."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.",
-        "attack_bonus": 10,
-        "damage_dice": "2d10",
-        "damage_bonus": 6
+        "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.",
-        "attack_bonus": 10,
-        "damage_dice": "2d6",
-        "damage_bonus": 6
+        "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage."
       },
       {
         "name": "Breath Weapons (Recharge 5-6)",
-        "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 55 (10d10) fire damage on a failed save, or half as much damage on a successful one.\nWeakening Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-        "attack_bonus": 0,
-        "damage_dice": "10d10"
+        "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 55 (10d10) fire damage on a failed save, or half as much damage on a successful one.\nWeakening Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
       }
     ]
   },
@@ -18034,11 +19076,10 @@ var jsonMonsterData = [
     "name": "Young Green Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "lawful evil",
     "armor_class": 18,
     "hit_points": 136,
-    "hit_dice": "16d10",
+    "hit_dice": "16d10 + 48",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
     "str": 19,
     "dex": 12,
@@ -18046,52 +19087,65 @@ var jsonMonsterData = [
     "int": 16,
     "wis": 13,
     "cha": 15,
-    "dexterity_save": 4,
-    "constitution_save": 6,
-    "wisdom_save": 4,
-    "charisma_save": 5,
-    "deception": 5,
-    "perception": 7,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 4
+      },
+      {
+        "name": "con",
+        "val": 6
+      },
+      {
+        "name": "wis",
+        "val": 4
+      },
+      {
+        "name": "cha",
+        "val": 5
+      }
+    ],
+    "skills": [
+      {
+        "name": "deception",
+        "val": 5
+      },
+      {
+        "name": "perception",
+        "val": 7
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 17",
     "languages": "Common, Draconic",
-    "challenge_rating": "8",
+    "challenge_rating": "8 (3900 XP)",
     "special_abilities": [
       {
         "name": "Amphibious",
-        "desc": "The dragon can breathe air and water.",
-        "attack_bonus": 0
+        "desc": "The dragon can breathe air and water."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 7 (2d6) poison damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d10 + 2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 7 (2d6) poison damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage."
       },
       {
         "name": "Poison Breath (Recharge 5-6)",
-        "desc": "The dragon exhales poisonous gas in a 30-foot cone. Each creature in that area must make a DC 14 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 0,
-        "damage_dice": "12d6"
+        "desc": "The dragon exhales poisonous gas in a 30-foot cone. Each creature in that area must make a DC 14 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
@@ -18099,11 +19153,10 @@ var jsonMonsterData = [
     "name": "Young Red Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "chaotic evil",
     "armor_class": 18,
     "hit_points": 178,
-    "hit_dice": "17d10",
+    "hit_dice": "17d10 + 85",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
     "str": 23,
     "dex": 10,
@@ -18111,44 +19164,54 @@ var jsonMonsterData = [
     "int": 14,
     "wis": 11,
     "cha": 19,
-    "dexterity_save": 4,
-    "constitution_save": 9,
-    "wisdom_save": 4,
-    "charisma_save": 8,
-    "perception": 8,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 4
+      },
+      {
+        "name": "con",
+        "val": 9
+      },
+      {
+        "name": "wis",
+        "val": 4
+      },
+      {
+        "name": "cha",
+        "val": 8
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 8
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "fire",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 18",
     "languages": "Common, Draconic",
-    "challenge_rating": "10",
+    "challenge_rating": "10 (18000 XP)",
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 3 (1d6) fire damage.",
-        "attack_bonus": 10,
-        "damage_dice": "2d10 + 1d6",
-        "damage_bonus": 6
+        "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 3 (1d6) fire damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.",
-        "attack_bonus": 10,
-        "damage_dice": "2d6",
-        "damage_bonus": 6
+        "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage."
       },
       {
         "name": "Fire Breath (Recharge 5-6)",
-        "desc": "The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 0,
-        "damage_dice": "16d6"
+        "desc": "The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
@@ -18156,11 +19219,10 @@ var jsonMonsterData = [
     "name": "Young Silver Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "lawful good",
     "armor_class": 18,
     "hit_points": 168,
-    "hit_dice": "16d10",
+    "hit_dice": "16d10 + 80",
     "speed": "40 ft., fly 80 ft.",
     "str": 23,
     "dex": 10,
@@ -18168,46 +19230,62 @@ var jsonMonsterData = [
     "int": 14,
     "wis": 11,
     "cha": 19,
-    "dexterity_save": 4,
-    "constitution_save": 9,
-    "wisdom_save": 4,
-    "charisma_save": 8,
-    "arcana": 6,
-    "history": 6,
-    "perception": 8,
-    "stealth": 4,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 4
+      },
+      {
+        "name": "con",
+        "val": 9
+      },
+      {
+        "name": "wis",
+        "val": 4
+      },
+      {
+        "name": "cha",
+        "val": 8
+      }
+    ],
+    "skills": [
+      {
+        "name": "arcana",
+        "val": 6
+      },
+      {
+        "name": "history",
+        "val": 6
+      },
+      {
+        "name": "perception",
+        "val": 8
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
     "damage_immunities": "cold",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 18",
     "languages": "Common, Draconic",
-    "challenge_rating": "9",
+    "challenge_rating": "9 (5000 XP)",
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.",
-        "attack_bonus": 10,
-        "damage_dice": "2d10",
-        "damage_bonus": 6
+        "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.",
-        "attack_bonus": 10,
-        "damage_dice": "2d6",
-        "damage_bonus": 6
+        "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage."
       },
       {
         "name": "Breath Weapons (Recharge 5-6)",
-        "desc": "The dragon uses one of the following breath weapons.\nCold Breath. The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.\nParalyzing Breath. The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-        "attack_bonus": 0,
-        "damage_dice": "12d8"
+        "desc": "The dragon uses one of the following breath weapons.\nCold Breath. The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.\nParalyzing Breath. The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
       }
     ]
   },
@@ -18215,11 +19293,10 @@ var jsonMonsterData = [
     "name": "Young White Dragon",
     "size": "Large",
     "type": "dragon",
-    "subtype": "",
     "alignment": "chaotic evil",
     "armor_class": 17,
     "hit_points": 133,
-    "hit_dice": "14d10",
+    "hit_dice": "14d10 + 56",
     "speed": "40 ft., burrow 20 ft., fly 80 ft., swim 40 ft.",
     "str": 18,
     "dex": 10,
@@ -18227,51 +19304,60 @@ var jsonMonsterData = [
     "int": 6,
     "wis": 11,
     "cha": 12,
-    "dexterity_save": 3,
-    "constitution_save": 7,
-    "wisdom_save": 3,
-    "charisma_save": 4,
-    "perception": 6,
-    "stealth": 3,
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
+    "saves": [
+      {
+        "name": "dex",
+        "val": 3
+      },
+      {
+        "name": "con",
+        "val": 7
+      },
+      {
+        "name": "wis",
+        "val": 3
+      },
+      {
+        "name": "cha",
+        "val": 4
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 6
+      },
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
     "damage_immunities": "cold",
-    "condition_immunities": "",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 16",
     "languages": "Common, Draconic",
-    "challenge_rating": "6",
+    "challenge_rating": "6 (2300 XP)",
     "special_abilities": [
       {
         "name": "Ice Walk",
-        "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment.",
-        "attack_bonus": 0
+        "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment."
       }
     ],
     "actions": [
       {
         "name": "Multiattack",
-        "desc": "The dragon makes three attacks: one with its bite and two with its claws.",
-        "attack_bonus": 0
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
       },
       {
         "name": "Bite",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) cold damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d10 + 1d8",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) cold damage."
       },
       {
         "name": "Claw",
-        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
-        "attack_bonus": 7,
-        "damage_dice": "2d6",
-        "damage_bonus": 4
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage."
       },
       {
         "name": "Cold Breath (Recharge 5-6)",
-        "desc": "The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 45 (10d8) cold damage on a failed save, or half as much damage on a successful one.",
-        "attack_bonus": 0,
-        "damage_dice": "10d8"
+        "desc": "The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 45 (10d8) cold damage on a failed save, or half as much damage on a successful one."
       }
     ]
   },
