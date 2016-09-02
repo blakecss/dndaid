@@ -6420,6 +6420,84 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     ]
   },
   {
+    "name": "Drow Elite Warrior",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "elf",
+    "alignment": "neutral evil",
+    "armor_class": 18,
+    "hit_points": 71,
+    "hit_dice": "11d8 + 22",
+    "speed": "30 ft.",
+    "str": 13,
+    "dex": 18,
+    "con": 14,
+    "int": 11,
+    "wis": 13,
+    "cha": 12,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 7
+      },
+      {
+        "name": "con",
+        "val": 5
+      },
+      {
+        "name": "wis",
+        "val": 4
+      },
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 4
+      },
+      {
+        "name": "stealth",
+        "val": 10
+      }
+    ],
+    "senses": "darkvision 120 ft., passive Perception 12",
+    "languages": "Elvish, Undercommon",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Fey Ancestry",
+        "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+      },
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The drow's spellcasting ability is Charisma (spell save DC 12). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire, levitate (self only)"
+      },
+      {
+        "name": "Sunlight Sensitivity",
+        "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The drow makes two shortsword attacks."
+      },
+      {
+        "name": "Shortsword",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
+      },
+      {
+        "name": "Hand Crossbow",
+        "desc": "Ranged Weapon Attack: +7 to hit, range 30/120 ft., one target. Hit: 7 (1d6 + 4) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake."
+      }
+    ],
+    "reactions": [
+      {
+        "name": "Parry",
+        "desc": "The drow adds 3 to its AC against one melee attack that would hit it. To do so, the drow must see the attacker and be wielding a melee weapon."
+      }
+    ]
+  },
+  {
     "name": "Druid",
     "size": "Medium",
     "type": "humanoid",
@@ -19212,6 +19290,87 @@ restrained. A creature can use its action to make a DC 12 Strength check, freein
       {
         "name": "Fire Breath (Recharge 5-6)",
         "desc": "The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one."
+      }
+    ]
+  },
+  {
+    "name": "Young Red Shadow Dragon",
+    "size": "Large",
+    "type": "dragon",
+    "alignment": "chaotic evil",
+    "armor_class": 18,
+    "hit_points": 178,
+    "hit_dice": "17d10 + 85",
+    "speed": "40 ft., climb 40 ft., fly 80 ft.",
+    "str": 23,
+    "dex": 10,
+    "con": 21,
+    "int": 14,
+    "wis": 11,
+    "cha": 19,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 4
+      },
+      {
+        "name": "con",
+        "val": 9
+      },
+      {
+        "name": "wis",
+        "val": 4
+      },
+      {
+        "name": "cha",
+        "val": 8
+      }
+    ],
+    "skills": [
+      {
+        "name": "perception",
+        "val": 8
+      },
+      {
+        "name": "stealth",
+        "val": 8
+      }
+    ],
+    "damage_resistances": "necrotic",
+    "damage_immunities": "fire",
+    "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 18",
+    "languages": "Common, Draconic",
+    "challenge_rating": "13 (10000 XP)",
+    "special_abilities": [
+      {
+        "name": "Living Shadow",
+        "desc": "While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
+      },
+      {
+        "name": "Shadow Stealth",
+        "desc": "While in dim light or darkness, the dragon can take the Hide action as a bonus action."
+      },
+      {
+        "name": "Sunlight Sensitivity",
+        "desc": "While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The dragon makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 3 (1d6) necrotic damage."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage."
+      },
+      {
+        "name": "Shadow Breath (Recharge 5-6)",
+        "desc": "The dragon exhales shadowy fire in a 30-foot cone. Each creature in that area must make a DC 18 Dexterity saving throw, taking 56 (16d6) necrotic damage on a failed save, or half as much damage on a successful one. A humanoid reduced to 0 hit points by this damage dies, and an undead shadow rises from its corpse and acts immediately after the dragon in the initiative count. The shadow is under the dragon's control."
       }
     ]
   },
