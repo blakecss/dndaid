@@ -151,6 +151,68 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Abominable Yeti",
+    "size": "Huge",
+    "type": "monstrosity",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 137,
+    "hit_dice": "11d12 + 66",
+    "speed": "40 ft., climb 40 ft.",
+    "str": 24,
+    "dex": 10,
+    "con": 22,
+    "int": 9,
+    "wis": 13,
+    "cha": 9,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
+    "damage_immunities": "cold",
+    "senses": "darkvision 60 ft., passive Perception 15",
+    "languages": "Yeti",
+    "challenge_rating": "9 (5000 XP)",
+    "special_abilities": [
+      {
+        "name": "Fear of Fire",
+        "desc": "If the yeti takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+      },
+      {
+        "name": "Keen Smell",
+        "desc": "The yeti has advantage on Wisdom (Perception) checks that rely on smell."
+      },
+      {
+        "name": "Snow Camouflage",
+        "desc": "The yeti has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The yeti can use its Chilling Gaze and makes two claw attacks."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 14 (2d6 + 7) slashing damage plus 7 (2d6) cold damage."
+      },
+      {
+        "name": "Chilling Gaze",
+        "desc": "The yeti targets one creature it can see within 30 feet of it. If the target can see the yeti, the target must succeed on a DC 18 Constitution saving throw against this magic or take 21 (6d6) cold damage and then be paralyzed for 1 minute, unless it is immune to cold damage. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target's saving throw is successful, or if the effect ends on it, the target is immune to this yeti's gaze for 1 hour."
+      },
+      {
+        "name": "Cold Breath (Recharge 6)",
+        "desc": "The yeti exhales a 30-foot cone of frigid air. Each creature in that area must make a DC 18 Constitution saving throw, taking 45 (10d8) cold damage on a failed save, or half as much damage on a successful one."
+      }
+    ]
+  },
+  {
     "name": "Acolyte",
     "size": "Medium",
     "type": "humanoid",
@@ -2586,6 +2648,93 @@ var jsonMonsterData = [
     ]
   },
   {
+    "name": "Arcanaloth",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "yogoloth",
+    "alignment": "neutral evil",
+    "armor_class": 17,
+    "hit_points": 104,
+    "hit_dice": "16d8 + 32",
+    "speed": "30 ft., fly 30 ft.",
+    "str": 17,
+    "dex": 12,
+    "con": 14,
+    "int": 20,
+    "wis": 16,
+    "cha": 17,
+    "saves": [
+      {
+        "name": "dex",
+        "val": 5
+      },
+      {
+        "name": "int",
+        "val": 9
+      },
+      {
+        "name": "wis",
+        "val": 7
+      },
+      {
+        "name": "cha",
+        "val": 7
+      }
+    ],
+    "skills": [
+      {
+        "name": "arcana",
+        "val": 13
+      },
+      {
+        "name": "deception",
+        "val": 9
+      },
+      {
+        "name": "insight",
+        "val": 9
+      },
+      {
+        "name": "perception",
+        "val": 7
+      }
+    ],
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "acid, poison",
+    "condition_immunities": "charmed, poisoned",
+    "senses": "truesight 120 ft., passive Perception 17",
+    "languages": "all, telepathy 120 ft.",
+    "challenge_rating": "12 (8400 XP)",
+    "special_abilities": [
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The arcanaloth's innate spellcasting ability is Charisma (spell save DC 15). The arcanaloth can innately cast the following spells, requiring no material components:\n\nAt will: alter self, darkness, heat metal, invisibility (self only), magic missile"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The arcanaloth has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Magic Weapons",
+        "desc": "The arcanaloth's weapon attacks are magical."
+      },
+      {
+        "name": "Spellcasting",
+        "desc": "The arcanaloth is a 16th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The arcanaloth has the following wizard spells prepared:\n\nCantrips (at will): fire bolt, mage hand, minor illusion, prestidigitation\n1st level (4 slots): detect magic, identify, shield, Tenser's floating disk\n2nd level (3 slots): detect thoughts, mirror image, phantasmal force, suggestion\n3rd level (3 slots): counterspell, fear, fireball\n4th level (3 slots): banishment, dimension door\n5th level (2 slots): contact other plane, hold monster\n6th level (1 slot): chain lightning\n7th level (1 slot): finger of death\n8th level (1 slot): mind blank"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) slashing damage. The target must make a DC 14 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Teleport",
+        "desc": "The arcanaloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      }
+    ]
+  },
+  {
     "name": "Archmage",
     "size": "Medium",
     "type": "humanoid",
@@ -3550,6 +3699,49 @@ that turn, but attack rolls against it have advantage until the start of its nex
     ]
   },
   {
+    "name": "Beholder Zombie",
+    "size": "Large",
+    "type": "undead",
+    "alignment": "neutral evil",
+    "armor_class": 15,
+    "hit_points": 93,
+    "hit_dice": "11d10 + 33",
+    "speed": "0 ft., fly 20 ft. (hover)",
+    "str": 10,
+    "dex": 8,
+    "con": 16,
+    "int": 3,
+    "wis": 8,
+    "cha": 5,
+    "saves": [
+      {
+        "names": "wis",
+        "val": 2
+      }
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60 ft., passive Perception 9",
+    "languages": "understand Deep Speech and Undercommon but can't speak",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Undead Fortitude",
+        "desc": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 14 (4d6) piercing damage."
+      },
+      {
+        "name": "Eye Ray",
+        "desc": "The zombie uses a random magical eye ray, choosing a target that it can see within 60 feet of it.\n\n1. Paralyzing Ray. The targeted creature must succeed on a DC 14 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n2. Fear Ray. The targeted creature must succeed on a DC 14 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n3. Enervation Ray. The targeted creature must make a DC 14 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one.\n4. Disintegration Ray. If the target is a creature, it must succeed on a DC 14 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smaller non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger non magical object or creation of magical force, this ray disintegrates a 10-foot cube of it."
+      }
+    ]
+  },
+  {
     "name": "Berserker",
     "size": "Medium",
     "type": "humanoid",
@@ -3868,6 +4060,56 @@ that turn, but attack rolls against it have advantage until the start of its nex
       {
         "name": "Lightning Breath (Recharge 5-6)",
         "desc": "The dragon exhales lightning in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one."
+      }
+    ]
+  },
+  {
+    "name": "Blue Slaad",
+    "size": "Large",
+    "type": "aberration",
+    "alignment": "chaotic neutral",
+    "armor_class": 15,
+    "hit_points": 123,
+    "hit_dice": "13d10 + 52",
+    "speed": "30 ft.",
+    "str": 20,
+    "dex": 15,
+    "con": 18,
+    "int": 7,
+    "wis": 7,
+    "cha": 9,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 1
+      }
+    ],
+    "damage_resistances": "acid, cold, fire, lightning, thunder",
+    "senses": "darkvision 60 ft., passive Perception 11",
+    "languages": "Slaad, telepathy 60 ft.",
+    "challenge_rating": "7 (2900 XP)",
+    "special_abilities": [
+      {
+        "name": "Magic Resistance",
+        "desc": "The slaad has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Regeneration",
+        "desc": "The slaad regains 10 hit points at the start of its turn if it has at least 1 hit point."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The slaad makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "desc": " Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) piercing damage."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage. If the target is a humanoid, it must succeed on a DC 15 Constitution saving throw or be infected with a disease called chaos phage. While infected, the target can't regain hit points, and its hit point maximum is reduced by 10 (3d6) every 24 hours. If the disease reduces the target's hit point maximum to 0, the target instantly transforms into a red slaad or, if it has the ability to cast spells of 3rd level or higher, a green slaad. Only a wish spell can reverse the transformation."
       }
     ]
   },
@@ -5757,6 +5999,77 @@ advantage on saving throws against features that turn undead."
     ]
   },
   {
+    "name": "Death Slaad",
+    "size": "Medium",
+    "type": "aberration",
+    "subtype": "shapechanger",
+    "alignment": "chaotic evil",
+    "armor_class": 18,
+    "hit_points": 170,
+    "hit_dice": "20d8 + 80",
+    "speed": "30 ft.",
+    "str": 20,
+    "dex": 15,
+    "con": 19,
+    "int": 15,
+    "wis": 10,
+    "cha": 16,
+    "skills": [
+      {
+        "name": "arcana",
+        "val": 6
+      },
+      {
+        "name": "perception",
+        "val": 8
+      }
+    ],
+    "damage_resistances": "acid, cold, fire, lightning, thunder",
+    "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 18",
+    "languages": "Slaad, telepathy 60 ft.",
+    "challenge_rating": "10 (5900 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": " The slaad can use its action to polymorph into a Small or Medium humanoid, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      },
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The slaad's innate spellcasting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). The slaad can innately cast the following spells, requiring no material components:\n\nAt will: detect magic, detect thoughts, invisibility (self only), mage hand, major image\n2/day each: fear, fireball, fly, tongues\n1/day each: cloudkill, plane shift"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The slaad has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Magic Weapons",
+        "desc": "The slaad's weapon attacks are magical."
+      },
+      {
+        "name": "Regeneration",
+        "desc": "The slaad regains 10 hit points at the start of its turn if it has at least 1 hit point."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The slaad makes three attacks: one with its bite and two with its claws or greatsword."
+      },
+      {
+        "name": "Bite (Slaad Form Only)",
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) piercing damage plus 7 (2d6) necrotic damage."
+      },
+      {
+        "name": "Claw (Slaad Form Only)",
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 10 (1d10 + 5) slashing damage plus 7 (2d6) necrotic damage."
+      },
+      {
+        "name": "Greatsword",
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage plus 7 (2d6) necrotic damage."
+      }
+    ]
+  },
+  {
     "name": "Death Tyrant",
     "size": "Large",
     "type": "undead",
@@ -7639,7 +7952,7 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     "damage_immunities": "fire",
     "senses": "passive Perception 16",
     "languages": "Giant",
-    "challenge_rating": "9",
+    "challenge_rating": "9 (5000 XP)",
     "actions": [
       {
         "name": "Multiattack",
@@ -7652,6 +7965,48 @@ saving throws. The target can repeat the saving throw at the end of each of its 
       {
         "name": "Rock",
         "desc": "Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit: 29 (4d10 + 7) bludgeoning damage."
+      }
+    ]
+  },
+  {
+    "name": "Fire Snake",
+    "size": "Medium",
+    "type": "elemental",
+    "alignment": "neutral evil",
+    "armor_class": 14,
+    "hit_points": 22,
+    "hit_dice": "5d8",
+    "speed": "30 ft.",
+    "str": 12,
+    "dex": 14,
+    "con": 11,
+    "int": 7,
+    "wis": 10,
+    "cha": 8,
+    "damage_vulnerabilities": "cold",
+    "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "fire",
+    "senses": "darkvision 60 ft., passive Perception 10",
+    "languages": "understands Ignan but can't speak",
+    "challenge_rating": "1 (200 XP)",
+    "special_abilities": [
+      {
+        "name": "Heated Body",
+        "desc": "A creature that touches the snake or hits it with a melee attack while within 5 feet of it takes 3 (1d6) fire damage."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The snake makes two attacks: one with its bite and one with its tail."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage plus 3 (1d6) fire damage."
+      },
+      {
+        "name": "Tail",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage plus 3 (1d6) fire damage."
       }
     ]
   },
@@ -10353,6 +10708,73 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     ]
   },
   {
+    "name": "Gray Slaad",
+    "size": "Medium",
+    "type": "aberration",
+    "subtype": "shapechanger",
+    "alignment": "chaotic neutral",
+    "armor_class": 18,
+    "hit_points": 127,
+    "hit_dice": "17d8 + 51",
+    "speed": "30 ft.",
+    "str": 17,
+    "dex": 17,
+    "con": 16,
+    "int": 13,
+    "wis": 8,
+    "cha": 14,
+    "skills": [
+      {
+        "name": "arcana",
+        "val": 5
+      },
+      {
+        "name": "perception",
+        "val": 6
+      }
+    ],
+    "damage_resistances": "acid, cold, fire, lightning, thunder",
+    "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 16",
+    "languages": "Slaad, telepathy 60 ft.",
+    "challenge_rating": "9 (5000 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": " The slaad can use its action to polymorph into a Small or Medium humanoid, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      },
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The slaad's innate spellcasting ability is Charisma (spell save DC 14). The slaad can innately cast the following spells, requiring no material components:\n\nAt will: detect magic, detect thoughts, invisibility (self only), mage hand, major image\n2/day each: fear, fly, fireball, tongues\nl/day: plane shift (self only)"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The slaad has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Regeneration",
+        "desc": "The slaad regains 10 hit points at the start of its turn if it has at least 1 hit point."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The slaad makes three attacks: one with its bite and two with its claws or greatsword."
+      },
+      {
+        "name": "Bite (Slaad Form Only)",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage."
+      },
+      {
+        "name": "Claw (Slaad Form Only)",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) slashing damage."
+      },
+      {
+        "name": "Greatsword",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage."
+      }
+    ]
+  },
+  {
     "name": "Green Dragon Wyrmling",
     "size": "Medium",
     "type": "dragon",
@@ -10491,6 +10913,77 @@ saving throws. The target can repeat the saving throw at the end of each of its 
       {
         "name": "Invisible Passage",
         "desc": "The hag magically turns invisible until she attacks or casts a spell, or until her concentration ends (as if concentrating on a spell). While invisible, she leaves no physical evidence of her passage, so she can be tracked only by magic. Any equipment she wears or carries is invisible with her."
+      }
+    ]
+  },
+  {
+    "name": "Green Slaad",
+    "size": "Large",
+    "type": "aberration",
+    "subtype": "shapechanger",
+    "alignment": "chaotic neutral",
+    "armor_class": 16,
+    "hit_points": 127,
+    "hit_dice": "15d10 + 45",
+    "speed": "30 ft.",
+    "str": 18,
+    "dex": 15,
+    "con": 16,
+    "int": 11,
+    "wis": 8,
+    "cha": 12,
+    "skills": [
+      {
+        "name": "arcana",
+        "val": 3
+      },
+      {
+        "name": "perception",
+        "val": 2
+      }
+    ],
+    "damage_resistances": "acid, cold, fire, lightning, thunder",
+    "senses": "blindsight 30 ft., darkvision 60 ft., passive Perception 12",
+    "languages": "Slaad, telepathy 60 ft.",
+    "challenge_rating": "8 (3900 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": " The slaad can use its action to polymorph into a Small or Medium humanoid, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      },
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The slaad's innate spellcasting ability is Charisma (spell save DC 12). The slaad can innately cast the following spells, requiring no material components:\n\nAt will: detect magic, detect thoughts, mage hand\n2/day each: fear, invisibility (self only)\nl/day: fireball"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The slaad has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Regeneration",
+        "desc": "The slaad regains 10 hit points at the start of its turn if it has at least 1 hit point."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The slaad makes three attacks: one with its bite and two with its claws or staff. Alternatively, it uses its Hurl Flame twice."
+      },
+      {
+        "name": "Bite (Slaad Form Only)",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage."
+      },
+      {
+        "name": "Claw (Slaad Form Only)",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) slashing damage."
+      },
+      {
+        "name": "Staff",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage."
+      },
+      {
+        "name": "Hurl Flame",
+        "desc": "Ranged Spell Attack: +4 to hit, range 60 ft., one target. Hit: 10 (3d6) fire damage. The fire ignites flammable objects that aren't being worn or carried."
       }
     ]
   },
@@ -13709,6 +14202,67 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     ]
   },
   {
+    "name": "Mezzoloth",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "yogoloth",
+    "alignment": "neutral evil",
+    "armor_class": 18,
+    "hit_points": 75,
+    "hit_dice": "10d8 + 30",
+    "speed": "40 ft.",
+    "str": 18,
+    "dex": 11,
+    "con": 16,
+    "int": 7,
+    "wis": 10,
+    "cha": 11,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      }
+    ],
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "acid, poison",
+    "condition_immunities": "poisoned",
+    "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 13",
+    "languages": "Abyssal, Infernal, telepathy 60 ft.",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The mezzoloth's innate spellcasting ability is Charisma (spell save DC 11). The mezzoloth can innately cast the following spells, requiring no material components:\n\n2/day each: darkness, dispel magic\n1/day: cloudkill"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The mezzoloth has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Magic Weapons",
+        "desc": "The mezzoloth's weapon attacks are magical."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The mezzoloth makes two attacks: one with its claws and one with its trident."
+      },
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) slashing damage."
+      },
+      {
+        "name": "Trident",
+        "desc": "Melee or Ranged Weapon Attack: +7 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 7 (1d6 + 4) piercing damage, or 8 (1d8 + 4) piercing damage when held with two claws and used to make a melee attack."
+      },
+      {
+        "name": "Teleport",
+        "desc": "The mezzoloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      }
+    ]
+  },
+  {
     "name": "Mimic",
     "size": "Medium",
     "type": "monstrosity",
@@ -14663,6 +15217,75 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     ]
   },
   {
+    "name": "Nycaloth",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "yogoloth",
+    "alignment": "neutral evil",
+    "armor_class": 18,
+    "hit_points": 123,
+    "hit_dice": "13d10 + 52",
+    "speed": "40 ft., fly 60 ft.",
+    "str": 20,
+    "dex": 11,
+    "con": 19,
+    "int": 12,
+    "wis": 10,
+    "cha": 15,
+    "skills": [
+      {
+        "name": "intimidation",
+        "val": 6
+      },
+      {
+        "name": "perception",
+        "val": 4
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "acid, poison",
+    "condition_immunities": "poisoned",
+    "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 14",
+    "languages": "Abyssal, Infernal, telepathy 60 ft.",
+    "challenge_rating": "9 (5000 XP)",
+    "special_abilities": [
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The nycaloth's innate spellcasting ability is Charisma. The nycaloth can innately cast the following spells, requiring no material components:\n\nAt will: darkness, detect magic, dispel magic, invisibility (self only), mirror image"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The nycaloth has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Magic Weapons",
+        "desc": "The nycaloth's weapon attacks are magical."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The nycaloth makes two melee attacks, or it makes one melee attack and teleports before or after the attack."
+      },
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or take 5 (2d4) slashing damage at the start of each of its turns due to a fiendish wound. Each time the nycaloth hits the wounded target with this attack, the damage dealt by the wound increases by 5 (2d4). Any creature can take an action to stanch the wound with a successful DC 13 Wisdom (Medicine) check. The wound also closes if the target receives magical healing."
+      },
+      {
+        "name": "Greataxe",
+        "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 18 (2d12 + 5) slashing damage."
+      },
+      {
+        "name": "Teleport",
+        "desc": "The mezzoloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      }
+    ]
+  },
+  {
     "name": "Ochre Jelly",
     "size": "Large",
     "type": "ooze",
@@ -14815,13 +15438,56 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     "special_abilities": [
       {
         "name": "Undead Fortitude",
-        "desc": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+        "desc": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
       }
     ],
     "actions": [
       {
         "name": "Morningstar",
         "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage."
+      }
+    ]
+  },
+  {
+    "name": "Ogre Zombie",
+    "size": "Large",
+    "type": "undead",
+    "alignment": "neutral evil",
+    "armor_class": 8,
+    "hit_points": 85,
+    "hit_dice": "9d10 + 36",
+    "speed": "30 ft.",
+    "str": 19,
+    "dex": 6,
+    "con": 18,
+    "int": 3,
+    "wis": 6,
+    "cha": 5,
+    "saves": [
+      {
+        "names": "wis",
+        "val": 0
+      }
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60 ft., passive Perception 8",
+    "languages": "understand Common and Giant but can't speak",
+    "challenge_rating": "2 (450 XP)",
+    "special_abilities": [
+      {
+        "name": "Undead Fortitude",
+        "desc": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 +the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 14 (4d6) piercing damage."
+      },
+      {
+        "name": "Eye Ray",
+        "desc": "The zombie uses a random magical eye ray, choosing a target that it can see within 60 feet of it.\n\n1. Paralyzing Ray. The targeted creature must succeed on a DC 14 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n2. Fear Ray. The targeted creature must succeed on a DC 14 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n3. Enervation Ray. The targeted creature must make a DC 14 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one.\n4. Disintegration Ray. If the target is a creature, it must succeed on a DC 14 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smaller non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger non magical object or creation of magical force, this ray disintegrates a 10-foot cube of it."
       }
     ]
   },
@@ -16493,6 +17159,56 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     ]
   },
   {
+    "name": "Red Slaad",
+    "size": "Large",
+    "type": "aberration",
+    "alignment": "chaotic neutral",
+    "armor_class": 14,
+    "hit_points": 93,
+    "hit_dice": "11d10 + 33",
+    "speed": "30 ft.",
+    "str": 16,
+    "dex": 12,
+    "con": 16,
+    "int": 6,
+    "wis": 6,
+    "cha": 7,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 1
+      }
+    ],
+    "damage_resistances": "acid, cold, fire, lightning, thunder",
+    "senses": "darkvision 60 ft., passive Perception 11",
+    "languages": "Slaad, telepathy 60 ft.",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Magic Resistance",
+        "desc": "The slaad has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Regeneration",
+        "desc": "The slaad regains 10 hit points at the start of its turn if it has at least 1 hit point."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The slaad makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) piercing damage."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be infected with a disease--a minuscule slaad egg. A humanoid host can carry only one slaad egg to term at a time. Over three months, the egg moves to the chest cavity, gestates, and forms a slaad tadpole. In the 24-hour period before giving birth, the host starts to feel unwell, its speed is halved, and it has disadvantage on attack rolls, ability checks, and saving throws. At birth, the tadpole chews its way through vital organs and out of the host's chest in 1 round, killing the host in the process. If the disease is cured before the tadpole's emergence, the unborn slaad is disintegrated."
+      }
+    ]
+  },
+  {
     "name": "Reef Shark",
     "size": "Medium",
     "type": "beast",
@@ -16564,6 +17280,78 @@ saving throws. The target can repeat the saving throw at the end of each of its 
       {
         "name": "Swallow",
         "desc": "The remorhaz makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, that creature takes the bite's damage and is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the remorhaz, and it takes 21 (6d6) acid damage at the start of each of the remorhaz's turns.\nIf the remorhaz takes 30 damage or more on a single turn from a creature inside it, the remorhaz must succeed on a DC 15 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet oft he remorhaz. If the remorhaz dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 15 feet of movement, exiting prone."
+      }
+    ]
+  },
+  {
+    "name": "Revenant",
+    "size": "Medium",
+    "type": "undead",
+    "alignment": "neutral",
+    "armor_class": 13,
+    "hit_points": 136,
+    "hit_dice": "16d8 + 64",
+    "speed": "30 ft.",
+    "str": 18,
+    "dex": 14,
+    "con": 18,
+    "int": 13,
+    "wis": 16,
+    "cha": 18,
+    "saves": [
+      {
+        "name": "str",
+        "val": 7
+      },
+      {
+        "name": "con",
+        "val": 7
+      },
+      {
+        "name": "wis",
+        "val": 6
+      },
+      {
+        "name": "cha",
+        "val": 7
+      }
+    ],
+    "damage_resistances": "necrotic, psychic",
+    "damage_immunities": "poison",
+    "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, stunned",
+    "senses": "darkvision 60 ft., passive Perception 13",
+    "languages": "the languages it knew in life",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Regeneration",
+        "desc": "The revenant regains 10 hit points at the start of its turn. If the revenant takes fire or radiant damage, this trait doesn't function at the start of the revenant's next turn. The revenant's body is destroyed only if it starts its turn with 0 hit points and doesn't regenerate."
+      },
+      {
+        "name": "Rejuvenation",
+        "desc": "When the revenant's body is destroyed, its soul lingers. After 24 hours, the soul inhabits and animates another corpse on the same plane of existence and regains all its hit points. While the soul is bodiless, a wish spell can be used to force the soul to go to the afterlife and not return."
+      },
+      {
+        "name": "Turn Immunity",
+        "desc": "The revenant is immune to effects that turn undead."
+      },
+      {
+        "name": "Vengeful Tracker",
+        "desc": "The revenant knows the distance to and direction of any creature against which it seeks revenge, even if the creature and the revenant are on different planes of existence. If the creature being tracked by the revenant dies, the revenant knows."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The revenant makes two fist attacks."
+      },
+      {
+        "name": "Fist",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage. If the target is a creature against which the revenant has sworn vengeance, the target takes an extra 14 (4d6) bludgeoning damage. Instead of dealing damage, the revenant can grapple the target (escape DC 14) provided the target is Large or smaller."
+      },
+      {
+        "name": "Vengeful Glare",
+        "desc": "The revenant targets one creature it can see within 30 feet of it and against which it has sworn vengeance. The target must make a DC 15 Wisdom saving throw. On a failure, the target is paralyzed until the revenant deals damage to it, or until the end of the revenant's next turn. When the paralysis ends, the target is frightened of the revenant for 1 minute. The frightened target can repeat the saving throw at the end of each of its turns, with disadvantage if it can see the revenant, ending the frightened condition on itself on a success."
       }
     ]
   },
@@ -16928,68 +17716,6 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     ]
   },
   {
-    "name": "Sahuagin Priestess",
-    "size": "Medium",
-    "type": "humanoid",
-    "subtype": "sahuagin",
-    "alignment": "lawful evil",
-    "armor_class": 12,
-    "hit_points": 33,
-    "hit_dice": "6d8 + 6",
-    "speed": "30 ft., swim 40 ft.",
-    "str": 13,
-    "dex": 11,
-    "con": 12,
-    "int": 12,
-    "wis": 14,
-    "cha": 13,
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "religion",
-        "val": 3
-      }
-    ],
-    "senses": "darkvision 120 ft., passive Perception 16",
-    "languages": "Sahuagin",
-    "challenge_rating": "2 (450 XP)",
-    "special_abilities": [
-      {
-        "name": "Blood Frenzy",
-        "desc": "The sahuagin has advantage on melee attack rolls against any creature that doesn't have all its hit points."
-      },
-      {
-        "name": "Limited Amphibiousness",
-        "desc": "The sahuagin can breathe air and water, but she needs to be submerged at least once every 4 hours to avoid suffocating."
-      },
-      {
-        "name": "Shark Telepathy",
-        "desc": "The sahuagin can magically command any shark within 120 feet of her, using a limited telepathy."
-      },
-      {
-        "name": "Spellcasting",
-        "desc": "The sahuagin is a 6th-level spellcaster. Her spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). She has the following cleric spells prepared:\n\nCantrips (at will): guidance, thaumaturgy\n1st level (4 slots): bless, detect magic, guiding bolt\n2nd level (3 slots): hold person, spiritual weapon (trident)\n3rd level (3 slots): mass healing word, tongues"
-      }
-    ],
-    "actions": [
-      {
-        "name": "Multiattack",
-        "desc": "The sahuagin makes two melee attacks: one with her bite and one with her claws."
-      },
-      {
-        "name": "Bite",
-        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage."
-      },
-      {
-        "name": "Claws",
-        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) slashing damage."
-      }
-    ]
-  },
-  {
     "name": "Sahuagin Baron",
     "size": "Large",
     "type": "humanoid",
@@ -17062,6 +17788,68 @@ saving throws. The target can repeat the saving throw at the end of each of its 
       {
         "name": "Trident",
         "desc": "Melee or Ranged Weapon Attack: +7 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 11 (2d6 + 4) piercing damage, or 13 (2d8 + 4) piercing damage if used with two hands to make a melee attack."
+      }
+    ]
+  },
+  {
+    "name": "Sahuagin Priestess",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "sahuagin",
+    "alignment": "lawful evil",
+    "armor_class": 12,
+    "hit_points": 33,
+    "hit_dice": "6d8 + 6",
+    "speed": "30 ft., swim 40 ft.",
+    "str": 13,
+    "dex": 11,
+    "con": 12,
+    "int": 12,
+    "wis": 14,
+    "cha": 13,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 6
+      },
+      {
+        "name": "religion",
+        "val": 3
+      }
+    ],
+    "senses": "darkvision 120 ft., passive Perception 16",
+    "languages": "Sahuagin",
+    "challenge_rating": "2 (450 XP)",
+    "special_abilities": [
+      {
+        "name": "Blood Frenzy",
+        "desc": "The sahuagin has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      },
+      {
+        "name": "Limited Amphibiousness",
+        "desc": "The sahuagin can breathe air and water, but she needs to be submerged at least once every 4 hours to avoid suffocating."
+      },
+      {
+        "name": "Shark Telepathy",
+        "desc": "The sahuagin can magically command any shark within 120 feet of her, using a limited telepathy."
+      },
+      {
+        "name": "Spellcasting",
+        "desc": "The sahuagin is a 6th-level spellcaster. Her spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). She has the following cleric spells prepared:\n\nCantrips (at will): guidance, thaumaturgy\n1st level (4 slots): bless, detect magic, guiding bolt\n2nd level (3 slots): hold person, spiritual weapon (trident)\n3rd level (3 slots): mass healing word, tongues"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The sahuagin makes two melee attacks: one with her bite and one with her claws."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage."
+      },
+      {
+        "name": "Claws",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) slashing damage."
       }
     ]
   },
@@ -17165,6 +17953,48 @@ saving throws. The target can repeat the saving throw at the end of each of its 
       {
         "name": "Variant: Panpipes",
         "desc": "Gentle Lullaby. The creature falls asleep and is unconscious for 1 minute. The effect ends if the creature takes damage or if someone takes an action to shake the creature awake."
+      }
+    ]
+  },
+  {
+    "name": "Scarecrow",
+    "size": "Medium",
+    "type": "construct",
+    "alignment": "chaotic evil",
+    "armor_class": 11,
+    "hit_points": 36,
+    "hit_dice": "8d8",
+    "speed": "30 ft.",
+    "str": 11,
+    "dex": 13,
+    "con": 11,
+    "int": 10,
+    "wis": 10,
+    "cha": 13,
+    "damage_vulnerabilities": "fire",
+    "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, unconscious",
+    "senses": "darkvision 60 ft., passive Perception 10",
+    "languages": "understands the languages of its creator but can't speak",
+    "challenge_rating": "1 (200 XP)",
+    "special_abilities": [
+      {
+        "name": "False Appearance",
+        "desc": "While the scarecrow remains motionless, it is indistinguishable from an ordinary, inanimate scarecrow."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The scarecrow makes two claw attacks."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) slashing damage. If the target is a creature, it must succeed on a DC 11 Wisdom saving throw or be frightened until the end of the scarecrow's next turn."
+      },
+      {
+        "name": "Terrifying Glare",
+        "desc": "The scarecrow targets one creature it can see within 30 feet of it. If the target can see the scarecrow, the target must succeed on a DC 11 Wisdom saving throw or be magically frightened until the end of the scarecrow's next turn. The frightened target is paralyzed."
       }
     ]
   },
@@ -17640,6 +18470,44 @@ saving throws. The target can repeat the saving throw at the end of each of its 
       {
         "name": "Shortbow",
         "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Slaad Tadpole",
+    "size": "Tiny",
+    "type": "aberration",
+    "alignment": "chaotic neutral",
+    "armor_class": 12,
+    "hit_points": 10,
+    "hit_dice": "4d4",
+    "speed": "30 ft.",
+    "str": 7,
+    "dex": 15,
+    "con": 10,
+    "int": 3,
+    "wis": 5,
+    "cha": 3,
+    "skills": [
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
+    "damage_resistances": "acid, cold, fire, lightning, thunder",
+    "senses": "darkvision 60 ft., passive Perception 7",
+    "languages": "understands Slaad but can't speak",
+    "challenge_rating": "1/8 (25 XP)",
+    "special_abilities": [
+      {
+        "name": "Magic Resistance",
+        "desc": "The slaad has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage."
       }
     ]
   },
@@ -19123,6 +19991,60 @@ saving throws. The target can repeat the saving throw at the end of each of its 
     ]
   },
   {
+    "name": "Troglodyte",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "troglodyte",
+    "alignment": "chaotic evil",
+    "armor_class": 11,
+    "hit_points": 13,
+    "hit_dice": "2d8 + 4",
+    "speed": "30 ft.",
+    "str": 14,
+    "dex": 10,
+    "con": 14,
+    "int": 6,
+    "wis": 10,
+    "cha": 6,
+    "skills": [
+      {
+        "name": "stealth",
+        "val": 2
+      }
+    ],
+    "senses": "darkvision 60 ft., passive Perception 10",
+    "languages": "Troglodyte",
+    "challenge_rating": "1/4 (50 XP)",
+    "special_abilities": [
+      {
+        "name": "Chameleon Skin",
+        "desc": " The troglodyte has advantage on Dexterity (Stealth) checks made to hide."
+      },
+      {
+        "name": "Stench",
+        "desc": "Any creature other than a troglodyte that starts its turn within 5 feet of the troglodyte must succeed on a DC 12 Constitution saving throw or be poisoned until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all troglodytes for 1 hour."
+      },
+      {
+        "name": "Sunlight Sensitivity",
+        "desc": "While in sunlight, the troglodyte has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The troglodyte makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage."
+      }
+    ]
+  },
+  {
     "name": "Troll",
     "size": "Large",
     "type": "giant",
@@ -19249,6 +20171,118 @@ saving throws. The target can repeat the saving throw at the end of each of its 
       {
         "name": "Tail",
         "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage."
+      }
+    ]
+  },
+  {
+    "name": "Ultroloth",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "yogoloth",
+    "alignment": "neutral evil",
+    "armor_class": 19,
+    "hit_points": 153,
+    "hit_dice": "18d8 + 72",
+    "speed": "30 ft., fly 60 ft.",
+    "str": 16,
+    "dex": 16,
+    "con": 18,
+    "int": 18,
+    "wis": 15,
+    "cha": 19,
+    "skills": [
+      {
+        "name": "intimidation",
+        "val": 9
+      },
+      {
+        "name": "perception",
+        "val": 7
+      },
+      {
+        "name": "stealth",
+        "val": 8
+      }
+    ],
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "acid, poison",
+    "condition_immunities": "charmed, frightened, poisoned",
+    "senses": "truesight 120 ft., passive Perception 17",
+    "languages": "Abyssal, Infernal, telepathy 120 ft.",
+    "challenge_rating": "13 (10000 XP)",
+    "special_abilities": [
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The ultroloth's innate spellcasting ability is Charisma (spell save DC 17). The ultroloth can innately cast the following spells, requiring no material components:\n\nAt will: alter self, clairvoyance, darkness, detect magic, detect thoughts, dispel magic, invisibility (self only), suggestion\n3/day each: dimension door,fear, wall of fire\n1/day each: fire storm, mass suggestion"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The ultroloth has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Magic Weapons",
+        "desc": "The ultroloth's weapon attacks are magical."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The ultroloth can use its Hypnotic Gaze and makes three melee attacks."
+      },
+      {
+        "name": "Longsword",
+        "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands."
+      },
+      {
+        "name": "Hypnotic Gaze",
+        "desc": "The ultroloth's eyes sparkle with opalescent light as it targets one creature it can see within 30 feet of it. If the target can see the ultroloth, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed until the end of the ultroloth's next turn. The charmed target is stunned. If the target's saving throw is successful, the target is immune to the ultroloth's gaze for the next 24 hours."
+      },
+      {
+        "name": "Teleport",
+        "desc": "The ultroloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      }
+    ]
+  },
+  {
+    "name": "Umber Hulk",
+    "size": "Large",
+    "type": "monstrosity",
+    "alignment": "chaotic evil",
+    "armor_class": 18,
+    "hit_points": 93,
+    "hit_dice": "11d10 + 33",
+    "speed": "30 ft., burrow 20 ft.",
+    "str": 20,
+    "dex": 13,
+    "con": 16,
+    "int": 9,
+    "wis": 10,
+    "cha": 10,
+    "senses": "darkvision 120 ft., tremorsense 60 ft., passive Perception 10",
+    "languages": "Umber Hulk",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Confusing Gaze",
+        "desc": "When a creature starts its turn within 30 feet of the umber hulk and is able to see the umber hulk's eyes, the umber hulk can magically force it to make a DC 15 Charisma saving throw, unless the umber hulk is incapacitated. On a failed saving throw, the creature can't take reactions until the start of its next turn and rolls a d8 to determine what it does during that turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action but uses all its movement to move in a random direction. On a 1 or 8, the creature makes one melee attack against a random creature, or it does nothing if no creature is within reach. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the umber hulk until the start of its next turn, when it can avert its eyes again. If the creature looks at the umber hulk in the meantime, it must immediately make the save."
+      },
+      {
+        "name": "Tunneler",
+        "desc": "The umber hulk can burrow through solid rock at half its burrowing speed and leaves a 5 foot-wide, 8-foot-high tunnel in its wake. "
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The umber hulk makes three attacks: two with its claws and one with its mandibles."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) slashing damage."
+      },
+      {
+        "name": "Mandibles",
+        "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage."
       }
     ]
   },
@@ -19982,6 +21016,44 @@ restrained. A creature can use its action to make a DC 12 Strength check, freein
       {
         "name": "Whelm (Recharge 4-6)",
         "desc": "Each creature in the elemental's space must make a DC 15 Strength saving throw. On a failure, a target takes 13 (2d8 + 4) bludgeoning damage. If it is Large or smaller, it is also grappled (escape DC 14). Until this grapple ends, the target is restrained and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the elemental's space.\nThe elemental can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the elemental's turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning damage. A creature within 5 feet of the elemental can pull a creature or object out of it by taking an action to make a DC 14 Strength and succeeding."
+      }
+    ]
+  },
+  {
+    "name": "Water Weird",
+    "size": "Large",
+    "type": "elemental",
+    "alignment": "neutral",
+    "armor_class": 13,
+    "hit_points": 58,
+    "hit_dice": "9d10 + 9",
+    "speed": "0 ft., swim 60 ft.",
+    "str": 17,
+    "dex": 16,
+    "con": 13,
+    "int": 11,
+    "wis": 10,
+    "cha": 10,
+    "damage_resistances": "fire; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "poison",
+    "condition_immunities": "exhaustion, grappled, paralyzed, poisoned, restrained, prone, unconscious",
+    "senses": "blindsight 30 ft., passive Perception 10",
+    "languages": "understands Aquan but doesn't speak",
+    "challenge_rating": "3 (700 XP)",
+    "special_abilities": [
+      {
+        "name": "Inivisible in Water",
+        "desc": "The water weird is invisible while fully immersed in water."
+      },
+      {
+        "name": "Water Bound",
+        "desc": "The water weird dies if it leaves the water to which it is bound or if that water is destroyed."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Constrict",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 10 ft., one creature. Hit: 13 (3d6 + 3) bludgeoning damage. If the target is Medium or smaller, it is grappled (escape DC 13) and pulled 5 feet toward the water weird. Until this grapple ends, the target is restrained, the water weird tries to drown it, and the water weird can't constrict another target."
       }
     ]
   },
@@ -20797,6 +21869,64 @@ restrained. A creature can use its action to make a DC 12 Strength check, freein
     ]
   },
   {
+    "name": "Yeti",
+    "size": "Large",
+    "type": "monstrosity",
+    "alignment": "chaotic evil",
+    "armor_class": 12,
+    "hit_points": 51,
+    "hit_dice": "6d10 + 18",
+    "speed": "40 ft., climb 40 ft.",
+    "str": 18,
+    "dex": 13,
+    "con": 16,
+    "int": 8,
+    "wis": 12,
+    "cha": 7,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
+    "damage_immunities": "cold",
+    "senses": "darkvision 60 ft., passive Perception 13",
+    "languages": "Yeti",
+    "challenge_rating": "3 (700 XP)",
+    "special_abilities": [
+      {
+        "name": "Fear of Fire",
+        "desc": "If the yeti takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+      },
+      {
+        "name": "Keen Smell",
+        "desc": "The yeti has advantage on Wisdom (Perception) checks that rely on smell."
+      },
+      {
+        "name": "Snow Camouflage",
+        "desc": "The yeti has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The yeti can use its Chilling Gaze and makes two claw attacks."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) slashing damage plus 3 (1d6) cold damage."
+      },
+      {
+        "name": "Chilling Gaze",
+        "desc": "The yeti targets one creature it can see within 30 feet of it. If the target can see the yeti, the target must succeed on a DC 13 Constitution saving throw against this magic or take 10 (3d6) cold damage and then be paralyzed for 1 minute, unless it is immune to cold damage. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target's saving throw is successful, or if the effect ends on it, the target is immune to the Chilling Gaze of all yetis (but not abominable yetis) for 1 hour."
+      }
+    ]
+  },
+  {
     "name": "Yochlol",
     "size": "Medium",
     "type": "fiend",
@@ -21542,6 +22672,37 @@ restrained. A creature can use its action to make a DC 12 Strength check, freein
     ]
   },
   {
+    "name": "Young Remorhaz",
+    "size": "Large",
+    "type": "monstrosity",
+    "alignment": "unaligned",
+    "armor_class": 14,
+    "hit_points": 93,
+    "hit_dice": "11d10 + 33",
+    "speed": "30 ft., burrow 20 ft.",
+    "str": 18,
+    "dex": 13,
+    "con": 17,
+    "int": 3,
+    "wis": 10,
+    "cha": 4,
+    "damage_immunities": "cold, fire",
+    "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 18",
+    "challenge_rating": "5 (1800 XP)",
+    "special_abilities": [
+      {
+        "name": "Heated Body",
+        "desc": " A creature that touches the remorhaz or hits it with a melee attack while within 5 feet of it takes 7 (2d6) fire damage."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 20 (3d10 + 4) piercing damage plus 7 (2d6) fire damage."
+      }
+    ]
+  },
+  {
     "name": "Young Silver Dragon",
     "size": "Large",
     "type": "dragon",
@@ -21684,6 +22845,322 @@ restrained. A creature can use its action to make a DC 12 Strength check, freein
       {
         "name": "Cold Breath (Recharge 5-6)",
         "desc": "The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 45 (10d8) cold damage on a failed save, or half as much damage on a successful one."
+      }
+    ]
+  },
+  {
+    "name": "Yuan-ti Abomination",
+    "size": "Large",
+    "type": "monstrosity",
+    "subtype": "shapechanger, yuan-ti",
+    "alignment": "neutral evil",
+    "armor_class": 15,
+    "hit_points": 127,
+    "hit_dice": "15d10 + 45",
+    "speed": "40 ft.",
+    "str": 19,
+    "dex": 16,
+    "con": 17,
+    "int": 17,
+    "wis": 15,
+    "cha": 18,
+    "skills": [
+      {
+        "name": "perception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 6
+      }
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60 ft., passive Perception 15",
+    "languages": "Abyssal, Common, Draconic",
+    "challenge_rating": "7 (2900 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": "The yuan-ti can use its action to polymorph into a Large snake, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+      },
+      {
+        "name": "Innate Spellcasting (Abomination Form Only)",
+        "desc": "The yuan-ti's innate spellcasting ability is Charisma (spell save DC 15). The yuan-ti can innately cast the following spells, requiring no material components:\n\nAt will: animal friendship (snakes only)\n3/day: suggestion\n1/day: fear"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack (Abomination Form Only)",
+        "desc": "The yuan-ti makes two ranged attacks or three melee attacks, but can use its bite and constrict attacks only once each."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 7 (1d6 + 4) piercing damage plus 10 (3d6) poison damage."
+      },
+      {
+        "name": "Constrict",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target Hit: 11 (2d6 + 4) bludgeoning damage, and the target is grappled (escape DC 14). Until this grapple ends, the target is restrained, and the yuan-ti can't constrict another target."
+      },
+      {
+        "name": "Scimitar (Abomination Form Only)",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage."
+      },
+      {
+        "name": "Longbow (Abomination Form Only)",
+        "desc": "Ranged Weapon Attack: +6 to hit, range 150/600 ft., one target. Hit: 12 (2d8 + 3) piercing damage plus 10 (3d6) poison damage."
+      }
+    ]
+  },
+  {
+    "name": "Yuan-ti Malison (Human Body/Snake Head)",
+    "size": "Medium",
+    "type": "monstrosity",
+    "subtype": "shapechanger, yuan-ti",
+    "alignment": "neutral evil",
+    "armor_class": 12,
+    "hit_points": 66,
+    "hit_dice": "12d8 + 12",
+    "speed": "30 ft.",
+    "str": 16,
+    "dex": 14,
+    "con": 13,
+    "int": 14,
+    "wis": 12,
+    "cha": 16,
+    "skills": [
+      {
+        "name": "deception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60 ft., passive Perception 11",
+    "languages": "Abyssal, Common, Draconic",
+    "challenge_rating": "3 (700 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": "The yuan-ti can use its action to polymorph into a Medium snake, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+      },
+      {
+        "name": "Innate Spellcasting (Yuan-ti Form Only)",
+        "desc": "The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:\n\nAt will: animal friendship (snakes only)\n3/day: suggestion"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack (Yuan-ti Form Only)",
+        "desc": "The yuan-ti makes two ranged attacks or two melee attacks, but can use its bite only once."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage plus 7 (2d6) poison damage."
+      },
+      {
+        "name": "Scimitar (Yuan-ti Form Only)",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage."
+      },
+      {
+        "name": "Longbow (Yuan-ti Form Only)",
+        "desc": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage plus 7 (2d6) poison damage."
+      }
+    ]
+  },
+  {
+    "name": "Yuan-ti Malison (Human/Snake Arms)",
+    "size": "Medium",
+    "type": "monstrosity",
+    "subtype": "shapechanger, yuan-ti",
+    "alignment": "neutral evil",
+    "armor_class": 12,
+    "hit_points": 66,
+    "hit_dice": "12d8 + 12",
+    "speed": "30 ft.",
+    "str": 16,
+    "dex": 14,
+    "con": 13,
+    "int": 14,
+    "wis": 12,
+    "cha": 16,
+    "skills": [
+      {
+        "name": "deception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60 ft., passive Perception 11",
+    "languages": "Abyssal, Common, Draconic",
+    "challenge_rating": "3 (700 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": "The yuan-ti can use its action to polymorph into a Medium snake, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+      },
+      {
+        "name": "Innate Spellcasting (Yuan-ti Form Only)",
+        "desc": "The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:\n\nAt will: animal friendship (snakes only)\n3/day: suggestion"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack (Yuan-ti Form Only)",
+        "desc": "The yuan-ti makes two bite attacks using its snake arms."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage plus 7 (2d6) poison damage."
+      }
+    ]
+  },
+  {
+    "name": "Yuan-ti Malison (Human Upper Body/Snake Lower Body)",
+    "size": "Medium",
+    "type": "monstrosity",
+    "subtype": "shapechanger, yuan-ti",
+    "alignment": "neutral evil",
+    "armor_class": 12,
+    "hit_points": 66,
+    "hit_dice": "12d8 + 12",
+    "speed": "30 ft.",
+    "str": 16,
+    "dex": 14,
+    "con": 13,
+    "int": 14,
+    "wis": 12,
+    "cha": 16,
+    "skills": [
+      {
+        "name": "deception",
+        "val": 5
+      },
+      {
+        "name": "stealth",
+        "val": 4
+      }
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60 ft., passive Perception 11",
+    "languages": "Abyssal, Common, Draconic",
+    "challenge_rating": "3 (700 XP)",
+    "special_abilities": [
+      {
+        "name": "Shapechanger",
+        "desc": "The yuan-ti can use its action to polymorph into a Medium snake, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+      },
+      {
+        "name": "Innate Spellcasting (Yuan-ti Form Only)",
+        "desc": "The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:\n\nAt will: animal friendship (snakes only)\n3/day: suggestion"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack (Yuan-ti Form Only)",
+        "desc": "The yuan-ti makes two ranged attacks or two melee attacks, but can constrict only once."
+      },
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage plus 7 (2d6) poison damage."
+      },
+      {
+        "name": "Constrict",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage, and the target is grappled (escape DC 13). Until this grapple ends, the target is restrained, and the yuan-ti can't constrict another target."
+      },
+      {
+        "name": "Scimitar (Yuan-ti Form Only)",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage."
+      },
+      {
+        "name": "Longbow (Yuan-ti Form Only)",
+        "desc": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage plus 7 (2d6) poison damage."
+      }
+    ]
+  },
+  {
+    "name": "Yuan-ti Pureblood",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "yuan-ti",
+    "alignment": "neutral evil",
+    "armor_class": 11,
+    "hit_points": 40,
+    "hit_dice": "9d8",
+    "speed": "30 ft.",
+    "str": 11,
+    "dex": 12,
+    "con": 11,
+    "int": 13,
+    "wis": 12,
+    "cha": 14,
+    "skills": [
+      {
+        "name": "deception",
+        "val": 6
+      },
+      {
+        "name": "perception",
+        "val": 3
+      },
+      {
+        "name": "stealth",
+        "val": 3
+      }
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60 ft., passive Perception 13",
+    "languages": "Abyssal, Common, Draconic",
+    "challenge_rating": "1 (200 XP)",
+    "special_abilities": [
+      {
+        "name": "Innate Spellcasting (Yuan-ti Form Only)",
+        "desc": "The yuan-ti's spellcasting ability is Charisma (spell save DC 12). The yuan-ti can innately cast the following spells, requiring no material components\n\nAt will: animal friendship (snakes only)\n3/day each: poison spray, suggestion"
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The yuan-ti makes two melee attacks."
+      },
+      {
+        "name": "Scimitar",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage."
+      },
+      {
+        "name": "Longbow",
+        "desc": "Ranged Weapon Attack: +3 to hit, range 80/320 ft., one target. Hit: 4 (1d6 + 1) piercing damage plus 7 (2d6) poison damage."
       }
     ]
   },
