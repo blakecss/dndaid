@@ -49,3 +49,9 @@
     <p ng-repeat="action in char.legendary_actions"><b><i>{{action.name}}:</i></b> {{action.desc}}</p>
   </div>
 </section>
+<section ng-show="char.reactions" class="reactions">
+  <h3>Reactions</h3>
+  <div class="content">
+    <p ng-repeat="reaction in char.reactions"><b><i>{{reaction.name}}:</i></b> {{reaction.desc}}</p>
+  </div>
+</section>
