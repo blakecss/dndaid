@@ -54,8 +54,8 @@
       <input class="maxHP" ng-model="char.maxHP" type="number" min="1"/>
     </md-input-container>
     <md-input-container>
-      <label>Hit Die</label>
-      <input class="hitDie" ng-model="char.hitDie" type="text" readonly/>
+      <label>Hit Dice</label>
+      <input class="hitDice" ng-model="char.hitDice" type="text" readonly/>
     </md-input-container>
     <md-input-container>
       <label>AC</label>
@@ -63,7 +63,7 @@
     </md-input-container>
     <md-input-container>
       <label>Speed</label>
-      <input class="speed" ng-model="char.speed" type="number" readonly/>
+      <input class="speed" value="{{char.speed+' ft.'}}" type="text" readonly/>
     </md-input-container>
   </div>
 </section>
@@ -89,25 +89,25 @@
       <h4>Abilities</h4>
       <md-input-container ng-repeat="ability in abilities">
         <label class="uc">{{ability.abbr}}</label>
-        <input ng-model="char[ability.abbr]" type="number" min="0"/>
-        <div class="small">{{calcMod(ability.abbr)}}</div>
+        <input ng-model="char.abilities[ability.abbr]" type="number" min="0"/>
+        <div class="small">{{char.mods[ability.abbr]}}</div>
       </md-input-container>
     </div>
     <div class="saving-throws">
       <h4>Saving Throws</h4>
-      <div class="faux" ng-repeat="ability in abilities">
+      <md-input-container ng-repeat="ability in abilities">
         <label class="uc">{{ability.abbr}}</label>
-        <input type="number" value="{{calcSaving(ability.abbr)}}" readonly/>
-        <md-checkbox ng-model="char[ability.abbr+'SavingP']" aria-label="{{ability.name}} Saving Throw Proficiency"></md-checkbox>
-      </div>
+        <input ng-model="char.saveMods[ability.abbr]" type="number" readonly/>
+        <md-checkbox ng-model="char.saveProfs[ability.abbr]" aria-label="{{ability.name}} Saving Throw Proficiency"></md-checkbox>
+      </md-input-container>
     </div>
     <div class="skills">
       <h4>Skills</h4>
-      <div class="faux" ng-repeat="skill in skills">
+      <md-input-container ng-repeat="skill in skills">
         <label class="cap">{{skill.name}}</label>
-        <input type="number" value="{{calcSkill(skill)}}" readonly/>
-        <md-checkbox ng-model="char[skill.abbr+'P']" aria-label="{{skill.name}} Proficiency"></md-checkbox>
-      </div>
+        <input ng-model="char.skillMods[skill.abbr]" type="number" readonly/>
+        <md-checkbox ng-model="char.skillProfs[skill.abbr]" aria-label="{{skill.name}} Proficiency"></md-checkbox>
+      </md-input-container>
     </div>
   </div>
 </section>
@@ -115,7 +115,27 @@
   <h3>Inventory</h3>
   <div class="content">
     <md-input-container>
-      <textarea ng-model="char.inventory" placeholder="Bag of Holding"></textarea>
+      <textarea class="bag" ng-model="char.bag" placeholder="Bag of Holding"></textarea>
+    </md-input-container>
+    <md-input-container>
+      <label>PP</label>
+      <input class="pp money" ng-model="char.pp" type="number" min="0"/>
+    </md-input-container>
+    <md-input-container>
+      <label>GP</label>
+      <input class="gp money" ng-model="char.gp" type="number" min="0"/>
+    </md-input-container>
+    <md-input-container>
+      <label>EP</label>
+      <input class="ep money" ng-model="char.ep" type="number" min="0"/>
+    </md-input-container>
+    <md-input-container>
+      <label>SP</label>
+      <input class="sp money" ng-model="char.sp" type="number" min="0"/>
+    </md-input-container>
+    <md-input-container>
+      <label>CP</label>
+      <input class="cp money" ng-model="char.cp" type="number" min="0"/>
     </md-input-container>
   </div>
 </section>

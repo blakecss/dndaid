@@ -5,7 +5,33 @@
       <label>Name</label>
       <input ng-model="char.name" type="text"/>
     </md-input-container>
-    <p style="margin-top: 0;">{{char.size}} {{char.type}}{{(' ('+char.subtype+')') || ''}}, {{char.alignment}}</p>
+    <p style="margin-top: 0;">{{char.size}} {{char.type}}<span ng-show="char.subtype"> ({{char.subtype}})</span>, {{char.alignment}}</p>
+  </div>
+</section>
+<section class="combat">
+  <h3>Combat</h3>
+  <div class="content">
+    <md-input-container>
+      <label>HP</label>
+      <input class="curHP" ng-model="char.curHP" type="number" min="0" max="{{char.hit_points}}" ng-val=char.hit_points/>
+    </md-input-container>
+    <span>/</span>
+    <md-input-container>
+      <label></label>
+      <input class="maxHP" ng-model="char.hit_points" type="number" min="1"/>
+    </md-input-container>
+    <md-input-container>
+      <label>Hit Dice</label>
+      <input class="hitDice" ng-model="char.hit_dice" type="text" readonly/>
+    </md-input-container>
+    <md-input-container>
+      <label>AC</label>
+      <input class="ac" ng-model="char.armor_class" type="number" min="0"/>
+    </md-input-container>
+    <md-input-container>
+      <label>Speed</label>
+      <input style="width:320px" class="speed" ng-model="char.speed" type="text" readonly/>
+    </md-input-container>
   </div>
 </section>
 <section class="stats">
@@ -34,7 +60,7 @@
 <section ng-show="char.special_abilities" class="special-abilities">
   <h3>Special Abilities</h3>
   <div class="content">
-    <p ng-repeat="action in char.special_abilities"><b><i>{{action.name}}:</i></b> {{action.desc}}</p>
+    <p ng-repeat="action in char.special_abilities"><b><i>{{action.name}}:</i></b> <span ng-bind-html=action.desc></span></p>
   </div>
 </section>
 <section ng-show="char.actions" class="actions">

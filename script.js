@@ -194,7 +194,7 @@ app.controller('characterController', ['$scope', function characterController($s
   });
   $scope.$watch('[char.level, char.class]', function(newVal, oldVal) {
     if (newVal[1]=='Barbarian') {
-      $scope.char.hitDie = newVal[0]+'d12';
+      $scope.char.hitDice = newVal[0]+'d12';
       $scope.char.cantripSlots = 0;
       $scope.char.level1Slots = 0;
       $scope.char.level2Slots = 0;
@@ -206,47 +206,47 @@ app.controller('characterController', ['$scope', function characterController($s
       $scope.char.level8Slots = 0;
       $scope.char.level9Slots = 0;
     } else if (newVal[1]=='Bard') {
-      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.cantripSlots = 2;
       $scope.char.level1Slots = 2;
     } else if (newVal[1]=='Cleric') {
-      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.cantripSlots = 3;
       $scope.char.level1Slots = 2;
     } else if (newVal[1]=='Druid') {
-      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.cantripSlots = 2;
       $scope.char.level1Slots = 2;
     } else if (newVal[1]=='Fighter') {
-      $scope.char.hitDie = newVal[0]+'d10';
+      $scope.char.hitDice = newVal[0]+'d10';
       $scope.char.cantripSlots = 0;
       $scope.char.level1Slots = 0;
     } else if (newVal[1]=='Monk') {
-      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.cantripSlots = 0;
       $scope.char.level1Slots = 0;
     } else if (newVal[1]=='Paladin') {
-      $scope.char.hitDie = newVal[0]+'d10';
+      $scope.char.hitDice = newVal[0]+'d10';
       $scope.char.cantripSlots = 0;
       $scope.char.level1Slots = 0;
     } else if (newVal[1]=='Ranger') {
-      $scope.char.hitDie = newVal[0]+'d10';
+      $scope.char.hitDice = newVal[0]+'d10';
       $scope.char.cantripSlots = 0;
       $scope.char.level1Slots = 0;
     } else if (newVal[1]=='Rogue') {
-      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.cantripSlots = 2;
       $scope.char.level1Slots = 1;
     } else if (newVal[1]=='Sorcerer') {
-      $scope.char.hitDie = newVal[0]+'d6';
+      $scope.char.hitDice = newVal[0]+'d6';
       $scope.char.cantripSlots = 4;
       $scope.char.level1Slots = 2;
     } else if (newVal[1]=='Warlock') {
-      $scope.char.hitDie = newVal[0]+'d8';
+      $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.cantripSlots = 2;
       $scope.char.level1Slots = 1;
     } else if (newVal[1]=='Wizard') {
-      $scope.char.hitDie = newVal[0]+'d6';
+      $scope.char.hitDice = newVal[0]+'d6';
       $scope.char.cantripSlots = 3;
       $scope.char.level1Slots = 2;
     }
@@ -325,28 +325,39 @@ app.controller('characterController', ['$scope', function characterController($s
 
   // TODO: Change these to an array and set a single watcher for all of them
   // Abilities
-  $scope.char.str = 0; $scope.char.dex = 0; $scope.char.con = 0; $scope.char.int = 0; $scope.char.wis = 0; $scope.char.cha = 0;
-  $scope.calcMod = function(ability) {
-    var mod = ability + 'Mod';
-    $scope.char[mod] = Math.floor(($scope.char[ability] - 10) / 2);
-    return $scope.char[mod];
-  };
+  $scope.char.abilities = {'str': 0, 'dex': 0, 'con': 0, 'int': 0, 'wis': 0, 'cha': 0};
+  $scope.char.mods = {'str': -5, 'dex': -5, 'con': -5, 'int': -5, 'wis': -5, 'cha': -5}
+  $scope.char.saveMods = {'str': -5, 'dex': -5, 'con': -5, 'int': -5, 'wis': -5, 'cha': -5};
+  $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': false, 'cha': false};
+  $scope.char.skillMods = {'acro': -5, 'anim': -5, 'arca': -5, 'athl': -5, 'dece': -5, 'hist': -5, 'insi': -5, 'inti': -5, 'inve': -5, 'medi': -5, 'natu': -5, 'perc': -5, 'perf': -5, 'pers': -5, 'reli': -5, 'slei': -5, 'stea': -5, 'surv': -5};
+  $scope.char.skillRels = {'acro': 'dex', 'anim': 'wis', 'arca': 'int', 'athl': 'str', 'dece': 'cha', 'hist': 'int', 'insi': 'wis', 'inti': 'cha', 'inve': 'int', 'medi': 'wis', 'natu': 'int', 'perc': 'wis', 'perf': 'cha', 'pers': 'cha', 'reli': 'int', 'slei': 'dex', 'stea': 'dex', 'surv': 'wis'};
+  $scope.char.skillProfs = {'acro': false, 'anim': false, 'arca': false, 'athl': false, 'dece': false, 'hist': false, 'insi': false, 'inti': false, 'inve': false, 'medi': false, 'natu': false, 'perc': false, 'perf': false, 'pers': false, 'reli': false, 'slei': false, 'stea': false, 'surv': false};
 
-  // Saving throws
-  $scope.calcSaving = function(ability) {
-    var mod = $scope.char[ability + 'Mod'];
-    var savingP = $scope.char[ability + 'SavingP'];
-    var saving = savingP ? mod + $scope.char.pb : mod;
-    return saving;
-  };
+  // Ability mod watchers
+  $scope.$watch('char.abilities', function(newVals, oldVals) {
+    for (var key in newVals) {
+      $scope.char.mods[key] = Math.floor((newVals[key] - 10) / 2);
+    }
+  }, true);
 
-  // Skills
-  $scope.calcSkill = function(skillObj) {
-    var mod = $scope.char[skillObj.relAbility + 'Mod'];
-    var skillP = $scope.char[skillObj.abbr + 'P'];
-    var skill = skillP ? mod + $scope.char.pb : mod;
-    return skill;
-  }
+  // Saving throw mod watchers
+  $scope.$watch('[char.mods, char.saveProfs, char.pb]', function(newVals, oldVals) {
+    for (var key in newVals[0]) {
+      var mod = newVals[0][key];
+      var saveP = newVals[1][key];
+      $scope.char.saveMods[key] = saveP ? mod + newVals[2] : mod;
+    }
+  }, true);
+
+  // Skill mod watchers
+  $scope.$watch('[char.mods, char.skillProfs, char.pb]', function(newVals, oldVals) {
+    for (var key in newVals[1]) {
+      var relAb = $scope.char.skillRels[key];
+      var mod = newVals[0][relAb];
+      var skillP = newVals[1][key];
+      $scope.char.skillMods[key] = skillP ? mod + newVals[2] : mod;
+    }
+  }, true);
 
   // Spells
 

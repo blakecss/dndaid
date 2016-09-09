@@ -101,49 +101,38 @@ body {
                 float: none;
                 max-width: 42px;
               }
-              div.small {
-                font-size: 12px;
-                padding: 2px;
-              }
             }
             div.saving-throws {
-              &:after {
-                content: ' ';
-                clear: both;
-                display: block;
+              input {
+                float: none;
+                max-width: 42px;
+                margin-bottom: 5px;
               }
-              div {
-                max-width: 40px;
-                padding: 2px;
-                float: left;
-                padding: 2px;
-                input {
-                  margin-bottom: 3px;
-                  width: 100%;
-                }
+              md-checkbox {
+                margin-bottom: 10px;
               }
             }
             div.skills {
-              &:after {
-                content: ' ';
-                clear: both;
-                display: block;
-              }
-              div {
-                float: left;
-                margin: 0 20px 15px 0;
-                md-checkbox {
-                  margin-bottom: 0;
-                }
+              md-input-container {
+                min-width: 120px;
+                margin-right: -20px;
                 input {
+                  float: left;
                   max-width: 35px;
+                }
+                md-checkbox {
+                  margin-top: 4px;
+                  margin-left: 5px;
                 }
               }
             }
           }
           &.inventory {
-            md-input-container {
+            textarea.bag {
               width: 100%;
+            }
+            input.money {
+              width: 50px;
             }
           }
           &.spells {
@@ -222,27 +211,13 @@ md-input-container {
   }
 }
 
-div.faux {
-  label {
-    display: block;
-    color: rgba(0,0,0,0.54);
-    font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  input {
-    border: 0;
-    border-bottom: 1px solid rgba(0,0,0,0.12);
-    margin-top: 7px;
-    &:focus {
-      outline: 0;
-    }
-  }
-}
-
 .html p {
   display: inline;
+}
+
+div.small {
+  font-size: 12px;
+  padding: 2px;
 }
 
 md-toast {
