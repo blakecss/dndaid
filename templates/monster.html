@@ -40,8 +40,8 @@
     <div class="abilities">
       <md-input-container ng-repeat="ability in abilities">
         <label class="uc">{{ability.abbr}}</label>
-        <input ng-model="char[ability.abbr]" type="number" min="0"/>
-        <div class="small">{{calcMod(ability.abbr)}}</div>
+        <input ng-model="char.abilities[ability.abbr]" type="number" min="0"/>
+        <div class="small">{{char.mods[ability.abbr]}}</div>
       </md-input-container>
     </div>
     <div class="monster-stats">

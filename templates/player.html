@@ -109,6 +109,11 @@
         <md-checkbox ng-model="char.skillProfs[skill.abbr]" aria-label="{{skill.name}} Proficiency"></md-checkbox>
       </md-input-container>
     </div>
+    <div class="other">
+      <md-input-container>
+        <textarea class="bag" ng-model="char.otherSkills" placeholder="Notes"></textarea>
+      </md-input-container>
+    </div>
   </div>
 </section>
 <section class="inventory">
@@ -142,114 +147,53 @@
 <section class="spells">
   <h3>Spells</h3>
   <div class="content">
-    <div class="cantrips" ng-show="char.cantripSlots">
+    <div class="cantrips" ng-show="char.cantripsKnown">
       <h4>Cantrips</h4>
-      <div ng-repeat="n in numToArray(char.cantripSlots) track by $index">
-        <md-select aria-label="Cantrip" ng-model="char['cantripSlot'+$index+1]">
+      <md-input-container ng-repeat="n in numToArray(char.cantripsKnown) track by $index">
+        <md-select aria-label="Cantrip" ng-model="char['cantrip'+$index+1]">
           <md-option ng-repeat="spell in spells | filter:{level:'cantrip'} | filter:{class:class}">{{spell.name}}</md-option>
         </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['cantripSlot'+$index+1])}}
-        </div>
-      </div>
+      </md-input-container>
     </div>
-    <div class="level-1-spells" ng-show="char.level1Slots">
-      <h4>Level 1</h4>
-      <div ng-repeat="n in numToArray(char.level1Slots) track by $index">
-        <md-select aria-label="Level 1 Spell Slot" ng-model="char['level1Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level1Slot'+$index+1])}}
-        </div>
-      </div>
+    <div class="slots">
+      <h4>Slots</h4>
+      <md-slider-container ng-repeat="n in numToArray(9) track by $index" ng-show="char['level'+($index+1)+'Slots']">
+        <span style="max-width:none;line-height:24px;">Level {{$index+1}} Slots</span>
+        <md-slider flex md-discrete ng-model="char['level'+($index+1)+'SlotsRemaining']" step="1" min="0" max="{{char['level'+($index+1)+'Slots']}}" aria-label="Level {{$index+1}} Spell Slots">
+      </md-slider-container>
     </div>
-    <div class="level-2-spells" ng-show="char.level2Slots">
-      <h4>Level 2</h4>
-      <div ng-repeat="n in numToArray(char.level2Slots) track by $index">
-        <md-select aria-label="Level 2 Spell Slot" ng-model="char['level2Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'2nd-level'} | filter:{class:class}">{{spell.name}}</md-option>
+    <div class="spells-known" ng-show="char.spellsKnown">
+      <h4>Spells Known</h4>
+      <div ng-repeat="n in numToArray(char.spellsKnown) track by $index">
+        <md-select aria-label="Known Spell" ng-model="char['knownSpell'+$index+1]">
+          <md-optgroup label="Level 1">
+            <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 2">
+            <md-option ng-repeat="spell in spells | filter:{level:'2nd-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 3">
+            <md-option ng-repeat="spell in spells | filter:{level:'3rd-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 4">
+            <md-option ng-repeat="spell in spells | filter:{level:'4th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 5">
+            <md-option ng-repeat="spell in spells | filter:{level:'5th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 6">
+            <md-option ng-repeat="spell in spells | filter:{level:'6th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 7">
+            <md-option ng-repeat="spell in spells | filter:{level:'7th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 8">
+            <md-option ng-repeat="spell in spells | filter:{level:'8th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="Level 9">
+            <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+          </md-optgroup>
         </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level2Slot'+$index+1])}}
-        </div>
-      </div>
-    </div>
-    <div class="level-3-spells" ng-show="char.level3Slots">
-      <h4>Level 3</h4>
-      <div ng-repeat="n in numToArray(char.level3Slots) track by $index">
-        <md-select aria-label="Level 3 Spell Slot" ng-model="char['level3Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'3rd-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level3Slot'+$index+1])}}
-        </div>
-      </div>
-    </div>
-    <div class="level-4-spells" ng-show="char.level4Slots">
-      <h4>Level 4</h4>
-      <div ng-repeat="n in numToArray(char.level4Slots) track by $index">
-        <md-select aria-label="Level 4 Spell Slot" ng-model="char['level4Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'4th-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level4Slot'+$index+1])}}
-        </div>
-      </div>
-    </div>
-    <div class="level-5-spells" ng-show="char.level5Slots">
-      <h4>Level 5</h4>
-      <div ng-repeat="n in numToArray(char.level5Slots) track by $index">
-        <md-select aria-label="Level 5 Spell Slot" ng-model="char['level5Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'5th-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level5Slot'+$index+1])}}
-        </div>
-      </div>
-    </div>
-    <div class="level-6-spells" ng-show="char.level6Slots">
-      <h4>Level 1</h4>
-      <div ng-repeat="n in numToArray(char.level6Slots) track by $index">
-        <md-select aria-label="Level 6 Spell Slot" ng-model="char['level6Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'6th-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level6Slot'+$index+1])}}
-        </div>
-      </div>
-    </div>
-    <div class="level-7-spells" ng-show="char.level7Slots">
-      <h4>Level 7</h4>
-      <div ng-repeat="n in numToArray(char.level7Slots) track by $index">
-        <md-select aria-label="Level 7 Spell Slot" ng-model="char['level7Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'7th-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level7Slot'+$index+1])}}
-        </div>
-      </div>
-    </div>
-    <div class="level-8-spells" ng-show="char.level8Slots">
-      <h4>Level 8</h4>
-      <div ng-repeat="n in numToArray(char.level8Slots) track by $index">
-        <md-select aria-label="Level 8 Spell Slot" ng-model="char['level8Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'8th-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level8Slot'+$index+1])}}
-        </div>
-      </div>
-    </div>
-    <div class="level-9-spells" ng-show="char.level9Slots">
-      <h4>Level 9</h4>
-      <div ng-repeat="n in numToArray(char.level9Slots) track by $index">
-        <md-select aria-label="Level 9 Spell Slot" ng-model="char['level9Slot'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:class}">{{spell.name}}</md-option>
-        </md-select>
-        <div class="spell-desc">
-          {{findSpell(char['level9Slot'+$index+1])}}
-        </div>
       </div>
     </div>
   </div>

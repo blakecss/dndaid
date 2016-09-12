@@ -46,13 +46,13 @@ body div.ui-sortable md-card md-card-content section h3:hover {
 body div.ui-sortable md-card md-card-content section div.content {
   padding: 5px;
 }
+body div.ui-sortable md-card md-card-content section.info input.race {
+  width: 120px;
+}
 body div.ui-sortable md-card md-card-content section.info input.class {
   width: 100px;
 }
 body div.ui-sortable md-card md-card-content section.info input.background {
-  width: 120px;
-}
-body div.ui-sortable md-card md-card-content section.info input.race {
   width: 120px;
 }
 body div.ui-sortable md-card md-card-content section.info input.alignment {
@@ -67,8 +67,8 @@ body div.ui-sortable md-card md-card-content section.combat input.curHP {
 body div.ui-sortable md-card md-card-content section.combat input.maxHP {
   width: 50px;
 }
-body div.ui-sortable md-card md-card-content section.combat input.hitDie {
-  width: 80px;
+body div.ui-sortable md-card md-card-content section.combat input.hitDice {
+  width: 100px;
 }
 body div.ui-sortable md-card md-card-content section.combat input.ac {
   width: 50px;
@@ -109,11 +109,21 @@ body div.ui-sortable md-card md-card-content section.stats div.skills md-input-c
   margin-top: 4px;
   margin-left: 5px;
 }
-body div.ui-sortable md-card md-card-content section.inventory textarea.bag {
+body div.ui-sortable md-card md-card-content section.stats div.other md-input-container:first-child {
+  width: 100%;
+}
+body div.ui-sortable md-card md-card-content section.inventory md-input-container:first-child {
   width: 100%;
 }
 body div.ui-sortable md-card md-card-content section.inventory input.money {
   width: 50px;
+}
+body div.ui-sortable md-card md-card-content section.spells div.cantrips {
+  margin-bottom: 25px;
+}
+body div.ui-sortable md-card md-card-content section.spells div.cantrips md-select {
+  min-width: 150px;
+  float: left;
 }
 body md-fab-speed-dial {
   position: fixed;

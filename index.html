@@ -10,6 +10,9 @@
       <div class="md-toolbar-tools">
         <h2>DnD Aid</h2>
         <span flex></span>
+        <md-button ng-click="showDice()" class="md-icon-button" aria-label="Roll Dice">
+          <md-icon style="width: 100%; height: 100%" md-svg-icon="icons/die.svg"></md-icon>
+        </md-button>
         <md-autocomplete class="itemRef"
           md-min-length="0"
           md-selected-item="selectedItem"
@@ -40,9 +43,20 @@
             <span class="item-sub">{{spell.class}}</span>
           </md-item-template>
         </md-autocomplete>
-        <md-button ng-click="showDice()" class="md-icon-button" aria-label="Roll Dice">
-          <md-icon style="width: 100%; height: 100%" md-svg-icon="icons/die.svg"></md-icon>
-        </md-button>
+        <md-menu md-position-mode="target-right target">
+          <md-button ng-click="$mdOpenMenu()" class="md-icon-button" aria-label="Menu">
+            <md-icon style="width: 100%; height: 100%" md-svg-icon="icons/menu.svg"></md-icon>
+          </md-button>
+          <md-menu-content>
+            <md-menu-item>
+              <md-button>Save</md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button>Load</md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </md-menu-bar>
       </div>
     </md-toolbar>
   </header>
