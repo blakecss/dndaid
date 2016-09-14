@@ -44,27 +44,48 @@
 <section class="combat">
   <h3>Combat</h3>
   <div class="content">
-    <md-input-container>
-      <label>HP</label>
-      <input class="curHP" ng-model="char.curHP" type="number" min="0" max="{{char.maxHP}}"/>
-    </md-input-container>
-    <span>/</span>
-    <md-input-container>
-      <label></label>
-      <input class="maxHP" ng-model="char.maxHP" type="number" min="1"/>
-    </md-input-container>
-    <md-input-container>
-      <label>Hit Dice</label>
-      <input class="hitDice" ng-model="char.hitDice" type="text" readonly/>
-    </md-input-container>
-    <md-input-container>
-      <label>AC</label>
-      <input class="ac" ng-model="char.ac" type="number" min="0"/>
-    </md-input-container>
-    <md-input-container>
-      <label>Speed</label>
-      <input class="speed" value="{{char.speed+' ft.'}}" type="text" readonly/>
-    </md-input-container>
+    <div class="health">
+      <h4>Health</h4>
+      <md-input-container>
+        <label>HP</label>
+        <input class="curHP" ng-model="char.curHP" type="number" min="0" max="{{char.maxHP}}"/>
+      </md-input-container>
+      <span>/</span>
+      <md-input-container>
+        <label></label>
+        <input class="maxHP" ng-model="char.maxHP" type="number" min="1"/>
+      </md-input-container>
+      <md-input-container>
+        <label>Hit Dice</label>
+        <input class="hitDice" ng-model="char.hitDice" type="text" readonly/>
+      </md-input-container>
+      <md-input-container>
+        <label>AC</label>
+        <input class="ac" ng-model="char.ac" type="number" min="0"/>
+      </md-input-container>
+    </div>
+    <div class="spellcasting" ng-show="char.spellcastingAbility">
+      <h4>Spellcasting</h4>
+      <md-input-container>
+        <label>Spellcasting Ability</label>
+        <input class="spellcastingAbility" ng-model="char.spellcastingAbility" type="text" readonly/>
+      </md-input-container>
+      <md-input-container>
+        <label>Spell Save DC</label>
+        <input class="spellSaveDC" ng-model="char.spellSaveDC" type="number" readonly/>
+      </md-input-container>
+      <md-input-container>
+        <label>Spell Attack Mod</label>
+        <input class="spellAttackMod" ng-model="char.spellAttackMod" type="number" readonly/>
+      </md-input-container>
+    </div>
+    <div class="status">
+      <h4>Status</h4>
+      <md-input-container>
+        <label>Speed</label>
+        <input class="speed" value="{{char.speed+' ft.'}}" type="text" readonly/>
+      </md-input-container>
+    </div>
   </div>
 </section>
 <section class="stats">
@@ -155,7 +176,7 @@
         </md-select>
       </md-input-container>
     </div>
-    <div class="slots">
+    <div class="slots" ng-show="char.spellsKnown">
       <h4>Slots</h4>
       <md-slider-container ng-repeat="n in numToArray(9) track by $index" ng-show="char['level'+($index+1)+'Slots']">
         <span style="max-width:none;line-height:24px;">Level {{$index+1}} Slots</span>
@@ -164,7 +185,7 @@
     </div>
     <div class="spells-known" ng-show="char.spellsKnown">
       <h4>Spells Known</h4>
-      <div ng-repeat="n in numToArray(char.spellsKnown) track by $index">
+      <md-input-container ng-repeat="n in numToArray(char.spellsKnown) track by $index">
         <md-select aria-label="Known Spell" ng-model="char['knownSpell'+$index+1]">
           <md-optgroup label="Level 1">
             <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
@@ -194,7 +215,7 @@
             <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
         </md-select>
-      </div>
+      </md-input-container>
     </div>
   </div>
 </section>

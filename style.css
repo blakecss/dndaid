@@ -61,17 +61,21 @@ body div.ui-sortable md-card md-card-content section.info input.alignment {
 body div.ui-sortable md-card md-card-content section.info input.size {
   width: 100px;
 }
-body div.ui-sortable md-card md-card-content section.combat input.curHP {
+body div.ui-sortable md-card md-card-content section.combat div.health input.curHP {
   width: 50px;
 }
-body div.ui-sortable md-card md-card-content section.combat input.maxHP {
+body div.ui-sortable md-card md-card-content section.combat div.health input.maxHP {
   width: 50px;
 }
-body div.ui-sortable md-card md-card-content section.combat input.hitDice {
+body div.ui-sortable md-card md-card-content section.combat div.health input.hitDice {
   width: 100px;
 }
-body div.ui-sortable md-card md-card-content section.combat input.ac {
+body div.ui-sortable md-card md-card-content section.combat div.health input.ac {
   width: 50px;
+}
+body div.ui-sortable md-card md-card-content section.combat div.spellcasting input.spellcastingAbility {
+  width: 130px;
+  text-transform: uppercase;
 }
 body div.ui-sortable md-card md-card-content section.combat input.speed {
   width: 50px;
@@ -122,6 +126,10 @@ body div.ui-sortable md-card md-card-content section.spells div.cantrips {
   margin-bottom: 25px;
 }
 body div.ui-sortable md-card md-card-content section.spells div.cantrips md-select {
+  min-width: 150px;
+  float: left;
+}
+body div.ui-sortable md-card md-card-content section.spells div.spells-known md-select {
   min-width: 150px;
   float: left;
 }

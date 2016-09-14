@@ -1,15 +1,19 @@
 <md-toast layout-wrap>
-  <h1 flex="100" style="text-align: center">{{dieNum}}d{{dieSides}} = <span id="rollResult">{{rollResult}}</span></h1>
+  <h1 flex="100" style="text-align: center">{{dieNum}}d{{dieSides}} + {{dieAdd}} = <span id="rollResult">{{rollResult}}</span></h1>
   <md-button class="md-icon-button" ng-click="closeDice()" aria-label="Delete Character">
     <md-icon md-svg-icon="icons/close.svg"></md-icon>
   </md-button>
-  <md-input-container flex="35">
+  <md-input-container flex="25">
     <label># of Die</label>
     <input ng-model="dieNum" type="number" min="1"/>
   </md-input-container>
-  <md-input-container flex="35">
+  <md-input-container flex="25">
     <label>Die Sides</label>
     <input ng-model="dieSides" type="number" min="2"/>
   </md-input-container>
-  <md-button flex="25" class="md-raised md-primary" ng-click="rollDice()">Roll</md-button>
+  <md-input-container flex="25">
+    <label>Add</label>
+    <input ng-model="dieAdd" type="number"/>
+  </md-input-container>
+  <md-button flex="20" class="md-raised md-primary" ng-click="rollDice()">Roll</md-button>
 </md-toast>

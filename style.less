@@ -70,17 +70,25 @@ body {
             }
           }
           &.combat {
-            input.curHP {
-              width: 50px;
+            div.health {
+              input.curHP {
+                width: 50px;
+              }
+              input.maxHP {
+                width: 50px;
+              }
+              input.hitDice {
+                width: 100px;
+              }
+              input.ac {
+                width: 50px;
+              }
             }
-            input.maxHP {
-              width: 50px;
-            }
-            input.hitDice {
-              width: 100px;
-            }
-            input.ac {
-              width: 50px;
+            div.spellcasting {
+              input.spellcastingAbility {
+                width: 130px;
+                text-transform: uppercase;
+              }
             }
             input.speed {
               width: 50px;
@@ -143,6 +151,15 @@ body {
           &.spells {
             div.cantrips {
               margin-bottom: 25px;
+              md-select {
+                min-width: 150px;
+                float: left;
+              }
+            }
+            div.spell-slots {
+              // Too big
+            }
+            div.spells-known {
               md-select {
                 min-width: 150px;
                 float: left;
