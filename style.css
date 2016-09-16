@@ -46,6 +46,9 @@ body div.ui-sortable md-card md-card-content section h3:hover {
 body div.ui-sortable md-card md-card-content section div.content {
   padding: 5px;
 }
+body div.ui-sortable md-card md-card-content section div.content h4 {
+  width: 100% !important;
+}
 body div.ui-sortable md-card md-card-content section.info input.race {
   width: 120px;
 }
@@ -128,6 +131,14 @@ body div.ui-sortable md-card md-card-content section.spells div.cantrips {
 body div.ui-sortable md-card md-card-content section.spells div.cantrips md-select {
   min-width: 150px;
   float: left;
+}
+body div.ui-sortable md-card md-card-content section.spells div.spell-slots md-slider-container {
+  max-width: 500px;
+  padding-right: 5px;
+}
+body div.ui-sortable md-card md-card-content section.spells div.spell-slots span {
+  max-width: none;
+  line-height: 24px;
 }
 body div.ui-sortable md-card md-card-content section.spells div.spells-known md-select {
   min-width: 150px;

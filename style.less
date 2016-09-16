@@ -51,6 +51,9 @@ body {
           }
           div.content {
             padding: 5px;
+            h4 {
+              width: 100% !important;
+            }
           }
           &.info {
             input.race {
@@ -157,7 +160,14 @@ body {
               }
             }
             div.spell-slots {
-              // Too big
+              md-slider-container {
+                max-width: 500px;
+                padding-right: 5px;
+              }
+              span {
+                max-width:none;
+                line-height:24px;
+              }
             }
             div.spells-known {
               md-select {

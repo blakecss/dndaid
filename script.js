@@ -12,21 +12,6 @@ app.config(function($mdThemingProvider) {
     .accentPalette('orange');
 });
 
-/*
-app.filter('spellFilter', function() {
-  return function(spell) {
-    var spellLvl = Number(input.level.charAt(0));
-    for (var i = 9; i<0; i--) {
-      if ($scope.char['lvl'+i+'Slots']>0) {
-        if (spellLvl<=i) {
-          return spell;
-        }
-      }
-    }
-  }
-});
-*/
-
 app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', '$mdToast', function charactersController($scope, filterFilter, $mdDialog, $mdToast) {
   $scope.dieNum = 1;
   $scope.dieSides = 20;
@@ -169,9 +154,8 @@ app.controller('characterController', ['$scope', function characterController($s
   } else {
     // Initialize stats
     $scope.char.speed = 0;
-    $scope.char.curHP = 0;
-    $scope.char.maxHP = 0;
-    $scope.char.cantripsKnown, $scope.char.lvl1Slots, $scope.char.lvl2Slots, $scope.char.lvl3Slots, $scope.char.lvl4Slots, $scope.char.lvl5Slots, $scope.char.lvl6Slots, $scope.char.lvl7Slots, $scope.char.lvl8Slots, $scope.char.lvl9Slots = 0;
+    $scope.char.curHP = $scope.char.maxHP = 0;
+    $scope.char.cantripsKnown = $scope.char.lvl1Slots = $scope.char.lvl2Slots = $scope.char.lvl3Slots = $scope.char.lvl4Slots = $scope.char.lvl5Slots = $scope.char.lvl6Slots = $scope.char.lvl7Slots = $scope.char.lvl8Slots = $scope.char.lvl9Slots = 0;
     $scope.char.exp = 0;
     $scope.char.level = 1;
     $scope.char.pb = 2;
@@ -182,7 +166,7 @@ app.controller('characterController', ['$scope', function characterController($s
     $scope.char.skillMods = {'acro': -5, 'anim': -5, 'arca': -5, 'athl': -5, 'dece': -5, 'hist': -5, 'insi': -5, 'inti': -5, 'inve': -5, 'medi': -5, 'natu': -5, 'perc': -5, 'perf': -5, 'pers': -5, 'reli': -5, 'slei': -5, 'stea': -5, 'surv': -5};
     $scope.char.skillRels = {'acro': 'dex', 'anim': 'wis', 'arca': 'int', 'athl': 'str', 'dece': 'cha', 'hist': 'int', 'insi': 'wis', 'inti': 'cha', 'inve': 'int', 'medi': 'wis', 'natu': 'int', 'perc': 'wis', 'perf': 'cha', 'pers': 'cha', 'reli': 'int', 'slei': 'dex', 'stea': 'dex', 'surv': 'wis'};
     $scope.char.skillProfs = {'acro': false, 'anim': false, 'arca': false, 'athl': false, 'dece': false, 'hist': false, 'insi': false, 'inti': false, 'inve': false, 'medi': false, 'natu': false, 'perc': false, 'perf': false, 'pers': false, 'reli': false, 'slei': false, 'stea': false, 'surv': false};
-    $scope.char.pp, $scope.char.gp, $scope.char.ep, $scope.char.sp, $scope.char.cp = 0;
+    $scope.char.pp = $scope.char.gp = $scope.char.ep = $scope.char.sp = $scope.char.cp = 0;
   }
 
   // Race watchers
@@ -232,12 +216,41 @@ app.controller('characterController', ['$scope', function characterController($s
     }
   });
 
-  // Class watchers (mostly spells)
+  // Class watchers
+  $scope.$watch('char.class', function(newVal, oldVal) {
+    if (newVal=='Barbarian') {
+      $scope.char.saveProfs = {'str': true, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': false};
+    } else if (newVal=='Bard') {
+      $scope.char.saveProfs = {'str': false, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': true};
+    } else if (newVal=='Cleric') {
+      $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
+    } else if (newVal=='Druid') {
+      $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': true, 'wis': true, 'cha': false};
+    } else if (newVal=='Fighter') {
+      $scope.char.saveProfs = {'str': true, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': false};
+    } else if (newVal=='Monk') {
+      $scope.char.saveProfs = {'str': true, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': false};
+    } else if (newVal=='Paladin') {
+      $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
+    } else if (newVal=='Ranger') {
+      $scope.char.saveProfs = {'str': true, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': false};
+    } else if (newVal=='Rogue') {
+      $scope.char.saveProfs = {'str': false, 'dex': true, 'con': false, 'int': true, 'wis': false, 'cha': false};
+    } else if (newVal=='Sorcerer') {
+      $scope.char.saveProfs = {'str': false, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': true};
+    } else if (newVal=='Warlock') {
+      $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
+    } else if (newVal=='Wizard') {
+      $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': true, 'wis': true, 'cha': false};
+    }
+  });
+
+  // Spell watchers
   $scope.$watch('[char.level, char.class, char.mods.int, char.mods.wis, char.mods.cha]', function(newVal, oldVal) {
     if (newVal[1]=='Barbarian') { // Done
       $scope.char.hitDice = newVal[0]+'d12';
       $scope.char.spellcastingAbility = '';
-      $scope.char.cantripsKnown, $scope.char.spellsKnown, $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+      $scope.char.cantripsKnown = $scope.char.spellsKnown = $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
     }
     else if (newVal[1]=='Bard') { // Done
       $scope.char.hitDice = newVal[0]+'d8';
@@ -248,38 +261,38 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 4;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 5;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 6;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 7;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 8;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==6) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 9;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 10;
@@ -287,7 +300,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 11;
@@ -295,7 +308,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 12;
@@ -304,7 +317,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 1;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 14;
@@ -313,7 +326,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 15;
@@ -323,7 +336,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
-        $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 16;
@@ -334,7 +347,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
         $scope.char.level7Slots = 1;
-        $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==14) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 18;
@@ -345,7 +358,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
         $scope.char.level7Slots = 1;
-        $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 19;
@@ -417,47 +430,47 @@ app.controller('characterController', ['$scope', function characterController($s
       if (newVal[0]==1) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==6) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
@@ -465,7 +478,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 1;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;
@@ -473,7 +486,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;
@@ -482,7 +495,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
-        $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13 || newVal[0]==14) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;
@@ -492,7 +505,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
         $scope.char.level7Slots = 1;
-        $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;
@@ -559,47 +572,47 @@ app.controller('characterController', ['$scope', function characterController($s
       if (newVal[0]==1) {
         $scope.char.cantripsKnown = 2;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 2;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 2;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==6) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots =3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots =3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots =3;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
@@ -607,7 +620,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots =3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 1;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
@@ -615,7 +628,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots =3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
@@ -624,7 +637,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
-        $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13 || newVal[0]==14) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
@@ -634,7 +647,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
         $scope.char.level7Slots = 1;
-        $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
@@ -698,62 +711,62 @@ app.controller('characterController', ['$scope', function characterController($s
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[2];
       $scope.char.spellAttackMod = $scope.char.pb + newVal[2];
       if (newVal[0]==1 || newVal[0]==2) {
-        $scope.char.cantripsKnown, $scope.char.spellsKnown, $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.cantripsKnown = $scope.char.spellsKnown = $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 3;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4 || newVal[0]==5 || newVal[0]==6) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 4;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 5;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8 || newVal[0]==9) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 6;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 7;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 8;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 9;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==14 || newVal[0]==15) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 10;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==16 || newVal[0]==17 || newVal[0]==18) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 11;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==19) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 12;
@@ -761,7 +774,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 13;
@@ -769,13 +782,13 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
     else if (newVal[1]=='Monk') { // Done
       $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.spellcastingAbility = '';
-      $scope.char.cantripsKnown, $scope.char.spellsKnown, $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+      $scope.char.cantripsKnown = $scope.char.spellsKnown = $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
     }
     else if (newVal[1]=='Paladin') { // Cha mod
       $scope.char.hitDice = newVal[0]+'d10';
@@ -785,51 +798,51 @@ app.controller('characterController', ['$scope', function characterController($s
       $scope.char.spellsKnown = newVal[4] + Math.floor(newVal[0]/2) < 1 ? 1 : newVal[4] + Math.floor(newVal[0]/2);
       if (newVal[0]==1) {
         $scope.char.cantripsKnown = 0;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3 || newVal[0]==4) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5 || newVal[0]==6) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7 || newVal[0]==8) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9 || newVal[0]==10) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13 || newVal[0]==14) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==17 || newVal[0]==18) {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
@@ -837,7 +850,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 1;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else {
         $scope.char.cantripsKnown = 0;
         $scope.char.level1Slots = 4;
@@ -845,7 +858,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
     else if (newVal[1]=='Ranger') { // Done
@@ -854,43 +867,43 @@ app.controller('characterController', ['$scope', function characterController($s
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[3];
       $scope.char.spellAttackMod = $scope.char.pb + newVal[3];
       if (newVal[0]==1) {
-        $scope.char.cantripsKnown, $scope.char.spellsKnown, $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.cantripsKnown = $scope.char.spellsKnown = $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }  else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 2;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3 || newVal[0]==4) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 3;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5 || newVal[0]==6) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7 || newVal[0]==8) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 5;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9 || newVal[0]==10) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 6;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 7;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13 || newVal[0]==14) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 8;
@@ -898,7 +911,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 9;
@@ -906,7 +919,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==17 || newVal[0]==18) {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 10;
@@ -915,7 +928,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 1;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else {
         $scope.char.cantripsKnown = 0;
         $scope.char.spellsKnown = 11;
@@ -924,7 +937,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
     else if (newVal[1]=='Rogue') { // Done
@@ -933,62 +946,62 @@ app.controller('characterController', ['$scope', function characterController($s
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[2];
       $scope.char.spellAttackMod = $scope.char.pb + newVal[2];
       if (newVal[0]==1 || newVal[0]==2) {
-        $scope.char.cantripsKnown, $scope.char.spellsKnown, $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.cantripsKnown = $scope.char.spellsKnown = $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 3;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4 || newVal[0]==5 || newVal[0]==6) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 4;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 5;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8 || newVal[0]==9) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 6;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 7;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 8;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 9;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==14 || newVal[0]==15) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 10;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==16 || newVal[0]==17 || newVal[0]==18) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 11;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==19) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 12;
@@ -996,7 +1009,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 13;
@@ -1004,7 +1017,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
     else if (newVal[1]=='Sorcerer') { // Done
@@ -1016,38 +1029,38 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 2;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 3;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4) {
         $scope.char.cantripsKnown = 5;
         $scope.char.spellsKnown = 5;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5) {
         $scope.char.cantripsKnown = 5;
         $scope.char.spellsKnown = 6;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==6) {
         $scope.char.cantripsKnown = 5;
         $scope.char.spellsKnown = 7;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 5;
         $scope.char.spellsKnown = 8;
@@ -1055,7 +1068,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8) {
         $scope.char.cantripsKnown = 5;
         $scope.char.spellsKnown = 9;
@@ -1063,7 +1076,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9) {
         $scope.char.cantripsKnown = 5;
         $scope.char.spellsKnown = 10;
@@ -1072,7 +1085,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 1;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 5;
         $scope.char.spellsKnown = 11;
@@ -1081,7 +1094,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 6;
         $scope.char.spellsKnown = 12;
@@ -1091,7 +1104,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
-        $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13 || newVal[0]==14) {
         $scope.char.cantripsKnown = 6;
         $scope.char.spellsKnown = 13;
@@ -1102,7 +1115,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
         $scope.char.level7Slots = 1;
-        $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 6;
         $scope.char.spellsKnown = 14;
@@ -1174,90 +1187,90 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 2;
         $scope.char.level1Slots = 1;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 3;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 2;
         $scope.char.spellsKnown = 4;
         $scope.char.level1Slots = 0;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 5;
         $scope.char.level1Slots = 0;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 6;
-        $scope.char.level1Slots, $scope.char.level2Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = 0;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==6) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 7;
-        $scope.char.level1Slots, $scope.char.level2Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = 0;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 8;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = 0;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 9;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = 0;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9) {
         $scope.char.cantripsKnown = 3;
         $scope.char.spellsKnown = 10;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = 0;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 10;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = 0;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 11;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = 0;
         $scope.char.level5Slots = 3;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13 || newVal[0]==14) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 12;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = 0;
         $scope.char.level5Slots = 3;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 13;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = 0;
         $scope.char.level5Slots = 3;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==17 || newVal[0]==18) {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 14;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = 0;
         $scope.char.level5Slots = 4;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else {
         $scope.char.cantripsKnown = 4;
         $scope.char.spellsKnown = 15;
-        $scope.char.level1Slots, $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots = 0;
+        $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = 0;
         $scope.char.level5Slots = 4;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
     else if (newVal[1]=='Wizard') { // Int mod
@@ -1269,47 +1282,47 @@ app.controller('characterController', ['$scope', function characterController($s
       if (newVal[0]==1) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 2;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==2) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 3;
-        $scope.char.level2Slots, $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==3) {
         $scope.char.cantripsKnown = 3;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 2;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==4) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
-        $scope.char.level3Slots, $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==5) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 2;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==6) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
-        $scope.char.level4Slots, $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==7) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 1;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==8) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
         $scope.char.level2Slots = 3;
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 2;
-        $scope.char.level5Slots, $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==9) {
         $scope.char.cantripsKnown = 4;
         $scope.char.level1Slots = 4;
@@ -1317,7 +1330,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 1;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==10) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;
@@ -1325,7 +1338,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level3Slots = 3;
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
-        $scope.char.level6Slots, $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==11 || newVal[0]==12) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;
@@ -1334,7 +1347,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level4Slots = 3;
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
-        $scope.char.level7Slots, $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==13 || newVal[0]==14) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;
@@ -1344,7 +1357,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = 2;
         $scope.char.level6Slots = 1;
         $scope.char.level7Slots = 1;
-        $scope.char.level8Slots, $scope.char.level9Slots = 0;
+        $scope.char.level8Slots = $scope.char.level9Slots = 0;
       } else if (newVal[0]==15 || newVal[0]==16) {
         $scope.char.cantripsKnown = 5;
         $scope.char.level1Slots = 4;

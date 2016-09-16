@@ -176,11 +176,11 @@
         </md-select>
       </md-input-container>
     </div>
-    <div class="slots" ng-show="char.spellsKnown">
+    <div class="spell-slots" ng-show="char.spellsKnown">
       <h4>Slots</h4>
       <md-slider-container ng-repeat="n in numToArray(9) track by $index" ng-show="char['level'+($index+1)+'Slots']">
-        <span style="max-width:none;line-height:24px;">Level {{$index+1}} Slots</span>
-        <md-slider flex md-discrete ng-model="char['level'+($index+1)+'SlotsRemaining']" step="1" min="0" max="{{char['level'+($index+1)+'Slots']}}" aria-label="Level {{$index+1}} Spell Slots">
+        <span>Level {{$index+1}} Slots ({{char['level'+($index+1)+'Slots']}})</span>
+        <md-slider md-discrete ng-model="char['level'+($index+1)+'SlotsRemaining']" step="1" min="0" max="{{char['level'+($index+1)+'Slots']}}" aria-label="Level {{$index+1}} Spell Slots">
       </md-slider-container>
     </div>
     <div class="spells-known" ng-show="char.spellsKnown">
@@ -190,28 +190,28 @@
           <md-optgroup label="Level 1">
             <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 2">
+          <md-optgroup label="Level 2" ng-show="char.level2Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'2nd-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 3">
+          <md-optgroup label="Level 3" ng-show="char.level3Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'3rd-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 4">
+          <md-optgroup label="Level 4" ng-show="char.level4Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'4th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 5">
+          <md-optgroup label="Level 5" ng-show="char.level5Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'5th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 6">
+          <md-optgroup label="Level 6" ng-show="char.level6Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'6th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 7">
+          <md-optgroup label="Level 7" ng-show="char.level7Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'7th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 8">
+          <md-optgroup label="Level 8" ng-show="char.level8Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'8th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
-          <md-optgroup label="Level 9">
+          <md-optgroup label="Level 9" ng-show="char.level9Slots">
             <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
           </md-optgroup>
         </md-select>
