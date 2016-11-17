@@ -1,7 +1,7 @@
-@blue500: #2196F3;
-@blue100: #BBDEFB;
-@orange500: #FF9800;
-@orange100: #FFE0B2;
+$blue500: #2196F3;
+$blue100: #BBDEFB;
+$orange500: #FF9800;
+$orange100: #FFE0B2;
 
 body {
   margin: 0;
@@ -21,18 +21,18 @@ body {
       flex: 1;
       &.monster {
         md-toolbar {
-          background: @orange500;
+          background: $orange500;
         }
         h3 {
-          background: @orange100;
+          background: $orange100;
         }
       }
       &.player {
         md-toolbar {
-          background: @blue500;
+          background: $blue500;
         }
         h3 {
-          background: @blue100;
+          background: $blue100;
         }
       }
       md-toolbar.handle:hover {
@@ -185,7 +185,7 @@ body {
     bottom: 10px;
     right: 10px;
     md-fab-trigger button {
-      //background: @blue500 !important;
+      //background: $blue500 !important;
     }
     md-fab-actions button.md-mini md-icon {
       width: 80%;

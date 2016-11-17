@@ -1,8 +1,10 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- build:css css/styles.min.css -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- endbuild -->
 </head>
 <body ng-app="DNDApp" ng-controller="charactersController" ng-cloak>
   <header>
@@ -96,18 +98,20 @@
       </md-button>
     </md-fab-actions>
   </md-fab-speed-dial>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-sanitize.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
-  <script src="node_modules\angular-ui-sortable\dist\sortable.min.js"></script>
-  <script src="data/spells.json"></script>
-  <script src="data/monsters.json"></script>
-  <script src="data/inventory.json"></script>
-  <script src="script.js"></script>
 </body>
+<!-- build:js js/main.min.js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-ui-sortable/sortable.js"></script>
+<script src="data/spells.json"></script>
+<script src="data/monsters.json"></script>
+<script src="data/inventory.json"></script>
+<script src="script.js"></script>
+<!-- endbuild -->
 </html>
