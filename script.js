@@ -58,7 +58,6 @@ app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'fil
     $mdToast.hide();
   };
   $scope.rollDice = function() {
-    console.log(saveFile[0]);
     var highest = $scope.dieNum * $scope.dieSides;
     $scope.rollResult = (Math.floor((Math.random() * highest) + 1)) + $scope.dieAdd;
   };
@@ -115,7 +114,7 @@ app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'fil
   };
   $scope.addMonster = function(monster) {
     $scope.idCounter++;
-    $scope.characters.push({id: $scope.idCounter, type: 'monster', presets: monster, char: c});
+    $scope.characters.push({id: $scope.idCounter, type: 'monster', presets: monster});
     $mdDialog.hide();
   };
   $scope.deleteChar = function(id, name) {
@@ -123,7 +122,6 @@ app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'fil
     $mdDialog.show(confirm).then(function() {
       var i = $scope.characters.findIndex(c => c.id==id);
       $scope.characters.splice(i, 1);
-      // saveFile.splice(i, 1);
     });
   };
 
@@ -183,10 +181,15 @@ app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'fil
     });
   };
   $scope.loadFile = function() {
+    var highestID = 0;
     angular.forEach($scope.savedFile, function(value) {
+      saveFile = [];
       $scope.characters.push({id: value.id, type: value.type, presets: value.presets, char: value.char});
-      console.log($scope.characters);
+      if (value.id > highestID) {
+        highestID = value.id;
+      }
     });
+    $scope.idCounter = highestID;
     $mdDialog.cancel();
   };
 
