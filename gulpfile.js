@@ -3,7 +3,7 @@ var watch = require('gulp-watch');
 var sass = require('gulp-sass');
 var useref = require('gulp-useref');
 var gulpIf = require('gulp-if');
-var uglify = require('gulp-uglify')
+var uglify = require('gulp-uglify');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var autoPrefixer = require('gulp-autoprefixer');
@@ -18,7 +18,7 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: base
     }
-  })
+  });
 });
 
 gulp.task('sass', function() {

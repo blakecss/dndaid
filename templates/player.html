@@ -8,13 +8,13 @@
     <md-input-container>
       <label>Race</label>
       <md-select class="race" ng-model="char.race">
-        <md-option ng-repeat="race in races">{{race.name}}</md-option>
+        <md-option ng-repeat="race in races" ng-value="race.name">{{race.name}}</md-option>
       </md-select>
     </md-input-container>
     <md-input-container>
       <label>Class</label>
       <md-select class="class" ng-model="char.class">
-        <md-option ng-repeat="class in classes">{{class.name}}</md-option>
+        <md-option ng-repeat="class in classes" ng-value="class.name">{{class.name}}</md-option>
       </md-select>
     </md-input-container>
     <md-input-container>
@@ -24,15 +24,15 @@
     <md-input-container>
       <label>Alignment</label>
       <md-select class="alignment" ng-model="char.alignment">
-        <md-option>LG</md-option>
-        <md-option>NG</md-option>
-        <md-option>CG</md-option>
-        <md-option>LN</md-option>
-        <md-option>N</md-option>
-        <md-option>CN</md-option>
-        <md-option>LE</md-option>
-        <md-option>NE</md-option>
-        <md-option>CE</md-option>
+        <md-option value="LG">LG</md-option>
+        <md-option value="NG">NG</md-option>
+        <md-option value="CG">CG</md-option>
+        <md-option value="LN">LN</md-option>
+        <md-option value="N">N</md-option>
+        <md-option value="CN">CN</md-option>
+        <md-option value="LE">LE</md-option>
+        <md-option value="NE">NE</md-option>
+        <md-option value="CE">CE</md-option>
       </md-select>
     </md-input-container>
     <md-input-container>
@@ -172,7 +172,7 @@
       <h4>Cantrips</h4>
       <md-input-container ng-repeat="n in numToArray(char.cantripsKnown) track by $index">
         <md-select aria-label="Cantrip" ng-model="char['cantrip'+$index+1]">
-          <md-option ng-repeat="spell in spells | filter:{level:'cantrip'} | filter:{class:class}">{{spell.name}}</md-option>
+          <md-option ng-repeat="spell in spells | filter:{level:'cantrip'} | filter:{class:class}" ng-value="spell.name">{{spell.name}}</md-option>
         </md-select>
       </md-input-container>
     </div>
@@ -188,31 +188,31 @@
       <md-input-container ng-repeat="n in numToArray(char.spellsKnown) track by $index">
         <md-select aria-label="Known Spell" ng-model="char['knownSpell'+$index+1]">
           <md-optgroup label="Level 1">
-            <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'1st-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 2" ng-show="char.level2Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'2nd-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'2nd-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 3" ng-show="char.level3Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'3rd-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'3rd-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 4" ng-show="char.level4Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'4th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'4th-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 5" ng-show="char.level5Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'5th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'5th-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 6" ng-show="char.level6Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'6th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'6th-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 7" ng-show="char.level7Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'7th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'7th-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 8" ng-show="char.level8Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'8th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'8th-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="Level 9" ng-show="char.level9Slots">
-            <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:char.class}">{{spell.name}}</md-option>
+            <md-option ng-repeat="spell in spells | filter:{level:'9th-level'} | filter:{class:char.class}" ng-value="spell.name">{{spell.name}}</md-option>
           </md-optgroup>
         </md-select>
       </md-input-container>

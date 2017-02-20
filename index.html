@@ -63,7 +63,7 @@
     </md-toolbar>
   </header>
   <div ui-sortable="sortableOptions" ng-model="characters" layout="row" layout-wrap>
-    <md-card ng-repeat="character in characters track by character.id" ng-controller="characterController" ng-class="type=='monster' ? 'monster' : 'player'">
+    <md-card ng-repeat="character in characters track by character.id" ng-controller="characterController" ng-class="character.type=='monster' ? 'monster' : 'player'" ng-init="id=character.id">
       <md-toolbar class="handle">
         <div class="md-toolbar-tools">
           <h2>{{char.name || charID}}</h2>
@@ -73,7 +73,7 @@
           </md-button>
         </div>
       </md-toolbar>
-      <md-card-content ng-switch on="type">
+      <md-card-content ng-switch on="character.type">
         <div ng-switch-when="player">
           <ng-include src="'/templates/player.html'"></ng-include>
         </div>

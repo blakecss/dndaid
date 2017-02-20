@@ -126,17 +126,21 @@ h3, h4 {
 .cap {
   text-transform: capitalize; }
 
-md-dialog div.md-dialog-content {
+md-dialog .md-dialog-content {
   padding: 16px; }
-
-md-dialog div.md-dialog-content *:first-child {
-  margin-top: 0; }
-
-md-dialog div.md-dialog-content *:last-child {
-  margin-bottom: 0; }
 
 md-dialog md-autocomplete {
   min-width: 300px; }
+
+md-dialog.item-dialog .md-dialog-content > *:first-child, md-dialog.spell-dialog .md-dialog-content > *:first-child {
+  margin-top: 0; }
+
+md-dialog.item-dialog .md-dialog-content > *:last-child, md-dialog.spell-dialog .md-dialog-content > *:last-child {
+  margin-bottom: 0; }
+
+md-dialog.save-dialog a {
+  color: inherit;
+  text-decoration: none; }
 
 .md-autocomplete-suggestions li {
   line-height: 18px;
@@ -164,20 +168,20 @@ div.small {
 
 md-toast {
   margin-top: 64px; }
-  md-toast div.md-toast-content {
+  md-toast .md-toast-content {
     background: rgba(50, 50, 50, 0.7);
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     height: auto;
     max-width: 304px; }
-    md-toast div.md-toast-content .md-icon-button {
+    md-toast .md-toast-content .md-icon-button {
       position: absolute;
       top: 0;
       right: 0; }
-    md-toast div.md-toast-content md-input-container label {
+    md-toast .md-toast-content md-input-container label {
       color: #fff !important; }
-    md-toast div.md-toast-content md-input-container input {
+    md-toast .md-toast-content md-input-container input {
       border-bottom: 1px solid #fff;
       color: #fff; }
-      md-toast div.md-toast-content md-input-container input:focus {
+      md-toast .md-toast-content md-input-container input:focus {
         outline: 0; }

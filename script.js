@@ -11,8 +11,15 @@ app.config(function($mdThemingProvider) {
     })
     .accentPalette('orange');
 });
+app.config(['$compileProvider', function($compileProvider) {
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|data|chrome-extension):/);
+}]);
 
-app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', '$mdToast', function charactersController($scope, filterFilter, $mdDialog, $mdToast) {
+var saveFile = [];
+var loading = false;
+
+app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'filterFilter', '$mdDialog', '$mdToast', function charactersController($scope, $rootScope, $timeout, filterFilter, $mdDialog, $mdToast) {
+  $scope.fileName = 'my_game';
   $scope.dieNum = 1;
   $scope.dieSides = 20;
   $scope.dieAdd = 0;
@@ -37,69 +44,6 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', '
     return new Array(num);
   };
 
-  // Character add/remove
-  $scope.addPlayer = function() {
-    $scope.idCounter++;
-    $scope.characters.push({id: $scope.idCounter, type: "player", preset: ''});
-  };
-  $scope.addMonster = function(monster) {
-    $scope.idCounter++;
-    $scope.characters.push({id: $scope.idCounter, type: "monster", presets: monster});
-    $mdDialog.hide();
-  };
-  $scope.deleteChar = function(id, name) {
-    var confirm = $mdDialog.confirm().title('Delete ' + (!name ? ('character ' + id) : name) + '?').cancel('Cancel').ok('Delete');
-    $mdDialog.show(confirm).then(function() {
-      var i = $scope.characters.findIndex(c => c.id==id);
-      $scope.characters.splice(i, 1);
-    });
-  };
-
-  // Spell search
-  $scope.showSpell = function(s) {
-    if (s) {
-      $mdDialog.show({
-        autoWrap: false,
-        scope: $scope,
-        preserveScope: true,
-        templateUrl: 'templates/spellDialog.html'
-      });
-    }
-  };
-  $scope.spellSearch = function(query) {
-    if (query=='') {
-      return $scope.spells;
-    } else {
-      return filterFilter($scope.spells, {name: query});
-    }
-  };
-  $scope.findSpell = function(query) {
-    if (!query) {
-      return '';
-    } else {
-      return filterFilter($scope.spells, {name: query});
-    }
-  }
-
-  // Item search
-  $scope.showItem = function(s) {
-    if (s) {
-      $mdDialog.show({
-        autoWrap: false,
-        scope: $scope,
-        preserveScope: true,
-        templateUrl: 'templates/itemDialog.html'
-      });
-    }
-  };
-  $scope.itemSearch = function(query) {
-    if (query=='') {
-      return $scope.inventory;
-    } else {
-      return filterFilter($scope.inventory, {name: query});
-    }
-  };
-
   // Dice Roller
   $scope.showDice = function() {
     $mdToast.show({
@@ -114,10 +58,74 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', '
     $mdToast.hide();
   };
   $scope.rollDice = function() {
+    console.log(saveFile[0]);
     var highest = $scope.dieNum * $scope.dieSides;
     $scope.rollResult = (Math.floor((Math.random() * highest) + 1)) + $scope.dieAdd;
   };
 
+  // Spell search
+  $scope.showSpell = function(s) {
+    if (s) {
+      $mdDialog.show({
+        autoWrap: false,
+        scope: $scope,
+        preserveScope: true,
+        templateUrl: 'templates/spellDialog.html'
+      });
+    }
+  };
+  $scope.spellSearch = function(query) {
+    if (query==='') {
+      return $scope.spells;
+    } else {
+      return filterFilter($scope.spells, {name: query});
+    }
+  };
+  $scope.findSpell = function(query) {
+    if (!query) {
+      return '';
+    } else {
+      return filterFilter($scope.spells, {name: query});
+    }
+  };
+
+  // Item search
+  $scope.showItem = function(s) {
+    if (s) {
+      $mdDialog.show({
+        autoWrap: false,
+        scope: $scope,
+        preserveScope: true,
+        templateUrl: 'templates/itemDialog.html'
+      });
+    }
+  };
+  $scope.itemSearch = function(query) {
+    if (query==='') {
+      return $scope.inventory;
+    } else {
+      return filterFilter($scope.inventory, {name: query});
+    }
+  };
+
+  // Character add/remove
+  $scope.addPlayer = function(c) {
+    $scope.idCounter++;
+    $scope.characters.push({id: $scope.idCounter, type: 'player', presets: '', char: c});
+  };
+  $scope.addMonster = function(monster) {
+    $scope.idCounter++;
+    $scope.characters.push({id: $scope.idCounter, type: 'monster', presets: monster, char: c});
+    $mdDialog.hide();
+  };
+  $scope.deleteChar = function(id, name) {
+    var confirm = $mdDialog.confirm().title('Delete ' + (!name ? ('character ' + id) : name) + '?').cancel('Cancel').ok('Delete');
+    $mdDialog.show(confirm).then(function() {
+      var i = $scope.characters.findIndex(c => c.id==id);
+      $scope.characters.splice(i, 1);
+      // saveFile.splice(i, 1);
+    });
+  };
 
   // Monster search
   $scope.selectMonster = function() {
@@ -127,7 +135,7 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', '
       preserveScope: true,
       controller: function DialogController($scope, filterFilter, $mdDialog) {
         $scope.monsterSearch = function(query) {
-          if (query=='') {
+          if (query==='') {
             return $scope.monsters;
           } else {
             return filterFilter($scope.monsters, {name: query});
@@ -139,35 +147,82 @@ app.controller('charactersController', ['$scope', 'filterFilter', '$mdDialog', '
   };
   $scope.closeDialog = function() {
     $mdDialog.cancel();
-  }
+  };
+
+  // Save
+  $scope.saveGame = function() {
+    saveFile = $scope.characters;
+    $scope.saveFile = encodeURIComponent(JSON.stringify(saveFile));
+    $mdDialog.show({
+      autoWrap: false,
+      scope: $scope,
+      preserveScope: true,
+      templateUrl: 'templates/saveDialog.html'
+    });
+  };
+
+  // Load
+  $scope.loadGame = function() {
+    $mdDialog.show({
+      autoWrap: false,
+      scope: $scope,
+      preserveScope: true,
+      templateUrl: 'templates/loadDialog.html',
+      onComplete: function() {
+        document.getElementById('filez').addEventListener('change', function(evt) {
+          var f = evt.target.files;
+          var reader = new FileReader();
+          reader.onload = (function(theFile) {
+            return function(e) {
+              $scope.savedFile = JSON.parse(e.target.result);
+            };
+          })(f[0]);
+          reader.readAsText(f[0]);
+        }, false);
+      }
+    });
+  };
+  $scope.loadFile = function() {
+    angular.forEach($scope.savedFile, function(value) {
+      $scope.characters.push({id: value.id, type: value.type, presets: value.presets, char: value.char});
+      console.log($scope.characters);
+    });
+    $mdDialog.cancel();
+  };
+
 }]);
-
-
 
 app.controller('characterController', ['$scope', function characterController($scope) {
   $scope.charID = $scope.$parent.idCounter;
   $scope.char = {};
-  var loading = false;
+  $scope.$watch('id', function(newID) {
+    $scope.charID = newID;
+    $scope.$parent.characters.forEach(function(value, key) {
+      if (value.id==newID) {
+        if (value.char) {
+          $scope.char = value.char;
+        } else {
+          value.char = $scope.char;
+        }
+      }
+    });
+  });
 
-  if (loading) {
-    // load variables
-  } else {
-    // Initialize stats
-    $scope.char.speed = 0;
-    $scope.char.curHP = $scope.char.maxHP = 0;
-    $scope.char.cantripsKnown = $scope.char.lvl1Slots = $scope.char.lvl2Slots = $scope.char.lvl3Slots = $scope.char.lvl4Slots = $scope.char.lvl5Slots = $scope.char.lvl6Slots = $scope.char.lvl7Slots = $scope.char.lvl8Slots = $scope.char.lvl9Slots = 0;
-    $scope.char.exp = 0;
-    $scope.char.level = 1;
-    $scope.char.pb = 2;
-    $scope.char.abilities = {'str': 0, 'dex': 0, 'con': 0, 'int': 0, 'wis': 0, 'cha': 0};
-    $scope.char.mods = {'str': -5, 'dex': -5, 'con': -5, 'int': -5, 'wis': -5, 'cha': -5}
-    $scope.char.saveMods = {'str': -5, 'dex': -5, 'con': -5, 'int': -5, 'wis': -5, 'cha': -5};
-    $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': false, 'cha': false};
-    $scope.char.skillMods = {'acro': -5, 'anim': -5, 'arca': -5, 'athl': -5, 'dece': -5, 'hist': -5, 'insi': -5, 'inti': -5, 'inve': -5, 'medi': -5, 'natu': -5, 'perc': -5, 'perf': -5, 'pers': -5, 'reli': -5, 'slei': -5, 'stea': -5, 'surv': -5};
-    $scope.char.skillRels = {'acro': 'dex', 'anim': 'wis', 'arca': 'int', 'athl': 'str', 'dece': 'cha', 'hist': 'int', 'insi': 'wis', 'inti': 'cha', 'inve': 'int', 'medi': 'wis', 'natu': 'int', 'perc': 'wis', 'perf': 'cha', 'pers': 'cha', 'reli': 'int', 'slei': 'dex', 'stea': 'dex', 'surv': 'wis'};
-    $scope.char.skillProfs = {'acro': false, 'anim': false, 'arca': false, 'athl': false, 'dece': false, 'hist': false, 'insi': false, 'inti': false, 'inve': false, 'medi': false, 'natu': false, 'perc': false, 'perf': false, 'pers': false, 'reli': false, 'slei': false, 'stea': false, 'surv': false};
-    $scope.char.pp = $scope.char.gp = $scope.char.ep = $scope.char.sp = $scope.char.cp = 0;
-  }
+  // Initialize stats
+  $scope.char.speed = 0;
+  $scope.char.curHP = $scope.char.maxHP = 0;
+  $scope.char.cantripsKnown = $scope.char.lvl1Slots = $scope.char.lvl2Slots = $scope.char.lvl3Slots = $scope.char.lvl4Slots = $scope.char.lvl5Slots = $scope.char.lvl6Slots = $scope.char.lvl7Slots = $scope.char.lvl8Slots = $scope.char.lvl9Slots = 0;
+  $scope.char.exp = 0;
+  $scope.char.level = 1;
+  $scope.char.pb = 2;
+  $scope.char.abilities = {'str': 0, 'dex': 0, 'con': 0, 'int': 0, 'wis': 0, 'cha': 0};
+  $scope.char.mods = {'str': -5, 'dex': -5, 'con': -5, 'int': -5, 'wis': -5, 'cha': -5};
+  $scope.char.saveMods = {'str': -5, 'dex': -5, 'con': -5, 'int': -5, 'wis': -5, 'cha': -5};
+  $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': false, 'cha': false};
+  $scope.char.skillMods = {'acro': -5, 'anim': -5, 'arca': -5, 'athl': -5, 'dece': -5, 'hist': -5, 'insi': -5, 'inti': -5, 'inve': -5, 'medi': -5, 'natu': -5, 'perc': -5, 'perf': -5, 'pers': -5, 'reli': -5, 'slei': -5, 'stea': -5, 'surv': -5};
+  $scope.char.skillRels = {'acro': 'dex', 'anim': 'wis', 'arca': 'int', 'athl': 'str', 'dece': 'cha', 'hist': 'int', 'insi': 'wis', 'inti': 'cha', 'inve': 'int', 'medi': 'wis', 'natu': 'int', 'perc': 'wis', 'perf': 'cha', 'pers': 'cha', 'reli': 'int', 'slei': 'dex', 'stea': 'dex', 'surv': 'wis'};
+  $scope.char.skillProfs = {'acro': false, 'anim': false, 'arca': false, 'athl': false, 'dece': false, 'hist': false, 'insi': false, 'inti': false, 'inve': false, 'medi': false, 'natu': false, 'perc': false, 'perf': false, 'pers': false, 'reli': false, 'slei': false, 'stea': false, 'surv': false};
+  $scope.char.pp = $scope.char.gp = $scope.char.ep = $scope.char.sp = $scope.char.cp = 0;
 
   // Race watchers
   $scope.$watch('char.race', function(newVal, oldVal) {

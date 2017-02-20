@@ -7,7 +7,7 @@ body {
   margin: 0;
   header {
     md-autocomplete.spellRef {
-      min-width: 250px
+      min-width: 250px;
     }
     md-autocomplete.itemRef {
       min-width: 250px;
@@ -213,19 +213,30 @@ h3, h4 {
 }
 
 md-dialog {
-  div.md-dialog-content {
+  .md-dialog-content {
     padding: 16px;
-  }
-  div.md-dialog-content *:first-child {
-    margin-top: 0;
-  }
-  div.md-dialog-content *:last-child {
-    margin-bottom: 0;
   }
   md-autocomplete {
     min-width: 300px;
   }
+  &.item-dialog, &.spell-dialog {
+    .md-dialog-content {
+      & > *:first-child {
+        margin-top: 0;
+      }
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.save-dialog {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 }
+
 
 .md-autocomplete-suggestions li {
   line-height: 18px;
@@ -261,7 +272,7 @@ div.small {
 
 md-toast {
   margin-top: 64px;
-  div.md-toast-content {
+  .md-toast-content {
     background: rgba(50,50,50,0.7);
     flex-wrap: wrap;
     height: auto;
