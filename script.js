@@ -18,15 +18,15 @@ app.config(['$compileProvider', function($compileProvider) {
 var saveFile = [];
 var loading = false;
 
-app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'filterFilter', '$mdDialog', '$mdToast', function charactersController($scope, $rootScope, $timeout, filterFilter, $mdDialog, $mdToast) {
+app.controller('charactersController', ['$scope', '$timeout', 'filterFilter', '$mdDialog', '$mdToast', function charactersController($scope, $timeout, filterFilter, $mdDialog, $mdToast) {
   $scope.fileName = 'my_game';
   $scope.dieNum = 1;
   $scope.dieSides = 20;
   $scope.dieAdd = 0;
   $scope.rollResult = '?';
   $scope.sortableOptions = {
-    'handle': '.handle',
     'placeholder': 'placeholder',
+    'forcePlaceholderSize': true,
     'tolerance': 'pointer',
     'ui-floating': true
   };
@@ -36,9 +36,10 @@ app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'fil
   $scope.classes = [{name:'Barbarian'}, {name:'Bard'}, {name:'Cleric'}, {name:'Druid'}, {name:'Fighter'}, {name:'Monk'}, {name:'Paladin'}, {name:'Ranger'}, {name:'Rogue'}, {name:'Sorcerer'}, {name:'Warlock'}, {name:'Wizard'}];
   $scope.abilities = [{name:'strength', abbr:'str'}, {name:'dexterity', abbr:'dex'}, {name:'constitution', abbr:'con'}, {name:'intelligence', abbr:'int'}, {name:'wisdom', abbr:'wis'}, {name:'charisma', abbr:'cha'}];
   $scope.skills = [{name:'acrobatics', abbr:'acro', relAbility:'dex'}, {name:'animal handling', abbr:'anim', relAbility:'wis'}, {name:'arcana', abbr:'arca', relAbility:'int'}, {name:'athletics', abbr:'athl', relAbility:'str'}, {name:'deception', abbr:'dece', relAbility:'cha'}, {name:'history', abbr:'hist', relAbility:'int'}, {name:'insight', abbr:'insi', relAbility:'wis'}, {name:'intimidation', abbr:'inti', relAbility:'cha'}, {name:'investigation', abbr:'inve', relAbility:'int'}, {name:'medicine', abbr:'medi', relAbility:'wis'}, {name:'nature', abbr:'natu', relAbility:'int'}, {name:'perception', abbr:'perc', relAbility:'wis'}, {name:'performance', abbr:'perf', relAbility:'cha'}, {name:'persuasion', abbr:'pers', relAbility:'cha'}, {name:'religion', abbr:'reli', relAbility:'int'}, {name:'sleight of hand', abbr:'slei', relAbility:'dex'}, {name:'stealth', abbr:'stea', relAbility:'dex'}, {name:'survival', abbr:'surv', relAbility:'wis'}];
-  $scope.spells = jsonSpellData;
   $scope.monsters = jsonMonsterData;
+  $scope.spells = jsonSpellData;
   $scope.inventory = jsonInventoryData;
+  $scope.ref = $scope.spells.concat($scope.inventory);
 
   $scope.numToArray = function(num) {
     return new Array(num);
@@ -63,30 +64,30 @@ app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'fil
   };
 
   // Spell search
-  $scope.showSpell = function(s) {
+  $scope.showRef = function(s) {
     if (s) {
       $mdDialog.show({
         autoWrap: false,
         scope: $scope,
         preserveScope: true,
-        templateUrl: 'templates/spellDialog.html'
+        templateUrl: 'templates/referenceDialog.html'
       });
     }
   };
-  $scope.spellSearch = function(query) {
-    if (query==='') {
-      return $scope.spells;
-    } else {
-      return filterFilter($scope.spells, {name: query});
-    }
+  $scope.refSearch = function(query) {
+    // if (query==='') {
+    //   return $scope.spells;
+    // } else {
+      return filterFilter($scope.ref, {name: query});
+    // }
   };
-  $scope.findSpell = function(query) {
-    if (!query) {
-      return '';
-    } else {
-      return filterFilter($scope.spells, {name: query});
-    }
-  };
+  // $scope.findSpell = function(query) {
+  //   if (!query) {
+  //     return '';
+  //   } else {
+  //     return filterFilter($scope.spells, {name: query});
+  //   }
+  // };
 
   // Item search
   $scope.showItem = function(s) {
@@ -182,6 +183,7 @@ app.controller('charactersController', ['$scope', '$rootScope', '$timeout', 'fil
   };
   $scope.loadFile = function() {
     var highestID = 0;
+    $scope.characters = [];
     angular.forEach($scope.savedFile, function(value) {
       saveFile = [];
       $scope.characters.push({id: value.id, type: value.type, presets: value.presets, char: value.char});
@@ -211,9 +213,25 @@ app.controller('characterController', ['$scope', function characterController($s
     });
   });
 
+  $scope.left = function(id) {
+    jQuery('.left').hide();
+    jQuery('#'+id+'.left').show();
+  };
+
+  $scope.right = function(id) {
+    jQuery('.right').hide();
+    jQuery('#'+id+'.right').show();
+  };
+
+  $scope.hideChar = function(id) {
+    jQuery('#'+id).hide();
+  };
+
   // Initialize stats
+  $scope.char.initiative = 0;
   $scope.char.speed = 0;
-  $scope.char.curHP = $scope.char.maxHP = 0;
+  $scope.char.curHP = 0;
+  $scope.char.maxHP = 1;
   $scope.char.cantripsKnown = $scope.char.lvl1Slots = $scope.char.lvl2Slots = $scope.char.lvl3Slots = $scope.char.lvl4Slots = $scope.char.lvl5Slots = $scope.char.lvl6Slots = $scope.char.lvl7Slots = $scope.char.lvl8Slots = $scope.char.lvl9Slots = 0;
   $scope.char.exp = 0;
   $scope.char.level = 1;

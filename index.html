@@ -15,34 +15,19 @@
         <md-button ng-click="showDice()" class="md-icon-button" aria-label="Roll Dice">
           <md-icon style="width: 100%; height: 100%" md-svg-icon="icons/die.svg"></md-icon>
         </md-button>
-        <md-autocomplete class="itemRef"
-          md-min-length="0"
-          md-selected-item="selectedItem"
+        <md-autocomplete class="reference"
+          md-min-length="1"
+          md-selected-item="refSelection"
           md-require-match="true"
-          md-selected-item-change="showItem(item)"
-          md-search-text="itemSearchText"
-          md-items="item in itemSearch(itemSearchText)"
-          md-item-text="item.name"
+          md-selected-item-change="showRef(selection)"
+          md-search-text="refSearchText"
+          md-items="selection in refSearch(refSearchText)"
+          md-item-text="selection.name"
           md-require-match="true"
-          placeholder="Item Reference">
+          placeholder="Reference">
           <md-item-template>
-            <span class="item-title">{{item.name}}</span>
-            <span class="item-sub">{{item.damage_die}} {{item.damage_type}}</span>
-          </md-item-template>
-        </md-autocomplete>
-        <md-autocomplete class="spellRef"
-          md-min-length="0"
-          md-selected-item="selectedSpell"
-          md-require-match="true"
-          md-selected-item-change="showSpell(spell)"
-          md-search-text="spellSearchText"
-          md-items="spell in spellSearch(spellSearchText)"
-          md-item-text="spell.name"
-          md-require-match="true"
-          placeholder="Spell Reference">
-          <md-item-template>
-            <span class="item-title">{{spell.name}}</span>
-            <span class="item-sub">{{spell.class}}</span>
+            <span class="item-title">{{selection.name}}</span>
+            <span class="item-sub cap">{{selection.type}}</span>
           </md-item-template>
         </md-autocomplete>
         <md-menu md-position-mode="target-right target">
@@ -62,27 +47,86 @@
       </div>
     </md-toolbar>
   </header>
-  <div ui-sortable="sortableOptions" ng-model="characters" layout="row" layout-wrap>
-    <md-card ng-repeat="character in characters track by character.id" ng-controller="characterController" ng-class="character.type=='monster' ? 'monster' : 'player'" ng-init="id=character.id">
-      <md-toolbar class="handle">
-        <div class="md-toolbar-tools">
-          <h2>{{char.name || charID}}</h2>
-          <span flex></span>
-          <md-button class="md-icon-button" ng-click="deleteChar(charID, char.name)" aria-label="Delete Character">
-            <md-icon md-svg-icon="icons/close.svg"></md-icon>
-          </md-button>
+  <main>
+    <md-list class="player-order" ui-sortable="sortableOptions" ng-model="characters">
+      <md-list-item class="character-placeholder">
+        <p>Add a player or monster by clicking the <i><b>plus</i></b> button in the bottom right.</p>
+      </md-list-item>
+      <md-list-item ng-repeat="character in characters track by character.id" ng-controller="characterController" ng-class="character.type=='monster' ? 'monster' : 'player'" ng-init="id=character.id">
+        <div>
+          <h3>{{char.name || charID}}</h3>
+          <md-input-container class="initiative">
+            <label>Initiative</label>
+            <input ng-model="char.initiative" min="0" max="99" type="number" />
+          </md-input-container>
         </div>
-      </md-toolbar>
-      <md-card-content ng-switch on="character.type">
-        <div ng-switch-when="player">
-          <ng-include src="'/templates/player.html'"></ng-include>
+        <div>
+          <md-input-container>
+            <label>HP</label>
+            <input class="curHP" ng-model="char.curHP" type="number" min="0" max="{{char.maxHP}}"/>
+          </md-input-container>
+          <span>/</span>
+          <md-input-container>
+            <label></label>
+            <input class="maxHP" ng-model="char.maxHP" type="number" min="1"/>
+          </md-input-container>
+          <md-button class="md-raised left-icon" aria-label="Compare Left" ng-click="left(character.id)"><svg viewBox="0 0 24 24"><path d="M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z"/></svg></md-button>
+          <md-button class="md-raised trash-icon" aria-label="Delete Character" ng-click="deleteChar(charID, char.name)"><svg viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg></md-button>
+          <md-button class="md-raised right-icon" aria-label="Compare Right" ng-click="right(character.id)"><svg viewBox="0 0 24 24"><path d="M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z"/></svg></md-button>
         </div>
-        <div ng-switch-when="monster">
-          <ng-include src="'/templates/monster.html'"></ng-include>
+      </md-list-item>
+    </md-list>
+    <div class="comparison" layout="row" layout-wrap>
+      <div flex="50">
+        <div class="comparison-placeholder">
+          <p>Add a character to the left pane to compare/edit stats.</p>
         </div>
-      </md-card-content>
-    </md-card>
-  </div>
+        <md-card id="{{character.id}}" class="left" ng-repeat="character in characters track by character.id" ng-controller="characterController" ng-class="character.type=='monster' ? 'monster' : 'player'" ng-init="id=character.id">
+          <md-toolbar class="handle">
+            <div class="md-toolbar-tools">
+              <h2>{{char.name || charID}}</h2>
+              <span flex></span>
+              <md-button class="md-icon-button" ng-click="hideChar(charID)" aria-label="Delete Character">
+                <md-icon md-svg-icon="icons/close.svg"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+          <md-card-content ng-switch on="character.type">
+            <div ng-switch-when="player">
+              <ng-include src="'/templates/player.html'"></ng-include>
+            </div>
+            <div ng-switch-when="monster">
+              <ng-include src="'/templates/monster.html'"></ng-include>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div flex="50">
+        <div class="comparison-placeholder">
+          <p>Add a character to the right pane to compare/edit stats.</p>
+        </div>
+        <md-card id="{{character.id}}" class="right" ng-repeat="character in characters track by character.id" ng-controller="characterController" ng-class="character.type=='monster' ? 'monster' : 'player'" ng-init="id=character.id">
+          <md-toolbar class="handle">
+            <div class="md-toolbar-tools">
+              <h2>{{char.name || charID}}</h2>
+              <span flex></span>
+              <md-button class="md-icon-button" ng-click="deleteChar(charID, char.name)" aria-label="Delete Character">
+                <md-icon md-svg-icon="icons/close.svg"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+          <md-card-content ng-switch on="character.type">
+            <div ng-switch-when="player">
+              <ng-include src="'/templates/player.html'"></ng-include>
+            </div>
+            <div ng-switch-when="monster">
+              <ng-include src="'/templates/monster.html'"></ng-include>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </main>
   <md-fab-speed-dial md-direction="up" class="md-scale">
     <md-fab-trigger>
       <md-button class="md-fab" aria-label="Add Character">

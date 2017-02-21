@@ -3,9 +3,15 @@ $blue100: #BBDEFB;
 $orange500: #FF9800;
 $orange100: #FFE0B2;
 
+.flex-50 {
+  min-height: calc(100vh - 48px);
+  max-height: inherit !important;
+}
+
 body {
   margin: 0;
   header {
+    width: 100%;
     md-autocomplete.spellRef {
       min-width: 250px;
     }
@@ -14,166 +20,251 @@ body {
       margin-right: 10px;
     }
   }
-  div.ui-sortable {
-    padding: 0 0 80px 0;
-    md-card {
-      min-width: 280px;
-      flex: 1;
-      &.monster {
-        md-toolbar {
-          background: $orange500;
-        }
-        h3 {
-          background: $orange100;
-        }
+  main {
+    display: flex;
+    .player-order {
+      overflow-y: scroll;
+      padding: 0;
+      background: #eee;
+      width: 275px;
+      position: relative;
+      .character-placeholder {
+        position: absolute;
+        padding: 10px;
+        color: #ccc;
       }
-      &.player {
-        md-toolbar {
-          background: $blue500;
-        }
-        h3 {
-          background: $blue100;
-        }
-      }
-      md-toolbar.handle:hover {
+      md-list-item:not(.character-placeholder) {
+        padding: 6px 10px 10px 10px;
+        display: block;
         cursor: move;
-      }
-      md-card-content {
-        padding: 0;
-        section {
-          box-sizing: border-box;
+        background: #eee;
+        &:before {
+          min-height: 0;
+        }
+        &:hover {
+          background: #ddd;
+        }
+        &:not(:last-child) {
+          border-bottom: 2px solid #fafafa;
+        }
+        & > div {
+          display: flex;
+          width: 100%;
+          align-items: baseline;
           h3 {
-            margin: 0;
-            padding: 5px;
-            &:hover {
-              cursor: pointer;
+            flex: 1;
+            margin-bottom: 0;
+          }
+          .initiative {
+            width: 60px;
+          }
+          md-input-container {
+            width: 60px;
+            margin-top: 15px;
+            .md-errors-spacer {
+              min-height: 0;
             }
           }
-          div.content {
-            padding: 5px;
-            h4 {
-              width: 100% !important;
+          button {
+            margin: 5px;
+            padding: 0;
+            min-width: 40px;
+            flex: 1;
+            &:hover svg {
+              fill: #000;
             }
           }
-          &.info {
-            input.race {
-              width: 120px;
+          .left-icon svg, .right-icon svg, .trash-icon svg {
+            fill: #444;
+            width: 18px;
+            height: 18px;
+          }
+          .left-icon svg {
+            transform: rotate(90deg);
+          }
+          .right-icon svg {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+    .comparison {
+      flex: 1;
+      & > div {
+        position: relative;
+      }
+      .comparison-placeholder {
+        margin: 8px;
+        position: absolute;
+        color: #ccc;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+        border: 1px solid #eee;
+        padding: 20px;
+      }
+    }
+  }
+  md-card {
+    min-width: 280px;
+    display: none;
+    flex: 1;
+    &.monster {
+      md-toolbar {
+        background: $orange500;
+      }
+      h3 {
+        background: $orange100;
+      }
+    }
+    &.player {
+      md-toolbar {
+        background: $blue500;
+      }
+      h3 {
+        background: $blue100;
+      }
+    }
+    md-toolbar.handle:hover {
+      cursor: move;
+    }
+    md-card-content {
+      padding: 0;
+      section {
+        box-sizing: border-box;
+        h3 {
+          margin: 0;
+          padding: 5px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        div.content {
+          padding: 5px;
+          h4 {
+            width: 100% !important;
+          }
+        }
+        &.info {
+          input.race {
+            width: 120px;
+          }
+          input.class {
+            width: 100px;
+          }
+          input.background {
+            width: 120px;
+          }
+          input.alignment {
+            width: 50px;
+          }
+          input.size {
+            width: 100px;
+          }
+        }
+        &.combat {
+          div.health {
+            input.curHP {
+              width: 50px;
             }
-            input.class {
+            input.maxHP {
+              width: 50px;
+            }
+            input.hitDice {
               width: 100px;
             }
-            input.background {
-              width: 120px;
-            }
-            input.alignment {
-              width: 50px;
-            }
-            input.size {
-              width: 100px;
-            }
-          }
-          &.combat {
-            div.health {
-              input.curHP {
-                width: 50px;
-              }
-              input.maxHP {
-                width: 50px;
-              }
-              input.hitDice {
-                width: 100px;
-              }
-              input.ac {
-                width: 50px;
-              }
-            }
-            div.spellcasting {
-              input.spellcastingAbility {
-                width: 130px;
-                text-transform: uppercase;
-              }
-            }
-            input.speed {
+            input.ac {
               width: 50px;
             }
           }
-          &.stats {
-            input.exp {
-              width: 90px;
+          div.spellcasting {
+            input.spellcastingAbility {
+              width: 130px;
+              text-transform: uppercase;
             }
-            input.level {
-              width: 50px;
+          }
+          input.speed {
+            width: 50px;
+          }
+        }
+        &.stats {
+          input.exp {
+            width: 90px;
+          }
+          input.level {
+            width: 50px;
+          }
+          input.pb {
+            width: 50px;
+          }
+          div.abilities md-input-container {
+            input {
+              float: none;
+              max-width: 42px;
             }
-            input.pb {
-              width: 50px;
+          }
+          div.saving-throws {
+            input {
+              float: none;
+              max-width: 42px;
+              margin-bottom: 5px;
             }
-            div.abilities md-input-container {
+            md-checkbox {
+              margin-bottom: 10px;
+            }
+          }
+          div.skills {
+            md-input-container {
+              min-width: 120px;
+              margin-right: -20px;
               input {
-                float: none;
-                max-width: 42px;
-              }
-            }
-            div.saving-throws {
-              input {
-                float: none;
-                max-width: 42px;
-                margin-bottom: 5px;
+                float: left;
+                max-width: 35px;
               }
               md-checkbox {
-                margin-bottom: 10px;
-              }
-            }
-            div.skills {
-              md-input-container {
-                min-width: 120px;
-                margin-right: -20px;
-                input {
-                  float: left;
-                  max-width: 35px;
-                }
-                md-checkbox {
-                  margin-top: 4px;
-                  margin-left: 5px;
-                }
-              }
-            }
-            div.other {
-              md-input-container:first-child {
-                width: 100%;
+                margin-top: 4px;
+                margin-left: 5px;
               }
             }
           }
-          &.inventory {
+          div.other {
             md-input-container:first-child {
               width: 100%;
             }
-            input.money {
-              width: 50px;
+          }
+        }
+        &.inventory {
+          md-input-container:first-child {
+            width: 100%;
+          }
+          input.money {
+            width: 50px;
+          }
+        }
+        &.spells {
+          div.cantrips {
+            margin-bottom: 25px;
+            md-select {
+              min-width: 150px;
+              float: left;
             }
           }
-          &.spells {
-            div.cantrips {
-              margin-bottom: 25px;
-              md-select {
-                min-width: 150px;
-                float: left;
-              }
+          div.spell-slots {
+            md-slider-container {
+              max-width: 500px;
+              padding-right: 5px;
             }
-            div.spell-slots {
-              md-slider-container {
-                max-width: 500px;
-                padding-right: 5px;
-              }
-              span {
-                max-width:none;
-                line-height:24px;
-              }
+            span {
+              max-width:none;
+              line-height:24px;
             }
-            div.spells-known {
-              md-select {
-                min-width: 150px;
-                float: left;
-              }
+          }
+          div.spells-known {
+            md-select {
+              min-width: 150px;
+              float: left;
             }
           }
         }
@@ -201,7 +292,8 @@ h3, h4 {
 .placeholder {
   background: #fff;
   border: 2px dashed #ddd;
-  flex: 1;
+  display: block;
+  height: 105px;
 }
 
 .uc {
@@ -213,18 +305,16 @@ h3, h4 {
 }
 
 md-dialog {
-  .md-dialog-content {
+  md-dialog-content, .md-dialog-content {
     padding: 16px;
   }
-  md-autocomplete {
-    min-width: 300px;
-  }
-  &.item-dialog, &.spell-dialog {
+  &.reference-dialog {
     .md-dialog-content {
-      & > *:first-child {
+      padding: 0;
+      & p:first-child {
         margin-top: 0;
       }
-      & > *:last-child {
+      & p:last-child {
         margin-bottom: 0;
       }
     }
@@ -235,8 +325,10 @@ md-dialog {
       text-decoration: none;
     }
   }
+  md-dialog-actions {
+    padding: 0 16px 8px 16px;
+  }
 }
-
 
 .md-autocomplete-suggestions li {
   line-height: 18px;

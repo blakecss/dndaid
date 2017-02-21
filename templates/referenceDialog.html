@@ -1,0 +1,28 @@
+<md-dialog class="reference-dialog" aria-label="Reference Dialog">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{refSelection.name}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" aria-label="Close Dialog" ng-click="closeDialog()">
+        <md-icon md-svg-icon="icons/close.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content ng-switch on="refSelection.type">
+    <div class="md-dialog-content" ng-switch-when="weapon">
+      <p class="cap">{{refSelection.subtype}} {{refSelection.type}}</p>
+      <p>{{refSelection.damage_die}} {{refSelection.damage_type}}</p>
+      <p>{{refSelection.properties}}</p>
+      <p><b>Cost: </b>{{refSelection.cost}}&nbsp;&nbsp;&nbsp;<b>Weight: </b>{{refSelection.weight}}</p>
+    </div>
+    <div class="md-dialog-content" ng-switch-when="spell">
+      <p>{{refSelection.level}} {{refSelection.school}}</p>
+      <p><b>Casting Time:</b> {{refSelection.casting_time}}</p>
+      <p><b>Range:</b> {{refSelection.range}}</p>
+      <p><b>Components:</b> {{refSelection.components}}</p>
+      <p><b>Duration:</b> {{refSelection.duration}}</p>
+      <p ng-bind-html="refSelection.desc"></p>
+      <p><b>Higher Levels:</b> <span class="html" ng-bind-html="refSelection.higher_level"></span></p>
+    </div>
+  </md-dialog-content>
+</md-dialog>
