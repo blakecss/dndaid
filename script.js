@@ -39,7 +39,8 @@ app.controller('charactersController', ['$scope', '$timeout', 'filterFilter', '$
   $scope.monsters = jsonMonsterData;
   $scope.spells = jsonSpellData;
   $scope.inventory = jsonInventoryData;
-  $scope.ref = $scope.spells.concat($scope.inventory);
+  $scope.definitions = jsonDefinitionData;
+  $scope.ref = $scope.spells.concat($scope.inventory, $scope.definitions);
 
   $scope.numToArray = function(num) {
     return new Array(num);
@@ -63,7 +64,7 @@ app.controller('charactersController', ['$scope', '$timeout', 'filterFilter', '$
     $scope.rollResult = (Math.floor((Math.random() * highest) + 1)) + $scope.dieAdd;
   };
 
-  // Spell search
+  // Reference search
   $scope.showRef = function(s) {
     if (s) {
       $mdDialog.show({
@@ -75,37 +76,7 @@ app.controller('charactersController', ['$scope', '$timeout', 'filterFilter', '$
     }
   };
   $scope.refSearch = function(query) {
-    // if (query==='') {
-    //   return $scope.spells;
-    // } else {
-      return filterFilter($scope.ref, {name: query});
-    // }
-  };
-  // $scope.findSpell = function(query) {
-  //   if (!query) {
-  //     return '';
-  //   } else {
-  //     return filterFilter($scope.spells, {name: query});
-  //   }
-  // };
-
-  // Item search
-  $scope.showItem = function(s) {
-    if (s) {
-      $mdDialog.show({
-        autoWrap: false,
-        scope: $scope,
-        preserveScope: true,
-        templateUrl: 'templates/itemDialog.html'
-      });
-    }
-  };
-  $scope.itemSearch = function(query) {
-    if (query==='') {
-      return $scope.inventory;
-    } else {
-      return filterFilter($scope.inventory, {name: query});
-    }
+    return filterFilter($scope.ref, {name: query});
   };
 
   // Character add/remove
@@ -214,13 +185,23 @@ app.controller('characterController', ['$scope', function characterController($s
   });
 
   $scope.left = function(id) {
+    var sel = jQuery('#'+id);
     jQuery('.left').hide();
-    jQuery('#'+id+'.left').show();
+    if (sel.attr('class').indexOf('left') == -1) {
+      sel.appendTo('.left-container');
+      sel.removeClass('left right').addClass('left');
+    }
+    sel.show();
   };
 
   $scope.right = function(id) {
+    var sel = jQuery('#'+id);
     jQuery('.right').hide();
-    jQuery('#'+id+'.right').show();
+    if (sel.attr('class').indexOf('right') == -1) {
+      sel.appendTo('.right-container');
+      sel.removeClass('left right').addClass('right');
+    }
+    sel.show();
   };
 
   $scope.hideChar = function(id) {
@@ -323,12 +304,12 @@ app.controller('characterController', ['$scope', function characterController($s
 
   // Spell watchers
   $scope.$watch('[char.level, char.class, char.mods.int, char.mods.wis, char.mods.cha]', function(newVal, oldVal) {
-    if (newVal[1]=='Barbarian') { // Done
+    if (newVal[1]=='Barbarian') {
       $scope.char.hitDice = newVal[0]+'d12';
       $scope.char.spellcastingAbility = '';
       $scope.char.cantripsKnown = $scope.char.spellsKnown = $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
     }
-    else if (newVal[1]=='Bard') { // Done
+    else if (newVal[1]=='Bard') {
       $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.spellcastingAbility = 'cha';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[4];
@@ -497,7 +478,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level9Slots = 1;
       }
     }
-    else if (newVal[1]=='Cleric') { // Wis mod
+    else if (newVal[1]=='Cleric') {
       $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.spellcastingAbility = 'wis';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[3];
@@ -639,7 +620,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level9Slots = 1;
       }
     }
-    else if (newVal[1]=='Druid') { // Wis mod
+    else if (newVal[1]=='Druid') {
       $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.spellcastingAbility = 'wis';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[3];
@@ -781,7 +762,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level9Slots = 1;
       }
     }
-    else if (newVal[1]=='Fighter') { // Done
+    else if (newVal[1]=='Fighter') {
       $scope.char.hitDice = newVal[0]+'d10';
       $scope.char.spellcastingAbility = 'int';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[2];
@@ -861,12 +842,12 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
-    else if (newVal[1]=='Monk') { // Done
+    else if (newVal[1]=='Monk') {
       $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.spellcastingAbility = '';
       $scope.char.cantripsKnown = $scope.char.spellsKnown = $scope.char.level1Slots = $scope.char.level2Slots = $scope.char.level3Slots = $scope.char.level4Slots = $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
     }
-    else if (newVal[1]=='Paladin') { // Cha mod
+    else if (newVal[1]=='Paladin') {
       $scope.char.hitDice = newVal[0]+'d10';
       $scope.char.spellcastingAbility = 'cha';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[4];
@@ -937,7 +918,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
-    else if (newVal[1]=='Ranger') { // Done
+    else if (newVal[1]=='Ranger') {
       $scope.char.hitDice = newVal[0]+'d10';
       $scope.char.spellcastingAbility = 'wis';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[3];
@@ -1016,7 +997,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
-    else if (newVal[1]=='Rogue') { // Done
+    else if (newVal[1]=='Rogue') {
       $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.spellcastingAbility = 'int';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[2];
@@ -1096,7 +1077,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level5Slots = $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
-    else if (newVal[1]=='Sorcerer') { // Done
+    else if (newVal[1]=='Sorcerer') {
       $scope.char.hitDice = newVal[0]+'d6';
       $scope.char.spellcastingAbility = 'cha';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[4];
@@ -1254,7 +1235,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level9Slots = 1;
       }
     }
-    else if (newVal[1]=='Warlock') { // Done
+    else if (newVal[1]=='Warlock') {
       $scope.char.hitDice = newVal[0]+'d8';
       $scope.char.spellcastingAbility = 'cha';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[4];
@@ -1349,7 +1330,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level6Slots = $scope.char.level7Slots = $scope.char.level8Slots = $scope.char.level9Slots = 0;
       }
     }
-    else if (newVal[1]=='Wizard') { // Int mod
+    else if (newVal[1]=='Wizard') {
       $scope.char.hitDice = newVal[0]+'d6';
       $scope.char.spellcastingAbility = 'int';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[2];

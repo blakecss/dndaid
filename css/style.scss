@@ -38,14 +38,23 @@ body {
         display: block;
         cursor: move;
         background: #eee;
+        &.player {
+          background: $blue100;
+          &:hover {
+            background: darken($blue100, 5%);
+          }
+        }
+        &.monster {
+          background: $orange100;
+          &:hover {
+            background: darken($orange100, 5%);
+          }
+        }
         &:before {
           min-height: 0;
         }
-        &:hover {
-          background: #ddd;
-        }
         &:not(:last-child) {
-          border-bottom: 2px solid #fafafa;
+          border-bottom: 2px solid #eee;
         }
         & > div {
           display: flex;
@@ -110,6 +119,8 @@ body {
   md-card {
     min-width: 280px;
     display: none;
+    position: relative;
+    z-index: 2;
     flex: 1;
     &.monster {
       md-toolbar {
@@ -181,7 +192,7 @@ body {
           }
           div.spellcasting {
             input.spellcastingAbility {
-              width: 130px;
+              width: 135px;
               text-transform: uppercase;
             }
           }
