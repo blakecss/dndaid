@@ -105,25 +105,6 @@
         <div class="comparison-placeholder">
           <p>Add a character to the right pane to compare/edit stats.</p>
         </div>
-        <!-- <md-card id="{{character.id}}" class="right" ng-repeat="character in characters track by character.id" ng-controller="characterController" ng-class="character.type=='monster' ? 'monster' : 'player'" ng-init="id=character.id">
-          <md-toolbar class="handle">
-            <div class="md-toolbar-tools">
-              <h2>{{char.name || charID}}</h2>
-              <span flex></span>
-              <md-button class="md-icon-button" ng-click="hideChar(charID)" aria-label="Delete Character">
-                <md-icon md-svg-icon="icons/close.svg"></md-icon>
-              </md-button>
-            </div>
-          </md-toolbar>
-          <md-card-content ng-switch on="character.type">
-            <div ng-switch-when="player">
-              <ng-include src="'/templates/player.html'"></ng-include>
-            </div>
-            <div ng-switch-when="monster">
-              <ng-include src="'/templates/monster.html'"></ng-include>
-            </div>
-          </md-card-content>
-        </md-card> -->
       </div>
     </div>
   </main>

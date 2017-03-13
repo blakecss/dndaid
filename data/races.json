@@ -1,0 +1,61 @@
+var jsonRaceData = [
+  {
+    "name": "Hill Dwarf",
+    "type": "race",
+    "male": ["Adrik", "Alberich", "Baern", "Barendd", "Brottor", "Bruenor", "Dain", "Darrak", "Delg", "Eberk", "Einkil", "Fargrim", "Flint", "Gardain", "Harbek", "Kildrak", "Morgran", "Orsik", "Oskar", "Rangrim", "Rurik", "Taklinn", "Thoradin", "Thorin", "Tordek", "Traubon", "Travok", "Ulfgar", "Veit", "Vondal"],
+    "female": ["Amber", "Artin", "Audhild", "Bardryn", "Dagnal", "Diesa", "Eldth", "Falkrunn", "Finellen", "Gunnloda", "Gurdis", "Helja", "Hlin", "Kathra", "Kristryd", "Ilde", "Liftrasa", "Mardred", "Riswynn", "Sannl", "Torbera", "Torgga", "Vistra"],
+    "clan": ["Balderk", "Battlehammer", "Brawnanvil", "Dankil", "Fireforge", "Frostbeard", "Gorunn", "Holderhek", "Ironfist", "Loderr", "Lutgehr", "Rumnaheim", "Strakeln", "Torunn", "Ungart"]
+  },
+  {
+    "name": "Mountain Dwarf",
+    "type": "race",
+  },
+  {
+    "name": "High Elf",
+    "type": "race",
+  },
+  {
+    "name": "Wood Elf",
+    "type": "race",
+  },
+  {
+    "name": "Dark Elf",
+    "type": "race",
+  },
+  {
+    "name": "Lightfoot Halfling",
+    "type": "race",
+  },
+  {
+    "name": "Stout Halfling",
+    "type": "race",
+  },
+  {
+    "name": "Human",
+    "type": "race",
+  },
+  {
+    "name": "Dragonbon",
+    "type": "race",
+  },
+  {
+    "name": "Forest Gnome",
+    "type": "race",
+  },
+  {
+    "name": "Rock Gnome",
+    "type": "race",
+  },
+  {
+    "name": "Half-Elf",
+    "type": "race",
+  },
+  {
+    "name": "Half-Orc",
+    "type": "race",
+  },
+  {
+    "name": "Tiefling",
+    "type": "race",
+  }
+]

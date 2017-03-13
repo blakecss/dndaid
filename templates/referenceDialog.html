@@ -29,5 +29,17 @@
       <p class="cap">{{refSelection.type}}</p>
       <p>{{refSelection.desc}}</p>
     </div>
+    <div class="md-dialog-content" ng-switch-when="class">
+      <p class="cap">{{refSelection.subtype}} {{refSelection.type}}</p>
+      <p>{{refSelection.desc}}</p>
+      <p><b>Hit Die: </b>{{refSelection.hit_die}}</p>
+      <div style="float: left;">
+        <ul>
+          <li><b>Savi</b></li>
+        </ul>
+      </div>
+      <p><b>Primary Ability: </b>{{refSelection.primary}}&nbsp;&nbsp;&nbsp;<b>Saving Throw Proficiencies: </b><span ng-repeat="throw in refSelection.saving_throw">{{throw}}</span></p>
+      <p><b>Proficiencies: </b></p>
+    </div>
   </md-dialog-content>
 </md-dialog>

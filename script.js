@@ -274,31 +274,537 @@ app.controller('characterController', ['$scope', function characterController($s
   });
 
   // Class watchers
-  $scope.$watch('char.class', function(newVal, oldVal) {
-    if (newVal=='Barbarian') {
+  $scope.$watch('char.class', function(){$scope.char.subclass = '';});
+  $scope.$watch('[char.class, char.level]', function(newVal, oldVal) {
+    $scope.char.features = [];
+    if (newVal[0]=='Barbarian') {
       $scope.char.saveProfs = {'str': true, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': false};
-    } else if (newVal=='Bard') {
+      $scope.char.subclasses = ['Path of the Berserker', 'Path of the Totem Warrior'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Rage, Unarmored Defense');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Reckless Attack, Danger Sense');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Primal Path');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Extra Attack, Fast Movement');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Path feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('Feral Instinct');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('Brutal Critical (1 die)');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Path feature');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Relentless Rage');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('Brutal Critical (2 dice)');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Path feature');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Persistent Rage');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Brutal Critical (3 dice)');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Indomitable Might');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Primal Champion');
+      }
+    } else if (newVal[0]=='Bard') {
       $scope.char.saveProfs = {'str': false, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': true};
-    } else if (newVal=='Cleric') {
+      $scope.char.subclasses = ['College of Lore', 'College of Valor'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Spellcasting, Bardic Inspiration (d6)');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Jack of All Trades, Song of Rest (d6)');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Bard College, Expertise');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Bardic Inspiration (d8), Font of Inspiration');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Countercharm, Bard College feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('Song of Rest (d8)');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Bardic Inspiration (d10), Expertise, Magical Secrets');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('Song of Rest (d10)');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Magical Secrets, Bard College feature');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Bardic Inspiration (d12)');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Song of Rest (d12)');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Magical Secrets');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Superior Inspiration');
+      }
+    } else if (newVal[0]=='Cleric') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
-    } else if (newVal=='Druid') {
+      $scope.char.subclasses = ['Knowledge Domain', 'Life Domain', 'Light Domain', 'Nature Domain', 'Tempest Domain', 'Trickery Domain', 'War Domain'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Spellcasting, Divine Domain');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Channel Divinity (1/rest), Divine Domain feature');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Destroy Undead (CR 1/2)');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Channel Divinity (2/rest), Divine Domain feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement, Destroy Undead (CR 1), Divine Domain feature');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Divine Intervention');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Destroy Undead (CR 2)');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Destroy Undead (CR 3)');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Destroy Undead (CR 4), Divine Domain feature');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Channel Divinity (3/rest)');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Divine Intervention improvement');
+      }
+    } else if (newVal[0]=='Druid') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': true, 'wis': true, 'cha': false};
-    } else if (newVal=='Fighter') {
+      $scope.char.subclasses = ['Circle of the Land', 'Circle of the Moon'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Druidic, Spellcasting');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Wild Shape, Druid Circle');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Wild Shape improvement, Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Druid Circle feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Wild Shape improvement, Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Druid Circle feature');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Druid Circle feature');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Timeless Body, Beast Spells');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Archdruid');
+      }
+    } else if (newVal[0]=='Fighter') {
       $scope.char.saveProfs = {'str': true, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': false};
-    } else if (newVal=='Monk') {
+      $scope.char.subclasses = ['Champion', 'Battle Master', 'Eldritch Knight'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Fighting Style, Second Wind');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Action Surge (one use)');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Martial Archetype');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Extra Attack');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('Martial Archetype feature');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('Indomitable (one use)');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Martial Archetype feature');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Extra Attack (2)');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('Indomitable (two uses)');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Martial Archetype feature');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Action Surge (two uses), Indomitable (three uses)');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Martial Archetype feature');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Extra Attack (3)');
+      }
+    } else if (newVal[0]=='Monk') {
       $scope.char.saveProfs = {'str': true, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': false};
-    } else if (newVal=='Paladin') {
+      $scope.char.subclasses = ['Way of the Open Hand', 'Way of the Four Elements'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Unarmored Defense, Martial Arts');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Ki, Unarmored Movement');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Monastic Tradition, Deflect Missiles');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement, Slow Fall');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Extra Attack, Stunning Strike');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Ki-Empowered Strikes, Monastic Tradition feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('Evasion, Stillness of Mind');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('Unarmored Movement improvement');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Purity of Body');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Monastic Tradition feature');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('Tongue of the Sun and Moon');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Diamond Soul');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Timeless Body');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Monastic Tradition feature');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Empty Body');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Perfect Self');
+      }
+    } else if (newVal[0]=='Paladin') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
-    } else if (newVal=='Ranger') {
+      $scope.char.subclasses = ['Oath of Devotion', 'Oath of the Ancients', 'Oath of Vengeance'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Divine Sense, Lay on Hands');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Fighting Style, Spellcasting, Divine Smite');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Divine Health, Sacred Oath');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Extra Attack');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Aura of Protection');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('Sacred Oath feature');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Aura of Courage');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Improved Divine Smite');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Cleansing Touch');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Sacred Oath feature');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Aura improvement');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Sacred Oath feature');
+      }
+    } else if (newVal[0]=='Ranger') {
       $scope.char.saveProfs = {'str': true, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': false};
-    } else if (newVal=='Rogue') {
+      $scope.char.subclasses = ['Hunter', 'Beast Master'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Favored Enemy, Natural Explorer');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Fighting Style, Spellcasting');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Ranger Archetype, Primeval Awareness');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Extra Attack');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Favored Enemy and Natural Explorer improvements');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('Ranger Archetype feature');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement, Land&#39;s Stride');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Natural Explorer improvments, Hide in Plain Sight');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Ranger Archetype feature');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Favored Enemy improvement, Vanish');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Ranger Archetype feature');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Feral Senses');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Foe Slayer');
+      }
+    } else if (newVal[0]=='Rogue') {
       $scope.char.saveProfs = {'str': false, 'dex': true, 'con': false, 'int': true, 'wis': false, 'cha': false};
-    } else if (newVal=='Sorcerer') {
+      $scope.char.subclasses = ['Thief', 'Arcane Trickster'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Expertise, Sneak Attack, Thieves&#39; Cant');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Cunning Action');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Roguish Archetype');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('Uncanny Dodge');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Expertise');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('Evasion');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('Roguish Archetype feature');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Reliable Talent');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('Roguish Archetype feature');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Blindsense');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Slippery Mind');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Roguish Archetype feature');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Elusive');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Stroke of Luck');
+      }
+    } else if (newVal[0]=='Sorcerer') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': true};
-    } else if (newVal=='Warlock') {
+      $scope.char.subclasses = ['Draconic Bloodline', 'Wild Magic'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Spellcasting, Sorcerous Origin');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Font of Magic');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Metamagic');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Sorcerous Origin feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Metamagic');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Sorcerous Origin feature');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Metamagic');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Sorcerous Origin feature');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Sorcerous Restoration');
+      }
+    } else if (newVal[0]=='Warlock') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
-    } else if (newVal=='Wizard') {
+      $scope.char.subclasses = ['The Archfey', 'The Fiend', 'The Great Old One'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Otherworldly Patron, Pact Magic');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Eldritch Invocations');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('Pact Boon');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Otherworldly Patron feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Otherworldly Patron feature');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('Mystic Arcanum (6th level)');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('Mystic Arcanum (7th level)');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Otherworldly Patron feature');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('Mystic Arcanum (8th level)');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('Mystic Arcanum (9th level)');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Eldritch Master');
+      }
+    } else if (newVal[0]=='Wizard') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': true, 'wis': true, 'cha': false};
+      $scope.char.subclasses = ['School of Abjuration', 'School of Conjuration', 'School of Divination', 'School of Enchantment', 'School of Evocation', 'School of Illusion', 'School of Necromancy', 'School of Transmutation'];
+      if (newVal[1]>=1) {
+        $scope.char.features.push('Spellcasting, Arcane Recovery');
+      } if (newVal[1]>=2) {
+        $scope.char.features.push('Arcane Tradition');
+      } if (newVal[1]>=3) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=4) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=5) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=6) {
+        $scope.char.features.push('Arcane Tradition feature');
+      } if (newVal[1]>=7) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=8) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=9) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=10) {
+        $scope.char.features.push('Arcane Tradition feature');
+      } if (newVal[1]>=11) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=12) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=13) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=14) {
+        $scope.char.features.push('Arcane Tradition feature');
+      } if (newVal[1]>=15) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=16) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=17) {
+        $scope.char.features.push('--');
+      } if (newVal[1]>=18) {
+        $scope.char.features.push('Spell Mastery');
+      } if (newVal[1]>=19) {
+        $scope.char.features.push('Ability Score Improvement');
+      } if (newVal[1]>=20) {
+        $scope.char.features.push('Signature Spell');
+      }
     }
   });
 
@@ -483,6 +989,7 @@ app.controller('characterController', ['$scope', function characterController($s
       $scope.char.spellcastingAbility = 'wis';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[3];
       $scope.char.spellAttackMod = $scope.char.pb + newVal[3];
+      $scope.char.spellsPrepared = newVal[3] + newVal[0] < 1 ? 1 : newVal[3] + newVal[0];
       $scope.char.spellsKnown = newVal[3] + newVal[0] < 1 ? 1 : newVal[3] + newVal[0];
       if (newVal[0]==1) {
         $scope.char.cantripsKnown = 3;
@@ -625,6 +1132,7 @@ app.controller('characterController', ['$scope', function characterController($s
       $scope.char.spellcastingAbility = 'wis';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[3];
       $scope.char.spellAttackMod = $scope.char.pb + newVal[3];
+      $scope.char.spellsPrepared = newVal[3] + newVal[0] < 1 ? 1 : newVal[3] + newVal[0];
       $scope.char.spellsKnown = newVal[3] + newVal[0] < 1 ? 1 : newVal[3] + newVal[0];
       if (newVal[0]==1) {
         $scope.char.cantripsKnown = 2;
@@ -762,7 +1270,7 @@ app.controller('characterController', ['$scope', function characterController($s
         $scope.char.level9Slots = 1;
       }
     }
-    else if (newVal[1]=='Fighter') {
+    else if (newVal[1]=='Fighter') { // This is only for a certain archetype
       $scope.char.hitDice = newVal[0]+'d10';
       $scope.char.spellcastingAbility = 'int';
       $scope.char.spellSaveDC = 8 + $scope.char.pb + newVal[2];
