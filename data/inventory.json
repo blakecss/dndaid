@@ -1117,5 +1117,137 @@ var jsonInventoryData = [
     "weight": "1 lb.",
     "cost": "25 gp",
     "desc": "This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks."
+  },
+  {
+    "name": "Padded Armor",
+    "type": "armor",
+    "subtype": "light",
+    "weight": "8 lb.",
+    "cost": "5 gp",
+    "ac": "11 + Dex modifier",
+    "strength": "--",
+    "stealth": "Disadvantage",
+    "desc": "Padded armor consists of quilted layers of cloth and batting."
+  },
+  {
+    "name": "Leather Armor",
+    "type": "armor",
+    "subtype": "light",
+    "weight": "10 lb.",
+    "cost": "10 gp",
+    "ac": "11 + Dex modifier",
+    "strength": "--",
+    "stealth": "--",
+    "desc": "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials."
+  },
+  {
+    "name": "Studded Leather Armor",
+    "type": "armor",
+    "subtype": "light",
+    "weight": "13 lb.",
+    "cost": "45 gp",
+    "ac": "12 + Dex modifier",
+    "strength": "--",
+    "stealth": "--",
+    "desc": "Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes."
+  },
+  {
+    "name": "Hide Armor",
+    "type": "armor",
+    "subtype": "medium",
+    "weight": "12 lb.",
+    "cost": "10 gp",
+    "ac": "12 + Dex modifier (max 2)",
+    "strength": "--",
+    "stealth": "--",
+    "desc": "This crude armor consists of thick furs and pelts. It is commonly worn by barbarian tribes, evil humanoids, and other folk who lack access to the tools and materials needed to create better armor."
+  },
+  {
+    "name": "Chain Shirt Armor",
+    "type": "armor",
+    "subtype": "medium",
+    "weight": "20 lb.",
+    "cost": "50 gp",
+    "ac": "13 + Dex modifier (max 2)",
+    "strength": "--",
+    "stealth": "--",
+    "desc": "Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers."
+  },
+  {
+    "name": "Scale Mail Armor",
+    "type": "armor",
+    "subtype": "medium",
+    "weight": "45 lb.",
+    "cost": "50 gp",
+    "ac": "14 + Dex modifier (max 2)",
+    "strength": "--",
+    "stealth": "Disadvantage",
+    "desc": "This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets."
+  },
+  {
+    "name": "Breastplate",
+    "type": "armor",
+    "subtype": "medium",
+    "weight": "20 lb.",
+    "cost": "400 gp",
+    "ac": "14 + Dex modifier (max 2)",
+    "strength": "--",
+    "stealth": "--",
+    "desc": "This armor consists of a fitted metal chest piece worn with supple leather. Although it leaves the legs and arms relatively unprotected, this armor provides good protection for the wearer's vital organs while leaving the wearer relatively unencumbered."
+  },
+  {
+    "name": "Half Plate Armor",
+    "type": "armor",
+    "subtype": "medium",
+    "weight": "40 lb.",
+    "cost": "750 gp",
+    "ac": "15 + Dex modifier (max 2)",
+    "strength": "--",
+    "stealth": "Disadvantage",
+    "desc": "Half plate consists of shaped metal plates that cover most of the wearer's body. It does not include leg protection beyond simple greaves that are attached with leather straps."
+  },
+  {
+    "name": "Ring Mail Armor",
+    "type": "armor",
+    "subtype": "heavy",
+    "weight": "40 lb.",
+    "cost": "30 gp",
+    "ac": "14",
+    "strength": "--",
+    "stealth": "Disadvantage",
+    "desc": "This armor is leather armor with heavy rings sewn into it. The rings help reinforce the armor against blows from swords and axes. Ring mail is inferior to chain mail, and it's usually worn only by those who can't afford better armor."
+  },
+  {
+    "name": "Chain Mail Armor",
+    "type": "armor",
+    "subtype": "heavy",
+    "weight": "55 lb.",
+    "cost": "75 gp",
+    "ac": "16",
+    "strength": "13",
+    "stealth": "Disadvantage",
+    "desc": "Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets."
+  },
+  {
+    "name": "Splint Armor",
+    "type": "armor",
+    "subtype": "heavy",
+    "weight": "60 lb.",
+    "cost": "200 gp",
+    "ac": "17",
+    "strength": "15",
+    "stealth": "Disadvantage",
+    "desc": "This armor is made of narrow vertical strips of metal riveted to a backing of leather that is worn over cloth padding. Flexible chain mail protects the joints."
+  },
+  {
+    "name": "Plate Armor",
+    "type": "armor",
+    "subtype": "heavy",
+    "weight": "65 lb.",
+    "cost": "1500 gp",
+    "ac": "18",
+    "strength": "15",
+    "stealth": "Disadvantage",
+    "desc": "Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath this armor. Buckles and straps distribute the weight over the body."
   }
 ]

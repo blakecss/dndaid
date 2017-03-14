@@ -157,6 +157,23 @@
       <textarea class="bag" ng-model="char.bag" placeholder="Bag of Holding"></textarea>
     </md-input-container>
     <md-input-container>
+      <label>Armor</label>
+      <md-select aria-label="Armor" ng-model="char.armor">
+        <md-option ng-value="Padded Armor">Padded Armor (Light)</md-option>
+        <md-option ng-value="Leather Armor">Leather Armor (Light)</md-option>
+        <md-option ng-value="Sudded Leather Armor">Studded Leather Armor (Light)</md-option>
+        <md-option ng-value="Hide Armor">Hide Armor (Medium)</md-option>
+        <md-option ng-value="Chain Shirt Armor">Chain Shirt Armor (Medium)</md-option>
+        <md-option ng-value="Scale Mail Armor">Scale Mail Armor (Medium)</md-option>
+        <md-option ng-value="Breastplate Armor">Breastplate Armor (Medium)</md-option>
+        <md-option ng-value="Half Plate Armor">Half Plate Armor (Medium)</md-option>
+        <md-option ng-value="Ring Mail Armor">Ring Mail Armor (Heavy)</md-option>
+        <md-option ng-value="Chain Mail Armor">Chain Mail Armor (Heavy)</md-option>
+        <md-option ng-value="Splint Armor">Splint Armor (Heavy)</md-option>
+        <md-option ng-value="Plate Armor">Plate Armor (Heavy)</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
       <label>PP</label>
       <input class="pp money" ng-model="char.pp" type="number" min="0"/>
     </md-input-container>
