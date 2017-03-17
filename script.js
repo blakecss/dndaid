@@ -279,6 +279,7 @@ app.controller('characterController', ['$scope', function characterController($s
     $scope.char.features = [];
     if (newVal[0]=='Barbarian') {
       $scope.char.saveProfs = {'str': true, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': false};
+      $scope.char.proficiencies = ['Light Armor', 'Medium Armor', 'Shields', 'Simple Weapons', 'Martial Weapons'];
       $scope.char.subclasses = ['Path of the Berserker', 'Path of the Totem Warrior'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Rage, Unarmored Defense');
@@ -323,6 +324,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Bard') {
       $scope.char.saveProfs = {'str': false, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': true};
+      $scope.char.proficiencies = ['Light Armor', 'Simple Weapons', 'Hand Crossbows', 'Longswords', 'Rapiers', 'Shortswords', 'Three Musical Instruments of you choice'];
       $scope.char.subclasses = ['College of Lore', 'College of Valor'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Spellcasting, Bardic Inspiration (d6)');
@@ -367,6 +369,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Cleric') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
+      $scope.char.proficiencies = ['Light Armor', 'Medium Armor', 'Shields', 'Simple Weapons'];
       $scope.char.subclasses = ['Knowledge Domain', 'Life Domain', 'Light Domain', 'Nature Domain', 'Tempest Domain', 'Trickery Domain', 'War Domain'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Spellcasting, Divine Domain');
@@ -411,6 +414,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Druid') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': true, 'wis': true, 'cha': false};
+      $scope.char.proficiencies = ['Light Armor (Non-metal)', 'Medium Armor (Non-metal)', 'Shields (Non-metal)', 'Clubs', 'Daggers', 'Darts', 'Javelins', 'Maces', 'Quarterstaffs', 'Scimitars', 'Sickles', 'Slings', 'Spears', 'Herbalism Kit'];
       $scope.char.subclasses = ['Circle of the Land', 'Circle of the Moon'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Druidic, Spellcasting');
@@ -455,6 +459,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Fighter') {
       $scope.char.saveProfs = {'str': true, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': false};
+      $scope.char.proficiencies = ['All Armor', 'Shields', 'Simple Weapons', 'Martial Weapons'];
       $scope.char.subclasses = ['Champion', 'Battle Master', 'Eldritch Knight'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Fighting Style, Second Wind');
@@ -499,6 +504,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Monk') {
       $scope.char.saveProfs = {'str': true, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': false};
+      $scope.char.proficiencies = ['Simple Weapons', 'Shortswords', 'One Artisan Tool or Musical Instrument'];
       $scope.char.subclasses = ['Way of the Open Hand', 'Way of the Four Elements'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Unarmored Defense, Martial Arts');
@@ -543,6 +549,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Paladin') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
+      $scope.char.proficiencies = ['All Armor', 'Shields', 'Simple Weapons', 'Martial Weapons'];
       $scope.char.subclasses = ['Oath of Devotion', 'Oath of the Ancients', 'Oath of Vengeance'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Divine Sense, Lay on Hands');
@@ -587,6 +594,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Ranger') {
       $scope.char.saveProfs = {'str': true, 'dex': true, 'con': false, 'int': false, 'wis': false, 'cha': false};
+      $scope.char.proficiencies = ['Light Armor', 'Medium Armor', 'Shields', 'Simple Weapons', 'Martial Weapons'];
       $scope.char.subclasses = ['Hunter', 'Beast Master'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Favored Enemy, Natural Explorer');
@@ -631,6 +639,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Rogue') {
       $scope.char.saveProfs = {'str': false, 'dex': true, 'con': false, 'int': true, 'wis': false, 'cha': false};
+      $scope.char.proficiencies = ['Light Armor', 'Simple Weapons', 'Hand Crossbows', 'Longswords', 'Rapiers', 'Shortswords', 'Thieves&#39; Tools'];
       $scope.char.subclasses = ['Thief', 'Arcane Trickster'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Expertise, Sneak Attack, Thieves&#39; Cant');
@@ -675,6 +684,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Sorcerer') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': true, 'int': false, 'wis': false, 'cha': true};
+      $scope.char.proficiencies = ['Daggers', 'Darts', 'Slings', 'Quarterstaffs', 'Light Crossbows'];
       $scope.char.subclasses = ['Draconic Bloodline', 'Wild Magic'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Spellcasting, Sorcerous Origin');
@@ -719,6 +729,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Warlock') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': false, 'wis': true, 'cha': true};
+      $scope.char.proficiencies = ['Light Armor', 'Simple Weapons'];
       $scope.char.subclasses = ['The Archfey', 'The Fiend', 'The Great Old One'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Otherworldly Patron, Pact Magic');
@@ -763,6 +774,7 @@ app.controller('characterController', ['$scope', function characterController($s
       }
     } else if (newVal[0]=='Wizard') {
       $scope.char.saveProfs = {'str': false, 'dex': false, 'con': false, 'int': true, 'wis': true, 'cha': false};
+      $scope.char.proficiencies = ['Daggers', 'Darts', 'Slings', 'Quarterstaffs', 'Light Crossbows'];
       $scope.char.subclasses = ['School of Abjuration', 'School of Conjuration', 'School of Divination', 'School of Enchantment', 'School of Evocation', 'School of Illusion', 'School of Necromancy', 'School of Transmutation'];
       if (newVal[1]>=1) {
         $scope.char.features.push('Spellcasting, Arcane Recovery');
