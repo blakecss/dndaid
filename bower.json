@@ -1,22 +1,15 @@
 {
-  "name": "dndaid",
-  "description": "",
-  "main": "script.js",
+  "name": "walkersands",
+  "description": "Template for wordpress themes",
+  "main": "index.js",
   "authors": [
-    "Blake Boucher <blakeboucher@gmail.com>"
+    "Blake Boucher"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/RiceCrisp/dndaid",
+  "homepage": "",
   "private": true,
   "dependencies": {
-    "jquery": "^3.1.1",
-    "jquery-ui": "^1.12.1",
-    "angular": "~1.5.8",
-    "angular-animate": "~1.5.8",
-    "angular-aria": "~1.5.8",
-    "angular-messages": "~1.5.8",
-    "angular-sanitize": "~1.5.8",
-    "angular-material": "~1.1.1",
-    "angular-ui-sortable": "^0.15.0"
+    "svg4everybody": "^2.1.9",
+    "vue": "^2.5.9"
   }
 }

@@ -1,0 +1,193 @@
+header {
+  background-color: $primary;
+}
+
+.logo {
+  width: 100px;
+  padding: 0 $grid-padding;
+  & + * {
+    flex: 1;
+    padding: 0 $grid-padding;
+  }
+  h1 {
+    color: #fff;
+    margin: 0;
+  }
+}
+.search {
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+  }
+}
+.tabs {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  li {
+    margin: 0;
+    padding: 10px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    color: #fff;
+    &.current {
+      border-bottom-color: #fff;
+    }
+  }
+}
+.slidez-enter-active, .slidez-leave-active {
+  transition: 0.5s ease;
+}
+.slidez-enter {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.slidez-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.characterList {
+  min-width: 200px;
+  max-width: 300px;
+  background-color: #ddd;
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  li {
+    box-shadow: inset 0 0 10px rgba(#000, 0.5);
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+.characterList, .comparisons {
+  position: relative;
+  z-index: 2;
+}
+#characters, #world {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.comparisons {
+  display: flex;
+  position: relative;
+  flex: 1;
+  min-height: 100px;
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+.characterPlaceholder {
+  position: absolute;
+  top: $grid-padding*2;
+  right: $grid-padding;
+  bottom: $grid-padding*2;
+  left: $grid-padding;
+  border: 2px dashed #ddd;
+}
+.character {
+  @extend %card;
+  margin: $grid-padding*2 0;
+  padding: 0;
+  background-color: #fff;
+}
+.character-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    margin: 0 10px;
+    padding: 0;
+    font-size: rem(16);
+    color: #000;
+    border: 0;
+  }
+  button {
+    background: none;
+    padding: 10px;
+  }
+  svg {
+    fill: #fff;
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+}
+.character-content {
+
+}
+.character-section-header {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  padding: 5px $grid-padding*2;
+  &:hover {
+    background-color: #eee;
+  }
+  h3 {
+    margin: 0;
+    flex: 1;
+  }
+  svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+}
+.character-section {
+  label {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  h4 {
+    padding: 0 10px;
+  }
+}
+
+.modal {
+  background-color: rgba(#000, 0.5);
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.modal-enter-active, .modal-leave-active {
+  transition: 0.5s ease;
+}
+.modal-enter, .modal-leave-to {
+  opacity: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 500px;
+}
+
+.hp {
+  width: 50px;
+}
+.input-group {
+  position: relative;
+  label {
+    font-size: rem(10);
+    margin: 0;
+  }
+}

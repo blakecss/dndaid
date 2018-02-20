@@ -1,0 +1,69 @@
+.container,
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: $row-padding;
+  padding-left: $row-padding;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.col.reverse {
+  flex-direction: column-reverse;
+}
+
+[class*=col-] {
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  max-width: 100%;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
+}
+
+@each $key, $val in $breaks {
+  @include media-breakpoint-up($key) {
+    @if $key == 'xs' {
+      .container {
+        width: 100%;
+      }
+    }
+    @else {
+      .container {
+        width: $val;
+      }
+    }
+    @each $size in $sizes {
+      .col-#{$key} {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+        padding-left: $grid-padding;
+        padding-right: $grid-padding;
+      }
+      .col-#{$key}-#{$size} {
+        flex-basis: percentage((1/12) * $size);
+        max-width: percentage((1/12) * $size);
+        padding-left: $grid-padding;
+        padding-right: $grid-padding;
+      }
+      .col-#{$key}-offset-#{$size - 1} {
+        margin-left: percentage((1/12) * ($size - 1));
+      }
+      .visible-#{$key} {
+        display: block;
+      }
+      .hidden-#{$key} {
+        display: none;
+      }
+    }
+  }
+}

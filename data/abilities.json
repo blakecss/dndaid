@@ -1,0 +1,20 @@
+var jsonAbilityData = {
+  "Strength": {
+    "abbr": "STR",
+  },
+  "Dexterity": {
+    "abbr": "DEX",
+  },
+  "Constitution": {
+    "abbr": "CON",
+  },
+  "Intelligence": {
+    "abbr": "INT",
+  },
+  "Wisdom": {
+    "abbr": "WIS",
+  },
+  "Charisma": {
+    "abbr": "CHA",
+  }
+};

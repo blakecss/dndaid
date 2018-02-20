@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,400,700');
+
+@function rem($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+@function em($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+};
+
+$text-color: #333;
+$text-color-light: #777;
+
+$player: blue;
+$playerLight: lighten($player, 50%);
+$creature: red;
+$creatureLight: lighten($creature, 50%);
+$npc: gold;
+$npcLight: lighten($npc, 50%);
+
+$primary: #311b92;
+$primary-light: #6746c3;
+$primary-dark: #000063;
+
+$secondary: #299;
+$secondary-light: lighten($secondary, 10%);
+$secondary-dark: darken($secondary, 10%);
+
+$accent: #fdd436;
+$accent-light: lighten($accent, 10%);
+$accent-dark: darken($accent, 10%);
+
+$border-color: #ddd;
+$border-radius: 5px;
+$shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+$heading-font: 'Open Sans', sans-serif;
+$text-font: 'Open Sans', sans-serif;
+$font: 'Open Sans', sans-serif;
+
+$light: 100;
+$normal: 300;
+$bold: 600;
+
+$default-margin: 20px;
+$input-padding: 0;
+$input-border-radius: 0;
+$input-margin: 30px;
+$menu-height: 80px;
+$header-padding: 50px;
+$section-padding: 50px;
+$row-padding: 6px;
+$grid-padding: 6px;
+$card-padding: 20px;
+
+// Grid size and break points
+$xs-break: 0px;
+$sm-break: 576px;
+$md-break: 768px;
+$lg-break: 992px;
+$xl-break: 1200px;
+$sizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+$breaks: (
+  xs: $xs-break,
+  sm: $sm-break,
+  md: $md-break,
+  lg: $lg-break,
+  xl: $xl-break
+);
+$breaks-alt: (
+  xs: $sm-break - 1px,
+  sm: $md-break - 1px,
+  md: $lg-break - 1px,
+  lg: $xl-break - 1px,
+);
+
+@mixin media-breakpoint-up($name) {
+  @media (min-width: map-get($breaks, $name)) {
+    @content;
+  }
+}
+@mixin media-breakpoint-down($name) {
+  @media (max-width: map-get($breaks-alt, $name)) {
+    @content;
+  }
+}
+
+@mixin overlay($color: rgba(#000, 0.3)) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color;
+  }
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+}

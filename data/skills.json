@@ -1,0 +1,74 @@
+var jsonSkillData = {
+  "Acrobatics": {
+    "abbr": "ACRO",
+    "relAbility": "Dexterity"
+  },
+  "Animal Handling": {
+    "abbr": "ANIM",
+    "relAbility": "Wisdom"
+  },
+  "Arcana": {
+    "abbr": "ARCA",
+    "relAbility": "Intelligence"
+  },
+  "Athletics": {
+    "abbr": "ATHL",
+    "relAbility": "Strength"
+  },
+  "Deception": {
+    "abbr": "DECE",
+    "relAbility": "Charisma"
+  },
+  "History": {
+    "abbr": "HIST",
+    "relAbility": "Intelligence"
+  },
+  "Insight": {
+    "abbr": "INSI",
+    "relAbility": "Wisdom"
+  },
+  "Intimidation": {
+    "abbr": "INTI",
+    "relAbility": "Charisma"
+  },
+  "Investigation": {
+    "abbr": "INVE",
+    "relAbility": "Intelligence"
+  },
+  "Medicine": {
+    "abbr": "MEDI",
+    "relAbility": "Wisdom"
+  },
+  "Nature": {
+    "abbr": "NATU",
+    "relAbility": "Intelligence"
+  },
+  "Perception": {
+    "abbr": "PERC",
+    "relAbility": "Wisdom"
+  },
+  "Performance": {
+    "abbr": "PERF",
+    "relAbility": "Charisma"
+  },
+  "Persuasion": {
+    "abbr": "PERS",
+    "relAbility": "Charisma"
+  },
+  "Religion": {
+    "abbr": "RELI",
+    "relAbility": "Intelligence"
+  },
+  "Sleight of Hand": {
+    "abbr": "SLEI",
+    "relAbility": "Dexterity"
+  },
+  "Stealth": {
+    "abbr": "STEA",
+    "relAbility": "Dexterity"
+  },
+  "Survival": {
+    "abbr": "SURV",
+    "relAbility": "Wisdom"
+  }
+};

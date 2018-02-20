@@ -1,0 +1,29 @@
+var jsonAlignmentData = {
+  "Lawful Good" : {
+    "abbr": "LG"
+  },
+  "Neutral Good" : {
+    "abbr": "NG"
+  },
+  "Chaotic Good" : {
+    "abbr": "CG"
+  },
+  "Lawful Neutral" : {
+    "abbr": "LN"
+  },
+  "Neutral" : {
+    "abbr": "N"
+  },
+  "Chaotic Neutral" : {
+    "abbr": "CN"
+  },
+  "Lawful Evil" : {
+    "abbr": "LE"
+  },
+  "Neutral Evil" : {
+    "abbr": "NE"
+  },
+  "Chaotic Evil" : {
+    "abbr": "CE"
+  }
+};
