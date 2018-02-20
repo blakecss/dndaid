@@ -306,9 +306,9 @@ figcaption {
   @include media-breakpoint-down(xs) {
     padding: 25px;
   }
-  & *:last-child {
-    margin-bottom: 0;
-  }
+  // & *:last-child {
+  //   margin-bottom: 0;
+  // }
 }
 .card {
   @extend %card;

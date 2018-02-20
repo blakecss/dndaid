@@ -36,7 +36,10 @@ header {
     }
   }
 }
-.slidez-enter-active, .slidez-leave-active {
+.slidez-enter-active {
+  transition: 0.5s ease 0.3s;
+}
+.slidez-leave-active {
   transition: 0.5s ease;
 }
 .slidez-enter {
@@ -119,8 +122,16 @@ header {
     display: block;
   }
 }
-.character-content {
-
+.character-section {
+  label {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  h4 {
+    padding: 0 10px;
+  }
 }
 .character-section-header {
   display: flex;
@@ -130,6 +141,9 @@ header {
   align-items: center;
   background: none;
   padding: 5px $grid-padding*2;
+  border-top: 1px solid #ddd;
+  position: relative;
+  z-index: 2;
   &:hover {
     background-color: #eee;
   }
@@ -143,16 +157,9 @@ header {
     height: 24px;
   }
 }
-.character-section {
-  label {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  h4 {
-    padding: 0 10px;
-  }
+.character-section-content {
+  padding-top: $grid-padding*2;
+  margin-bottom: -$input-margin + ($grid-padding*2);
 }
 
 .modal {

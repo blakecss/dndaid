@@ -1328,11 +1328,11 @@ Vue.component('character', {
     </div>\
     <div class="character-content">\
       <div class="character-section">\
-        <button @click="expand()" class="character-section-header">\
+        <button @click="c.showInfo = !c.showInfo" class="character-section-header">\
           <h3>Info</h3>\
           <svg><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
-        <div class="character-section-content">\
+        <div v-show="c.showInfo" class="character-section-content">\
           <div class="row">\
             <div class="input-group col-xs-6">\
               <label>R</label>\
@@ -1344,6 +1344,7 @@ Vue.component('character', {
                   <option v-else>{{key}}</option>\
                 </template>\
               </select>\
+              <input v-model="race" type="hidden" />\
             </div>\
             <div class="input-group col-xs-6">\
               <label>C</label>\
@@ -1372,11 +1373,12 @@ Vue.component('character', {
           </div>\
         </div>\
       </div>\
-      class="character-section">\
-        <div class="character-section-header">\
+      <div class="character-section">\
+        <button @click="c.showCombat = !c.showCombat" class="character-section-header">\
           <h3>Combat</h3>\
-        </div>\
-        <div class="character-section-content">\
+          <svg><use xlink:href="sprites.svg#arrow-down"></use></svg>\
+        </button>\
+        <div v-show="c.showCombat" class="character-section-content">\
           <div class="row">\
             <div class="input-group col-xs-4">\
               <label>Hit Points</label>\
@@ -1408,10 +1410,11 @@ Vue.component('character', {
         </div>\
       </div>\
       <div class="character-section">\
-        <div class="character-section-header">\
+        <button @click="c.showStats = !c.showStats" class="character-section-header">\
           <h3>Stats</h3>\
-        </div>\
-        <div class="character-section-content">\
+          <svg><use xlink:href="sprites.svg#arrow-down"></use></svg>\
+        </button>\
+        <div v-show="c.showStats" class="character-section-content">\
           <div class="row">\
             <div class="input-group col-xs-4">\
               <label>Exp</label>\
@@ -1498,28 +1501,33 @@ Vue.component('characters', {
       this.characters.push({
         id: Math.random().toString(36).substr(2,9),
         name: 'Namely' + Math.random(),
+        showInfo: true,
         race: '',
         subrace: '',
         klass: '',
-        subclass: '',
         background: '',
         alignment: '',
         size: '',
+        showCombat: true,
         currentHP: 0,
         maxHP: 0,
+        hitDie: '',
         armorClass: 0,
         spellAbility: '',
         spellAttackMod: 0,
         spellSavingDC: 0,
         speed: 0,
+        showStats: true,
         exp: 0,
+        level: 0,
         pb: 2,
-        cantripsKnown: 0,
-        spellsKnown: 0,
-        spellSlots: spellSlots,
         abilities: abilities,
         saves: saves,
-        skills: skills
+        skills: skills,
+        showSpells: true,
+        cantripsKnown: 0,
+        spellsKnown: 0,
+        spellSlots: spellSlots
       });
     },
     leftBtn: function(i) {
