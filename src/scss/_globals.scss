@@ -134,7 +134,7 @@ input[type="color"] {
   border: 1px solid $border-color;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder, textarea::placeholder, select:invalid {
   color: #ddd;
 }
 
@@ -142,17 +142,20 @@ input::placeholder, textarea::placeholder {
   display: inline-block;
   text-decoration: none;
   color: #fff;
+  fill: #fff;
   border: 0;
-  border-radius: $button-border-radius;
+  border-radius: $border-radius;
   background-color: $secondary;
   padding: $button-padding;
   cursor: pointer;
   transition: 0.3s ease;
   appearance: none;
-  box-shadow: $shadow;
+  box-shadow: $shadow-0;
+  font-size: rem(14);
   &:hover {
     background-color: $secondary-dark;
     color: #fff;
+    fill: #fff;
   }
   &:focus {
     outline: none;
@@ -161,6 +164,18 @@ input::placeholder, textarea::placeholder {
 
 button, input[type=button], input[type=submit], .btn, .button,  {
   @extend %button;
+}
+
+.flat-btn {
+  color: $text-color;
+  fill: $text-color;
+  background-color: transparent;
+  box-shadow: none;
+  &:hover {
+    color: $text-color;
+    fill: $text-color;
+    background-color: #eee;
+  }
 }
 
 %select {
@@ -205,7 +220,7 @@ div.select {
     left: 0;
     right: 0;
     z-index: 2;
-    box-shadow: $shadow;
+    box-shadow: $shadow-2;
     max-height: 200px;
     overflow-y: scroll;
     opacity: 0;
@@ -303,9 +318,9 @@ figcaption {
 */
 %card {
   background-color: #fff;
-  box-shadow: $shadow;
+  box-shadow: $shadow-1;
   padding: $card-padding;
-  border-radius: 3px;
+  border-radius: $border-radius;
   @include media-breakpoint-down(xs) {
     padding: 25px;
   }

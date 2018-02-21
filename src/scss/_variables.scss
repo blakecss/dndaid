@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
 @function rem($pixels, $context: 16px) {
   @if (unitless($pixels)) {
@@ -40,7 +40,10 @@ $secondary-dark: #0031ca;
 
 $border-color: #ddd;
 $border-radius: 5px;
-$shadow: 0 3px 6px rgba(#000, 0.15);
+$shadow-0: 0 2px 4px rgba(#000, 0.2);
+$shadow-1: 0 3px 6px rgba(#000, 0.2);
+$shadow-2: 0 6px 12px rgba(#000, 0.2);
+$shadow-3: 0 12px 24px rgba(#000, 0.2);
 
 $heading-font: 'Roboto', sans-serif;
 $text-font: 'Roboto', sans-serif;
@@ -48,20 +51,20 @@ $font: 'Roboto', sans-serif;
 
 $light: 300;
 $normal: 400;
-$bold: 500;
+$bold: 700;
 
-$default-margin: 20px;
-$button-padding: 10px;
-$button-border-radius: 3px;
+$default-margin: 24px;
+$button-padding: 8px;
+$border-radius: 2px;
 $input-padding: 0;
 $input-border-radius: 0;
-$input-margin: 25px;
+$input-margin: 24px;
 $menu-height: 80px;
 $header-padding: 50px;
 $section-padding: 50px;
-$row-padding: 6px;
+$row-padding: 8px;
 $grid-padding: 8px;
-$card-padding: 20px;
+$card-padding: 24px;
 
 // Grid size and break points
 $xs-break: 0px;

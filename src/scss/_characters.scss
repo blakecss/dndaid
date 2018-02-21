@@ -1,6 +1,19 @@
+.add-character {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 100%;
+  top: -20px;
+  left: 10px;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
 .character-list {
   width: 100%;
-  max-width: 260px;
+  max-width: 280px;
   position: relative;
   background-color: #fff;
   border-left: 1px solid #ccc;
@@ -9,33 +22,26 @@
     margin: 32px 0 0 0;
   }
   li {
-    padding: 10px;
     margin-bottom: 0;
-    border-bottom: 1px solid #ddd;
-    button {
-      width: 40px;
-      height: 40px;
-      border-radius: 100%;
-      svg {
-        fill: #fff;
-        width: 100%;
-        height: 100%;
-      }
-    }
   }
   .info {
     display: flex;
     flex-direction: flex-start;
-    margin-bottom: 8px;
+    align-items: center;
+    background: #eee;
+    padding: 10px;
   }
-  .reorder {
-    cursor: grab;
-    width: 24px;
-    min-width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    &:active {
-      cursor: grabbing;
+  .class-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background-color: $primary-dark;
+    fill: #fff;
+    border-radius: 100%;
+    padding: 8px;
+    svg {
+      width: 100%;
+      height: 100%;
     }
   }
   .name {
@@ -44,12 +50,23 @@
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 8px;
+  }
+  .reorder {
+    cursor: grab;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    &:active {
+      cursor: grabbing;
+    }
   }
   .stats {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    padding: 10px;
     & > div {
       display: flex;
       align-items: center;
@@ -66,22 +83,18 @@
     }
   }
   .tools {
-
-  }
-}
-.add-character {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  padding: 16px;
-  border-radius: 100%;
-  top: -28px;
-  left: 10px;
-  box-shadow: $shadow;
-  svg {
-    width: 100%;
-    height: 100%;
-    fill: #fff;
+    padding: 0 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 .comparisons {
@@ -153,21 +166,13 @@
     margin: 0;
     font-size: rem(14);
   }
-  button {
-    background: none;
-    padding: 10px;
-    border-radius: 100%;
-    box-shadow: none;
-    &:hover {
-      background-color: #eee;
-    }
-  }
-  .menu-icon {
+  .flat-btn {
     width: 40px;
     height: 40px;
     min-width: 40px;
+    padding: 10px;
+    border-radius: 100%;
     svg {
-      fill: $text-color;
       width: 100%;
       height: 100%;
       display: block;
@@ -209,6 +214,7 @@
   }
   svg {
     display: block;
+    fill: $text-color;
     width: 24px;
     height: 24px;
     transition: 0.3s ease;
@@ -242,9 +248,17 @@
 }
 .input-group {
   position: relative;
+  margin-bottom: $input-margin;
   label {
     font-size: rem(12);
     color: rgba($text-color, 0.75);
     margin: 0;
+  }
+  input, select, textarea {
+    margin-bottom: 0;
+  }
+  .mod {
+    font-size: rem(12);
+    color: rgba($text-color, 0.75);
   }
 }

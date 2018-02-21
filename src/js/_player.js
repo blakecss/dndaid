@@ -1226,10 +1226,10 @@ Vue.component('player', {
         <svg><use :xlink:href="\'sprites.svg#\' + c.klass.toLowerCase()"></use></svg>\
       </div>\
       <div class="name">\
-        <input v-model="c.name" type="text" />\
-        <p class="subtitle">{{c.subrace}}</p>\
+        <input v-model="c.name" type="text" placeholder="Name" />\
+        <p class="subtitle">{{c.subrace}} {{c.klass}}</p>\
       </div>\
-      <button class="menu-icon" @click="clear()">\
+      <button class="flat-btn" @click="clear()">\
         <svg><use xlink:href="sprites.svg#menu"></use></svg>\
       </button>\
     </div>\
@@ -1241,27 +1241,26 @@ Vue.component('player', {
         </button>\
         <div v-show="c.showInfo" class="character-section-content">\
           <div class="row">\
-            <div class="input-group col-xs-6">\
-              <label>C</label>\
-              <select v-model="c.klass">\
-                <option v-for="(value, key) in classes">{{key}}</option>\
-              </select>\
-            </div>\
-            <div class="input-group col-xs-6">\
+            <div class="input-group col-xs-4">\
               <label>Alignment</label>\
               <select v-model="c.alignment">\
                 <option v-for="alignment in alignments">{{alignment}}</option>\
               </select>\
             </div>\
-          </div>\
-          <div class="row">\
-            <div class="input-group col-xs-6">\
+            <div class="input-group col-xs-4">\
               <label>Background</label>\
               <input v-model="c.background" type="text" required>\
             </div>\
-            <div class="input-group col-xs-6">\
+            <div class="input-group col-xs-4">\
               <label>Size</label>\
-              <input v-model="c.size" type="text" readonly />\
+              <select v-model="c.size">\
+                <option>Tiny</option>\
+                <option>Small</option>\
+                <option>Medium</option>\
+                <option>Large</option>\
+                <option>Huge</option>\
+                <option>Gargantuan</option>\
+              </select>\
             </div>\
           </div>\
         </div>\
@@ -1327,14 +1326,24 @@ Vue.component('player', {
           <div class="row">\
             <div class="input-group col-xs-2" v-for="(value, key) in abilities">\
               <label>{{key}}</label>\
-              <input v-model="c[value.abbr.toLowerCase()]" type="number" />\
+              <input v-model="c.abilities[key]" type="number" />\
+              <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
+            </div>\
+          </div>\
+          <h4>Saves</h4>\
+          <div class="row">\
+            <div class="input-group col-xs-2" v-for="(value, key) in abilities">\
+              <label>{{key}}</label>\
+              <input v-model="c.saves[key].value" type="number" />\
+              <div class="mod"><span>{{c.saves[key] | mod}}</span><input type=""</div>\
             </div>\
           </div>\
           <h4>Skills</h4>\
           <div class="row">\
             <div class="input-group col-xs-2" v-for="(value, key) in skills">\
               <label>{{key}}</label>\
-              <input v-model="c[value.abbr.toLowerCase()]" type="number" />\
+              <input v-model="c.skills[key]" type="number" />\
+              <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
             </div>\
           </div>\
         </div>\

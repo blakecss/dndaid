@@ -16,12 +16,13 @@ Vue.component('creature', {
   template: '<div class="character">\
     <div class="character-header">\
       <div class="class-icon">\
+        <svg><use xlink:href="sprites.svg#creature"></use></svg>\
       </div>\
       <div class="name">\
         <input v-model="c.name" type="text" />\
         <p class="subtitle">{{c.name}}</p>\
       </div>\
-      <button class="menu-icon" @click="clear()">\
+      <button class="flat-btn" @click="clear()">\
         <svg><use xlink:href="sprites.svg#menu"></use></svg>\
       </button>\
     </div>\
