@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600');
 
 @function rem($pixels, $context: 16px) {
   @if (unitless($pixels)) {
@@ -21,7 +21,7 @@
 };
 
 $text-color: #333;
-$text-color-light: #777;
+$text-color-light: #999;
 
 $player: blue;
 $playerLight: lighten($player, 50%);
@@ -30,39 +30,37 @@ $creatureLight: lighten($creature, 50%);
 $npc: gold;
 $npcLight: lighten($npc, 50%);
 
-$primary: #311b92;
-$primary-light: #6746c3;
-$primary-dark: #000063;
+$primary: #455a64;
+$primary-light: #718792;
+$primary-dark: #1c313a;
 
-$secondary: #299;
-$secondary-light: lighten($secondary, 10%);
-$secondary-dark: darken($secondary, 10%);
-
-$accent: #fdd436;
-$accent-light: lighten($accent, 10%);
-$accent-dark: darken($accent, 10%);
+$secondary: #3d5afe;
+$secondary-light: #8187ff;
+$secondary-dark: #0031ca;
 
 $border-color: #ddd;
 $border-radius: 5px;
-$shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+$shadow: 0 3px 6px rgba(#000, 0.15);
 
-$heading-font: 'Open Sans', sans-serif;
-$text-font: 'Open Sans', sans-serif;
-$font: 'Open Sans', sans-serif;
+$heading-font: 'Roboto', sans-serif;
+$text-font: 'Roboto', sans-serif;
+$font: 'Roboto', sans-serif;
 
-$light: 100;
-$normal: 300;
-$bold: 600;
+$light: 300;
+$normal: 400;
+$bold: 500;
 
 $default-margin: 20px;
+$button-padding: 10px;
+$button-border-radius: 3px;
 $input-padding: 0;
 $input-border-radius: 0;
-$input-margin: 30px;
+$input-margin: 25px;
 $menu-height: 80px;
 $header-padding: 50px;
 $section-padding: 50px;
 $row-padding: 6px;
-$grid-padding: 6px;
+$grid-padding: 8px;
 $card-padding: 20px;
 
 // Grid size and break points

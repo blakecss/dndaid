@@ -5,6 +5,7 @@ var jsonClassData = {
     "hit_die": "d12",
     "primary_ability": "Strength",
     "saving_throw": ["Strength", "Constitution"],
+    "spell_casting_ability": "",
     "proficiencies": ["Light Armor", "Medium Armor", "Shields", "Simple Weapons", "Martial Weapons"],
     "skills": "<p>Choose 2:</p><ul><li>Animal Handling</li><li>Athletics</li><li>Intimidation</li><li>Nature</li><li>Perception</li><li>Survival</li></ul>",
     "equipment": ["(a)Greataxe or (b)any martial melee weapon", "(a)Two handaxes or (b)any simple weapon", "An explorer's pack and four javelins"]
@@ -15,6 +16,7 @@ var jsonClassData = {
     "hit_die": "d8",
     "primary_ability": "Charisma",
     "saving_throw": ["Dexterity", "Charisma"],
+    "spell_casting_ability": "Charisma",
     "proficiencies": ["Light Armor", "Simple Weapons", "Hand Crossbows", "Longswords", "Rapiers", "Shortswords", "Three musical instruments of your choice"],
     "skills": "<p>Choose any 3</p>",
     "equipment": ["(a)Rapier, (b)longsword, or (c)any simple weapon", "(a)Diplomat's pack or (b)an entertainer's pack", "Any musical instrument", "Leather armor and a dagger"]
@@ -25,6 +27,7 @@ var jsonClassData = {
     "hit_die": "d8",
     "primary_ability": "Wisdom",
     "saving_throw": ["Wisdom", "Charisma"],
+    "spell_casting_ability": "Wisdom",
     "proficiencies": ["Light Armor", "Medium Armor", "Shields", "Simple Weapons"],
     "skills": "<p>Choose 2:</p><ul><li>History</li><li>Insight</li><li>Medicine</li><li>Persuasion</li><li>Religion</li></ul>",
     "equipment": ["(a)Mace or (b)a warhammer (if proficient)", "(a)Scale mail, (b)leather armor, or (c)chain mail (if proficient)", "(a)Light crossbow and 20 bolts or (b)any simple weapon", "(a)Priest's pack or (b)an explorer's pack", "Shield and a holy symbol"]
@@ -35,6 +38,7 @@ var jsonClassData = {
     "hit_die": "d8",
     "primary_ability": "Wisdom",
     "saving_throw": ["Intelligence", "Wisdom"],
+    "spell_casting_ability": "Wisdom",
     "proficiencies": ["Light Armor", "Medium Armor", "Shields", "Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears", "Herbalism Kit"],
     "skills": "<p>Choose 2:</p><ul><li>Arcana</li><li>Animal Handling</li><li>Insight</li><li>Medicine</li><li>Nature</li><li>Perception</li><li>Religion</li><li>Survival</li></ul>",
     "equipment": ["(a)Wooden Shield or (b)any simple weapon", "(a)Scimitar or (b)any simple melee weapon", "Leather armor, an explorer's pack, and a druidic focus"]
@@ -45,6 +49,7 @@ var jsonClassData = {
     "hit_die": "d10",
     "primary_ability": "Strength or Dexterity",
     "saving_throw": ["Strength", "Constitution"],
+    "spell_casting_ability": "Intelligence",
     "proficiencies": ["All Armor", "Shields", "Simple Weapons", "Martial Weapons"],
     "skills": "<p>Choose 2:</p><ul><li>Acrobatics</li><li>Animal Handling</li><li>Athletics</li><li>History</li><li>Insight</li><li>Intimidation</li><li>Perception</li><li>Survival</li></ul>",
     "equipment": ["(a)Chain mail or (b)leather, longbow, and 20 arrows", "(a)Martial weapon and a shield or (b)two martial weapons", "(a)Light crossbow and 20 bolts or (b)explorer's pack"]
@@ -55,6 +60,7 @@ var jsonClassData = {
     "hit_die": "d8",
     "primary_ability": "Dexterity & Wisdom",
     "saving_throw": ["Strength", "Dexterity"],
+    "spell_casting_ability": "",
     "proficiencies": ["Simple Weapons", "Shortswords", "One type of artisan's tools or one musical instrument"],
     "skills": "<p>Choose 2:</p><ul><li>Acrobatics</li><li>Athletics</li><li>History</li><li>Insight</li><li>Religion</li><li>Stealth</li></ul>",
     "equipment": ["(a)Shortsword or (b)any simple weapon", "(a)Dungeoneer's pack or (b)explorer's pack", "10 darts"]
@@ -65,6 +71,7 @@ var jsonClassData = {
     "hit_die": "d10",
     "primary_ability": "Strength & Charisma",
     "saving_throw": ["Wisdom", "Charisma"],
+    "spell_casting_ability": "Charisma",
     "proficiencies": ["All Armor", "Shields", "Simple Weapons", "Martial Weapons"],
     "skills": "<p>Choose 2:</p><ul><li>Athletics</li><li>Insight</li><li>Intimidation</li><li>Medicine</li><li>Persuasion</li><li>Religion</li></ul>",
     "equipment": ["(a)Martial weapon and a shield or (b)two martial weapons", "(a)Five javelins or (b)any simple melee weapon", "(a)Priest's pack or (b)explorer's pack", "Chain mail and a holy symbol"]
@@ -75,6 +82,7 @@ var jsonClassData = {
     "hit_die": "d10",
     "primary_ability": "Dexterity & Wisdom",
     "saving_throw": ["Strength", "Dexterity"],
+    "spell_casting_ability": "Wisdom",
     "proficiencies": ["Light Armor", "Medium Armor", "Shields", "Simple Weapons", "Martial Weapons"],
     "skills": "<p>Choose 3:</p><ul><li>Animal Handling</li><li>Athletics</li><li>Insight</li><li>Investigation</li><li>Nature</li><li>Perception</li><li>Stealth</li><li>Survival</li></ul>",
     "equipment": ["(a)Scale mail or (b)leather armor", "(a)Two shortswords or (b)two simple melee weapons", "(a)Dungeoneer's pack or (b)explorer's pack", "Longbow and a quiver of 20 arrows"]
@@ -85,6 +93,7 @@ var jsonClassData = {
     "hit_die": "d8",
     "primary_ability": "Dexterity",
     "saving_throw": ["Dexterity", "Intelligence"],
+    "spell_casting_ability": "Intelligence",
     "proficiencies": ["Light Armor", "Simple Weapons", "Hand Crossbows", "Longswords", "Rapiers", "Shortswords", "Thieves' Tools"],
     "skills": "<p>Choose 4:</p><ul><li>Acrobatics</li><li>Athletics</li><li>Deception</li><li>Insight</li><li>Intimidation</li><li>Investigation</li><li>Perception</li><li>Performance</li><li>Persuasion</li><li>Sleight of Hand</li><li>Stealth</li></ul>",
     "equipment": ["(a)Rapier or (b)shortsword", "(a)Shortbow and quiver of 20 arrows or (b)shortsword", "(a)Burglar's pack, (b)dungeoneer's pack, or (c)explorer's pack", "Leather armor, two daggers, and thieves' tools"]
@@ -95,6 +104,7 @@ var jsonClassData = {
     "hit_die": "d6",
     "primary_ability": "Charisma",
     "saving_throw": ["Constitution", "Charisma"],
+    "spell_casting_ability": "Charisma",
     "proficiencies": ["Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows"],
     "skills": "<p>Choose 2:</p><ul><li>Arcana</li><li>Deception</li><li>Insight</li><li>Intimidation</li><li>Persuasion</li><li>Religion</li></ul>",
     "equipment": ["(a)Light crossbow and 20 bolts or (b)any simple weapon", "(a)Component pouch or (b)arcane focus", "(a)Dungeoneer's pack or (b)explorer's pack", "Two daggers"]
@@ -105,6 +115,7 @@ var jsonClassData = {
     "hit_die": "d8",
     "primary_ability": "Charisma",
     "saving_throw": ["Wisdom", "Charisma"],
+    "spell_casting_ability": "Charisma",
     "proficiencies": ["Light Armor", "Simple Weapons"],
     "skills": "<p>Choose 2:</p><ul><li>Arcana</li><li>Deception</li><li>History</li><li>Intimidation</li><li>Investigation</li><li>Nature</li><li>Religion</li></ul>",
     "equipment": ["(a)Light crossbow and 20 bolts or (b)any simple weapon", "(a)Component pouch or (b)arcane focus", "(a)Scholar's pack or (b)dungeoneer's pack", "Leather armor, any simple weapon, and two daggers"]
@@ -115,6 +126,7 @@ var jsonClassData = {
     "hit_die": "d6",
     "primary_ability": "Intelligence",
     "saving_throw": ["Intelligence", "Wisdom"],
+    "spell_casting_ability": "Intelligence",
     "proficiencies": ["Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows"],
     "skills": "<p>Choose 2:</p><ul><li>Arcana</li><li>History</li><li>Insight</li><li>IInvestigation</li><li>Medicine</li><li>Religion</li></ul>",
     "equipment": ["(a)Quartersaff or (b)dagger", "(a)Component pouch or (b)arcane focus", "(a)Scholar's pack or (b)explorer's pack", "Spellbook"]

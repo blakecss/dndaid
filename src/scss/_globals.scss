@@ -18,22 +18,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
   margin: 0 0 $default-margin;
   font-weight: $normal;
-  color: $primary;
+  color: $text-color;
   a {
     font-family: $heading-font;
   }
 }
 
 h1, .h1 {
-  font-size: rem(42);
+  font-size: rem(32);
 }
 
 h2, .h2 {
-  font-size: rem(38);
+  font-size: rem(24);
 }
 
 h3, .h3 {
-  font-size: rem(20);
+  font-size: rem(18);
 }
 
 h4, .h4 {
@@ -56,7 +56,7 @@ a {
   color: $secondary;
   color: $secondary;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
   &:hover {
     color: $secondary-dark;
   }
@@ -105,15 +105,16 @@ label {
   width: 100%;
   margin: 0 0 $input-margin;
   border: 0;
-  border-bottom: 2px solid rgba(#000, 0.2);
+  border-bottom: 1px solid rgba(#000, 0.2);
   border-radius: $input-border-radius;
   padding: $input-padding;
   color: $text-color;
   background: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  font-size: rem(16);
   &:focus {
     outline: none;
-    border-bottom-color: rgba(#000, 0.5);
+    border-bottom-color: $primary;
   }
 }
 
@@ -142,12 +143,13 @@ input::placeholder, textarea::placeholder {
   text-decoration: none;
   color: #fff;
   border: 0;
-  border-radius: $input-border-radius;
+  border-radius: $button-border-radius;
   background-color: $secondary;
-  padding: $input-padding;
+  padding: $button-padding;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
   appearance: none;
+  box-shadow: $shadow;
   &:hover {
     background-color: $secondary-dark;
     color: #fff;
@@ -303,6 +305,7 @@ figcaption {
   background-color: #fff;
   box-shadow: $shadow;
   padding: $card-padding;
+  border-radius: 3px;
   @include media-breakpoint-down(xs) {
     padding: 25px;
   }

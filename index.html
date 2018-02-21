@@ -7,15 +7,21 @@
 <body>
   <div id="main">
     <header>
+      <div class="super-header">
+        &nbsp;
+      </div>
       <div class="container row">
         <div class="logo">
-          <a href="/"><h1>Title</h1></a>
+          <a href="/"><h1>Vue Application</h1></a>
         </div>
-        <div>
-          <div class="search">
-            <input v-model="search" type="text" placeholder="Search Anything" />
-            <svg><use xlink:href="sprites.svg#search"></use></svg>
-          </div>
+        <div class="search">
+          <button class="search-icon" @click="showSearch = true"><svg><use xlink:href="sprites.svg#search"></use></svg></button>
+          <transition name="search">
+            <div class="search-bar" v-show="showSearch">
+              <input v-model="search" type="text" placeholder="Search" />
+              <button class="search-close" @click="showSearch = false"><svg><use xlink:href="sprites.svg#close"></use></svg></button>
+            </div>
+          </transition>
         </div>
       </div>
       <div class="container row">
@@ -25,20 +31,16 @@
         </ul>
       </div>
     </header>
-    <transition-group name="slidez">
-      <div v-show="slide == 'characters'" key="characters">
+    <transition name="slides">
+      <div v-show="slide == 'characters'">
         <characters id="characters"></characters>
       </div>
-    <!-- </transition> -->
-    <!-- <transition name="slidez" mode="out-in"> -->
-      <div v-show="slide == 'world'" key="world">
-        <div id="world">
-          <div class="container row">
-            <h1>World</h1>
-          </div>
-        </div>
+    </transition>
+    <transition name="slides">
+      <div v-show="slide == 'world'">
+        <world id="world"></world>
       </div>
-    </transition-group>
+    </transition>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -47,9 +49,9 @@
   <script src="data/alignments.json"></script>
   <script src="data/abilities.json"></script>
   <script src="data/skills.json"></script>
-  <!-- <script src="data/spells.json"></script>
-  <script src="data/monsters.json"></script>
-  <script src="data/inventory.json"></script>
+  <script src="data/spells.json"></script>
+  <script src="data/creatures.json"></script>
+  <!-- <script src="data/inventory.json"></script>
   <script src="data/definitions.json"></script> -->
   <script src="lib/vue/dist/vue.js"></script>
   <script src="dist/js/main.min.js"></script>

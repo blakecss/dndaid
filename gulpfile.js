@@ -8,17 +8,12 @@ var rename = require('gulp-rename');
 var include = require('gulp-include');
 var runSequence = require('run-sequence');
 
-var base = './';
+var base = '/Applications/MAMP/htdocs/vue/';
 
 // Initialize Browser Sync
 gulp.task('browserSync', function() {
   browserSync.init({
-    server: {
-      baseDir: base
-    }
-    // open: 'external',
-    // host: 'localhost',
-    // proxy: 'dnd.local.com'
+    proxy: 'localhost/vue'
   });
 });
 
