@@ -276,7 +276,7 @@ Vue.component('characters', {
       <div v-if="characterSelect" id="character-creator" class="modal-bg">\
         <div class="modal">\
           <div class="modal-header">\
-            <div class="step" :class="[addPlayerScreen == 1 ? \'current\' : \'\', addPlayerScreen > 1 ? \'complete\' : \'\']">\
+            <div @click="addPlayerScreen = 1" class="step" :class="[addPlayerScreen == 1 ? \'current\' : \'\', addPlayerScreen > 1 ? \'complete\' : \'\']">\
               <div class="step-icon">\
                 <svg v-if="addPlayerScreen > 1"><use xlink:href="sprites.svg#checkmark"></use></svg>\
                 <div v-else>1</div>\
@@ -284,7 +284,7 @@ Vue.component('characters', {
               <h3>Choose type</h3>\
             </div>\
             <div class="line"></div>\
-            <div class="step" :class="[addPlayerScreen == 2 ? \'current\' : \'\', addPlayerScreen > 2 ? \'complete\' : \'\']">\
+            <div @click="addPlayerScreen = 2" class="step" :class="[addPlayerScreen == 2 ? \'current\' : \'\', addPlayerScreen > 2 ? \'complete\' : \'\']">\
               <div class="step-icon">\
                 <svg v-if="addPlayerScreen > 2"><use xlink:href="sprites.svg#checkmark"></use></svg>\
                 <div v-else>2</div>\
@@ -292,7 +292,7 @@ Vue.component('characters', {
               <h3>Choose advantages</h3>\
             </div>\
             <div class="line"></div>\
-            <div class="step" :class="[addPlayerScreen == 3 ? \'current\' : \'\', addPlayerScreen > 3 ? \'complete\' : \'\']">\
+            <div @click="addPlayerScreen = 3" class="step" :class="[addPlayerScreen == 3 ? \'current\' : \'\', addPlayerScreen > 3 ? \'complete\' : \'\']">\
               <div class="step-icon">\
                 <svg v-if="addPlayerScreen > 3"><use xlink:href="sprites.svg#checkmark"></use></svg>\
                 <div v-else>3</div>\
@@ -300,7 +300,7 @@ Vue.component('characters', {
               <h3>Choose abilities</h3>\
             </div>\
           </div>\
-          <transition name="slides">\
+          <transition-group name="slides" tag="div" class="step-slides">\
             <div v-if="addPlayerScreen == 1" class="row no-padding" key="1">\
               <form @submit.prevent="addCreature()" class="col-xs-6 no-padding">\
                 <div class="modal-content">\
@@ -359,7 +359,7 @@ Vue.component('characters', {
                 <input type="submit" value="Create Player" />\
               </div>\
             </form>\
-          </transition>\
+          </transition-group>\
         </div>\
       </div>\
     </transition>\

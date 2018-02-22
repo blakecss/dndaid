@@ -1,64 +1,119 @@
 var jsonRaceData = {
   "Dwarf": {
     "size": "Medium",
+    "perk": {
+      "Constitution": 2
+    },
     "subraces": {
       "Hill Dwarf": {
-        "value": "yes"
+        "perk": {
+          "Wisdom": 1
+        }
       },
       "Mountain Dwarf": {
-
+        "perk": {
+          "Strength": 2
+        }
       }
     }
   },
   "Elf": {
     "size": "Medium",
+    "perk": {
+      "Dexterity": 2
+    },
     "subraces": {
       "High Elf": {
-
+        "perk": {
+          "Intelligence": 1
+        }
       },
       "Wood Elf": {
-
+        "perk": {
+          "Wisdom": 1
+        }
       },
       "Dark Elf": {
-
+        "perk": {
+          "Charisma": 1
+        }
       }
     }
   },
   "Halfling": {
     "size": "Small",
+    "perk": {
+      "Dexterity": 2
+    },
     "subraces": {
       "Lightfoot Halfling": {
-
+        "perk": {
+          "Charisma": 1
+        }
       },
       "Stout Halfling": {
-
+        "perk": {
+          "Constitution": 1
+        }
       }
     }
   },
   "Human": {
-    "size": "Medium"
+    "size": "Medium",
+    "perk": {
+      "Strength": 1,
+      "Dexterity": 1,
+      "Constitution": 1,
+      "Intelligence": 1,
+      "Wisdom": 1,
+      "Charisma": 1
+    }
   },
   "Dragonborn": {
-    "size": "Medium"
+    "size": "Medium",
+    "perk": {
+      "Strength": 2,
+      "Charisma": 1
+    }
   },
   "Gnome": {
     "size": "Small",
+    "perk": {
+      "Intelligence": 2
+    },
     "subraces": {
       "Forest Gnome": {
-
+        "perk": {
+          "Dexterity": 1
+        }
       },
       "Rock Gnome": {
-
+        "perk": {
+          "Constitution": 1
+        }
       }
     }
   },
   "Half-Elf": {
-    "size": "Medium"
+    "size": "Medium",
+    "perk": {
+      "Charisma": 2,
+      "Other": 1,
+      "Other": 1
+    }
   },
   "Half-Orc": {
-    "size": "Medium"
+    "size": "Medium",
+    "perk": {
+      "Strength": 2,
+      "Constitution": 1
+    }
   },
   "Tiefling": {
-    "size": "Medium"
+    "size": "Medium",
+    "perk": {
+      "Charisma": 2,
+      "Intelligence": 1
+    }
   }
 };
