@@ -1,40 +1,63 @@
 var jsonRaceData = {
   "Dwarf": {
     "size": "Medium",
-    "perk": {
+    "perks": {
       "Constitution": 2
     },
+    "traits": [
+      "Dark Vision",
+      "Dwarven Resilience",
+      "Tool Proficiency",
+      "Stonecunning",
+    ],
+    "proficiencies": [
+      "Battleaxe",
+      "Handaxe",
+      "Throwing Hammer",
+      "Warhammer"
+    ],
+    "languages": [
+      "Common",
+      "Dwarvish"
+    ],
     "subraces": {
       "Hill Dwarf": {
-        "perk": {
+        "perks": {
           "Wisdom": 1
-        }
+        },
+        "traits": [
+          "Dwarven Toughness"
+        ]
       },
       "Mountain Dwarf": {
-        "perk": {
+        "perks": {
           "Strength": 2
-        }
+        },
+        "proficiencies": [
+          "Light Armor",
+          "Medium Armor"
+        ]
       }
     }
   },
   "Elf": {
     "size": "Medium",
-    "perk": {
+    "perks": {
       "Dexterity": 2
     },
     "subraces": {
       "High Elf": {
-        "perk": {
+        "perks": {
           "Intelligence": 1
         }
       },
       "Wood Elf": {
-        "perk": {
+        "perks": {
           "Wisdom": 1
         }
       },
       "Dark Elf": {
-        "perk": {
+        "perks": {
           "Charisma": 1
         }
       }
@@ -42,17 +65,17 @@ var jsonRaceData = {
   },
   "Halfling": {
     "size": "Small",
-    "perk": {
+    "perks": {
       "Dexterity": 2
     },
     "subraces": {
       "Lightfoot Halfling": {
-        "perk": {
+        "perks": {
           "Charisma": 1
         }
       },
       "Stout Halfling": {
-        "perk": {
+        "perks": {
           "Constitution": 1
         }
       }
@@ -60,7 +83,7 @@ var jsonRaceData = {
   },
   "Human": {
     "size": "Medium",
-    "perk": {
+    "perks": {
       "Strength": 1,
       "Dexterity": 1,
       "Constitution": 1,
@@ -71,24 +94,24 @@ var jsonRaceData = {
   },
   "Dragonborn": {
     "size": "Medium",
-    "perk": {
+    "perks": {
       "Strength": 2,
       "Charisma": 1
     }
   },
   "Gnome": {
     "size": "Small",
-    "perk": {
+    "perks": {
       "Intelligence": 2
     },
     "subraces": {
       "Forest Gnome": {
-        "perk": {
+        "perks": {
           "Dexterity": 1
         }
       },
       "Rock Gnome": {
-        "perk": {
+        "perks": {
           "Constitution": 1
         }
       }
@@ -96,7 +119,7 @@ var jsonRaceData = {
   },
   "Half-Elf": {
     "size": "Medium",
-    "perk": {
+    "perks": {
       "Charisma": 2,
       "Other": 1,
       "Other": 1
@@ -104,14 +127,14 @@ var jsonRaceData = {
   },
   "Half-Orc": {
     "size": "Medium",
-    "perk": {
+    "perks": {
       "Strength": 2,
       "Constitution": 1
     }
   },
   "Tiefling": {
     "size": "Medium",
-    "perk": {
+    "perks": {
       "Charisma": 2,
       "Intelligence": 1
     }
