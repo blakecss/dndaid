@@ -126,7 +126,7 @@
     margin: 0;
   }
 }
-.character {
+.character, .creature {
   @extend %card;
   padding: 0;
 }
@@ -228,13 +228,17 @@
     margin: 18px 0 12px 0;
     font-weight: $bold;
   }
-  ul {
-    list-style: none;
-    margin: 0;
-    li {
+}
+.creature {
+  .character-section-content {
+    ul {
+      list-style: none;
       margin: 0;
-      b {
-        font-weight: 600;
+      li {
+        margin: 0;
+        b {
+          font-weight: 600;
+        }
       }
     }
   }

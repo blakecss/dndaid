@@ -98,7 +98,6 @@ var end = 0;
 jQuery('.sortable').sortable({
   axis: 'y',
   handle: '.reorder',
-  // cursor: 'ns-resize',
   placeholder: 'sortable-placeholder',
   forcePlaceholderSize: true,
   start: function(e, ui) {
@@ -106,6 +105,6 @@ jQuery('.sortable').sortable({
   },
   stop: function(e, ui) {
     end = ui.item.index();
-    mainVue.$children[0].characters.splice(end, 0, mainVue.$children[0].characters.splice(start, 1)[0]);
+    mainVue.$children[0].$children[0].characters.splice(end, 0, mainVue.$children[0].$children[0].characters.splice(start, 1)[0]);
   }
 });

@@ -1243,7 +1243,7 @@ Vue.component('player', {
       return this.c.spellSlots;
     },
     spellSlotsAvailable: function() {
-
+      return 0;
     }
   },
   template: '<div class="character">\
@@ -1288,8 +1288,9 @@ Vue.component('player', {
                 <option>Gargantuan</option>\
               </select>\
             </div>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-12">\
               <label>Languages</label>\
+              <chips :chips="c.languages"></chips>\
             </div>\
           </div>\
         </div>\
@@ -1366,19 +1367,29 @@ Vue.component('player', {
           <div class="row">\
             <h4>Saves</h4>\
             <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
-              <label>{{key}}</label>\
-              <div class="prof">{{saves[key]}}<input v-model="c.saves[key]" type="checkbox" /></div>\
+              <label>{{key}}\
+                <div class="prof">{{saves[key]}}<input v-model="c.saves[key]" type="checkbox" /></div>\
+              </label>\
             </div>\
           </div>\
           <div class="row">\
             <h4>Skills</h4>\
             <div class="input-group col-xs-2" v-for="(value, key) in skillData">\
-              <label>{{key}}</label>\
-              <div class="prof">{{skills[key]}}<input v-model="c.skills[key]" type="checkbox" /></div>\
+              <label>{{key}}\
+                <div class="prof">{{skills[key]}}<input v-model="c.skills[key]" type="checkbox" /></div>\
+              </label>\
             </div>\
           </div>\
           <div class="row">\
-            <h4>Proficiencies</h4>\
+            <h4>Perks</h4>\
+            <div class="input-group col-xs-6">\
+              <label>Proficiencies</label>\
+              <chips :chips="c.proficiencies"></chips>\
+            </div>\
+            <div class="input-group col-xs-6">\
+              <label>Traits</label>\
+              <chips :chips="c.traits"></chips>\
+            </div>\
           </div>\
         </div>\
       </div>\
@@ -1388,6 +1399,12 @@ Vue.component('player', {
           <svg :class="{open: c.showInventory}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showInventory" class="character-section-content">\
+          <div class="row">\
+            <div class="input-group col-xs-12">\
+              <label>Inventory</label>\
+              <chips :chips="c.inventory"></chips>\
+            </div>\
+          </div>\
         </div>\
       </div>\
     </div>\

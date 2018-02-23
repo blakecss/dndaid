@@ -163,7 +163,9 @@ Vue.component('characters', {
         saves: saves,
         skills: skills,
         proficiencies: [],
-        showInventory: true
+        traits: [],
+        showInventory: true,
+        inventory: []
       });
       this.characterSelect = false;
     },

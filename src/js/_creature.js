@@ -13,7 +13,7 @@ Vue.component('creature', {
       return mod(value);
     }
   },
-  template: '<div class="character">\
+  template: '<div class="creature">\
     <div class="character-header">\
       <div class="class-icon">\
         <svg><use xlink:href="sprites.svg#creature"></use></svg>\

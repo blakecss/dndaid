@@ -212,6 +212,91 @@
     width: 36px;
   }
 }
+.chips {
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    background-color: #ddd;
+    padding: 4px 4px 4px 12px;
+    border-radius: 24px;
+    line-height: rem(24);
+    margin: 2px 8px 4px 0;
+    display: flex;
+    align-items: center;
+    cursor: grab;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+      background-color: #777;
+      color: #fff;
+    }
+    &:active {
+      cursor: grabbing;
+    }
+    button {
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      margin-left: 4px;
+      box-shadow: none;
+      background: none;
+      padding: 2px;
+      &:hover {
+        svg {
+          fill: #fff;
+        }
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: #aaa;
+        display: block;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  input {
+    width: 100%;
+    max-width: 200px;
+  }
+  .chip-placeholder {
+    background-color: transparent;
+    border: 2px dashed #ddd;
+    min-height: 32px;
+  }
+  form {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .suggestions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: -$input-margin;
+    box-shadow: $shadow-2;
+    max-height: 200px;
+    overflow-y: scroll;
+    button {
+      text-align: left;
+      padding: 12px 24px;
+      width: 100%;
+      border-radius: 0;
+      background-color: #fff;
+      color: $text-color;
+      &:hover {
+        background-color: #eee;
+      }
+    }
+    .hover {
+      background-color: #eee;
+    }
+  }
+}
+
 .slide-right-enter-active, .slide-left-enter-active {
   transition: 0.5s ease;
 }
