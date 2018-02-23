@@ -5,7 +5,8 @@ Vue.component('player', {
       alignmentData: jsonAlignmentData,
       abilityData: jsonAbilityData,
       skillData: jsonSkillData,
-      char: this.c
+      char: this.c,
+      test: 0
     }
   },
   filters: {
@@ -371,879 +372,879 @@ Vue.component('player', {
       }
       return this.c.spellsKnown;
     },
-    level1Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level1Slots = 0;
+    spellSlots: function() {
+      var slots = {};
+      for (var i = 1; i < 10; i++) {
+        if (i == 1) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level1Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 1) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else if (this.c.level <= 2) {
+              this.c.spellSlots.level1Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 4;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 1) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else if (this.c.level <= 2) {
+              this.c.spellSlots.level1Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 4;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 1) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else if (this.c.level <= 2) {
+              this.c.spellSlots.level1Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 4;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level1Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level1Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            if (this.c.level <= 1) {
+              this.c.spellSlots.level1Slots = 0;
+            }
+            else if (this.c.level <= 2) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else if (this.c.level <= 4) {
+              this.c.spellSlots.level1Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 4;
+            }
+          }
+          else if (this.c.klass == 'Ranger') {
+            if (this.c.level <= 1) {
+              this.c.spellSlots.level1Slots = 0;
+            }
+            else if (this.c.level <= 2) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else if (this.c.level <= 4) {
+              this.c.spellSlots.level1Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 4;
+            }
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level1Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 1) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else if (this.c.level <= 2) {
+              this.c.spellSlots.level1Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 4;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            if (this.c.level == 1) {
+              this.c.spellSlots.level1Slots = 1;
+            }
+            else if (this.c.level == 2) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 0;
+            }
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 1) {
+              this.c.spellSlots.level1Slots = 2;
+            }
+            else if (this.c.level <= 2) {
+              this.c.spellSlots.level1Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level1Slots = 4;
+            }
+          }
+        }
+        else if (i == 2) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level2Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 2) {
+              this.c.spellSlots.level2Slots = 0;
+            }
+            else if (this.c.level <= 3) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 2) {
+              this.c.spellSlots.level2Slots = 0;
+            }
+            else if (this.c.level <= 3) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 2) {
+              this.c.spellSlots.level2Slots = 0;
+            }
+            else if (this.c.level <= 3) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level2Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level2Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            if (this.c.level <= 4) {
+              this.c.spellSlots.level2Slots = 0;
+            }
+            else if (this.c.level <= 6) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Ranger') {
+            if (this.c.level <= 4) {
+              this.c.spellSlots.level2Slots = 0;
+            }
+            else if (this.c.level <= 6) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level2Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 2) {
+              this.c.spellSlots.level2Slots = 0;
+            }
+            else if (this.c.level <= 3) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            if (this.c.level == 3) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else if (this.c.level == 4) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 0;
+            }
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 2) {
+              this.c.spellSlots.level2Slots = 0;
+            }
+            else if (this.c.level <= 3) {
+              this.c.spellSlots.level2Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level2Slots = 3;
+            }
+          }
+        }
+        else if (i == 3) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level3Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 4) {
+              this.c.spellSlots.level3Slots = 0;
+            }
+            else if (this.c.level <= 5) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 4) {
+              this.c.spellSlots.level3Slots = 0;
+            }
+            else if (this.c.level <= 5) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 4) {
+              this.c.spellSlots.level3Slots = 0;
+            }
+            else if (this.c.level <= 5) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level3Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level3Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level3Slots = 0;
+            }
+            else if (this.c.level <= 10) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Ranger') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level3Slots = 0;
+            }
+            else if (this.c.level <= 10) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level3Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 4) {
+              this.c.spellSlots.level3Slots = 0;
+            }
+            else if (this.c.level <= 5) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            if (this.c.level == 5) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else if (this.c.level == 6) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 0;
+            }
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 4) {
+              this.c.spellSlots.level3Slots = 0;
+            }
+            else if (this.c.level <= 5) {
+              this.c.spellSlots.level3Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level3Slots = 3;
+            }
+          }
+        }
+        else if (i == 4) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level4Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 6) {
+              this.c.spellSlots.level4Slots = 0;
+            }
+            else if (this.c.level <= 7) {
+              this.c.spellSlots.level4Slots = 1;
+            }
+            else if (this.c.level <= 8) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 6) {
+              this.c.spellSlots.level4Slots = 0;
+            }
+            else if (this.c.level <= 7) {
+              this.c.spellSlots.level4Slots = 1;
+            }
+            else if (this.c.level <= 8) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 6) {
+              this.c.spellSlots.level4Slots = 0;
+            }
+            else if (this.c.level <= 7) {
+              this.c.spellSlots.level4Slots = 1;
+            }
+            else if (this.c.level <= 8) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level4Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level4Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            if (this.c.level <= 12) {
+              this.c.spellSlots.level4Slots = 0;
+            }
+            else if (this.c.level <= 14) {
+              this.c.spellSlots.level4Slots = 1;
+            }
+            else if (this.c.level <= 16) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Ranger') {
+            if (this.c.level <= 12) {
+              this.c.spellSlots.level4Slots = 0;
+            }
+            else if (this.c.level <= 14) {
+              this.c.spellSlots.level4Slots = 1;
+            }
+            else if (this.c.level <= 16) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level4Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 6) {
+              this.c.spellSlots.level4Slots = 0;
+            }
+            else if (this.c.level <= 7) {
+              this.c.spellSlots.level4Slots = 1;
+            }
+            else if (this.c.level <= 8) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            if (this.c.level == 7) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else if (this.c.level == 8) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 0;
+            }
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 6) {
+              this.c.spellSlots.level4Slots = 0;
+            }
+            else if (this.c.level <= 7) {
+              this.c.spellSlots.level4Slots = 1;
+            }
+            else if (this.c.level <= 8) {
+              this.c.spellSlots.level4Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level4Slots = 3;
+            }
+          }
+        }
+        else if (i == 5) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level5Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            else if (this.c.level <= 9) {
+              this.c.spellSlots.level5Slots = 1;
+            }
+            else if (this.c.level <= 17) {
+              this.c.spellSlots.level5Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            else if (this.c.level <= 9) {
+              this.c.spellSlots.level5Slots = 1;
+            }
+            else if (this.c.level <= 17) {
+              this.c.spellSlots.level5Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            else if (this.c.level <= 9) {
+              this.c.spellSlots.level5Slots = 1;
+            }
+            else if (this.c.level <= 17) {
+              this.c.spellSlots.level5Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level5Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level5Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            if (this.c.level <= 16) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            else if (this.c.level <= 18) {
+              this.c.spellSlots.level5Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Ranger') {
+            if (this.c.level <= 16) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            else if (this.c.level <= 18) {
+              this.c.spellSlots.level5Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level5Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            else if (this.c.level <= 9) {
+              this.c.spellSlots.level5Slots = 1;
+            }
+            else if (this.c.level <= 17) {
+              this.c.spellSlots.level5Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 3;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            if (this.c.level >= 9 && this.c.level <= 10) {
+              this.c.spellSlots.level5Slots = 2;
+            }
+            else if (this.c.level >= 11 && this.c.level <= 16) {
+              this.c.spellSlots.level5Slots = 3;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 4;
+            }
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 8) {
+              this.c.spellSlots.level5Slots = 0;
+            }
+            else if (this.c.level <= 9) {
+              this.c.spellSlots.level5Slots = 1;
+            }
+            else if (this.c.level <= 17) {
+              this.c.spellSlots.level5Slots = 2;
+            }
+            else {
+              this.c.spellSlots.level5Slots = 3;
+            }
+          }
+        }
+        else if (i == 6) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level6Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 10) {
+              this.c.spellSlots.level6Slots = 0;
+            }
+            else if (this.c.level <= 18) {
+              this.c.spellSlots.level6Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level6Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 10) {
+              this.c.spellSlots.level6Slots = 0;
+            }
+            else if (this.c.level <= 18) {
+              this.c.spellSlots.level6Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level6Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 10) {
+              this.c.spellSlots.level6Slots = 0;
+            }
+            else if (this.c.level <= 18) {
+              this.c.spellSlots.level6Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level6Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level6Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level6Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            this.c.spellSlots.level6Slots = 0;
+          }
+          else if (this.c.klass == 'Ranger') {
+            this.c.spellSlots.level6Slots = 0;
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level6Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 10) {
+              this.c.spellSlots.level6Slots = 0;
+            }
+            else if (this.c.level <= 18) {
+              this.c.spellSlots.level6Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level6Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            this.c.spellSlots.level6Slots = 0;
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 10) {
+              this.c.spellSlots.level6Slots = 0;
+            }
+            else if (this.c.level <= 18) {
+              this.c.spellSlots.level6Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level6Slots = 2;
+            }
+          }
+        }
+        else if (i == 7) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level7Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 12) {
+              this.c.spellSlots.level7Slots = 0;
+            }
+            else if (this.c.level <= 19) {
+              this.c.spellSlots.level7Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level7Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 12) {
+              this.c.spellSlots.level7Slots = 0;
+            }
+            else if (this.c.level <= 19) {
+              this.c.spellSlots.level7Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level7Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 12) {
+              this.c.spellSlots.level7Slots = 0;
+            }
+            else if (this.c.level <= 19) {
+              this.c.spellSlots.level7Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level7Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level7Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level7Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            this.c.spellSlots.level7Slots = 0;
+          }
+          else if (this.c.klass == 'Ranger') {
+            this.c.spellSlots.level7Slots = 0;
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level7Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 12) {
+              this.c.spellSlots.level7Slots = 0;
+            }
+            else if (this.c.level <= 19) {
+              this.c.spellSlots.level7Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level7Slots = 2;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            this.c.spellSlots.level7Slots = 0;
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 12) {
+              this.c.spellSlots.level7Slots = 0;
+            }
+            else if (this.c.level <= 19) {
+              this.c.spellSlots.level7Slots = 1;
+            }
+            else {
+              this.c.spellSlots.level7Slots = 2;
+            }
+          }
+        }
+        else if (i == 8) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level8Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 14) {
+              this.c.spellSlots.level8Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level8Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 14) {
+              this.c.spellSlots.level8Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level8Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 14) {
+              this.c.spellSlots.level8Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level8Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level8Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level8Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            this.c.spellSlots.level8Slots = 0;
+          }
+          else if (this.c.klass == 'Ranger') {
+            this.c.spellSlots.level8Slots = 0;
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level8Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 14) {
+              this.c.spellSlots.level8Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level8Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            this.c.spellSlots.level8Slots = 0;
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 14) {
+              this.c.spellSlots.level8Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level8Slots = 1;
+            }
+          }
+        }
+        else if (i == 9) {
+          if (this.c.klass == 'Barbarian') {
+            this.c.spellSlots.level9Slots = 0;
+          }
+          else if (this.c.klass == 'Bard') {
+            if (this.c.level <= 16) {
+              this.c.spellSlots.level9Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level9Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Cleric') {
+            if (this.c.level <= 16) {
+              this.c.spellSlots.level9Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level9Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Druid') {
+            if (this.c.level <= 16) {
+              this.c.spellSlots.level9Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level9Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Fighter') {
+            this.c.spellSlots.level9Slots = 0;
+            // Eldritch Knight gets spells
+          }
+          else if (this.c.klass == 'Monk') {
+            this.c.spellSlots.level9Slots = 0;
+            // Monk has ki
+          }
+          else if (this.c.klass == 'Paladin') {
+            this.c.spellSlots.level9Slots = 0;
+          }
+          else if (this.c.klass == 'Ranger') {
+            this.c.spellSlots.level9Slots = 0;
+          }
+          else if (this.c.klass == 'Rogue') {
+            this.c.spellSlots.level9Slots = 0;
+            // Arcane Trickster gets spells
+          }
+          else if (this.c.klass == 'Sorcerer') {
+            if (this.c.level <= 16) {
+              this.c.spellSlots.level9Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level9Slots = 1;
+            }
+          }
+          else if (this.c.klass == 'Warlock') {
+            this.c.spellSlots.level9Slots = 0;
+          }
+          else if (this.c.klass == 'Wizard') {
+            if (this.c.level <= 16) {
+              this.c.spellSlots.level9Slots = 0;
+            }
+            else {
+              this.c.spellSlots.level9Slots = 1;
+            }
+          }
+        }
       }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 1) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else if (this.c.level <= 2) {
-          this.c.spellSlots.level1Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 4;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 1) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else if (this.c.level <= 2) {
-          this.c.spellSlots.level1Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 4;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 1) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else if (this.c.level <= 2) {
-          this.c.spellSlots.level1Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 4;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level1Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level1Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        if (this.c.level <= 1) {
-          this.c.spellSlots.level1Slots = 0;
-        }
-        else if (this.c.level <= 2) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else if (this.c.level <= 4) {
-          this.c.spellSlots.level1Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 4;
-        }
-      }
-      else if (this.c.klass == 'Ranger') {
-        if (this.c.level <= 1) {
-          this.c.spellSlots.level1Slots = 0;
-        }
-        else if (this.c.level <= 2) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else if (this.c.level <= 4) {
-          this.c.spellSlots.level1Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 4;
-        }
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level1Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 1) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else if (this.c.level <= 2) {
-          this.c.spellSlots.level1Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 4;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        if (this.c.level == 1) {
-          this.c.spellSlots.level1Slots = 1;
-        }
-        else if (this.c.level == 2) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 0;
-        }
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 1) {
-          this.c.spellSlots.level1Slots = 2;
-        }
-        else if (this.c.level <= 2) {
-          this.c.spellSlots.level1Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level1Slots = 4;
-        }
-      }
-      return this.c.spellSlots.level1Slots;
+      return this.c.spellSlots;
     },
-    level2Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level2Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 2) {
-          this.c.spellSlots.level2Slots = 0;
-        }
-        else if (this.c.level <= 3) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 2) {
-          this.c.spellSlots.level2Slots = 0;
-        }
-        else if (this.c.level <= 3) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 2) {
-          this.c.spellSlots.level2Slots = 0;
-        }
-        else if (this.c.level <= 3) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level2Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level2Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        if (this.c.level <= 4) {
-          this.c.spellSlots.level2Slots = 0;
-        }
-        else if (this.c.level <= 6) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Ranger') {
-        if (this.c.level <= 4) {
-          this.c.spellSlots.level2Slots = 0;
-        }
-        else if (this.c.level <= 6) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level2Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 2) {
-          this.c.spellSlots.level2Slots = 0;
-        }
-        else if (this.c.level <= 3) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        if (this.c.level == 3) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else if (this.c.level == 4) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 0;
-        }
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 2) {
-          this.c.spellSlots.level2Slots = 0;
-        }
-        else if (this.c.level <= 3) {
-          this.c.spellSlots.level2Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level2Slots = 3;
-        }
-      }
-      return this.c.spellSlots.level2Slots;
-    },
-    level3Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level3Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 4) {
-          this.c.spellSlots.level3Slots = 0;
-        }
-        else if (this.c.level <= 5) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 4) {
-          this.c.spellSlots.level3Slots = 0;
-        }
-        else if (this.c.level <= 5) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 4) {
-          this.c.spellSlots.level3Slots = 0;
-        }
-        else if (this.c.level <= 5) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level3Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level3Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level3Slots = 0;
-        }
-        else if (this.c.level <= 10) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Ranger') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level3Slots = 0;
-        }
-        else if (this.c.level <= 10) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level3Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 4) {
-          this.c.spellSlots.level3Slots = 0;
-        }
-        else if (this.c.level <= 5) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        if (this.c.level == 5) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else if (this.c.level == 6) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 0;
-        }
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 4) {
-          this.c.spellSlots.level3Slots = 0;
-        }
-        else if (this.c.level <= 5) {
-          this.c.spellSlots.level3Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level3Slots = 3;
-        }
-      }
-      return this.c.spellSlots.level3Slots;
-    },
-    level4Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level4Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 6) {
-          this.c.spellSlots.level4Slots = 0;
-        }
-        else if (this.c.level <= 7) {
-          this.c.spellSlots.level4Slots = 1;
-        }
-        else if (this.c.level <= 8) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 6) {
-          this.c.spellSlots.level4Slots = 0;
-        }
-        else if (this.c.level <= 7) {
-          this.c.spellSlots.level4Slots = 1;
-        }
-        else if (this.c.level <= 8) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 6) {
-          this.c.spellSlots.level4Slots = 0;
-        }
-        else if (this.c.level <= 7) {
-          this.c.spellSlots.level4Slots = 1;
-        }
-        else if (this.c.level <= 8) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level4Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level4Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        if (this.c.level <= 12) {
-          this.c.spellSlots.level4Slots = 0;
-        }
-        else if (this.c.level <= 14) {
-          this.c.spellSlots.level4Slots = 1;
-        }
-        else if (this.c.level <= 16) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Ranger') {
-        if (this.c.level <= 12) {
-          this.c.spellSlots.level4Slots = 0;
-        }
-        else if (this.c.level <= 14) {
-          this.c.spellSlots.level4Slots = 1;
-        }
-        else if (this.c.level <= 16) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level4Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 6) {
-          this.c.spellSlots.level4Slots = 0;
-        }
-        else if (this.c.level <= 7) {
-          this.c.spellSlots.level4Slots = 1;
-        }
-        else if (this.c.level <= 8) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        if (this.c.level == 7) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else if (this.c.level == 8) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 0;
-        }
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 6) {
-          this.c.spellSlots.level4Slots = 0;
-        }
-        else if (this.c.level <= 7) {
-          this.c.spellSlots.level4Slots = 1;
-        }
-        else if (this.c.level <= 8) {
-          this.c.spellSlots.level4Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level4Slots = 3;
-        }
-      }
-      return this.c.spellSlots.level4Slots;
-    },
-    level5Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level5Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        else if (this.c.level <= 9) {
-          this.c.spellSlots.level5Slots = 1;
-        }
-        else if (this.c.level <= 17) {
-          this.c.spellSlots.level5Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        else if (this.c.level <= 9) {
-          this.c.spellSlots.level5Slots = 1;
-        }
-        else if (this.c.level <= 17) {
-          this.c.spellSlots.level5Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        else if (this.c.level <= 9) {
-          this.c.spellSlots.level5Slots = 1;
-        }
-        else if (this.c.level <= 17) {
-          this.c.spellSlots.level5Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level5Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level5Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        if (this.c.level <= 16) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        else if (this.c.level <= 18) {
-          this.c.spellSlots.level5Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Ranger') {
-        if (this.c.level <= 16) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        else if (this.c.level <= 18) {
-          this.c.spellSlots.level5Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level5Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        else if (this.c.level <= 9) {
-          this.c.spellSlots.level5Slots = 1;
-        }
-        else if (this.c.level <= 17) {
-          this.c.spellSlots.level5Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 3;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        if (this.c.level >= 9 && this.c.level <= 10) {
-          this.c.spellSlots.level5Slots = 2;
-        }
-        else if (this.c.level >= 11 && this.c.level <= 16) {
-          this.c.spellSlots.level5Slots = 3;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 4;
-        }
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 8) {
-          this.c.spellSlots.level5Slots = 0;
-        }
-        else if (this.c.level <= 9) {
-          this.c.spellSlots.level5Slots = 1;
-        }
-        else if (this.c.level <= 17) {
-          this.c.spellSlots.level5Slots = 2;
-        }
-        else {
-          this.c.spellSlots.level5Slots = 3;
-        }
-      }
-      return this.c.spellSlots.level5Slots;
-    },
-    level6Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level6Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 10) {
-          this.c.spellSlots.level6Slots = 0;
-        }
-        else if (this.c.level <= 18) {
-          this.c.spellSlots.level6Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level6Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 10) {
-          this.c.spellSlots.level6Slots = 0;
-        }
-        else if (this.c.level <= 18) {
-          this.c.spellSlots.level6Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level6Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 10) {
-          this.c.spellSlots.level6Slots = 0;
-        }
-        else if (this.c.level <= 18) {
-          this.c.spellSlots.level6Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level6Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level6Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level6Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        this.c.spellSlots.level6Slots = 0;
-      }
-      else if (this.c.klass == 'Ranger') {
-        this.c.spellSlots.level6Slots = 0;
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level6Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 10) {
-          this.c.spellSlots.level6Slots = 0;
-        }
-        else if (this.c.level <= 18) {
-          this.c.spellSlots.level6Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level6Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        this.c.spellSlots.level6Slots = 0;
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 10) {
-          this.c.spellSlots.level6Slots = 0;
-        }
-        else if (this.c.level <= 18) {
-          this.c.spellSlots.level6Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level6Slots = 2;
-        }
-      }
-      return this.c.spellSlots.level6Slots;
-    },
-    level7Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level7Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 12) {
-          this.c.spellSlots.level7Slots = 0;
-        }
-        else if (this.c.level <= 19) {
-          this.c.spellSlots.level7Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level7Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 12) {
-          this.c.spellSlots.level7Slots = 0;
-        }
-        else if (this.c.level <= 19) {
-          this.c.spellSlots.level7Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level7Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 12) {
-          this.c.spellSlots.level7Slots = 0;
-        }
-        else if (this.c.level <= 19) {
-          this.c.spellSlots.level7Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level7Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level7Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level7Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        this.c.spellSlots.level7Slots = 0;
-      }
-      else if (this.c.klass == 'Ranger') {
-        this.c.spellSlots.level7Slots = 0;
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level7Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 12) {
-          this.c.spellSlots.level7Slots = 0;
-        }
-        else if (this.c.level <= 19) {
-          this.c.spellSlots.level7Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level7Slots = 2;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        this.c.spellSlots.level7Slots = 0;
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 12) {
-          this.c.spellSlots.level7Slots = 0;
-        }
-        else if (this.c.level <= 19) {
-          this.c.spellSlots.level7Slots = 1;
-        }
-        else {
-          this.c.spellSlots.level7Slots = 2;
-        }
-      }
-      return this.c.spellSlots.level7Slots;
-    },
-    level8Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level8Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 14) {
-          this.c.spellSlots.level8Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level8Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 14) {
-          this.c.spellSlots.level8Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level8Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 14) {
-          this.c.spellSlots.level8Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level8Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level8Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level8Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        this.c.spellSlots.level8Slots = 0;
-      }
-      else if (this.c.klass == 'Ranger') {
-        this.c.spellSlots.level8Slots = 0;
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level8Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 14) {
-          this.c.spellSlots.level8Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level8Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        this.c.spellSlots.level8Slots = 0;
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 14) {
-          this.c.spellSlots.level8Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level8Slots = 1;
-        }
-      }
-      return this.c.spellSlots.level8Slots;
-    },
-    level9Slots: function() {
-      if (this.c.klass == 'Barbarian') {
-        this.c.spellSlots.level9Slots = 0;
-      }
-      else if (this.c.klass == 'Bard') {
-        if (this.c.level <= 16) {
-          this.c.spellSlots.level9Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level9Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Cleric') {
-        if (this.c.level <= 16) {
-          this.c.spellSlots.level9Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level9Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Druid') {
-        if (this.c.level <= 16) {
-          this.c.spellSlots.level9Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level9Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Fighter') {
-        this.c.spellSlots.level9Slots = 0;
-        // Eldritch Knight gets spells
-      }
-      else if (this.c.klass == 'Monk') {
-        this.c.spellSlots.level9Slots = 0;
-        // Monk has ki
-      }
-      else if (this.c.klass == 'Paladin') {
-        this.c.spellSlots.level9Slots = 0;
-      }
-      else if (this.c.klass == 'Ranger') {
-        this.c.spellSlots.level9Slots = 0;
-      }
-      else if (this.c.klass == 'Rogue') {
-        this.c.spellSlots.level9Slots = 0;
-        // Arcane Trickster gets spells
-      }
-      else if (this.c.klass == 'Sorcerer') {
-        if (this.c.level <= 16) {
-          this.c.spellSlots.level9Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level9Slots = 1;
-        }
-      }
-      else if (this.c.klass == 'Warlock') {
-        this.c.spellSlots.level9Slots = 0;
-      }
-      else if (this.c.klass == 'Wizard') {
-        if (this.c.level <= 16) {
-          this.c.spellSlots.level9Slots = 0;
-        }
-        else {
-          this.c.spellSlots.level9Slots = 1;
-        }
-      }
-      return this.c.spellSlots.level9Slots;
-    },
+    spellSlotsAvailable: function() {
+
+    }
   },
   template: '<div class="character">\
     <div class="character-header">\
@@ -1287,6 +1288,9 @@ Vue.component('player', {
                 <option>Gargantuan</option>\
               </select>\
             </div>\
+            <div class="input-group col-xs-4">\
+              <label>Languages</label>\
+            </div>\
           </div>\
         </div>\
       </div>\
@@ -1323,6 +1327,10 @@ Vue.component('player', {
             <div class="input-group col-xs-4">\
               <label>Saving DC</label>\
               <input v-model="spellSavingDC" type="number" readonly />\
+            </div>\
+            <div v-for="slot in [1, 2, 3, 4, 5, 6, 7, 8, 9]" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="col-xs-12">\
+              <label>Level {{slot}} Slots</label>\
+              <input v-model="c.spellSlotsAvailable[\'level\' + slot + \'SlotsAvailable\']" type="range" min="0" :max="spellSlots[\'level\' + slot + \'Slots\']" step="1" />\
             </div>\
           </div>\
         </div>\
@@ -1369,14 +1377,9 @@ Vue.component('player', {
               <div class="prof">{{skills[key]}}<input v-model="c.skills[key]" type="checkbox" /></div>\
             </div>\
           </div>\
-        </div>\
-      </div>\
-      <div class="character-section">\
-        <button @click="c.showSpells = !c.showSpells" class="character-section-header">\
-          <h3>Spells</h3>\
-          <svg :class="{open: c.showSpells}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
-        </button>\
-        <div v-show="c.showSpells" class="character-section-content">\
+          <div class="row">\
+            <h4>Proficiencies</h4>\
+          </div>\
         </div>\
       </div>\
       <div class="character-section">\

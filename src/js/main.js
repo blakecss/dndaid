@@ -67,6 +67,7 @@ function mod(value) {
 //=include _town.js
 //=include _dungeon.js
 //=include _treasure.js
+//=include _chips.js
 //=include _player.js
 //=include _creature.js
 //=include _characters.js

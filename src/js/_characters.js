@@ -6,15 +6,18 @@ Vue.component('characters', {
       characterSelect: false,
       addPlayerScreen: 1,
       addPlayerRace: 'Human',
-      addPlayerClass: 'Fighter',
+      addPlayerClass: 'Wizard',
+      addPlayerBackground: 'Acolyte',
       addPlayerName: 'test',
       addPlayerBaseAbilities: {"Strength": 8, "Dexterity": 8, "Constitution": 8, "Intelligence": 8, "Wisdom": 8, "Charisma": 8},
+      addPlayerInventory: [],
       addCreatureName: '',
       characterDelete: false,
       characters: [],
       abilityData: jsonAbilityData,
       raceData: jsonRaceData,
       classData: jsonClassData,
+      backgroundData: jsonBackgroundData,
       creatureData: jsonCreatureData,
       slideDirection: 'slide-left'
     }
@@ -96,9 +99,11 @@ Vue.component('characters', {
         this.addPlayerScreen = 1;
         this.addPlayerRace = '';
         this.addPlayerClass = '';
+        this.addPlayerBackground = '';
         this.addPlayerName = '';
         this.addCreatureName = '';
-        this.addPlayerBaseAbilities = {"Strength": 8, "Dexterity": 8, "Constitution": 8, "Intelligence": 8, "Wisdom": 8, "Charisma": 8}
+        this.addPlayerBaseAbilities = {"Strength": 8, "Dexterity": 8, "Constitution": 8, "Intelligence": 8, "Wisdom": 8, "Charisma": 8};
+        this.addPlayerInventory = [];
       }
     },
     addPlayerScreen: function(newVal, oldVal) {
@@ -120,8 +125,10 @@ Vue.component('characters', {
         skills[Object.keys(jsonSkillData)[i]] = false;
       }
       var spellSlots = {};
+      var spellSlotsAvailable = {};
       for (var i = 0; i < 9; i++) {
         spellSlots['level' + (i+1) + 'Slots'] = 0;
+        spellSlotsAvailable['level' + (i+1) + 'SlotsAvailable'] = 0;
       }
       this.characters.push({
         id: Math.random().toString(36).substr(2,9),
@@ -131,7 +138,7 @@ Vue.component('characters', {
         race: this.race,
         subrace: this.addPlayerRace,
         klass: this.addPlayerClass,
-        background: '',
+        background: this.addPlayerBackground,
         alignment: '',
         languages: ["Common", "Other"],
         size: this.size,
@@ -144,6 +151,10 @@ Vue.component('characters', {
         spellAbility: this.spellAbility,
         spellAttackMod: 0,
         spellSavingDC: 0,
+        cantripsKnown: 0,
+        spellsKnown: 0,
+        spellSlots: spellSlots,
+        spellSlotsAvailable: spellSlotsAvailable,
         showStats: true,
         exp: 0,
         level: 0,
@@ -151,10 +162,7 @@ Vue.component('characters', {
         abilities: this.addPlayerAbilities,
         saves: saves,
         skills: skills,
-        showSpells: true,
-        cantripsKnown: 0,
-        spellsKnown: 0,
-        spellSlots: spellSlots,
+        proficiencies: [],
         showInventory: true
       });
       this.characterSelect = false;
@@ -186,6 +194,7 @@ Vue.component('characters', {
         currentHP: c.maxHP,
         maxHP: c.maxHP,
         armorClass: c.armor_class,
+        spellSlots: '',
         showStats: true,
         abilities: abilities,
         saves: saves,
@@ -354,9 +363,11 @@ Vue.component('characters', {
                   </select>\
                   <select v-model="addPlayerClass" required>\
                     <option value="" disabled>Class</option>\
-                    <template v-for="(value, key) in classData">\
-                      <option>{{key}}</option>\
-                    </template>\
+                    <option v-for="(value, key) in classData">{{key}}</option>\
+                  </select>\
+                  <select v-model="addPlayerBackground" required>\
+                    <option value="" disabled>Background</option>\
+                    <option v-for="(value, key) in backgroundData">{{key}}</option>\
                   </select>\
                   <input v-model="addPlayerName" type="text" placeholder="Name" required />\
                 </div>\
@@ -368,7 +379,18 @@ Vue.component('characters', {
             </div>\
             <form v-if="addPlayerScreen == 2" @submit.prevent="addPlayerScreen = 3" key="2">\
               <div class="modal-content">\
-                <h2>Step 2</h2>\
+                <div class="row no-padding">\
+                  <div class="col-xs-6">\
+                    <h2>Step 2</h2>\
+                    <div v-if="addPlayerRace == \'Hill Dwarf\' || addPlayerRace == \'Mountain Dwarf\'">\
+                      <label><input value="Smith\'s Tools" type="radio" />Smith\'s Tools</label>\
+                      <label><input value="Brewer\'s Supplies" type="radio" />Brewer\'s Supplies</label>\
+                      <label><input value="Mason\'s Tools" type="radio" />Mason\'s Tools</label>\
+                    </div>\
+                  </div>\
+                  <div class="col-xs-6">\
+                  </div>\
+                </div>\
               </div>\
               <div class="modal-footer">\
                 <button @click.prevent="characterSelect = false">Cancel</button>\

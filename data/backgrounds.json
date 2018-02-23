@@ -1,0 +1,229 @@
+var jsonBackgroundData = {
+  "Acolyte": {
+    "skill_proficiencies": [
+      "Insight",
+      "Religion"
+    ],
+    "languages": [
+      "Other",
+      "Other"
+    ],
+    "equipment": [
+      "Holy symbol (a gift to you when you entered the priesthood)",
+      "Prayer book or prayer wheel",
+      "5 sticks of incense",
+      "Vestments",
+      "Set of common clothes",
+      "Belt pouch containing 15 gp"
+    ]
+  },
+  "Charlatan": {
+    "skill_proficiencies": [
+      "Deception",
+      "Sleight of Hand"
+    ],
+    "proficiencies": [
+      "Disguise Kit",
+      "Forgery Kit"
+    ],
+    "equipment": [
+      "Set of fine clothes",
+      "Disguise Kit",
+      "Tools of the con of your choice (ten stoppered bottles filled with colored liquid, a set of weighted dice, a deck of marked cards, or a signet ring of an imaginary duke)",
+      "Belt pouch containing 15 gp"
+    ]
+  },
+  "Criminal": {
+    "skill_proficiencies": [
+      "Deception",
+      "Stealth"
+    ],
+    "proficiencies": [
+      "One type of gaming set",
+      "Thieves' Tools"
+    ],
+    "equipment": [
+      "Crowbar",
+      "Set of dark common clothes including a hood",
+      "Belt pouch containing 15 gp"
+    ]
+  },
+  "Entertainer": {
+    "skill_proficiencies": [
+      "Acrobatics",
+      "Performance"
+    ],
+    "proficiencies": [
+      "Disguise Kit",
+      "One type of musical instrument"
+    ],
+    "equipment": [
+      "Musical instrument (one of your choice)",
+      "The favor of an admirer (love letter, lock of hair, or trinket)",
+      "Costume",
+      "Belt pouch containing 15 gp"
+    ]
+  },
+  "Folk Hero": {
+    "skill_proficiencies": [
+      "Animal Handling",
+      "Survival"
+    ],
+    "proficiencies": [
+      "One type of artisan’s tools",
+      "Vehicles (Land)"
+    ],
+    "equipment": [
+      "Set of artisan’s tools (one of your choice)",
+      "Shovel",
+      "Iron pot",
+      "Set of common clothes",
+      "Belt pouch containing 10 gp"
+    ]
+  },
+  "Guild Artisan": {
+    "skill_proficiencies": [
+      "Insight",
+      "Persuasion"
+    ],
+    "proficiencies": [
+      "One type of artisan’s tools"
+    ],
+    "languages": [
+      "Other"
+    ],
+    "equipment": [
+      "Set of artisan’s tools (one of your choice)",
+      "Letter of introduction from your guild",
+      "Set of traveler’s clothes",
+      "Belt pouch containing 15 gp"
+    ]
+  },
+  "Hermit": {
+    "skill_proficiencies": [
+      "Medicine",
+      "Religion"
+    ],
+    "proficiencies": [
+      "Herbalism Kit"
+    ],
+    "languages": [
+      "Other"
+    ],
+    "equipment": [
+      "Scroll case stuffed full of notes from your studies or prayers",
+      "Winter blanket",
+      "Set of common clothes",
+      "Herbalism Kit",
+      "5 gp"
+    ]
+  },
+  "Noble": {
+    "skill_proficiencies": [
+      "History",
+      "Persuasion"
+    ],
+    "proficiencies": [
+      "One type of gaming set"
+    ],
+    "languages": [
+      "Other"
+    ],
+    "equipment": [
+      "Set of fine clothes",
+      "Signet ring",
+      "Scroll of pedigree",
+      "Purse containing 25 gp"
+    ]
+  },
+  "Outlander": {
+    "skill_proficiencies": [
+      "Athletics",
+      "Survival"
+    ],
+    "proficiencies": [
+      "One type of musical instrument"
+    ],
+    "languages": [
+      "Other"
+    ],
+    "equipment": [
+      "Staff",
+      "Hunting trap",
+      "Trophy from an animal you killed",
+      "Set of traveler’s clothes",
+      "Belt pouch containing 10 gp"
+    ]
+  },
+  "Sage": {
+    "skill_proficiencies": [
+      "Arcana",
+      "History"
+    ],
+    "languages": [
+      "Other",
+      "Other"
+    ],
+    "equipment": [
+      "Bottle of black ink",
+      "Quill",
+      "Small knife",
+      "Letter from a dead colleague posing a question you have not yet been able to answer",
+      "Set of common clothes",
+      "Belt pouch containing 10 gp"
+    ]
+  },
+  "Sailor": {
+    "skill_proficiencies": [
+      "Athletics",
+      "Perception"
+    ],
+    "proficiencies": [
+      "Navigator’s Tools",
+      "Vehicles (Water)"
+    ],
+    "equipment": [
+      "Belaying pin (club)",
+      "50 feet of silk rope",
+      "Lucky charm such as a rabbit foot or a small stone with a hole in the center (or you may roll for a random trinket)",
+      "Set of common clothes",
+      "Belt pouch containing 10 gp"
+    ]
+  },
+  "Soldier": {
+    "skill_proficiencies": [
+      "Athletics",
+      "Intimidation"
+    ],
+    "proficiencies": [
+      "One type of gaming set",
+      "Vehicles (Land)"
+    ],
+    "equipment": [
+      "Insignia of rank",
+      "Trophy taken from a fallen enemy (a dagger, broken blade, or piece of a banner)",
+      "Set of bone dice or deck of cards",
+      "Set of common clothes",
+      "Belt pouch containing 10 gp"
+    ]
+  },
+  "Urchin": {
+    "skill_proficiencies": [
+      "Sleight of Hand",
+      "Stealth"
+    ],
+    "proficiencies": [
+      "Disguise Kit",
+      "Thieves' Tools"
+    ],
+    "equipment": [
+      "Small knife",
+      "Map of the city you grew up in",
+      "Pet mouse",
+      "Token to remember your parents by",
+      "Set of common clothes",
+      "Belt pouch containing 10 gp"
+    ]
+  },
+  "Other": {}
+};
