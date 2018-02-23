@@ -82,7 +82,6 @@
     width: 24px;
     height: 24px;
     min-width: 24px;
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,6 +90,7 @@
     transition: 0.3s ease;
     div {
       font-size: rem(12);
+      color: #fff;
     }
     svg {
       width: 100%;

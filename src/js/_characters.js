@@ -91,6 +91,48 @@ Vue.component('characters', {
         as[a] = this.addPlayerBaseAbilities[a] + (this.addPlayerPerks[a] || 0);
       }
       return as;
+    },
+    addPlayerTraits: function() {
+      var t = [];
+      if (sr = this.addPlayerRace) {
+        if (jsonRaceData[sr]) {
+          t = jsonRaceData[sr].traits;
+        }
+        else {
+          for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
+            var item = Object.keys(jsonRaceData)[i];
+            if (jsonRaceData[item].subraces) {
+              if (jsonRaceData[item].subraces[sr]) {
+                t = jsonRaceData[item].subraces[sr].traits;
+              }
+            }
+          }
+        }
+        return t;
+      }
+    },
+    addPlayerProficiencies: function() {
+      var p1 = [];
+      var p2 = [];
+      if (sr = this.addPlayerRace) {
+        if (jsonRaceData[sr]) {
+          p1 = jsonRaceData[sr].proficiencies;
+        }
+        else {
+          for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
+            var item = Object.keys(jsonRaceData)[i];
+            if (jsonRaceData[item].subraces) {
+              if (jsonRaceData[item].subraces[sr]) {
+                p1 = jsonRaceData[item].subraces[sr].proficiencies;
+              }
+            }
+          }
+        }
+      }
+      if (c = this.addPlayerClass) {
+        p2 = jsonClassData[this.addPlayerClass].proficiencies;
+      }
+      return 
     }
   },
   watch: {
@@ -163,7 +205,7 @@ Vue.component('characters', {
         saves: saves,
         skills: skills,
         proficiencies: [],
-        traits: [],
+        traits: this.addPlayerTraits,
         showInventory: true,
         inventory: []
       });

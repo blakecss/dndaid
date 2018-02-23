@@ -17,10 +17,10 @@ var jsonRaceData = {
           "Dwarven Toughness"
         ],
         "proficiencies": [
-          "Battleaxe",
-          "Handaxe",
-          "Throwing Hammer",
-          "Warhammer"
+          "Battleaxes",
+          "Handaxes",
+          "Throwing Hammers",
+          "Warhammers"
         ],
         "languages": [
           "Common",
@@ -43,10 +43,10 @@ var jsonRaceData = {
           "Dwarven Armor Training"
         ],
         "proficiencies": [
-          "Battleaxe",
-          "Handaxe",
-          "Throwing Hammer",
-          "Warhammer",
+          "Battleaxes",
+          "Handaxes",
+          "Throwing Hammers",
+          "Warhammers",
           "Light Armor",
           "Medium Armor"
         ],
@@ -76,10 +76,10 @@ var jsonRaceData = {
           "Extra Language"
         ],
         "proficiencies": [
-          "Longsword",
-          "Shortsword",
-          "Shortbow",
-          "Longbow"
+          "Longswords",
+          "Shortswords",
+          "Shortbows",
+          "Longbows"
         ],
         "languages": [
           "Common",
@@ -102,10 +102,10 @@ var jsonRaceData = {
           "Mask of the Wild"
         ],
         "proficiencies": [
-          "Longsword",
-          "Shortsword",
-          "Shortbow",
-          "Longbow"
+          "Longswords",
+          "Shortswords",
+          "Shortbows",
+          "Longbows"
         ],
         "languages": [
           "Common",
@@ -130,9 +130,9 @@ var jsonRaceData = {
           "Drow Weapon Training"
         ],
         "proficiencies": [
-          "Rapier",
-          "Shortsword",
-          "Hand Crossbow"
+          "Rapiers",
+          "Shortswords",
+          "Hand Crossbows"
         ],
         "languages": [
           "Common",
