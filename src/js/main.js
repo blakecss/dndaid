@@ -75,9 +75,20 @@ function mod(value) {
 var mainVue = new Vue({
   el: '#main',
   data: {
-    slide: 'characters',
+    slide: 1,
     showSearch: false,
-    search: ''
+    search: '',
+    slideDirection: 'slide-left'
+  },
+  watch: {
+    slide: function(newVal, oldVal) {
+      if (newVal > oldVal) {
+        this.slideDirection = 'slide-right';
+      }
+      else {
+        this.slideDirection = 'slide-left';
+      }
+    }
   }
 });
 

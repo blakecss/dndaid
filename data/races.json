@@ -1,88 +1,189 @@
 var jsonRaceData = {
   "Dwarf": {
-    "size": "Medium",
-    "perks": {
-      "Constitution": 2
-    },
-    "traits": [
-      "Dark Vision",
-      "Dwarven Resilience",
-      "Tool Proficiency",
-      "Stonecunning",
-    ],
-    "proficiencies": [
-      "Battleaxe",
-      "Handaxe",
-      "Throwing Hammer",
-      "Warhammer"
-    ],
-    "languages": [
-      "Common",
-      "Dwarvish"
-    ],
     "subraces": {
       "Hill Dwarf": {
+        "size": "Medium",
+        "speed": 25,
         "perks": {
+          "Constitution": 2,
           "Wisdom": 1
         },
         "traits": [
+          "Darkvision",
+          "Dwarven Resilience",
+          "Dwarven Combat Training",
+          "Tool Proficiency",
+          "Stonecunning",
           "Dwarven Toughness"
+        ],
+        "proficiencies": [
+          "Battleaxe",
+          "Handaxe",
+          "Throwing Hammer",
+          "Warhammer"
+        ],
+        "languages": [
+          "Common",
+          "Dwarvish"
         ]
       },
       "Mountain Dwarf": {
+        "size": "Medium",
+        "speed": 25,
         "perks": {
+          "Constitution": 2,
           "Strength": 2
         },
+        "traits": [
+          "Darkvision",
+          "Dwarven Resilience",
+          "Dwarven Combat Training",
+          "Tool Proficiency",
+          "Stonecunning",
+          "Dwarven Armor Training"
+        ],
         "proficiencies": [
+          "Battleaxe",
+          "Handaxe",
+          "Throwing Hammer",
+          "Warhammer",
           "Light Armor",
           "Medium Armor"
+        ],
+        "languages": [
+          "Common",
+          "Dwarvish"
         ]
       }
     }
   },
   "Elf": {
-    "size": "Medium",
-    "perks": {
-      "Dexterity": 2
-    },
     "subraces": {
       "High Elf": {
+        "size": "Medium",
+        "speed": 30,
         "perks": {
+          "Dexterity": 2,
           "Intelligence": 1
-        }
+        },
+        "traits": [
+          "Darkvision",
+          "Keen Senses",
+          "Fey Ancestry",
+          "Trance",
+          "Elf Weapon Training",
+          "Cantrip",
+          "Extra Language"
+        ],
+        "proficiencies": [
+          "Longsword",
+          "Shortsword",
+          "Shortbow",
+          "Longbow"
+        ],
+        "languages": [
+          "Common",
+          "Elvish"
+        ]
       },
       "Wood Elf": {
+        "size": "Medium",
+        "speed": 35,
         "perks": {
+          "Dexterity": 2,
           "Wisdom": 1
-        }
+        },
+        "traits": [
+          "Darkvision",
+          "Keen Senses",
+          "Fey Ancestry",
+          "Trance",
+          "Elf Weapon Training",
+          "Mask of the Wild"
+        ],
+        "proficiencies": [
+          "Longsword",
+          "Shortsword",
+          "Shortbow",
+          "Longbow"
+        ],
+        "languages": [
+          "Common",
+          "Elvish"
+        ]
       },
       "Dark Elf": {
+        "size": "Medium",
+        "speed": 30,
         "perks": {
+          "Dexterity": 2,
           "Charisma": 1
-        }
+        },
+        "traits": [
+          "Darkvision",
+          "Keen Senses",
+          "Fey Ancestry",
+          "Trance",
+          "Superior Darkvision",
+          "Sunlight Sensitivity",
+          "Drow Magic",
+          "Drow Weapon Training"
+        ],
+        "proficiencies": [
+          "Rapier",
+          "Shortsword",
+          "Hand Crossbow"
+        ],
+        "languages": [
+          "Common",
+          "Elvish"
+        ]
       }
     }
   },
   "Halfling": {
-    "size": "Small",
-    "perks": {
-      "Dexterity": 2
-    },
     "subraces": {
       "Lightfoot Halfling": {
+        "size": "Small",
+        "speed": 25,
         "perks": {
+          "Dexterity": 2,
           "Charisma": 1
-        }
+        },
+        "traits": [
+          "Lucky",
+          "Brave",
+          "Halfling Nimbleness",
+          "Naturally Stealthy"
+        ],
+        "languages": [
+          "Common",
+          "Halfling"
+        ]
       },
       "Stout Halfling": {
+        "size": "Small",
+        "speed": 25,
         "perks": {
+          "Dexterity": 2,
           "Constitution": 1
-        }
+        },
+        "traits": [
+          "Lucky",
+          "Brave",
+          "Halfling Nimbleness",
+          "Stout Resilience"
+        ],
+        "languages": [
+          "Common",
+          "Halfling"
+        ]
       }
     }
   },
   "Human": {
     "size": "Medium",
+    "speed": 30,
     "perks": {
       "Strength": 1,
       "Dexterity": 1,
@@ -90,53 +191,121 @@ var jsonRaceData = {
       "Intelligence": 1,
       "Wisdom": 1,
       "Charisma": 1
-    }
+    },
+    "languages": [
+      "Common",
+      "Other"
+    ]
   },
   "Dragonborn": {
     "size": "Medium",
+    "speed": 30,
     "perks": {
       "Strength": 2,
       "Charisma": 1
-    }
+    },
+    "traits": [
+      "Draconic Ancestry",
+      "Breath Weapon",
+      "Damage Resistance"
+    ],
+    "languages": [
+      "Common",
+      "Draconic"
+    ]
   },
   "Gnome": {
-    "size": "Small",
-    "perks": {
-      "Intelligence": 2
-    },
     "subraces": {
       "Forest Gnome": {
+        "size": "Small",
+        "speed": 25,
         "perks": {
+          "Intelligence": 2,
           "Dexterity": 1
-        }
+        },
+        "traits": [
+          "Darkvision",
+          "Gnome Cunning",
+          "Natural Illusionist",
+          "Speak with Small Beasts"
+        ],
+        "languages": [
+          "Common",
+          "Gnomish"
+        ]
       },
       "Rock Gnome": {
+        "size": "Small",
+        "speed": 25,
         "perks": {
+          "Intelligence": 2,
           "Constitution": 1
-        }
+        },
+        "traits": [
+          "Darkvision",
+          "Gnome Cunning",
+          "Artificer's Lore",
+          "Tinker"
+        ],
+        "languages": [
+          "Common",
+          "Gnomish"
+        ]
       }
     }
   },
   "Half-Elf": {
     "size": "Medium",
+    "speed": 30,
     "perks": {
       "Charisma": 2,
       "Other": 1,
       "Other": 1
-    }
+    },
+    "traits": [
+      "Darkvision",
+      "Fey Ancestry",
+      "Skill Versatility"
+    ],
+    "languages": [
+      "Common",
+      "Elvish",
+      "Other"
+    ]
   },
   "Half-Orc": {
     "size": "Medium",
+    "speed": 30,
     "perks": {
       "Strength": 2,
       "Constitution": 1
-    }
+    },
+    "traits": [
+      "Darkvision",
+      "Menacing",
+      "Relentless Endurance",
+      "Savage Attacks"
+    ],
+    "languages": [
+      "Common",
+      "Orc"
+    ]
   },
   "Tiefling": {
     "size": "Medium",
+    "speed": 30,
     "perks": {
       "Charisma": 2,
       "Intelligence": 1
-    }
+    },
+    "traits": [
+      "Darkvision",
+      "Hellish Resistance",
+      "Infernal Legacy"
+    ],
+    "languages": [
+      "Common",
+      "Infernal"
+    ]
   }
 };

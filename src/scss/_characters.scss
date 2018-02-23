@@ -161,11 +161,6 @@
     width: 100%;
     margin: 0;
   }
-  .subtitle {
-    color: $text-color-light;
-    margin: 0;
-    font-size: rem(14);
-  }
   .flat-btn {
     width: 40px;
     height: 40px;
@@ -187,7 +182,8 @@
     text-overflow: ellipsis;
   }
   h4 {
-    padding: 0 $grid-padding*2;
+    width: 100%;
+    padding: 0 $grid-padding;
   }
 }
 .character-section-header {
@@ -229,7 +225,7 @@
   h4 {
     font-size: rem(14);
     color: $text-color-light;
-    margin-bottom: 10px;
+    margin: 18px 0 12px 0;
     font-weight: $bold;
   }
   ul {
@@ -257,8 +253,16 @@
   input, select, textarea {
     margin-bottom: 0;
   }
-  .mod {
-    font-size: rem(12);
-    color: rgba($text-color, 0.75);
+  .prof {
+    display: flex;
+    // flex-direction: row-reverse;
+    justify-content: flex-start;
+    input {
+      margin: 2px 0 0 8px;
+    }
   }
+}
+.mod {
+  font-size: rem(12);
+  color: rgba($text-color, 0.75);
 }

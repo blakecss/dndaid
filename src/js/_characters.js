@@ -5,22 +5,31 @@ Vue.component('characters', {
       right: '',
       characterSelect: false,
       addPlayerScreen: 1,
-      addPlayerRace: '',
-      addPlayerClass: '',
-      addPlayerName: '',
+      addPlayerRace: 'Human',
+      addPlayerClass: 'Fighter',
+      addPlayerName: 'test',
+      addPlayerBaseAbilities: {"Strength": 8, "Dexterity": 8, "Constitution": 8, "Intelligence": 8, "Wisdom": 8, "Charisma": 8},
       addCreatureName: '',
       characterDelete: false,
       characters: [],
-      races: jsonRaceData,
-      classes: jsonClassData,
-      creatures: jsonCreatureData
+      abilityData: jsonAbilityData,
+      raceData: jsonRaceData,
+      classData: jsonClassData,
+      creatureData: jsonCreatureData,
+      slideDirection: 'slide-left'
+    }
+  },
+  filters: {
+    mod: function(value) {
+      var v = Math.floor((value - 10) / 2);
+      return v >= 0 ? '+' + v : v;
     }
   },
   computed: {
     race: function() {
       var r = '';
       if (sr = this.addPlayerRace) {
-        if (jsonRaceData[this.addPlayerRace]) {
+        if (jsonRaceData[sr]) {
           r = sr;
         }
         else {
@@ -37,26 +46,48 @@ Vue.component('characters', {
       }
     },
     size: function() {
-      if (this.race) {
-        return jsonRaceData[this.race].size;
+      var s = '';
+      if (this.addPlayerRace) {
+        return this.addPlayerRace == this.race ? jsonRaceData[this.race].size : jsonRaceData[this.race].subraces[this.addPlayerRace].size;
       }
     },
     speed: function() {
       var s = '';
       if (this.addPlayerRace) {
-        if (this.addPlayerRace != this.race) {
-          s = jsonRaceData[this.race].subraces[this.addPlayerRace].speed;
-        }
-        else {
-          s = jsonRaceData[this.race].speed;
-        }
-        return s;
+        return this.addPlayerRace == this.race ? jsonRaceData[this.race].speed : jsonRaceData[this.race].subraces[this.addPlayerRace].speed;
       }
     },
     spellAbility: function() {
       if (this.addPlayerClass) {
         return jsonClassData[this.addPlayerClass].spell_casting_ability;
       }
+    },
+    addPlayerPerks: function() {
+      var p = '';
+      if (sr = this.addPlayerRace) {
+        if (jsonRaceData[sr]) {
+          p = jsonRaceData[sr].perks;
+        }
+        else {
+          for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
+            var item = Object.keys(jsonRaceData)[i];
+            if (jsonRaceData[item].subraces) {
+              if (jsonRaceData[item].subraces[sr]) {
+                p = jsonRaceData[item].subraces[sr].perks;
+              }
+            }
+          }
+        }
+        return p;
+      }
+    },
+    addPlayerAbilities: function() {
+      var as = {};
+      for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
+        var a = Object.keys(jsonAbilityData)[i];
+        as[a] = this.addPlayerBaseAbilities[a] + (this.addPlayerPerks[a] || 0);
+      }
+      return as;
     }
   },
   watch: {
@@ -67,7 +98,11 @@ Vue.component('characters', {
         this.addPlayerClass = '';
         this.addPlayerName = '';
         this.addCreatureName = '';
+        this.addPlayerBaseAbilities = {"Strength": 8, "Dexterity": 8, "Constitution": 8, "Intelligence": 8, "Wisdom": 8, "Charisma": 8}
       }
+    },
+    addPlayerScreen: function(newVal, oldVal) {
+      this.slideDirection = newVal > oldVal ? 'slide-right' : 'slide-left';
     }
   },
   methods: {
@@ -78,15 +113,11 @@ Vue.component('characters', {
       }
       var saves = {};
       for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
-        saves[Object.keys(jsonAbilityData)[i]] = {};
-        saves[Object.keys(jsonAbilityData)[i]].value = 0;
-        saves[Object.keys(jsonAbilityData)[i]].prof = false;
+        saves[Object.keys(jsonAbilityData)[i]] = false;
       }
       var skills = {};
       for (var i = 0; i < Object.keys(jsonSkillData).length; i++) {
-        skills[Object.keys(jsonSkillData)[i]] = {};
-        skills[Object.keys(jsonSkillData)[i]].value = 0;
-        skills[Object.keys(jsonSkillData)[i]].prof = false;
+        skills[Object.keys(jsonSkillData)[i]] = false;
       }
       var spellSlots = {};
       for (var i = 0; i < 9; i++) {
@@ -102,6 +133,7 @@ Vue.component('characters', {
         klass: this.addPlayerClass,
         background: '',
         alignment: '',
+        languages: ["Common", "Other"],
         size: this.size,
         speed: this.speed,
         showCombat: true,
@@ -112,12 +144,11 @@ Vue.component('characters', {
         spellAbility: this.spellAbility,
         spellAttackMod: 0,
         spellSavingDC: 0,
-        speed: 0,
         showStats: true,
         exp: 0,
         level: 0,
         pb: 2,
-        abilities: abilities,
+        abilities: this.addPlayerAbilities,
         saves: saves,
         skills: skills,
         showSpells: true,
@@ -242,14 +273,14 @@ Vue.component('characters', {
           <div class="stats">\
             <div>\
               <svg><use xlink:href="sprites.svg#health"></use></svg>\
-              <input v-model="character.currentHP" type="number" />\
+              <input v-model.number="character.currentHP" type="number" />\
             </div>\
             <div>\
               <svg><use xlink:href="sprites.svg#armor"></use></svg>\
-              <input v-model="character.armorClass" type="number" readonly />\
+              <input v-model.number="character.armorClass" type="number" readonly />\
             </div>\
             <div>\
-              <svg><use xlink:href="sprites.svg#initiative"></use></svg><input v-model="character.initiative" type="number" />\
+              <svg><use xlink:href="sprites.svg#initiative"></use></svg><input v-model.number="character.initiative" type="number" />\
             </div>\
           </div>\
           <div class="tools">\
@@ -300,14 +331,14 @@ Vue.component('characters', {
               <h3>Choose abilities</h3>\
             </div>\
           </div>\
-          <transition-group name="slides" tag="div" class="step-slides">\
+          <transition-group :name="slideDirection" tag="div" class="step-slides">\
             <div v-if="addPlayerScreen == 1" class="row no-padding" key="1">\
               <form @submit.prevent="addCreature()" class="col-xs-6 no-padding">\
                 <div class="modal-content">\
                   <h2>Creature</h2>\
                   <select v-model="addCreatureName" required>\
                     <option value="" disabled>Creature</option>\
-                    <option v-for="(value, key) in creatures">{{key}}</option>\
+                    <option v-for="(value, key) in creatureData">{{key}}</option>\
                   </select>\
                 </div>\
                 <div class="modal-footer">\
@@ -320,7 +351,7 @@ Vue.component('characters', {
                   <h2>Player</h2>\
                   <select v-model="addPlayerRace" required>\
                     <option value="" disabled>Race</option>\
-                    <template v-for="(value, key) in races">\
+                    <template v-for="(value, key) in raceData">\
                       <optgroup v-if="value.subraces" :label="key">\
                         <option v-for="(value2, key2) in value.subraces">{{key2}}</option>\
                       </optgroup>\
@@ -329,7 +360,7 @@ Vue.component('characters', {
                   </select>\
                   <select v-model="addPlayerClass" required>\
                     <option value="" disabled>Class</option>\
-                    <template v-for="(value, key) in classes">\
+                    <template v-for="(value, key) in classData">\
                       <option>{{key}}</option>\
                     </template>\
                   </select>\
@@ -353,6 +384,14 @@ Vue.component('characters', {
             <form v-if="addPlayerScreen == 3" @submit.prevent="addPlayer()" key="3">\
               <div class="modal-content">\
                 <h2>Step 3</h2>\
+                <div class="inputs">\
+                  <div v-for="(value, key) in abilityData" class="stat">\
+                    <h4 class="subtitle">{{key.substring(0,3).toUpperCase()}}</h4>\
+                    <input v-model.number="addPlayerBaseAbilities[key]" class="base" type="number" />\
+                    <div class="perk">+{{addPlayerPerks[key] || 0}}</div>\
+                    <div class="total">{{addPlayerAbilities[key]}}<span class="mod"> ({{addPlayerAbilities[key] | mod}})</span></div>\
+                  </div>\
+                </div>\
               </div>\
               <div class="modal-footer">\
                 <button @click.prevent="characterSelect = false">Cancel</button>\

@@ -2,16 +2,16 @@ Vue.component('player', {
   props: ['side', 'c'],
   data: function() {
     return {
-      classes: jsonClassData,
-      alignments: jsonAlignmentData,
-      abilities: jsonAbilityData,
-      skills: jsonSkillData,
+      alignmentData: jsonAlignmentData,
+      abilityData: jsonAbilityData,
+      skillData: jsonSkillData,
       char: this.c
     }
   },
   filters: {
     mod: function(value) {
-      return mod(value);
+      var v = Math.floor((value - 10) / 2);
+      return v >= 0 ? '+' + v : v;
     }
   },
   computed: {
@@ -114,7 +114,7 @@ Vue.component('player', {
       if (this.c.klass) {
         var a = jsonClassData[this.c.klass].spell_casting_ability;
         if (a) {
-          this.c.spellSavingDC = 8 + this.c.pb + mod(this.c[a.substring(0,3).toLowerCase()]);
+          this.c.spellSavingDC = 8 + this.c.pb + mod(this.c.abilities[a]);
         }
         else {
           this.c.spellSavingDC = '';
@@ -124,6 +124,31 @@ Vue.component('player', {
     },
     spellAttackMod: function() {
       return 0;
+    },
+    saves: function() {
+      var s = {}
+      for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
+        var a = Object.keys(jsonAbilityData)[i];
+        var v = Math.floor((this.c.abilities[a] - 10) / 2);
+        if (this.c.saves[a]) {
+          v = v + this.c.pb;
+        }
+        s[a] = v >= 0 ? '+' + v : v;
+      }
+      return s;
+    },
+    skills: function() {
+      var ss = {}
+      for (var i = 0; i < Object.keys(jsonSkillData).length; i++) {
+        var s = Object.keys(jsonSkillData)[i];
+        var ra = jsonSkillData[s].rel_ability;
+        var v = Math.floor((this.c.abilities[ra] - 10) / 2);
+        if (this.c.skills[s]) {
+          v = v + this.c.pb;
+        }
+        ss[s] = v >= 0 ? '+' + v : v;
+      }
+      return ss;
     },
     cantripsKnown: function() {
       if (this.c.klass == 'Barbarian') {
@@ -246,10 +271,10 @@ Vue.component('player', {
         }
       }
       else if (this.c.klass == 'Cleric') {
-        this.c.spellsKnown = (this.c.abilities.wisdom.mod + this.c.level < 1) ? 1 : this.c.abilies.wisdom.mod + this.c.level;
+        this.c.spellsKnown = (mod(this.c.abilities.Wisdom) + this.c.level < 1) ? 1 : mod(this.c.abilities.Wisdom) + this.c.level;
       }
       else if (this.c.klass == 'Druid') {
-        this.c.spellsKnown = (this.c.abilities.wisdom.mod + this.c.level < 1) ? 1 : this.c.abilies.wisdom.mod + this.c.level;
+        this.c.spellsKnown = (mod(this.c.abilities.Wisdom) + this.c.level < 1) ? 1 : mod(this.c.abilities.Wisdom) + this.c.level;
       }
       else if (this.c.klass == 'Fighter') {
         this.c.spellsKnown = 0;
@@ -260,7 +285,7 @@ Vue.component('player', {
         // Monk has ki
       }
       else if (this.c.klass == 'Paladin') {
-        this.c.spellsKnown = (this.c.abilities.charisma.mod + Math.floor(this.c.level/2) < 1) ? 1 : this.c.abilies.charisma.mod + Math.floor(this.c.level/2);
+        this.c.spellsKnown = (mod(this.c.abilities.Charisma) + Math.floor(this.c.level/2) < 1) ? 1 : mod(this.c.abilities.Charisma) + Math.floor(this.c.level/2);
       }
       else if (this.c.klass == 'Ranger') {
         if (this.c.level <= 1) {
@@ -342,7 +367,7 @@ Vue.component('player', {
         }
       }
       else if (this.c.klass == 'Wizard') {
-        this.c.spellsKnown = (this.c.abilities.intelligence.mod + this.c.level < 1) ? 1 : this.c.abilies.intelligence.mod + this.c.level;
+        this.c.spellsKnown = (mod(this.c.abilities.Intelligence) + this.c.level < 1) ? 1 : mod(this.c.abilities.Intelligence) + this.c.level;
       }
       return this.c.spellsKnown;
     },
@@ -1244,7 +1269,7 @@ Vue.component('player', {
             <div class="input-group col-xs-4">\
               <label>Alignment</label>\
               <select v-model="c.alignment">\
-                <option v-for="alignment in alignments">{{alignment}}</option>\
+                <option v-for="(value, key) in alignmentData">{{key}}</option>\
               </select>\
             </div>\
             <div class="input-group col-xs-4">\
@@ -1285,8 +1310,8 @@ Vue.component('player', {
               <input v-model="c.armorClass" type="number" readonly />\
             </div>\
           </div>\
-          <h4>Spellcasting</h4>\
           <div class="row">\
+            <h4>Spellcasting</h4>\
             <div class="input-group col-xs-4">\
               <label>Ability</label>\
               <input v-model="spellAbility" type="text" readonly />\
@@ -1322,28 +1347,26 @@ Vue.component('player', {
               <input v-model="c.pb" type="number" readonly />\
             </div>\
           </div>\
-          <h4>Abilities</h4>\
           <div class="row">\
-            <div class="input-group col-xs-2" v-for="(value, key) in abilities">\
+            <h4>Abilities</h4>\
+            <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
               <label>{{key}}</label>\
               <input v-model="c.abilities[key]" type="number" />\
               <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
             </div>\
           </div>\
-          <h4>Saves</h4>\
           <div class="row">\
-            <div class="input-group col-xs-2" v-for="(value, key) in abilities">\
+            <h4>Saves</h4>\
+            <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
               <label>{{key}}</label>\
-              <input v-model="c.saves[key].value" type="number" />\
-              <div class="mod"><span>{{c.saves[key] | mod}}</span><input type=""</div>\
+              <div class="prof">{{saves[key]}}<input v-model="c.saves[key]" type="checkbox" /></div>\
             </div>\
           </div>\
-          <h4>Skills</h4>\
           <div class="row">\
-            <div class="input-group col-xs-2" v-for="(value, key) in skills">\
+            <h4>Skills</h4>\
+            <div class="input-group col-xs-2" v-for="(value, key) in skillData">\
               <label>{{key}}</label>\
-              <input v-model="c.skills[key]" type="number" />\
-              <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
+              <div class="prof">{{skills[key]}}<input v-model="c.skills[key]" type="checkbox" /></div>\
             </div>\
           </div>\
         </div>\

@@ -1,74 +1,74 @@
 var jsonSkillData = {
   "Acrobatics": {
     "abbr": "ACRO",
-    "relAbility": "Dexterity"
+    "rel_ability": "Dexterity"
   },
   "Animal Handling": {
     "abbr": "ANIM",
-    "relAbility": "Wisdom"
+    "rel_ability": "Wisdom"
   },
   "Arcana": {
     "abbr": "ARCA",
-    "relAbility": "Intelligence"
+    "rel_ability": "Intelligence"
   },
   "Athletics": {
     "abbr": "ATHL",
-    "relAbility": "Strength"
+    "rel_ability": "Strength"
   },
   "Deception": {
     "abbr": "DECE",
-    "relAbility": "Charisma"
+    "rel_ability": "Charisma"
   },
   "History": {
     "abbr": "HIST",
-    "relAbility": "Intelligence"
+    "rel_ability": "Intelligence"
   },
   "Insight": {
     "abbr": "INSI",
-    "relAbility": "Wisdom"
+    "rel_ability": "Wisdom"
   },
   "Intimidation": {
     "abbr": "INTI",
-    "relAbility": "Charisma"
+    "rel_ability": "Charisma"
   },
   "Investigation": {
     "abbr": "INVE",
-    "relAbility": "Intelligence"
+    "rel_ability": "Intelligence"
   },
   "Medicine": {
     "abbr": "MEDI",
-    "relAbility": "Wisdom"
+    "rel_ability": "Wisdom"
   },
   "Nature": {
     "abbr": "NATU",
-    "relAbility": "Intelligence"
+    "rel_ability": "Intelligence"
   },
   "Perception": {
     "abbr": "PERC",
-    "relAbility": "Wisdom"
+    "rel_ability": "Wisdom"
   },
   "Performance": {
     "abbr": "PERF",
-    "relAbility": "Charisma"
+    "rel_ability": "Charisma"
   },
   "Persuasion": {
     "abbr": "PERS",
-    "relAbility": "Charisma"
+    "rel_ability": "Charisma"
   },
   "Religion": {
     "abbr": "RELI",
-    "relAbility": "Intelligence"
+    "rel_ability": "Intelligence"
   },
   "Sleight of Hand": {
     "abbr": "SLEI",
-    "relAbility": "Dexterity"
+    "rel_ability": "Dexterity"
   },
   "Stealth": {
     "abbr": "STEA",
-    "relAbility": "Dexterity"
+    "rel_ability": "Dexterity"
   },
   "Survival": {
     "abbr": "SURV",
-    "relAbility": "Wisdom"
+    "rel_ability": "Wisdom"
   }
 };

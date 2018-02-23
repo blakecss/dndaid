@@ -26,21 +26,19 @@
       </div>
       <div class="container row">
         <ul class="col-xs-12 tabs">
-          <li @click="slide = 'characters'" :class="slide == 'characters' ? 'current' : ''">Characters</li>
-          <li @click="slide = 'world'" :class="slide == 'world' ? 'current' : ''">World</li>
+          <li @click="slide = 1" :class="slide == 1 ? 'current' : ''">Characters</li>
+          <li @click="slide = 2" :class="slide == 2 ? 'current' : ''">World</li>
         </ul>
       </div>
     </header>
-    <transition name="slides">
-      <div v-show="slide == 'characters'">
+    <transition-group :name="slideDirection" tag="div">\
+      <div v-show="slide == 1" key="1">
         <characters id="characters"></characters>
       </div>
-    </transition>
-    <transition name="slides">
-      <div v-show="slide == 'world'">
+      <div v-show="slide == 2" key="2">
         <world id="world"></world>
       </div>
-    </transition>
+    </transition-group>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -54,6 +52,7 @@
   <!-- <script src="data/inventory.json"></script>
   <script src="data/definitions.json"></script> -->
   <script src="lib/vue/dist/vue.js"></script>
+  <script src="//d3js.org/d3.v4.min.js"></script>
   <script src="dist/js/main.min.js"></script>
 </body>
 </html>
