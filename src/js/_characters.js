@@ -162,23 +162,17 @@ Vue.component('characters', {
     addCreature: function() {
       var abilities = {};
       for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
-        abilities[Object.keys(jsonAbilityData)[i]] = {};
-        abilities[Object.keys(jsonAbilityData)[i]].value = 0;
-        abilities[Object.keys(jsonAbilityData)[i]].mod = -5;
+        abilities[Object.keys(jsonAbilityData)[i]] = 0;
       }
       var saves = {};
       for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
-        saves[Object.keys(jsonAbilityData)[i]] = {};
-        saves[Object.keys(jsonAbilityData)[i]].mod = -5;
-        saves[Object.keys(jsonAbilityData)[i]].prof = false;
+        saves[Object.keys(jsonAbilityData)[i]] = false;
       }
       var skills = {};
       for (var i = 0; i < Object.keys(jsonSkillData).length; i++) {
-        skills[Object.keys(jsonSkillData)[i]] = {};
-        skills[Object.keys(jsonSkillData)[i]].mod = -5;
-        skills[Object.keys(jsonSkillData)[i]].prof = false;
+        skills[Object.keys(jsonSkillData)[i]] = false;
       }
-      var c = this.creatures[this.addCreatureName];
+      var c = this.creatureData[this.addCreatureName];
       this.characters.push({
         id: Math.random().toString(36).substr(2,9),
         name: this.addCreatureName,
