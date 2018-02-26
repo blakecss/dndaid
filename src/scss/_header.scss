@@ -11,6 +11,22 @@ header {
     align-items: center;
     justify-content: space-between;
   }
+  button {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 100%;
+    width: 38px;
+    height: 38px;
+    &:hover {
+      background-color: rgba(#000, 0.1);
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      fill: #fff;
+    }
+  }
 }
 
 .logo {
@@ -20,33 +36,24 @@ header {
     margin: 0;
   }
 }
-.search {
+.header-right {
   flex: 1;
   padding: 0 $grid-padding;
   display: flex;
   justify-content: flex-end;
-  display: flex;
   align-items: center;
-  button {
-    background: none;
-    box-shadow: none;
-  }
-  svg {
-    display: block;
-    fill: #fff;
-  }
-  .search-icon {
-    padding: 8px 8px 4px 8px;
-    svg {
-      width: 24px;
-      height: 24px;
-    }
+  margin: 0;
+  position: relative;
+  form {
+    margin: 0;
+    display: flex;
+    align-items: center;
   }
   .search-close {
-    padding: 4px;
-    svg {
-      width: 16px;
-      height: 16px;
+    width: 32px;
+    height: 32px;
+    &:hover {
+      background-color: transparent;
     }
   }
   input {
@@ -63,7 +70,37 @@ header {
   border-bottom: 1px solid #fff;
   width: 240px;
   max-width: 100%;
+  margin-left: 4px;
 }
+.header-menu {
+  position: absolute;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: $shadow-2;
+  top: 0;
+  width: 140px;
+  overflow-x: hidden;
+  button {
+    color: $text-color;
+    border-radius: 0;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 8px 16px;
+    height: auto;
+    width: 100%;
+    svg {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      margin-right: 16px;
+      fill: $text-color;
+    }
+  }
+}
+
 .search-enter-active {
   transition: 0.3s ease;
 }
@@ -84,7 +121,6 @@ header {
   list-style: none;
   display: flex;
   margin: 0;
-  // margin-left: 250px;
   li {
     margin: 0;
     padding: 10px 20px;

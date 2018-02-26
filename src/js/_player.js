@@ -5,8 +5,8 @@ Vue.component('player', {
       alignmentData: jsonAlignmentData,
       abilityData: jsonAbilityData,
       skillData: jsonSkillData,
-      char: this.c,
-      test: 0
+      languages: ['Common', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Orc', 'Abyssal', 'Celestial', 'Draconic', 'Deep Speech', 'Infernal', 'Primordial', 'Sylvan', 'Undercommon'],
+      char: this.c
     }
   },
   filters: {
@@ -1290,7 +1290,7 @@ Vue.component('player', {
             </div>\
             <div class="input-group col-xs-12">\
               <label>Languages</label>\
-              <chips :chips="c.languages"></chips>\
+              <chips :chips="c.languages" :suggestions="languages"></chips>\
             </div>\
           </div>\
         </div>\
@@ -1307,12 +1307,16 @@ Vue.component('player', {
               <input class="hp" v-model="c.currentHP" type="number" /><span>/</span><input class="hp" v-model="c.maxHP" type="number" />\
             </div>\
             <div class="input-group col-xs-4">\
-              <label>Hit Die</label>\
-              <input v-model="hitDie" type="text" readonly />\
-            </div>\
-            <div class="input-group col-xs-4">\
               <label>Armor Class</label>\
               <input v-model="c.armorClass" type="number" readonly />\
+            </div>\
+            <div class="input-group col-xs-4">\
+              <label>Initiative</label>\
+              <input v-model="c.initiative" type="number" />\
+            </div>\
+            <div class="input-group col-xs-4">\
+              <label>Hit Die</label>\
+              <input v-model="hitDie" type="text" readonly />\
             </div>\
           </div>\
           <div class="row">\
@@ -1359,7 +1363,7 @@ Vue.component('player', {
           <div class="row">\
             <h4>Abilities</h4>\
             <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
-              <label>{{key}}</label>\
+              <label>{{value.full}}</label>\
               <input v-model="c.abilities[key]" type="number" />\
               <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
             </div>\
@@ -1399,6 +1403,28 @@ Vue.component('player', {
           <svg :class="{open: c.showInventory}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showInventory" class="character-section-content">\
+          <div class="row">\
+            <div class="input-group col-xs">\
+              <label>CP</label>\
+              <input v-model="c.coins.cp" type="number" />\
+            </div>\
+            <div class="input-group col-xs">\
+              <label>SP</label>\
+              <input v-model="c.coins.sp" type="number" />\
+            </div>\
+            <div class="input-group col-xs">\
+              <label>EP</label>\
+              <input v-model="c.coins.ep" type="number" />\
+            </div>\
+            <div class="input-group col-xs">\
+              <label>GP</label>\
+              <input v-model="c.coins.gp" type="number" />\
+            </div>\
+            <div class="input-group col-xs">\
+              <label>PP</label>\
+              <input v-model="c.coins.pp" type="number" />\
+            </div>\
+          </div>\
           <div class="row">\
             <div class="input-group col-xs-12">\
               <label>Inventory</label>\

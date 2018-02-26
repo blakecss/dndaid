@@ -15,7 +15,6 @@ Vue.component('world', {
       <div class="col-xs-12">\
         <button @click="generateTown()">Generate T</button>\
         <p>{{town}}</p>\
-        <chips :chips="cz"></chips>\
       </div>\
     </main>\
   </div>'

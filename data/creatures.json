@@ -28,12 +28,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "20 ft., fly 50 ft.",
-    "str": 10,
-    "dex": 14,
-    "con": 10,
-    "int": 11,
-    "wis": 12,
-    "cha": 11,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 10,
+      "int": 11,
+      "wis": 12,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -72,12 +74,14 @@ var jsonCreatureData = {
     "maxHP": 135,
     "hit_dice": "18d10 + 36",
     "speed": "10 ft., swim 40 ft.",
-    "str": 21,
-    "dex": 9,
-    "con": 15,
-    "int": 18,
-    "wis": 15,
-    "cha": 18,
+    "abilities": {
+      "str": 21,
+      "dex": 9,
+      "con": 15,
+      "int": 18,
+      "wis": 15,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "con",
@@ -160,12 +164,14 @@ var jsonCreatureData = {
     "maxHP": 137,
     "hit_dice": "11d12 + 66",
     "speed": "40 ft., climb 40 ft.",
-    "str": 24,
-    "dex": 10,
-    "con": 22,
-    "int": 9,
-    "wis": 13,
-    "cha": 9,
+    "abilities": {
+      "str": 24,
+      "dex": 10,
+      "con": 22,
+      "int": 9,
+      "wis": 13,
+      "cha": 9
+    },
     "skills": [
       {
         "name": "perception",
@@ -222,12 +228,14 @@ var jsonCreatureData = {
     "maxHP": 9,
     "hit_dice": "2d8",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 10,
-    "con": 10,
-    "int": 10,
-    "wis": 14,
-    "cha": 11,
+    "abilities": {
+      "str": 10,
+      "dex": 10,
+      "con": 10,
+      "int": 10,
+      "wis": 14,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "medicine",
@@ -262,12 +270,14 @@ var jsonCreatureData = {
     "maxHP": 195,
     "hit_dice": "17d12 + 85",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 23,
-    "dex": 14,
-    "con": 21,
-    "int": 14,
-    "wis": 13,
-    "cha": 17,
+    "abilities": {
+      "str": 23,
+      "dex": 14,
+      "con": 21,
+      "int": 14,
+      "wis": 13,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "dex",
@@ -359,12 +369,14 @@ var jsonCreatureData = {
     "maxHP": 225,
     "hit_dice": "18d12 + 108",
     "speed": "40 ft., burrow 30 ft., fly 80 ft.",
-    "str": 25,
-    "dex": 10,
-    "con": 23,
-    "int": 16,
-    "wis": 15,
-    "cha": 19,
+    "abilities": {
+      "str": 25,
+      "dex": 10,
+      "con": 23,
+      "int": 16,
+      "wis": 15,
+      "cha": 19
+    },
     "skills": [
       {
         "name": "perception",
@@ -436,12 +448,14 @@ var jsonCreatureData = {
     "maxHP": 225,
     "hit_dice": "18d12 + 108",
     "speed": "40 ft., burrow 30 ft., fly 80 ft.",
-    "str": 25,
-    "dex": 10,
-    "con": 23,
-    "int": 16,
-    "wis": 15,
-    "cha": 19,
+    "abilities": {
+      "str": 25,
+      "dex": 10,
+      "con": 23,
+      "int": 16,
+      "wis": 15,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -529,12 +543,14 @@ var jsonCreatureData = {
     "maxHP": 172,
     "hit_dice": "15d12 + 75",
     "speed": "40 ft., burrow 40 ft., fly 80 ft.",
-    "str": 23,
-    "dex": 10,
-    "con": 21,
-    "int": 14,
-    "wis": 13,
-    "cha": 17,
+    "abilities": {
+      "str": 23,
+      "dex": 10,
+      "con": 21,
+      "int": 14,
+      "wis": 13,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "dex",
@@ -616,12 +632,14 @@ var jsonCreatureData = {
     "maxHP": 212,
     "hit_dice": "17d12 + 102",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 25,
-    "dex": 10,
-    "con": 23,
-    "int": 16,
-    "wis": 15,
-    "cha": 19,
+    "abilities": {
+      "str": 25,
+      "dex": 10,
+      "con": 23,
+      "int": 16,
+      "wis": 15,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -721,12 +739,14 @@ var jsonCreatureData = {
     "maxHP": 184,
     "hit_dice": "16d12 + 80",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
-    "str": 23,
-    "dex": 12,
-    "con": 21,
-    "int": 18,
-    "wis": 15,
-    "cha": 17,
+    "abilities": {
+      "str": 23,
+      "dex": 12,
+      "con": 21,
+      "int": 18,
+      "wis": 15,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "dex",
@@ -818,12 +838,14 @@ var jsonCreatureData = {
     "maxHP": 256,
     "hit_dice": "19d12 + 133",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 27,
-    "dex": 14,
-    "con": 25,
-    "int": 16,
-    "wis": 15,
-    "cha": 24,
+    "abilities": {
+      "str": 27,
+      "dex": 14,
+      "con": 25,
+      "int": 16,
+      "wis": 15,
+      "cha": 24
+    },
     "saves": [
       {
         "name": "dex",
@@ -927,12 +949,14 @@ var jsonCreatureData = {
     "maxHP": 207,
     "hit_dice": "18d12 + 90",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 23,
-    "dex": 12,
-    "con": 21,
-    "int": 18,
-    "wis": 15,
-    "cha": 17,
+    "abilities": {
+      "str": 23,
+      "dex": 12,
+      "con": 21,
+      "int": 18,
+      "wis": 15,
+      "cha": 17
+    },
     "save": [
       {
         "name": "dex",
@@ -1037,12 +1061,14 @@ var jsonCreatureData = {
     "maxHP": 256,
     "hit_dice": "19d12 + 133",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
-    "str": 27,
-    "dex": 10,
-    "con": 25,
-    "int": 16,
-    "wis": 13,
-    "cha": 21,
+    "abilities": {
+      "str": 27,
+      "dex": 10,
+      "con": 25,
+      "int": 16,
+      "wis": 13,
+      "cha": 21
+    },
     "saves": [
       {
         "name": "dex",
@@ -1134,12 +1160,14 @@ var jsonCreatureData = {
     "maxHP": 243,
     "hit_dice": "18d12 + 126",
     "speed": "40 ft., fly 80 ft.",
-    "str": 27,
-    "dex": 10,
-    "con": 25,
-    "int": 16,
-    "wis": 13,
-    "cha": 21,
+    "abilities": {
+      "str": 27,
+      "dex": 10,
+      "con": 25,
+      "int": 16,
+      "wis": 13,
+      "cha": 21
+    },
     "saves": [
       {
         "name": "dex",
@@ -1239,12 +1267,14 @@ var jsonCreatureData = {
     "maxHP": 200,
     "hit_dice": "16d12 + 96",
     "speed": "40 ft., burrow 30 ft., fly 80 ft., swim 40 ft.",
-    "str": 22,
-    "dex": 10,
-    "con": 22,
-    "int": 8,
-    "wis": 12,
-    "cha": 12,
+    "abilities": {
+      "str": 22,
+      "dex": 10,
+      "con": 22,
+      "int": 8,
+      "wis": 12,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "dex",
@@ -1336,12 +1366,14 @@ var jsonCreatureData = {
     "maxHP": 90,
     "hit_dice": "12d10 + 24",
     "speed": "fly 90 ft. (hover)",
-    "str": 14,
-    "dex": 20,
-    "con": 14,
-    "int": 6,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 14,
+      "dex": 20,
+      "con": 14,
+      "int": 6,
+      "wis": 10,
+      "cha": 6
+    },
     "damage_resistances": "lightning; thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
@@ -1377,12 +1409,14 @@ var jsonCreatureData = {
     "maxHP": 51,
     "hit_dice": "6d10 + 18",
     "speed": "60 ft.",
-    "str": 19,
-    "dex": 13,
-    "con": 17,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 19,
+      "dex": 13,
+      "con": 17,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -1416,12 +1450,14 @@ var jsonCreatureData = {
     "maxHP": 367,
     "hit_dice": "21d20 + 147",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 27,
-    "dex": 14,
-    "con": 25,
-    "int": 16,
-    "wis": 15,
-    "cha": 19,
+    "abilities": {
+      "str": 27,
+      "dex": 14,
+      "con": 25,
+      "int": 16,
+      "wis": 15,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -1517,12 +1553,14 @@ var jsonCreatureData = {
     "maxHP": 481,
     "hit_dice": "26d20 + 208",
     "speed": "40 ft., burrow 40 ft., fly 80 ft.",
-    "str": 29,
-    "dex": 10,
-    "con": 27,
-    "int": 18,
-    "wis": 17,
-    "cha": 21,
+    "abilities": {
+      "str": 29,
+      "dex": 10,
+      "con": 27,
+      "int": 18,
+      "wis": 17,
+      "cha": 21
+    },
     "saves": [
       {
         "name": "dex",
@@ -1604,12 +1642,14 @@ var jsonCreatureData = {
     "maxHP": 297,
     "hit_dice": "17d20 + 119",
     "speed": "40 ft., burrow 40 ft., fly 80 ft.",
-    "str": 27,
-    "dex": 10,
-    "con": 25,
-    "int": 16,
-    "wis": 15,
-    "cha": 19,
+    "abilities": {
+      "str": 27,
+      "dex": 10,
+      "con": 25,
+      "int": 16,
+      "wis": 15,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -1709,12 +1749,14 @@ var jsonCreatureData = {
     "maxHP": 444,
     "hit_dice": "24d20 + 192",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 29,
-    "dex": 10,
-    "con": 27,
-    "int": 18,
-    "wis": 17,
-    "cha": 21,
+    "abilities": {
+      "str": 29,
+      "dex": 10,
+      "con": 27,
+      "int": 18,
+      "wis": 17,
+      "cha": 21
+    },
     "saves": [
       {
         "name": "dex",
@@ -1814,12 +1856,14 @@ var jsonCreatureData = {
     "maxHP": 350,
     "hit_dice": "20d20 + 140",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
-    "str": 27,
-    "dex": 12,
-    "con": 25,
-    "int": 20,
-    "wis": 17,
-    "cha": 19,
+    "abilities": {
+      "str": 27,
+      "dex": 12,
+      "con": 25,
+      "int": 20,
+      "wis": 17,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -1915,12 +1959,14 @@ var jsonCreatureData = {
     "maxHP": 546,
     "hit_dice": "28d20 + 140",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 30,
-    "dex": 14,
-    "con": 29,
-    "int": 18,
-    "wis": 17,
-    "cha": 28,
+    "abilities": {
+      "str": 30,
+      "dex": 14,
+      "con": 29,
+      "int": 18,
+      "wis": 17,
+      "cha": 28
+    },
     "saves": [
       {
         "name": "dex",
@@ -2024,12 +2070,14 @@ var jsonCreatureData = {
     "maxHP": 385,
     "hit_dice": "22d20 + 154",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 27,
-    "dex": 12,
-    "con": 25,
-    "int": 20,
-    "wis": 17,
-    "cha": 19,
+    "abilities": {
+      "str": 27,
+      "dex": 12,
+      "con": 25,
+      "int": 20,
+      "wis": 17,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -2134,12 +2182,14 @@ var jsonCreatureData = {
     "maxHP": 546,
     "hit_dice": "28d20 + 252",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
-    "str": 30,
-    "dex": 10,
-    "con": 29,
-    "int": 18,
-    "wis": 15,
-    "cha": 23,
+    "abilities": {
+      "str": 30,
+      "dex": 10,
+      "con": 29,
+      "int": 18,
+      "wis": 15,
+      "cha": 23
+    },
     "saves": [
       {
         "name": "dex",
@@ -2227,12 +2277,14 @@ var jsonCreatureData = {
     "maxHP": 487,
     "hit_dice": "25d20 + 225",
     "speed": "40 ft., fly 80 ft.",
-    "str": 30,
-    "dex": 10,
-    "con": 29,
-    "int": 18,
-    "wis": 15,
-    "cha": 23,
+    "abilities": {
+      "str": 30,
+      "dex": 10,
+      "con": 29,
+      "int": 18,
+      "wis": 15,
+      "cha": 23
+    },
     "saves": [
       {
         "name": "dex",
@@ -2332,12 +2384,14 @@ var jsonCreatureData = {
     "maxHP": 333,
     "hit_dice": "18d20 + 144",
     "speed": "40 ft., burrow 40 ft., fly 80 ft., swim 40 ft.",
-    "str": 26,
-    "dex": 10,
-    "con": 26,
-    "int": 10,
-    "wis": 13,
-    "cha": 14,
+    "abilities": {
+      "str": 26,
+      "dex": 10,
+      "con": 26,
+      "int": 10,
+      "wis": 13,
+      "cha": 14
+    },
     "saves": [
       {
         "name": "dex",
@@ -2415,12 +2469,14 @@ var jsonCreatureData = {
     "maxHP": 199,
     "hit_dice": "19d10 + 95",
     "speed": "40 ft., fly 60 ft.",
-    "str": 22,
-    "dex": 10,
-    "con": 20,
-    "int": 16,
-    "wis": 18,
-    "cha": 23,
+    "abilities": {
+      "str": 22,
+      "dex": 10,
+      "con": 20,
+      "int": 16,
+      "wis": 18,
+      "cha": 23
+    },
     "saves": [
       {
         "name": "dex",
@@ -2509,12 +2565,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "25 ft.",
-    "str": 14,
-    "dex": 11,
-    "con": 13,
-    "int": 1,
-    "wis": 3,
-    "cha": 1,
+    "abilities": {
+      "str": 14,
+      "dex": 11,
+      "con": 13,
+      "int": 1,
+      "wis": 3,
+      "cha": 1
+    },
     "damage_immunities": "poison, psychic",
     "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 6",
@@ -2548,12 +2606,14 @@ var jsonCreatureData = {
     "maxHP": 39,
     "hit_dice": "6d10 + 6",
     "speed": "30 ft., burrow 10 ft.",
-    "str": 17,
-    "dex": 11,
-    "con": 13,
-    "int": 1,
-    "wis": 13,
-    "cha": 6,
+    "abilities": {
+      "str": 17,
+      "dex": 11,
+      "con": 13,
+      "int": 1,
+      "wis": 13,
+      "cha": 6
+    },
     "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 11",
     "challenge_rating": "2 (450 XP)",
     "actions": [
@@ -2575,12 +2635,14 @@ var jsonCreatureData = {
     "maxHP": 68,
     "hit_dice": "8d12 + 16",
     "speed": "30 ft.",
-    "str": 19,
-    "dex": 11,
-    "con": 15,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 19,
+      "dex": 11,
+      "con": 15,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "senses": "passive Perception 11",
     "challenge_rating": "3 (700 XP)",
     "actions": [
@@ -2598,12 +2660,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d8 + 6",
     "speed": "30 ft., climb 30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 14,
-    "int": 6,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 14,
+      "int": 6,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "athletics",
@@ -2640,12 +2704,14 @@ var jsonCreatureData = {
     "maxHP": 104,
     "hit_dice": "16d8 + 32",
     "speed": "30 ft., fly 30 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 14,
-    "int": 20,
-    "wis": 16,
-    "cha": 17,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 14,
+      "int": 20,
+      "wis": 16,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "dex",
@@ -2726,12 +2792,14 @@ var jsonCreatureData = {
     "maxHP": 99,
     "hit_dice": "18d8 + 18",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 14,
-    "con": 12,
-    "int": 20,
-    "wis": 15,
-    "cha": 16,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 12,
+      "int": 20,
+      "wis": 15,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "int",
@@ -2782,12 +2850,14 @@ var jsonCreatureData = {
     "maxHP": 78,
     "hit_dice": "12d8 + 24",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 16,
-    "con": 14,
-    "int": 13,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 11,
+      "dex": 16,
+      "con": 14,
+      "int": 13,
+      "wis": 11,
+      "cha": 10
+    },
     "saves": [
       {
         "name": "dex",
@@ -2857,12 +2927,14 @@ var jsonCreatureData = {
     "maxHP": 10,
     "hit_dice": "3d6",
     "speed": "20 ft.",
-    "str": 3,
-    "dex": 8,
-    "con": 11,
-    "int": 10,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 3,
+      "dex": 8,
+      "con": 11,
+      "int": 10,
+      "wis": 10,
+      "cha": 6
+    },
     "damage_vulnerabilities": "fire",
     "damage_resistances": "piercing",
     "senses": "passive Perception 10",
@@ -2889,12 +2961,14 @@ var jsonCreatureData = {
     "maxHP": 59,
     "hit_dice": "7d12 + 14",
     "speed": "20 ft.",
-    "str": 19,
-    "dex": 6,
-    "con": 15,
-    "int": 10,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 19,
+      "dex": 6,
+      "con": 15,
+      "int": 10,
+      "wis": 10,
+      "cha": 7
+    },
     "damage_vulnerabilities": "fire",
     "damage_resistances": "bludgeoning, piercing",
     "senses": "passive Perception 10",
@@ -2921,12 +2995,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10 + 3",
     "speed": "50 ft.",
-    "str": 14,
-    "dex": 12,
-    "con": 12,
-    "int": 2,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 14,
+      "dex": 12,
+      "con": 12,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
@@ -2944,12 +3020,14 @@ var jsonCreatureData = {
     "maxHP": 39,
     "hit_dice": "6d8 + 12",
     "speed": "30 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 15,
-    "int": 12,
-    "wis": 13,
-    "cha": 10,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 15,
+      "int": 12,
+      "wis": 13,
+      "cha": 10
+    },
     "saves": [
        {
          "names": "con",
@@ -2990,12 +3068,14 @@ var jsonCreatureData = {
     "maxHP": 3,
     "hit_dice": "1d6",
     "speed": "30 ft., climb 30 ft.",
-    "str": 8,
-    "dex": 14,
-    "con": 11,
-    "int": 4,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 8,
+      "dex": 14,
+      "con": 11,
+      "int": 4,
+      "wis": 12,
+      "cha": 6
+    },
     "senses": "passive Perception 11",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -3019,12 +3099,14 @@ var jsonCreatureData = {
     "maxHP": 3,
     "hit_dice": "1d4 + 1",
     "speed": "20 ft., burrow 5 ft.",
-    "str": 4,
-    "dex": 11,
-    "con": 12,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 4,
+      "dex": 11,
+      "con": 12,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "senses": "darkvision 30 ft., passive Perception 11",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -3049,12 +3131,14 @@ var jsonCreatureData = {
     "maxHP": 262,
     "hit_dice": "21d12 + 126",
     "speed": "40 ft., fly 80 ft.",
-    "str": 26,
-    "dex": 15,
-    "con": 22,
-    "int": 20,
-    "wis": 16,
-    "cha": 22,
+    "abilities": {
+      "str": 26,
+      "dex": 15,
+      "con": 22,
+      "int": 20,
+      "wis": 16,
+      "cha": 22
+    },
     "saves": [
       {
         "names": "str",
@@ -3129,12 +3213,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 12,
-    "con": 12,
-    "int": 10,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 11,
+      "dex": 12,
+      "con": 12,
+      "int": 10,
+      "wis": 10,
+      "cha": 10
+    },
     "senses": "passive Perception 10",
     "languages": "any one language (usually Common)",
     "challenge_rating": "1/8 (25 XP)",
@@ -3158,12 +3244,14 @@ var jsonCreatureData = {
     "maxHP": 65,
     "hit_dice": "10d8 + 10",
     "speed": "30 ft.",
-    "str": 15,
-    "dex": 16,
-    "con": 14,
-    "int": 14,
-    "wis": 11,
-    "cha": 14,
+    "abilities": {
+      "str": 15,
+      "dex": 16,
+      "con": 14,
+      "int": 14,
+      "wis": 11,
+      "cha": 14
+    },
     "saves": [
       {
         "names": "str",
@@ -3220,12 +3308,14 @@ var jsonCreatureData = {
     "maxHP": 58,
     "hit_dice": "13d8",
     "speed": "0 ft., fly 40 ft. (hover)",
-    "str": 1,
-    "dex": 14,
-    "con": 10,
-    "int": 12,
-    "wis": 11,
-    "cha": 17,
+    "abilities": {
+      "str": 1,
+      "dex": 14,
+      "con": 10,
+      "int": 12,
+      "wis": 11,
+      "cha": 17
+    },
     "saves": [
       {
         "names": "wis",
@@ -3276,12 +3366,14 @@ var jsonCreatureData = {
     "maxHP": 110,
     "hit_dice": "13d8 + 52",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 17,
-    "con": 18,
-    "int": 12,
-    "wis": 14,
-    "cha": 14,
+    "abilities": {
+      "str": 16,
+      "dex": 17,
+      "con": 18,
+      "int": 12,
+      "wis": 14,
+      "cha": 14
+    },
     "saves": [
       {
         "names": "str",
@@ -3366,12 +3458,14 @@ var jsonCreatureData = {
     "maxHP": 68,
     "hit_dice": "8d10 + 24",
     "speed": "30 ft., climb 30 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 7,
-    "wis": 14,
-    "cha": 9,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 7,
+      "wis": 14,
+      "cha": 9
+    },
     "saves": [
       {
         "name": "dex",
@@ -3439,12 +3533,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "8d8 + 16",
     "speed": "20 ft.",
-    "str": 16,
-    "dex": 8,
-    "con": 15,
-    "int": 2,
-    "wis": 8,
-    "cha": 7,
+    "abilities": {
+      "str": 16,
+      "dex": 8,
+      "con": 15,
+      "int": 2,
+      "wis": 8,
+      "cha": 7
+    },
     "senses": "darkvision 60 ft., passive Perception 9",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
@@ -3468,12 +3564,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "5 ft., fly 30 ft.",
-    "str": 2,
-    "dex": 15,
-    "con": 8,
-    "int": 2,
-    "wis": 12,
-    "cha": 4,
+    "abilities": {
+      "str": 2,
+      "dex": 15,
+      "con": 8,
+      "int": 2,
+      "wis": 12,
+      "cha": 4
+    },
     "senses": "blindsight 60 ft., passive Perception 11",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -3502,12 +3600,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "8d8 + 16",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 15,
-    "con": 15,
-    "int": 9,
-    "wis": 11,
-    "cha": 11,
+    "abilities": {
+      "str": 16,
+      "dex": 15,
+      "con": 15,
+      "int": 9,
+      "wis": 11,
+      "cha": 11
+    },
     "saves": [
       {
         "names": "str",
@@ -3569,12 +3669,14 @@ var jsonCreatureData = {
     "maxHP": 168,
     "hit_dice": "16d12 + 64",
     "speed": "50 ft., climb 40 ft.",
-    "str": 23,
-    "dex": 16,
-    "con": 18,
-    "int": 7,
-    "wis": 14,
-    "cha": 12,
+    "abilities": {
+      "str": 23,
+      "dex": 16,
+      "con": 18,
+      "int": 7,
+      "wis": 14,
+      "cha": 12
+    },
     "skills": [
       {
         "names": "perception",
@@ -3620,12 +3722,14 @@ var jsonCreatureData = {
     "maxHP": 180,
     "hit_dice": "19d10 + 76",
     "speed": "0 ft., fly 20 ft. (hover)",
-    "str": 10,
-    "dex": 14,
-    "con": 18,
-    "int": 17,
-    "wis": 15,
-    "cha": 17,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 18,
+      "int": 17,
+      "wis": 15,
+      "cha": 17
+    },
     "saves": [
       {
         "names": "int",
@@ -3681,12 +3785,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d10 + 33",
     "speed": "0 ft., fly 20 ft. (hover)",
-    "str": 10,
-    "dex": 8,
-    "con": 16,
-    "int": 3,
-    "wis": 8,
-    "cha": 5,
+    "abilities": {
+      "str": 10,
+      "dex": 8,
+      "con": 16,
+      "int": 3,
+      "wis": 8,
+      "cha": 5
+    },
     "saves": [
       {
         "names": "wis",
@@ -3724,12 +3830,14 @@ var jsonCreatureData = {
     "maxHP": 67,
     "hit_dice": "9d8 + 27",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 12,
-    "con": 17,
-    "int": 9,
-    "wis": 11,
-    "cha": 9,
+    "abilities": {
+      "str": 16,
+      "dex": 12,
+      "con": 17,
+      "int": 9,
+      "wis": 11,
+      "cha": 9
+    },
     "senses": "passive Perception 10",
     "languages": "any one language (usually Common)",
     "challenge_rating": "2 (450 XP)",
@@ -3754,12 +3862,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d8 + 6",
     "speed": "40 ft., climb 30 ft.",
-    "str": 15,
-    "dex": 10,
-    "con": 14,
-    "int": 2,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 15,
+      "dex": 10,
+      "con": 14,
+      "int": 2,
+      "wis": 12,
+      "cha": 7
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -3791,12 +3901,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "30 ft., fly 60 ft., swim 30 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 13,
-    "int": 10,
-    "wis": 11,
-    "cha": 13,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 13,
+      "int": 10,
+      "wis": 11,
+      "cha": 13
+    },
     "saves": [
       {
         "names": "dex",
@@ -3854,12 +3966,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "10d10 + 30",
     "speed": "20 ft., climb 20 ft.",
-    "str": 16,
-    "dex": 5,
-    "con": 16,
-    "int": 1,
-    "wis": 6,
-    "cha": 1,
+    "abilities": {
+      "str": 16,
+      "dex": 5,
+      "con": 16,
+      "int": 1,
+      "wis": 6,
+      "cha": 1
+    },
     "damage_immunities": "acid, cold, lightning, slashing",
     "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 8",
@@ -3899,12 +4013,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d8 + 4",
     "speed": "40 ft.",
-    "str": 12,
-    "dex": 17,
-    "con": 12,
-    "int": 10,
-    "wis": 13,
-    "cha": 11,
+    "abilities": {
+      "str": 12,
+      "dex": 17,
+      "con": 12,
+      "int": 10,
+      "wis": 13,
+      "cha": 11
+    },
     "skills": [
       {
         "names": "perception",
@@ -3943,12 +4059,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "2d6",
     "speed": "10 ft., fly 60 ft.",
-    "str": 6,
-    "dex": 14,
-    "con": 10,
-    "int": 3,
-    "wis": 14,
-    "cha": 5,
+    "abilities": {
+      "str": 6,
+      "dex": 14,
+      "con": 10,
+      "int": 3,
+      "wis": 14,
+      "cha": 5
+    },
     "skills": [
       {
         "names": "perception",
@@ -3982,12 +4100,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "8d8 + 16",
     "speed": "30 ft., burrow 15 ft., fly 60 ft.",
-    "str": 17,
-    "dex": 10,
-    "con": 15,
-    "int": 12,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 17,
+      "dex": 10,
+      "con": 15,
+      "int": 12,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "names": "dex",
@@ -4038,12 +4158,14 @@ var jsonCreatureData = {
     "maxHP": 123,
     "hit_dice": "13d10 + 52",
     "speed": "30 ft.",
-    "str": 20,
-    "dex": 15,
-    "con": 18,
-    "int": 7,
-    "wis": 7,
-    "cha": 9,
+    "abilities": {
+      "str": 20,
+      "dex": 15,
+      "con": 18,
+      "int": 7,
+      "wis": 7,
+      "cha": 9
+    },
     "skills": [
       {
         "name": "perception",
@@ -4091,12 +4213,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "40 ft.",
-    "str": 13,
-    "dex": 11,
-    "con": 12,
-    "int": 2,
-    "wis": 9,
-    "cha": 5,
+    "abilities": {
+      "str": 13,
+      "dex": 11,
+      "con": 12,
+      "int": 2,
+      "wis": 9,
+      "cha": 5
+    },
     "senses": "passive Perception 9",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -4125,12 +4249,14 @@ var jsonCreatureData = {
     "maxHP": 142,
     "hit_dice": "15d10 + 60",
     "speed": "40 ft., fly 40 ft.",
-    "str": 18,
-    "dex": 16,
-    "con": 18,
-    "int": 13,
-    "wis": 14,
-    "cha": 16,
+    "abilities": {
+      "str": 18,
+      "dex": 16,
+      "con": 18,
+      "int": 13,
+      "wis": 14,
+      "cha": 16
+    },
     "saves": [
       {
         "names": "int",
@@ -4202,12 +4328,14 @@ var jsonCreatureData = {
     "maxHP": 58,
     "hit_dice": "9d10 + 9",
     "speed": "30 ft.",
-    "str": 15,
-    "dex": 16,
-    "con": 12,
-    "int": 15,
-    "wis": 15,
-    "cha": 16,
+    "abilities": {
+      "str": 15,
+      "dex": 16,
+      "con": 12,
+      "int": 15,
+      "wis": 15,
+      "cha": 16
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, paralyzed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 12",
@@ -4234,12 +4362,14 @@ var jsonCreatureData = {
     "maxHP": 16,
     "hit_dice": "3d8 + 3",
     "speed": "30 ft., burrow 15 ft., fly 60 ft.",
-    "str": 15,
-    "dex": 10,
-    "con": 13,
-    "int": 10,
-    "wis": 11,
-    "cha": 13,
+    "abilities": {
+      "str": 15,
+      "dex": 10,
+      "con": 13,
+      "int": 10,
+      "wis": 11,
+      "cha": 13
+    },
     "saves": [
       {
         "names": "dex",
@@ -4291,12 +4421,14 @@ var jsonCreatureData = {
     "maxHP": 32,
     "hit_dice": "5d8 + 10",
     "speed": "30 ft., fly 60 ft., swim 30 ft.",
-    "str": 17,
-    "dex": 10,
-    "con": 15,
-    "int": 12,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 17,
+      "dex": 10,
+      "con": 15,
+      "int": 12,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "names": "dex",
@@ -4354,12 +4486,14 @@ var jsonCreatureData = {
     "maxHP": 34,
     "hit_dice": "4d10 + 12",
     "speed": "40 ft., climb 30 ft.",
-    "str": 19,
-    "dex": 10,
-    "con": 16,
-    "int": 2,
-    "wis": 13,
-    "cha": 7,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 16,
+      "int": 2,
+      "wis": 13,
+      "cha": 7
+    },
     "skills": [
       {
         "names": "perception",
@@ -4398,12 +4532,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "5d8 + 5",
     "speed": "30 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 13,
-    "int": 8,
-    "wis": 11,
-    "cha": 9,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 13,
+      "int": 8,
+      "wis": 11,
+      "cha": 9
+    },
     "skills": [
       {
         "names": "stealth",
@@ -4447,12 +4583,14 @@ var jsonCreatureData = {
     "maxHP": 65,
     "hit_dice": "10d8 + 20",
     "speed": "30 ft.",
-    "str": 17,
-    "dex": 14,
-    "con": 14,
-    "int": 11,
-    "wis": 12,
-    "cha": 11,
+    "abilities": {
+      "str": 17,
+      "dex": 14,
+      "con": 14,
+      "int": 11,
+      "wis": 12,
+      "cha": 11
+    },
     "skills": [
       {
         "names": "intimidation",
@@ -4507,12 +4645,14 @@ var jsonCreatureData = {
     "maxHP": 94,
     "hit_dice": "9d10 + 45",
     "speed": "40 ft., burrow 40 ft.",
-    "str": 19,
-    "dex": 11,
-    "con": 21,
-    "int": 2,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 19,
+      "dex": 11,
+      "con": 21,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -4547,12 +4687,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "20 ft., swim 40 ft.",
-    "str": 12,
-    "dex": 12,
-    "con": 13,
-    "int": 7,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 12,
+      "dex": 12,
+      "con": 13,
+      "int": 7,
+      "wis": 10,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "stealth",
@@ -4603,12 +4745,14 @@ var jsonCreatureData = {
     "maxHP": 82,
     "hit_dice": "11d8 + 33",
     "speed": "30 ft., fly 60 ft.",
-    "str": 18,
-    "dex": 18,
-    "con": 16,
-    "int": 14,
-    "wis": 12,
-    "cha": 16,
+    "abilities": {
+      "str": 18,
+      "dex": 18,
+      "con": 16,
+      "int": 14,
+      "wis": 12,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "str",
@@ -4686,12 +4830,14 @@ var jsonCreatureData = {
     "maxHP": 15,
     "hit_dice": "2d10 + 4",
     "speed": "50 ft.",
-    "str": 16,
-    "dex": 8,
-    "con": 14,
-    "int": 2,
-    "wis": 8,
-    "cha": 5,
+    "abilities": {
+      "str": 16,
+      "dex": 8,
+      "con": 14,
+      "int": 2,
+      "wis": 8,
+      "cha": 5
+    },
     "senses": "passive Perception 9",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
@@ -4709,12 +4855,14 @@ var jsonCreatureData = {
     "maxHP": 51,
     "hit_dice": "6d10 + 18",
     "speed": "30 ft., climb 30 ft.",
-    "str": 14,
-    "dex": 13,
-    "con": 16,
-    "int": 1,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 14,
+      "dex": 13,
+      "con": 16,
+      "int": 1,
+      "wis": 12,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -4756,12 +4904,14 @@ var jsonCreatureData = {
     "maxHP": 2,
     "hit_dice": "1d4",
     "speed": "40 ft., climb 30 ft.",
-    "str": 3,
-    "dex": 15,
-    "con": 10,
-    "int": 3,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 3,
+      "dex": 15,
+      "con": 10,
+      "int": 3,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -4795,12 +4945,14 @@ var jsonCreatureData = {
     "maxHP": 42,
     "hit_dice": "5d10 + 15",
     "speed": "40 ft., swim 30 ft.",
-    "str": 20,
-    "dex": 10,
-    "con": 16,
-    "int": 2,
-    "wis": 13,
-    "cha": 7,
+    "abilities": {
+      "str": 20,
+      "dex": 10,
+      "con": 16,
+      "int": 2,
+      "wis": 13,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -4838,12 +4990,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d10 + 12",
     "speed": "50 ft.",
-    "str": 18,
-    "dex": 14,
-    "con": 14,
-    "int": 9,
-    "wis": 13,
-    "cha": 11,
+    "abilities": {
+      "str": 18,
+      "dex": 14,
+      "con": 14,
+      "int": 9,
+      "wis": 13,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "athletics",
@@ -4895,12 +5049,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "10d8",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 18,
-    "int": 11,
-    "wis": 12,
-    "cha": 14,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 18,
+      "int": 11,
+      "wis": 12,
+      "cha": 14
+    },
     "saves": [
       {
         "name": "con",
@@ -4961,12 +5117,14 @@ var jsonCreatureData = {
     "maxHP": 84,
     "hit_dice": "13d10 + 13",
     "speed": "20 ft., fly 60 ft.",
-    "str": 15,
-    "dex": 15,
-    "con": 12,
-    "int": 11,
-    "wis": 14,
-    "cha": 10,
+    "abilities": {
+      "str": 15,
+      "dex": 15,
+      "con": 12,
+      "int": 11,
+      "wis": 14,
+      "cha": 10
+    },
     "saves": [
       {
         "name": "dex",
@@ -5022,12 +5180,14 @@ var jsonCreatureData = {
     "maxHP": 114,
     "hit_dice": "12d10 + 48",
     "speed": "30 ft., fly 60 ft.",
-    "str": 19,
-    "dex": 11,
-    "con": 19,
-    "int": 3,
-    "wis": 14,
-    "cha": 10,
+    "abilities": {
+      "str": 19,
+      "dex": 11,
+      "con": 19,
+      "int": 3,
+      "wis": 14,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -5068,12 +5228,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d10 + 33",
     "speed": "30 ft., swim 30 ft.",
-    "str": 19,
-    "dex": 10,
-    "con": 16,
-    "int": 5,
-    "wis": 11,
-    "cha": 5,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 16,
+      "int": 5,
+      "wis": 11,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -5118,12 +5280,14 @@ var jsonCreatureData = {
     "maxHP": 133,
     "hit_dice": "14d10 + 56",
     "speed": "20 ft.",
-    "str": 20,
-    "dex": 9,
-    "con": 18,
-    "int": 3,
-    "wis": 8,
-    "cha": 1,
+    "abilities": {
+      "str": 20,
+      "dex": 9,
+      "con": 18,
+      "int": 3,
+      "wis": 8,
+      "cha": 1
+    },
     "damage_immunities": "acid, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
@@ -5174,12 +5338,14 @@ var jsonCreatureData = {
     "maxHP": 78,
     "hit_dice": "12d10 + 12",
     "speed": "10 ft., fly 40 ft.",
-    "str": 17,
-    "dex": 15,
-    "con": 12,
-    "int": 13,
-    "wis": 12,
-    "cha": 14,
+    "abilities": {
+      "str": 17,
+      "dex": 15,
+      "con": 12,
+      "int": 13,
+      "wis": 12,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "stealth",
@@ -5234,12 +5400,14 @@ var jsonCreatureData = {
     "maxHP": 200,
     "hit_dice": "16d12 + 96",
     "speed": "40 ft.",
-    "str": 27,
-    "dex": 10,
-    "con": 22,
-    "int": 12,
-    "wis": 16,
-    "cha": 16,
+    "abilities": {
+      "str": 27,
+      "dex": 10,
+      "con": 22,
+      "int": 12,
+      "wis": 16,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "con",
@@ -5300,12 +5468,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "6d6 + 6",
     "speed": "20 ft., fly 40 ft.",
-    "str": 6,
-    "dex": 12,
-    "con": 12,
-    "int": 2,
-    "wis": 13,
-    "cha": 5,
+    "abilities": {
+      "str": 6,
+      "dex": 12,
+      "con": 12,
+      "int": 2,
+      "wis": 13,
+      "cha": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "",
     "challenge_rating": "1/2 (100 XP)",
@@ -5325,12 +5495,14 @@ var jsonCreatureData = {
     "maxHP": 4,
     "hit_dice": "1d8",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 10,
-    "con": 10,
-    "int": 10,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 10,
+      "dex": 10,
+      "con": 10,
+      "int": 10,
+      "wis": 10,
+      "cha": 10
+    },
     "senses": "passive Perception 10",
     "languages": "any one language (usually Common)",
     "challenge_rating": "0 (10 XP)",
@@ -5349,12 +5521,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "2d10 + 2",
     "speed": "30 ft., swim 30 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 12,
-    "int": 1,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 12,
+      "int": 1,
+      "wis": 10,
+      "cha": 3
+    },
     "senses": "blindsight 10 ft., passive Perception 10",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
@@ -5376,12 +5550,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d8 + 4",
     "speed": "30 ft., climb 30 ft., fly 60 ft.",
-    "str": 15,
-    "dex": 12,
-    "con": 13,
-    "int": 14,
-    "wis": 11,
-    "cha": 13,
+    "abilities": {
+      "str": 15,
+      "dex": 12,
+      "con": 13,
+      "int": 14,
+      "wis": 11,
+      "cha": 13
+    },
     "saves": [
       {
         "name": "dex",
@@ -5433,12 +5609,14 @@ var jsonCreatureData = {
     "maxHP": 97,
     "hit_dice": "13d8 + 39",
     "speed": "30 ft., fly 90 ft.",
-    "str": 16,
-    "dex": 20,
-    "con": 17,
-    "int": 18,
-    "wis": 20,
-    "cha": 18,
+    "abilities": {
+      "str": 16,
+      "dex": 20,
+      "con": 17,
+      "int": 18,
+      "wis": 20,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "con",
@@ -5495,12 +5673,14 @@ var jsonCreatureData = {
     "maxHP": 2,
     "hit_dice": "1d4",
     "speed": "20 ft., swim 20 ft.",
-    "str": 2,
-    "dex": 11,
-    "con": 10,
-    "int": 1,
-    "wis": 8,
-    "cha": 2,
+    "abilities": {
+      "str": 2,
+      "dex": 11,
+      "con": 10,
+      "int": 1,
+      "wis": 8,
+      "cha": 2
+    },
     "skills": [
       {
         "name": "stealth",
@@ -5530,12 +5710,14 @@ var jsonCreatureData = {
     "maxHP": 2,
     "hit_dice": "1d4",
     "speed": "20 ft., swim 20 ft.",
-    "str": 13,
-    "dex": 14,
-    "con": 11,
-    "int": 5,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 13,
+      "dex": 14,
+      "con": 11,
+      "int": 5,
+      "wis": 10,
+      "cha": 4
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, poisoned",
     "senses": "blindsight 30 ft., passive Perception 10",
@@ -5562,12 +5744,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10 + 3",
     "speed": "20 ft., swim 20 ft.",
-    "str": 15,
-    "dex": 10,
-    "con": 13,
-    "int": 2,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 15,
+      "dex": 10,
+      "con": 13,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "stealth",
@@ -5598,12 +5782,14 @@ var jsonCreatureData = {
     "maxHP": 9,
     "hit_dice": "2d8",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 12,
-    "con": 10,
-    "int": 10,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 11,
+      "dex": 12,
+      "con": 10,
+      "int": 10,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "deception",
@@ -5639,12 +5825,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "6d8 + 6",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 14,
-    "con": 12,
-    "int": 10,
-    "wis": 13,
-    "cha": 14,
+    "abilities": {
+      "str": 11,
+      "dex": 14,
+      "con": 12,
+      "int": 10,
+      "wis": 13,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "deception",
@@ -5691,12 +5879,14 @@ var jsonCreatureData = {
     "maxHP": 138,
     "hit_dice": "12d12 + 60",
     "speed": "30 ft.",
-    "str": 22,
-    "dex": 11,
-    "con": 20,
-    "int": 8,
-    "wis": 6,
-    "cha": 10,
+    "abilities": {
+      "str": 22,
+      "dex": 11,
+      "con": 20,
+      "int": 8,
+      "wis": 6,
+      "cha": 10
+    },
     "senses": "passive Perception 8",
     "languages": "Giant",
     "challenge_rating": "6 (2300 XP)",
@@ -5729,12 +5919,14 @@ var jsonCreatureData = {
     "maxHP": 187,
     "hit_dice": "15d10 + 105",
     "speed": "30 ft., burrow 30 ft., fly 30 ft.",
-    "str": 23,
-    "dex": 12,
-    "con": 24,
-    "int": 12,
-    "wis": 13,
-    "cha": 14,
+    "abilities": {
+      "str": 23,
+      "dex": 12,
+      "con": 24,
+      "int": 12,
+      "wis": 13,
+      "cha": 14
+    },
     "saves": [
       {
         "name": "int",
@@ -5794,12 +5986,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d6 + 5",
     "speed": "10 ft., fly 30 ft.",
-    "str": 16,
-    "dex": 12,
-    "con": 13,
-    "int": 2,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 16,
+      "dex": 12,
+      "con": 13,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "stealth",
@@ -5837,12 +6031,14 @@ var jsonCreatureData = {
     "maxHP": 39,
     "hit_dice": "6d8 + 12",
     "speed": "40 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 14,
-    "int": 3,
-    "wis": 13,
-    "cha": 6,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 14,
+      "int": 3,
+      "wis": 13,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -5880,12 +6076,14 @@ var jsonCreatureData = {
     "maxHP": 180,
     "hit_dice": "19d8 + 95",
     "speed": "30 ft.",
-    "str": 20,
-    "dex": 11,
-    "con": 20,
-    "int": 12,
-    "wis": 16,
-    "cha": 18,
+    "abilities": {
+      "str": 20,
+      "dex": 11,
+      "con": 20,
+      "int": 12,
+      "wis": 16,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "dex",
@@ -5949,12 +6147,14 @@ var jsonCreatureData = {
     "maxHP": 170,
     "hit_dice": "20d8 + 80",
     "speed": "30 ft.",
-    "str": 20,
-    "dex": 15,
-    "con": 19,
-    "int": 15,
-    "wis": 10,
-    "cha": 16,
+    "abilities": {
+      "str": 20,
+      "dex": 15,
+      "con": 19,
+      "int": 15,
+      "wis": 10,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "arcana",
@@ -6022,12 +6222,14 @@ var jsonCreatureData = {
     "maxHP": "187",
     "hit_dice": "25d10 + 50",
     "speed": "0 ft., fly 20 ft. (hover)",
-    "str": 10,
-    "dex": 14,
-    "con": 14,
-    "int": 19,
-    "wis": 15,
-    "cha": 19,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 14,
+      "int": 19,
+      "wis": 15,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "str",
@@ -6093,12 +6295,14 @@ var jsonCreatureData = {
     "maxHP": 16,
     "hit_dice": "3d6 + 6",
     "speed": "20 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 14,
-    "int": 12,
-    "wis": 10,
-    "cha": 9,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 14,
+      "int": 12,
+      "wis": 10,
+      "cha": 9
+    },
     "skills": [
       {
         "name": "investigation",
@@ -6149,12 +6353,14 @@ var jsonCreatureData = {
     "maxHP": 4,
     "hit_dice": "1d8",
     "speed": "50 ft.",
-    "str": 11,
-    "dex": 16,
-    "con": 11,
-    "int": 2,
-    "wis": 14,
-    "cha": 5,
+    "abilities": {
+      "str": 11,
+      "dex": 16,
+      "con": 11,
+      "int": 2,
+      "wis": 14,
+      "cha": 5
+    },
     "senses": "passive Perception 12",
     "challenge_rating": "0 (10 XP)",
     "actions": [
@@ -6172,12 +6378,14 @@ var jsonCreatureData = {
     "maxHP": 80,
     "hit_dice": "20d4",
     "speed": "0 ft., fly 30 ft. (hover)",
-    "str": 1,
-    "dex": 20,
-    "con": 10,
-    "int": 20,
-    "wis": 17,
-    "cha": 20,
+    "abilities": {
+      "str": 1,
+      "dex": 20,
+      "con": 10,
+      "int": 20,
+      "wis": 17,
+      "cha": 20
+    },
     "saves": [
       {
         "name": "con",
@@ -6252,12 +6460,14 @@ var jsonCreatureData = {
     "maxHP": 80,
     "hit_dice": "20d4",
     "speed": "0 ft., fly 30 ft. (hover)",
-    "str": 1,
-    "dex": 20,
-    "con": 10,
-    "int": 20,
-    "wis": 17,
-    "cha": 20,
+    "abilities": {
+      "str": 1,
+      "dex": 20,
+      "con": 10,
+      "int": 20,
+      "wis": 17,
+      "cha": 20
+    },
     "saves": [
       {
         "name": "con",
@@ -6336,12 +6546,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "16d8 + 64",
     "speed": "30 ft., fly 90 ft.",
-    "str": 18,
-    "dex": 18,
-    "con": 18,
-    "int": 17,
-    "wis": 20,
-    "cha": 20,
+    "abilities": {
+      "str": 18,
+      "dex": 18,
+      "con": 18,
+      "int": 17,
+      "wis": 20,
+      "cha": 20
+    },
     "saves": [
       {
         "name": "wis",
@@ -6408,12 +6620,14 @@ var jsonCreatureData = {
     "maxHP": 37,
     "hit_dice": "5d10 + 10",
     "speed": "50 ft.",
-    "str": 17,
-    "dex": 15,
-    "con": 15,
-    "int": 3,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 17,
+      "dex": 15,
+      "con": 15,
+      "int": 3,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -6451,12 +6665,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "10d10 + 30",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 6,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 6,
+      "wis": 12,
+      "cha": 8
+    },
     "senses": "darkvision 60 ft.passive Perception 11",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
@@ -6488,12 +6704,14 @@ var jsonCreatureData = {
     "maxHP": 161,
     "hit_dice": "14d10 + 84",
     "speed": "30 ft., fly 90 ft.",
-    "str": 21,
-    "dex": 15,
-    "con": 22,
-    "int": 15,
-    "wis": 16,
-    "cha": 20,
+    "abilities": {
+      "str": 21,
+      "dex": 15,
+      "con": 22,
+      "int": 15,
+      "wis": 16,
+      "cha": 20
+    },
     "saves": [
       {
         "name": "dex",
@@ -6550,12 +6768,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "8d8 + 16",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 18,
-    "con": 14,
-    "int": 11,
-    "wis": 12,
-    "cha": 14,
+    "abilities": {
+      "str": 11,
+      "dex": 18,
+      "con": 14,
+      "int": 11,
+      "wis": 12,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "deception",
@@ -6607,12 +6827,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10 + 3",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 10,
-    "con": 12,
-    "int": 2,
-    "wis": 11,
-    "cha": 7,
+    "abilities": {
+      "str": 18,
+      "dex": 10,
+      "con": 12,
+      "int": 2,
+      "wis": 11,
+      "cha": 7
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
@@ -6630,12 +6852,14 @@ var jsonCreatureData = {
     "maxHP": 341,
     "hit_dice": "22d20 + 110",
     "speed": "20 ft., swim 40 ft.",
-    "str": 25,
-    "dex": 10,
-    "con": 20,
-    "int": 10,
-    "wis": 12,
-    "cha": 12,
+    "abilities": {
+      "str": 25,
+      "dex": 10,
+      "con": 20,
+      "int": 10,
+      "wis": 12,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "dex",
@@ -6692,12 +6916,14 @@ var jsonCreatureData = {
     "maxHP": 18,
     "hit_dice": "4d6 + 4",
     "speed": "20 ft.",
-    "str": 11,
-    "dex": 11,
-    "con": 12,
-    "int": 5,
-    "wis": 8,
-    "cha": 3,
+    "abilities": {
+      "str": 11,
+      "dex": 11,
+      "con": 12,
+      "int": 5,
+      "wis": 8,
+      "cha": 3
+    },
     "damage_resistances": "cold, fire, lightning",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -6731,12 +6957,14 @@ var jsonCreatureData = {
     "maxHP": 123,
     "hit_dice": "13d10 + 52",
     "speed": "30 ft., climb 30 ft.",
-    "str": 16,
-    "dex": 16,
-    "con": 18,
-    "int": 13,
-    "wis": 14,
-    "cha": 12,
+    "abilities": {
+      "str": 16,
+      "dex": 16,
+      "con": 18,
+      "int": 13,
+      "wis": 14,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "perception",
@@ -6799,12 +7027,14 @@ var jsonCreatureData = {
     "maxHP": 123,
     "hit_dice": "13d10 + 52",
     "speed": "30 ft., climb 30 ft.",
-    "str": 16,
-    "dex": 16,
-    "con": 18,
-    "int": 13,
-    "wis": 16,
-    "cha": 12,
+    "abilities": {
+      "str": 16,
+      "dex": 16,
+      "con": 18,
+      "int": 13,
+      "wis": 16,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "perception",
@@ -6872,12 +7102,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 14,
-    "con": 10,
-    "int": 11,
-    "wis": 11,
-    "cha": 12,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 10,
+      "int": 11,
+      "wis": 11,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "perception",
@@ -6929,12 +7161,14 @@ var jsonCreatureData = {
     "maxHP": 71,
     "hit_dice": "11d8 + 22",
     "speed": "30 ft.",
-    "str": 13,
-    "dex": 18,
-    "con": 14,
-    "int": 11,
-    "wis": 13,
-    "cha": 12,
+    "abilities": {
+      "str": 13,
+      "dex": 18,
+      "con": 14,
+      "int": 11,
+      "wis": 13,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "dex",
@@ -7010,12 +7244,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "10d8",
     "speed": "30 ft.",
-    "str": 9,
-    "dex": 14,
-    "con": 10,
-    "int": 17,
-    "wis": 13,
-    "cha": 12,
+    "abilities": {
+      "str": 9,
+      "dex": 14,
+      "con": 10,
+      "int": 17,
+      "wis": 13,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "arcana",
@@ -7075,12 +7311,14 @@ var jsonCreatureData = {
     "maxHP": 71,
     "hit_dice": "13d8 + 13",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 14,
-    "con": 12,
-    "int": 13,
-    "wis": 17,
-    "cha": 18,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 12,
+      "int": 13,
+      "wis": 17,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "con",
@@ -7162,12 +7400,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "5d8 + 5",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 12,
-    "con": 13,
-    "int": 12,
-    "wis": 15,
-    "cha": 11,
+    "abilities": {
+      "str": 10,
+      "dex": 12,
+      "con": 13,
+      "int": 12,
+      "wis": 15,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "medicine",
@@ -7206,12 +7446,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 12,
-    "con": 11,
-    "int": 14,
-    "wis": 15,
-    "cha": 18,
+    "abilities": {
+      "str": 10,
+      "dex": 12,
+      "con": 11,
+      "int": 14,
+      "wis": 15,
+      "cha": 18
+    },
     "skills": [
       {
         "name": "perception",
@@ -7263,12 +7505,14 @@ var jsonCreatureData = {
     "maxHP": 26,
     "hit_dice": "4d8 + 8",
     "speed": "25 ft.",
-    "str": 14,
-    "dex": 11,
-    "con": 14,
-    "int": 11,
-    "wis": 10,
-    "cha": 9,
+    "abilities": {
+      "str": 14,
+      "dex": 11,
+      "con": 14,
+      "int": 11,
+      "wis": 10,
+      "cha": 9
+    },
     "damage_resistances": "poison",
     "senses": "darkvision 120 ft., passive Perception 10",
     "languages": "Dwarvish, Undercommon",
@@ -7310,12 +7554,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 13,
-    "con": 12,
-    "int": 6,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 11,
+      "dex": 13,
+      "con": 12,
+      "int": 6,
+      "wis": 10,
+      "cha": 7
+    },
     "senses": "truesight 120 ft., passive Perception 10",
     "languages": "Modron",
     "challenge_rating": "1/4 (50 XP)",
@@ -7353,12 +7599,14 @@ var jsonCreatureData = {
     "maxHP": 17,
     "hit_dice": "5d6",
     "speed": "30 ft., fly 30 ft.",
-    "str": 5,
-    "dex": 14,
-    "con": 10,
-    "int": 9,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 5,
+      "dex": 14,
+      "con": 10,
+      "int": 9,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -7408,12 +7656,14 @@ var jsonCreatureData = {
     "maxHP": 3,
     "hit_dice": "1d6",
     "speed": "10 ft., fly 60 ft.",
-    "str": 6,
-    "dex": 15,
-    "con": 10,
-    "int": 2,
-    "wis": 14,
-    "cha": 7,
+    "abilities": {
+      "str": 6,
+      "dex": 15,
+      "con": 10,
+      "int": 2,
+      "wis": 14,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -7443,12 +7693,14 @@ var jsonCreatureData = {
     "maxHP": 126,
     "hit_dice": "12d10 + 60",
     "speed": "30 ft., burrow 30 ft.",
-    "str": 20,
-    "dex": 8,
-    "con": 20,
-    "int": 5,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 20,
+      "dex": 8,
+      "con": 20,
+      "int": 5,
+      "wis": 10,
+      "cha": 5
+    },
     "damage_vulnerabilities": "thunder",
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
@@ -7485,12 +7737,14 @@ var jsonCreatureData = {
     "maxHP": 200,
     "hit_dice": "16d10 + 112",
     "speed": "40 ft., fly 60 ft.",
-    "str": 22,
-    "dex": 12,
-    "con": 24,
-    "int": 16,
-    "wis": 15,
-    "cha": 16,
+    "abilities": {
+      "str": 22,
+      "dex": 12,
+      "con": 24,
+      "int": 16,
+      "wis": 15,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "int",
@@ -7546,12 +7800,14 @@ var jsonCreatureData = {
     "maxHP": 76,
     "hit_dice": "8d12 + 24",
     "speed": "40 ft.",
-    "str": 22,
-    "dex": 9,
-    "con": 17,
-    "int": 3,
-    "wis": 11,
-    "cha": 6,
+    "abilities": {
+      "str": 22,
+      "dex": 9,
+      "con": 17,
+      "int": 3,
+      "wis": 11,
+      "cha": 6
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
@@ -7579,12 +7835,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "2d10 + 2",
     "speed": "50 ft.",
-    "str": 16,
-    "dex": 10,
-    "con": 12,
-    "int": 2,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 16,
+      "dex": 10,
+      "con": 12,
+      "int": 2,
+      "wis": 10,
+      "cha": 6
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -7613,12 +7871,14 @@ var jsonCreatureData = {
     "maxHP": 313,
     "hit_dice": "19d12 + 190",
     "speed": "50 ft., fly 50 ft., swim 50 ft.",
-    "str": 30,
-    "dex": 21,
-    "con": 30,
-    "int": 21,
-    "wis": 22,
-    "cha": 27,
+    "abilities": {
+      "str": 30,
+      "dex": 21,
+      "con": 30,
+      "int": 21,
+      "wis": 22,
+      "cha": 27
+    },
     "saves": [
       {
         "name": "str",
@@ -7703,12 +7963,14 @@ var jsonCreatureData = {
     "maxHP": 153,
     "hit_dice": "18d8 + 72",
     "speed": "30 ft., fly 60 ft.",
-    "str": 18,
-    "dex": 16,
-    "con": 18,
-    "int": 14,
-    "wis": 14,
-    "cha": 18,
+    "abilities": {
+      "str": 18,
+      "dex": 16,
+      "con": 18,
+      "int": 14,
+      "wis": 14,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "dex",
@@ -7780,12 +8042,14 @@ var jsonCreatureData = {
     "maxHP": 44,
     "hit_dice": "8d8 + 8",
     "speed": "30 ft., climb 30 ft.",
-    "str": 14,
-    "dex": 15,
-    "con": 13,
-    "int": 7,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 14,
+      "dex": 15,
+      "con": 13,
+      "int": 7,
+      "wis": 12,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -7847,12 +8111,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "10d10 + 30",
     "speed": "40 ft.",
-    "str": 21,
-    "dex": 8,
-    "con": 17,
-    "int": 6,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 21,
+      "dex": 8,
+      "con": 17,
+      "int": 6,
+      "wis": 10,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -7895,12 +8161,14 @@ var jsonCreatureData = {
     "maxHP": 14,
     "hit_dice": "4d4 + 4",
     "speed": "10 ft., fly 60 ft.",
-    "str": 3,
-    "dex": 20,
-    "con": 13,
-    "int": 14,
-    "wis": 12,
-    "cha": 16,
+    "abilities": {
+      "str": 3,
+      "dex": 20,
+      "con": 13,
+      "int": 14,
+      "wis": 12,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "arcana",
@@ -7955,12 +8223,14 @@ var jsonCreatureData = {
     "maxHP": 102,
     "hit_dice": "12d10 + 36",
     "speed": "50 ft.",
-    "str": 10,
-    "dex": 17,
-    "con": 16,
-    "int": 6,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 10,
+      "dex": 17,
+      "con": 16,
+      "int": 6,
+      "wis": 10,
+      "cha": 7
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "fire, poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
@@ -8000,12 +8270,14 @@ var jsonCreatureData = {
     "maxHP": 162,
     "hit_dice": "13d12 + 78",
     "speed": "30 ft.",
-    "str": 25,
-    "dex": 9,
-    "con": 23,
-    "int": 10,
-    "wis": 14,
-    "cha": 13,
+    "abilities": {
+      "str": 25,
+      "dex": 9,
+      "con": 23,
+      "int": 10,
+      "wis": 14,
+      "cha": 13
+    },
     "saves": [
       {
         "name": "dex",
@@ -8057,12 +8329,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "30 ft.",
-    "str": 12,
-    "dex": 14,
-    "con": 11,
-    "int": 7,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 12,
+      "dex": 14,
+      "con": 11,
+      "int": 7,
+      "wis": 10,
+      "cha": 8
+    },
     "damage_vulnerabilities": "cold",
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "fire",
@@ -8098,12 +8372,14 @@ var jsonCreatureData = {
     "maxHP": 40,
     "hit_dice": "9d4 + 18",
     "speed": "0 ft., fly 40 ft.",
-    "str": 1,
-    "dex": 17,
-    "con": 14,
-    "int": 16,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 1,
+      "dex": 17,
+      "con": 14,
+      "int": 16,
+      "wis": 10,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "arcana",
@@ -8157,12 +8433,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d8 + 44",
     "speed": "30 ft.",
-    "str": 19,
-    "dex": 9,
-    "con": 18,
-    "int": 6,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 19,
+      "dex": 9,
+      "con": 18,
+      "int": 6,
+      "wis": 10,
+      "cha": 5
+    },
     "damage_immunities": "lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
@@ -8213,12 +8491,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "2d6",
     "speed": "5 ft., fly 30 ft.",
-    "str": 6,
-    "dex": 15,
-    "con": 10,
-    "int": 14,
-    "wis": 14,
-    "cha": 11,
+    "abilities": {
+      "str": 6,
+      "dex": 15,
+      "con": 10,
+      "int": 14,
+      "wis": 14,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "arcana",
@@ -8270,12 +8550,14 @@ var jsonCreatureData = {
     "maxHP": 5,
     "hit_dice": "2d4",
     "speed": "30 ft., fly 60 ft., swim 30 ft.",
-    "str": 4,
-    "dex": 18,
-    "con": 11,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 4,
+      "dex": 18,
+      "con": 11,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "senses": "blindsight 10 ft., passive Perception 11",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
@@ -8299,12 +8581,14 @@ var jsonCreatureData = {
     "maxHP": 17,
     "hit_dice": "5d6",
     "speed": "0 ft., fly 50 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 11,
-    "int": 1,
-    "wis": 5,
-    "cha": 1,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 11,
+      "int": 1,
+      "wis": 5,
+      "cha": 1
+    },
     "save": [
       {
         "name": "dex",
@@ -8340,12 +8624,14 @@ var jsonCreatureData = {
     "maxHP": 149,
     "hit_dice": "13d12 + 65",
     "speed": "30 ft.",
-    "str": 23,
-    "dex": 10,
-    "con": 20,
-    "int": 9,
-    "wis": 14,
-    "cha": 6,
+    "abilities": {
+      "str": 23,
+      "dex": 10,
+      "con": 20,
+      "int": 9,
+      "wis": 14,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -8386,12 +8672,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "20 ft., swim 20 ft.",
-    "str": 1,
-    "dex": 13,
-    "con": 8,
-    "int": 1,
-    "wis": 8,
-    "cha": 3,
+    "abilities": {
+      "str": 1,
+      "dex": 13,
+      "con": 8,
+      "int": 1,
+      "wis": 8,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "perception",
@@ -8423,12 +8711,14 @@ var jsonCreatureData = {
     "maxHP": 138,
     "hit_dice": "12d12 + 60",
     "speed": "40 ft.",
-    "str": 23,
-    "dex": 9,
-    "con": 21,
-    "int": 9,
-    "wis": 10,
-    "cha": 12,
+    "abilities": {
+      "str": 23,
+      "dex": 9,
+      "con": 21,
+      "int": 9,
+      "wis": 10,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "con",
@@ -8480,12 +8770,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "9d8 + 45",
     "speed": "15 ft. (30 ft. rolling, 60 ft. rolling downhill)",
-    "str": 20,
-    "dex": 14,
-    "con": 20,
-    "int": 11,
-    "wis": 12,
-    "cha": 11,
+    "abilities": {
+      "str": 20,
+      "dex": 14,
+      "con": 20,
+      "int": 11,
+      "wis": 12,
+      "cha": 11
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, paralyzed, poisoned, petrified",
@@ -8521,12 +8813,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "7d8 + 21",
     "speed": "30 ft., fly 60 ft.",
-    "str": 15,
-    "dex": 11,
-    "con": 16,
-    "int": 6,
-    "wis": 11,
-    "cha": 7,
+    "abilities": {
+      "str": 15,
+      "dex": 11,
+      "con": 16,
+      "int": 6,
+      "wis": 11,
+      "cha": 7
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, petrified, poisoned",
@@ -8562,12 +8856,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d10 - 4",
     "speed": "0 ft., fly 10 ft. (hover)",
-    "str": 5,
-    "dex": 1,
-    "con": 3,
-    "int": 1,
-    "wis": 1,
-    "cha": 1,
+    "abilities": {
+      "str": 5,
+      "dex": 1,
+      "con": 3,
+      "int": 1,
+      "wis": 1,
+      "cha": 1
+    },
     "damage_immunities": "poison",
     "condition_immunities": "blinded, deafened, frightened, paralyzed, poisoned, prone",
     "senses": "blindsight 30 ft. (blind beyond this radius), passive Perception 5",
@@ -8597,12 +8893,14 @@ var jsonCreatureData = {
     "maxHP": 84,
     "hit_dice": "8d10 + 40",
     "speed": "15 ft.",
-    "str": 14,
-    "dex": 3,
-    "con": 20,
-    "int": 1,
-    "wis": 6,
-    "cha": 1,
+    "abilities": {
+      "str": 14,
+      "dex": 3,
+      "con": 20,
+      "int": 1,
+      "wis": 6,
+      "cha": 1
+    },
     "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 8",
     "challenge_rating": "2 (450 XP)",
@@ -8635,12 +8933,14 @@ var jsonCreatureData = {
     "maxHP": 36,
     "hit_dice": "8d8",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 17,
-    "con": 10,
-    "int": 11,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 16,
+      "dex": 17,
+      "con": 10,
+      "int": 11,
+      "wis": 10,
+      "cha": 8
+    },
     "damage_immunities": "necrotic",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
@@ -8675,12 +8975,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "10d8",
     "speed": "0 ft., fly 40 ft.",
-    "str": 7,
-    "dex": 13,
-    "con": 10,
-    "int": 10,
-    "wis": 12,
-    "cha": 17,
+    "abilities": {
+      "str": 7,
+      "dex": 13,
+      "con": 10,
+      "int": 10,
+      "wis": 12,
+      "cha": 17
+    },
     "damage_resistances": "acid, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "cold, necrotic, poison",
     "condition_immunities": "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
@@ -8724,12 +9026,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "30 ft.",
-    "str": 13,
-    "dex": 15,
-    "con": 10,
-    "int": 7,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 13,
+      "dex": 15,
+      "con": 10,
+      "int": 7,
+      "wis": 10,
+      "cha": 6
+    },
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common",
@@ -8753,12 +9057,14 @@ var jsonCreatureData = {
     "maxHP": 157,
     "hit_dice": "15d12 + 60",
     "speed": "40 ft., climb 40 ft.",
-    "str": 23,
-    "dex": 14,
-    "con": 18,
-    "int": 7,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 23,
+      "dex": 14,
+      "con": 18,
+      "int": 7,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "athletics",
@@ -8794,12 +9100,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "2d8 + 4",
     "speed": "30 ft., burrow 10 ft.",
-    "str": 13,
-    "dex": 10,
-    "con": 15,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 13,
+      "dex": 10,
+      "con": 15,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "senses": "darkvision 30 ft., passive Perception 11",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -8831,12 +9139,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d10",
     "speed": "10 ft., fly 60 ft.",
-    "str": 15,
-    "dex": 16,
-    "con": 11,
-    "int": 2,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 15,
+      "dex": 16,
+      "con": 11,
+      "int": 2,
+      "wis": 12,
+      "cha": 6
+    },
     "senses": "blindsight 60 ft., passive Perception 11",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -8864,12 +9174,14 @@ var jsonCreatureData = {
     "maxHP": 42,
     "hit_dice": "5d10 + 15",
     "speed": "40 ft.",
-    "str": 17,
-    "dex": 10,
-    "con": 16,
-    "int": 2,
-    "wis": 7,
-    "cha": 5,
+    "abilities": {
+      "str": 17,
+      "dex": 10,
+      "con": 16,
+      "int": 2,
+      "wis": 7,
+      "cha": 5
+    },
     "senses": "passive Perception 8",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -8897,12 +9209,14 @@ var jsonCreatureData = {
     "maxHP": 4,
     "hit_dice": "1d6 + 1",
     "speed": "30 ft., climb 30 ft.",
-    "str": 5,
-    "dex": 14,
-    "con": 12,
-    "int": 1,
-    "wis": 7,
-    "cha": 3,
+    "abilities": {
+      "str": 5,
+      "dex": 14,
+      "con": 12,
+      "int": 1,
+      "wis": 7,
+      "cha": 3
+    },
     "senses": "blindsight 30 ft., passive Perception 8",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
@@ -8920,12 +9234,14 @@ var jsonCreatureData = {
     "maxHP": 60,
     "hit_dice": "8d12 + 8",
     "speed": "30 ft., swim 30 ft.",
-    "str": 19,
-    "dex": 14,
-    "con": 12,
-    "int": 1,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 19,
+      "dex": 14,
+      "con": 12,
+      "int": 1,
+      "wis": 10,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "perception",
@@ -8953,12 +9269,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "30 ft., swim 30 ft.",
-    "str": 13,
-    "dex": 15,
-    "con": 11,
-    "int": 1,
-    "wis": 9,
-    "cha": 3,
+    "abilities": {
+      "str": 13,
+      "dex": 15,
+      "con": 11,
+      "int": 1,
+      "wis": 9,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "stealth",
@@ -8988,12 +9306,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "9d12 + 27",
     "speed": "30 ft., swim 50 ft.",
-    "str": 21,
-    "dex": 9,
-    "con": 17,
-    "int": 2,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 21,
+      "dex": 9,
+      "con": 17,
+      "int": 2,
+      "wis": 10,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "stealth",
@@ -9031,12 +9351,14 @@ var jsonCreatureData = {
     "maxHP": 26,
     "hit_dice": "4d10 + 4",
     "speed": "10 ft., fly 80 ft.",
-    "str": 16,
-    "dex": 17,
-    "con": 13,
-    "int": 8,
-    "wis": 14,
-    "cha": 10,
+    "abilities": {
+      "str": 16,
+      "dex": 17,
+      "con": 13,
+      "int": 8,
+      "wis": 14,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -9075,12 +9397,14 @@ var jsonCreatureData = {
     "maxHP": 42,
     "hit_dice": "5d12 + 10",
     "speed": "60 ft.",
-    "str": 19,
-    "dex": 16,
-    "con": 14,
-    "int": 7,
-    "wis": 14,
-    "cha": 10,
+    "abilities": {
+      "str": 19,
+      "dex": 16,
+      "con": 14,
+      "int": 7,
+      "wis": 14,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -9115,12 +9439,14 @@ var jsonCreatureData = {
     "maxHP": 4,
     "hit_dice": "1d6 + 1",
     "speed": "30 ft.",
-    "str": 8,
-    "dex": 10,
-    "con": 12,
-    "int": 1,
-    "wis": 7,
-    "cha": 3,
+    "abilities": {
+      "str": 8,
+      "dex": 10,
+      "con": 12,
+      "int": 1,
+      "wis": 7,
+      "cha": 3
+    },
     "senses": "blindsight 30 ft., passive Perception 8",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -9144,12 +9470,14 @@ var jsonCreatureData = {
     "maxHP": 18,
     "hit_dice": "4d8",
     "speed": "30 ft., swim 30 ft.",
-    "str": 12,
-    "dex": 13,
-    "con": 11,
-    "int": 2,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 12,
+      "dex": 13,
+      "con": 11,
+      "int": 2,
+      "wis": 10,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "perception",
@@ -9191,12 +9519,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10 + 3",
     "speed": "40 ft.",
-    "str": 17,
-    "dex": 11,
-    "con": 12,
-    "int": 3,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 17,
+      "dex": 11,
+      "con": 12,
+      "int": 3,
+      "wis": 12,
+      "cha": 6
+    },
     "senses": "passive Perception 11",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -9224,12 +9554,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d10 + 12",
     "speed": "50 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 14,
-    "int": 2,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 14,
+      "int": 2,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -9259,12 +9591,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10",
     "speed": "30 ft., climb 30 ft.",
-    "str": 15,
-    "dex": 12,
-    "con": 13,
-    "int": 2,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 15,
+      "dex": 12,
+      "con": 13,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
     "senses": "darkvision 30 ft., passive Perception 10",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -9292,12 +9626,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "8d10 + 8",
     "speed": "10 ft., swim 60 ft.",
-    "str": 17,
-    "dex": 13,
-    "con": 13,
-    "int": 4,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 17,
+      "dex": 13,
+      "con": 13,
+      "int": 4,
+      "wis": 10,
+      "cha": 4
+    },
     "skills": [
       {
         "name": "perception",
@@ -9343,12 +9679,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10 + 3",
     "speed": "5 ft., fly 60 ft.",
-    "str": 13,
-    "dex": 15,
-    "con": 12,
-    "int": 8,
-    "wis": 13,
-    "cha": 10,
+    "abilities": {
+      "str": 13,
+      "dex": 15,
+      "con": 12,
+      "int": 8,
+      "wis": 13,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -9387,12 +9725,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft., swim 30 ft.",
-    "str": 10,
-    "dex": 18,
-    "con": 13,
-    "int": 2,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 10,
+      "dex": 18,
+      "con": 13,
+      "int": 2,
+      "wis": 10,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "perception",
@@ -9416,12 +9756,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "2d6",
     "speed": "30 ft.",
-    "str": 7,
-    "dex": 15,
-    "con": 11,
-    "int": 2,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 7,
+      "dex": 15,
+      "con": 11,
+      "int": 2,
+      "wis": 10,
+      "cha": 4
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
@@ -9449,12 +9791,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "2d6",
     "speed": "30 ft.",
-    "str": 7,
-    "dex": 15,
-    "con": 11,
-    "int": 2,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 7,
+      "dex": 15,
+      "con": 11,
+      "int": 2,
+      "wis": 10,
+      "cha": 4
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
@@ -9473,12 +9817,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "7d10 + 14",
     "speed": "40 ft.",
-    "str": 15,
-    "dex": 13,
-    "con": 15,
-    "int": 1,
-    "wis": 9,
-    "cha": 3,
+    "abilities": {
+      "str": 15,
+      "dex": 13,
+      "con": 15,
+      "int": 1,
+      "wis": 9,
+      "cha": 3
+    },
     "senses": "blindsight 60 ft., passive Perception 9",
     "challenge_rating": "3 (700 XP)",
     "actions": [
@@ -9504,12 +9850,14 @@ var jsonCreatureData = {
     "maxHP": 16,
     "hit_dice": "3d10",
     "speed": "0 ft., swim 40 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 11,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 11,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "senses": "passive Perception 11",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -9537,12 +9885,14 @@ var jsonCreatureData = {
     "maxHP": 126,
     "hit_dice": "11d12 + 55",
     "speed": "swim 50 ft.",
-    "str": 23,
-    "dex": 11,
-    "con": 21,
-    "int": 1,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 23,
+      "dex": 11,
+      "con": 21,
+      "int": 1,
+      "wis": 10,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -9576,12 +9926,14 @@ var jsonCreatureData = {
     "maxHP": 26,
     "hit_dice": "4d10 + 4",
     "speed": "30 ft., climb 30 ft.",
-    "str": 14,
-    "dex": 16,
-    "con": 12,
-    "int": 2,
-    "wis": 11,
-    "cha": 4,
+    "abilities": {
+      "str": 14,
+      "dex": 16,
+      "con": 12,
+      "int": 2,
+      "wis": 11,
+      "cha": 4
+    },
     "skills": [
       {
         "name": "stealth",
@@ -9623,12 +9975,14 @@ var jsonCreatureData = {
     "maxHP": 39,
     "hit_dice": "6d10 + 6",
     "speed": "20 ft., swim 40 ft.",
-    "str": 15,
-    "dex": 13,
-    "con": 13,
-    "int": 2,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 15,
+      "dex": 13,
+      "con": 13,
+      "int": 2,
+      "wis": 10,
+      "cha": 3
+    },
     "senses": "darkvision 30 ft., passive Perception 10",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -9660,12 +10014,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "3d10 + 6",
     "speed": "10 ft., fly 60 ft.",
-    "str": 15,
-    "dex": 10,
-    "con": 15,
-    "int": 6,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 15,
+      "dex": 10,
+      "con": 15,
+      "int": 6,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -9708,12 +10064,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "10 ft., fly 50 ft., swim 50 ft.",
-    "str": 10,
-    "dex": 14,
-    "con": 10,
-    "int": 1,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 10,
+      "int": 1,
+      "wis": 10,
+      "cha": 3
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/2 (100 XP)",
     "actions": [
@@ -9731,12 +10089,14 @@ var jsonCreatureData = {
     "maxHP": 9,
     "hit_dice": "2d8",
     "speed": "40 ft.",
-    "str": 11,
-    "dex": 16,
-    "con": 10,
-    "int": 4,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 11,
+      "dex": 16,
+      "con": 10,
+      "int": 4,
+      "wis": 12,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -9770,12 +10130,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "40 ft., climb 40 ft.",
-    "str": 12,
-    "dex": 16,
-    "con": 13,
-    "int": 3,
-    "wis": 12,
-    "cha": 4,
+    "abilities": {
+      "str": 12,
+      "dex": 16,
+      "con": 13,
+      "int": 3,
+      "wis": 12,
+      "cha": 4
+    },
     "skills": [
       {
         "name": "perception",
@@ -9817,12 +10179,14 @@ var jsonCreatureData = {
     "maxHP": 67,
     "hit_dice": "9d8 + 27",
     "speed": "10 ft., swim 10 ft.",
-    "str": 10,
-    "dex": 8,
-    "con": 16,
-    "int": 3,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 10,
+      "dex": 8,
+      "con": 16,
+      "int": 3,
+      "wis": 10,
+      "cha": 6
+    },
     "condition_immunities": "prone",
     "senses": "darkvision 60 ft., passive Perception 10",
     "challenge_rating": "2 (450 XP)",
@@ -9860,12 +10224,14 @@ var jsonCreatureData = {
     "maxHP": 91,
     "hit_dice": "14d8 + 28",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 15,
-    "int": 14,
-    "wis": 14,
-    "cha": 15,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 15,
+      "int": 14,
+      "wis": 14,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "con",
@@ -9909,12 +10275,14 @@ var jsonCreatureData = {
     "maxHP": 49,
     "hit_dice": "9d8 + 9",
     "speed": "30 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 12,
-    "int": 13,
-    "wis": 13,
-    "cha": 10,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 12,
+      "int": 13,
+      "wis": 13,
+      "cha": 10
+    },
     "saves": [
       {
         "name": "con",
@@ -9958,12 +10326,14 @@ var jsonCreatureData = {
     "maxHP": 38,
     "hit_dice": "7d8 + 7",
     "speed": "30 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 12,
-    "int": 13,
-    "wis": 14,
-    "cha": 10,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 12,
+      "int": 13,
+      "wis": 14,
+      "cha": 10
+    },
     "saves": [
       {
         "name": "str",
@@ -10025,12 +10395,14 @@ var jsonCreatureData = {
     "maxHP": 84,
     "hit_dice": "13d8 + 26",
     "speed": "30 ft.",
-    "str": 13,
-    "dex": 18,
-    "con": 15,
-    "int": 16,
-    "wis": 17,
-    "cha": 12,
+    "abilities": {
+      "str": 13,
+      "dex": 18,
+      "con": 15,
+      "int": 16,
+      "wis": 17,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "str",
@@ -10096,12 +10468,14 @@ var jsonCreatureData = {
     "maxHP": 157,
     "hit_dice": "15d10 + 75",
     "speed": "40 ft.",
-    "str": 20,
-    "dex": 15,
-    "con": 21,
-    "int": 19,
-    "wis": 17,
-    "cha": 16,
+    "abilities": {
+      "str": 20,
+      "dex": 15,
+      "con": 21,
+      "int": 19,
+      "wis": 17,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "str",
@@ -10164,12 +10538,14 @@ var jsonCreatureData = {
     "maxHP": 112,
     "hit_dice": "15d8 + 45",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 10,
-    "wis": 12,
-    "cha": 15,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 10,
+      "wis": 12,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "str",
@@ -10237,12 +10613,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "30 ft.",
-    "str": 14,
-    "dex": 12,
-    "con": 11,
-    "int": 6,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 14,
+      "dex": 12,
+      "con": 11,
+      "int": 6,
+      "wis": 10,
+      "cha": 7
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Gnoll",
     "challenge_rating": "1/2 (100 XP)",
@@ -10276,12 +10654,14 @@ var jsonCreatureData = {
     "maxHP": 65,
     "hit_dice": "10d8 + 20",
     "speed": "30 ft.",
-    "str": 17,
-    "dex": 15,
-    "con": 15,
-    "int": 10,
-    "wis": 11,
-    "cha": 13,
+    "abilities": {
+      "str": 17,
+      "dex": 15,
+      "con": 15,
+      "int": 10,
+      "wis": 11,
+      "cha": 13
+    },
     "saves": [
       {
         "name": "con",
@@ -10329,12 +10709,14 @@ var jsonCreatureData = {
     "maxHP": 49,
     "hit_dice": "9d8 + 9",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 13,
-    "int": 8,
-    "wis": 11,
-    "cha": 9,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 13,
+      "int": 8,
+      "wis": 11,
+      "cha": 9
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Gnoll",
     "challenge_rating": "2 (450 XP)",
@@ -10375,12 +10757,14 @@ var jsonCreatureData = {
     "maxHP": 4,
     "hit_dice": "1d8",
     "speed": "40 ft.",
-    "str": 12,
-    "dex": 10,
-    "con": 11,
-    "int": 2,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 12,
+      "dex": 10,
+      "con": 11,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -10409,12 +10793,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "2d6",
     "speed": "30 ft.",
-    "str": 8,
-    "dex": 14,
-    "con": 10,
-    "int": 10,
-    "wis": 8,
-    "cha": 8,
+    "abilities": {
+      "str": 8,
+      "dex": 14,
+      "con": 10,
+      "int": 10,
+      "wis": 8,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "stealth",
@@ -10450,12 +10836,14 @@ var jsonCreatureData = {
     "maxHP": 21,
     "hit_dice": "6d6",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 14,
-    "con": 10,
-    "int": 10,
-    "wis": 8,
-    "cha": 10,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 10,
+      "int": 10,
+      "wis": 8,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "stealth",
@@ -10500,12 +10888,14 @@ var jsonCreatureData = {
     "maxHP": 60,
     "hit_dice": "8d8 + 24",
     "speed": "30 ft., fly 60 ft., swim 30 ft.",
-    "str": 19,
-    "dex": 14,
-    "con": 17,
-    "int": 14,
-    "wis": 11,
-    "cha": 16,
+    "abilities": {
+      "str": 19,
+      "dex": 14,
+      "con": 17,
+      "int": 14,
+      "wis": 11,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "dex",
@@ -10564,12 +10954,14 @@ var jsonCreatureData = {
     "maxHP": 310,
     "hit_dice": "23d12 + 161",
     "speed": "40 ft.",
-    "str": 25,
-    "dex": 11,
-    "con": 25,
-    "int": 6,
-    "wis": 13,
-    "cha": 14,
+    "abilities": {
+      "str": 25,
+      "dex": 11,
+      "con": 25,
+      "int": 6,
+      "wis": 13,
+      "cha": 14
+    },
     "saves": [
       {
         "name": "str",
@@ -10645,12 +11037,14 @@ var jsonCreatureData = {
     "maxHP": 114,
     "hit_dice": "12d10 + 48",
     "speed": "40 ft.",
-    "str": 20,
-    "dex": 11,
-    "con": 18,
-    "int": 2,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 20,
+      "dex": 11,
+      "con": 18,
+      "int": 2,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -10689,12 +11083,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "3d8 + 9",
     "speed": "10 ft., climb 10 ft.",
-    "str": 12,
-    "dex": 6,
-    "con": 16,
-    "int": 1,
-    "wis": 6,
-    "cha": 2,
+    "abilities": {
+      "str": 12,
+      "dex": 6,
+      "con": 16,
+      "int": 1,
+      "wis": 6,
+      "cha": 2
+    },
     "skills": [
       {
         "name": "stealth",
@@ -10734,12 +11130,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "3d8 + 9",
     "speed": "10 ft., climb 10 ft.",
-    "str": 12,
-    "dex": 6,
-    "con": 16,
-    "int": 6,
-    "wis": 6,
-    "cha": 2,
+    "abilities": {
+      "str": 12,
+      "dex": 6,
+      "con": 16,
+      "int": 6,
+      "wis": 6,
+      "cha": 2
+    },
     "skills": [
       {
         "name": "stealth",
@@ -10784,12 +11182,14 @@ var jsonCreatureData = {
     "maxHP": 127,
     "hit_dice": "17d8 + 51",
     "speed": "30 ft.",
-    "str": 17,
-    "dex": 17,
-    "con": 16,
-    "int": 13,
-    "wis": 8,
-    "cha": 14,
+    "abilities": {
+      "str": 17,
+      "dex": 17,
+      "con": 16,
+      "int": 13,
+      "wis": 8,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "arcana",
@@ -10853,12 +11253,14 @@ var jsonCreatureData = {
     "maxHP": 38,
     "hit_dice": "7d8 + 7",
     "speed": "30 ft., fly 60 ft., swim 30 ft.",
-    "str": 15,
-    "dex": 12,
-    "con": 13,
-    "int": 14,
-    "wis": 11,
-    "cha": 13,
+    "abilities": {
+      "str": 15,
+      "dex": 12,
+      "con": 13,
+      "int": 14,
+      "wis": 11,
+      "cha": 13
+    },
     "saves": [
       {
         "name": "dex",
@@ -10917,12 +11319,14 @@ var jsonCreatureData = {
     "maxHP": 82,
     "hit_dice": "11d8 + 33",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 12,
-    "con": 16,
-    "int": 13,
-    "wis": 14,
-    "cha": 14,
+    "abilities": {
+      "str": 18,
+      "dex": 12,
+      "con": 16,
+      "int": 13,
+      "wis": 14,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "arcana",
@@ -10994,12 +11398,14 @@ var jsonCreatureData = {
     "maxHP": 127,
     "hit_dice": "15d10 + 45",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 11,
-    "wis": 8,
-    "cha": 12,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 11,
+      "wis": 8,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "arcana",
@@ -11067,12 +11473,14 @@ var jsonCreatureData = {
     "maxHP": 55,
     "hit_dice": "10d8 + 10",
     "speed": "30 ft., fly 30 ft. (hover)",
-    "str": 15,
-    "dex": 14,
-    "con": 13,
-    "int": 12,
-    "wis": 11,
-    "cha": 9,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 13,
+      "int": 12,
+      "wis": 11,
+      "cha": 9
+    },
     "skills": [
       {
         "name": "perception",
@@ -11111,12 +11519,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "6d8",
     "speed": "30 ft., climb 30 ft.",
-    "str": 14,
-    "dex": 14,
-    "con": 11,
-    "int": 3,
-    "wis": 14,
-    "cha": 5,
+    "abilities": {
+      "str": 14,
+      "dex": 14,
+      "con": 11,
+      "int": 3,
+      "wis": 14,
+      "cha": 5
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 12",
     "challenge_rating": "2 (450 XP)",
@@ -11149,12 +11559,14 @@ var jsonCreatureData = {
     "maxHP": 75,
     "hit_dice": "10d10 + 20",
     "speed": "30 ft., climb 30 ft.",
-    "str": 18,
-    "dex": 16,
-    "con": 15,
-    "int": 4,
-    "wis": 14,
-    "cha": 9,
+    "abilities": {
+      "str": 18,
+      "dex": 16,
+      "con": 15,
+      "int": 4,
+      "wis": 14,
+      "cha": 9
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 12",
     "challenge_rating": "7 (2900 XP)",
@@ -11191,12 +11603,14 @@ var jsonCreatureData = {
     "maxHP": 59,
     "hit_dice": "7d10 + 21",
     "speed": "30 ft., fly 80 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 2,
-    "wis": 13,
-    "cha": 8,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 2,
+      "wis": 13,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -11235,12 +11649,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 12,
-    "con": 12,
-    "int": 9,
-    "wis": 8,
-    "cha": 6,
+    "abilities": {
+      "str": 16,
+      "dex": 12,
+      "con": 12,
+      "int": 9,
+      "wis": 8,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "athletics",
@@ -11289,12 +11705,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft.",
-    "str": 13,
-    "dex": 12,
-    "con": 12,
-    "int": 10,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 13,
+      "dex": 12,
+      "con": 12,
+      "int": 10,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -11319,12 +11737,14 @@ var jsonCreatureData = {
     "maxHP": 127,
     "hit_dice": "15d10 + 45",
     "speed": "40 ft.",
-    "str": 19,
-    "dex": 18,
-    "con": 16,
-    "int": 16,
-    "wis": 19,
-    "cha": 18,
+    "abilities": {
+      "str": 19,
+      "dex": 18,
+      "con": 16,
+      "int": 16,
+      "wis": 19,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "dex",
@@ -11381,12 +11801,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "16d10 + 48",
     "speed": "40 ft., fly 60 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 18,
-    "wis": 18,
-    "cha": 18,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 18,
+      "wis": 18,
+      "cha": 18
+    },
     "skills": [
       {
         "name": "arcana",
@@ -11458,12 +11880,14 @@ var jsonCreatureData = {
     "maxHP": 30,
     "hit_dice": "4d10 + 8",
     "speed": "30 ft.",
-    "str": 17,
-    "dex": 10,
-    "con": 14,
-    "int": 7,
-    "wis": 9,
-    "cha": 10,
+    "abilities": {
+      "str": 17,
+      "dex": 10,
+      "con": 14,
+      "int": 7,
+      "wis": 9,
+      "cha": 10
+    },
     "senses": "darkvision 60 ft., passive Perception 9",
     "languages": "Common, Giant",
     "challenge_rating": "1 (200 XP)",
@@ -11487,12 +11911,14 @@ var jsonCreatureData = {
     "maxHP": 65,
     "hit_dice": "10d8 + 20",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 13,
-    "con": 14,
-    "int": 10,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 16,
+      "dex": 13,
+      "con": 14,
+      "int": 10,
+      "wis": 11,
+      "cha": 10
+    },
     "damage_resistances": "fire",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 12",
     "languages": "Common, Draconic",
@@ -11528,12 +11954,14 @@ var jsonCreatureData = {
     "maxHP": 38,
     "hit_dice": "7d8 + 7",
     "speed": "20 ft., fly 40 ft.",
-    "str": 12,
-    "dex": 13,
-    "con": 12,
-    "int": 7,
-    "wis": 10,
-    "cha": 13,
+    "abilities": {
+      "str": 12,
+      "dex": 13,
+      "con": 12,
+      "int": 7,
+      "wis": 10,
+      "cha": 13
+    },
     "senses": "passive Perception 10",
     "languages": "Common",
     "challenge_rating": "1 (200 XP)",
@@ -11564,12 +11992,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "10 ft., fly 60 ft.",
-    "str": 5,
-    "dex": 16,
-    "con": 8,
-    "int": 2,
-    "wis": 14,
-    "cha": 6,
+    "abilities": {
+      "str": 5,
+      "dex": 16,
+      "con": 8,
+      "int": 2,
+      "wis": 14,
+      "cha": 6
+    },
     "perception": [
       {
         "name": "perception",
@@ -11599,12 +12029,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "7d8 + 14",
     "speed": "50 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 14,
-    "int": 6,
-    "wis": 13,
-    "cha": 6,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 14,
+      "int": 6,
+      "wis": 13,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -11644,12 +12076,14 @@ var jsonCreatureData = {
     "maxHP": 60,
     "hit_dice": "8d8 + 24",
     "speed": "30 ft., fly 30 ft.",
-    "str": 18,
-    "dex": 13,
-    "con": 16,
-    "int": 10,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 18,
+      "dex": 13,
+      "con": 16,
+      "int": 10,
+      "wis": 10,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -11692,12 +12126,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "13d10 + 65",
     "speed": "30 ft.",
-    "str": 19,
-    "dex": 17,
-    "con": 20,
-    "int": 5,
-    "wis": 12,
-    "cha": 13,
+    "abilities": {
+      "str": 19,
+      "dex": 17,
+      "con": 20,
+      "int": 5,
+      "wis": 12,
+      "cha": 13
+    },
     "saves": [
       {
         "name": "str",
@@ -11755,12 +12191,14 @@ var jsonCreatureData = {
     "maxHP": 105,
     "hit_dice": "10d12 + 40",
     "speed": "40 ft.",
-    "str": 21,
-    "dex": 8,
-    "con": 19,
-    "int": 5,
-    "wis": 9,
-    "cha": 6,
+    "abilities": {
+      "str": 21,
+      "dex": 8,
+      "con": 19,
+      "int": 5,
+      "wis": 9,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -11793,12 +12231,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10 + 3",
     "speed": "40 ft, fly 60 ft.",
-    "str": 17,
-    "dex": 13,
-    "con": 13,
-    "int": 2,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 17,
+      "dex": 13,
+      "con": 13,
+      "int": 2,
+      "wis": 12,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -11837,12 +12277,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft.",
-    "str": 13,
-    "dex": 12,
-    "con": 12,
-    "int": 10,
-    "wis": 10,
-    "cha": 9,
+    "abilities": {
+      "str": 13,
+      "dex": 12,
+      "con": 12,
+      "int": 10,
+      "wis": 10,
+      "cha": 9
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common, Goblin",
     "challenge_rating": "1/2 (100 XP)",
@@ -11872,12 +12314,14 @@ var jsonCreatureData = {
     "maxHP": 39,
     "hit_dice": "6d8 + 12",
     "speed": "30 ft.",
-    "str": 13,
-    "dex": 12,
-    "con": 12,
-    "int": 10,
-    "wis": 10,
-    "cha": 9,
+    "abilities": {
+      "str": 13,
+      "dex": 12,
+      "con": 12,
+      "int": 10,
+      "wis": 10,
+      "cha": 9
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common, Goblin",
     "challenge_rating": "3 (700 XP)",
@@ -11915,12 +12359,14 @@ var jsonCreatureData = {
     "maxHP": 97,
     "hit_dice": "13d8 + 39",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 16,
-    "int": 14,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 16,
+      "int": 14,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "int",
@@ -11981,12 +12427,14 @@ var jsonCreatureData = {
     "maxHP": 5,
     "hit_dice": "2d4",
     "speed": "20 ft., fly 40 ft.",
-    "str": 4,
-    "dex": 15,
-    "con": 11,
-    "int": 10,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 4,
+      "dex": 15,
+      "con": 11,
+      "int": 10,
+      "wis": 10,
+      "cha": 7
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
@@ -12013,12 +12461,14 @@ var jsonCreatureData = {
     "maxHP": 75,
     "hit_dice": "10d10 + 20",
     "speed": "30 ft., climb 30 ft.",
-    "str": 18,
-    "dex": 10,
-    "con": 15,
-    "int": 6,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 18,
+      "dex": 10,
+      "con": 15,
+      "int": 6,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -12058,12 +12508,14 @@ var jsonCreatureData = {
     "maxHP": 148,
     "hit_dice": "17d10 + 55",
     "speed": "20 ft., fly 60 ft.",
-    "str": 22,
-    "dex": 17,
-    "con": 21,
-    "int": 12,
-    "wis": 16,
-    "cha": 17,
+    "abilities": {
+      "str": 22,
+      "dex": 17,
+      "con": 21,
+      "int": 12,
+      "wis": 16,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "str",
@@ -12133,12 +12585,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d10 + 12",
     "speed": "swim 40 ft.",
-    "str": 18,
-    "dex": 13,
-    "con": 15,
-    "int": 1,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 18,
+      "dex": 13,
+      "con": 15,
+      "int": 1,
+      "wis": 10,
+      "cha": 4
+    },
     "skills": [
       {
         "name": "perception",
@@ -12172,12 +12626,14 @@ var jsonCreatureData = {
     "maxHP": 172,
     "hit_dice": "15d12 + 75",
     "speed": "30 ft., swim 30 ft.",
-    "str": 20,
-    "dex": 12,
-    "con": 20,
-    "int": 2,
-    "wis": 10,
-    "cha": 7,
+    "abilities": {
+      "str": 20,
+      "dex": 12,
+      "con": 20,
+      "int": 2,
+      "wis": 10,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -12223,12 +12679,14 @@ var jsonCreatureData = {
     "maxHP": 5,
     "hit_dice": "1d8 + 1",
     "speed": "50 ft.",
-    "str": 11,
-    "dex": 13,
-    "con": 12,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 11,
+      "dex": 13,
+      "con": 12,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -12259,12 +12717,14 @@ var jsonCreatureData = {
     "maxHP": 180,
     "hit_dice": "19d10 + 76",
     "speed": "40 ft.",
-    "str": 21,
-    "dex": 14,
-    "con": 18,
-    "int": 18,
-    "wis": 15,
-    "cha": 18,
+    "abilities": {
+      "str": 21,
+      "dex": 14,
+      "con": 18,
+      "int": 18,
+      "wis": 15,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "dex",
@@ -12338,12 +12798,14 @@ var jsonCreatureData = {
     "maxHP": 21,
     "hit_dice": "6d6",
     "speed": "30 ft., fly 30 ft.",
-    "str": 7,
-    "dex": 13,
-    "con": 10,
-    "int": 9,
-    "wis": 11,
-    "cha": 12,
+    "abilities": {
+      "str": 7,
+      "dex": 13,
+      "con": 10,
+      "int": 9,
+      "wis": 11,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "perception",
@@ -12398,12 +12860,14 @@ var jsonCreatureData = {
     "maxHP": 10,
     "hit_dice": "3d4 + 3",
     "speed": "20 ft., fly 40 ft.",
-    "str": 6,
-    "dex": 17,
-    "con": 13,
-    "int": 11,
-    "wis": 12,
-    "cha": 14,
+    "abilities": {
+      "str": 6,
+      "dex": 17,
+      "con": 13,
+      "int": 11,
+      "wis": 12,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "deception",
@@ -12465,12 +12929,14 @@ var jsonCreatureData = {
     "maxHP": 21,
     "hit_dice": "6d4 + 6",
     "speed": "40 ft.",
-    "str": 6,
-    "dex": 14,
-    "con": 13,
-    "int": 12,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 6,
+      "dex": 14,
+      "con": 13,
+      "int": 12,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -12519,12 +12985,14 @@ var jsonCreatureData = {
     "maxHP": 104,
     "hit_dice": "16d8 + 32",
     "speed": "50 ft., fly 50 ft. (hover)",
-    "str": 16,
-    "dex": 19,
-    "con": 14,
-    "int": 10,
-    "wis": 15,
-    "cha": 11,
+    "abilities": {
+      "str": 16,
+      "dex": 19,
+      "con": 14,
+      "int": 10,
+      "wis": 15,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -12570,12 +13038,14 @@ var jsonCreatureData = {
     "maxHP": 210,
     "hit_dice": "20d10",
     "speed": "30 ft.",
-    "str": 24,
-    "dex": 9,
-    "con": 20,
-    "int": 3,
-    "wis": 11,
-    "cha": 1,
+    "abilities": {
+      "str": 24,
+      "dex": 9,
+      "con": 20,
+      "int": 3,
+      "wis": 11,
+      "cha": 1
+    },
     "damage_immunities": "fire, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
@@ -12626,12 +13096,14 @@ var jsonCreatureData = {
     "maxHP": 3,
     "hit_dice": "1d6",
     "speed": "40 ft.",
-    "str": 8,
-    "dex": 15,
-    "con": 11,
-    "int": 3,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 8,
+      "dex": 15,
+      "con": 11,
+      "int": 3,
+      "wis": 12,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -12666,12 +13138,14 @@ var jsonCreatureData = {
     "maxHP": 18,
     "hit_dice": "4d8",
     "speed": "40 ft.",
-    "str": 11,
-    "dex": 15,
-    "con": 11,
-    "int": 13,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 11,
+      "dex": 15,
+      "con": 11,
+      "int": 13,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "deception",
@@ -12728,12 +13202,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 16,
-    "con": 10,
-    "int": 11,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 10,
+      "dex": 16,
+      "con": 10,
+      "int": 11,
+      "wis": 10,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "deception",
@@ -12781,12 +13257,14 @@ var jsonCreatureData = {
     "maxHP": 90,
     "hit_dice": "12d12 + 12",
     "speed": "swim 60 ft.",
-    "str": 19,
-    "dex": 10,
-    "con": 13,
-    "int": 3,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 13,
+      "int": 3,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -12825,12 +13303,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "8d8 + 16",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 11,
-    "con": 14,
-    "int": 11,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 16,
+      "dex": 11,
+      "con": 14,
+      "int": 11,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "con",
@@ -12884,12 +13364,14 @@ var jsonCreatureData = {
     "maxHP": 5,
     "hit_dice": "2d6 - 2",
     "speed": "30 ft.",
-    "str": 7,
-    "dex": 15,
-    "con": 9,
-    "int": 8,
-    "wis": 7,
-    "cha": 8,
+    "abilities": {
+      "str": 7,
+      "dex": 15,
+      "con": 9,
+      "int": 8,
+      "wis": 7,
+      "cha": 8
+    },
     "senses": "darkvision 60 ft., passive Perception 8",
     "languages": "Common, Draconic",
     "challenge_rating": "1/8 (25 XP)",
@@ -12923,12 +13405,14 @@ var jsonCreatureData = {
     "maxHP": 472,
     "hit_dice": "27d20 + 189",
     "speed": "20 ft., swim 60 ft.",
-    "str": 30,
-    "dex": 11,
-    "con": 25,
-    "int": 22,
-    "wis": 18,
-    "cha": 20,
+    "abilities": {
+      "str": 30,
+      "dex": 11,
+      "con": 25,
+      "int": 22,
+      "wis": 18,
+      "cha": 20
+    },
     "saves": [
       {
         "name": "str",
@@ -13016,12 +13500,14 @@ var jsonCreatureData = {
     "maxHP": 18,
     "hit_dice": "4d8",
     "speed": "30 ft., swim 30 ft.",
-    "str": 13,
-    "dex": 10,
-    "con": 11,
-    "int": 11,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 13,
+      "dex": 10,
+      "con": 11,
+      "int": 11,
+      "wis": 10,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -13079,12 +13565,14 @@ var jsonCreatureData = {
     "maxHP": 97,
     "hit_dice": "13d8 + 39",
     "speed": "30 ft., swim 30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 16,
-    "int": 13,
-    "wis": 16,
-    "cha": 14,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 16,
+      "int": 13,
+      "wis": 16,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "perception",
@@ -13144,12 +13632,14 @@ var jsonCreatureData = {
     "maxHP": 65,
     "hit_dice": "10d8 + 20",
     "speed": "30 ft., swim 30 ft.",
-    "str": 14,
-    "dex": 10,
-    "con": 14,
-    "int": 12,
-    "wis": 14,
-    "cha": 11,
+    "abilities": {
+      "str": 14,
+      "dex": 10,
+      "con": 14,
+      "int": 12,
+      "wis": 14,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -13205,12 +13695,14 @@ var jsonCreatureData = {
     "maxHP": 65,
     "hit_dice": "10d8 + 20",
     "speed": "30 ft., swim 30 ft.",
-    "str": 14,
-    "dex": 10,
-    "con": 14,
-    "int": 12,
-    "wis": 14,
-    "cha": 11,
+    "abilities": {
+      "str": 14,
+      "dex": 10,
+      "con": 14,
+      "int": 12,
+      "wis": 14,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -13269,12 +13761,14 @@ var jsonCreatureData = {
     "maxHP": 97,
     "hit_dice": "13d10 + 26",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 13,
-    "con": 15,
-    "int": 14,
-    "wis": 15,
-    "cha": 16,
+    "abilities": {
+      "str": 16,
+      "dex": 13,
+      "con": 15,
+      "int": 14,
+      "wis": 15,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "deception",
@@ -13326,12 +13820,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "15 ft.",
-    "str": 10,
-    "dex": 5,
-    "con": 11,
-    "int": 1,
-    "wis": 11,
-    "cha": 3,
+    "abilities": {
+      "str": 10,
+      "dex": 5,
+      "con": 11,
+      "int": 1,
+      "wis": 11,
+      "cha": 3
+    },
     "damage_resistances": "cold",
     "damage_immunities": "fire, poison",
     "condition_immunities": "charmed, frightened, poisoned",
@@ -13363,12 +13859,14 @@ var jsonCreatureData = {
     "maxHP": 135,
     "hit_dice": "18d8 + 54",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 16,
-    "con": 16,
-    "int": 20,
-    "wis": 14,
-    "cha": 16,
+    "abilities": {
+      "str": 11,
+      "dex": 16,
+      "con": 16,
+      "int": 20,
+      "wis": 14,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "con",
@@ -13458,12 +13956,14 @@ var jsonCreatureData = {
     "maxHP": 26,
     "hit_dice": "4d10 + 4",
     "speed": "50 ft.",
-    "str": 17,
-    "dex": 15,
-    "con": 13,
-    "int": 3,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 17,
+      "dex": 15,
+      "con": 13,
+      "int": 3,
+      "wis": 12,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -13513,12 +14013,14 @@ var jsonCreatureData = {
     "maxHP": 2,
     "hit_dice": "1d4",
     "speed": "20 ft., climb 20 ft.",
-    "str": 2,
-    "dex": 11,
-    "con": 10,
-    "int": 1,
-    "wis": 8,
-    "cha": 3,
+    "abilities": {
+      "str": 2,
+      "dex": 11,
+      "con": 10,
+      "int": 1,
+      "wis": 8,
+      "cha": 3
+    },
     "senses": "darkvision 30 ft., passive Perception 9",
     "challenge_rating": "0 (10 XP)",
     "actions": [
@@ -13537,12 +14039,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d8 + 4",
     "speed": "30 ft., swim 30 ft.",
-    "str": 15,
-    "dex": 10,
-    "con": 13,
-    "int": 7,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 15,
+      "dex": 10,
+      "con": 13,
+      "int": 7,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -13598,12 +14102,14 @@ var jsonCreatureData = {
     "maxHP": 78,
     "hit_dice": "12d8 + 24",
     "speed": "30 ft., swim 30 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 15,
-    "int": 11,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 15,
+      "int": 11,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "con",
@@ -13670,12 +14176,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "5d8 + 5",
     "speed": "30 ft., swim 30 ft.",
-    "str": 15,
-    "dex": 10,
-    "con": 13,
-    "int": 10,
-    "wis": 15,
-    "cha": 8,
+    "abilities": {
+      "str": 15,
+      "dex": 10,
+      "con": 13,
+      "int": 10,
+      "wis": 15,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -13731,12 +14239,14 @@ var jsonCreatureData = {
     "maxHP": 40,
     "hit_dice": "9d8",
     "speed": "30 ft.",
-    "str": 9,
-    "dex": 14,
-    "con": 11,
-    "int": 17,
-    "wis": 12,
-    "cha": 11,
+    "abilities": {
+      "str": 9,
+      "dex": 14,
+      "con": 11,
+      "int": 17,
+      "wis": 12,
+      "cha": 11
+    },
     "saves": [
       {
         "name": "int",
@@ -13781,12 +14291,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d6 + 5",
     "speed": "30 ft., fly 30 ft.",
-    "str": 8,
-    "dex": 12,
-    "con": 12,
-    "int": 7,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 8,
+      "dex": 12,
+      "con": 12,
+      "int": 7,
+      "wis": 10,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "stealth",
@@ -13836,12 +14348,14 @@ var jsonCreatureData = {
     "maxHP": 9,
     "hit_dice": "2d6 + 2",
     "speed": "30 ft.",
-    "str": 7,
-    "dex": 15,
-    "con": 12,
-    "int": 8,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 7,
+      "dex": 15,
+      "con": 12,
+      "int": 8,
+      "wis": 11,
+      "cha": 10
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "fire",
     "senses": "darkvision 60 ft., passive Perception 10",
@@ -13872,12 +14386,14 @@ var jsonCreatureData = {
     "maxHP": 126,
     "hit_dice": "11d12 + 55",
     "speed": "40 ft.",
-    "str": 24,
-    "dex": 9,
-    "con": 21,
-    "int": 3,
-    "wis": 11,
-    "cha": 6,
+    "abilities": {
+      "str": 24,
+      "dex": 9,
+      "con": 21,
+      "int": 3,
+      "wis": 11,
+      "cha": 6
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "6 (2300 XP)",
     "special_abilities": [
@@ -13906,12 +14422,14 @@ var jsonCreatureData = {
     "maxHP": 9,
     "hit_dice": "2d6 + 2",
     "speed": "20 ft.",
-    "str": 10,
-    "dex": 9,
-    "con": 13,
-    "int": 3,
-    "wis": 8,
-    "cha": 4,
+    "abilities": {
+      "str": 10,
+      "dex": 9,
+      "con": 13,
+      "int": 3,
+      "wis": 8,
+      "cha": 4
+    },
     "damage_resistances": "cold, fire, lightning",
     "damage_immunities": "poison",
     "condition_immunities": "charmed, frightened, poisoned",
@@ -13933,12 +14451,14 @@ var jsonCreatureData = {
     "maxHP": 68,
     "hit_dice": "8d10 + 24",
     "speed": "30 ft., fly 50 ft.",
-    "str": 17,
-    "dex": 16,
-    "con": 17,
-    "int": 7,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 17,
+      "dex": 16,
+      "con": 17,
+      "int": 7,
+      "wis": 12,
+      "cha": 8
+    },
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Common",
     "challenge_rating": "3 (700 XP)",
@@ -13975,12 +14495,14 @@ var jsonCreatureData = {
     "maxHP": 229,
     "hit_dice": "17d10 + 136",
     "speed": "30 ft., fly 60 ft., swim 90 ft.",
-    "str": 22,
-    "dex": 12,
-    "con": 26,
-    "int": 18,
-    "wis": 17,
-    "cha": 18,
+    "abilities": {
+      "str": 22,
+      "dex": 12,
+      "con": 26,
+      "int": 18,
+      "wis": 17,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "dex",
@@ -14037,12 +14559,14 @@ var jsonCreatureData = {
     "maxHP": 189,
     "hit_dice": "18d10 + 90",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 20,
-    "con": 20,
-    "int": 18,
-    "wis": 16,
-    "cha": 20,
+    "abilities": {
+      "str": 18,
+      "dex": 20,
+      "con": 20,
+      "int": 18,
+      "wis": 16,
+      "cha": 20
+    },
     "saves": [
       {
         "name": "str",
@@ -14118,12 +14642,14 @@ var jsonCreatureData = {
     "maxHP": 5,
     "hit_dice": "1d8",
     "speed": "40 ft.",
-    "str": 13,
-    "dex": 14,
-    "con": 12,
-    "int": 3,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 13,
+      "dex": 14,
+      "con": 12,
+      "int": 3,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -14153,12 +14679,14 @@ var jsonCreatureData = {
     "maxHP": 127,
     "hit_dice": "17d8 + 51",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 15,
-    "con": 16,
-    "int": 12,
-    "wis": 13,
-    "cha": 15,
+    "abilities": {
+      "str": 10,
+      "dex": 15,
+      "con": 16,
+      "int": 12,
+      "wis": 13,
+      "cha": 15
+    },
     "skills": [
       {
         "name": "deception",
@@ -14214,12 +14742,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "10 ft., swim 40 ft.",
-    "str": 10,
-    "dex": 13,
-    "con": 12,
-    "int": 11,
-    "wis": 11,
-    "cha": 12,
+    "abilities": {
+      "str": 10,
+      "dex": 13,
+      "con": 12,
+      "int": 11,
+      "wis": 11,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "perception",
@@ -14250,12 +14780,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d10 + 12",
     "speed": "10 ft., swim 40 ft.",
-    "str": 18,
-    "dex": 10,
-    "con": 15,
-    "int": 8,
-    "wis": 10,
-    "cha": 9,
+    "abilities": {
+      "str": 18,
+      "dex": 10,
+      "con": 15,
+      "int": 8,
+      "wis": 10,
+      "cha": 9
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Abyssal, Aquan",
     "challenge_rating": "2 (450 XP)",
@@ -14293,12 +14825,14 @@ var jsonCreatureData = {
     "maxHP": 75,
     "hit_dice": "10d8 + 30",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 11,
-    "con": 16,
-    "int": 7,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 18,
+      "dex": 11,
+      "con": 16,
+      "int": 7,
+      "wis": 10,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -14353,12 +14887,14 @@ var jsonCreatureData = {
     "maxHP": 58,
     "hit_dice": "9d8 + 18",
     "speed": "15 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 15,
-    "int": 5,
-    "wis": 13,
-    "cha": 8,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 15,
+      "int": 5,
+      "wis": 13,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "stealth",
@@ -14406,12 +14942,14 @@ var jsonCreatureData = {
     "maxHP": 71,
     "hit_dice": "13d8 + 13",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 12,
-    "con": 12,
-    "int": 19,
-    "wis": 17,
-    "cha": 17,
+    "abilities": {
+      "str": 11,
+      "dex": 12,
+      "con": 12,
+      "int": 19,
+      "wis": 17,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "int",
@@ -14488,12 +15026,14 @@ var jsonCreatureData = {
     "maxHP": 71,
     "hit_dice": "13d8 + 13",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 12,
-    "con": 12,
-    "int": 19,
-    "wis": 17,
-    "cha": 17,
+    "abilities": {
+      "str": 11,
+      "dex": 12,
+      "con": 12,
+      "int": 19,
+      "wis": 17,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "int",
@@ -14574,12 +15114,14 @@ var jsonCreatureData = {
     "maxHP": 76,
     "hit_dice": "9d10 + 27",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 11,
-    "con": 16,
-    "int": 6,
-    "wis": 16,
-    "cha": 9,
+    "abilities": {
+      "str": 18,
+      "dex": 11,
+      "con": 16,
+      "int": 6,
+      "wis": 16,
+      "cha": 9
+    },
     "skills": [
       {
         "name": "perception",
@@ -14622,12 +15164,14 @@ var jsonCreatureData = {
     "maxHP": 67,
     "hit_dice": "9d10 + 8",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 11,
-    "con": 15,
-    "int": 6,
-    "wis": 8,
-    "cha": 5,
+    "abilities": {
+      "str": 18,
+      "dex": 11,
+      "con": 15,
+      "int": 6,
+      "wis": 8,
+      "cha": 5
+    },
     "damage_vulnerabilities": "bludgeoning",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, poisoned",
@@ -14659,12 +15203,14 @@ var jsonCreatureData = {
     "maxHP": 5,
     "hit_dice": "1d8 + 1",
     "speed": "30 ft., fly 30 ft.",
-    "str": 10,
-    "dex": 13,
-    "con": 12,
-    "int": 4,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 10,
+      "dex": 13,
+      "con": 12,
+      "int": 4,
+      "wis": 10,
+      "cha": 5
+    },
     "senses": "truesight 120 ft., passive Perception 10",
     "languages": "Modron",
     "challenge_rating": "1/8 (25 XP)",
@@ -14697,12 +15243,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "6d6 + 6",
     "speed": "20 ft., fly 20 ft., swim 20 ft.",
-    "str": 8,
-    "dex": 12,
-    "con": 12,
-    "int": 9,
-    "wis": 11,
-    "cha": 7,
+    "abilities": {
+      "str": 8,
+      "dex": 12,
+      "con": 12,
+      "int": 9,
+      "wis": 11,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "stealth",
@@ -14743,12 +15291,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "40 ft.",
-    "str": 14,
-    "dex": 10,
-    "con": 13,
-    "int": 2,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 14,
+      "dex": 10,
+      "con": 13,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
@@ -14776,12 +15326,14 @@ var jsonCreatureData = {
     "maxHP": 58,
     "hit_dice": "9d8 + 18",
     "speed": "20 ft.",
-    "str": 16,
-    "dex": 8,
-    "con": 15,
-    "int": 6,
-    "wis": 10,
-    "cha": 12,
+    "abilities": {
+      "str": 16,
+      "dex": 8,
+      "con": 15,
+      "int": 6,
+      "wis": 10,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "wis",
@@ -14817,12 +15369,14 @@ var jsonCreatureData = {
     "maxHP": 97,
     "hit_dice": "13d8 + 39",
     "speed": "20 ft.",
-    "str": 18,
-    "dex": 10,
-    "con": 17,
-    "int": 11,
-    "wis": 18,
-    "cha": 16,
+    "abilities": {
+      "str": 18,
+      "dex": 10,
+      "con": 17,
+      "int": 11,
+      "wis": 18,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "con",
@@ -14916,12 +15470,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d8 + 4",
     "speed": "20 ft.",
-    "str": 10,
-    "dex": 10,
-    "con": 12,
-    "int": 10,
-    "wis": 13,
-    "cha": 7,
+    "abilities": {
+      "str": 10,
+      "dex": 10,
+      "con": 12,
+      "int": 10,
+      "wis": 13,
+      "cha": 7
+    },
     "senses": "darkvision 120 ft., passive Perception 11",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -14957,12 +15513,14 @@ var jsonCreatureData = {
     "maxHP": 60,
     "hit_dice": "8d10 + 16",
     "speed": "30 ft.",
-    "str": 12,
-    "dex": 10,
-    "con": 14,
-    "int": 13,
-    "wis": 15,
-    "cha": 10,
+    "abilities": {
+      "str": 12,
+      "dex": 10,
+      "con": 14,
+      "int": 13,
+      "wis": 15,
+      "cha": 10
+    },
     "senses": "darkvision 120 ft., passive Perception 12",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -15010,12 +15568,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "2d6",
     "speed": "10 ft.",
-    "str": 8,
-    "dex": 10,
-    "con": 10,
-    "int": 8,
-    "wis": 11,
-    "cha": 5,
+    "abilities": {
+      "str": 8,
+      "dex": 10,
+      "con": 10,
+      "int": 8,
+      "wis": 11,
+      "cha": 5
+    },
     "senses": "darkvision 120 ft., passive Perception 10",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -15048,12 +15608,14 @@ var jsonCreatureData = {
     "maxHP": 184,
     "hit_dice": "16d10 + 96",
     "speed": "20 ft., fly 30 ft.",
-    "str": 21,
-    "dex": 10,
-    "con": 22,
-    "int": 19,
-    "wis": 12,
-    "cha": 15,
+    "abilities": {
+      "str": 21,
+      "dex": 10,
+      "con": 22,
+      "int": 19,
+      "wis": 12,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "con",
@@ -15119,12 +15681,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft.",
-    "str": 12,
-    "dex": 12,
-    "con": 13,
-    "int": 4,
-    "wis": 8,
-    "cha": 3,
+    "abilities": {
+      "str": 12,
+      "dex": 12,
+      "con": 13,
+      "int": 4,
+      "wis": 8,
+      "cha": 3
+    },
     "condition_immunities": "blinded, deafened",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 9",
     "languages": "understands Common but can't speak",
@@ -15148,12 +15712,14 @@ var jsonCreatureData = {
     "maxHP": 112,
     "hit_dice": "15d8 + 45",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 16,
-    "wis": 14,
-    "cha": 16,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 16,
+      "wis": 14,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "deception",
@@ -15230,12 +15796,14 @@ var jsonCreatureData = {
     "maxHP": 68,
     "hit_dice": "8d10 + 24",
     "speed": "60 ft., fly 90 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 10,
-    "wis": 13,
-    "cha": 15,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 10,
+      "wis": 13,
+      "cha": 15
+    },
     "damage_immunities": "fire",
     "senses": "passive Perception 11",
     "languages": "understands Abyssal, Common, and Infernal but can't speak",
@@ -15270,12 +15838,14 @@ var jsonCreatureData = {
     "maxHP": 9,
     "hit_dice": "2d8",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 12,
-    "con": 11,
-    "int": 12,
-    "wis": 14,
-    "cha": 16,
+    "abilities": {
+      "str": 11,
+      "dex": 12,
+      "con": 11,
+      "int": 12,
+      "wis": 14,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "deception",
@@ -15314,12 +15884,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d8 + 18",
     "speed": "30 ft.",
-    "str": 14,
-    "dex": 16,
-    "con": 16,
-    "int": 13,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 14,
+      "dex": 16,
+      "con": 16,
+      "int": 13,
+      "wis": 10,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "arcana",
@@ -15375,12 +15947,14 @@ var jsonCreatureData = {
     "maxHP": 123,
     "hit_dice": "13d10 + 52",
     "speed": "40 ft., fly 60 ft.",
-    "str": 20,
-    "dex": 11,
-    "con": 19,
-    "int": 12,
-    "wis": 10,
-    "cha": 15,
+    "abilities": {
+      "str": 20,
+      "dex": 11,
+      "con": 19,
+      "int": 12,
+      "wis": 10,
+      "cha": 15
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -15442,12 +16016,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d10 + 12",
     "speed": "10 ft., climb 10 ft.",
-    "str": 15,
-    "dex": 6,
-    "con": 14,
-    "int": 2,
-    "wis": 6,
-    "cha": 1,
+    "abilities": {
+      "str": 15,
+      "dex": 6,
+      "con": 14,
+      "int": 2,
+      "wis": 6,
+      "cha": 1
+    },
     "damage_resistances": "acid",
     "damage_immunities": "lightning, slashing",
     "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
@@ -15484,12 +16060,14 @@ var jsonCreatureData = {
     "maxHP": 3,
     "hit_dice": "1d6",
     "speed": "5 ft., swim 30 ft.",
-    "str": 4,
-    "dex": 15,
-    "con": 11,
-    "int": 3,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 4,
+      "dex": 15,
+      "con": 11,
+      "int": 3,
+      "wis": 10,
+      "cha": 4
+    },
     "skills": [
       {
         "name": "perception",
@@ -15535,12 +16113,14 @@ var jsonCreatureData = {
     "maxHP": 59,
     "hit_dice": "7d10 + 21",
     "speed": "40 ft.",
-    "str": 19,
-    "dex": 8,
-    "con": 16,
-    "int": 5,
-    "wis": 7,
-    "cha": 7,
+    "abilities": {
+      "str": 19,
+      "dex": 8,
+      "con": 16,
+      "int": 5,
+      "wis": 7,
+      "cha": 7
+    },
     "senses": "darkvision 60 ft., passive Perception 8",
     "languages": "Common, Giant",
     "challenge_rating": "2 (450 XP)",
@@ -15563,12 +16143,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "9d10 + 36",
     "speed": "30 ft.",
-    "str": 19,
-    "dex": 6,
-    "con": 18,
-    "int": 3,
-    "wis": 6,
-    "cha": 5,
+    "abilities": {
+      "str": 19,
+      "dex": 6,
+      "con": 18,
+      "int": 3,
+      "wis": 6,
+      "cha": 5
+    },
     "saves": [
       {
         "name": "wis",
@@ -15601,12 +16183,14 @@ var jsonCreatureData = {
     "maxHP": 85,
     "hit_dice": "9d10 + 36",
     "speed": "30 ft.",
-    "str": 19,
-    "dex": 6,
-    "con": 18,
-    "int": 3,
-    "wis": 6,
-    "cha": 5,
+    "abilities": {
+      "str": 19,
+      "dex": 6,
+      "con": 18,
+      "int": 3,
+      "wis": 6,
+      "cha": 5
+    },
     "saves": [
       {
         "names": "wis",
@@ -15643,12 +16227,14 @@ var jsonCreatureData = {
     "maxHP": 110,
     "hit_dice": "13d10 + 39",
     "speed": "30 ft., fly 30 ft.",
-    "str": 19,
-    "dex": 11,
-    "con": 16,
-    "int": 14,
-    "wis": 12,
-    "cha": 15,
+    "abilities": {
+      "str": 19,
+      "dex": 11,
+      "con": 16,
+      "int": 14,
+      "wis": 12,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -15726,12 +16312,14 @@ var jsonCreatureData = {
     "maxHP": 15,
     "hit_dice": "2d8 + 6",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 12,
-    "con": 16,
-    "int": 7,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 16,
+      "dex": 12,
+      "con": 16,
+      "int": 7,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -15767,12 +16355,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d8 + 18",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 12,
-    "con": 16,
-    "int": 9,
-    "wis": 13,
-    "cha": 12,
+    "abilities": {
+      "str": 16,
+      "dex": 12,
+      "con": 16,
+      "int": 9,
+      "wis": 13,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -15816,12 +16406,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d8 + 44",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 12,
-    "con": 18,
-    "int": 11,
-    "wis": 11,
-    "cha": 16,
+    "abilities": {
+      "str": 18,
+      "dex": 12,
+      "con": 18,
+      "int": 11,
+      "wis": 11,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "str",
@@ -15883,12 +16475,14 @@ var jsonCreatureData = {
     "maxHP": 42,
     "hit_dice": "5d8 + 20",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 12,
-    "con": 18,
-    "int": 12,
-    "wis": 11,
-    "cha": 12,
+    "abilities": {
+      "str": 18,
+      "dex": 12,
+      "con": 18,
+      "int": 12,
+      "wis": 11,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -15931,12 +16525,14 @@ var jsonCreatureData = {
     "maxHP": 114,
     "hit_dice": "12d10 + 48",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 11,
-    "con": 19,
-    "int": 6,
-    "wis": 13,
-    "cha": 6,
+    "abilities": {
+      "str": 16,
+      "dex": 11,
+      "con": 19,
+      "int": 6,
+      "wis": 13,
+      "cha": 6
+    },
     "saves": [
       {
         "name": "con",
@@ -15979,12 +16575,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "5 ft., fly 60 ft.",
-    "str": 3,
-    "dex": 13,
-    "con": 8,
-    "int": 2,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 3,
+      "dex": 13,
+      "con": 8,
+      "int": 2,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -16022,12 +16620,14 @@ var jsonCreatureData = {
     "maxHP": 59,
     "hit_dice": "7d10 + 21",
     "speed": "40 ft.",
-    "str": 20,
-    "dex": 12,
-    "con": 17,
-    "int": 3,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 20,
+      "dex": 12,
+      "con": 17,
+      "int": 3,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -16065,12 +16665,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "50 ft., climb 40 ft.",
-    "str": 14,
-    "dex": 15,
-    "con": 10,
-    "int": 3,
-    "wis": 14,
-    "cha": 7,
+    "abilities": {
+      "str": 14,
+      "dex": 15,
+      "con": 10,
+      "int": 3,
+      "wis": 14,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -16112,12 +16714,14 @@ var jsonCreatureData = {
     "maxHP": 59,
     "hit_dice": "7d10 + 21",
     "speed": "60 ft., fly 90 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 10,
-    "wis": 15,
-    "cha": 13,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 10,
+      "wis": 15,
+      "cha": 13
+    },
     "saves": [
       {
         "name": "dex",
@@ -16156,12 +16760,14 @@ var jsonCreatureData = {
     "maxHP": 32,
     "hit_dice": "5d10 + 5",
     "speed": "40 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 12,
-    "int": 10,
-    "wis": 10,
-    "cha": 13,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 12,
+      "int": 10,
+      "wis": 10,
+      "cha": 13
+    },
     "skills": [
       {
         "name": "perception",
@@ -16204,12 +16810,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "20 ft., fly 60 ft.",
-    "str": 16,
-    "dex": 12,
-    "con": 13,
-    "int": 9,
-    "wis": 12,
-    "cha": 10,
+    "abilities": {
+      "str": 16,
+      "dex": 12,
+      "con": 13,
+      "int": 9,
+      "wis": 12,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -16257,12 +16865,14 @@ var jsonCreatureData = {
     "maxHP": 32,
     "hit_dice": "5d10 + 5",
     "speed": "30 ft., climb 30 ft.",
-    "str": 15,
-    "dex": 15,
-    "con": 12,
-    "int": 6,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 15,
+      "dex": 15,
+      "con": 12,
+      "int": 6,
+      "wis": 10,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "stealth",
@@ -16300,12 +16910,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "3d8 + 9",
     "speed": "5 ft., climb 5 ft.",
-    "str": 15,
-    "dex": 15,
-    "con": 12,
-    "int": 6,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 15,
+      "dex": 15,
+      "con": 12,
+      "int": 6,
+      "wis": 10,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "stealth",
@@ -16340,12 +16952,14 @@ var jsonCreatureData = {
     "maxHP": 300,
     "hit_dice": "24d10 + 168",
     "speed": "30 ft., fly 60 ft.",
-    "str": 26,
-    "dex": 14,
-    "con": 24,
-    "int": 22,
-    "wis": 18,
-    "cha": 24,
+    "abilities": {
+      "str": 26,
+      "dex": 14,
+      "con": 24,
+      "int": 22,
+      "wis": 18,
+      "cha": 24
+    },
     "saves": [
       {
         "name": "dex",
@@ -16419,12 +17033,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "10 ft., fly 30 ft.",
-    "str": 2,
-    "dex": 20,
-    "con": 8,
-    "int": 10,
-    "wis": 14,
-    "cha": 15,
+    "abilities": {
+      "str": 2,
+      "dex": 20,
+      "con": 8,
+      "int": 10,
+      "wis": 14,
+      "cha": 15
+    },
     "skills": [
       {
         "name": "perception",
@@ -16463,12 +17079,14 @@ var jsonCreatureData = {
     "maxHP": 200,
     "hit_dice": "16d10 + 112",
     "speed": "40 ft., fly 120 ft.",
-    "str": 24,
-    "dex": 20,
-    "con": 24,
-    "int": 19,
-    "wis": 22,
-    "cha": 25,
+    "abilities": {
+      "str": 24,
+      "dex": 20,
+      "con": 24,
+      "int": 19,
+      "wis": 22,
+      "cha": 25
+    },
     "saves": [
       {
         "name": "con",
@@ -16535,12 +17153,14 @@ var jsonCreatureData = {
     "maxHP": 68,
     "hit_dice": "8d10 + 24",
     "speed": "20 ft., swim 40 ft.",
-    "str": 18,
-    "dex": 15,
-    "con": 16,
-    "int": 2,
-    "wis": 12,
-    "cha": 5,
+    "abilities": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -16574,12 +17194,14 @@ var jsonCreatureData = {
     "maxHP": 2,
     "hit_dice": "1d4",
     "speed": "30 ft., swim 30 ft.",
-    "str": 2,
-    "dex": 16,
-    "con": 11,
-    "int": 1,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 2,
+      "dex": 16,
+      "con": 11,
+      "int": 1,
+      "wis": 10,
+      "cha": 3
+    },
     "senses": "blindsight 10 ft., passive Perception 10",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
@@ -16597,12 +17219,14 @@ var jsonCreatureData = {
     "maxHP": 42,
     "hit_dice": "5d10 + 15",
     "speed": "40 ft., swim 30 ft.",
-    "str": 20,
-    "dex": 10,
-    "con": 16,
-    "int": 2,
-    "wis": 13,
-    "cha": 7,
+    "abilities": {
+      "str": 20,
+      "dex": 10,
+      "con": 16,
+      "int": 2,
+      "wis": 13,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -16640,12 +17264,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "10 ft., fly 60 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 10,
-    "int": 2,
-    "wis": 9,
-    "cha": 5,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 10,
+      "int": 2,
+      "wis": 9,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "perception",
@@ -16675,12 +17301,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "0 ft., fly 50 ft. (hover)",
-    "str": 1,
-    "dex": 14,
-    "con": 11,
-    "int": 10,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 1,
+      "dex": 14,
+      "con": 11,
+      "int": 10,
+      "wis": 10,
+      "cha": 11
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
@@ -16720,12 +17348,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "40 ft.",
-    "str": 15,
-    "dex": 10,
-    "con": 13,
-    "int": 2,
-    "wis": 11,
-    "cha": 7,
+    "abilities": {
+      "str": 15,
+      "dex": 10,
+      "con": 13,
+      "int": 2,
+      "wis": 11,
+      "cha": 7
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
@@ -16744,12 +17374,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "5d8 + 5",
     "speed": "25 ft.",
-    "str": 10,
-    "dex": 10,
-    "con": 12,
-    "int": 13,
-    "wis": 16,
-    "cha": 13,
+    "abilities": {
+      "str": 10,
+      "dex": 10,
+      "con": 12,
+      "int": 13,
+      "wis": 16,
+      "cha": 13
+    },
     "skills": [
       {
         "name": "medicine",
@@ -16792,12 +17424,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "2d4 + 2",
     "speed": "15 ft., fly 60 ft.",
-    "str": 6,
-    "dex": 15,
-    "con": 13,
-    "int": 10,
-    "wis": 12,
-    "cha": 10,
+    "abilities": {
+      "str": 6,
+      "dex": 15,
+      "con": 13,
+      "int": 10,
+      "wis": 12,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -16848,12 +17482,14 @@ var jsonCreatureData = {
     "maxHP": 247,
     "hit_dice": "15d20 + 90",
     "speed": "50 ft., burrow 30 ft.",
-    "str": 28,
-    "dex": 7,
-    "con": 22,
-    "int": 1,
-    "wis": 8,
-    "cha": 4,
+    "abilities": {
+      "str": 28,
+      "dex": 7,
+      "con": 22,
+      "int": 1,
+      "wis": 8,
+      "cha": 4
+    },
     "saves": [
       {
         "name": "con",
@@ -16895,12 +17531,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d8 + 4",
     "speed": "30 ft., fly 30 ft.",
-    "str": 12,
-    "dex": 14,
-    "con": 12,
-    "int": 10,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 12,
+      "dex": 14,
+      "con": 12,
+      "int": 10,
+      "wis": 10,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -16944,12 +17582,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d8 + 18",
     "speed": "30 ft., climb 30 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 16,
-    "int": 6,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 16,
+      "int": 6,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "athletics",
@@ -16986,12 +17626,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d8 + 18",
     "speed": "20 ft., climb 20 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 16,
-    "int": 2,
-    "wis": 6,
-    "cha": 1,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 16,
+      "int": 2,
+      "wis": 6,
+      "cha": 1
+    },
     "damage_immunities": "poison",
     "condition_immunities": "blinded, charmed, frightened, paralyzed, poisoned",
     "senses": "blindsight 30 ft. (blind beyond this radius), passive Perception 8",
@@ -17016,12 +17658,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d8 + 18",
     "speed": "30 ft., climb 30 ft.",
-    "str": 17,
-    "dex": 12,
-    "con": 16,
-    "int": 6,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 17,
+      "dex": 12,
+      "con": 16,
+      "int": 6,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "athletics",
@@ -17063,12 +17707,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "3d4",
     "speed": "40 ft.",
-    "str": 5,
-    "dex": 17,
-    "con": 10,
-    "int": 7,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 5,
+      "dex": 17,
+      "con": 10,
+      "int": 7,
+      "wis": 10,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "stealth",
@@ -17118,12 +17764,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "swim 40 ft.",
-    "str": 2,
-    "dex": 16,
-    "con": 9,
-    "int": 1,
-    "wis": 7,
-    "cha": 2,
+    "abilities": {
+      "str": 2,
+      "dex": 16,
+      "con": 9,
+      "int": 1,
+      "wis": 7,
+      "cha": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 8",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -17151,12 +17799,14 @@ var jsonCreatureData = {
     "maxHP": 110,
     "hit_dice": "13d8 + 52",
     "speed": "40 ft.",
-    "str": 14,
-    "dex": 17,
-    "con": 18,
-    "int": 13,
-    "wis": 16,
-    "cha": 20,
+    "abilities": {
+      "str": 14,
+      "dex": 17,
+      "con": 18,
+      "int": 13,
+      "wis": 16,
+      "cha": 20
+    },
     "skills": [
       {
         "name": "deception",
@@ -17201,12 +17851,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "20 ft.",
-    "str": 2,
-    "dex": 11,
-    "con": 9,
-    "int": 2,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 2,
+      "dex": 11,
+      "con": 9,
+      "int": 2,
+      "wis": 10,
+      "cha": 4
+    },
     "senses": "darkvision 30 ft., passive Perception 10",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -17230,12 +17882,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "10 ft., fly 50 ft.",
-    "str": 2,
-    "dex": 14,
-    "con": 8,
-    "int": 2,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 2,
+      "dex": 14,
+      "con": 8,
+      "int": 2,
+      "wis": 12,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -17265,12 +17919,14 @@ var jsonCreatureData = {
     "maxHP": 75,
     "hit_dice": "10d8 + 30",
     "speed": "30 ft., climb 30 ft., fly 60 ft.",
-    "str": 19,
-    "dex": 10,
-    "con": 17,
-    "int": 12,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 17,
+      "int": 12,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -17322,12 +17978,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d10 + 33",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 12,
-    "con": 16,
-    "int": 6,
-    "wis": 6,
-    "cha": 7,
+    "abilities": {
+      "str": 16,
+      "dex": 12,
+      "con": 16,
+      "int": 6,
+      "wis": 6,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -17375,12 +18033,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d8 + 4",
     "speed": "swim 40 ft.",
-    "str": 14,
-    "dex": 13,
-    "con": 13,
-    "int": 1,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 14,
+      "dex": 13,
+      "con": 13,
+      "int": 1,
+      "wis": 10,
+      "cha": 4
+    },
     "skills": [
       {
         "name": "perception",
@@ -17414,12 +18074,14 @@ var jsonCreatureData = {
     "maxHP": 195,
     "hit_dice": "17d12 + 85",
     "speed": "30 ft., burrow 20 ft.",
-    "str": 24,
-    "dex": 13,
-    "con": 21,
-    "int": 4,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 24,
+      "dex": 13,
+      "con": 21,
+      "int": 4,
+      "wis": 10,
+      "cha": 5
+    },
     "damage_immunities": "cold, fire",
     "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 10",
     "challenge_rating": "11 (7200 XP)",
@@ -17448,12 +18110,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "16d8 + 64",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 14,
-    "con": 18,
-    "int": 13,
-    "wis": 16,
-    "cha": 18,
+    "abilities": {
+      "str": 18,
+      "dex": 14,
+      "con": 18,
+      "int": 13,
+      "wis": 16,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "str",
@@ -17523,12 +18187,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d10 + 12",
     "speed": "40 ft.",
-    "str": 21,
-    "dex": 8,
-    "con": 15,
-    "int": 2,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 21,
+      "dex": 8,
+      "con": 15,
+      "int": 2,
+      "wis": 12,
+      "cha": 6
+    },
     "senses": "passive Perception 11",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -17552,12 +18218,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "2d10 + 2",
     "speed": "60 ft.",
-    "str": 16,
-    "dex": 10,
-    "con": 12,
-    "int": 2,
-    "wis": 11,
-    "cha": 7,
+    "abilities": {
+      "str": 16,
+      "dex": 10,
+      "con": 12,
+      "int": 2,
+      "wis": 11,
+      "cha": 7
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
@@ -17575,12 +18243,14 @@ var jsonCreatureData = {
     "maxHP": 248,
     "hit_dice": "16d20 + 80",
     "speed": "20 ft., fly 120 ft.",
-    "str": 28,
-    "dex": 10,
-    "con": 20,
-    "int": 3,
-    "wis": 10,
-    "cha": 9,
+    "abilities": {
+      "str": 28,
+      "dex": 10,
+      "con": 20,
+      "int": 3,
+      "wis": 10,
+      "cha": 9
+    },
     "saves": [
       {
         "name": "dex",
@@ -17636,12 +18306,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d10 + 33",
     "speed": "10 ft., climb 10 ft.",
-    "str": 18,
-    "dex": 8,
-    "con": 17,
-    "int": 7,
-    "wis": 16,
-    "cha": 6,
+    "abilities": {
+      "str": 18,
+      "dex": 8,
+      "con": 17,
+      "int": 7,
+      "wis": 16,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -17695,12 +18367,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d10",
     "speed": "10 ft.",
-    "str": 17,
-    "dex": 14,
-    "con": 10,
-    "int": 1,
-    "wis": 3,
-    "cha": 1,
+    "abilities": {
+      "str": 17,
+      "dex": 14,
+      "con": 10,
+      "int": 1,
+      "wis": 3,
+      "cha": 1
+    },
     "damage_immunities": "poison, psychic",
     "condition_immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 6",
@@ -17734,12 +18408,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "5d8 + 5",
     "speed": "40 ft.",
-    "str": 13,
-    "dex": 12,
-    "con": 13,
-    "int": 2,
-    "wis": 13,
-    "cha": 6,
+    "abilities": {
+      "str": 13,
+      "dex": 12,
+      "con": 13,
+      "int": 2,
+      "wis": 13,
+      "cha": 6
+    },
     "senses": "darkvision 60 ft., passive Perception 11",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -17771,12 +18447,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "7d10 + 14",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 14,
-    "con": 15,
-    "int": 3,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 18,
+      "dex": 14,
+      "con": 15,
+      "int": 3,
+      "wis": 12,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -17819,12 +18497,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "4d8 + 4",
     "speed": "30 ft., swim 40 ft.",
-    "str": 13,
-    "dex": 11,
-    "con": 12,
-    "int": 12,
-    "wis": 13,
-    "cha": 9,
+    "abilities": {
+      "str": 13,
+      "dex": 11,
+      "con": 12,
+      "int": 12,
+      "wis": 13,
+      "cha": 9
+    },
     "skills": [
       {
         "name": "perception",
@@ -17876,12 +18556,14 @@ var jsonCreatureData = {
     "maxHP": 76,
     "hit_dice": "9d10 + 27",
     "speed": "30 ft., swim 50 ft.",
-    "str": 19,
-    "dex": 15,
-    "con": 16,
-    "int": 14,
-    "wis": 13,
-    "cha": 17,
+    "abilities": {
+      "str": 19,
+      "dex": 15,
+      "con": 16,
+      "int": 14,
+      "wis": 13,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "dex",
@@ -17951,12 +18633,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "30 ft., swim 40 ft.",
-    "str": 13,
-    "dex": 11,
-    "con": 12,
-    "int": 12,
-    "wis": 14,
-    "cha": 13,
+    "abilities": {
+      "str": 13,
+      "dex": 11,
+      "con": 12,
+      "int": 12,
+      "wis": 14,
+      "cha": 13
+    },
     "skills": [
       {
         "name": "perception",
@@ -18011,12 +18695,14 @@ var jsonCreatureData = {
     "maxHP": 90,
     "hit_dice": "12d10 + 24",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 14,
-    "con": 15,
-    "int": 11,
-    "wis": 10,
-    "cha": 12,
+    "abilities": {
+      "str": 18,
+      "dex": 14,
+      "con": 15,
+      "int": 11,
+      "wis": 10,
+      "cha": 12
+    },
     "damage_vulnerabilities": "cold",
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "fire",
@@ -18056,12 +18742,14 @@ var jsonCreatureData = {
     "maxHP": 31,
     "hit_dice": "7d8",
     "speed": "40 ft.",
-    "str": 12,
-    "dex": 16,
-    "con": 11,
-    "int": 12,
-    "wis": 10,
-    "cha": 14,
+    "abilities": {
+      "str": 12,
+      "dex": 16,
+      "con": 11,
+      "int": 12,
+      "wis": 10,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "perception",
@@ -18112,12 +18800,14 @@ var jsonCreatureData = {
     "maxHP": 36,
     "hit_dice": "8d8",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 13,
-    "con": 11,
-    "int": 10,
-    "wis": 10,
-    "cha": 13,
+    "abilities": {
+      "str": 11,
+      "dex": 13,
+      "con": 11,
+      "int": 10,
+      "wis": 10,
+      "cha": 13
+    },
     "damage_vulnerabilities": "fire",
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, unconscious",
@@ -18153,12 +18843,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "10 ft.",
-    "str": 2,
-    "dex": 11,
-    "con": 8,
-    "int": 1,
-    "wis": 8,
-    "cha": 2,
+    "abilities": {
+      "str": 2,
+      "dex": 11,
+      "con": 8,
+      "int": 1,
+      "wis": 8,
+      "cha": 2
+    },
     "senses": "blindsight 10 ft., passive Perception 9",
     "challenge_rating": "0 (10 XP)",
     "actions": [
@@ -18177,12 +18869,14 @@ var jsonCreatureData = {
     "maxHP": 16,
     "hit_dice": "3d8 + 3",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 14,
-    "con": 12,
-    "int": 11,
-    "wis": 13,
-    "cha": 11,
+    "abilities": {
+      "str": 11,
+      "dex": 14,
+      "con": 12,
+      "int": 11,
+      "wis": 13,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "nature",
@@ -18233,12 +18927,14 @@ var jsonCreatureData = {
     "maxHP": 52,
     "hit_dice": "7d8 + 21",
     "speed": "30 ft., swim 40 ft.",
-    "str": 16,
-    "dex": 13,
-    "con": 16,
-    "int": 12,
-    "wis": 12,
-    "cha": 13,
+    "abilities": {
+      "str": 16,
+      "dex": 13,
+      "con": 16,
+      "int": 12,
+      "wis": 12,
+      "cha": 13
+    },
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Aquan, Common, Giant",
     "challenge_rating": "2 (450 XP)",
@@ -18275,12 +18971,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "swim 20 ft.",
-    "str": 1,
-    "dex": 12,
-    "con": 8,
-    "int": 1,
-    "wis": 10,
-    "cha": 2,
+    "abilities": {
+      "str": 1,
+      "dex": 12,
+      "con": 8,
+      "int": 1,
+      "wis": 10,
+      "cha": 2
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -18298,12 +18996,14 @@ var jsonCreatureData = {
     "maxHP": 16,
     "hit_dice": "3d8 + 3",
     "speed": "40 ft.",
-    "str": 6,
-    "dex": 14,
-    "con": 13,
-    "int": 6,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 6,
+      "dex": 14,
+      "con": 13,
+      "int": 6,
+      "wis": 10,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "stealth",
@@ -18346,12 +19046,14 @@ var jsonCreatureData = {
     "maxHP": 66,
     "hit_dice": "12d8 + 12",
     "speed": "30 ft., fly 30 ft.",
-    "str": 1,
-    "dex": 17,
-    "con": 12,
-    "int": 14,
-    "wis": 13,
-    "cha": 14,
+    "abilities": {
+      "str": 1,
+      "dex": 17,
+      "con": 12,
+      "int": 14,
+      "wis": 13,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "dex",
@@ -18404,12 +19106,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "16d10 + 48",
     "speed": "20 ft., swim 20 ft.",
-    "str": 18,
-    "dex": 8,
-    "con": 16,
-    "int": 5,
-    "wis": 10,
-    "cha": 5,
+    "abilities": {
+      "str": 18,
+      "dex": 8,
+      "con": 16,
+      "int": 5,
+      "wis": 10,
+      "cha": 5
+    },
     "skills": [
       {
         "name": "stealth",
@@ -18450,12 +19154,14 @@ var jsonCreatureData = {
     "maxHP": 142,
     "hit_dice": "15d10 + 60",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 8,
-    "con": 18,
-    "int": 7,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 18,
+      "dex": 8,
+      "con": 18,
+      "int": 7,
+      "wis": 10,
+      "cha": 3
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 10",
@@ -18500,12 +19206,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "3d8",
     "speed": "0 ft.",
-    "str": 1,
-    "dex": 1,
-    "con": 10,
-    "int": 1,
-    "wis": 3,
-    "cha": 1,
+    "abilities": {
+      "str": 1,
+      "dex": 1,
+      "con": 10,
+      "int": 1,
+      "wis": 3,
+      "cha": 1
+    },
     "condition_immunities": "blinded, deafened, frightened",
     "senses": "blindsight 30 ft. (blind beyond this radius), passive Perception 6",
     "challenge_rating": "0 (10 XP)",
@@ -18530,12 +19238,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d8 + 18",
     "speed": "30 ft., fly 60 ft.",
-    "str": 19,
-    "dex": 10,
-    "con": 17,
-    "int": 12,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 17,
+      "int": 12,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -18587,12 +19297,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "2d8 + 4",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 14,
-    "con": 15,
-    "int": 6,
-    "wis": 8,
-    "cha": 5,
+    "abilities": {
+      "str": 10,
+      "dex": 14,
+      "con": 15,
+      "int": 6,
+      "wis": 8,
+      "cha": 5
+    },
     "damage_vulnerabilities": "bludgeoning",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
@@ -18617,12 +19329,14 @@ var jsonCreatureData = {
     "maxHP": 10,
     "hit_dice": "4d4",
     "speed": "30 ft.",
-    "str": 7,
-    "dex": 15,
-    "con": 10,
-    "int": 3,
-    "wis": 5,
-    "cha": 3,
+    "abilities": {
+      "str": 7,
+      "dex": 15,
+      "con": 10,
+      "int": 3,
+      "wis": 5,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "stealth",
@@ -18654,12 +19368,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d6 + 5",
     "speed": "30 ft., fly 30 ft.",
-    "str": 6,
-    "dex": 14,
-    "con": 12,
-    "int": 10,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 6,
+      "dex": 14,
+      "con": 12,
+      "int": 10,
+      "wis": 10,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -18704,12 +19420,14 @@ var jsonCreatureData = {
     "maxHP": 243,
     "hit_dice": "18d10 + 144",
     "speed": "50 ft., fly 150 ft.",
-    "str": 26,
-    "dex": 22,
-    "con": 26,
-    "int": 25,
-    "wis": 25,
-    "cha": 30,
+    "abilities": {
+      "str": 26,
+      "dex": 22,
+      "con": 26,
+      "int": 25,
+      "wis": 25,
+      "cha": 30
+    },
     "saves": [
       {
         "name": "int",
@@ -18799,12 +19517,14 @@ var jsonCreatureData = {
     "maxHP": 39,
     "hit_dice": "6d8 + 12",
     "speed": "0 ft., fly 30 ft. (hover)",
-    "str": 8,
-    "dex": 14,
-    "con": 14,
-    "int": 13,
-    "wis": 14,
-    "cha": 11,
+    "abilities": {
+      "str": 8,
+      "dex": 14,
+      "con": 14,
+      "int": 13,
+      "wis": 14,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -18844,12 +19564,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "0 ft., fly 50 ft. (hover)",
-    "str": 1,
-    "dex": 14,
-    "con": 11,
-    "int": 10,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 1,
+      "dex": 14,
+      "con": 11,
+      "int": 10,
+      "wis": 10,
+      "cha": 11
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
@@ -18881,12 +19603,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "20 ft., climb 20 ft.",
-    "str": 2,
-    "dex": 14,
-    "con": 8,
-    "int": 1,
-    "wis": 10,
-    "cha": 2,
+    "abilities": {
+      "str": 2,
+      "dex": 14,
+      "con": 8,
+      "int": 1,
+      "wis": 10,
+      "cha": 2
+    },
     "skills": [
       {
         "name": "stealth",
@@ -18924,12 +19648,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d6 + 5",
     "speed": "20 ft., fly 40 ft.",
-    "str": 10,
-    "dex": 15,
-    "con": 12,
-    "int": 11,
-    "wis": 14,
-    "cha": 8,
+    "abilities": {
+      "str": 10,
+      "dex": 15,
+      "con": 12,
+      "int": 11,
+      "wis": 14,
+      "cha": 8
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -18981,12 +19707,14 @@ var jsonCreatureData = {
     "maxHP": 75,
     "hit_dice": "10d10 + 20",
     "speed": "40 ft.",
-    "str": 18,
-    "dex": 17,
-    "con": 14,
-    "int": 16,
-    "wis": 15,
-    "cha": 16,
+    "abilities": {
+      "str": 18,
+      "dex": 17,
+      "con": 14,
+      "int": 16,
+      "wis": 15,
+      "cha": 16
+    },
     "saves": [
       {
         "name": "dex",
@@ -19035,12 +19763,14 @@ var jsonCreatureData = {
     "maxHP": 2,
     "hit_dice": "1d4",
     "speed": "10 ft., fly 40 ft.",
-    "str": 3,
-    "dex": 18,
-    "con": 10,
-    "int": 14,
-    "wis": 13,
-    "cha": 11,
+    "abilities": {
+      "str": 3,
+      "dex": 18,
+      "con": 10,
+      "int": 14,
+      "wis": 13,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -19082,12 +19812,14 @@ var jsonCreatureData = {
     "maxHP": 27,
     "hit_dice": "6d8",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 15,
-    "con": 10,
-    "int": 12,
-    "wis": 14,
-    "cha": 16,
+    "abilities": {
+      "str": 10,
+      "dex": 15,
+      "con": 10,
+      "int": 12,
+      "wis": 14,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "deception",
@@ -19150,12 +19882,14 @@ var jsonCreatureData = {
     "maxHP": 21,
     "hit_dice": "6d6",
     "speed": "30 ft., fly 30 ft.",
-    "str": 5,
-    "dex": 11,
-    "con": 10,
-    "int": 11,
-    "wis": 10,
-    "cha": 12,
+    "abilities": {
+      "str": 5,
+      "dex": 11,
+      "con": 10,
+      "int": 11,
+      "wis": 10,
+      "cha": 12
+    },
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
@@ -19194,12 +19928,14 @@ var jsonCreatureData = {
     "maxHP": 2,
     "hit_dice": "1d4",
     "speed": "10 ft., fly 40 ft.",
-    "str": 4,
-    "dex": 16,
-    "con": 11,
-    "int": 2,
-    "wis": 8,
-    "cha": 6,
+    "abilities": {
+      "str": 4,
+      "dex": 16,
+      "con": 11,
+      "int": 2,
+      "wis": 8,
+      "cha": 6
+    },
     "senses": "darkvision 60 ft., passive Perception 9",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
@@ -19217,12 +19953,14 @@ var jsonCreatureData = {
     "maxHP": 126,
     "hit_dice": "11d12 + 55",
     "speed": "40 ft.",
-    "str": 23,
-    "dex": 15,
-    "con": 20,
-    "int": 10,
-    "wis": 12,
-    "cha": 9,
+    "abilities": {
+      "str": 23,
+      "dex": 15,
+      "con": 20,
+      "int": 10,
+      "wis": 12,
+      "cha": 9
+    },
     "saves": [
       {
         "name": "dex",
@@ -19285,12 +20023,14 @@ var jsonCreatureData = {
     "maxHP": 178,
     "hit_dice": "17d10 + 85",
     "speed": "30 ft.",
-    "str": 22,
-    "dex": 9,
-    "con": 20,
-    "int": 3,
-    "wis": 11,
-    "cha": 1,
+    "abilities": {
+      "str": 22,
+      "dex": 9,
+      "con": 20,
+      "int": 3,
+      "wis": 11,
+      "cha": 1
+    },
     "damage_immunities": "poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
@@ -19333,12 +20073,14 @@ var jsonCreatureData = {
     "maxHP": 230,
     "hit_dice": "20d12 + 100",
     "speed": "50 ft., swim 50 ft.",
-    "str": 29,
-    "dex": 14,
-    "con": 20,
-    "int": 16,
-    "wis": 18,
-    "cha": 18,
+    "abilities": {
+      "str": 29,
+      "dex": 14,
+      "con": 20,
+      "int": 16,
+      "wis": 18,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "str",
@@ -19422,12 +20164,14 @@ var jsonCreatureData = {
     "maxHP": 66,
     "hit_dice": "12d8 + 12",
     "speed": "30 ft., fly 60 ft.",
-    "str": 8,
-    "dex": 17,
-    "con": 13,
-    "int": 15,
-    "wis": 12,
-    "cha": 20,
+    "abilities": {
+      "str": 8,
+      "dex": 17,
+      "con": 13,
+      "int": 15,
+      "wis": 12,
+      "cha": 20
+    },
     "skills": [
       {
         "name": "deception",
@@ -19491,12 +20235,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "0 ft., fly 30 ft.",
-    "str": 5,
-    "dex": 15,
-    "con": 10,
-    "int": 2,
-    "wis": 12,
-    "cha": 4,
+    "abilities": {
+      "str": 5,
+      "dex": 15,
+      "con": 10,
+      "int": 2,
+      "wis": 12,
+      "cha": 4
+    },
     "damage_resistances": "bludgeoning, piercing, slashing",
     "condition_immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
     "senses": "blindsight 60 ft., passive Perception 11",
@@ -19530,12 +20276,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "5d8",
     "speed": "20 ft., burrow 5 ft., climb 20 ft.",
-    "str": 3,
-    "dex": 13,
-    "con": 10,
-    "int": 1,
-    "wis": 7,
-    "cha": 1,
+    "abilities": {
+      "str": 3,
+      "dex": 13,
+      "con": 10,
+      "int": 1,
+      "wis": 7,
+      "cha": 1
+    },
     "damage_resistances": "bludgeoning, piercing, slashing",
     "condition_immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
     "senses": "blindsight 10 ft., passive Perception 8",
@@ -19577,12 +20325,14 @@ var jsonCreatureData = {
     "maxHP": 36,
     "hit_dice": "8d8",
     "speed": "30 ft., swim 30 ft.",
-    "str": 8,
-    "dex": 18,
-    "con": 11,
-    "int": 1,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 8,
+      "dex": 18,
+      "con": 11,
+      "int": 1,
+      "wis": 10,
+      "cha": 3
+    },
     "damage_resistances": "bludgeoning, piercing, slashing",
     "condition_immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
     "senses": "blindsight 10 ft., passive Perception 10",
@@ -19608,12 +20358,14 @@ var jsonCreatureData = {
     "maxHP": 28,
     "hit_dice": "8d8 - 8",
     "speed": "0 ft., swim 40 ft.",
-    "str": 13,
-    "dex": 16,
-    "con": 9,
-    "int": 1,
-    "wis": 7,
-    "cha": 2,
+    "abilities": {
+      "str": 13,
+      "dex": 16,
+      "con": 9,
+      "int": 1,
+      "wis": 7,
+      "cha": 2
+    },
     "damage_resistances": "bludgeoning, piercing, slashing",
     "condition_immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
     "senses": "darkvision 60 ft., passive Perception 8",
@@ -19647,12 +20399,14 @@ var jsonCreatureData = {
     "maxHP": 24,
     "hit_dice": "7d8 - 7",
     "speed": "30 ft.",
-    "str": 9,
-    "dex": 11,
-    "con": 9,
-    "int": 2,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 9,
+      "dex": 11,
+      "con": 9,
+      "int": 2,
+      "wis": 10,
+      "cha": 3
+    },
     "damage_resistances": "bludgeoning, piercing, slashing",
     "condition_immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
     "senses": "darkvision 30 ft., passive Perception 10",
@@ -19682,12 +20436,14 @@ var jsonCreatureData = {
     "maxHP": 24,
     "hit_dice": "7d8 - 7",
     "speed": "10 ft., fly 50 ft.",
-    "str": 6,
-    "dex": 14,
-    "con": 8,
-    "int": 3,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 6,
+      "dex": 14,
+      "con": 8,
+      "int": 3,
+      "wis": 12,
+      "cha": 6
+    },
     "damage_resistances": "bludgeoning, piercing, slashing",
     "condition_immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
     "senses": "passive Perception 15",
@@ -19714,12 +20470,14 @@ var jsonCreatureData = {
     "maxHP": 676,
     "hit_dice": "33d20 + 330",
     "speed": "40 ft.",
-    "str": 30,
-    "dex": 11,
-    "con": 30,
-    "int": 3,
-    "wis": 11,
-    "cha": 11,
+    "abilities": {
+      "str": 30,
+      "dex": 11,
+      "con": 30,
+      "int": 3,
+      "wis": 11,
+      "cha": 11
+    },
     "saves": [
       {
         "name": "int",
@@ -19810,12 +20568,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "40 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 13,
-    "int": 8,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 13,
+      "int": 8,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -19859,12 +20619,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "40 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 13,
-    "int": 8,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 13,
+      "int": 8,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -19912,12 +20674,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "40 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 13,
-    "int": 8,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 13,
+      "int": 8,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -19969,12 +20733,14 @@ var jsonCreatureData = {
     "maxHP": 32,
     "hit_dice": "5d8 + 10",
     "speed": "30 ft.",
-    "str": 15,
-    "dex": 11,
-    "con": 14,
-    "int": 10,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 15,
+      "dex": 11,
+      "con": 14,
+      "int": 10,
+      "wis": 10,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -20013,12 +20779,14 @@ var jsonCreatureData = {
     "maxHP": 37,
     "hit_dice": "5d10 + 10",
     "speed": "40 ft.",
-    "str": 17,
-    "dex": 15,
-    "con": 14,
-    "int": 3,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 17,
+      "dex": 15,
+      "con": 14,
+      "int": 3,
+      "wis": 12,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -20060,12 +20828,14 @@ var jsonCreatureData = {
     "maxHP": 138,
     "hit_dice": "12d12 + 60",
     "speed": "30 ft.",
-    "str": 23,
-    "dex": 8,
-    "con": 21,
-    "int": 12,
-    "wis": 16,
-    "cha": 12,
+    "abilities": {
+      "str": 23,
+      "dex": 8,
+      "con": 21,
+      "int": 12,
+      "wis": 16,
+      "cha": 12
+    },
     "damage_vulnerabilities": "fire",
     "damage_resistances": "bludgeoning, piercing",
     "senses": "passive Perception 13",
@@ -20108,12 +20878,14 @@ var jsonCreatureData = {
     "maxHP": 16,
     "hit_dice": "3d8 + 3",
     "speed": "30 ft.",
-    "str": 12,
-    "dex": 13,
-    "con": 12,
-    "int": 9,
-    "wis": 10,
-    "cha": 9,
+    "abilities": {
+      "str": 12,
+      "dex": 13,
+      "con": 12,
+      "int": 9,
+      "wis": 10,
+      "cha": 9
+    },
     "senses": "truesight 120 ft., passive Perception 10",
     "languages": "Modron",
     "challenge_rating": "1/2 (100 XP)",
@@ -20151,12 +20923,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "30 ft.",
-    "str": 13,
-    "dex": 11,
-    "con": 12,
-    "int": 8,
-    "wis": 11,
-    "cha": 8,
+    "abilities": {
+      "str": 13,
+      "dex": 11,
+      "con": 12,
+      "int": 8,
+      "wis": 11,
+      "cha": 8
+    },
     "senses": "passive Perception 10",
     "languages": "any one language",
     "challenge_rating": "1/8 (25 XP)",
@@ -20181,12 +20955,14 @@ var jsonCreatureData = {
     "maxHP": 95,
     "hit_dice": "10d12 + 30",
     "speed": "50 ft.",
-    "str": 22,
-    "dex": 9,
-    "con": 17,
-    "int": 2,
-    "wis": 11,
-    "cha": 5,
+    "abilities": {
+      "str": 22,
+      "dex": 9,
+      "con": 17,
+      "int": 2,
+      "wis": 11,
+      "cha": 5
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
@@ -20215,12 +20991,14 @@ var jsonCreatureData = {
     "maxHP": 13,
     "hit_dice": "2d8 + 4",
     "speed": "30 ft.",
-    "str": 14,
-    "dex": 10,
-    "con": 14,
-    "int": 6,
-    "wis": 10,
-    "cha": 6,
+    "abilities": {
+      "str": 14,
+      "dex": 10,
+      "con": 14,
+      "int": 6,
+      "wis": 10,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "stealth",
@@ -20267,12 +21045,14 @@ var jsonCreatureData = {
     "maxHP": 84,
     "hit_dice": "8d10 + 40",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 13,
-    "con": 20,
-    "int": 7,
-    "wis": 9,
-    "cha": 7,
+    "abilities": {
+      "str": 18,
+      "dex": 13,
+      "con": 20,
+      "int": 7,
+      "wis": 9,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -20319,12 +21099,14 @@ var jsonCreatureData = {
     "maxHP": 4,
     "hit_dice": "1d6 + 1",
     "speed": "20 ft.",
-    "str": 6,
-    "dex": 13,
-    "con": 12,
-    "int": 4,
-    "wis": 8,
-    "cha": 3,
+    "abilities": {
+      "str": 6,
+      "dex": 13,
+      "con": 12,
+      "int": 4,
+      "wis": 8,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "stealth",
@@ -20357,12 +21139,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "13d12 + 52",
     "speed": "50 ft.",
-    "str": 25,
-    "dex": 10,
-    "con": 19,
-    "int": 2,
-    "wis": 12,
-    "cha": 9,
+    "abilities": {
+      "str": 25,
+      "dex": 10,
+      "con": 19,
+      "int": 2,
+      "wis": 12,
+      "cha": 9
+    },
     "skills": [
       {
         "name": "perception",
@@ -20395,12 +21179,14 @@ var jsonCreatureData = {
     "maxHP": 153,
     "hit_dice": "18d8 + 72",
     "speed": "30 ft., fly 60 ft.",
-    "str": 16,
-    "dex": 16,
-    "con": 18,
-    "int": 18,
-    "wis": 15,
-    "cha": 19,
+    "abilities": {
+      "str": 16,
+      "dex": 16,
+      "con": 18,
+      "int": 18,
+      "wis": 15,
+      "cha": 19
+    },
     "skills": [
       {
         "name": "intimidation",
@@ -20462,12 +21248,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d10 + 33",
     "speed": "30 ft., burrow 20 ft.",
-    "str": 20,
-    "dex": 13,
-    "con": 16,
-    "int": 9,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 20,
+      "dex": 13,
+      "con": 16,
+      "int": 9,
+      "wis": 10,
+      "cha": 10
+    },
     "senses": "darkvision 120 ft., tremorsense 60 ft., passive Perception 10",
     "languages": "Umber Hulk",
     "challenge_rating": "5 (1800 XP)",
@@ -20504,12 +21292,14 @@ var jsonCreatureData = {
     "maxHP": 67,
     "hit_dice": "9d10 + 18",
     "speed": "50 ft.",
-    "str": 18,
-    "dex": 14,
-    "con": 15,
-    "int": 11,
-    "wis": 17,
-    "cha": 16,
+    "abilities": {
+      "str": 18,
+      "dex": 14,
+      "con": 15,
+      "int": 11,
+      "wis": 17,
+      "cha": 16
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, paralyzed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 13",
@@ -20579,12 +21369,14 @@ var jsonCreatureData = {
     "maxHP": 144,
     "hit_dice": "17d8 + 68",
     "speed": "30 ft.",
-    "str": 18,
-    "dex": 18,
-    "con": 18,
-    "int": 17,
-    "wis": 15,
-    "cha": 18,
+    "abilities": {
+      "str": 18,
+      "dex": 18,
+      "con": 18,
+      "int": 17,
+      "wis": 15,
+      "cha": 18
+    },
     "saves": [
       {
         "name": "dex",
@@ -20684,12 +21476,14 @@ var jsonCreatureData = {
     "maxHP": 82,
     "hit_dice": "11d8 + 33",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 16,
-    "con": 16,
-    "int": 11,
-    "wis": 10,
-    "cha": 12,
+    "abilities": {
+      "str": 16,
+      "dex": 16,
+      "con": 16,
+      "int": 11,
+      "wis": 10,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "dex",
@@ -20751,12 +21545,14 @@ var jsonCreatureData = {
     "maxHP": 82,
     "hit_dice": "11d8 + 33",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 16,
-    "con": 16,
-    "int": 11,
-    "wis": 10,
-    "cha": 12,
+    "abilities": {
+      "str": 16,
+      "dex": 16,
+      "con": 16,
+      "int": 11,
+      "wis": 10,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "dex",
@@ -20822,12 +21618,14 @@ var jsonCreatureData = {
     "maxHP": 82,
     "hit_dice": "11d8 + 33",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 16,
-    "con": 16,
-    "int": 11,
-    "wis": 10,
-    "cha": 12,
+    "abilities": {
+      "str": 16,
+      "dex": 16,
+      "con": 16,
+      "int": 11,
+      "wis": 10,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "dex",
@@ -20894,12 +21692,14 @@ var jsonCreatureData = {
     "maxHP": 58,
     "hit_dice": "9d8",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 13,
-    "con": 14,
-    "int": 10,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 16,
+      "dex": 13,
+      "con": 14,
+      "int": 10,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "athletics",
@@ -20940,12 +21740,14 @@ var jsonCreatureData = {
     "maxHP": 26,
     "hit_dice": "4d8 + 8",
     "speed": "10 ft.",
-    "str": 15,
-    "dex": 8,
-    "con": 14,
-    "int": 5,
-    "wis": 10,
-    "cha": 3,
+    "abilities": {
+      "str": 15,
+      "dex": 8,
+      "con": 14,
+      "int": 5,
+      "wis": 10,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "stealth",
@@ -20981,12 +21783,14 @@ var jsonCreatureData = {
     "maxHP": 18,
     "hit_dice": "4d8",
     "speed": "5 ft.",
-    "str": 3,
-    "dex": 1,
-    "con": 10,
-    "int": 1,
-    "wis": 3,
-    "cha": 1,
+    "abilities": {
+      "str": 3,
+      "dex": 1,
+      "con": 10,
+      "int": 1,
+      "wis": 3,
+      "cha": 1
+    },
     "condition_immunities": "blinded, deafened, frightened",
     "senses": "blindsight 30 ft. (blind beyond this radius), passive Perception 6",
     "challenge_rating": "1/4 (50 XP)",
@@ -21016,12 +21820,14 @@ var jsonCreatureData = {
     "maxHP": 104,
     "hit_dice": "11d10 + 44",
     "speed": "40 ft., fly 60 ft.",
-    "str": 17,
-    "dex": 15,
-    "con": 18,
-    "int": 8,
-    "wis": 13,
-    "cha": 8,
+    "abilities": {
+      "str": 17,
+      "dex": 15,
+      "con": 18,
+      "int": 8,
+      "wis": 13,
+      "cha": 8
+    },
     "saves": [
       {
         "name": "dex",
@@ -21083,12 +21889,14 @@ var jsonCreatureData = {
     "maxHP": 5,
     "hit_dice": "1d8 + 1",
     "speed": "10 ft., fly 50 ft.",
-    "str": 7,
-    "dex": 10,
-    "con": 13,
-    "int": 2,
-    "wis": 12,
-    "cha": 4,
+    "abilities": {
+      "str": 7,
+      "dex": 10,
+      "con": 13,
+      "int": 2,
+      "wis": 12,
+      "cha": 4
+    },
     "skills": [
       {
         "name": "perception",
@@ -21122,12 +21930,14 @@ var jsonCreatureData = {
     "maxHP": 19,
     "hit_dice": "3d10 + 3",
     "speed": "60 ft.",
-    "str": 18,
-    "dex": 12,
-    "con": 13,
-    "int": 2,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 18,
+      "dex": 12,
+      "con": 13,
+      "int": 2,
+      "wis": 12,
+      "cha": 7
+    },
     "senses": "passive Perception 11",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -21155,12 +21965,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "3d10 + 6",
     "speed": "60 ft.",
-    "str": 18,
-    "dex": 12,
-    "con": 15,
-    "int": 2,
-    "wis": 8,
-    "cha": 5,
+    "abilities": {
+      "str": 18,
+      "dex": 12,
+      "con": 15,
+      "int": 2,
+      "wis": 8,
+      "cha": 5
+    },
     "damage_vulnerabilities": "bludgeoning",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, poisoned",
@@ -21181,12 +21993,14 @@ var jsonCreatureData = {
     "maxHP": 114,
     "hit_dice": "12d10 + 48",
     "speed": "30 ft., swim 90 ft.",
-    "str": 18,
-    "dex": 14,
-    "con": 18,
-    "int": 5,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 18,
+      "dex": 14,
+      "con": 18,
+      "int": 5,
+      "wis": 10,
+      "cha": 8
+    },
     "damage_resistances": "acid; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
@@ -21226,12 +22040,14 @@ var jsonCreatureData = {
     "maxHP": 58,
     "hit_dice": "9d10 + 9",
     "speed": "0 ft., swim 60 ft.",
-    "str": 17,
-    "dex": 16,
-    "con": 13,
-    "int": 11,
-    "wis": 10,
-    "cha": 10,
+    "abilities": {
+      "str": 17,
+      "dex": 16,
+      "con": 13,
+      "int": 11,
+      "wis": 10,
+      "cha": 10
+    },
     "damage_resistances": "fire; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, poisoned, restrained, prone, unconscious",
@@ -21263,12 +22079,14 @@ var jsonCreatureData = {
     "maxHP": 1,
     "hit_dice": "1d4 - 1",
     "speed": "30 ft.",
-    "str": 3,
-    "dex": 16,
-    "con": 8,
-    "int": 2,
-    "wis": 12,
-    "cha": 3,
+    "abilities": {
+      "str": 3,
+      "dex": 16,
+      "con": 8,
+      "int": 2,
+      "wis": 12,
+      "cha": 3
+    },
     "skills": [
       {
         "name": "perception",
@@ -21303,12 +22121,14 @@ var jsonCreatureData = {
     "maxHP": 135,
     "hit_dice": "18d8 + 54",
     "speed": "30 ft. (40 ft., climb 30 ft. bear or hybrid form)",
-    "str": 19,
-    "dex": 10,
-    "con": 17,
-    "int": 11,
-    "wis": 12,
-    "cha": 12,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 17,
+      "int": 11,
+      "wis": 12,
+      "cha": 12
+    },
     "skills": [
       {
         "name": "perception",
@@ -21357,12 +22177,14 @@ var jsonCreatureData = {
     "maxHP": 78,
     "hit_dice": "12d8 + 24",
     "speed": "30 ft. (40 ft. boar form)",
-    "str": 17,
-    "dex": 10,
-    "con": 15,
-    "int": 10,
-    "wis": 11,
-    "cha": 8,
+    "abilities": {
+      "str": 17,
+      "dex": 10,
+      "con": 15,
+      "int": 10,
+      "wis": 11,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -21411,12 +22233,14 @@ var jsonCreatureData = {
     "maxHP": 33,
     "hit_dice": "6d8 + 6",
     "speed": "30 ft.",
-    "str": 10,
-    "dex": 15,
-    "con": 12,
-    "int": 11,
-    "wis": 10,
-    "cha": 8,
+    "abilities": {
+      "str": 10,
+      "dex": 15,
+      "con": 12,
+      "int": 11,
+      "wis": 10,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -21469,12 +22293,14 @@ var jsonCreatureData = {
     "maxHP": 120,
     "hit_dice": "16d8 + 48",
     "speed": "30 ft. (40 ft. tiger form)",
-    "str": 17,
-    "dex": 15,
-    "con": 16,
-    "int": 10,
-    "wis": 13,
-    "cha": 11,
+    "abilities": {
+      "str": 17,
+      "dex": 15,
+      "con": 16,
+      "int": 10,
+      "wis": 13,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -21535,12 +22361,14 @@ var jsonCreatureData = {
     "maxHP": 58,
     "hit_dice": "9d8 + 18",
     "speed": "30 ft. (40 ft. wolf form)",
-    "str": 15,
-    "dex": 13,
-    "con": 14,
-    "int": 10,
-    "wis": 11,
-    "cha": 10,
+    "abilities": {
+      "str": 15,
+      "dex": 13,
+      "con": 14,
+      "int": 10,
+      "wis": 11,
+      "cha": 10
+    },
     "skills": [
       {
         "name": "perception",
@@ -21588,12 +22416,14 @@ var jsonCreatureData = {
     "maxHP": 32,
     "hit_dice": "5d8 + 10",
     "speed": "30 ft., burrow 15 ft., fly 60 ft., swim 30 ft.",
-    "str": 14,
-    "dex": 10,
-    "con": 14,
-    "int": 5,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 14,
+      "dex": 10,
+      "con": 14,
+      "int": 5,
+      "wis": 10,
+      "cha": 11
+    },
     "saves": [
       {
         "name": "dex",
@@ -21645,12 +22475,14 @@ var jsonCreatureData = {
     "maxHP": 45,
     "hit_dice": "6d8 + 18",
     "speed": "30 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 16,
-    "int": 10,
-    "wis": 13,
-    "cha": 15,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 16,
+      "int": 10,
+      "wis": 13,
+      "cha": 15
+    },
     "skills": [
       {
         "name": "perception",
@@ -21699,12 +22531,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "9d4",
     "speed": "0 ft., fly 50 ft. (hover)",
-    "str": 1,
-    "dex": 28,
-    "con": 10,
-    "int": 13,
-    "wis": 14,
-    "cha": 11,
+    "abilities": {
+      "str": 1,
+      "dex": 28,
+      "con": 10,
+      "int": 13,
+      "wis": 14,
+      "cha": 11
+    },
     "damage_resistances": "acid, cold, fire, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "lightning, poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, poisoned, prone, restrained, unconscious",
@@ -21749,12 +22583,14 @@ var jsonCreatureData = {
     "maxHP": 7,
     "hit_dice": "3d6 - 3",
     "speed": "30 ft., fly 30 ft.",
-    "str": 7,
-    "dex": 16,
-    "con": 9,
-    "int": 8,
-    "wis": 7,
-    "cha": 8,
+    "abilities": {
+      "str": 7,
+      "dex": 16,
+      "con": 9,
+      "int": 8,
+      "wis": 7,
+      "cha": 8
+    },
     "senses": "darkvision 60 ft., passive Perception 8",
     "languages": "Common, Draconic",
     "challenge_rating": "1/4 (50 XP)",
@@ -21787,12 +22623,14 @@ var jsonCreatureData = {
     "maxHP": 75,
     "hit_dice": "10d10 + 20",
     "speed": "50 ft.",
-    "str": 18,
-    "dex": 13,
-    "con": 14,
-    "int": 7,
-    "wis": 12,
-    "cha": 8,
+    "abilities": {
+      "str": 18,
+      "dex": 13,
+      "con": 14,
+      "int": 7,
+      "wis": 12,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -21840,12 +22678,14 @@ var jsonCreatureData = {
     "maxHP": 11,
     "hit_dice": "2d8 + 2",
     "speed": "40 ft.",
-    "str": 12,
-    "dex": 15,
-    "con": 12,
-    "int": 3,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 12,
+      "dex": 15,
+      "con": 12,
+      "int": 3,
+      "wis": 12,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -21883,12 +22723,14 @@ var jsonCreatureData = {
     "maxHP": 26,
     "hit_dice": "4d10 + 4",
     "speed": "50 ft.",
-    "str": 16,
-    "dex": 13,
-    "con": 13,
-    "int": 7,
-    "wis": 11,
-    "cha": 8,
+    "abilities": {
+      "str": 16,
+      "dex": 13,
+      "con": 13,
+      "int": 7,
+      "wis": 11,
+      "cha": 8
+    },
     "skills": [
       {
         "name": "perception",
@@ -21919,12 +22761,14 @@ var jsonCreatureData = {
     "maxHP": 67,
     "hit_dice": "9d8 + 27",
     "speed": "0 ft., fly 60 ft. (hover)",
-    "str": 6,
-    "dex": 16,
-    "con": 16,
-    "int": 12,
-    "wis": 14,
-    "cha": 15,
+    "abilities": {
+      "str": 6,
+      "dex": 16,
+      "con": 16,
+      "int": 12,
+      "wis": 14,
+      "cha": 15
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
@@ -21960,12 +22804,14 @@ var jsonCreatureData = {
     "maxHP": 110,
     "hit_dice": "13d10 + 39",
     "speed": "20 ft., fly 80 ft.",
-    "str": 19,
-    "dex": 10,
-    "con": 16,
-    "int": 5,
-    "wis": 12,
-    "cha": 6,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 16,
+      "int": 5,
+      "wis": 12,
+      "cha": 6
+    },
     "skills": [
       {
         "name": "perception",
@@ -22001,12 +22847,14 @@ var jsonCreatureData = {
     "maxHP": 73,
     "hit_dice": "7d8 + 42",
     "speed": "20 ft., burrow 20 ft.",
-    "str": 17,
-    "dex": 10,
-    "con": 22,
-    "int": 11,
-    "wis": 10,
-    "cha": 11,
+    "abilities": {
+      "str": 17,
+      "dex": 10,
+      "con": 22,
+      "int": 11,
+      "wis": 10,
+      "cha": 11
+    },
     "skills": [
       {
         "name": "perception",
@@ -22058,12 +22906,14 @@ var jsonCreatureData = {
     "maxHP": 51,
     "hit_dice": "6d10 + 18",
     "speed": "40 ft., climb 40 ft.",
-    "str": 18,
-    "dex": 13,
-    "con": 16,
-    "int": 8,
-    "wis": 12,
-    "cha": 7,
+    "abilities": {
+      "str": 18,
+      "dex": 13,
+      "con": 16,
+      "int": 8,
+      "wis": 12,
+      "cha": 7
+    },
     "skills": [
       {
         "name": "perception",
@@ -22116,12 +22966,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "16d8 + 64",
     "speed": "30 ft., climb 30 ft.",
-    "str": 15,
-    "dex": 14,
-    "con": 18,
-    "int": 13,
-    "wis": 15,
-    "cha": 15,
+    "abilities": {
+      "str": 15,
+      "dex": 14,
+      "con": 18,
+      "int": 13,
+      "wis": 15,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -22205,12 +23057,14 @@ var jsonCreatureData = {
     "maxHP": 127,
     "hit_dice": "15d10 + 45",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 19,
-    "dex": 14,
-    "con": 17,
-    "int": 12,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 19,
+      "dex": 14,
+      "con": 17,
+      "int": 12,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -22276,12 +23130,14 @@ var jsonCreatureData = {
     "maxHP": 152,
     "hit_dice": "16d10 + 64",
     "speed": "40 ft., burrow 40 ft., fly 80 ft.",
-    "str": 21,
-    "dex": 10,
-    "con": 19,
-    "int": 14,
-    "wis": 13,
-    "cha": 17,
+    "abilities": {
+      "str": 21,
+      "dex": 10,
+      "con": 19,
+      "int": 14,
+      "wis": 13,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "dex",
@@ -22341,12 +23197,14 @@ var jsonCreatureData = {
     "maxHP": 110,
     "hit_dice": "13d10 + 39",
     "speed": "40 ft., burrow 20 ft., fly 80 ft.",
-    "str": 19,
-    "dex": 10,
-    "con": 17,
-    "int": 12,
-    "wis": 11,
-    "cha": 15,
+    "abilities": {
+      "str": 19,
+      "dex": 10,
+      "con": 17,
+      "int": 12,
+      "wis": 11,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -22410,12 +23268,14 @@ var jsonCreatureData = {
     "maxHP": 142,
     "hit_dice": "15d10 + 60",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 21,
-    "dex": 10,
-    "con": 19,
-    "int": 14,
-    "wis": 13,
-    "cha": 17,
+    "abilities": {
+      "str": 21,
+      "dex": 10,
+      "con": 19,
+      "int": 14,
+      "wis": 13,
+      "cha": 17
+    },
     "saves": [
       {
         "name": "dex",
@@ -22485,12 +23345,14 @@ var jsonCreatureData = {
     "maxHP": 119,
     "hit_dice": "14d10 + 42",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
-    "str": 19,
-    "dex": 12,
-    "con": 17,
-    "int": 16,
-    "wis": 13,
-    "cha": 15,
+    "abilities": {
+      "str": 19,
+      "dex": 12,
+      "con": 17,
+      "int": 16,
+      "wis": 13,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -22554,12 +23416,14 @@ var jsonCreatureData = {
     "maxHP": 178,
     "hit_dice": "17d10 + 85",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 23,
-    "dex": 14,
-    "con": 21,
-    "int": 16,
-    "wis": 13,
-    "cha": 20,
+    "abilities": {
+      "str": 23,
+      "dex": 14,
+      "con": 21,
+      "int": 16,
+      "wis": 13,
+      "cha": 20
+    },
     "saves": [
       {
         "name": "dex",
@@ -22633,12 +23497,14 @@ var jsonCreatureData = {
     "maxHP": 136,
     "hit_dice": "16d10 + 48",
     "speed": "40 ft., fly 80 ft., swim 40 ft.",
-    "str": 19,
-    "dex": 12,
-    "con": 17,
-    "int": 16,
-    "wis": 13,
-    "cha": 15,
+    "abilities": {
+      "str": 19,
+      "dex": 12,
+      "con": 17,
+      "int": 16,
+      "wis": 13,
+      "cha": 15
+    },
     "saves": [
       {
         "name": "dex",
@@ -22709,12 +23575,14 @@ var jsonCreatureData = {
     "maxHP": 178,
     "hit_dice": "17d10 + 85",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
-    "str": 23,
-    "dex": 10,
-    "con": 21,
-    "int": 14,
-    "wis": 11,
-    "cha": 19,
+    "abilities": {
+      "str": 23,
+      "dex": 10,
+      "con": 21,
+      "int": 14,
+      "wis": 11,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -22774,12 +23642,14 @@ var jsonCreatureData = {
     "maxHP": 178,
     "hit_dice": "17d10 + 85",
     "speed": "40 ft., climb 40 ft., fly 80 ft.",
-    "str": 23,
-    "dex": 10,
-    "con": 21,
-    "int": 14,
-    "wis": 11,
-    "cha": 19,
+    "abilities": {
+      "str": 23,
+      "dex": 10,
+      "con": 21,
+      "int": 14,
+      "wis": 11,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -22854,12 +23724,14 @@ var jsonCreatureData = {
     "maxHP": 93,
     "hit_dice": "11d10 + 33",
     "speed": "30 ft., burrow 20 ft.",
-    "str": 18,
-    "dex": 13,
-    "con": 17,
-    "int": 3,
-    "wis": 10,
-    "cha": 4,
+    "abilities": {
+      "str": 18,
+      "dex": 13,
+      "con": 17,
+      "int": 3,
+      "wis": 10,
+      "cha": 4
+    },
     "damage_immunities": "cold, fire",
     "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 18",
     "challenge_rating": "5 (1800 XP)",
@@ -22884,12 +23756,14 @@ var jsonCreatureData = {
     "maxHP": 168,
     "hit_dice": "16d10 + 80",
     "speed": "40 ft., fly 80 ft.",
-    "str": 23,
-    "dex": 10,
-    "con": 21,
-    "int": 14,
-    "wis": 11,
-    "cha": 19,
+    "abilities": {
+      "str": 23,
+      "dex": 10,
+      "con": 21,
+      "int": 14,
+      "wis": 11,
+      "cha": 19
+    },
     "saves": [
       {
         "name": "dex",
@@ -22957,12 +23831,14 @@ var jsonCreatureData = {
     "maxHP": 133,
     "hit_dice": "14d10 + 56",
     "speed": "40 ft., burrow 20 ft., fly 80 ft., swim 40 ft.",
-    "str": 18,
-    "dex": 10,
-    "con": 18,
-    "int": 6,
-    "wis": 11,
-    "cha": 12,
+    "abilities": {
+      "str": 18,
+      "dex": 10,
+      "con": 18,
+      "int": 6,
+      "wis": 11,
+      "cha": 12
+    },
     "saves": [
       {
         "name": "dex",
@@ -23029,12 +23905,14 @@ var jsonCreatureData = {
     "maxHP": 127,
     "hit_dice": "15d10 + 45",
     "speed": "40 ft.",
-    "str": 19,
-    "dex": 16,
-    "con": 17,
-    "int": 17,
-    "wis": 15,
-    "cha": 18,
+    "abilities": {
+      "str": 19,
+      "dex": 16,
+      "con": 17,
+      "int": 17,
+      "wis": 15,
+      "cha": 18
+    },
     "skills": [
       {
         "name": "perception",
@@ -23096,12 +23974,14 @@ var jsonCreatureData = {
     "maxHP": 66,
     "hit_dice": "12d8 + 12",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 13,
-    "int": 14,
-    "wis": 12,
-    "cha": 16,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 13,
+      "int": 14,
+      "wis": 12,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "deception",
@@ -23159,12 +24039,14 @@ var jsonCreatureData = {
     "maxHP": 66,
     "hit_dice": "12d8 + 12",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 13,
-    "int": 14,
-    "wis": 12,
-    "cha": 16,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 13,
+      "int": 14,
+      "wis": 12,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "deception",
@@ -23214,12 +24096,14 @@ var jsonCreatureData = {
     "maxHP": 66,
     "hit_dice": "12d8 + 12",
     "speed": "30 ft.",
-    "str": 16,
-    "dex": 14,
-    "con": 13,
-    "int": 14,
-    "wis": 12,
-    "cha": 16,
+    "abilities": {
+      "str": 16,
+      "dex": 14,
+      "con": 13,
+      "int": 14,
+      "wis": 12,
+      "cha": 16
+    },
     "skills": [
       {
         "name": "deception",
@@ -23281,12 +24165,14 @@ var jsonCreatureData = {
     "maxHP": 40,
     "hit_dice": "9d8",
     "speed": "30 ft.",
-    "str": 11,
-    "dex": 12,
-    "con": 11,
-    "int": 13,
-    "wis": 12,
-    "cha": 14,
+    "abilities": {
+      "str": 11,
+      "dex": 12,
+      "con": 11,
+      "int": 13,
+      "wis": 12,
+      "cha": 14
+    },
     "skills": [
       {
         "name": "deception",
@@ -23339,12 +24225,14 @@ var jsonCreatureData = {
     "maxHP": 22,
     "hit_dice": "3d8 + 9",
     "speed": "20 ft.",
-    "str": 13,
-    "dex": 6,
-    "con": 16,
-    "int": 3,
-    "wis": 6,
-    "cha": 5,
+    "abilities": {
+      "str": 13,
+      "dex": 6,
+      "con": 16,
+      "int": 3,
+      "wis": 6,
+      "cha": 5
+    },
     "saves": [
       {
         "name": "wis",

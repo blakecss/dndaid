@@ -9,6 +9,20 @@
   }
 }
 
+.fixed-click {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  & ~ * {
+    position: relative;
+    z-index: 101;
+  }
+}
+
 .subtitle {
   color: $text-color-light;
   margin: 0;
@@ -218,13 +232,14 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -4px;
   }
   li {
     background-color: #ddd;
     padding: 4px 4px 4px 12px;
-    border-radius: 24px;
+    border-radius: 1em;
     line-height: rem(24);
-    margin: 2px 8px 4px 0;
+    margin: 2px 4px 4px 4px;
     display: flex;
     align-items: center;
     cursor: grab;
@@ -238,6 +253,7 @@
     }
     button {
       width: 24px;
+      min-width: 24px;
       height: 24px;
       border-radius: 100%;
       margin-left: 4px;
@@ -274,9 +290,10 @@
   }
   .suggestions {
     position: absolute;
+    z-index: 5;
     left: 0;
     right: 0;
-    margin-top: -$input-margin;
+    top: 100%;
     box-shadow: $shadow-2;
     max-height: 200px;
     overflow-y: scroll;
@@ -315,6 +332,20 @@
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+.character-enter-active, .character-leave-active {
+  transition: 0.2s ease;
+}
+.character-enter, .character-leave-to {
+  opacity: 0;
+}
+
+.menu-enter-active, .menu-leave-active {
+  transition: 0.3s ease;
+}
+.menu-enter, .menu-leave-to {
+  width: 0;
 }
 
 .list-slide-enter-active, .list-slide-leave-active {

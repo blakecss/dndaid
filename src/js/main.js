@@ -1,8 +1,22 @@
+Vue.directive('click-outside', {
+  bind: function (el, binding, vnode) {
+    el.event = function (event) {
+      if (!(el == event.target || el.contains(event.target))) {
+        vnode.context[binding.expression](event);
+      }
+    };
+    document.body.addEventListener('click', this.event)
+  },
+  unbind: function (el) {
+    document.body.removeEventListener('click', this.event)
+  },
+});
+
 Array.prototype.unique = function() {
   var a = this.concat();
-  for(var i=0; i<a.length; ++i) {
-    for(var j=i+1; j<a.length; ++j) {
-      if(a[i] === a[j])
+  for (var i=0; i<a.length; ++i) {
+    for (var j=i+1; j<a.length; ++j) {
+      if (a[i] === a[j])
         a.splice(j--, 1);
     }
   }
@@ -15,13 +29,16 @@ function roll(odds) {
     return Math.floor(Math.random() * odds) + 1;
   }
   // Dice
-  else if (/^\d+d\d+$/.test(odds)) {
-    var d = odds.split('d');
-    var r = 0;
-    for (var i = 0; i < Number(d[0]); i++) {
-      r += Math.floor(Math.random() * Number(d[1])) + 1;
-    }
-    return r;
+  else if (/\d+d\d+/.test(odds)) {
+    return eval(odds.replace(/\d+d\d+/g, function(match) {
+      var d = match.split('d');
+      console.log(d[0] + ' ' + d[1]);
+      var r = 0;
+      for (var i = 0; i < Number(d[0]); i++) {
+        r += Math.floor(Math.random() * Number(d[1])) + 1;
+      }
+      return r;
+    }));
   }
   // Dice Odds
   else if (Array.isArray(odds[0])) {
@@ -79,6 +96,7 @@ function mod(value) {
 //=include _dungeon.js
 //=include _treasure.js
 //=include _chips.js
+//=include _character-preview.js
 //=include _player.js
 //=include _creature.js
 //=include _characters.js
@@ -89,6 +107,7 @@ var mainVue = new Vue({
   data: {
     slide: 1,
     showSearch: false,
+    showMenu: false,
     search: '',
     slideDirection: 'slide-left'
   },
@@ -99,6 +118,14 @@ var mainVue = new Vue({
       }
       else {
         this.slideDirection = 'slide-left';
+      }
+    }
+  },
+  methods: {
+    doSearch: function() {
+      var s = this.search;
+      if (/\d+d\d+/.test(s)) {
+        this.search = roll(s);
       }
     }
   }

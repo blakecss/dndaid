@@ -5,8 +5,8 @@ var jsonRaceData = {
         "size": "Medium",
         "speed": 25,
         "perks": {
-          "Constitution": 2,
-          "Wisdom": 1
+          "con": 2,
+          "wis": 1
         },
         "traits": [
           "Darkvision",
@@ -31,8 +31,8 @@ var jsonRaceData = {
         "size": "Medium",
         "speed": 25,
         "perks": {
-          "Constitution": 2,
-          "Strength": 2
+          "con": 2,
+          "str": 2
         },
         "traits": [
           "Darkvision",
@@ -63,8 +63,8 @@ var jsonRaceData = {
         "size": "Medium",
         "speed": 30,
         "perks": {
-          "Dexterity": 2,
-          "Intelligence": 1
+          "dex": 2,
+          "int": 1
         },
         "traits": [
           "Darkvision",
@@ -90,8 +90,8 @@ var jsonRaceData = {
         "size": "Medium",
         "speed": 35,
         "perks": {
-          "Dexterity": 2,
-          "Wisdom": 1
+          "dex": 2,
+          "wis": 1
         },
         "traits": [
           "Darkvision",
@@ -116,8 +116,8 @@ var jsonRaceData = {
         "size": "Medium",
         "speed": 30,
         "perks": {
-          "Dexterity": 2,
-          "Charisma": 1
+          "dex": 2,
+          "cha": 1
         },
         "traits": [
           "Darkvision",
@@ -147,8 +147,8 @@ var jsonRaceData = {
         "size": "Small",
         "speed": 25,
         "perks": {
-          "Dexterity": 2,
-          "Charisma": 1
+          "dex": 2,
+          "cha": 1
         },
         "traits": [
           "Lucky",
@@ -165,8 +165,8 @@ var jsonRaceData = {
         "size": "Small",
         "speed": 25,
         "perks": {
-          "Dexterity": 2,
-          "Constitution": 1
+          "dex": 2,
+          "con": 1
         },
         "traits": [
           "Lucky",
@@ -185,12 +185,12 @@ var jsonRaceData = {
     "size": "Medium",
     "speed": 30,
     "perks": {
-      "Strength": 1,
-      "Dexterity": 1,
-      "Constitution": 1,
-      "Intelligence": 1,
-      "Wisdom": 1,
-      "Charisma": 1
+      "str": 1,
+      "dex": 1,
+      "con": 1,
+      "int": 1,
+      "wis": 1,
+      "cha": 1
     },
     "languages": [
       "Common",
@@ -201,8 +201,8 @@ var jsonRaceData = {
     "size": "Medium",
     "speed": 30,
     "perks": {
-      "Strength": 2,
-      "Charisma": 1
+      "str": 2,
+      "cha": 1
     },
     "traits": [
       "Draconic Ancestry",
@@ -220,8 +220,8 @@ var jsonRaceData = {
         "size": "Small",
         "speed": 25,
         "perks": {
-          "Intelligence": 2,
-          "Dexterity": 1
+          "int": 2,
+          "dex": 1
         },
         "traits": [
           "Darkvision",
@@ -238,8 +238,8 @@ var jsonRaceData = {
         "size": "Small",
         "speed": 25,
         "perks": {
-          "Intelligence": 2,
-          "Constitution": 1
+          "int": 2,
+          "con": 1
         },
         "traits": [
           "Darkvision",
@@ -258,7 +258,7 @@ var jsonRaceData = {
     "size": "Medium",
     "speed": 30,
     "perks": {
-      "Charisma": 2,
+      "cha": 2,
       "Other": 1,
       "Other": 1
     },
@@ -277,8 +277,8 @@ var jsonRaceData = {
     "size": "Medium",
     "speed": 30,
     "perks": {
-      "Strength": 2,
-      "Constitution": 1
+      "str": 2,
+      "con": 1
     },
     "traits": [
       "Darkvision",
@@ -295,8 +295,8 @@ var jsonRaceData = {
     "size": "Medium",
     "speed": 30,
     "perks": {
-      "Charisma": 2,
-      "Intelligence": 1
+      "cha": 2,
+      "int": 1
     },
     "traits": [
       "Darkvision",

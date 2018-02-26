@@ -14,12 +14,25 @@
         <div class="logo">
           <a href="/"><h1>Vue Application</h1></a>
         </div>
-        <div class="search">
-          <button class="search-icon" @click="showSearch = true"><svg><use xlink:href="sprites.svg#search"></use></svg></button>
-          <transition name="search">
-            <div class="search-bar" v-show="showSearch">
-              <input v-model="search" type="text" placeholder="Search" />
-              <button class="search-close" @click="showSearch = false"><svg><use xlink:href="sprites.svg#close"></use></svg></button>
+        <div class="header-right">
+          <form @submit.prevent="doSearch()">
+            <button class="search-icon" @click="showSearch = true"><svg><use xlink:href="sprites.svg#search"></use></svg></button>
+            <transition name="search">
+              <div class="search-bar" v-show="showSearch">
+                <input v-model="search" type="text" placeholder="Search" />
+                <button class="search-close" @click="showSearch = false"><svg><use xlink:href="sprites.svg#close"></use></svg></button>
+              </div>
+            </transition>
+          </form>
+          <button class="menu-icon" @click="showMenu = !showMenu">
+            <svg><use xlink:href="sprites.svg#menu"></use></svg>
+          </button>
+          <transition name="menu">
+            <div v-show="showMenu" class="header-menu">
+              <div @click="showMenu = false" class="fixed-click"></div>
+              <button><svg><use xlink:href="sprites.svg#save"></use></svg><span>Save</span></button>
+              <button><svg><use xlink:href="sprites.svg#import"></use></svg><span>Import</span></button>
+              <button><svg><use xlink:href="sprites.svg#help"></use></svg><span>Help</span></button>
             </div>
           </transition>
         </div>

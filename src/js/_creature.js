@@ -3,7 +3,7 @@ Vue.component('creature', {
   data: function() {
     return {
       alignments: jsonAlignmentData,
-      abilities: jsonAbilityData,
+      abilityData: jsonAbilityData,
       skills: jsonSkillData,
       char: this.c
     }
@@ -76,18 +76,12 @@ Vue.component('creature', {
           <svg :class="{open: c.showStats}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showStats" class="character-section-content">\
-          <h4>Abilities</h4>\
           <div class="row">\
-            <div class="input-group col-xs-2" v-for="(value, key) in abilities">\
+            <h4>Abilities</h4>\
+            <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
               <label>{{key}}</label>\
-              <input v-model="c[value.abbr.toLowerCase()]" type="number" />\
-            </div>\
-          </div>\
-          <h4>Skills</h4>\
-          <div class="row">\
-            <div class="input-group col-xs-2" v-for="(value, key) in skills">\
-              <label>{{key}}</label>\
-              <input v-model="c[value.abbr.toLowerCase()]" type="number" />\
+              <input v-model="c.abilities[key]" type="number" />\
+              <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
             </div>\
           </div>\
         </div>\

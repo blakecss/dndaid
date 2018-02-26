@@ -1,74 +1,74 @@
 var jsonSkillData = {
   "Acrobatics": {
     "abbr": "ACRO",
-    "rel_ability": "Dexterity"
+    "rel_ability": "dex"
   },
   "Animal Handling": {
     "abbr": "ANIM",
-    "rel_ability": "Wisdom"
+    "rel_ability": "wis"
   },
   "Arcana": {
     "abbr": "ARCA",
-    "rel_ability": "Intelligence"
+    "rel_ability": "int"
   },
   "Athletics": {
     "abbr": "ATHL",
-    "rel_ability": "Strength"
+    "rel_ability": "str"
   },
   "Deception": {
     "abbr": "DECE",
-    "rel_ability": "Charisma"
+    "rel_ability": "cha"
   },
   "History": {
     "abbr": "HIST",
-    "rel_ability": "Intelligence"
+    "rel_ability": "int"
   },
   "Insight": {
     "abbr": "INSI",
-    "rel_ability": "Wisdom"
+    "rel_ability": "wis"
   },
   "Intimidation": {
     "abbr": "INTI",
-    "rel_ability": "Charisma"
+    "rel_ability": "cha"
   },
   "Investigation": {
     "abbr": "INVE",
-    "rel_ability": "Intelligence"
+    "rel_ability": "int"
   },
   "Medicine": {
     "abbr": "MEDI",
-    "rel_ability": "Wisdom"
+    "rel_ability": "wis"
   },
   "Nature": {
     "abbr": "NATU",
-    "rel_ability": "Intelligence"
+    "rel_ability": "int"
   },
   "Perception": {
     "abbr": "PERC",
-    "rel_ability": "Wisdom"
+    "rel_ability": "wis"
   },
   "Performance": {
     "abbr": "PERF",
-    "rel_ability": "Charisma"
+    "rel_ability": "cha"
   },
   "Persuasion": {
     "abbr": "PERS",
-    "rel_ability": "Charisma"
+    "rel_ability": "cha"
   },
   "Religion": {
     "abbr": "RELI",
-    "rel_ability": "Intelligence"
+    "rel_ability": "int"
   },
   "Sleight of Hand": {
     "abbr": "SLEI",
-    "rel_ability": "Dexterity"
+    "rel_ability": "dex"
   },
   "Stealth": {
     "abbr": "STEA",
-    "rel_ability": "Dexterity"
+    "rel_ability": "dex"
   },
   "Survival": {
     "abbr": "SURV",
-    "rel_ability": "Wisdom"
+    "rel_ability": "wis"
   }
 };
