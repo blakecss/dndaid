@@ -109,7 +109,19 @@ var mainVue = new Vue({
     showSearch: false,
     showMenu: false,
     search: '',
-    slideDirection: 'slide-left'
+    showLoad: false,
+    loadFile: '',
+    slideDirection: 'slide-left',
+    characters: []
+  },
+  computed: {
+    saveData: function() {
+      return encodeURIComponent(JSON.stringify(this.characters));
+    },
+    saveFile: function() {
+      var d = new Date();
+      return (d.getMonth() + 1) + '-' + d.getDate() + '-' + d.getFullYear() + '.json';
+    }
   },
   watch: {
     slide: function(newVal, oldVal) {
@@ -127,6 +139,22 @@ var mainVue = new Vue({
       if (/\d+d\d+/.test(s)) {
         this.search = roll(s);
       }
+    },
+    loadBtn: function() {
+      this.showLoad = true;
+      this.showMenu = false;
+    },
+    load: function() {
+      this.showMenu = false;
+      var c = this;
+      var f = this.$refs.uploader.files[0];
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        c.characters = JSON.parse(event.target.result);
+        c.showLoad = false;
+        console.log(c);
+      };
+      reader.readAsText(f);
     }
   }
 });

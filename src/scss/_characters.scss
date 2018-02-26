@@ -11,10 +11,27 @@
     height: 100%;
   }
 }
-.roll-initiative {
+.order {
   position: absolute;
   top: 5px;
   right: 10px;
+  transition: 0.3s ease;
+  button {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 100%;
+    box-shadow: none;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  svg {
+    fill: $text-color;
+    width: 100%;
+    height: 100%;
+  }
 }
 .character-list {
   width: 100%;
@@ -24,7 +41,7 @@
   border-left: 1px solid #ccc;
   ul {
     list-style: none;
-    margin: 32px 0 0 0;
+    margin: 42px 0 0 0;
   }
   li {
     margin-bottom: 0;
@@ -52,6 +69,7 @@
   }
   .name {
     font-size: rem(16);
+    font-weight: $bold;
     margin: 0;
     flex: 1;
     overflow: hidden;

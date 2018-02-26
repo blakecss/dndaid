@@ -2,16 +2,32 @@ Vue.component('creature', {
   props: ['side', 'c'],
   data: function() {
     return {
-      alignments: jsonAlignmentData,
+      alignmentData: jsonAlignmentData,
       abilityData: jsonAbilityData,
-      skills: jsonSkillData,
+      skillData: jsonSkillData,
+      languages: ['Common', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Orc', 'Abyssal', 'Celestial', 'Draconic', 'Deep Speech', 'Infernal', 'Primordial', 'Sylvan', 'Undercommon'],
       char: this.c
     }
   },
   filters: {
     mod: function(value) {
-      return mod(value);
+      var v = Math.floor((value - 10) / 2);
+      return v >= 0 ? '+' + v : v;
     }
+  },
+  computed: {
+    saves: function() {
+      var s = {}
+      for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
+        var a = Object.keys(jsonAbilityData)[i];
+        var v = Math.floor((this.c.abilities[a] - 10) / 2);
+        if (this.c.saves[a]) {
+          v = v + this.c.pb;
+        }
+        s[a] = v >= 0 ? '+' + v : v;
+      }
+      return s;
+    },
   },
   template: '<div class="creature">\
     <div class="character-header">\
@@ -20,7 +36,7 @@ Vue.component('creature', {
       </div>\
       <div class="name">\
         <input v-model="c.name" type="text" />\
-        <p class="subtitle">{{c.name}}</p>\
+        <p class="subtitle">{{c.trueName}} ({{c.race}})</p>\
       </div>\
       <button class="flat-btn" @click="clear()">\
         <svg><use xlink:href="sprites.svg#menu"></use></svg>\
@@ -35,16 +51,23 @@ Vue.component('creature', {
         <div v-show="c.showInfo" class="character-section-content">\
           <div class="row">\
             <div class="input-group col-xs-6">\
-              <label>Alignment</label>\
-              <select v-model="c.alignment">\
-                <option v-for="alignment in alignments">{{alignment}}</option>\
-              </select>\
+            <label>Alignment</label>\
+            <input v-model="c.alignment" type="text" />\
             </div>\
-          </div>\
-          <div class="row">\
             <div class="input-group col-xs-6">\
               <label>Size</label>\
-              <input v-model="c.size" type="text" readonly />\
+              <select v-model="c.size">\
+                <option>Tiny</option>\
+                <option>Small</option>\
+                <option>Medium</option>\
+                <option>Large</option>\
+                <option>Huge</option>\
+                <option>Gargantuan</option>\
+              </select>\
+            </div>\
+            <div class="input-group col-xs-12">\
+              <label>Languages</label>\
+              <input v-model="c.languages" type="text" />\
             </div>\
           </div>\
         </div>\
@@ -82,6 +105,14 @@ Vue.component('creature', {
               <label>{{key}}</label>\
               <input v-model="c.abilities[key]" type="number" />\
               <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
+            </div>\
+          </div>\
+          <div class="row">\
+            <h4>Saves</h4>\
+            <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
+              <label>{{key}}\
+                <div class="prof">{{saves[key]}}<input v-model="c.saves[key]" type="checkbox" /></div>\
+              </label>\
             </div>\
           </div>\
         </div>\

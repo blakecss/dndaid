@@ -1292,6 +1292,10 @@ Vue.component('player', {
               <label>Languages</label>\
               <chips :chips="c.languages" :suggestions="languages"></chips>\
             </div>\
+            <div class="input-group col-xs-12">\
+              <label class="textarea-label">Notes</label>\
+              <textarea v-model="c.notes"></textarea>\
+            </div>\
           </div>\
         </div>\
       </div>\

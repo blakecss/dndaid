@@ -354,3 +354,6 @@
 .list-slide-enter, .list-slide-leave-to {
   transform: translateX(260px);
 }
+.list-slide-move {
+  transition: 0.5s ease;
+}

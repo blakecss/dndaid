@@ -30,9 +30,9 @@
           <transition name="menu">
             <div v-show="showMenu" class="header-menu">
               <div @click="showMenu = false" class="fixed-click"></div>
-              <button><svg><use xlink:href="sprites.svg#save"></use></svg><span>Save</span></button>
-              <button><svg><use xlink:href="sprites.svg#import"></use></svg><span>Import</span></button>
-              <button><svg><use xlink:href="sprites.svg#help"></use></svg><span>Help</span></button>
+              <a :href="'data:text/json;charset=utf-8,' + saveData" :download="saveFile"><svg><use xlink:href="sprites.svg#save"></use></svg><span>Save</span></a>
+              <input id="importer" ref="uploader" @change="load()" type="file" /><label for="importer"><svg><use xlink:href="sprites.svg#import"></use></svg><span>Import</span></label>
+              <button @click="help()"><svg><use xlink:href="sprites.svg#help"></use></svg><span>Help</span></button>
             </div>
           </transition>
         </div>
@@ -43,10 +43,21 @@
           <li @click="slide = 2" :class="slide == 2 ? 'current' : ''">W</li>
         </ul>
       </div>
+      <transition name="fade">
+        <div v-if="showLoad" class="modal-bg">
+          <div class="modal">
+            <div class="modal-content">
+            </div>
+            <div class="modal-footer">
+              <button @click="showLoad = false">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </transition>
     </header>
     <transition-group :name="slideDirection" tag="div">\
       <div v-show="slide == 1" key="1">
-        <characters id="characters"></characters>
+        <characters id="characters" :characters="characters"></characters>
       </div>
       <div v-show="slide == 2" key="2">
         <world id="world"></world>

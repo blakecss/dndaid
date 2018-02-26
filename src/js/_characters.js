@@ -1,8 +1,10 @@
 Vue.component('characters', {
+  props: ['characters'],
   data: function() {
     return {
       left: '',
       right: '',
+      currentCharacter: 0,
       characterSelect: false,
       addPlayerScreen: 1,
       addPlayerRace: 'Human',
@@ -13,7 +15,6 @@ Vue.component('characters', {
       addPlayerInventory: [],
       addCreatureName: '',
       characterDelete: false,
-      characters: [],
       abilityData: jsonAbilityData,
       raceData: jsonRaceData,
       classData: jsonClassData,
@@ -157,6 +158,13 @@ Vue.component('characters', {
       for (var i = 0; i < this.characters.length; i++) {
         this.characters[i].initiative = roll('1d20 + ' + mod(this.characters[i].abilities.dex));
       }
+      this.characters.sort(function(a, b) {
+        return b.initiative - a.initiative;
+      });
+    },
+    nextTurn: function() {
+      var f = this.characters.shift();
+      this.characters.push(f);
     },
     addPlayer: function() {
       var abilities = {};
@@ -189,8 +197,9 @@ Vue.component('characters', {
         klass: this.addPlayerClass,
         background: this.addPlayerBackground,
         alignment: '',
-        languages: ["Common", "Other"],
         size: this.size,
+        languages: ["Common", "Other"],
+        notes: '',
         speed: this.speed,
         showCombat: true,
         currentHP: 0,
@@ -218,6 +227,7 @@ Vue.component('characters', {
         coins: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': 0, 'pp': 0},
         inventory: []
       });
+
       this.characterSelect = false;
     },
     addCreature: function() {
@@ -239,11 +249,13 @@ Vue.component('characters', {
         left: false,
         right: false,
         name: this.addCreatureName,
+        trueName: this.addCreatureName,
         type: 'creature',
         showInfo: true,
-        race: c.type + (c.subtype ? ' (' + c.subtype + ')' : ''),
+        race: c.type,
         alignment: c.alignment,
         size: c.size,
+        languages: c.languages,
         speed: c.speed,
         showCombat: true,
         currentHP: c.maxHP,
@@ -283,16 +295,16 @@ Vue.component('characters', {
       this.characters.splice(i + 1, 0, dupe);
     },
     deleteBtn: function(i) {
-      this.characterDelete = i + 1;
+      this.characterDelete = i;
     },
     deleteCharacter: function(i) {
-      if (this.left.id == this.characters[i - 1].id) {
+      if (this.left.id === this.characters[i].id) {
         this.left = '';
       }
-      if (this.right.id == this.characters[i - 1].id) {
+      if (this.right.id === this.characters[i].id) {
         this.right = '';
       }
-      this.characters.splice(i - 1, 1);
+      this.characters.splice(i, 1);
       this.characterDelete = false;
     },
     clearLeft: function() {
@@ -322,10 +334,15 @@ Vue.component('characters', {
       </div>\
     </main>\
     <aside class="character-list">\
-      <button class="add-character" @click="characterSelect = true">\
+      <button class="add-character" @click="characterSelect = true" title="Add Character">\
         <svg><use xlink:href="sprites.svg#plus"></use></svg>\
       </button>\
-      <a class="roll-initiative" href="" @click.prevent="rollInitiative()">Roll Initiative</a>\
+      <transition name="fade">\
+        <div v-if="characters.length > 0" class="order">\
+          <button @click="rollInitiative()" title="Roll Initiative"><svg><use xlink:href="sprites.svg#initiative"></use></svg></button>\
+          <button @click="nextTurn()" title="Next Turn"><svg><use xlink:href="sprites.svg#next"></use></svg></button>\
+        </div>\
+      </transition>\
       <transition-group class="sortable" name="list-slide" tag="ul">\
         <li v-for="(character, index) in characters" :key="character.id">\
           <div class="info">\
@@ -350,16 +367,16 @@ Vue.component('characters', {
             </div>\
           </div>\
           <div class="tools">\
-            <button :class="[left && left.id === character.id ? \'current\' : \'\']" class="flat-btn" @click="leftBtn(index)">\
+            <button :class="[left && left.id === character.id ? \'current\' : \'\']" class="flat-btn" @click="leftBtn(index)" title="Inspect Left">\
               <svg><use xlink:href="sprites.svg#arrow-left"></use></svg>\
             </button>\
-            <button :class="[right && right.id === character.id ? \'current\' : \'\']" class="flat-btn" @click="rightBtn(index)">\
+            <button :class="[right && right.id === character.id ? \'current\' : \'\']" class="flat-btn" @click="rightBtn(index)" title="Inspect Right">\
               <svg><use xlink:href="sprites.svg#arrow-right"></use></svg>\
             </button>\
-            <button class="flat-btn" @click="duplicateBtn(index)">\
+            <button class="flat-btn" @click="duplicateBtn(index)" title="Duplicate Character">\
               <svg><use xlink:href="sprites.svg#duplicate"></use></svg>\
             </button>\
-            <button class="flat-btn" @click="deleteBtn(index)">\
+            <button class="flat-btn" @click="deleteBtn(index)" title="Delete Character">\
               <svg><use xlink:href="sprites.svg#trash"></use></svg>\
             </button>\
           </div>\
@@ -401,7 +418,7 @@ Vue.component('characters', {
                   <h2>Creature</h2>\
                   <select v-model="addCreatureName" required>\
                     <option value="" disabled>Creature</option>\
-                    <option v-for="(value, key) in creatureData">{{key}}</option>\
+                    <option v-for="(value, key) in creatureData" :value="key">{{key}} {{value.challenge_rating}}</option>\
                   </select>\
                 </div>\
                 <div class="modal-footer">\
@@ -479,10 +496,10 @@ Vue.component('characters', {
       </div>\
     </transition>\
     <transition name="fade">\
-      <div v-if="characterDelete" class="modal-bg">\
+      <div v-if="typeof characterDelete == \'number\'" class="modal-bg">\
         <div class="modal">\
           <div class="modal-content">\
-            <p>Delete {{characters[characterDelete - 1].name || character}}?</p>\
+            <p>Delete {{characters[characterDelete].name || character}}?</p>\
           </div>\
           <div class="modal-footer">\
             <button @click="characterDelete = false">Cancel</button>\

@@ -123,6 +123,21 @@ input, select, textarea {
   @extend %input;
 }
 
+.textarea-label {
+  padding-left: $grid-padding;
+  padding-top: 12px;
+}
+textarea {
+  border: 1px solid rgba(#000, 0.2);
+  padding: $grid-padding;
+  padding-top: 24px;
+  margin-top: -24px;
+  display: block;
+  &:focus {
+    border-color: $primary;
+  }
+}
+
 input[type="checkbox"], input[type="radio"] {
   width: auto;
   margin: 4px 10px 0 0;
