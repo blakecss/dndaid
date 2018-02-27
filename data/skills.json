@@ -1,74 +1,92 @@
 var jsonSkillData = {
-  "Acrobatics": {
+  "acrobatics": {
     "abbr": "ACRO",
+    "full": "Acrobatics",
     "rel_ability": "dex"
   },
-  "Animal Handling": {
+  "animal_handling": {
     "abbr": "ANIM",
+    "full": "Animal Handling",
     "rel_ability": "wis"
   },
-  "Arcana": {
+  "arcana": {
     "abbr": "ARCA",
+    "full": "Arcana",
     "rel_ability": "int"
   },
-  "Athletics": {
+  "athletics": {
     "abbr": "ATHL",
+    "full": "Athletics",
     "rel_ability": "str"
   },
-  "Deception": {
+  "deception": {
     "abbr": "DECE",
+    "full": "Deception",
     "rel_ability": "cha"
   },
-  "History": {
+  "history": {
     "abbr": "HIST",
+    "full": "History",
     "rel_ability": "int"
   },
-  "Insight": {
+  "insight": {
     "abbr": "INSI",
+    "full": "Insight",
     "rel_ability": "wis"
   },
-  "Intimidation": {
+  "intimidation": {
     "abbr": "INTI",
+    "full": "Intimidation",
     "rel_ability": "cha"
   },
-  "Investigation": {
+  "investigation": {
     "abbr": "INVE",
+    "full": "Investigation",
     "rel_ability": "int"
   },
-  "Medicine": {
+  "medicine": {
     "abbr": "MEDI",
+    "full": "Medicine",
     "rel_ability": "wis"
   },
-  "Nature": {
+  "nature": {
     "abbr": "NATU",
+    "full": "Nature",
     "rel_ability": "int"
   },
-  "Perception": {
+  "perception": {
     "abbr": "PERC",
+    "full": "Perception",
     "rel_ability": "wis"
   },
-  "Performance": {
+  "performance": {
     "abbr": "PERF",
+    "full": "Performance",
     "rel_ability": "cha"
   },
-  "Persuasion": {
+  "persuasion": {
     "abbr": "PERS",
+    "full": "Persuasion",
     "rel_ability": "cha"
   },
-  "Religion": {
+  "religion": {
     "abbr": "RELI",
+    "full": "Religion",
     "rel_ability": "int"
   },
-  "Sleight of Hand": {
+  "sleight_of_hand": {
     "abbr": "SLEI",
+    "full": "Slight of Hand",
     "rel_ability": "dex"
   },
-  "Stealth": {
+  "stealth": {
     "abbr": "STEA",
+    "full": "Stealth",
     "rel_ability": "dex"
   },
-  "Survival": {
+  "survival": {
     "abbr": "SURV",
+    "full": "Survival",
     "rel_ability": "wis"
   }
 };

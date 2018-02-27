@@ -16,10 +16,10 @@
         </div>
         <div class="header-right">
           <form @submit.prevent="doSearch()">
-            <button class="search-icon" @click="showSearch = true"><svg><use xlink:href="sprites.svg#search"></use></svg></button>
+            <button class="search-icon" @click="searchBtn()"><svg><use xlink:href="sprites.svg#search"></use></svg></button>
             <transition name="search">
               <div class="search-bar" v-show="showSearch">
-                <input v-model="search" type="text" placeholder="Search" />
+                <input v-model="search" ref="search" type="text" placeholder="Search" />
                 <button class="search-close" @click="showSearch = false"><svg><use xlink:href="sprites.svg#close"></use></svg></button>
               </div>
             </transition>

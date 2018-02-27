@@ -266,7 +266,7 @@ Vue.component('characters', {
         abilities: c.abilities,
         saves: saves,
         skills: skills,
-        showSpecialAbilites: true,
+        showSpecialAbilities: true,
         specialAbilities: c.special_abilities,
         showActions: true,
         actions: c.actions,

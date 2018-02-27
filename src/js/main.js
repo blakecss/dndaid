@@ -134,6 +134,13 @@ var mainVue = new Vue({
     }
   },
   methods: {
+    searchBtn: function() {
+      this.showSearch = true;
+      var s = this.$refs.search;
+      setTimeout(function() {
+        s.focus();
+      }, 10);
+    },
     doSearch: function() {
       var s = this.search;
       if (/\d+d\d+/.test(s)) {

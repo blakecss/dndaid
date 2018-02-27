@@ -118,11 +118,11 @@ Vue.component('creature', {
         </div>\
       </div>\
       <div class="character-section">\
-        <button @click="c.showSpecialAbilities = !c.showSpecialAbilites" class="character-section-header">\
+        <button @click="c.showSpecialAbilities = !c.showSpecialAbilities" class="character-section-header">\
           <h3>Special Abilites</h3>\
-          <svg :class="{open: c.showSpecialAbilites}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
+          <svg :class="{open: c.showSpecialAbilities}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
-        <div v-show="c.showSpecialAbilites" class="character-section-content">\
+        <div v-show="c.showSpecialAbilities" class="character-section-content">\
           <ul class="row">\
             <li v-for="special in c.specialAbilities" class="col-xs-12">\
               <p><b><i>{{special.name}}: </i></b>{{special.desc}}</p>\
@@ -145,7 +145,7 @@ Vue.component('creature', {
       </div>\
       <div class="character-section">\
         <button @click="c.showLegendaryActions = !c.showLegendaryActions" class="character-section-header">\
-          <h3>Actions</h3>\
+          <h3>Legendary Actions</h3>\
           <svg :class="{open: c.showLegendaryActions}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showLegendaryActions" class="character-section-content">\

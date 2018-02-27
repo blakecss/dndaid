@@ -36,12 +36,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 5
+    },
     "senses": "passive Perception 15",
     "languages": "Auran",
     "challenge_rating": "1/4 (50 XP)",
@@ -82,30 +79,15 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "int",
-        "val": 8
-      },
-      {
-        "name": "wis",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "history",
-        "val": 12
-      },
-      {
-        "name": "perception",
-        "val": 10
-      }
-    ],
+    "saves": {
+      "con": 6,
+      "int": 8,
+      "wis": 6
+    },
+    "skills": {
+      "history": 12,
+      "perception": 10
+    },
     "senses": "darkvision 120 ft., passive Perception 20",
     "languages": "Deep Speech, telepathy 120 ft.",
     "challenge_rating": "10 (5900 XP)",
@@ -172,16 +154,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 9
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
     "damage_immunities": "cold",
     "senses": "darkvision 60 ft., passive Perception 15",
     "languages": "Yeti",
@@ -236,16 +212,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "medicine",
-        "val": 4
-      },
-      {
-        "name": "religion",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "medicine": 4,
+      "religion": 2
+    },
     "senses": "passive Perception 12",
     "languages": "any one language (usually Common)",
     "challenge_rating": "1/4 (50 XP)",
@@ -278,34 +248,16 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 11
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 10,
+      "wis": 6,
+      "cha": 8
+    },
+    "skills": {
+      "perception": 11,
+      "stealth": 7
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 21",
     "languages": "Common, Draconic",
@@ -377,12 +329,9 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 19
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 12
-      }
-    ],
+    "skills": {
+      "perception": 12
+    },
     "damage_resistances": "necrotic",
     "damage_immunities": "lightning, poison",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
@@ -456,34 +405,16 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 11
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 12
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 11,
+      "wis": 7,
+      "cha": 9
+    },
+    "skills": {
+      "perception": 12,
+      "stealth": 5
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 22",
     "languages": "Common, Draconic",
@@ -551,42 +482,18 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "history",
-        "val": 7
-      },
-      {
-        "name": "perception",
-        "val": 11
-      },
-      {
-        "name": "persuasion",
-        "val": 8
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 10,
+      "wis": 6,
+      "cha": 8
+    },
+    "skills": {
+      "history": 7,
+      "perception": 11,
+      "persuasion": 8,
+      "stealth": 5
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 21",
     "languages": "Common, Draconic",
@@ -640,38 +547,17 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 11
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 7
-      },
-      {
-        "name": "perception",
-        "val": 12
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 11,
+      "wis": 7,
+      "cha": 9
+    },
+    "skills": {
+      "insight": 7,
+      "perception": 12,
+      "stealth": 5
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 22",
     "languages": "Common, Draconic",
@@ -747,38 +633,17 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 8
-      },
-      {
-        "name": "perception",
-        "val": 12
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 10,
+      "wis": 7,
+      "cha": 8
+    },
+    "skills": {
+      "deception": 8,
+      "perception": 12,
+      "stealth": 6
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 22",
     "languages": "Common, Draconic",
@@ -846,42 +711,18 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 24
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 8
-      },
-      {
-        "name": "con",
-        "val": 13
-      },
-      {
-        "name": "wis",
-        "val": 8
-      },
-      {
-        "name": "cha",
-        "val": 13
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 8
-      },
-      {
-        "name": "perception",
-        "val": 14
-      },
-      {
-        "name": "persuasion",
-        "val": 13
-      },
-      {
-        "name": "stealth",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "dex": 8,
+      "con": 13,
+      "wis": 8,
+      "cha": 13
+    },
+    "skills": {
+      "insight": 8,
+      "perception": 14,
+      "persuasion": 13,
+      "stealth": 8
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 24",
     "languages": "Common, Draconic",
@@ -957,46 +798,19 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 17
     },
-    "save": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 8
-      },
-      {
-        "name": "insight",
-        "val": 7
-      },
-      {
-        "name": "perception",
-        "val": 12
-      },
-      {
-        "name": "persuasion",
-        "val": 8
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "save": {
+      "dex": 6,
+      "con": 10,
+      "wis": 7,
+      "cha": 8
+    },
+    "skills": {
+      "deception": 8,
+      "insight": 7,
+      "perception": 12,
+      "persuasion": 8,
+      "stealth": 6
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 22",
@@ -1069,34 +883,16 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 21
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 13
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 11
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 13
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 13,
+      "wis": 7,
+      "cha": 11
+    },
+    "skills": {
+      "perception": 13,
+      "stealth": 6
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 23",
     "languages": "Common, Draconic",
@@ -1168,42 +964,18 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 21
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 12
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 10
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 8
-      },
-      {
-        "name": "history",
-        "val": 8
-      },
-      {
-        "name": "perception",
-        "val": 11
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 12,
+      "wis": 6,
+      "cha": 10
+    },
+    "skills": {
+      "arcana": 8,
+      "history": 8,
+      "perception": 11,
+      "stealth": 5
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 21",
     "languages": "Common, Draconic",
@@ -1275,34 +1047,16 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 11
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 11
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 11,
+      "wis": 6,
+      "cha": 6
+    },
+    "skills": {
+      "perception": 11,
+      "stealth": 5
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 21",
     "languages": "Common, Draconic",
@@ -1417,12 +1171,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 5
+    },
     "senses": "passive Perception 15",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -1458,34 +1209,16 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 9
-      },
-      {
-        "name": "con",
-        "val": 14
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 11
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 16
-      },
-      {
-        "name": "stealth",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "dex": 9,
+      "con": 14,
+      "wis": 9,
+      "cha": 11
+    },
+    "skills": {
+      "perception": 16,
+      "stealth": 9
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 26",
     "languages": "Common, Draconic",
@@ -1561,34 +1294,16 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 21
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 15
-      },
-      {
-        "name": "wis",
-        "val": 10
-      },
-      {
-        "name": "cha",
-        "val": 12
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 17
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 15,
+      "wis": 10,
+      "cha": 12
+    },
+    "skills": {
+      "perception": 17,
+      "stealth": 7
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 27",
     "languages": "Common, Draconic",
@@ -1650,42 +1365,18 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 13
-      },
-      {
-        "name": "wis",
-        "val": 8
-      },
-      {
-        "name": "cha",
-        "val": 10
-      }
-    ],
-    "skills": [
-      {
-        "name": "history",
-        "val": 9
-      },
-      {
-        "name": "perception",
-        "val": 14
-      },
-      {
-        "name": "persuasion",
-        "val": 10
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 13,
+      "wis": 8,
+      "cha": 10
+    },
+    "skills": {
+      "history": 9,
+      "perception": 14,
+      "persuasion": 10,
+      "stealth": 6
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 24",
     "languages": "Common, Draconic",
@@ -1757,38 +1448,17 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 21
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 15
-      },
-      {
-        "name": "wis",
-        "val": 10
-      },
-      {
-        "name": "cha",
-        "val": 12
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 10
-      },
-      {
-        "name": "perception",
-        "val": 17
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 15,
+      "wis": 10,
+      "cha": 12
+    },
+    "skills": {
+      "insight": 10,
+      "perception": 17,
+      "stealth": 7
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 27",
     "languages": "Common, Draconic",
@@ -1864,38 +1534,17 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 8
-      },
-      {
-        "name": "con",
-        "val": 14
-      },
-      {
-        "name": "wis",
-        "val": 10
-      },
-      {
-        "name": "cha",
-        "val": 11
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 11
-      },
-      {
-        "name": "perception",
-        "val": 17
-      },
-      {
-        "name": "stealth",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "dex": 8,
+      "con": 14,
+      "wis": 10,
+      "cha": 11
+    },
+    "skills": {
+      "deception": 11,
+      "perception": 17,
+      "stealth": 8
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 27",
     "languages": "Common, Draconic",
@@ -1967,42 +1616,18 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 28
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 9
-      },
-      {
-        "name": "con",
-        "val": 16
-      },
-      {
-        "name": "wis",
-        "val": 10
-      },
-      {
-        "name": "cha",
-        "val": 16
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 10
-      },
-      {
-        "name": "perception",
-        "val": 17
-      },
-      {
-        "name": "persuasion",
-        "val": 16
-      },
-      {
-        "name": "stealth",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "dex": 9,
+      "con": 16,
+      "wis": 10,
+      "cha": 16
+    },
+    "skills": {
+      "insight": 10,
+      "perception": 17,
+      "persuasion": 16,
+      "stealth": 9
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 27",
     "languages": "Common, Draconic",
@@ -2078,46 +1703,19 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 8
-      },
-      {
-        "name": "con",
-        "val": 14
-      },
-      {
-        "name": "wis",
-        "val": 10
-      },
-      {
-        "name": "cha",
-        "val": 11
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 11
-      },
-      {
-        "name": "insight",
-        "val": 10
-      },
-      {
-        "name": "perception",
-        "val": 17
-      },
-      {
-        "name": "persuasion",
-        "val": 11
-      },
-      {
-        "name": "stealth",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "dex": 8,
+      "con": 14,
+      "wis": 10,
+      "cha": 11
+    },
+    "skills": {
+      "deception": 11,
+      "insight": 10,
+      "perception": 17,
+      "persuasion": 11,
+      "stealth": 8
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 27",
@@ -2190,34 +1788,16 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 23
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 16
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 13
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 16
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 16,
+      "wis": 9,
+      "cha": 13
+    },
+    "skills": {
+      "perception": 16,
+      "stealth": 7
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 26",
     "languages": "Common, Draconic",
@@ -2285,42 +1865,18 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 23
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 16
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 13
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 11
-      },
-      {
-        "name": "history",
-        "val": 11
-      },
-      {
-        "name": "perception",
-        "val": 16
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 16,
+      "wis": 9,
+      "cha": 13
+    },
+    "skills": {
+      "arcana": 11,
+      "history": 11,
+      "perception": 16,
+      "stealth": 7
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 26",
     "languages": "Common, Draconic",
@@ -2392,34 +1948,16 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 14
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 14
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 13
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 14,
+      "wis": 7,
+      "cha": 8
+    },
+    "skills": {
+      "perception": 13,
+      "stealth": 6
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 23",
     "languages": "Common, Draconic",
@@ -2477,38 +2015,17 @@ var jsonCreatureData = {
       "wis": 18,
       "cha": 23
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 11
-      },
-      {
-        "name": "int",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 10
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 9
-      },
-      {
-        "name": "perception",
-        "val": 10
-      },
-      {
-        "name": "religion",
-        "val": 15
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 11,
+      "int": 9,
+      "wis": 10
+    },
+    "skills": {
+      "arcana": 9,
+      "perception": 10,
+      "religion": 15
+    },
     "damage_immunities": "psychic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, frightened",
     "senses": "truesight 120 ft., passive Perception 20",
@@ -2668,16 +2185,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "athletics": 5,
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1/2 (100 XP)",
     "actions": [
@@ -2712,42 +2223,18 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "int",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 13
-      },
-      {
-        "name": "deception",
-        "val": 9
-      },
-      {
-        "name": "insight",
-        "val": 9
-      },
-      {
-        "name": "perception",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "int": 9,
+      "wis": 7,
+      "cha": 7
+    },
+    "skills": {
+      "arcana": 13,
+      "deception": 9,
+      "insight": 9,
+      "perception": 7
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "acid, poison",
     "condition_immunities": "charmed, poisoned",
@@ -2800,26 +2287,14 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 13
-      },
-      {
-        "name": "history",
-        "val": 13
-      }
-    ],
+    "saves": {
+      "int": 9,
+      "wis": 6
+    },
+    "skills": {
+      "arcana": 13,
+      "history": 13
+    },
     "damage_resistances": "damage from spells; non magical bludgeoning, piercing, and slashing (from stoneskin)",
     "senses": "passive Perception 12",
     "languages": "any six languages",
@@ -2858,34 +2333,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "int",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "acrobatics",
-        "val": 6
-      },
-      {
-        "name": "deception",
-        "val": 3
-      },
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "int": 4
+    },
+    "skills": {
+      "acrobatics": 6,
+      "deception": 3,
+      "perception": 3,
+      "stealth": 9
+    },
     "damage_resistances": "poison",
     "senses": "passive Perception 13",
     "languages": "Thieves' cant plus any two languages",
@@ -3028,12 +2485,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 10
     },
-    "saves": [
-       {
-         "names": "con",
-         "val": 4
-       }
-    ],
+    "saves": {
+      "con": 4
+    },
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "passive Perception 11",
@@ -3139,24 +2593,12 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 22
     },
-    "saves": [
-      {
-        "names": "str",
-        "val": 14
-      },
-      {
-        "names": "con",
-        "val": 12
-      },
-      {
-        "names": "wis",
-        "val": 9
-      },
-      {
-        "names": "cha",
-        "val": 12
-      }
-    ],
+    "saves": {
+      "str": 14,
+      "con": 12,
+      "wis": 9,
+      "cha": 12
+    },
     "damage_resistances": "cold, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -3252,30 +2694,15 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 14
     },
-    "saves": [
-      {
-        "names": "str",
-        "val": 4
-      },
-      {
-        "names": "dex",
-        "val": 5
-      },
-      {
-        "names": "wis",
-        "val": 2
-      }
-    ],
-    "skills": [
-      {
-        "names": "athletics",
-        "val": 4
-      },
-      {
-        "names": "deception",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "str": 4,
+      "dex": 5,
+      "wis": 2
+    },
+    "skills": {
+      "athletics": 4,
+      "deception": 4
+    },
     "senses": "passive Perception 10",
     "languages": "any two languages",
     "challenge_rating": "2 (450 XP)",
@@ -3316,16 +2743,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 17
     },
-    "saves": [
-      {
-        "names": "wis",
-        "val": 2
-      },
-      {
-        "names": "cha",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "wis": 2,
+      "cha": 4
+    },
     "damage_resistances": "acid, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "cold, necrotic, poison",
     "condition_immunities": "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
@@ -3374,38 +2795,17 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 14
     },
-    "saves": [
-      {
-        "names": "str",
-        "val": 6
-      },
-      {
-        "names": "con",
-        "val": 7
-      },
-      {
-        "names": "wis",
-        "val": 5
-      },
-      {
-        "names": "cha",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "names": "deception",
-        "val": 5
-      },
-      {
-        "names": "insight",
-        "val": 5
-      },
-      {
-        "names": "perception",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "str": 6,
+      "con": 7,
+      "wis": 5,
+      "cha": 5
+    },
+    "skills": {
+      "deception": 5,
+      "insight": 5,
+      "perception": 8
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -3466,26 +2866,14 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 9
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 6
+    },
+    "skills": {
+      "perception": 5,
+      "stealth": 5
+    },
     "damage_resistances": "cold, fire, lightning",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -3608,20 +2996,11 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 11
     },
-    "saves": [
-      {
-        "names": "str",
-        "val": 5
-      },
-      {
-        "names": "con",
-        "val": 4
-      },
-      {
-        "names": "wis",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "str": 5,
+      "con": 4,
+      "wis": 2
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -3677,16 +3056,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 12
     },
-    "skills": [
-      {
-        "names": "perception",
-        "val": 6
-      },
-      {
-        "names": "stealth",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "perception": 6,
+      "stealth": 7
+    },
     "damage_immunities": "lightning",
     "senses": "darkvision 90 ft., passive Perception 16",
     "languages": "Draconic",
@@ -3730,26 +3103,14 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 17
     },
-    "saves": [
-      {
-        "names": "int",
-        "val": 8
-      },
-      {
-        "names": "wis",
-        "val": 7
-      },
-      {
-        "names": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "names": "perception",
-        "val": 12
-      }
-    ],
+    "saves": {
+      "int": 8,
+      "wis": 7,
+      "cha": 8
+    },
+    "skills": {
+      "perception": 12
+    },
     "damage_immunities": "prone",
     "senses": "darkvision 120 ft., passive Perception 22",
     "languages": "Deep Speech, Undercommon",
@@ -3793,12 +3154,9 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 5
     },
-    "saves": [
-      {
-        "names": "wis",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "wis": 2
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
@@ -3909,34 +3267,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 13
     },
-    "saves": [
-      {
-        "names": "dex",
-        "val": 4
-      },
-      {
-        "names": "con",
-        "val": 3
-      },
-      {
-        "names": "wis",
-        "val": 2
-      },
-      {
-        "names": "cha",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "names": "perception",
-        "val": 4
-      },
-      {
-        "names": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 3,
+      "wis": 2,
+      "cha": 3
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 4
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -4021,16 +3361,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 11
     },
-    "skills": [
-      {
-        "names": "perception",
-        "val": 3
-      },
-      {
-        "names": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 5
+    },
     "senses": "passive Perception 10",
     "languages": "Blink Dog, understands Sylvan but can't speak it",
     "challenge_rating": "1/4 (50 XP)",
@@ -4067,12 +3401,9 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 5
     },
-    "skills": [
-      {
-        "names": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
@@ -4108,33 +3439,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "names": "dex",
-        "val": 2
-      },
-      {
-        "names": "con",
-        "val": 4
-      },
-      {
-        "names": "wis",
-        "val": 2
-      },{
-        "names": "cha",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "names": "perception",
-        "val": 4
-      },
-      {
-        "names": "stealth",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "dex": 2,
+      "con": 4,
+      "wis": 2,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 2
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -4166,12 +3480,9 @@ var jsonCreatureData = {
       "wis": 7,
       "cha": 9
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 1
-      }
-    ],
+    "skills": {
+      "perception": 1
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Slaad, telepathy 60 ft.",
@@ -4257,30 +3568,15 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 16
     },
-    "saves": [
-      {
-        "names": "int",
-        "val": 5
-      },
-      {
-        "names": "wis",
-        "val": 6
-      },
-      {
-        "names": "cha",
-        "val": 7
-      }
-    ],
-    "skills": [
-      {
-        "names": "deception",
-        "val": 7
-      },
-      {
-        "names": "insight",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "int": 5,
+      "wis": 6,
+      "cha": 7
+    },
+    "skills": {
+      "deception": 7,
+      "insight": 6
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -4370,34 +3666,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 13
     },
-    "saves": [
-      {
-        "names": "dex",
-        "val": 2
-      },
-      {
-        "names": "con",
-        "val": 3
-      },
-      {
-        "names": "wis",
-        "val": 2
-      },
-      {
-        "names": "cha",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "names": "perception",
-        "val": 4
-      },
-      {
-        "names": "stealth",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "dex": 2,
+      "con": 3,
+      "wis": 2,
+      "cha": 3
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 2
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -4429,34 +3707,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "names": "dex",
-        "val": 2
-      },
-      {
-        "names": "con",
-        "val": 4
-      },
-      {
-        "names": "wis",
-        "val": 2
-      },
-      {
-        "names": "cha",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "names": "perception",
-        "val": 4
-      },
-      {
-        "names": "stealth",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "dex": 2,
+      "con": 4,
+      "wis": 2,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 2
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -4494,12 +3754,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 7
     },
-    "skills": [
-      {
-        "names": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -4540,16 +3797,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 9
     },
-    "skills": [
-      {
-        "names": "stealth",
-        "val": 6
-      },
-      {
-        "names": "survival",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "stealth": 6,
+      "survival": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common, Goblin",
     "challenge_rating": "1 (200 XP)",
@@ -4591,20 +3842,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 11
     },
-    "skills": [
-      {
-        "names": "intimidation",
-        "val": 2
-      },
-      {
-        "names": "stealth",
-        "val": 6
-      },
-      {
-        "names": "survival",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "intimidation": 2,
+      "stealth": 6,
+      "survival": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Common, Goblin",
     "challenge_rating": "3 (700 XP)",
@@ -4653,12 +3895,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 6
+    },
     "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 16",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
@@ -4695,12 +3934,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "stealth": 3
+    },
     "senses": "passive Perception 10",
     "languages": "Bullywug",
     "challenge_rating": "1/4 (50 XP)",
@@ -4753,42 +3989,18 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 6
-      },
-      {
-        "name": "intimidation",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "str": 7,
+      "con": 6,
+      "int": 5,
+      "cha": 6
+    },
+    "skills": {
+      "deception": 6,
+      "intimidation": 6,
+      "perception": 4,
+      "stealth": 7
+    },
     "damage_resistances": "cold, fire, lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Percption 14",
     "languages": "Abyssal, Common, Infernal",
@@ -4863,12 +4075,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -4912,16 +4121,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "0",
     "special_abilities": [
@@ -4953,12 +4156,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -4998,20 +4198,11 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "survival",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "athletics": 6,
+      "perception": 3,
+      "survival": 3
+    },
     "senses": "passive Perception 13",
     "languages": "Elvish, Sylvan",
     "challenge_rating": "2 (450 XP)",
@@ -5057,20 +4248,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 14
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "con": 7,
+      "wis": 4,
+      "cha": 5
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -5125,22 +4307,13 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 10
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "wis": 5
+    },
+    "skills": {
+      "perception": 5
+    },
     "damage_resistances": "cold, fire, lightning",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -5188,12 +4361,9 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 8
-      }
-    ],
+    "skills": {
+      "perception": 8
+    },
     "senses": "darkvision 60 ft., passive Perception 18",
     "languages": "understands Draconic but can't speak",
     "challenge_rating": "6 (2300 XP)",
@@ -5236,12 +4406,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 14",
@@ -5346,12 +4513,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "stealth": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Deep Speech, Undercommon",
     "challenge_rating": "8 (3900 XP)",
@@ -5408,30 +4572,15 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 7
-      },
-      {
-        "name": "perception",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "con": 10,
+      "wis": 7,
+      "cha": 7
+    },
+    "skills": {
+      "insight": 7,
+      "perception": 7
+    },
     "senses": "passive Perception 17",
     "languages": "Common, Giant",
     "challenge_rating": "9 (5000 XP)",
@@ -5558,34 +4707,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 13
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 3
-      },
-      {
-        "name": "con",
-        "val": 3
-      },
-      {
-        "name": "wis",
-        "val": 2
-      },
-      {
-        "name": "cha",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "saves": {
+      "dex": 3,
+      "con": 3,
+      "wis": 2,
+      "cha": 3
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 3
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -5617,20 +4748,11 @@ var jsonCreatureData = {
       "wis": 20,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "con": 5,
+      "wis": 7,
+      "cha": 6
+    },
     "damage_resistances": "radiant",
     "damage_immunities": "psychic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "truesight 120 ft., passive Perception 15",
@@ -5681,12 +4803,9 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 2
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "stealth": 2
+    },
     "senses": "blindsight 30 ft., passive Perception 9",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -5752,12 +4871,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "stealth": 2
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -5790,16 +4906,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 2
-      },
-      {
-        "name": "religion",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "deception": 2,
+      "religion": 2
+    },
     "senses": "passive Perception 10",
     "languages": "any one language (usually Common)",
     "challenge_rating": "1/8 (25 XP)",
@@ -5833,20 +4943,11 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 4
-      },
-      {
-        "name": "persuasion",
-        "val": 4
-      },
-      {
-        "name": "religion",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "deception": 4,
+      "persuasion": 4,
+      "religion": 2
+    },
     "senses": "passive Perception 10",
     "languages": "any one language (usually Common)",
     "challenge_rating": "2 (450 XP)",
@@ -5927,20 +5028,11 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 14
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 5
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "int": 5,
+      "wis": 5,
+      "cha": 6
+    },
     "condition_immunities": "petrified",
     "senses": "darkvision 120 ft., passive Perception 11",
     "languages": "Terran",
@@ -5994,12 +5086,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "stealth": 3
+    },
     "senses": "blindsight 60 ft., passive Perception 10",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -6039,16 +5128,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 15",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -6084,20 +5167,11 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 10
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "wis": 9,
+      "cha": 10
+    },
     "damage_immunities": "mecrotic, poison",
     "condition_immunities": "exhaustion, frightened, poisoned",
     "senses": "darkvision 120 ft., passive Perception 13",
@@ -6155,16 +5229,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 6
+    "skills": {
+      "arcana": 6,
+      "perception": 8
       },
-      {
-        "name": "perception",
-        "val": 8
-      }
-    ],
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 18",
     "languages": "Slaad, telepathy 60 ft.",
@@ -6230,34 +5298,16 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 7
-      },
-      {
-        "name": "int",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 12
-      }
-    ],
+    "saves": {
+      "str": 5,
+      "con": 7,
+      "int": 9,
+      "wis": 7,
+      "cha": 9
+    },
+    "skills": {
+      "perception": 12
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, paralyzed, petrified, poisoned, prone",
     "senses": "darkvision 120 ft., passive Perception 22",
@@ -6303,20 +5353,11 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 9
     },
-    "skills": [
-      {
-        "name": "investigation",
-        "val": 3
-      },
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "investigation": 3,
+      "perception": 2,
+      "stealth": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 12",
     "languages": "Gnomish, Terran, Undercommon",
     "challenge_rating": "1/2 (100 XP)",
@@ -6386,24 +5427,12 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 20
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "int",
-        "val": 11
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 11
-      }
-    ],
+    "saves": {
+      "con": 6,
+      "int": 11,
+      "wis": 9,
+      "cha": 11
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from magic weapons",
     "damage_immunities": "necrotic, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned, prone, stunned",
@@ -6468,24 +5497,12 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 20
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "int",
-        "val": 11
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 11
-      }
-    ],
+    "saves": {
+      "con": 6,
+      "int": 11,
+      "wis": 9,
+      "cha": 11
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from magic weapons",
     "damage_immunities": "necrotic, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned, prone, stunned",
@@ -6554,26 +5571,14 @@ var jsonCreatureData = {
       "wis": 20,
       "cha": 20
     },
-    "saves": [
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 9
-      },
-      {
-        "name": "perception",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "wis": 9,
+      "cha": 9
+    },
+    "skills": {
+      "insight": 9,
+      "perception": 9
+    },
     "damage_resistances": "radiant; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, exhaustion, frightened",
     "senses": "darkvision 120 ft., passive Perception 19",
@@ -6628,16 +5633,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -6712,20 +5711,11 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 20
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "wis": 7,
+      "cha": 9
+    },
     "damage_immunities": "lightning, thunder",
     "senses": "darkvision 120 ft., passive Perception 13",
     "languages": "Auran",
@@ -6776,16 +5766,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 6
-      },
-      {
-        "name": "insight",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "deception": 6,
+      "insight": 3
+    },
     "damage_immunities": "charmed",
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Common",
@@ -6860,20 +5844,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 11
-      },
-      {
-        "name": "wis",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 11,
+      "wis": 7
+    },
     "damage_resistances": "fire",
     "senses": "darkvision 120 ft., passive Perception 11",
     "languages": "Aquan, Draconic",
@@ -6965,16 +5940,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 9
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 9
+    },
     "senses": "darkvision 120 ft., passive Perception 15",
     "languages": "Elvish, Undercommon",
     "challenge_rating": "6 (2300 XP)",
@@ -7035,16 +6004,10 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 9
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 9
+    },
     "senses": "darkvision 120 ft., passive Perception 15",
     "languages": "Elvish, Undercommon",
     "challenge_rating": "6 (2300 XP)",
@@ -7110,16 +6073,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 12",
     "languages": "Elvish, Undercommon",
     "challenge_rating": "1/4 (50 XP)",
@@ -7169,30 +6126,15 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 10
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 5,
+      "wis": 4
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 10
+    },
     "senses": "darkvision 120 ft., passive Perception 12",
     "languages": "Elvish, Undercommon",
     "challenge_rating": "5 (1800 XP)",
@@ -7252,24 +6194,12 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 6
-      },
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "arcana": 6,
+      "deception": 5,
+      "perception": 4,
+      "stealth": 5
+    },
     "senses": "darkvision 120 ft., passive Perception 14",
     "languages": "Elvish, Undercommon",
     "challenge_rating": "7 (2900 XP)",
@@ -7319,38 +6249,17 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 4
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "religion",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "con": 4,
+      "wis": 6,
+      "cha": 7
+    },
+    "skills": {
+      "insight": 6,
+      "perception": 6,
+      "religion": 4,
+      "stealth": 5
+    },
     "senses": "darkvision 120 ft., passive Perception 16",
     "languages": "Elvish, Undercommon",
     "challenge_rating": "8 (3900 XP)",
@@ -7408,20 +6317,11 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "medicine",
-        "val": 4
-      },
-      {
-        "name": "nature",
-        "val": 3
-      },
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "medicine": 4,
+      "nature": 3,
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "languages": "Druidic plus any two languages",
     "challenge_rating": "2 (450 XP)",
@@ -7454,16 +6354,10 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 18
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Elvish, Sylvan",
     "challenge_rating": "1 (200 XP)",
@@ -7607,16 +6501,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
     "damage_vulnerabilities": "fire",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -7664,12 +6552,9 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -7745,20 +6630,11 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "int": 7,
+      "wis": 6,
+      "cha": 7
+    },
     "damage_immunities": "fire",
     "senses": "darkvision 120 ft., passive Perception 12",
     "languages": "Ignan",
@@ -7879,34 +6755,16 @@ var jsonCreatureData = {
       "wis": 22,
       "cha": 27
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 17
-      },
-      {
-        "name": "int",
-        "val": 12
-      },
-      {
-        "name": "wis",
-        "val": 13
-      },
-      {
-        "name": "cha",
-        "val": 15
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 13
-      },
-      {
-        "name": "persuasion",
-        "val": 15
-      }
-    ],
+    "saves": {
+      "str": 17,
+      "int": 12,
+      "wis": 13,
+      "cha": 15
+    },
+    "skills": {
+      "insight": 13,
+      "persuasion": 15
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "truesight 120 ft., passive Perception 16",
     "languages": "all",
@@ -7971,24 +6829,12 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 8
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 8,
+      "wis": 6,
+      "cha": 8
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -8050,20 +6896,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      },
-      {
-        "name": "survival",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4,
+      "survival": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -8119,12 +6956,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Giant, Orc",
     "challenge_rating": "4 (1100 XP)",
@@ -8169,20 +7003,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "arcana": 4,
+      "perception": 3,
+      "stealth": 7
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "Draconic, Sylvan",
     "challenge_rating": "1 (200 XP) for red-yellow; 2 (450 XP) for green-violet",
@@ -8278,30 +7103,15 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 13
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 3
-      },
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 11
-      },
-      {
-        "name": "perception",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 3,
+      "con": 10,
+      "cha": 5
+    },
+    "skills": {
+      "athletics": 11,
+      "perception": 6
+    },
     "damage_immunities": "fire",
     "senses": "passive Perception 16",
     "languages": "Giant",
@@ -8380,16 +7190,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "arcana": 5,
+      "perception": 2
+    },
     "damage_resistances": "lightning, necrotic, piercing",
     "damage_immunities": "cold, fire, poison",
     "condition_immunities": "charmed, frightened, paralyzed, poisoned",
@@ -8499,20 +7303,11 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 4
-      },
-      {
-        "name": "history",
-        "val": 4
-      },
-      {
-        "name": "religion",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "arcana": 4,
+      "history": 4,
+      "religion": 4
+    },
     "damage_vulnerabilities": "psychic",
     "senses": "darksight 60 ft., passive Perception 12",
     "languages": "understands Undercommon but can't speak, telepathy 60 ft.",
@@ -8589,12 +7384,9 @@ var jsonCreatureData = {
       "wis": 5,
       "cha": 1
     },
-    "save": [
-      {
-        "name": "dex",
-        "val": 4
-      }
-    ],
+    "save": {
+      "dex": 4
+    },
     "damage_immunities": "poison, psychic",
     "condition_immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 7",
@@ -8632,16 +7424,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 8
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 8,
+      "stealth": 3
+    },
     "senses": "darkvision 120 ft., passive Perception 18",
     "languages": "Giant, Undercommon",
     "challenge_rating": "8 (3900 XP)",
@@ -8680,16 +7466,10 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 1
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 1,
+      "stealth": 3
+    },
     "senses": "darkvision 30 ft., passive Perception 11",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -8719,30 +7499,15 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 8
-      },
-      {
-        "name": "wis",
-        "val": 3
-      },
-      {
-        "name": "cha",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 9
-      },
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "saves": {
+      "con": 8,
+      "wis": 3,
+      "cha": 4
+    },
+    "skills": {
+      "athletics": 9,
+      "perception": 3
+    },
     "damage_immunities": "cold",
     "senses": "passive Perception 13",
     "languages": "Giant",
@@ -9065,16 +7830,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "athletics",
-        "val": "9"
-      },
-      {
-        "name": "perception",
-        "val": "4"
-      }
-    ],
+    "skills": {
+      "athletics": "9",
+      "perception": "4"
+    },
     "senses": "passive Perception 14",
     "challenge_rating": "7 (2900 XP)",
     "actions": [
@@ -9242,12 +8001,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "blindsight 10 ft., passive Perception 12",
     "challenge_rating": "2 (450 XP)",
     "actions": [
@@ -9277,12 +8033,9 @@ var jsonCreatureData = {
       "wis": 9,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "stealth": 4
+    },
     "senses": "blindsight 30 ft., passive Perception 9",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
@@ -9314,12 +8067,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "stealth": 5
+    },
     "senses": "passive Perception 10",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
@@ -9359,12 +8109,9 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "languages": "Giant Eagle, understands Common and Auran but can't speak",
     "challenge_rating": "1 (200 XP)",
@@ -9405,12 +8152,9 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "languages": "Giant Elk, understands Common, Elvish, and Sylvan but can't speak",
     "challenge_rating": "2 (450 XP)",
@@ -9478,16 +8222,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 3
+    },
     "senses": "darkvision 30 ft., passive Perception 12",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -9562,12 +8300,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -9634,16 +8369,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 4
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -9687,16 +8416,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 15",
     "languages": "Giant Owl, understands Common, Elvish, and Sylvan but can't speak them",
     "challenge_rating": "1/4 (50 XP)",
@@ -9733,12 +8456,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "blindsight 10 ft., passive Perception 12",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
@@ -9893,12 +8613,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "blindsight 60 ft., passive Perception 13",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
@@ -9934,12 +8651,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 4
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "stealth": 7
+    },
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 10",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -10022,12 +8736,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "languages": "understands Common but can't speak",
     "challenge_rating": "1 (200 XP)",
@@ -10097,16 +8808,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
@@ -10138,16 +8843,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 4
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 7
+    },
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 13",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -10232,20 +8931,11 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 5
-      },
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "con": 5,
+      "int": 5,
+      "wis": 5
+    },
     "senses": "passive Perception 12",
     "languages": "Gith",
     "challenge_rating": "8 (3900 XP)",
@@ -10283,20 +8973,11 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 10
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 3
-      },
-      {
-        "name": "int",
-        "val": 3
-      },
-      {
-        "name": "wis",
-        "val": 3
-      }
-    ],
+    "saves": {
+      "con": 3,
+      "int": 3,
+      "wis": 3
+    },
     "senses": "passive Perception 11",
     "languages": "Gith",
     "challenge_rating": "3 (700 XP)",
@@ -10334,34 +9015,16 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 10
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 3
-      },
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "int",
-        "val": 3
-      },
-      {
-        "name": "wis",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "str": 3,
+      "dex": 4,
+      "int": 3,
+      "wis": 4
+    },
+    "skills": {
+      "insight": 4,
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "languages": "Gith",
     "challenge_rating": "2 (450 XP)",
@@ -10403,38 +9066,17 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 4
-      },
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "int",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 6
-      },
-      {
-        "name": "insight",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "str": 4,
+      "dex": 7,
+      "int": 6,
+      "wis": 6
+    },
+    "skills": {
+      "arcana": 6,
+      "insight": 6,
+      "perception": 6
+    },
     "senses": "passive Perception 16",
     "languages": "Gith",
     "challenge_rating": "6 (2300 XP)",
@@ -10476,24 +9118,12 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 9
-      },
-      {
-        "name": "con",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "str": 9,
+      "con": 9,
+      "wis": 7,
+      "cha": 7
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -10546,30 +9176,15 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 7
-      },
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 10
-      },
-      {
-        "name": "intimidation",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "str": 7,
+      "dex": 5,
+      "con": 6
+    },
+    "skills": {
+      "athletics": 10,
+      "intimidation": 5
+    },
     "senses": "passive Perception 11",
     "languages": "any one language (usually Common)",
     "challenge_rating": "5 (1800 XP)",
@@ -10662,20 +9277,11 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 13
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 4
-      },
-      {
-        "name": "wis",
-        "val": 2
-      },
-      {
-        "name": "cha",
-        "val": 3
-      },
-    ],
+    "saves": {
+      "con": 4,
+      "wis": 2,
+      "cha": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Abyssal, Gnoll",
     "challenge_rating": "4 (1100 XP)",
@@ -10801,12 +9407,9 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "stealth": 6
+    },
     "senses": "darkvision 60 ft., passive Perception 9",
     "languages": "Common, Goblin",
     "challenge_rating": "1/4 (50 XP)",
@@ -10844,12 +9447,9 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 6
-      },
-    ],
+    "skills": {
+      "stealth": 6
+    },
     "senses": "darkvision 60 ft., passive Perception 9",
     "languages": "Common, Goblin",
     "challenge_rating": "1 (200 XP)",
@@ -10896,34 +9496,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 2
-      },
-      {
-        "name": "cha",
-        "val": 5
-      },
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      },
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 5,
+      "wis": 2,
+      "cha": 5
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 4
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -10962,30 +9544,15 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 14
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 13
-      },
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 13
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 7
-      },
-    ],
+    "saves": {
+      "str": 13,
+      "dex": 6,
+      "con": 13,
+      "wis": 7
+    },
+    "skills": {
+      "perception": 7
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -11045,12 +9612,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-    ],
+    "skills": {
+      "perception": 4
+    },
     "damage_immunities": "petrified",
     "senses": "darkvision 60 ft., passive Perception 14",
     "challenge_rating": "5 (1800 XP)",
@@ -11091,12 +9655,9 @@ var jsonCreatureData = {
       "wis": 6,
       "cha": 2
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 2
-      },
-    ],
+    "skills": {
+      "stealth": 2
+    },
     "damage_resistances": "acid, cold, fire",
     "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 8",
@@ -11138,12 +9699,9 @@ var jsonCreatureData = {
       "wis": 6,
       "cha": 2
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 2
-      },
-    ],
+    "skills": {
+      "stealth": 2
+    },
     "damage_resistances": "acid, cold, fire",
     "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 8",
@@ -11190,16 +9748,10 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "arcana": 5,
+      "perception": 6
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 16",
     "languages": "Slaad, telepathy 60 ft.",
@@ -11261,34 +9813,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 13
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 3
-      },
-      {
-        "name": "con",
-        "val": 3
-      },
-      {
-        "name": "wis",
-        "val": 2
-      },
-      {
-        "name": "cha",
-        "val": 3
-      },
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "saves": {
+      "dex": 3,
+      "con": 3,
+      "wis": 2,
+      "cha": 3
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 3
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
@@ -11327,24 +9861,12 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 3
-      },
-      {
-        "name": "deception",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "arcana": 3,
+      "deception": 4,
+      "perception": 4,
+      "stealth": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Common, Draconic, Sylvan",
     "challenge_rating": "3 (700 XP)",
@@ -11406,16 +9928,10 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 3
-      },
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "arcana": 3,
+      "perception": 2
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "blindsight 30 ft., darkvision 60 ft., passive Perception 12",
     "languages": "Slaad, telepathy 60 ft.",
@@ -11481,16 +9997,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 9
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 6
+    },
     "damage_immunities": "lightning",
     "condition_immunities": "blinded, prone",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 14",
@@ -11611,12 +10121,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 15",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -11657,20 +10164,11 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "athletics": 5,
+      "perception": 3,
+      "stealth": 3
+    },
     "damage_immunities": "blinded",
     "senses": "blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius), passive Perception 13",
     "languages": "Undercommon",
@@ -11713,12 +10211,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "passive Perception 12",
     "languages": "any one language (usually Common)",
     "challenge_rating": "1/8 (25 XP)",
@@ -11745,28 +10240,13 @@ var jsonCreatureData = {
       "wis": 19,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 8
-      },
-      {
-        "name": "con",
-        "val": 7
-      },
-      {
-        "name": "int",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 8
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "dex": 8,
+      "con": 7,
+      "int": 7,
+      "wis": 8,
+      "cha": 8
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 14",
@@ -11809,24 +10289,12 @@ var jsonCreatureData = {
       "wis": 18,
       "cha": 18
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 14
-      },
-      {
-        "name": "history",
-        "val": 14
-      },
-      {
-        "name": "perception",
-        "val": 9
-      },
-      {
-        "name": "religion",
-        "val": 9
-      }
-    ],
+    "skills": {
+      "arcana": 14,
+      "history": 14,
+      "perception": 9,
+      "religion": 9
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "psychic",
     "condition_immunities": "charmed, frightened",
@@ -12000,12 +10468,9 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 6
     },
-    "perception": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -12037,12 +10502,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 5
+    },
     "damage_immunities": "fire",
     "senses": "darkvision 60 ft., passive Perception 15",
     "languages": "understands Infernal but can't speak it",
@@ -12084,12 +10546,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "damage_immunities": "force, necrotic, poison",
     "condition_immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned",
@@ -12134,20 +10593,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 13
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 8
-      },
-      {
-        "name": "wis",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "str": 7,
+      "con": 8,
+      "wis": 4
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -12199,12 +10649,9 @@ var jsonCreatureData = {
       "wis": 9,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "passive Perception 12",
     "languages": "Giant",
     "challenge_rating": "5 (1800 XP)",
@@ -12239,12 +10686,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 5
+    },
     "senses": "passive Perception 15",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -12367,20 +10811,11 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 3
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "int": 5,
+      "wis": 3,
+      "cha": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common, Goblin",
     "challenge_rating": "6 (2300 XP)",
@@ -12469,12 +10904,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "blindsight 60 ft., darkvision 10 ft., passive Perception 13",
     "languages": "Hook Horror",
     "challenge_rating": "3 (700 XP)",
@@ -12516,24 +10948,12 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 10
-      },
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "str": 10,
+      "dex": 7,
+      "wis": 7,
+      "cha": 7
+    },
     "strength_save": 10,
     "dexterity_save": 7,
     "wisdom_save": 7,
@@ -12593,12 +11013,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 4
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "darkvision 30 ft., passive Perception 12",
     "challenge_rating": "2",
     "special_abilities": [
@@ -12634,12 +11051,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 6
+    },
     "senses": "darkvision 60 ft., passive Perception 16",
     "challenge_rating": "8 (3900 XP)",
     "special_abilities": [
@@ -12687,12 +11101,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -12725,24 +11136,12 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "dex": 7,
+      "con": 9,
+      "wis": 7,
+      "cha": 9
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -12806,16 +11205,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 3
+    },
     "damage_vulnerabilities": "bludgeoning, fire",
     "damage_immunities": "cold, poison",
     "condition_immunities": "poisoned",
@@ -12868,24 +11261,12 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 4
-      },
-      {
-        "name": "insight",
-        "val": 3
-      },
-      {
-        "name": "persuasion",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "deception": 4,
+      "insight": 3,
+      "persuasion": 4,
+      "stealth": 5
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical/nonsilver weapons",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -12937,16 +11318,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "blinded",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 12",
@@ -12993,16 +11368,10 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 8
-      },
-      {
-        "name": "stealth",
-        "val": 10
-      }
-    ],
+    "skills": {
+      "perception": 8,
+      "stealth": 10
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
@@ -13104,12 +11473,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -13146,20 +11512,11 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "deception": 4,
+      "perception": 2,
+      "stealth": 4
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical wepons that aren't silvered",
     "senses": "passive Perception 12",
     "languages": "Common (can't speak in jackal form)",
@@ -13210,20 +11567,11 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "deception": 4,
+      "perception": 2,
+      "stealth": 5
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical wepons that aren't silvered",
     "senses": "passive Perception 12",
     "languages": "understands Auran and Common but speaks only through the use of its Mimicry trait.",
@@ -13265,12 +11613,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "blindsight 120 ft., passive Perception 13",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
@@ -13311,16 +11656,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 4
-      },
-      {
-        "name": "wis",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "con": 4,
+      "wis": 2
+    },
     "senses": "passive Perception 10",
     "languages": "any one language (usually Common)",
     "challenge_rating": "3 (700 XP)",
@@ -13413,28 +11752,13 @@ var jsonCreatureData = {
       "wis": 18,
       "cha": 20
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 17
-      },
-      {
-        "name": "dex",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 14
-      },
-      {
-        "name": "int",
-        "val": 13
-      },
-      {
-        "name": "wis",
-        "val": 11
-      }
-    ],
+    "saves": {
+      "str": 17,
+      "dex": 7,
+      "con": 14,
+      "int": 13,
+      "wis": 11
+    },
     "damage_immunities": "lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "frightened, paralyzed",
     "senses": "truesight 120 ft., passive Perception 14",
@@ -13508,12 +11832,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 14",
     "languages": "Undercommon",
     "challenge_rating": "1/4 (50 XP)",
@@ -13573,16 +11894,10 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 9
-      },
-      {
-        "name": "religion",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 9,
+      "religion": 6
+    },
     "senses": "darkvision 120 ft., passive Perception 19",
     "languages": "Undercommon",
     "challenge_rating": "6 (2300 XP)",
@@ -13640,16 +11955,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "religion",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 6,
+      "religion": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 16",
     "languages": "Undercommon",
     "challenge_rating": "3 (700 XP)",
@@ -13703,16 +12012,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "religion",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 6,
+      "religion": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 16",
     "languages": "Undercommon",
     "challenge_rating": "1 (200 XP)",
@@ -13769,20 +12072,11 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 7
-      },
-      {
-        "name": "insight",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "deception": 7,
+      "insight": 4,
+      "stealth": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 12",
     "languages": "Abyssal, Common",
     "challenge_rating": "4 (1100 XP)",
@@ -13867,38 +12161,17 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "int",
-        "val": 12
-      },
-      {
-        "name": "wis",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 18
-      },
-      {
-        "name": "history",
-        "val": 12
-      },
-      {
-        "name": "insight",
-        "val": 9
-      },
-      {
-        "name": "perception",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "con": 10,
+      "int": 12,
+      "wis": 9
+    },
+    "skills": {
+      "arcana": 18,
+      "history": 12,
+      "insight": 9,
+      "perception": 9
+    },
     "damage_resistances": "cold, lightning, necrotic",
     "damage_immunities": "poison; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
@@ -13964,16 +12237,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 6
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -14047,20 +12314,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      },
-      {
-        "name": "survival",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4,
+      "survival": 5
+    },
     "senses": "passive Perception 13",
     "languages": "Draconic",
     "challenge_rating": "1/2 (100 XP)",
@@ -14110,30 +12368,15 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 4
-      },
-      {
-        "name": "wis",
-        "val": 2
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      },
-      {
-        "name": "survival",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "con": 4,
+      "wis": 2
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 5,
+      "survival": 4
+    },
     "condition_immunities": "frightened",
     "senses": "dark vision 60 ft., passive Perception 14",
     "languages": "Abyssal, Draconic",
@@ -14184,20 +12427,11 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      },
-      {
-        "name": "survival",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 4,
+      "survival": 6
+    },
     "senses": "passive Perception 14",
     "languages": "Draconic",
     "challenge_rating": "2 (450 XP)",
@@ -14247,26 +12481,14 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 11
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 6
-      },
-      {
-        "name": "history",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "int": 6,
+      "wis": 4
+    },
+    "skills": {
+      "arcana": 6,
+      "history": 6
+    },
     "senses": "passive Perception 11",
     "languages": "any four languages",
     "challenge_rating": "6 (2300 XP)",
@@ -14299,12 +12521,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "stealth": 3
+    },
     "damage_vulnerabilities": "cold",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -14503,20 +12722,11 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "wis": 7,
+      "cha": 8
+    },
     "damage_resistances": "acid, cold, lightning",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 13",
     "languages": "Aquan",
@@ -14567,24 +12777,12 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 20
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 9
-      },
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "wis",
-        "val": 8
-      },
-      {
-        "name": "cha",
-        "val": 10
-      }
-    ],
+    "saves": {
+      "str": 9,
+      "con": 10,
+      "wis": 8,
+      "cha": 10
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -14650,12 +12848,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
@@ -14687,24 +12882,12 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 15
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "insight",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "deception": 5,
+      "insight": 4,
+      "perception": 4,
+      "stealth": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Common",
     "challenge_rating": "6 (2300 XP)",
@@ -14750,12 +12933,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "passive Perception 12",
     "languages": "Aquan, Common",
     "challenge_rating": "1/8 (25 XP)",
@@ -14833,12 +13013,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "acid, poison",
     "condition_immunities": "poisoned",
@@ -14895,12 +13072,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "stealth": 5
+    },
     "damage_immunities": "acid",
     "condition_immunities": "prone",
     "senses": "darkvision 60 ft., passive Perception 11",
@@ -14950,46 +13124,19 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 7
-      },
-      {
-        "name": "deception",
-        "val": 6
-      },
-      {
-        "name": "insight",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "persuasion",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "int": 7,
+      "wis": 6,
+      "cha": 6
+    },
+    "skills": {
+      "arcana": 7,
+      "deception": 6,
+      "insight": 6,
+      "perception": 6,
+      "persuasion": 6,
+      "stealth": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 16",
     "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
     "challenge_rating": "7 (2900 XP)",
@@ -15034,46 +13181,19 @@ var jsonCreatureData = {
       "wis": 17,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 7
-      },
-      {
-        "name": "deception",
-        "val": 6
-      },
-      {
-        "name": "insight",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "persuasion",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "int": 7,
+      "wis": 6,
+      "cha": 6
+    },
+    "skills": {
+      "arcana": 7,
+      "deception": 6,
+      "insight": 6,
+      "perception": 6,
+      "persuasion": 6,
+      "stealth": 4
+    },
     "senses": "darkvision 120 ft., passive Perception 16",
     "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
     "challenge_rating": "8 (3900 XP)",
@@ -15122,12 +13242,9 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 9
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "perception": 7
+    },
     "senses": "darkvision 60 ft., passive Perception 17",
     "languages": "Abyssal",
     "challenge_rating": "3 (700 XP)",
@@ -15251,12 +13368,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "stealth": 3
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darvision 60 ft., passive Perception 10",
@@ -15334,12 +13448,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "wis",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "wis": 2
+    },
     "damage_vulnerabilities": "fire",
     "damage_immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "necrotic, poisoned",
@@ -15377,34 +13488,16 @@ var jsonCreatureData = {
       "wis": 18,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 8
-      },
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "history",
-        "val": 5
-      },
-      {
-        "name": "religion",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "con": 8,
+      "int": 5,
+      "wis": 9,
+      "cha": 8
+    },
+    "skills": {
+      "history": 5,
+      "religion": 5
+    },
     "damage_vulnerabilities": "bludgeoning",
     "damage_immunities": "necrotic, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
@@ -15616,24 +13709,12 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 11
-      },
-      {
-        "name": "int",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "con": 11,
+      "int": 9,
+      "wis": 6,
+      "cha": 7
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -15720,24 +13801,12 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 7
-      },
-      {
-        "name": "insight",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "deception": 7,
+      "insight": 6,
+      "perception": 6,
+      "stealth": 6
+    },
     "damage_resistances": "cold, fire; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "condition_immunities": "charmed",
     "senses": "darkvision 120 ft., passive Perception 16",
@@ -15846,20 +13915,11 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "insight",
-        "val": 4
-      },
-      {
-        "name": "persuasion",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "deception": 5,
+      "insight": 4,
+      "persuasion": 5
+    },
     "senses": "passive Perception 10",
     "languages": "any two languages",
     "challenge_rating": "1/8 (25 XP)",
@@ -15892,24 +13952,12 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 5
-      },
-      {
-        "name": "insight",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "arcana": 5,
+      "insight": 4,
+      "perception": 2,
+      "stealth": 5
+    },
     "senses": "truesight 120 ft., passive Perception 12",
     "languages": "Undercommon",
     "challenge_rating": "2 (450 XP)",
@@ -15955,20 +14003,11 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 15
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "intimidation": 6,
+      "perception": 4,
+      "stealth": 4
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "acid, poison",
     "condition_immunities": "poisoned",
@@ -16068,16 +14107,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 4
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
     "senses": "darkvision 30 ft., passive Perception 12",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -16151,12 +14184,9 @@ var jsonCreatureData = {
       "wis": 6,
       "cha": 5
     },
-    "saves": [
-      {
-        "name": "wis",
-        "val": 0
-      }
-    ],
+    "saves": {
+      "wis": 0
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 8",
@@ -16191,12 +14221,9 @@ var jsonCreatureData = {
       "wis": 6,
       "cha": 5
     },
-    "saves": [
-      {
-        "names": "wis",
-        "val": 0
-      }
-    ],
+    "saves": {
+      "wis":0
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 8",
@@ -16235,38 +14262,17 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 3
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 5
-      },
-      {
-        "name": "deception",
-        "val": 8
-      },
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 3,
+      "con": 6,
+      "wis": 4,
+      "cha": 5
+    },
+    "skills": {
+      "arcana": 5,
+      "deception": 8,
+      "perception": 4
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Common, Giant",
     "challenge_rating": "7 (2900 XP)",
@@ -16320,12 +14326,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "intimidation": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common, Orc",
     "challenge_rating": "1/2 (100 XP)",
@@ -16363,16 +14366,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 3
-      },
-      {
-        "name": "religion",
-        "val": 1
-      }
-    ],
+    "skills": {
+      "intimidation": 3,
+      "religion": 1
+    },
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Common, Orc",
     "challenge_rating": "2 (450 XP)",
@@ -16414,26 +14411,14 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 2
-      }
-    ],
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "str": 6,
+      "con": 6,
+      "wis": 2
+    },
+    "skills": {
+      "intimidation": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common, Orc",
     "challenge_rating": "4 (1100 XP)",
@@ -16483,16 +14468,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 5
-      },
-      {
-        "name": "survival",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "intimidation": 5,
+      "survival": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Common, Orc",
     "challenge_rating": "2 (450 XP)",
@@ -16533,12 +14512,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 6
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "con": 7
+    },
     "senses": "darkvision 120 ft., passive Perception 11",
     "languages": "Otyugh",
     "challenge_rating": "5 (1800 XP)",
@@ -16583,16 +14559,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 3
+    },
     "senses": "darkvision 120 ft., passive Perception 13",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -16628,12 +14598,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
@@ -16673,16 +14640,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 6
+    },
     "senses": "passive Perception 14",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -16722,26 +14683,14 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 13
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "wis": 4,
+      "cha": 3
+    },
+    "skills": {
+      "perception": 6
+    },
     "senses": "passive Perception 16",
     "languages": "understands Celestial, Common, Elvish, and Sylvan but can't speak",
     "challenge_rating": "2 (450 XP)",
@@ -16768,12 +14717,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 13
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "truesight 120 ft., passive Perception 14",
     "languages": "Modron",
     "challenge_rating": "2 (450 XP)",
@@ -16818,12 +14764,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 5
+    },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "passive Perception 15",
     "languages": "understands Common and Elvish but can't speak",
@@ -16873,12 +14816,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "stealth": 6
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
@@ -16918,12 +14858,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "stealth": 5
+    },
     "senses": "blindsight 30 ft., darkvision 60 ft., passive Perception 8",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -16960,20 +14897,11 @@ var jsonCreatureData = {
       "wis": 18,
       "cha": 24
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 8
-      },
-      {
-        "name": "con",
-        "val": 13
-      },
-      {
-        "name": "wis",
-        "val": 10
-      }
-    ],
+    "saves": {
+      "dex": 8,
+      "con": 13,
+      "wis": 10
+    },
     "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
@@ -17041,16 +14969,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 15
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 7
+    },
     "senses": "passive Perception 14",
     "languages": "Sylvan",
     "challenge_rating": "1/4 (50 XP)",
@@ -17087,26 +15009,14 @@ var jsonCreatureData = {
       "wis": 22,
       "cha": 25
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 12
-      },
-      {
-        "name": "wis",
-        "val": 11
-      },
-      {
-        "name": "cha",
-        "val": 12
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 11
-      }
-    ],
+    "saves": {
+      "con": 12,
+      "wis": 11,
+      "cha": 12
+    },
+    "skills": {
+      "perception": 11
+    },
     "damage_resistances": "radiant; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, exhaustion, frightened",
     "senses": "truesight 120 ft., passive Perception 21",
@@ -17161,16 +15071,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -17227,12 +15131,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -17272,12 +15173,9 @@ var jsonCreatureData = {
       "wis": 9,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 1
-      }
-    ],
+    "skills": {
+      "perception": 1
+    },
     "senses": "passive Perception 11",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -17382,20 +15280,11 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 13
     },
-    "skills": [
-      {
-        "name": "medicine",
-        "val": 7
-      },
-      {
-        "name": "persuasion",
-        "val": 3
-      },
-      {
-        "name": "religion",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "medicine": 7,
+      "persuasion": 3,
+      "religion": 4
+    },
     "senses": "passive Perception 13",
     "languages": "any two languages",
     "challenge_rating": "2 (450 XP)",
@@ -17432,16 +15321,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 13",
     "languages": "understands Common and Draconic but can't speak",
     "challenge_rating": "1/4 (50 XP)",
@@ -17490,16 +15373,10 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 4
     },
-    "saves": [
-      {
-        "name": "con",
-        "val": 11
-      },
-      {
-        "name": "wis",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "con": 11,
+      "wis": 4
+    },
     "senses": "blindsight 30 ft., tremorsense 60 ft., passive Perception 9",
     "challenge_rating": "15 (13000 XP)",
     "special_abilities": [
@@ -17539,12 +15416,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "truesight 120 ft., passive Perception 10",
     "languages": "Modron",
     "challenge_rating": "1/2 (100 XP)",
@@ -17590,12 +15464,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "athletics": 5
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
@@ -17666,12 +15537,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "athletics": 5
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
@@ -17715,12 +15583,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "stealth": 5
+    },
     "damage_resistances": "cold; fire; lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -17807,16 +15672,10 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 20
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 10
-      },
-      {
-        "name": "insight",
-        "val": 8
-      }
-    ],
+    "skills": {
+      "deception": 10,
+      "insight": 8
+    },
     "damage_vulnerabilities": "piercing from magic weapons wielded by good creatures",
     "damage_immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 13",
@@ -17890,12 +15749,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -17927,34 +15783,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 2
-      },
-      {
-        "name": "con",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 2
-      },
-      {
-        "name": "cha",
-        "val": 4
-      }
-    ],
-    "skills":  [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "dex": 2,
+      "con": 5,
+      "wis": 2,
+      "cha": 4
+    },
+    "skills":  {
+      "perception": 4,
+      "stealth": 2
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -17986,12 +15824,9 @@ var jsonCreatureData = {
       "wis": 6,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 1
-      }
-    ],
+    "skills": {
+      "perception": 1
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "darkvision 60 ft., passive Perception 11",
     "languages": "Slaad, telepathy 60 ft.",
@@ -18041,12 +15876,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 4
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "blindsight 30 ft., passive Perception 12",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
@@ -18118,24 +15950,12 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 7
-      },
-      {
-        "name": "con",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "str": 7,
+      "con": 7,
+      "wis": 6,
+      "cha": 7
+    },
     "damage_resistances": "necrotic, psychic",
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, stunned",
@@ -18251,30 +16071,15 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 9
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 9,
+      "wis": 4,
+      "cha": 3
+    },
+    "skills": {
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "challenge_rating": "11 (7200 XP)",
     "special_abilities": [
@@ -18314,16 +16119,10 @@ var jsonCreatureData = {
       "wis": 16,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 6,
+      "stealth": 5
+    },
     "senses": "darkvision 60 ft., passive Perception 16",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
@@ -18455,16 +16254,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 6
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
@@ -18505,12 +16298,9 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 9
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 5
+    },
     "senses": "darkvision 120 ft., passive Perception 15",
     "languages": "Sahuagin",
     "challenge_rating": "1/2 (100 XP)",
@@ -18564,30 +16354,15 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 7
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 6,
+      "int": 5,
+      "wis": 4
+    },
+    "skills": {
+      "perception": 7
+    },
     "senses": "darkvision 120 ft., passive Perception 17",
     "languages": "Sahuagin",
     "challenge_rating": "5 (1800 XP)",
@@ -18641,16 +16416,10 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 13
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "religion",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 6,
+      "religion": 3
+    },
     "senses": "darkvision 120 ft., passive Perception 16",
     "languages": "Sahuagin",
     "challenge_rating": "2 (450 XP)",
@@ -18750,20 +16519,11 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "performance",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "performance": 6,
+      "stealth": 5
+    },
     "senses": "passive Perception 12",
     "languages": "Common, Elvish, Sylvan",
     "challenge_rating": "1/2 (100 XP)",
@@ -18877,24 +16637,12 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "nature",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      },
-      {
-        "name": "survival",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "nature": 4,
+      "perception": 5,
+      "stealth": 6,
+      "survival": 5
+    },
     "senses": "passive Perception 15",
     "languages": "any one language (usually Common)",
     "challenge_rating": "1/2 (100 XP)",
@@ -19004,12 +16752,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "stealth": 4
+    },
     "damage_vulnerabilities": "radiant",
     "damage_resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "necrotic, poison",
@@ -19054,22 +16799,13 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "cha",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "dex": 5,
+      "cha": 4
+    },
+    "skills": {
+      "stealth": 7
+    },
     "damage_vulnerabilities": "radiant",
     "damage_resistances": "acid, fire, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "cold, lightning, poison",
@@ -19114,12 +16850,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 5
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "stealth": 2
+    },
     "damage_resistances": "cold, fire",
     "damage_immunities": "lightning",
     "condition_immunities": "blinded, deafened, exhaustion",
@@ -19246,34 +16979,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 2
-      },
-      {
-        "name": "con",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 2
-      },
-      {
-        "name": "cha",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "dex": 2,
+      "con": 5,
+      "wis": 2,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 2
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -19337,12 +17052,9 @@ var jsonCreatureData = {
       "wis": 5,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "stealth": 4
+    },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "darkvision 60 ft., passive Perception 7",
     "languages": "understands Slaad but can't speak",
@@ -19376,16 +17088,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "truesight 60 ft., passive Perception 12",
@@ -19428,26 +17134,14 @@ var jsonCreatureData = {
       "wis": 25,
       "cha": 30
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 14
-      },
-      {
-        "name": "wis",
-        "val": 14
-      },
-      {
-        "name": "cha",
-        "val": 17
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 14
-      }
-    ],
+    "saves": {
+      "int": 14,
+      "wis": 14,
+      "cha": 17
+    },
+    "skills": {
+      "perception": 14
+    },
     "damage_resistances": "radiant; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, frightened, poisoned",
@@ -19525,12 +17219,9 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 6
+    },
     "condition_immunities": "prone",
     "senses": "darkvision 120 ft., passive Perception 16",
     "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
@@ -19611,12 +17302,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 2
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "stealth": 4
+    },
     "senses": "darkvision 30 ft., passive Perception 10",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -19715,24 +17403,12 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 16
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 5
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 5,
+      "wis": 5,
+      "cha": 6
+    },
     "damage_immunities": "poison",
     "condition_immunities": "charmed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 12",
@@ -19771,16 +17447,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 8
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 8
+    },
     "senses": "passive Perception 13",
     "languages": "Common, Elvish, Sylvan",
     "challenge_rating": "1/4 (50 XP)",
@@ -19820,32 +17490,14 @@ var jsonCreatureData = {
       "wis": 14,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "insight",
-        "val": 4
-      },
-      {
-        "name": "investigation",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "persuasion",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "deception": 5,
+      "insight": 4,
+      "investigation": 5,
+      "perception": 6,
+      "persuasion": 5,
+      "stealth": 4
+    },
     "senses": "passive Perception 16",
     "languages": "any two languages",
     "challenge_rating": "1 (200 XP)",
@@ -19961,30 +17613,15 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 9
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 8
-      },
-      {
-        "name": "wis",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 12
-      },
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 8,
+      "wis": 4
+    },
+    "skills": {
+      "athletics": 12,
+      "perception": 4
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Giant",
     "challenge_rating": "7 (2900 XP)",
@@ -20081,46 +17718,19 @@ var jsonCreatureData = {
       "wis": 18,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "str",
-        "val": 14
-      },
-      {
-        "name": "con",
-        "val": 10
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 8
-      },
-      {
-        "name": "athletics",
-        "val": 14
-      },
-      {
-        "name": "history",
-        "val": 8
-      },
-      {
-        "name": "history",
-        "val": 18
-      },
-      {
-        "name": "perception",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "str": 14,
+      "con": 10,
+      "wis": 9,
+      "cha": 9
+    },
+    "skills": {
+      "arcana": 8,
+      "athletics": 14,
+      "history": 8,
+      "history": 18,
+      "perception": 9
+    },
     "damage_resistances": "cold",
     "damage_immunities": "lightning, thunder",
     "senses": "passive Perception 19",
@@ -20172,28 +17782,13 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 20
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 9
-      },
-      {
-        "name": "insight",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "persuasion",
-        "val": 9
-      },
-      {
-        "name": "stealth",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "deception": 9,
+      "insight": 5,
+      "perception": 5,
+      "persuasion": 9,
+      "stealth": 7
+    },
     "damage_resistances": "cold, fire, lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 15",
     "languages": "Abyssal, Common, Infernal, telepathy 60 ft.",
@@ -20478,20 +18073,11 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 11
     },
-    "saves": [
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 9
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "int": 5,
+      "wis": 9,
+      "cha": 9
+    },
     "damage_immunities": "fire, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, frightened, paralyzed, poisoned",
     "senses": "blindsight 120 ft., passive Perception 10",
@@ -20576,12 +18162,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "intimidation": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "Thri-kreen",
     "challenge_rating": "1 (200 XP)",
@@ -20627,12 +18210,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "intimidation": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "Thri-kreen, telepathy 120 ft.",
     "challenge_rating": "1 (200 XP)",
@@ -20682,12 +18262,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "intimidation": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "Thri-kreen",
     "challenge_rating": "1 (200 XP)",
@@ -20741,12 +18318,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "intimidation": 2
+    },
     "senses": "passive Perception 10",
     "languages": "any one language (usually Common)",
     "challenge_rating": "1/2 (100 XP)",
@@ -20787,16 +18361,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 6
+    },
     "senses": "darkvision 60 ft., passive Perception 13",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
@@ -20999,12 +18567,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "stealth": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 10",
     "languages": "Troglodyte",
     "challenge_rating": "1/4 (50 XP)",
@@ -21053,12 +18618,9 @@ var jsonCreatureData = {
       "wis": 9,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "senses": "darkvision 60 ft., passive Perception 12",
     "languages": "Giant",
     "challenge_rating": "5 (1800 XP)",
@@ -21107,12 +18669,9 @@ var jsonCreatureData = {
       "wis": 8,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "stealth": 3
+    },
     "damage_vulnerabilities": "fire",
     "condition_immunities": "blinded, deafened",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 9",
@@ -21147,12 +18706,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 9
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "passive Perception 14",
     "challenge_rating": "8 (3900 XP)",
     "actions": [
@@ -21187,20 +18743,11 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 19
     },
-    "skills": [
-      {
-        "name": "intimidation",
-        "val": 9
-      },
-      {
-        "name": "perception",
-        "val": 7
-      },
-      {
-        "name": "stealth",
-        "val": 8
-      }
-    ],
+    "skills": {
+      "intimidation": 9,
+      "perception": 7,
+      "stealth": 8
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "acid, poison",
     "condition_immunities": "charmed, frightened, poisoned",
@@ -21377,30 +18924,15 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 18
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 7
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 7
-      },
-      {
-        "name": "stealth",
-        "val": 9
-      }
-    ],
+    "saves": {
+      "dex": 9,
+      "wis": 7,
+      "cha": 9
+    },
+    "skills": {
+      "perception": 7,
+      "stealth": 9
+    },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 120 ft., passive Perception 17",
     "languages": "the languages it knew in life",
@@ -21484,26 +19016,14 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "wis": 3
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 6
+    },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "the languages it knew in life",
@@ -21553,26 +19073,14 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "wis": 3
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 6
+    },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "the languages it knew in life",
@@ -21626,26 +19134,14 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 3
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "wis": 3
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 6
+    },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "the languages it knew in life",
@@ -21700,16 +19196,10 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "athletics",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "athletics": 5,
+      "perception": 2
+    },
     "senses": "passive Perception 12",
     "languages": "any one language (usually Common)",
     "challenge_rating": "3 (700 XP)",
@@ -21748,12 +19238,9 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "stealth",
-        "val": 1
-      }
-    ],
+    "skills": {
+      "stealth": 1
+    },
     "condition_immunities": "blinded, deafened",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 10",
     "languages": "Common",
@@ -21828,20 +19315,11 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 8
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "wis": 4,
+      "cha": 2
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -21897,12 +19375,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 4
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -22087,16 +19562,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 3
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 5
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
@@ -22129,12 +19598,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 12
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 7
-      }
-    ],
+    "skills": {
+      "perception": 7
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
     "senses": "passive Perception 17",
     "languages": "Common (can't speak in bear form)",
@@ -22185,12 +19651,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      }
-    ],
+    "skills": {
+      "perception": 2
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
     "senses": "passive Perception 12",
     "languages": "Common (can't speak in boar form)",
@@ -22241,16 +19704,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 2
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
     "senses": "darkvision 60 ft. (rat form only), passive Perception 12",
     "languages": "Common (can't speak in rat form)",
@@ -22301,16 +19758,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
     "senses": "darkvision 60 ft., passive Perception 15",
     "languages": "Common (can't speak in tiger form)",
@@ -22369,12 +19820,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 10
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
     "senses": "passive Perception 14",
     "languages": "Common (can't speak in wolf form)",
@@ -22424,34 +19872,16 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 11
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 2
-      },
-      {
-        "name": "con",
-        "val": 4
-      },
-      {
-        "name": "wis",
-        "val": 2
-      },
-      {
-        "name": "cha",
-        "val": 2
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      },
-      {
-        "name": "stealth",
-        "val": 2
-      }
-    ],
+    "saves": {
+      "dex": 2,
+      "con": 4,
+      "wis": 2,
+      "cha": 2
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 2
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 14",
     "languages": "Draconic",
@@ -22483,16 +19913,10 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 15
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
     "damage_immunities": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 13",
@@ -22631,16 +20055,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 3
+    },
     "damage_immunities": "cold",
     "senses": "passive Perception 15",
     "languages": "Common, Giant, Winter Wolf",
@@ -22686,16 +20104,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
     "senses": "passive Perception 13",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
@@ -22731,12 +20143,9 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 8
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "languages": "Goblin, Worg",
     "challenge_rating": "1/2 (100 XP)",
@@ -22812,12 +20221,9 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 6
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "perception": 4
+    },
     "senses": "darkvision 60 ft., passive Perception 14",
     "challenge_rating": "6 (2300 XP)",
     "actions": [
@@ -22855,16 +20261,10 @@ var jsonCreatureData = {
       "wis": 10,
       "cha": 11
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 6,
+      "stealth": 3
+    },
     "damage_resistances": "piercing and slashing from nonmagical weapons that aren't adamantine",
     "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 16",
     "languages": "Terran",
@@ -22914,16 +20314,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 7
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 3
+    },
     "damage_immunities": "cold",
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "Yeti",
@@ -22974,34 +20368,16 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "int",
-        "val": 5
-      },
-      {
-        "name": "wis",
-        "val": 6
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 10
-      },
-      {
-        "name": "insight",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "int": 5,
+      "wis": 6,
+      "cha": 6
+    },
+    "skills": {
+      "deception": 10,
+      "insight": 6
+    },
     "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
@@ -23065,34 +20441,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 5
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 3
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 5
-      }
-    ],
+    "saves": {
+      "dex": 5,
+      "con": 6,
+      "wis": 3,
+      "cha": 5
+    },
+    "skills": {
+      "perception": 6,
+      "stealth": 5
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 16",
     "languages": "Common, Draconic",
@@ -23138,34 +20496,16 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 8
-      },
-      {
-        "name": "wis",
-        "val": 5
-      },
-      {
-        "name": "cha",
-        "val": 7
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 9
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 8,
+      "wis": 5,
+      "cha": 7
+    },
+    "skills": {
+      "perception": 9,
+      "stealth": 4
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 19",
     "languages": "Common, Draconic",
@@ -23205,38 +20545,17 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 3
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 3
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "persuasion",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "saves": {
+      "dex": 3,
+      "con": 6,
+      "wis": 3,
+      "cha": 5
+    },
+    "skills": {
+      "perception": 6,
+      "persuasion": 5,
+      "stealth": 3
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 20",
     "languages": "Common, Draconic",
@@ -23276,38 +20595,17 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 17
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 3
-      },
-      {
-        "name": "con",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 5
-      },
-      {
-        "name": "cha",
-        "val": 6
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 4
-      },
-      {
-        "name": "perception",
-        "val": 7
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "saves": {
+      "dex": 3,
+      "con": 7,
+      "wis": 5,
+      "cha": 6
+    },
+    "skills": {
+      "insight": 4,
+      "perception": 7,
+      "stealth": 3
+    },
     "damage_immunities": "lightning",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 17",
     "languages": "Common, Draconic",
@@ -23353,38 +20651,17 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 7
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 6,
+      "wis": 4,
+      "cha": 5
+    },
+    "skills": {
+      "deception": 5,
+      "perception": 7,
+      "stealth": 4
+    },
     "damage_immunities": "acid",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 17",
     "languages": "Common, Draconic",
@@ -23424,42 +20701,18 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 20
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 6
-      },
-      {
-        "name": "con",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 5
-      },
-      {
-        "name": "cha",
-        "val": 9
-      }
-    ],
-    "skills": [
-      {
-        "name": "insight",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 9
-      },
-      {
-        "name": "persuasion",
-        "val": 9
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "saves": {
+      "dex": 6,
+      "con": 9,
+      "wis": 5,
+      "cha": 9
+    },
+    "skills": {
+      "insight": 5,
+      "perception": 9,
+      "persuasion": 9,
+      "stealth": 6
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 19",
     "languages": "Common, Draconic",
@@ -23505,38 +20758,17 @@ var jsonCreatureData = {
       "wis": 13,
       "cha": 15
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 6
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 5
-      }
-    ],
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "perception",
-        "val": 7
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 6,
+      "wis": 4,
+      "cha": 5
+    },
+    "skills": {
+      "deception": 5,
+      "perception": 7,
+      "stealth": 4
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 17",
@@ -23583,34 +20815,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 8
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 9,
+      "wis": 4,
+      "cha": 8
+    },
+    "skills": {
+      "perception": 8,
+      "stealth": 4
+    },
     "damage_immunities": "fire",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 18",
     "languages": "Common, Draconic",
@@ -23650,34 +20864,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 8
-      },
-      {
-        "name": "stealth",
-        "val": 8
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 9,
+      "wis": 4,
+      "cha": 8
+    },
+    "skills": {
+      "perception": 8,
+      "stealth": 8
+    },
     "damage_resistances": "necrotic",
     "damage_immunities": "fire",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 18",
@@ -23764,42 +20960,18 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 19
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 4
-      },
-      {
-        "name": "con",
-        "val": 9
-      },
-      {
-        "name": "wis",
-        "val": 4
-      },
-      {
-        "name": "cha",
-        "val": 8
-      }
-    ],
-    "skills": [
-      {
-        "name": "arcana",
-        "val": 6
-      },
-      {
-        "name": "history",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 8
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "saves": {
+      "dex": 4,
+      "con": 9,
+      "wis": 4,
+      "cha": 8
+    },
+    "skills": {
+      "arcana": 6,
+      "history": 6,
+      "perception": 8,
+      "stealth": 4
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 18",
     "languages": "Common, Draconic",
@@ -23839,34 +21011,16 @@ var jsonCreatureData = {
       "wis": 11,
       "cha": 12
     },
-    "saves": [
-      {
-        "name": "dex",
-        "val": 3
-      },
-      {
-        "name": "con",
-        "val": 7
-      },
-      {
-        "name": "wis",
-        "val": 3
-      },
-      {
-        "name": "cha",
-        "val": 4
-      }
-    ],
-    "skills": [
-      {
-        "name": "perception",
-        "val": 6
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "saves": {
+      "dex": 3,
+      "con": 7,
+      "wis": 3,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 6,
+      "stealth": 3
+    },
     "damage_immunities": "cold",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 16",
     "languages": "Common, Draconic",
@@ -23913,16 +21067,10 @@ var jsonCreatureData = {
       "wis": 15,
       "cha": 18
     },
-    "skills": [
-      {
-        "name": "perception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 6
-      }
-    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 6
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 15",
@@ -23982,16 +21130,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "deception": 5,
+      "stealth": 4
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 11",
@@ -24047,16 +21189,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "deception": 5,
+      "stealth": 4
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 11",
@@ -24104,16 +21240,10 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 16
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 5
-      },
-      {
-        "name": "stealth",
-        "val": 4
-      }
-    ],
+    "skills": {
+      "deception": 5,
+      "stealth": 4
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 11",
@@ -24173,20 +21303,11 @@ var jsonCreatureData = {
       "wis": 12,
       "cha": 14
     },
-    "skills": [
-      {
-        "name": "deception",
-        "val": 6
-      },
-      {
-        "name": "perception",
-        "val": 3
-      },
-      {
-        "name": "stealth",
-        "val": 3
-      }
-    ],
+    "skills": {
+      "deception": 6,
+      "perception": 3,
+      "stealth": 3
+    },
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 13",
@@ -24233,12 +21354,9 @@ var jsonCreatureData = {
       "wis": 6,
       "cha": 5
     },
-    "saves": [
-      {
-        "name": "wis",
-        "val": 0
-      }
-    ],
+    "saves": {
+      "wis": 0
+    },
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 8",
     "languages": "understands all languages it spoke in life but can't speak",
