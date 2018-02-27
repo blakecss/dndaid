@@ -20,14 +20,37 @@ Vue.component('creature', {
       var s = {}
       for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
         var a = Object.keys(jsonAbilityData)[i];
-        var v = Math.floor((this.c.abilities[a] - 10) / 2);
-        if (this.c.saves[a]) {
-          v = v + this.c.pb;
+        if (this.c.saves[a] == false) {
+          var v = Math.floor((this.c.abilities[a] - 10) / 2);
+          if (this.c.saves[a]) {
+            v = v + this.c.pb;
+          }
+          s[a] = v >= 0 ? '+' + v : v;
         }
-        s[a] = v >= 0 ? '+' + v : v;
+        else {
+          s[a] = '+' + this.c.saves[a];
+        }
       }
       return s;
     },
+    skills: function() {
+      var ss = {}
+      for (var i = 0; i < Object.keys(jsonSkillData).length; i++) {
+        var s = Object.keys(jsonSkillData)[i];
+        var ra = jsonSkillData[s].rel_ability;
+        if (this.c.skills[s] == false) {
+          var v = Math.floor((this.c.abilities[ra] - 10) / 2);
+          if (this.c.skills[s]) {
+            v = v + this.c.pb;
+          }
+          ss[s] = v >= 0 ? '+' + v : v;
+        }
+        else {
+          ss[s] = '+' + this.c.skills[s]
+        }
+      }
+      return ss;
+    }
   },
   template: '<div class="creature">\
     <div class="character-header">\
@@ -67,7 +90,7 @@ Vue.component('creature', {
             </div>\
             <div class="input-group col-xs-12">\
               <label>Languages</label>\
-              <input v-model="c.languages" type="text" />\
+              <chips :chips="c.languages" :suggestions="languages"></chips>\
             </div>\
           </div>\
         </div>\
@@ -84,11 +107,16 @@ Vue.component('creature', {
               <input class="hp" v-model="c.currentHP" type="number" /><span>/</span><input class="hp" v-model="c.maxHP" type="number" />\
             </div>\
             <div class="input-group col-xs-4">\
-              <label>Hit Die</label>\
+              <label>Armor Class</label>\
+              <input v-model="c.armorClass" type="number" />\
             </div>\
             <div class="input-group col-xs-4">\
-              <label>Armor Class</label>\
-              <input v-model="c.armorClass" type="number" readonly />\
+              <label>Initiative</label>\
+              <input v-model="c.initiative" type="number" />\
+            </div>\
+            <div class="input-group col-xs-4">\
+              <label>Speed</label>\
+              <input v-model="c.speed" type="text" />\
             </div>\
           </div>\
         </div>\
@@ -100,9 +128,19 @@ Vue.component('creature', {
         </button>\
         <div v-show="c.showStats" class="character-section-content">\
           <div class="row">\
+            <div class="input-group col-xs-6">\
+              <label>Challenge Rating</label>\
+              <input v-model="c.challengeRating" type="text" readonly />\
+            </div>\
+            <div class="input-group col-xs-6">\
+              <label>Proficiency Bonus</label>\
+              <input v-model="c.pb" type="number" />\
+            </div>\
+          </div>\
+          <div class="row">\
             <h4>Abilities</h4>\
             <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
-              <label>{{key}}</label>\
+              <label>{{value.full}}</label>\
               <input v-model="c.abilities[key]" type="number" />\
               <div class="mod"><span>{{c.abilities[key] | mod}}</span></div>\
             </div>\
@@ -110,22 +148,30 @@ Vue.component('creature', {
           <div class="row">\
             <h4>Saves</h4>\
             <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
-              <label>{{key}}\
-                <div class="prof">{{saves[key]}}<input v-model="c.saves[key]" type="checkbox" /></div>\
+              <label>{{value.full}}\
+                <div class="prof">{{saves[key]}}<input v-model="c.saves[key]" type="checkbox" disabled /></div>\
+              </label>\
+            </div>\
+          </div>\
+          <div class="row">\
+            <h4>Skills</h4>\
+            <div class="input-group col-xs-2" v-for="(value, key) in skillData">\
+              <label>{{value.full}}\
+                <div class="prof">{{skills[key]}}<input v-model="c.skills[key]" type="checkbox" disabled /></div>\
               </label>\
             </div>\
           </div>\
         </div>\
       </div>\
-      <div class="character-section">\
+      <div v-if="c.specialAbilities" class="character-section">\
         <button @click="c.showSpecialAbilities = !c.showSpecialAbilities" class="character-section-header">\
           <h3>Special Abilites</h3>\
           <svg :class="{open: c.showSpecialAbilities}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showSpecialAbilities" class="character-section-content">\
-          <ul class="row">\
+          <ul class="row action-list">\
             <li v-for="special in c.specialAbilities" class="col-xs-12">\
-              <p><b><i>{{special.name}}: </i></b>{{special.desc}}</p>\
+              <p><b><i>{{special.name}}: </i></b><span v-html="special.desc"></span></p>\
             </li>\
           </ul>\
         </div>\
@@ -136,35 +182,35 @@ Vue.component('creature', {
           <svg :class="{open: c.showActions}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showActions" class="character-section-content">\
-          <ul class="row">\
+          <ul class="row action-list">\
             <li v-for="action in c.actions" class="col-xs-12">\
-              <p><b><i>{{action.name}}: </i></b>{{action.desc}}</p>\
+              <p><b><i>{{action.name}}: </i></b><span v-html="action.desc"></span></p>\
             </li>\
           </ul>\
         </div>\
       </div>\
-      <div class="character-section">\
+      <div v-if="c.legendaryActions" class="character-section">\
         <button @click="c.showLegendaryActions = !c.showLegendaryActions" class="character-section-header">\
           <h3>Legendary Actions</h3>\
           <svg :class="{open: c.showLegendaryActions}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showLegendaryActions" class="character-section-content">\
-          <ul class="row">\
+          <ul class="row action-list">\
             <li v-for="action in c.legendaryActions" class="col-xs-12">\
-              <p><b><i>{{action.name}}: </i></b>{{action.desc}}</p>\
+              <p><b><i>{{action.name}}: </i></b><span v-html="action.desc"></span></p>\
             </li>\
           </ul>\
         </div>\
       </div>\
-      <div class="character-section">\
+      <div v-if="c.reactions" class="character-section">\
         <button @click="c.showReactions = !c.showReactions" class="character-section-header">\
           <h3>Reactions</h3>\
           <svg :class="{open: c.showReactions}"><use xlink:href="sprites.svg#arrow-down"></use></svg>\
         </button>\
         <div v-show="c.showReactions" class="character-section-content">\
-          <ul class="row">\
+          <ul class="row action-list">\
             <li v-for="reaction in c.reactions" class="col-xs-12">\
-              <p><b><i>{{reaction.name}}: </i></b>{{reaction.desc}}</p>\
+              <p><b><i>{{reaction.name}}: </i></b><span v-html="reaction.desc"></span></p>\
             </li>\
           </ul>\
         </div>\

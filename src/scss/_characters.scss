@@ -261,17 +261,13 @@
     font-weight: $bold;
   }
 }
-.creature {
-  .character-section-content {
-    ul {
-      list-style: none;
-      margin: 0;
-      li {
-        margin: 0;
-        b {
-          font-weight: 600;
-        }
-      }
+.action-list {
+  list-style: none;
+  margin: 0;
+  li {
+    margin: 0;
+    b {
+      font-weight: 600;
     }
   }
 }

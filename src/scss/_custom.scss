@@ -23,6 +23,10 @@
   }
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .subtitle {
   color: $text-color-light;
   margin: 0;
@@ -154,78 +158,6 @@
   }
 }
 
-#character-creator {
-  form {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .col-xs-6:first-child {
-    border-right: 1px solid #ddd;
-  }
-  .step-slides {
-    background-color: #fff;
-    position: relative;
-    width: 700px;
-    height: 300px;
-    & > * {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-    form {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-#chart {
-  width: 300px;
-  border: 1px solid #eee;
-  .grid {
-    fill: none;
-    stroke-width: 0.5;
-    stroke: #000;
-  }
-  .bars {
-    fill: $secondary;
-  }
-}
-.inputs {
-  display: flex;
-  justify-content: center;
-  .stat {
-    padding: 0 10px 0 20px;
-  }
-  .subtitle {
-    margin-left: -9px;
-  }
-  .base {
-    border-bottom: 0;
-  }
-  .perk {
-    font-size: rem(16);
-    color: $text-color;
-    margin-left: -9px;
-    border-bottom: 1px solid rgba(#000, 0.2);
-  }
-  .total {
-    border-bottom: 0;
-    font-size: rem(16);
-    color: $text-color;
-  }
-  .mod {
-    font-size: rem(12);
-    vertical-align: text-bottom;
-  }
-  input {
-    margin: 0;
-    width: 36px;
-  }
-}
 .chips {
   ul {
     list-style: none;

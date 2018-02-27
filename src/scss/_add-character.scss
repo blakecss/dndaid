@@ -1,0 +1,138 @@
+#character-creator {
+  form {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .col-xs-6:first-child {
+    border-right: 1px solid #ddd;
+  }
+  .step-slides {
+    background-color: #fff;
+    position: relative;
+    width: 700px;
+    height: 420px;
+    & > * {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    form {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  fieldset {
+    padding: 0;
+    overflow-y: scroll;
+    max-height: 240px;
+    input {
+      display: none;
+      &:checked + label {
+        background-color: $secondary;
+        color: #fff;
+        .creature-name {
+          color: #fff;
+        }
+        .subtitle {
+          color: rgba(#fff, 0.6);
+        }
+      }
+    }
+    label {
+      display: block;
+      cursor: pointer;
+      justify-content: space-between;
+      padding: 4px 8px;
+      margin: 0;
+      border-bottom: 1px solid #eee;
+      transition: 0.3s ease;
+      &:hover {
+        background-color: #eee;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+.filter-sort {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  .creature-filter {
+    width: auto;
+    margin: 0;
+  }
+  .creature-sort {
+    text-align: right;
+    select {
+      width: auto;
+      font-size: rem(14);
+    }
+  }
+}
+#creature-selector {
+  p {
+    margin: 0;
+    font-size: rem(14);
+  }
+  margin-bottom: 8px;
+}
+.selection-results {
+  position: relative;
+  input {
+    padding-right: 24px;
+    text-overflow: ellipsis;
+  }
+  button {
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: none;
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $text-color;
+    }
+  }
+}
+.inputs {
+  display: flex;
+  justify-content: center;
+  .stat {
+    padding: 0 10px 0 20px;
+  }
+  .subtitle {
+    margin-left: -9px;
+  }
+  .base {
+    border-bottom: 0;
+  }
+  .perk {
+    font-size: rem(16);
+    color: $text-color;
+    margin-left: -9px;
+    border-bottom: 1px solid rgba(#000, 0.2);
+  }
+  .total {
+    border-bottom: 0;
+    font-size: rem(16);
+    color: $text-color;
+  }
+  .mod {
+    font-size: rem(12);
+    vertical-align: text-bottom;
+  }
+  input {
+    margin: 0;
+    width: 36px;
+  }
+}

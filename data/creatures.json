@@ -89,7 +89,7 @@ var jsonCreatureData = {
       "perception": 10
     },
     "senses": "darkvision 120 ft., passive Perception 20",
-    "languages": "Deep Speech, telepathy 120 ft.",
+    "languages": "Deep Speech, Telepathy 120 ft.",
     "challenge_rating": "10 (5900 XP)",
     "special_abilities": [
       {
@@ -217,7 +217,7 @@ var jsonCreatureData = {
       "religion": 2
     },
     "senses": "passive Perception 12",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
       {
@@ -815,7 +815,7 @@ var jsonCreatureData = {
     "condition_immunities": "poisoned",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 22",
     "languages": "Common, Draconic",
-    "challenge_rating": "15",
+    "challenge_rating": "15 (13000 XP)",
     "special_abilities": [
       {
         "name": "Amphibious",
@@ -1631,7 +1631,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 27",
     "languages": "Common, Draconic",
-    "challenge_rating": "24",
+    "challenge_rating": "24 (36500 XP)",
     "special_abilities": [
       {
         "name": "Amphibious",
@@ -2239,7 +2239,7 @@ var jsonCreatureData = {
     "damage_immunities": "acid, poison",
     "condition_immunities": "charmed, poisoned",
     "senses": "truesight 120 ft., passive Perception 17",
-    "languages": "all, telepathy 120 ft.",
+    "languages": "All, Telepathy 120 ft.",
     "challenge_rating": "12 (8400 XP)",
     "special_abilities": [
       {
@@ -2297,7 +2297,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "damage from spells; non magical bludgeoning, piercing, and slashing (from stoneskin)",
     "senses": "passive Perception 12",
-    "languages": "any six languages",
+    "languages": "Any six languages",
     "challenge_rating": "12 (8400 XP)",
     "special_abilities": [
       {
@@ -2395,7 +2395,7 @@ var jsonCreatureData = {
     "damage_vulnerabilities": "fire",
     "damage_resistances": "piercing",
     "senses": "passive Perception 10",
-    "languages": "one language known by its creator",
+    "languages": "One language known by its creator",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
       {
@@ -2429,7 +2429,7 @@ var jsonCreatureData = {
     "damage_vulnerabilities": "fire",
     "damage_resistances": "bludgeoning, piercing",
     "senses": "passive Perception 10",
-    "languages": "one language known by its creator",
+    "languages": "One language known by its creator",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -2603,7 +2603,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "truesight 120 ft., passive Perception 13",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "19 (22000 XP)",
     "special_abilities": [
       {
@@ -2664,7 +2664,7 @@ var jsonCreatureData = {
       "cha": 10
     },
     "senses": "passive Perception 10",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
       {
@@ -2704,7 +2704,7 @@ var jsonCreatureData = {
       "deception": 4
     },
     "senses": "passive Perception 10",
-    "languages": "any two languages",
+    "languages": "Any two languages",
     "challenge_rating": "2 (450 XP)",
     "actions": [
       {
@@ -2810,7 +2810,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 18",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -2878,7 +2878,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 30 ft., darkvision 120 ft., passive Perception 15",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -3005,7 +3005,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
@@ -3160,7 +3160,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
-    "languages": "understand Deep Speech and Undercommon but can't speak",
+    "languages": "Understand Deep Speech and Undercommon but can't speak",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -3197,7 +3197,7 @@ var jsonCreatureData = {
       "cha": 9
     },
     "senses": "passive Perception 10",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -3317,7 +3317,7 @@ var jsonCreatureData = {
     "damage_immunities": "acid, cold, lightning, slashing",
     "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 8",
-    "challenge_rating": "4",
+    "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
         "name": "Amorphous",
@@ -3366,7 +3366,7 @@ var jsonCreatureData = {
       "stealth": 5
     },
     "senses": "passive Perception 10",
-    "languages": "Blink Dog, understands Sylvan but can't speak it",
+    "languages": "Blink Dog, Understands Sylvan but can't speak it",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
       {
@@ -3485,7 +3485,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "darkvision 60 ft., passive Perception 11",
-    "languages": "Slaad, telepathy 60 ft.",
+    "languages": "Slaad, Telepathy 60 ft.",
     "challenge_rating": "7 (2900 XP)",
     "special_abilities": [
       {
@@ -3581,7 +3581,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 12",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "9 (5000 XP)",
     "special_abilities": [
       {
@@ -3635,7 +3635,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, paralyzed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 12",
-    "languages": "Common plus one other language",
+    "languages": "Common, Other",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
@@ -4126,7 +4126,7 @@ var jsonCreatureData = {
       "stealth": 4
     },
     "senses": "passive Perception 13",
-    "challenge_rating": "0",
+    "challenge_rating": "0 (10 XP)",
     "special_abilities": [
       {
         "name": "Keen Smell",
@@ -4257,7 +4257,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 11",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "8 (3900 XP)",
     "special_abilities": [
       {
@@ -4318,7 +4318,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 10 ft., darkvision 120 ft., passive Perception 15",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "6 (2300 XP)",
     "special_abilities": [
       {
@@ -4365,7 +4365,7 @@ var jsonCreatureData = {
       "perception": 8
     },
     "senses": "darkvision 60 ft., passive Perception 18",
-    "languages": "understands Draconic but can't speak",
+    "languages": "Understands Draconic but can't speak",
     "challenge_rating": "6 (2300 XP)",
     "actions": [
       {
@@ -4412,7 +4412,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 14",
-    "languages": "understands Deep Speech but can't speak",
+    "languages": "Understands Deep Speech but can't speak",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
@@ -4458,7 +4458,7 @@ var jsonCreatureData = {
     "damage_immunities": "acid, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
-    "languages": "understands the languages of its creator but can't speak",
+    "languages": "Understands the languages of its creator but can't speak",
     "challenge_rating": "9 (5000 XP)",
     "special_abilities": [
       {
@@ -4653,7 +4653,7 @@ var jsonCreatureData = {
       "cha": 10
     },
     "senses": "passive Perception 10",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "0 (10 XP)",
     "actions": [
       {
@@ -4756,7 +4756,7 @@ var jsonCreatureData = {
     "damage_resistances": "radiant",
     "damage_immunities": "psychic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "truesight 120 ft., passive Perception 15",
-    "languages": "all, telepathy 120 ft.",
+    "languages": "All, Telepathy 120 ft.",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
@@ -4840,7 +4840,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, poisoned",
     "senses": "blindsight 30 ft., passive Perception 10",
-    "languages": "understands Common but can't speak",
+    "languages": "Understands Common but can't speak",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
       {
@@ -4911,7 +4911,7 @@ var jsonCreatureData = {
       "religion": 2
     },
     "senses": "passive Perception 10",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
       {
@@ -4949,7 +4949,7 @@ var jsonCreatureData = {
       "religion": 2
     },
     "senses": "passive Perception 10",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -5235,7 +5235,7 @@ var jsonCreatureData = {
       },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 18",
-    "languages": "Slaad, telepathy 60 ft.",
+    "languages": "Slaad, Telepathy 60 ft.",
     "challenge_rating": "10 (5900 XP)",
     "special_abilities": [
       {
@@ -5312,7 +5312,7 @@ var jsonCreatureData = {
     "condition_immunities": "charmed, exhaustion, paralyzed, petrified, poisoned, prone",
     "senses": "darkvision 120 ft., passive Perception 22",
     "languages": "Deep Speech, Undercommon",
-    "challenge_rating": 14,
+    "challenge_rating": "14 (11500 XP)",
     "special_abilities": [
       {
         "name": "Negative Energy Cone",
@@ -5582,7 +5582,7 @@ var jsonCreatureData = {
     "damage_resistances": "radiant; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, exhaustion, frightened",
     "senses": "darkvision 120 ft., passive Perception 19",
-    "languages": "all, telepathy 120 ft.",
+    "languages": "All, Telepathy 120 ft.",
     "challenge_rating": "10 (5900 XP)",
     "special_abilities": [
       {
@@ -6767,7 +6767,7 @@ var jsonCreatureData = {
     },
     "damage_immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "truesight 120 ft., passive Perception 16",
-    "languages": "all",
+    "languages": "All",
     "challenge_rating": "23 (32500 XP)",
     "special_abilities": [
       {
@@ -6839,7 +6839,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "truesight 120 ft., passive Perception 12",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "12 (8400 XP)",
     "special_abilities": [
       {
@@ -6987,7 +6987,7 @@ var jsonCreatureData = {
       }
     ]
   },
-  "Faerie Dragon": {
+  "Faerie Dragon (Red-Yellow)": {
     "size": "Tiny",
     "type": "dragon",
     "alignment": "Chaotic Good",
@@ -7010,7 +7010,7 @@ var jsonCreatureData = {
     },
     "senses": "darkvision 60 ft., passive Perception 13",
     "languages": "Draconic, Sylvan",
-    "challenge_rating": "1 (200 XP) for red-yellow; 2 (450 XP) for green-violet",
+    "challenge_rating": "1 (200 XP)",
     "special_abilities": [
       {
         "name": "Superior Invisibility",
@@ -7026,7 +7026,60 @@ var jsonCreatureData = {
       },
       {
         "name": "Innate Spellcasting",
-        "desc": "The dragon's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast a number of spells, requiring no material components. As the dragon ages and changes color, it gains additional spells as shown below.<br><br>Red, 1/day each: dancing lights, mage hand, minor illusion<br>Orange, 1/day: color spray<br>Yellow, 1/day: mirror image<br>Green, 1/day: suggestion<br>Blue, 1/day: major image<br>Indigo, 1/day: hallucinatory terrain<br>Violet, 1/day: polymorph"
+        "desc": "The dragon's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast a number of spells, requiring no material components. As the dragon ages and changes color, it gains additional spells as shown below.<br><br>Red, 1/day each: dancing lights, mage hand, minor illusion<br>Orange, 1/day: color spray<br>Yellow, 1/day: mirror image"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 1 piercing damage."
+      },
+      {
+        "name": "Euphoria Breath (Recharge 5-6)",
+        "desc": "The dragon exhales a puff of euphoria gas at one creature within 5 feet of it. The target must succeed on a DC 11 Wisdom saving throw, or for 1 minute, the target can't take reactions and must roll a d6 at the start of each of its turns to determine its behavior during the turn:<br>1-4. The target takes no action or bonus action and uses all of its movement to move in a random direction.<br>5- 6. The target doesn't move, and the only thing it can do on its turn is make a DC 11 Wisdom saving throw, ending the effect on itself on a success."
+      }
+    ]
+  },
+  "Faerie Dragon (Green-Violet)": {
+    "size": "Tiny",
+    "type": "dragon",
+    "alignment": "Chaotic Good",
+    "armor_class": 15,
+    "maxHP": 14,
+    "hit_dice": "4d4 + 4",
+    "speed": "10 ft., fly 60 ft.",
+    "abilities": {
+      "str": 3,
+      "dex": 20,
+      "con": 13,
+      "int": 14,
+      "wis": 12,
+      "cha": 16
+    },
+    "skills": {
+      "arcana": 4,
+      "perception": 3,
+      "stealth": 7
+    },
+    "senses": "darkvision 60 ft., passive Perception 13",
+    "languages": "Draconic, Sylvan",
+    "challenge_rating": "2 (450 XP)",
+    "special_abilities": [
+      {
+        "name": "Superior Invisibility",
+        "desc": " As a bonus action, the dragon can magically turn invisible until its concentration ends (as if concentrating on a spell). Any equipment the dragon wears or carries is invisible with it."
+      },
+      {
+        "name": "Limited Telepathy",
+        "desc": "Using telepathy, the dragon can magically communicate with any other faerie dragon within 60 feet of it."
+      },
+      {
+        "name": "Magic Resistance",
+        "desc": "The dragon has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The dragon's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast a number of spells, requiring no material components. As the dragon ages and changes color, it gains additional spells as shown below.<br><br>Green, 1/day: suggestion<br>Blue, 1/day: major image<br>Indigo, 1/day: hallucinatory terrain<br>Violet, 1/day: polymorph"
       }
     ],
     "actions": [
@@ -7151,7 +7204,7 @@ var jsonCreatureData = {
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "fire",
     "senses": "darkvision 60 ft., passive Perception 10",
-    "languages": "understands Ignan but can't speak",
+    "languages": "Understands Ignan but can't speak",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
       {
@@ -7248,7 +7301,7 @@ var jsonCreatureData = {
     "damage_immunities": "lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
-    "languages": "understands the languages of its creator but can't speak",
+    "languages": "Understands the languages of its creator but can't speak",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -7310,7 +7363,7 @@ var jsonCreatureData = {
     },
     "damage_vulnerabilities": "psychic",
     "senses": "darksight 60 ft., passive Perception 12",
-    "languages": "understands Undercommon but can't speak, telepathy 60 ft.",
+    "languages": "Understands Undercommon but can't speak, Telepathy 60 ft.",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
       {
@@ -7752,7 +7805,7 @@ var jsonCreatureData = {
     "damage_immunities": "cold, necrotic, poison",
     "condition_immunities": "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
     "senses": "darkvision 60 ft., passive Perception 11",
-    "languages": "any languages it knew in life",
+    "languages": "Any languages it knew in life",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
@@ -8740,7 +8793,7 @@ var jsonCreatureData = {
       "perception": 3
     },
     "senses": "passive Perception 13",
-    "languages": "understands Common but can't speak",
+    "languages": "Understands Common but can't speak",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
       {
@@ -9128,7 +9181,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "truesight 120 ft., passive Perception 13",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "9 (5000 XP)",
     "special_abilities": [
       {
@@ -9186,7 +9239,7 @@ var jsonCreatureData = {
       "intimidation": 5
     },
     "senses": "passive Perception 11",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -9754,7 +9807,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 16",
-    "languages": "Slaad, telepathy 60 ft.",
+    "languages": "Slaad, Telepathy 60 ft.",
     "challenge_rating": "9 (5000 XP)",
     "special_abilities": [
       {
@@ -9934,7 +9987,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "blindsight 30 ft., darkvision 60 ft., passive Perception 12",
-    "languages": "Slaad, telepathy 60 ft.",
+    "languages": "Slaad, Telepathy 60 ft.",
     "challenge_rating": "8 (3900 XP)",
     "special_abilities": [
       {
@@ -10215,7 +10268,7 @@ var jsonCreatureData = {
       "perception": 2
     },
     "senses": "passive Perception 12",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
       {
@@ -10507,7 +10560,7 @@ var jsonCreatureData = {
     },
     "damage_immunities": "fire",
     "senses": "darkvision 60 ft., passive Perception 15",
-    "languages": "understands Infernal but can't speak it",
+    "languages": "Understands Infernal but can't speak it",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
@@ -10553,7 +10606,7 @@ var jsonCreatureData = {
     "damage_immunities": "force, necrotic, poison",
     "condition_immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 14",
-    "languages": "understands the languages of its creator but can't speak",
+    "languages": "Understands the languages of its creator but can't speak",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
@@ -10602,7 +10655,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 11",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "8 (3900 XP)",
     "special_abilities": [
       {
@@ -10873,7 +10926,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "charmed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
-    "languages": "understands the languages of its creator but can't speak",
+    "languages": "Understands the languages of its creator but can't speak",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
       {
@@ -10962,7 +11015,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 13",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "11 (7200 XP)",
     "special_abilities": [
       {
@@ -11017,7 +11070,7 @@ var jsonCreatureData = {
       "perception": 2
     },
     "senses": "darkvision 30 ft., passive Perception 12",
-    "challenge_rating": "2",
+    "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
         "name": "Blood Frenzy",
@@ -11146,7 +11199,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 12",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "14 (11500 XP)",
     "special_abilities": [
       {
@@ -11325,7 +11378,7 @@ var jsonCreatureData = {
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "blinded",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 12",
-    "languages": "understands Deep Speech but can't speak, telepathy 60 ft.",
+    "languages": "Understands Deep Speech but can't speak, Telepathy 60 ft.",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -11418,7 +11471,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
-    "languages": "understands the languages of its creator but can't speak",
+    "languages": "Understands the languages of its creator but can't speak",
     "challenge_rating": "16 (15000 XP)",
     "special_abilities": [
       {
@@ -11574,7 +11627,7 @@ var jsonCreatureData = {
     },
     "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical wepons that aren't silvered",
     "senses": "passive Perception 12",
-    "languages": "understands Auran and Common but speaks only through the use of its Mimicry trait.",
+    "languages": "Understands Auran and Common but speaks only through the use of its Mimicry trait.",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
       {
@@ -11661,7 +11714,7 @@ var jsonCreatureData = {
       "wis": 2
     },
     "senses": "passive Perception 10",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
@@ -11762,7 +11815,7 @@ var jsonCreatureData = {
     "damage_immunities": "lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "frightened, paralyzed",
     "senses": "truesight 120 ft., passive Perception 14",
-    "languages": "understands Abyssal, Celestial, Infernal, and Primordial but can't speak, telepathy 120 ft.",
+    "languages": "Understands Abyssal, Celestial, Infernal, and Primordial but can't speak, Telepathy 120 ft.",
     "challenge_rating": "23 (50000 XP)",
     "special_abilities": [
       {
@@ -12126,7 +12179,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "charmed, frightened, poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
-    "languages": "understands infernal but can't speak",
+    "languages": "Understands infernal but can't speak",
     "challenge_rating": "0 (10 XP)",
     "special_abilities": [
       {
@@ -12490,7 +12543,7 @@ var jsonCreatureData = {
       "history": 6
     },
     "senses": "passive Perception 11",
-    "languages": "any four languages",
+    "languages": "Any four languages",
     "challenge_rating": "6 (2300 XP)",
     "special_abilities": [
       {
@@ -12653,7 +12706,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "charmed, frightened, poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
-    "languages": "understands Abyssal but can't speak",
+    "languages": "Understands Abyssal but can't speak",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
       {
@@ -12787,7 +12840,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "truesight 120 ft., passive Perception 13",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "16 (15000 XP)",
     "special_abilities": [
       {
@@ -13020,7 +13073,7 @@ var jsonCreatureData = {
     "damage_immunities": "acid, poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 13",
-    "languages": "Abyssal, Infernal, telepathy 60 ft.",
+    "languages": "Abyssal, Infernal, Telepathy 60 ft.",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -13138,7 +13191,7 @@ var jsonCreatureData = {
       "stealth": 4
     },
     "senses": "darkvision 120 ft., passive Perception 16",
-    "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
+    "languages": "Deep Speech, Undercommon, Telepathy 120 ft.",
     "challenge_rating": "7 (2900 XP)",
     "special_abilities": [
       {
@@ -13195,7 +13248,7 @@ var jsonCreatureData = {
       "stealth": 4
     },
     "senses": "darkvision 120 ft., passive Perception 16",
-    "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
+    "languages": "Deep Speech, Undercommon, Telepathy 120 ft.",
     "challenge_rating": "8 (3900 XP)",
     "special_abilities": [
       {
@@ -13293,7 +13346,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
-    "languages": "understands Abyssal but can't speak",
+    "languages": "Understands Abyssal but can't speak",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -13455,7 +13508,7 @@ var jsonCreatureData = {
     "damage_immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "necrotic, poisoned",
     "senses": "darkvision 60 ft., passive Perception 10",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "3 (700 XP)",
     "actions": [
       {
@@ -13502,7 +13555,7 @@ var jsonCreatureData = {
     "damage_immunities": "necrotic, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 14",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "15 (13000 XP)",
     "special_abilities": [
       {
@@ -13719,7 +13772,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "truesight 120 ft., passive Perception 11",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "13 (10000 XP)",
     "special_abilities": [
       {
@@ -13772,7 +13825,7 @@ var jsonCreatureData = {
     },
     "condition_immunities": "blinded, deafened",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 9",
-    "languages": "understands Common but can't speak",
+    "languages": "Understands Common but can't speak",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
       {
@@ -13875,7 +13928,7 @@ var jsonCreatureData = {
     },
     "damage_immunities": "fire",
     "senses": "passive Perception 11",
-    "languages": "understands Abyssal, Common, and Infernal but can't speak",
+    "languages": "Understands Abyssal, Common, and Infernal but can't speak",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
@@ -13921,7 +13974,7 @@ var jsonCreatureData = {
       "persuasion": 5
     },
     "senses": "passive Perception 10",
-    "languages": "any two languages",
+    "languages": "Any two languages",
     "challenge_rating": "1/8 (25 XP)",
     "actions": [
       {
@@ -14012,7 +14065,7 @@ var jsonCreatureData = {
     "damage_immunities": "acid, poison",
     "condition_immunities": "poisoned",
     "senses": "blindsight 60 ft., darkvision 60 ft., passive Perception 14",
-    "languages": "Abyssal, Infernal, telepathy 60 ft.",
+    "languages": "Abyssal, Infernal, Telepathy 60 ft.",
     "challenge_rating": "9 (5000 XP)",
     "special_abilities": [
       {
@@ -14190,7 +14243,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 8",
-    "languages": "understands Common and Giant but can't speak",
+    "languages": "Understands Common and Giant but can't speak",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -14227,7 +14280,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 8",
-    "languages": "understand Common and Giant but can't speak",
+    "languages": "Understand Common and Giant but can't speak",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -14692,7 +14745,7 @@ var jsonCreatureData = {
       "perception": 6
     },
     "senses": "passive Perception 16",
-    "languages": "understands Celestial, Common, Elvish, and Sylvan but can't speak",
+    "languages": "Understands Celestial, Common, Elvish, and Sylvan but can't speak",
     "challenge_rating": "2 (450 XP)",
     "actions": [
       {
@@ -14769,7 +14822,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "passive Perception 15",
-    "languages": "understands Common and Elvish but can't speak",
+    "languages": "Understands Common and Elvish but can't speak",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -14906,7 +14959,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "truesight 120 ft., passive Perception 14",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "20 (25000 XP)",
     "special_abilities": [
       {
@@ -15020,7 +15073,7 @@ var jsonCreatureData = {
     "damage_resistances": "radiant; bludgeoning, piercing, and slashing from nonmagical weapons",
     "condition_immunities": "charmed, exhaustion, frightened",
     "senses": "truesight 120 ft., passive Perception 21",
-    "languages": "all, telepathy 120 ft.",
+    "languages": "All, Telepathy 120 ft.",
     "challenge_rating": "16 (15000 XP)",
     "special_abilities": [
       {
@@ -15211,7 +15264,7 @@ var jsonCreatureData = {
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
     "senses": "darkvision 60 ft., passive Perception 10",
-    "languages": "understands all languages it knew in life but can't speak",
+    "languages": "Understands all languages it knew in life but can't speak",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -15286,7 +15339,7 @@ var jsonCreatureData = {
       "religion": 4
     },
     "senses": "passive Perception 13",
-    "languages": "any two languages",
+    "languages": "Any two languages",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -15326,7 +15379,7 @@ var jsonCreatureData = {
       "stealth": 4
     },
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 13",
-    "languages": "understands Common and Draconic but can't speak",
+    "languages": "Understands Common and Draconic but can't speak",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
       {
@@ -15829,7 +15882,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "darkvision 60 ft., passive Perception 11",
-    "languages": "Slaad, telepathy 60 ft.",
+    "languages": "Slaad, Telepathy 60 ft.",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -15960,7 +16013,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, stunned",
     "senses": "darkvision 60 ft., passive Perception 13",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -16572,7 +16625,7 @@ var jsonCreatureData = {
     "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
     "damage_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, unconscious",
     "senses": "darkvision 60 ft., passive Perception 10",
-    "languages": "understands the languages of its creator but can't speak",
+    "languages": "Understands the languages of its creator but can't speak",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
       {
@@ -16644,7 +16697,7 @@ var jsonCreatureData = {
       "survival": 5
     },
     "senses": "passive Perception 15",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
       {
@@ -16811,7 +16864,7 @@ var jsonCreatureData = {
     "damage_immunities": "cold, lightning, poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
     "senses": "darkvision 120 ft., passive Perception 11",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
@@ -16898,7 +16951,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
     "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 10",
-    "languages": "understands commands given in any language but can't speak",
+    "languages": "Understands commands given in any language but can't speak",
     "challenge_rating": "7 (2900 XP)",
     "special_abilities": [
       {
@@ -17023,7 +17076,7 @@ var jsonCreatureData = {
     "damage_vulnerabilities": "bludgeoning",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 9",
-    "languages": "understands all languages it spoke in life but can't speak",
+    "languages": "Understands all languages it spoke in life but can't speak",
     "challenge_rating": "1/4 (50 XP)",
     "actions": [
       {
@@ -17057,7 +17110,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "acid, cold, fire, lightning, thunder",
     "senses": "darkvision 60 ft., passive Perception 7",
-    "languages": "understands Slaad but can't speak",
+    "languages": "Understands Slaad but can't speak",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
       {
@@ -17146,7 +17199,7 @@ var jsonCreatureData = {
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, frightened, poisoned",
     "senses": "truesight 120 ft., passive Perception 24",
-    "languages": "all, telepathy 120 ft.",
+    "languages": "All, Telepathy 120 ft.",
     "challenge_rating": "21 (33000 XP)",
     "special_abilities": [
       {
@@ -17224,7 +17277,7 @@ var jsonCreatureData = {
     },
     "condition_immunities": "prone",
     "senses": "darkvision 120 ft., passive Perception 16",
-    "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
+    "languages": "Deep Speech, Undercommon, Telepathy 120 ft.",
     "challenge_rating": "3 (700 XP)",
     "actions": [
       {
@@ -17267,7 +17320,7 @@ var jsonCreatureData = {
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
     "senses": "darkvision 60 ft., passive Perception 10",
-    "languages": "understands all languages it knew in life but can't speak",
+    "languages": "Understands all languages it knew in life but can't speak",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
       {
@@ -17348,7 +17401,7 @@ var jsonCreatureData = {
     "damage_immunities": "fire, poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 12",
-    "languages": "Infernal, telepathy 120 ft.",
+    "languages": "Infernal, Telepathy 120 ft.",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -17499,7 +17552,7 @@ var jsonCreatureData = {
       "stealth": 4
     },
     "senses": "passive Perception 16",
-    "languages": "any two languages",
+    "languages": "Any two languages",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
       {
@@ -17671,7 +17724,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
     "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
     "senses": "darkvision 120 ft., passive Perception 10",
-    "languages": "understands the languages of its creator but can't speak",
+    "languages": "Understands the languages of its creator but can't speak",
     "challenge_rating": "10 (5900 XP)",
     "special_abilities": [
       {
@@ -17791,7 +17844,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "cold, fire, lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 15",
-    "languages": "Abyssal, Common, Infernal, telepathy 60 ft.",
+    "languages": "Abyssal, Common, Infernal, Telepathy 60 ft.",
     "challenge_rating": "4 (1100 XP)",
     "special_abilities": [
       {
@@ -18214,7 +18267,7 @@ var jsonCreatureData = {
       "intimidation": 2
     },
     "senses": "darkvision 60 ft., passive Perception 13",
-    "languages": "Thri-kreen, telepathy 120 ft.",
+    "languages": "Thri-kreen, Telepathy 120 ft.",
     "challenge_rating": "1 (200 XP)",
     "special_abilities": [
       {
@@ -18322,7 +18375,7 @@ var jsonCreatureData = {
       "intimidation": 2
     },
     "senses": "passive Perception 10",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "1/2 (100 XP)",
     "special_abilities": [
       {
@@ -18500,7 +18553,7 @@ var jsonCreatureData = {
       "cha": 8
     },
     "senses": "passive Perception 10",
-    "languages": "any one language",
+    "languages": "Any one language",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
       {
@@ -18675,7 +18728,7 @@ var jsonCreatureData = {
     "damage_vulnerabilities": "fire",
     "condition_immunities": "blinded, deafened",
     "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 9",
-    "languages": "understands Common but can't speak",
+    "languages": "Understands Common but can't speak",
     "challenge_rating": "1/8 (25 XP)",
     "special_abilities": [
       {
@@ -18752,7 +18805,7 @@ var jsonCreatureData = {
     "damage_immunities": "acid, poison",
     "condition_immunities": "charmed, frightened, poisoned",
     "senses": "truesight 120 ft., passive Perception 17",
-    "languages": "Abyssal, Infernal, telepathy 120 ft.",
+    "languages": "Abyssal, Infernal, Telepathy 120 ft.",
     "challenge_rating": "13 (10000 XP)",
     "special_abilities": [
       {
@@ -18850,7 +18903,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "charmed, paralyzed, poisoned",
     "senses": "darkvision 60 ft., passive Perception 13",
-    "languages": "Celestial, Elvish, Sylvan, telepathy 60 ft.",
+    "languages": "Celestial, Elvish, Sylvan, Telepathy 60 ft.",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -18935,7 +18988,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 120 ft., passive Perception 17",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "13 (10000 XP)",
     "special_abilities": [
       {
@@ -19026,7 +19079,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 13",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -19083,7 +19136,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 13",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "15 (13000 XP)",
     "special_abilities": [
       {
@@ -19144,7 +19197,7 @@ var jsonCreatureData = {
     },
     "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
     "senses": "darkvision 60 ft., passive Perception 13",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "15 (13000 XP)",
     "special_abilities": [
       {
@@ -19201,7 +19254,7 @@ var jsonCreatureData = {
       "perception": 2
     },
     "senses": "passive Perception 12",
-    "languages": "any one language (usually Common)",
+    "languages": "Any one language (usually Common)",
     "challenge_rating": "3 (700 XP)",
     "actions": [
       {
@@ -19324,7 +19377,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "poisoned",
     "senses": "darkvision 120 ft., passive Perception 11",
-    "languages": "Abyssal, telepathy 120 ft.",
+    "languages": "Abyssal, Telepathy 120 ft.",
     "challenge_rating": "6 (2300 XP)",
     "special_abilities": [
       {
@@ -19527,7 +19580,7 @@ var jsonCreatureData = {
     "damage_immunities": "poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, poisoned, restrained, prone, unconscious",
     "senses": "blindsight 30 ft., passive Perception 10",
-    "languages": "understands Aquan but doesn't speak",
+    "languages": "Understands Aquan but doesn't speak",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
@@ -19920,7 +19973,7 @@ var jsonCreatureData = {
     "damage_immunities": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 13",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "3 (700 XP)",
     "special_abilities": [
       {
@@ -19967,7 +20020,7 @@ var jsonCreatureData = {
     "damage_immunities": "lightning, poison",
     "condition_immunities": "exhaustion, grappled, paralyzed, poisoned, prone, restrained, unconscious",
     "senses": "darkvision 120 ft., passive Perception 12",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "2 (450 XP)",
     "special_abilities": [
       {
@@ -20182,7 +20235,7 @@ var jsonCreatureData = {
     "damage_immunities": "necrotic, poison",
     "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
     "senses": "darkvision 60 ft., passive Perception 12",
-    "languages": "the languages it knew in life",
+    "languages": "The languages it knew in life",
     "challenge_rating": "5 (1800 XP)",
     "special_abilities": [
       {
@@ -21359,7 +21412,7 @@ var jsonCreatureData = {
     },
     "condition_immunities": "poisoned",
     "senses": "darkvision 60 ft., passive Perception 8",
-    "languages": "understands all languages it spoke in life but can't speak",
+    "languages": "Understands all languages it spoke in life but can't speak",
     "challenge_rating": "1/4 (50 XP)",
     "special_abilities": [
       {

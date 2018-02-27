@@ -4,7 +4,7 @@ var jsonRaceData = {
       "Hill Dwarf": {
         "size": "Medium",
         "speed": 25,
-        "perks": {
+        "ability_perks": {
           "con": 2,
           "wis": 1
         },
@@ -20,7 +20,7 @@ var jsonRaceData = {
           "Battleaxes",
           "Handaxes",
           "Throwing Hammers",
-          "Warhammers"
+          "Warhammers",
         ],
         "languages": [
           "Common",
@@ -30,7 +30,7 @@ var jsonRaceData = {
       "Mountain Dwarf": {
         "size": "Medium",
         "speed": 25,
-        "perks": {
+        "ability_perks": {
           "con": 2,
           "str": 2
         },
@@ -62,10 +62,13 @@ var jsonRaceData = {
       "High Elf": {
         "size": "Medium",
         "speed": 30,
-        "perks": {
+        "ability_perks": {
           "dex": 2,
           "int": 1
         },
+        "skill_proficiencies": [
+          "perception"
+        ],
         "traits": [
           "Darkvision",
           "Keen Senses",
@@ -83,16 +86,20 @@ var jsonRaceData = {
         ],
         "languages": [
           "Common",
-          "Elvish"
+          "Elvish",
+          "Other"
         ]
       },
       "Wood Elf": {
         "size": "Medium",
         "speed": 35,
-        "perks": {
+        "ability_perks": {
           "dex": 2,
           "wis": 1
         },
+        "skill_proficiencies": [
+          "perception"
+        ],
         "traits": [
           "Darkvision",
           "Keen Senses",
@@ -115,10 +122,13 @@ var jsonRaceData = {
       "Dark Elf": {
         "size": "Medium",
         "speed": 30,
-        "perks": {
+        "ability_perks": {
           "dex": 2,
           "cha": 1
         },
+        "skill_proficiencies": [
+          "perception"
+        ],
         "traits": [
           "Darkvision",
           "Keen Senses",
@@ -146,7 +156,7 @@ var jsonRaceData = {
       "Lightfoot Halfling": {
         "size": "Small",
         "speed": 25,
-        "perks": {
+        "ability_perks": {
           "dex": 2,
           "cha": 1
         },
@@ -164,7 +174,7 @@ var jsonRaceData = {
       "Stout Halfling": {
         "size": "Small",
         "speed": 25,
-        "perks": {
+        "ability_perks": {
           "dex": 2,
           "con": 1
         },
@@ -184,7 +194,7 @@ var jsonRaceData = {
   "Human": {
     "size": "Medium",
     "speed": 30,
-    "perks": {
+    "ability_perks": {
       "str": 1,
       "dex": 1,
       "con": 1,
@@ -200,7 +210,7 @@ var jsonRaceData = {
   "Dragonborn": {
     "size": "Medium",
     "speed": 30,
-    "perks": {
+    "ability_perks": {
       "str": 2,
       "cha": 1
     },
@@ -219,7 +229,7 @@ var jsonRaceData = {
       "Forest Gnome": {
         "size": "Small",
         "speed": 25,
-        "perks": {
+        "ability_perks": {
           "int": 2,
           "dex": 1
         },
@@ -237,7 +247,7 @@ var jsonRaceData = {
       "Rock Gnome": {
         "size": "Small",
         "speed": 25,
-        "perks": {
+        "ability_perks": {
           "int": 2,
           "con": 1
         },
@@ -247,17 +257,21 @@ var jsonRaceData = {
           "Artificer's Lore",
           "Tinker"
         ],
+        "proficiencies": [
+          "Tinker's Tools"
+        ],
         "languages": [
           "Common",
           "Gnomish"
-        ]
+        ],
+
       }
     }
   },
   "Half-Elf": {
     "size": "Medium",
     "speed": 30,
-    "perks": {
+    "ability_perks": {
       "cha": 2,
       "Other": 1,
       "Other": 1
@@ -276,10 +290,13 @@ var jsonRaceData = {
   "Half-Orc": {
     "size": "Medium",
     "speed": 30,
-    "perks": {
+    "ability_perks": {
       "str": 2,
       "con": 1
     },
+    "skill_proficiencies": [
+      "intimidation"
+    ],
     "traits": [
       "Darkvision",
       "Menacing",
@@ -294,7 +311,7 @@ var jsonRaceData = {
   "Tiefling": {
     "size": "Medium",
     "speed": 30,
-    "perks": {
+    "ability_perks": {
       "cha": 2,
       "int": 1
     },

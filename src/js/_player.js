@@ -105,10 +105,14 @@ Vue.component('player', {
         return this.c.hitDie;
       }
     },
+    armorClass: function() {
+      this.c.armorClass = 10 + mod(this.c.abilities.dex);
+      return this.c.armorClass;
+    },
     spellAbility: function() {
       if (this.c.klass) {
         this.c.spellAbility = jsonClassData[this.c.klass].spell_casting_ability;
-        return this.c.spellAbility;
+        return jsonAbilityData[this.c.spellAbility].full;
       }
     },
     spellSavingDC: function() {
@@ -124,7 +128,8 @@ Vue.component('player', {
       }
     },
     spellAttackMod: function() {
-      return 0;
+      this.c.spellAttackMod = this.c.pb + mod(this.c.abilities[this.c.spellAbility]);
+      return this.c.spellAttackMod;
     },
     saves: function() {
       var s = {}
@@ -1312,7 +1317,7 @@ Vue.component('player', {
             </div>\
             <div class="input-group col-xs-4">\
               <label>Armor Class</label>\
-              <input v-model="c.armorClass" type="number" readonly />\
+              <input v-model="armorClass" type="number" readonly />\
             </div>\
             <div class="input-group col-xs-4">\
               <label>Initiative</label>\
@@ -1321,6 +1326,10 @@ Vue.component('player', {
             <div class="input-group col-xs-4">\
               <label>Hit Die</label>\
               <input v-model="hitDie" type="text" readonly />\
+            </div>\
+            <div class="input-group col-xs-4">\
+              <label>Speed</label>\
+              <input v-model="c.speed" type="text" />\
             </div>\
           </div>\
           <div class="row">\
@@ -1375,7 +1384,7 @@ Vue.component('player', {
           <div class="row">\
             <h4>Saves</h4>\
             <div class="input-group col-xs-2" v-for="(value, key) in abilityData">\
-              <label>{{key}}\
+              <label>{{value.full}}\
                 <div class="prof">{{saves[key]}}<input v-model="c.saves[key]" type="checkbox" /></div>\
               </label>\
             </div>\
@@ -1383,7 +1392,7 @@ Vue.component('player', {
           <div class="row">\
             <h4>Skills</h4>\
             <div class="input-group col-xs-2" v-for="(value, key) in skillData">\
-              <label>{{key}}\
+              <label>{{value.full}}\
                 <div class="prof">{{skills[key]}}<input v-model="c.skills[key]" type="checkbox" /></div>\
               </label>\
             </div>\

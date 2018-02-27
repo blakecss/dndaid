@@ -1,17 +1,3 @@
-Vue.directive('click-outside', {
-  bind: function (el, binding, vnode) {
-    el.event = function (event) {
-      if (!(el == event.target || el.contains(event.target))) {
-        vnode.context[binding.expression](event);
-      }
-    };
-    document.body.addEventListener('click', this.event)
-  },
-  unbind: function (el) {
-    document.body.removeEventListener('click', this.event)
-  },
-});
-
 Array.prototype.unique = function() {
   var a = this.concat();
   for (var i=0; i<a.length; ++i) {
@@ -97,6 +83,7 @@ function mod(value) {
 //=include _treasure.js
 //=include _chips.js
 //=include _character-preview.js
+//=include _add-character.js
 //=include _player.js
 //=include _creature.js
 //=include _characters.js
@@ -159,7 +146,6 @@ var mainVue = new Vue({
       reader.onload = function(event) {
         c.characters = JSON.parse(event.target.result);
         c.showLoad = false;
-        console.log(c);
       };
       reader.readAsText(f);
     }
