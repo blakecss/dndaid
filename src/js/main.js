@@ -18,7 +18,6 @@ function roll(odds) {
   else if (/\d+d\d+/.test(odds)) {
     return eval(odds.replace(/\d+d\d+/g, function(match) {
       var d = match.split('d');
-      console.log(d[0] + ' ' + d[1]);
       var r = 0;
       for (var i = 0; i < Number(d[0]); i++) {
         r += Math.floor(Math.random() * Number(d[1])) + 1;

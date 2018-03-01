@@ -8,7 +8,7 @@ Vue.component('add-character', {
     }
     return {
       addPlayerScreen: 1,
-      addPlayerData: {"name": "Test", "race": "Human", "class": "Wizard", "background": "Acolyte", "languages": "", "inventory": ''},
+      addPlayerData: {"name": "Test", "race": "Human", "class": "Bard", "classSkills": [], "classEquipment": [], "background": "Acolyte", "languages": []},
       addPlayerBaseAbilities: {"str": 8, "dex": 8, "con": 8, "int": 8, "wis": 8, "cha": 8},
       addCreatureName: [],
       raceData: jsonRaceData,
@@ -22,8 +22,7 @@ Vue.component('add-character', {
       slideDirection: 'slide-left',
       dwarfTools: '',
       draconicAncestry: '',
-      skillVersatility: [],
-      classSkills: []
+      skillVersatility: []
     }
   },
   filters: {
@@ -90,53 +89,101 @@ Vue.component('add-character', {
       return as;
     },
     addPlayerTraits: function() {
-      var t = [];
+      var rt = [];
+      var ct = [];
       if (sr = this.addPlayerData.race) {
         if (jsonRaceData[sr]) {
-          t = jsonRaceData[sr].traits;
+          rt = jsonRaceData[sr].traits || [];
         }
         else {
           for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
             var item = Object.keys(jsonRaceData)[i];
             if (jsonRaceData[item].subraces) {
               if (jsonRaceData[item].subraces[sr]) {
-                t = jsonRaceData[item].subraces[sr].traits;
-              }
-            }
-          }
-        }
-        return t;
-      }
-    },
-    addPlayerProficiencies: function() {
-      var p1 = [];
-      var p2 = [];
-      if (sr = this.addPlayerData.race) {
-        if (jsonRaceData[sr]) {
-          p1 = jsonRaceData[sr].proficiencies || [];
-        }
-        else {
-          for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
-            var item = Object.keys(jsonRaceData)[i];
-            if (jsonRaceData[item].subraces) {
-              if (jsonRaceData[item].subraces[sr]) {
-                p1 = jsonRaceData[item].subraces[sr].proficiencies || [];
+                rt = jsonRaceData[item].subraces[sr].traits || [];
               }
             }
           }
         }
       }
       if (c = this.addPlayerData.class) {
-        p2 = jsonClassData[c].proficiencies;
+        ct = jsonClassData[c].features[0]
       }
-      return p1.concat(p2).unique();
+      return rt.concat(ct).unique();
+    },
+    addPlayerProficiencies: function() {
+      var rp = [];
+      var cp = [];
+      var bp = [];
+      if (sr = this.addPlayerData.race) {
+        if (jsonRaceData[sr]) {
+          rp = jsonRaceData[sr].proficiencies || [];
+        }
+        else {
+          for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
+            var item = Object.keys(jsonRaceData)[i];
+            if (jsonRaceData[item].subraces) {
+              if (jsonRaceData[item].subraces[sr]) {
+                rp = jsonRaceData[item].subraces[sr].proficiencies || [];
+              }
+            }
+          }
+        }
+      }
+      if (c = this.addPlayerData.class) {
+        cp = jsonClassData[c].proficiencies;
+      }
+      if (b = this.addPlayerData.background) {
+        bp = jsonBackgroundData[b].proficiencies || [];
+      }
+      return rp.concat(cp).concat(bp).unique();
+    },
+    addPlayerGold: function() {
+      var g = 0;
+      if (this.addPlayerData.class == 'Barbarian') {
+        g = roll('2d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Bard') {
+        g = roll('5d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Cleric') {
+        g = roll('5d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Druid') {
+        g = roll('2d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Fighter') {
+        g = roll('5d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Monk') {
+        g = roll('5d4');
+      }
+      else if (this.addPlayerData.class == 'Paladin') {
+        g = roll('5d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Ranger') {
+        g = roll('5d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Rogue') {
+        g = roll('4d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Sorcerer') {
+        g = roll('3d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Warlock') {
+        g = roll('4d4 * 10');
+      }
+      else if (this.addPlayerData.class == 'Wizard') {
+        g = roll('4d4 * 10');
+      }
+      return g;
     }
   },
   watch: {
     characterSelect: function(val) {
       if (!val) {
         this.addPlayerScreen = 1;
-        this.addPlayerData = {"name": "Test", "race": "Human", "class": "Wizard", "background": "Acolyte", "languages": "", "inventory": ''};
+        this.addPlayerData = {"name": "Test", "race": "Human", "class": "Bard", "classSkills": [], "classEquipment": [], "background": "Acolyte", "languages": ""};
         this.addCreatureName = [];
         this.addPlayerBaseAbilities = {"str": 8, "dex": 8, "con": 8, "int": 8, "wis": 8, "cha": 8};
       }
@@ -153,17 +200,36 @@ Vue.component('add-character', {
       }
       var saves = {};
       for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
-        saves[Object.keys(jsonAbilityData)[i]] = false;
+        var a = Object.keys(jsonAbilityData)[i];
+        saves[a] = jsonClassData[this.addPlayerData.class].saving_throws.includes(a) ? true : false;
       }
       var skills = {};
       for (var i = 0; i < Object.keys(jsonSkillData).length; i++) {
-        skills[Object.keys(jsonSkillData)[i]] = false;
+        var s = Object.keys(jsonSkillData)[i];
+        skills[s] = this.addPlayerData.classSkills.includes(s) ? true : false;
       }
       var spellSlots = {};
       var spellSlotsAvailable = {};
       for (var i = 0; i < 9; i++) {
         spellSlots['level' + (i+1) + 'Slots'] = 0;
         spellSlotsAvailable['level' + (i+1) + 'SlotsAvailable'] = 0;
+      }
+      var inventory = [];
+      for (var i = 0; i < this.addPlayerData.classEquipment.length; i++) {
+        var e = this.addPlayerData.classEquipment[i];
+        if (Array.isArray(e)) {
+          for (var ii = 0; ii < e.length; ii++) {
+            inventory.push(e[ii]);
+          }
+        }
+        else {
+          inventory.push(e);
+        }
+      }
+      for (var i = 0; i < jsonClassData[this.addPlayerData.class].equipment.length; i++) {
+        if (!Array.isArray(jsonClassData[this.addPlayerData.class].equipment[i])) {
+          inventory.push(jsonClassData[this.addPlayerData.class].equipment[i]);
+        }
       }
       this.characters.push({
         id: Math.random().toString(36).substr(2,9),
@@ -189,7 +255,9 @@ Vue.component('add-character', {
         spellAttackMod: 0,
         spellSavingDC: 0,
         cantripsKnown: 0,
+        cantrips: [],
         spellsKnown: 0,
+        spells: [],
         spellSlots: spellSlots,
         spellSlotsAvailable: spellSlotsAvailable,
         showStats: true,
@@ -202,8 +270,8 @@ Vue.component('add-character', {
         proficiencies: this.addPlayerProficiencies,
         traits: this.addPlayerTraits,
         showInventory: true,
-        coins: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': 0, 'pp': 0},
-        inventory: []
+        coins: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': this.addPlayerGold, 'pp': 0},
+        inventory: inventory
       });
       this.$emit('close');
     },
@@ -369,7 +437,7 @@ Vue.component('add-character', {
             </fieldset>\
             <div class="selection-results">\
               <input :value="addCreatureName.join(\', \')" type="text" required />\
-              <button @click.prevent="addCreatureName = []"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
+              <button @click.prevent="addCreatureName = []" title="Clear"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
             </div>\
           </div>\
           <div class="modal-footer">\
@@ -407,51 +475,91 @@ Vue.component('add-character', {
       <form v-if="addPlayerScreen == 2" @submit.prevent="addPlayerScreen = 3" key="2">\
         <div class="modal-content">\
           <div class="row no-padding">\
-            <div v-if="addPlayerData.race == \'Hill Dwarf\' || addPlayerData.race == \'Mountain Dwarf\'" class="col-xs-6">\
-              <label>Choose <b>1</b> Tool Proficiency (Dwarf Trait: Tool Proficiency)</label>\
-              <fieldset>\
-                <input v-model="dwarfTools" name="dwarfTools" id="1" value="Smith\'s Tools" type="radio" required /><label for="1"> Smith\'s Tools</label>\
-                <input v-model="dwarfTools" name="dwarfTools" id="2" value="Brewer\'s Supplies" type="radio" required /><label for="2">Brewer\'s Supplies</label>\
-                <input v-model="dwarfTools" name="dwarfTools" id="3" value="Mason\'s Tools" type="radio" required /><label for="3">Mason\'s Tools</label>\
-              </fieldset>\
-            </div>\
-            <div v-if="addPlayerData.race == \'Dragonborn\'" class="col-xs-6">\
-              <label>Choose <b>1</b> Draconic Ancestry (Dragonborn Trait: Draconic Ancestry)</label>\
-              <fieldset>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="1" value="Black (Acid)" type="radio" required /><label for="1">Black (Acid)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="2" value="Blue (Lightning)" type="radio" required /><label for="2">Blue (Lightning)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="3" value="Brass (Fire)" type="radio" required /><label for="3">Brass (Fire)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="4" value="Bronze (Lightning)" type="radio" required /><label for="4">Bronze (Lightning)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="5" value="Copper (Acid)" type="radio" required /><label for="5">Copper (Acid)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="6" value="Gold (Fire)" type="radio" required /><label for="6">Gold (Fire)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="7" value="Green (Poison)" type="radio" required /><label for="7">Green (Poison)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="8" value="Red (Fire)" type="radio" required /><label for="8">Red (Fire)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="9" value="Silver (Cold)" type="radio" required /><label for="9">Silver (Cold)</label>\
-                <input v-model="draconicAncestry" name="draconicAncestry" id="10" value="White (Cold)" type="radio" required /><label for="10">White (Cold)</label>\
-              </fieldset>\
-            </div>\
-            <div v-if="addPlayerData.race == \'Half-Elf\'" class="col-xs-6">\
-              <label>Choose <b>2</b> Skill Proficiences (Half-Elf Trait: Skill Versatility)</label>\
-              <fieldset>\
-                <template v-for="(value, key) in skillData">\
-                  <input v-model="skillVersatility" name="skillVersatility" :id="key" :value="key" type="checkbox" /><label :for="key">{{value.full}}</label>\
-                </template>\
-              </fieldset>\
-              <div class="selection-results">\
-                <input class="capitalize" :value="skillVersatility.join(\', \').replace(/_/g, \' \')" type="text" required />\
-                <button @click.prevent="skillVersatility = []"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
+            <div class="col-xs-4">\
+              <h3>Race ({{addPlayerData.race}})</h3>\
+              <div v-if="addPlayerData.race == \'Hill Dwarf\' || addPlayerData.race == \'Mountain Dwarf\'">\
+                <label>Choose <b>1</b> Tool Proficiency (Tool Proficiency)</label>\
+                <fieldset>\
+                  <input v-model="dwarfTools" name="dwarfTools" id="r0" value="Smith\'s Tools" type="radio" required />\
+                  <label for="r0"> Smith\'s Tools</label>\
+                  <input v-model="dwarfTools" name="dwarfTools" id="r1" value="Brewer\'s Supplies" type="radio" required />\
+                  <label for="r1">Brewer\'s Supplies</label>\
+                  <input v-model="dwarfTools" name="dwarfTools" id="r2" value="Mason\'s Tools" type="radio" required />\
+                  <label for="r2">Mason\'s Tools</label>\
+                </fieldset>\
+              </div>\
+              <div v-else-if="addPlayerData.race == \'Dragonborn\'">\
+                <label>Choose <b>1</b> Draconic Ancestry (Draconic Ancestry)</label>\
+                <fieldset>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r0" value="Black (Acid)" type="radio" required />\
+                  <label for="r0">Black (Acid)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r1" value="Blue (Lightning)" type="radio" required />\
+                  <label for="r1">Blue (Lightning)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r2" value="Brass (Fire)" type="radio" required />\
+                  <label for="r2">Brass (Fire)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r3" value="Bronze (Lightning)" type="radio" required />\
+                  <label for="r3">Bronze (Lightning)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r4" value="Copper (Acid)" type="radio" required />\
+                  <label for="r4">Copper (Acid)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r5" value="Gold (Fire)" type="radio" required />\
+                  <label for="r5">Gold (Fire)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r6" value="Green (Poison)" type="radio" required />\
+                  <label for="r6">Green (Poison)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r7" value="Red (Fire)" type="radio" required />\
+                  <label for="r7">Red (Fire)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r8" value="Silver (Cold)" type="radio" required />\
+                  <label for="r8">Silver (Cold)</label>\
+                  <input v-model="draconicAncestry" name="draconicAncestry" id="r9" value="White (Cold)" type="radio" required />\
+                  <label for="r9">White (Cold)</label>\
+                </fieldset>\
+              </div>\
+              <div v-else-if="addPlayerData.race == \'Half-Elf\'">\
+                <label>Choose <b>2</b> Skill Proficiences (Skill Versatility)</label>\
+                <fieldset>\
+                  <template v-for="(value, key, index) in skillData">\
+                    <input v-model="skillVersatility" name="skillVersatility" :id="\'r\' + index" :value="key" type="checkbox" />\
+                    <label :for="\'r\' + index">{{value.full}}</label>\
+                  </template>\
+                </fieldset>\
+                <div class="selection-results">\
+                  <input class="capitalize" :value="skillVersatility.join(\', \').replace(/_/g, \' \')" type="text" required />\
+                  <button @click.prevent="skillVersatility = []"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
+                </div>\
+              </div>\
+              <div v-else>\
+                <p>No Choices Required</p>\
               </div>\
             </div>\
-            <div v-if="addPlayerData.class == \'Barbarian\'" class="col-xs-6">\
-              <label>Choose <b>2</b> Skill Proficiences (Barbarian)</label>\
-              <fieldset>\
-                <template v-for="skill in classData[addPlayerData.class].skills">\
-                  <input v-model="classSkills" name="classSkills" :id="skill" :value="skill" type="checkbox" /><label :for="skill">{{skill}}</label>\
+            <div class="col-xs-8 row no-padding">\
+              <div class="col-xs-12">\
+                <h3>Class ({{addPlayerData.class}})</h3>\
+              </div>\
+              <div class="col-xs-6">\
+                <label class="class-label">Choose <b>{{classData[addPlayerData.class].skills_num}}</b> Skill Proficiences</label>\
+                <fieldset>\
+                  <template v-for="(skill, index) in classData[addPlayerData.class].skills">\
+                    <input v-model="addPlayerData.classSkills" name="classSkills" :id="\'s\' + index" :value="skill" type="checkbox" />\
+                    <label :for="\'s\' + index" :class="backgroundData[addPlayerData.background].skill_proficiencies.includes(skill) ? \'disabled\' : \'\'">\
+                      <span>{{skillData[skill].full}}</span>\
+                      <span class="covered">{{addPlayerData.background}}</span>\
+                    </label>\
+                  </template>\
+                </fieldset>\
+                <div class="selection-results">\
+                  <input class="capitalize" :value="addPlayerData.classSkills.join(\', \').replace(/_/g, \' \')" type="text" required />\
+                  <button @click.prevent="addPlayerData.classSkills = []"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
+                </div>\
+              </div>\
+              <div class="col-xs-6">\
+                <label class="class-label">Choose Equipment</label>\
+                <template v-for="(equipments, index) in classData[addPlayerData.class].equipment">\
+                  <fieldset v-if="Array.isArray(equipments)">\
+                    <template v-for="(equipment, index2) in equipments">\
+                      <input v-model="addPlayerData.classEquipment[index]" :name="\'e\' + index" :id="\'e\' + index + \'_\' + index2" :value="equipment" type="radio" required />\
+                      <label :for="\'e\' + index + \'_\' + index2">{{Array.isArray(equipment) ? equipment.join(\', \') : equipment}}</label>\
+                    </template>\
+                  </fieldset>\
                 </template>\
-              </fieldset>\
-              <div class="selection-results">\
-                <input class="capitalize" :value="classSkills.join(\', \').replace(/_/g, \' \')" type="text" required />\
-                <button @click.prevent="classSkills = []"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
               </div>\
             </div>\
           </div>\
@@ -463,7 +571,6 @@ Vue.component('add-character', {
       </form>\
       <form v-if="addPlayerScreen == 3" @submit.prevent="addPlayer()" key="3">\
         <div class="modal-content">\
-          <h2>Step 3</h2>\
           <div class="inputs">\
             <div v-for="(value, key) in abilityData" class="stat">\
               <h4 class="subtitle">{{key.toUpperCase()}}</h4>\

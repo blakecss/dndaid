@@ -1,8 +1,8 @@
 var jsonBackgroundData = {
   "Acolyte": {
     "skill_proficiencies": [
-      "Insight",
-      "Religion"
+      "insight",
+      "religion"
     ],
     "languages": [
       "Other",
@@ -19,8 +19,8 @@ var jsonBackgroundData = {
   },
   "Charlatan": {
     "skill_proficiencies": [
-      "Deception",
-      "Sleight of Hand"
+      "deception",
+      "sleight_of_hand"
     ],
     "proficiencies": [
       "Disguise Kit",
@@ -35,8 +35,8 @@ var jsonBackgroundData = {
   },
   "Criminal": {
     "skill_proficiencies": [
-      "Deception",
-      "Stealth"
+      "deception",
+      "stealth"
     ],
     "proficiencies": [
       "One type of gaming set",
@@ -50,8 +50,8 @@ var jsonBackgroundData = {
   },
   "Entertainer": {
     "skill_proficiencies": [
-      "Acrobatics",
-      "Performance"
+      "acrobatics",
+      "performance"
     ],
     "proficiencies": [
       "Disguise Kit",
@@ -66,8 +66,8 @@ var jsonBackgroundData = {
   },
   "Folk Hero": {
     "skill_proficiencies": [
-      "Animal Handling",
-      "Survival"
+      "animal_handling",
+      "survival"
     ],
     "proficiencies": [
       "One type of artisan’s tools",
@@ -83,8 +83,8 @@ var jsonBackgroundData = {
   },
   "Guild Artisan": {
     "skill_proficiencies": [
-      "Insight",
-      "Persuasion"
+      "insight",
+      "persuasion"
     ],
     "proficiencies": [
       "One type of artisan’s tools"
@@ -101,8 +101,8 @@ var jsonBackgroundData = {
   },
   "Hermit": {
     "skill_proficiencies": [
-      "Medicine",
-      "Religion"
+      "medicine",
+      "religion"
     ],
     "proficiencies": [
       "Herbalism Kit"
@@ -120,8 +120,8 @@ var jsonBackgroundData = {
   },
   "Noble": {
     "skill_proficiencies": [
-      "History",
-      "Persuasion"
+      "history",
+      "persuasion"
     ],
     "proficiencies": [
       "One type of gaming set"
@@ -138,8 +138,8 @@ var jsonBackgroundData = {
   },
   "Outlander": {
     "skill_proficiencies": [
-      "Athletics",
-      "Survival"
+      "athletics",
+      "survival"
     ],
     "proficiencies": [
       "One type of musical instrument"
@@ -157,8 +157,8 @@ var jsonBackgroundData = {
   },
   "Sage": {
     "skill_proficiencies": [
-      "Arcana",
-      "History"
+      "arcana",
+      "history"
     ],
     "languages": [
       "Other",
@@ -175,8 +175,8 @@ var jsonBackgroundData = {
   },
   "Sailor": {
     "skill_proficiencies": [
-      "Athletics",
-      "Perception"
+      "athletics",
+      "perception"
     ],
     "proficiencies": [
       "Navigator’s Tools",
@@ -192,8 +192,8 @@ var jsonBackgroundData = {
   },
   "Soldier": {
     "skill_proficiencies": [
-      "Athletics",
-      "Intimidation"
+      "athletics",
+      "intimidation"
     ],
     "proficiencies": [
       "One type of gaming set",
@@ -209,8 +209,8 @@ var jsonBackgroundData = {
   },
   "Urchin": {
     "skill_proficiencies": [
-      "Sleight of Hand",
-      "Stealth"
+      "sleight_of_hand",
+      "stealth"
     ],
     "proficiencies": [
       "Disguise Kit",

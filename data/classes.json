@@ -4,7 +4,7 @@ var jsonClassData = {
     "desc": "A fierce warrior of primitive background who can enter a battle rage.",
     "hit_die": "d12",
     "primary_ability": "Strength",
-    "saving_throw": ["str", "con"],
+    "saving_throws": ["str", "con"],
     "spell_casting_ability": "",
     "proficiencies": [
       "Light Armor",
@@ -13,22 +13,50 @@ var jsonClassData = {
       "Simple Weapons",
       "Martial Weapons"
     ],
+    "skills_num": 2,
     "skills": [
-      "Animal Handling",
-      "Athletics",
-      "Intimidation",
-      "Nature",
-      "Perception",
-      "Survival"
+      "animal_handling",
+      "athletics",
+      "intimidation",
+      "nature",
+      "perception",
+      "survival"
     ],
-    "equipment": ["(a)Greataxe or (b)any martial melee weapon", "(a)Two handaxes or (b)any simple weapon", "An explorer's pack and four javelins"]
+    "equipment": [
+      ["Greataxe", "Any martial melee weapon"],
+      ["Two handaxes", "Any simple weapon"],
+      "Explorer's Pack",
+      "Four Javelins"
+    ],
+    "features": [
+      ["Rage", "Unarmored Defense"],
+      ["Reckless Attack", "Danger Sense"],
+      ["Primal Path"],
+      ["Ability Score Improvement"],
+      ["Extra Attack", "Fast Movement"],
+      ["Path Feature"],
+      ["Feral Instinct"],
+      ["Ability Score Improvement"],
+      ["Brutal Critical (1 die)"],
+      ["Path Feature"],
+      ["Relentless Rage"],
+      ["Ability Score Improvement"],
+      ["Brutal Critical (2 dice)"],
+      ["Path Feature"],
+      ["Persistent Rage"],
+      ["Ability Score Improvement"],
+      ["Brutal Critical (3 dice)"],
+      ["Indomitable Might"],
+      ["Ability Score Improvement"],
+      ["Primal Champion"]
+    ]
   },
   "Bard": {
     "type": "class",
     "desc": "An inspiring magician whose power echoes the music of creation.",
     "hit_die": "d8",
     "primary_ability": "Charisma",
-    "saving_throw": ["dex", "cha"],
+    "saving_throws": ["dex", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
       "Light Armor",
@@ -39,15 +67,63 @@ var jsonClassData = {
       "Shortswords",
       "Three musical instruments of your choice"
     ],
-    "skills": "<p>Choose any 3</p>",
-    "equipment": ["(a)Rapier, (b)longsword, or (c)any simple weapon", "(a)Diplomat's pack or (b)an entertainer's pack", "Any musical instrument", "Leather armor and a dagger"]
+    "skills_num": 3,
+    "skills": [
+      "acrobatics",
+      "animal_handling",
+      "arcana",
+      "athletics",
+      "deception",
+      "history",
+      "insight",
+      "intimidation",
+      "investigation",
+      "medicine",
+      "nature",
+      "perception",
+      "performance",
+      "persuasion",
+      "religion",
+      "sleight_of_hand",
+      "stealth",
+      "survival"
+    ],
+    "equipment": [
+      ["Rapier", "Longsword", "Any simple weapon"],
+      ["Diplomat's Pack", "Entertainer's Pack"],
+      "Any musical instrument",
+      "Leather Armor",
+      "Dagger"
+    ],
+    "features": [
+      ["Spellcasting", "Bardic Inspiration (d6)"],
+      ["Jack of All Trades", "Song of Rest (d6)"],
+      ["Bard College", "Expertise"],
+      ["Ability Score Improvement"],
+      ["Bardic Inspiration (d8)", "Font of Inspiration"],
+      ["Countercharm", "Bard College Feature"],
+      [],
+      ["Ability Score Improvement"],
+      ["Song of Rest (d8)"],
+      ["Bardic Inspiration (d10)", "Expertise", "Magical Secrets"],
+      [],
+      ["Ability Score Improvement"],
+      ["Song of Rest (d10)"],
+      ["Magical Secrets", "Bard College Feature"],
+      ["Bardic Inspiration"],
+      ["Ability Score Improvement"],
+      ["Song of Rest (d12)"],
+      ["Magical Secrets"],
+      ["Ability Score Improvement"],
+      ["Superior Inspiration"]
+    ]
   },
   "Cleric": {
     "type": "class",
     "desc": "A priestly champion who wields divine magic in service of a higher power.",
     "hit_die": "d8",
     "primary_ability": "Wisdom",
-    "saving_throw": ["wis", "cha"],
+    "saving_throws": ["wis", "cha"],
     "spell_casting_ability": "wis",
     "proficiencies": [
       "Light Armor",
@@ -55,21 +131,51 @@ var jsonClassData = {
       "Shields",
       "Simple Weapons"
     ],
+    "skills_num": 2,
     "skills": [
-      "History",
-      "Insight",
-      "Medicine",
-      "Persuasion",
-      "Religion"
+      "history",
+      "insight",
+      "medicine",
+      "persuasion",
+      "religion"
     ],
-    "equipment": ["(a)Mace or (b)a warhammer (if proficient)", "(a)Scale mail, (b)leather armor, or (c)chain mail (if proficient)", "(a)Light crossbow and 20 bolts or (b)any simple weapon", "(a)Priest's pack or (b)an explorer's pack", "Shield and a holy symbol"]
+    "equipment": [
+      ["Mace", "Warhammer (if proficient)"],
+      ["Scale Mail", "Leather Armor", "Chain Mail (if proficient)"],
+      [["Light Crossbow", "20 Bolts"], "Any simple weapon"],
+      ["Priest's Pack", "Explorer's Pack"],
+      "Shield",
+      "Holy Symbol"
+    ],
+    "features": [
+      ["Spellcasting", "Divine Domain"],
+      ["Channel Divinity (1/rest)", "Divine Domain Feature"],
+      [],
+      ["Ability Score Improvement"],
+      ["Destroy Undead (CR 1/2)"],
+      ["Channel Divinity (2/rest)", "Divinie Domain Feature"],
+      [],
+      ["Ability Score Improvement", "Destroy Undead (CR 1)", "Divine Domain Feature"],
+      [],
+      ["Divine Intervention"],
+      ["Destroy Undead (CR 2)"],
+      ["Ability Score Improvement"],
+      [],
+      ["Destroy Undead (CR 3)"],
+      [],
+      ["Ability Score Improvement"],
+      ["Destroy Undead (CR 4)", "Divine Domain Feature"],
+      ["Channel Divinity (3/rest)"],
+      ["Ability Score Improvement"],
+      ["Divine Intervention Improvement"]
+    ]
   },
   "Druid": {
     "type": "class",
     "desc": "A priest of the OldFaith, wielding the powers of nature--moonlight and pant growth, fire and lightning--and adoption animal forms.",
     "hit_die": "d8",
     "primary_ability": "Wisdom",
-    "saving_throw": ["int", "wis"],
+    "saving_throws": ["int", "wis"],
     "spell_casting_ability": "wis",
     "proficiencies": [
       "Light Armor",
@@ -87,24 +193,53 @@ var jsonClassData = {
       "Spears",
       "Herbalism Kit"
     ],
+    "skills_num": 2,
     "skills": [
-      "Arcana",
-      "Animal Handling",
-      "Insight",
-      "Medicine",
-      "Nature",
-      "Perception",
-      "Religion",
-      "Survival"
+      "arcana",
+      "animal_handling",
+      "insight",
+      "medicine",
+      "nature",
+      "perception",
+      "religion",
+      "survival"
     ],
-    "equipment": ["(a)Wooden Shield or (b)any simple weapon", "(a)Scimitar or (b)any simple melee weapon", "Leather armor, an explorer's pack, and a druidic focus"]
+    "equipment": [
+      ["Wooden Shield", "Any simple weapon"],
+      ["Scimitar", "Any simple melee weapon"],
+      "Leather Armor",
+      "Explorer's Pack",
+      "Druidic focus"
+    ],
+    "features": [
+      ["Druidic", "Spellcasting"],
+      ["Wild Shape", "Druid Circle"],
+      [],
+      ["Ability Score Improvement", "Wild Shape Improvement"],
+      [],
+      ["Druid Circle Feature"],
+      [],
+      ["Ability Score Improvement", "Wild Shape Improvement"],
+      [],
+      ["Druid Circle Feature"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Druid Circle Feature"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Timeless Body", "Beast Spells"],
+      ["Ability Score Improvement"],
+      ["Archdruid"]
+    ]
   },
   "Fighter": {
     "type": "class",
     "desc": "A master of martial combat, skilled with a variety of weapons and armor.",
     "hit_die": "d10",
     "primary_ability": "Strength or Dexterity",
-    "saving_throw": ["str", "con"],
+    "saving_throws": ["str", "con"],
     "spell_casting_ability": "int",
     "proficiencies": [
       "All Armor",
@@ -112,46 +247,100 @@ var jsonClassData = {
       "Simple Weapons",
       "Martial Weapons"
     ],
+    "skills_num": 2,
     "skills": [
-      "Acrobatics",
-      "Animal Handling",
-      "Athletics",
-      "History",
-      "Insight",
-      "Intimidation",
-      "Perception",
-      "Survival"
+      "acrobatics",
+      "animal_handling",
+      "athletics",
+      "history",
+      "insight",
+      "intimidation",
+      "perception",
+      "survival"
     ],
-    "equipment": ["(a)Chain mail or (b)leather, longbow, and 20 arrows", "(a)Martial weapon and a shield or (b)two martial weapons", "(a)Light crossbow and 20 bolts or (b)explorer's pack"]
+    "equipment": [
+      ["Chain Mail", ["Leather", "Longbow", "20 arrows"]],
+      [["Martial Weapon", "Shield"], "Two martial weapons"],
+      [["Light Crossbow", "20 Bolts"], "Explorer's Pack"]
+    ],
+    "features": [
+      ["Fighting Style", "Second Wind"],
+      ["Action Surge (one use)"],
+      ["Martial Archetype"],
+      ["Ability Score Improvement"],
+      ["Extra Attack"],
+      ["Ability Score Improvement"],
+      ["Martial Archetype Feature"],
+      ["Ability Score Improvement"],
+      ["Indomitable Spirit"],
+      ["Martial Archetype Improvement"],
+      ["Extra Attack (2)"],
+      ["Ability Score Improvement"],
+      ["Indomitable (two uses)"],
+      ["Ability Score Improvement"],
+      ["Martial Archetype Feature"],
+      ["Ability Score Improvement"],
+      ["Action Surge (two uses)", "Indomitable (three uses)"],
+      ["Martial Archetype Feature"],
+      ["Ability Score Improvement"],
+      ["Extra Attack (3)"]
+    ]
   },
   "Monk": {
     "type": "class",
     "desc": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
     "hit_die": "d8",
     "primary_ability": "Dexterity & Wisdom",
-    "saving_throw": ["str", "dex"],
+    "saving_throws": ["str", "dex"],
     "spell_casting_ability": "",
     "proficiencies": [
       "Simple Weapons",
       "Shortswords",
       "One type of artisan's tools or one musical instrument"
     ],
+    "skills_num": 2,
     "skills": [
-      "Acrobatics",
-      "Athletics",
-      "History",
-      "Insight",
-      "Religion",
-      "Stealth"
+      "acrobatics",
+      "athletics",
+      "history",
+      "insight",
+      "religion",
+      "stealth"
     ],
-    "equipment": ["(a)Shortsword or (b)any simple weapon", "(a)Dungeoneer's pack or (b)explorer's pack", "10 darts"]
+    "equipment": [
+      ["Shortsword", "Any simple weapon"],
+      ["Dungeoneer's Pack", "Explorer's Pack"],
+      "10 darts"
+    ],
+    "features": [
+      ["Unarmored Defense", "Martial Arts"],
+      ["Ki", "Unarmored Movement"],
+      ["Monastic Tradition", "Deflect Missiles"],
+      ["Ability Score Improvement", "Slow Fall"],
+      ["Extra Attack", "Stunning Strike"],
+      ["Ki-Empowered Strikes", "Monastic Tradition Feature"],
+      ["Evasion", "Stillness of Mind"],
+      ["Ability Score Improvement"],
+      ["Unarmored Movement Improvement"],
+      ["Purity of Body"],
+      ["Monastic Tradition Feature"],
+      ["Ability Score Improvement"],
+      ["Tongue of the Sun and Moon"],
+      ["Diamond Soul"],
+      ["Timeless Body"],
+      ["Ability Score Improvement"],
+      ["Monastic Tradition Feature"],
+      ["Empty Body"],
+      ["Ability Score Improvement"],
+      ["Perfect Self"]
+    ]
   },
   "Paladin": {
     "type": "class",
     "desc": "A holy warrior bound to a sacred oath.",
     "hit_die": "d10",
     "primary_ability": "Strength & Charisma",
-    "saving_throw": ["wis", "cha"],
+    "saving_throws": ["wis", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
       "All Armor",
@@ -159,22 +348,51 @@ var jsonClassData = {
       "Simple Weapons",
       "Martial Weapons"
     ],
+    "skills_num": 2,
     "skills": [
-      "Athletics",
-      "Insight",
-      "Intimidation",
-      "Medicine",
-      "Persuasion",
-      "Religion"
+      "athletics",
+      "insight",
+      "intimidation",
+      "medicine",
+      "persuasion",
+      "religion"
     ],
-    "equipment": ["(a)Martial weapon and a shield or (b)two martial weapons", "(a)Five javelins or (b)any simple melee weapon", "(a)Priest's pack or (b)explorer's pack", "Chain mail and a holy symbol"]
+    "equipment": [
+      [["Martial Weapon", "Shield"], "Two martial weapons"],
+      ["Five javelins", "Any simple melee weapon"],
+      ["Priest's Pack", "Explorer's Pack"],
+      "Chain Mail",
+      "Holy Symbol"
+    ],
+    "features": [
+      ["Divine Sense", "Lay on Hands"],
+      ["Fighting Style", "Spellcasting", "Divine Smite"],
+      ["Divine Health", "Sacred Oath"],
+      ["Ability Score Improvement"],
+      ["Extra Attack"],
+      ["Aura of Protection"],
+      ["Sacred Oath Feature"],
+      ["Ability Score Improvement"],
+      [],
+      ["Aura of Courage"],
+      ["Improved Divine Smite"],
+      ["Ability Score Improvement"],
+      [],
+      ["Cleansing Touch"],
+      ["Sacred Oath Feature"],
+      ["Ability Score Improvement"],
+      [],
+      ["Aura Improvements"],
+      ["Ability Score Improvement"],
+      ["Sacred Oath Feature"]
+    ]
   },
   "Ranger": {
     "type": "class",
     "desc": "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
     "hit_die": "d10",
     "primary_ability": "Dexterity & Wisdom",
-    "saving_throw": ["str", "dex"],
+    "saving_throws": ["str", "dex"],
     "spell_casting_ability": "wis",
     "proficiencies": [
       "Light Armor",
@@ -183,23 +401,53 @@ var jsonClassData = {
       "Simple Weapons",
       "Martial Weapons"
     ],
+    "skills_num": 3,
     "skills": [
-      "Athletics",
-      "Insight",
-      "Investigation",
-      "Nature",
-      "Perception",
-      "Stealth",
-      "Survival"
+      "animal_handling",
+      "athletics",
+      "insight",
+      "investigation",
+      "nature",
+      "perception",
+      "stealth",
+      "survival"
     ],
-    "equipment": ["(a)Scale mail or (b)leather armor", "(a)Two shortswords or (b)two simple melee weapons", "(a)Dungeoneer's pack or (b)explorer's pack", "Longbow and a quiver of 20 arrows"]
+    "equipment": [
+      ["Scale Mail", "Leather Armor"],
+      ["Two Shortswords", "Two simple melee weapons"],
+      ["Dungeoneer's Pack", "Explorer's Pack"],
+      "Longbow",
+      "Quiver of 20 arrows"
+    ],
+    "features": [
+      ["Favored Enemy", "Natural Explorer"],
+      ["Fighting Style", "Spellcasting"],
+      ["Ranger Archetype", "Primeval Awareness"],
+      ["Ability Score Improvement"],
+      ["Extra Attack"],
+      ["Favored Enemy and Natural Explorer Improvements"],
+      ["Ranger Archetype Feature"],
+      ["Ability Score Improvement", "Land's Stride"],
+      [],
+      ["Natural Explorer Improvement", "Hide in Plain Sight"],
+      ["Ranger Archetype Feature"],
+      ["Ability Score Improvement"],
+      [],
+      ["Favored Enemy Improvement", "Vanish"],
+      ["Ranger Archetype Feature"],
+      ["Ability Score Improvement"],
+      [],
+      ["Feral Senses"],
+      ["Ability Score Improvement"],
+      ["Foe Slayer"]
+    ]
   },
   "Rogue": {
     "type": "class",
     "desc": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
     "hit_die": "d8",
     "primary_ability": "Dexterity",
-    "saving_throw": ["dex", "int"],
+    "saving_throws": ["dex", "int"],
     "spell_casting_ability": "int",
     "proficiencies": [
       "Light Armor",
@@ -210,27 +458,57 @@ var jsonClassData = {
       "Shortswords",
       "Thieves' Tools"
     ],
+    "skills_num": 4,
     "skills": [
-      "Acrobatics",
-      "Athletics",
-      "Deception",
-      "Insight",
-      "Intimidation",
-      "Investigation",
-      "Perception",
-      "Performance",
-      "Persuasion",
-      "Sleight of Hand",
-      "Stealth"
+      "acrobatics",
+      "athletics",
+      "deception",
+      "insight",
+      "intimidation",
+      "investigation",
+      "perception",
+      "performance",
+      "persuasion",
+      "sleight_of_hand",
+      "stealth"
     ],
-    "equipment": ["(a)Rapier or (b)shortsword", "(a)Shortbow and quiver of 20 arrows or (b)shortsword", "(a)Burglar's pack, (b)dungeoneer's pack, or (c)explorer's pack", "Leather armor, two daggers, and thieves' tools"]
+    "equipment": [
+      ["Rapier", "Shortsword"],
+      [["Shortbow", "Quiver of 20 arrows"], "Shortsword"],
+      ["Burglar's Pack", "Dungeoneer's Pack", "Explorer's Pack"],
+      "Leather Armor",
+      "Two Daggers",
+      "Thieves' Tools"
+    ],
+    "features": [
+      ["Expertise", "Sneak Attack", "Thieves' Cant"],
+      ["Cunning Action"],
+      ["Roguish Archetype"],
+      ["Ability Score Improvement"],
+      ["Uncanny Dodge"],
+      ["Expertise"],
+      ["Evasion"],
+      ["Ability Score Improvement"],
+      ["Roguish Archetype Feature"],
+      ["Ability Score Improvement"],
+      ["Reliable Talent"],
+      ["Ability Score Improvement"],
+      ["Roguish Archetype Feature"],
+      ["Blindsense"],
+      ["Slippery Mind"],
+      ["Ability Score Improvement"],
+      ["Roguish Archetype Feature"],
+      ["Elusive"],
+      ["Ability Score Improvement"],
+      ["Stroke of Luck"]
+    ]
   },
   "Sorcerer": {
     "type": "class",
     "desc": "A spellcaster who draws on inherent magic from a gift or bloodline.",
     "hit_die": "d6",
     "primary_ability": "Charisma",
-    "saving_throw": ["con", "cha"],
+    "saving_throws": ["con", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
       "Daggers",
@@ -239,44 +517,102 @@ var jsonClassData = {
       "Quarterstaffs",
       "Light Crossbows"
     ],
+    "skills_num": 2,
     "skills": [
-      "Arcana",
-      "Deception",
-      "Insight",
-      "Intimidation",
-      "Persuasion",
-      "Religion"
+      "arcana",
+      "deception",
+      "insight",
+      "intimidation",
+      "persuasion",
+      "religion"
     ],
-    "equipment": ["(a)Light crossbow and 20 bolts or (b)any simple weapon", "(a)Component pouch or (b)arcane focus", "(a)Dungeoneer's pack or (b)explorer's pack", "Two daggers"]
+    "equipment": [
+      [["Light Crossbow", "20 Bolts"], "Any simple weapon"],
+      ["Component Pouch", "Arcane Focus"],
+      ["Dungeoneer's Pack", "Explorer's Pack"],
+      "Two daggers"
+    ],
+    "features": [
+      ["Spellcasting", "Sorcerous Origin"],
+      ["Font of Magic"],
+      ["Metamagic"],
+      ["Ability Score Improvement"],
+      [],
+      ["Sorcerous Origin Feature"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Metamagic"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Sorcerous Origin Feature"],
+      [],
+      ["Ability Score Improvement"],
+      ["Metamagic"],
+      ["Sorcerous Origin Feature"],
+      ["Ability Score Improvement"],
+      ["Sorcerous Restoration"]
+    ]
   },
   "Warlock": {
     "type": "class",
     "desc": "A wielder of magic that is derived from a bargain with an extraplanar entity.",
     "hit_die": "d8",
     "primary_ability": "Charisma",
-    "saving_throw": ["wis", "cha"],
+    "saving_throws": ["wis", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
       "Light Armor",
       "Simple Weapons"
     ],
+    "skills_num": 2,
     "skills": [
-      "Arcana",
-      "Deception",
-      "History",
-      "Intimidation",
-      "Investigation",
-      "Nature",
-      "Religion"
+      "arcana",
+      "deception",
+      "history",
+      "intimidation",
+      "investigation",
+      "nature",
+      "religion"
     ],
-    "equipment": ["(a)Light crossbow and 20 bolts or (b)any simple weapon", "(a)Component pouch or (b)arcane focus", "(a)Scholar's pack or (b)dungeoneer's pack", "Leather armor, any simple weapon, and two daggers"]
+    "equipment": [
+      [["Light Crossbow", "20 Bolts"], "Any simple weapon"],
+      ["Component Pouch", "Arcane Focus"],
+      ["Scholar's Pack", "Dungeoneer's Pack"],
+      "Leather Armor",
+      "Any simple weapon",
+      "Two Daggers"
+    ],
+    "features": [
+      ["Otherworldly Patron", "Pact Magic"],
+      ["Eldritch Invocations"],
+      ["Pact Boon"],
+      ["Ability Score Improvement"],
+      [],
+      ["Otherworldly Patron Feature"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Otherworldly Patron Feature"],
+      ["Mystic Arcanum (6th level)"],
+      ["Ability Score Improvement"],
+      ["Mystic Arcanum (7th level)"],
+      ["Otherworldly Patron Feature"],
+      ["Mystic Arcanum (8th level)"],
+      ["Ability Score Improvement"],
+      ["Mystic Arcanum (9th level)"],
+      [],
+      ["Ability Score Improvement"],
+      ["Eldritch Master"]
+    ]
   },
   "Wizard": {
     "type": "class",
     "desc": "A scholarly magic-user capable of manipulating the structures of reality.",
     "hit_die": "d6",
     "primary_ability": "Intelligence",
-    "saving_throw": ["int", "wis"],
+    "saving_throws": ["int", "wis"],
     "spell_casting_ability": "int",
     "proficiencies": [
       "Daggers",
@@ -285,14 +621,42 @@ var jsonClassData = {
       "Quarterstaffs",
       "Light Crossbows"
     ],
+    "skills_num": 2,
     "skills": [
-      "Arcana",
-      "History",
-      "Insight",
-      "IInvestigation",
-      "Medicine",
-      "Religion"
+      "arcana",
+      "history",
+      "insight",
+      "investigation",
+      "medicine",
+      "religion"
     ],
-    "equipment": ["(a)Quartersaff or (b)dagger", "(a)Component pouch or (b)arcane focus", "(a)Scholar's pack or (b)explorer's pack", "Spellbook"]
+    "equipment": [
+      ["Quartersaff", "Dagger"],
+      ["Component Pouch", "Arcane Focus"],
+      ["Scholar's Pack", "Explorer's Pack"],
+      "Spellbook"
+    ],
+    "features": [
+      ["Spellcasting", "Arcane Recovery"],
+      ["Arcane Tradition"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Arcane Tradition Feature"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Arcane Tradition Feature"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Arcane Tradition Feature"],
+      [],
+      ["Ability Score Improvement"],
+      [],
+      ["Spell Mastery"],
+      ["Ability Score Improvement"],
+      ["Signature Spell"]
+    ]
   }
 };

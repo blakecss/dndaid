@@ -63,7 +63,6 @@
   width: auto;
   min-width: 200px;
   max-width: 800px;
-  overflow-x: hidden;
 }
 .modal-header {
   display: flex;
@@ -208,7 +207,6 @@
   }
   input {
     width: 100%;
-    max-width: 200px;
   }
   .chip-placeholder {
     background-color: transparent;
@@ -217,7 +215,7 @@
   }
   form {
     position: relative;
-    display: inline-block;
+    display: block;
     margin-bottom: 0;
   }
   .suggestions {
@@ -236,6 +234,7 @@
       border-radius: 0;
       background-color: #fff;
       color: $text-color;
+      box-shadow: none;
       &:hover {
         background-color: #eee;
       }

@@ -16,7 +16,7 @@ body, html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
-  margin: 0 0 $default-margin;
+  margin: 0 0 12px;
   font-weight: $normal;
   color: $text-color;
   a {

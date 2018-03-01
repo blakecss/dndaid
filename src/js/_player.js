@@ -1,12 +1,13 @@
 Vue.component('player', {
   props: ['side', 'c'],
   data: function() {
+    var spells = {};
     return {
       alignmentData: jsonAlignmentData,
       abilityData: jsonAbilityData,
       skillData: jsonSkillData,
+      spellData: jsonSpellData,
       languages: ['Common', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Orc', 'Abyssal', 'Celestial', 'Draconic', 'Deep Speech', 'Infernal', 'Primordial', 'Sylvan', 'Undercommon'],
-      char: this.c
     }
   },
   filters: {
@@ -112,7 +113,12 @@ Vue.component('player', {
     spellAbility: function() {
       if (this.c.klass) {
         this.c.spellAbility = jsonClassData[this.c.klass].spell_casting_ability;
-        return jsonAbilityData[this.c.spellAbility].full;
+        if (this.c.spellAbility) {
+          return jsonAbilityData[this.c.spellAbility].full;
+        }
+        else {
+          return '';
+        }
       }
     },
     spellSavingDC: function() {
@@ -246,6 +252,32 @@ Vue.component('player', {
       }
       return this.c.cantripsKnown;
     },
+    filteredCantrips: function() {
+      var cantrips = [];
+      for (var i = 0; i < Object.keys(jsonSpellData).length; i++) {
+        var s = Object.keys(jsonSpellData)[i];
+        if (jsonSpellData[s].level == 'Cantrip' && jsonSpellData[s].class.includes(this.c.klass)) {
+          cantrips.push(s);
+        }
+      }
+      return cantrips;
+    },
+    filteredSpells: function() {
+      var spells = [];
+      var maxLevel = 0;
+      for (var i = 1; i < 10; i++) {
+        if (l = this.c.spellSlots['level' + i + 'Slots'] > 0) {
+          maxLevel = l;
+        }
+      }
+      for (var i = 0; i < Object.keys(jsonSpellData).length; i++) {
+        var s = Object.keys(jsonSpellData)[i];
+        if (jsonSpellData[s].level.charAt(0) <= maxLevel && jsonSpellData[s].class.includes(this.c.klass)) {
+          spells.push(s);
+        }
+      }
+      return spells;
+    },
     spellsKnown: function() {
       if (this.c.klass == 'Barbarian') {
         this.c.spellsKnown = 0;
@@ -277,10 +309,10 @@ Vue.component('player', {
         }
       }
       else if (this.c.klass == 'Cleric') {
-        this.c.spellsKnown = (mod(this.c.abilities.Wisdom) + this.c.level < 1) ? 1 : mod(this.c.abilities.Wisdom) + this.c.level;
+        this.c.spellsKnown = (mod(this.c.abilities.wis) + this.c.level < 1) ? 1 : mod(this.c.abilities.wis) + this.c.level;
       }
       else if (this.c.klass == 'Druid') {
-        this.c.spellsKnown = (mod(this.c.abilities.Wisdom) + this.c.level < 1) ? 1 : mod(this.c.abilities.Wisdom) + this.c.level;
+        this.c.spellsKnown = (mod(this.c.abilities.wis) + this.c.level < 1) ? 1 : mod(this.c.abilities.wis) + this.c.level;
       }
       else if (this.c.klass == 'Fighter') {
         this.c.spellsKnown = 0;
@@ -291,7 +323,7 @@ Vue.component('player', {
         // Monk has ki
       }
       else if (this.c.klass == 'Paladin') {
-        this.c.spellsKnown = (mod(this.c.abilities.Charisma) + Math.floor(this.c.level/2) < 1) ? 1 : mod(this.c.abilities.Charisma) + Math.floor(this.c.level/2);
+        this.c.spellsKnown = (mod(this.c.abilities.cha) + Math.floor(this.c.level/2) < 1) ? 1 : mod(this.c.abilities.cha) + Math.floor(this.c.level/2);
       }
       else if (this.c.klass == 'Ranger') {
         if (this.c.level <= 1) {
@@ -373,7 +405,7 @@ Vue.component('player', {
         }
       }
       else if (this.c.klass == 'Wizard') {
-        this.c.spellsKnown = (mod(this.c.abilities.Intelligence) + this.c.level < 1) ? 1 : mod(this.c.abilities.Intelligence) + this.c.level;
+        this.c.spellsKnown = (mod(this.c.abilities.int) + this.c.level < 1) ? 1 : mod(this.c.abilities.int) + this.c.level;
       }
       return this.c.spellsKnown;
     },
@@ -1251,6 +1283,17 @@ Vue.component('player', {
       return 0;
     }
   },
+  watch: {
+    level: function(newVal, oldVal) {
+      if (newVal != oldVal) {
+        for (var i = oldVal; i < newVal; i++) {
+          for (var ii = 0; ii < jsonClassData[this.c.klass].features[i].length; ii++) {
+            this.c.traits.push(jsonClassData[this.c.klass].features[i][ii]);
+          }
+        }
+      }
+    }
+  },
   template: '<div class="character">\
     <div class="character-header">\
       <div class="class-icon">\
@@ -1346,6 +1389,14 @@ Vue.component('player', {
               <label>Saving DC</label>\
               <input v-model="spellSavingDC" type="number" readonly />\
             </div>\
+            <div class="input-group col-xs-12">\
+              <label>Cantrips Known ({{cantripsKnown}})</label>\
+              <chips :chips="c.cantrips" :suggestions="filteredCantrips"></chips>\
+            </div>\
+            <div class="input-group col-xs-12">\
+              <label>Spells Known ({{spellsKnown}})</label>\
+              <chips :chips="c.spells" :suggestions="filteredSpells"></chips>\
+            </div>\
             <div v-for="slot in [1, 2, 3, 4, 5, 6, 7, 8, 9]" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="col-xs-12">\
               <label>Level {{slot}} Slots</label>\
               <input v-model="c.spellSlotsAvailable[\'level\' + slot + \'SlotsAvailable\']" type="range" min="0" :max="spellSlots[\'level\' + slot + \'Slots\']" step="1" />\
@@ -1398,13 +1449,14 @@ Vue.component('player', {
             </div>\
           </div>\
           <div class="row">\
-            <h4>Perks</h4>\
-            <div class="input-group col-xs-6">\
-              <label>Proficiencies</label>\
+            <h4>Proficiencies</h4>\
+            <div class="input-group col-xs-12">\
               <chips :chips="c.proficiencies"></chips>\
             </div>\
-            <div class="input-group col-xs-6">\
-              <label>Traits</label>\
+          </div>\
+          <div class="row">\
+            <h4>Traits</h4>\
+            <div class="input-group col-xs-12">\
               <chips :chips="c.traits"></chips>\
             </div>\
           </div>\
