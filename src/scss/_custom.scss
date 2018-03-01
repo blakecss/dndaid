@@ -27,6 +27,10 @@
   text-transform: capitalize;
 }
 
+.warning {
+  color: #d50000;
+}
+
 .subtitle {
   color: $text-color-light;
   margin: 0;
@@ -281,6 +285,9 @@
 
 .list-slide-enter-active, .list-slide-leave-active {
   transition: 0.5s ease;
+}
+.list-slide-leave-active {
+  position: absolute;
 }
 .list-slide-enter, .list-slide-leave-to {
   transform: translateX(260px);

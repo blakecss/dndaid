@@ -46,6 +46,8 @@
   li {
     margin-bottom: 0;
     border-bottom: 1px solid #eee;
+    width: 260px;
+    background-color: #fff;
   }
   .info {
     display: flex;
@@ -287,7 +289,6 @@
   }
   .prof {
     display: flex;
-    // flex-direction: row-reverse;
     justify-content: flex-start;
     input {
       margin: 2px 0 0 8px;

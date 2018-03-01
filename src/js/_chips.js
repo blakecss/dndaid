@@ -14,8 +14,17 @@ Vue.component('chips', {
     return {
       newChip: '',
       savedChip: '',
-      focus: 0,
-      suggs: this.suggestions
+      focus: 0
+    }
+  },
+  computed: {
+    suggs: {
+      get: function() {
+        return this.suggestions;
+      },
+      set: function() {
+
+      }
     }
   },
   methods: {

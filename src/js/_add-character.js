@@ -8,7 +8,7 @@ Vue.component('add-character', {
     }
     return {
       addPlayerScreen: 1,
-      addPlayerData: {"name": "Test", "race": "Human", "class": "Bard", "classSkills": [], "classEquipment": [], "background": "Acolyte", "languages": []},
+      addPlayerData: {"name": "Test", "race": "Human", "class": "Bard", "classSkills": [], "classEquipment": [], "background": "Acolyte"},
       addPlayerBaseAbilities: {"str": 8, "dex": 8, "con": 8, "int": 8, "wis": 8, "cha": 8},
       addCreatureName: [],
       raceData: jsonRaceData,
@@ -22,7 +22,7 @@ Vue.component('add-character', {
       slideDirection: 'slide-left',
       dwarfTools: '',
       draconicAncestry: '',
-      skillVersatility: []
+      skillVersatility: [],
     }
   },
   filters: {
@@ -60,6 +60,26 @@ Vue.component('add-character', {
       if (r = this.addPlayerData.race) {
         return r == this.race ? jsonRaceData[this.race].speed : jsonRaceData[this.race].subraces[r].speed;
       }
+    },
+    addPlayerLanguages: function() {
+      var rl = [];
+      if (sr = this.addPlayerData.race) {
+        if (jsonRaceData[sr]) {
+          rl = jsonRaceData[sr].languages;
+        }
+        else {
+          for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
+            var item = Object.keys(jsonRaceData)[i];
+            if (jsonRaceData[item].subraces) {
+              if (jsonRaceData[item].subraces[sr]) {
+                rl = jsonRaceData[item].subraces[sr].languages;
+              }
+            }
+          }
+        }
+      }
+      var bl = jsonBackgroundData[this.addPlayerData.background].languages || [];
+      return rl.concat(bl);
     },
     addPlayerPerks: function() {
       var p = '';
@@ -109,6 +129,10 @@ Vue.component('add-character', {
       if (c = this.addPlayerData.class) {
         ct = jsonClassData[c].features[0]
       }
+      if (this.draconicAncestry) {
+        rt[0] = 'Draconic Ancestry: ' + this.draconicAncestry;
+        rt[2] = 'Damage Resistance: ' + this.draconicAncestry;
+      }
       return rt.concat(ct).unique();
     },
     addPlayerProficiencies: function() {
@@ -136,7 +160,29 @@ Vue.component('add-character', {
       if (b = this.addPlayerData.background) {
         bp = jsonBackgroundData[b].proficiencies || [];
       }
+      if (this.dwarfTools) {
+        rp.push(this.dwarfTools);
+      }
       return rp.concat(cp).concat(bp).unique();
+    },
+    raceSkills: function() {
+      var rs = [];
+      if (sr = this.addPlayerData.race) {
+        if (jsonRaceData[sr]) {
+          rs = jsonRaceData[sr].skill_proficiencies || [];
+        }
+        else {
+          for (var i = 0; i < Object.keys(jsonRaceData).length; i++) {
+            var item = Object.keys(jsonRaceData)[i];
+            if (jsonRaceData[item].subraces) {
+              if (jsonRaceData[item].subraces[sr]) {
+                rs = jsonRaceData[item].subraces[sr].skill_proficiencies || [];
+              }
+            }
+          }
+        }
+      }
+      return rs;
     },
     addPlayerGold: function() {
       var g = 0;
@@ -183,13 +229,18 @@ Vue.component('add-character', {
     characterSelect: function(val) {
       if (!val) {
         this.addPlayerScreen = 1;
-        this.addPlayerData = {"name": "Test", "race": "Human", "class": "Bard", "classSkills": [], "classEquipment": [], "background": "Acolyte", "languages": ""};
-        this.addCreatureName = [];
-        this.addPlayerBaseAbilities = {"str": 8, "dex": 8, "con": 8, "int": 8, "wis": 8, "cha": 8};
       }
     },
     addPlayerScreen: function(newVal, oldVal) {
       this.slideDirection = newVal > oldVal ? 'slide-right' : 'slide-left';
+      if (newVal == 1) {
+        this.addPlayerData = {"name": "Test", "race": "Human", "class": "Bard", "classSkills": [], "classEquipment": [], "background": "Acolyte"};
+        this.addPlayerBaseAbilities = {"str": 8, "dex": 8, "con": 8, "int": 8, "wis": 8, "cha": 8};
+        this.addCreatureName = [];
+        this.dwarfTools = '';
+        this.draconicAncestry = '';
+        this.skillVersatility = [];
+      }
     }
   },
   methods: {
@@ -207,6 +258,12 @@ Vue.component('add-character', {
       for (var i = 0; i < Object.keys(jsonSkillData).length; i++) {
         var s = Object.keys(jsonSkillData)[i];
         skills[s] = this.addPlayerData.classSkills.includes(s) ? true : false;
+        if (this.skillVersatility.includes(s)) {
+          skills[s] = true;
+        }
+        if (this.raceSkills.includes(s)) {
+          skills[s] = true;
+        }
       }
       var spellSlots = {};
       var spellSlotsAvailable = {};
@@ -242,7 +299,7 @@ Vue.component('add-character', {
         background: this.addPlayerData.background,
         alignment: '',
         size: this.size,
-        languages: ["Common", "Other"],
+        languages: this.addPlayerLanguages,
         notes: '',
         speed: this.speed,
         showCombat: true,
@@ -340,6 +397,7 @@ Vue.component('add-character', {
           alignment: c.alignment,
           size: c.size,
           languages: c.languages.split(','),
+          notes: '',
           speed: c.speed,
           showCombat: true,
           currentHP: c.maxHP,
@@ -437,7 +495,9 @@ Vue.component('add-character', {
             </fieldset>\
             <div class="selection-results">\
               <input :value="addCreatureName.join(\', \')" type="text" required />\
-              <button @click.prevent="addCreatureName = []" title="Clear"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
+              <transition name="fade">\
+                <button v-if="addCreatureName.length" @click.prevent="addCreatureName = []"><svg><use xlink:href="sprites.svg#clear"></use></svg></button>\
+              </transition>\
             </div>\
           </div>\
           <div class="modal-footer">\
@@ -523,7 +583,9 @@ Vue.component('add-character', {
                 </fieldset>\
                 <div class="selection-results">\
                   <input class="capitalize" :value="skillVersatility.join(\', \').replace(/_/g, \' \')" type="text" required />\
-                  <button @click.prevent="skillVersatility = []"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
+                  <transition name="fade">\
+                    <button v-if="skillVersatility.length" @click.prevent="skillVersatility = []"><svg><use xlink:href="sprites.svg#clear"></use></svg></button>\
+                  </transition>\
                 </div>\
               </div>\
               <div v-else>\
@@ -539,15 +601,17 @@ Vue.component('add-character', {
                 <fieldset>\
                   <template v-for="(skill, index) in classData[addPlayerData.class].skills">\
                     <input v-model="addPlayerData.classSkills" name="classSkills" :id="\'s\' + index" :value="skill" type="checkbox" />\
-                    <label :for="\'s\' + index" :class="backgroundData[addPlayerData.background].skill_proficiencies.includes(skill) ? \'disabled\' : \'\'">\
+                    <label :for="\'s\' + index" :class="backgroundData[addPlayerData.background].skill_proficiencies.includes(skill) || raceSkills.includes(skill) ? \'disabled\' : \'\'">\
                       <span>{{skillData[skill].full}}</span>\
-                      <span class="covered">{{addPlayerData.background}}</span>\
+                      <span class="covered">{{backgroundData[addPlayerData.background].skill_proficiencies.includes(skill) ? addPlayerData.background : raceSkills.includes(skill) ? addPlayerData.race : \'\'}}</span>\
                     </label>\
                   </template>\
                 </fieldset>\
                 <div class="selection-results">\
                   <input class="capitalize" :value="addPlayerData.classSkills.join(\', \').replace(/_/g, \' \')" type="text" required />\
-                  <button @click.prevent="addPlayerData.classSkills = []"><svg><use xlink:href="sprites.svg#close"></use></svg></button>\
+                  <transition name="fade">\
+                    <button v-if="addPlayerData.classSkills.length" @click.prevent="addPlayerData.classSkills = []"><svg><use xlink:href="sprites.svg#clear"></use></svg></button>\
+                  </transition>\
                 </div>\
               </div>\
               <div class="col-xs-6">\

@@ -60,7 +60,7 @@ var jsonClassData = {
     "spell_casting_ability": "cha",
     "proficiencies": [
       "Light Armor",
-      "SimpleWeapons",
+      "Simple Weapons",
       "Hand Crossbows",
       "Longswords",
       "Rapiers",

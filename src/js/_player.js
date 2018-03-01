@@ -266,14 +266,14 @@ Vue.component('player', {
       var spells = [];
       var maxLevel = 0;
       for (var i = 1; i < 10; i++) {
-        if (l = this.c.spellSlots['level' + i + 'Slots'] > 0) {
-          maxLevel = l;
+        if (this.c.spellSlots['level' + i + 'Slots'] > 0) {
+          maxLevel = i;
         }
       }
       for (var i = 0; i < Object.keys(jsonSpellData).length; i++) {
         var s = Object.keys(jsonSpellData)[i];
         if (jsonSpellData[s].level.charAt(0) <= maxLevel && jsonSpellData[s].class.includes(this.c.klass)) {
-          spells.push(s);
+          spells.push(s + ' (' + jsonSpellData[s].level.charAt(0) + ')');
         }
       }
       return spells;
@@ -1301,7 +1301,7 @@ Vue.component('player', {
       </div>\
       <div class="name">\
         <input v-model="c.name" type="text" placeholder="Name" />\
-        <p class="subtitle">{{c.subrace}} {{c.klass}}</p>\
+        <p class="subtitle">{{c.subrace}} {{c.klass}} ({{c.background}})</p>\
       </div>\
       <button class="flat-btn" @click="clear()">\
         <svg><use xlink:href="sprites.svg#menu"></use></svg>\
@@ -1315,17 +1315,13 @@ Vue.component('player', {
         </button>\
         <div v-show="c.showInfo" class="character-section-content">\
           <div class="row">\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-6">\
               <label>Alignment</label>\
               <select v-model="c.alignment">\
                 <option v-for="(value, key) in alignmentData">{{key}}</option>\
               </select>\
             </div>\
-            <div class="input-group col-xs-4">\
-              <label>Background</label>\
-              <input v-model="c.background" type="text" required>\
-            </div>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-6">\
               <label>Size</label>\
               <select v-model="c.size">\
                 <option>Tiny</option>\
@@ -1390,11 +1386,11 @@ Vue.component('player', {
               <input v-model="spellSavingDC" type="number" readonly />\
             </div>\
             <div class="input-group col-xs-12">\
-              <label>Cantrips Known ({{cantripsKnown}})</label>\
+              <label>Cantrips Known (<span :class="c.cantrips.length > cantripsKnown ? \'warning\' : \'\'">{{c.cantrips.length + \'/\' + cantripsKnown}}</span>)</label>\
               <chips :chips="c.cantrips" :suggestions="filteredCantrips"></chips>\
             </div>\
             <div class="input-group col-xs-12">\
-              <label>Spells Known ({{spellsKnown}})</label>\
+              <label>Spells Known (<span :class="c.spells.length > spellsKnown ? \'warning\' : \'\'">{{c.spells.length + \'/\' + spellsKnown}}</span>)</label>\
               <chips :chips="c.spells" :suggestions="filteredSpells"></chips>\
             </div>\
             <div v-for="slot in [1, 2, 3, 4, 5, 6, 7, 8, 9]" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="col-xs-12">\
