@@ -229,22 +229,19 @@
     right: 0;
     top: 100%;
     box-shadow: $shadow-2;
-    max-height: 200px;
+    max-height: 206px;
     overflow-y: scroll;
     button {
       text-align: left;
-      padding: 12px 24px;
+      padding: 8px 12px;
       width: 100%;
       border-radius: 0;
       background-color: #fff;
       color: $text-color;
       box-shadow: none;
-      &:hover {
+      &:hover, &.hover {
         background-color: #eee;
       }
-    }
-    .hover {
-      background-color: #eee;
     }
   }
 }

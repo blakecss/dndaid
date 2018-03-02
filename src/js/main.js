@@ -119,6 +119,39 @@ var mainVue = new Vue({
       }
     }
   },
+  mounted: function() {
+    var start = 0;
+    var end = 0;
+    var characters = this.characters;
+    jQuery('.sortable').sortable({
+      axis: 'y',
+      handle: '.reorder',
+      placeholder: 'sortable-placeholder',
+      forcePlaceholderSize: true,
+      start: function(e, ui) {
+        start = ui.item.index();
+      },
+      stop: function(e, ui) {
+        end = ui.item.index();
+        characters.splice(end, 0, characters.splice(start, 1)[0]);
+      }
+    });
+    var cs = this.chips;
+    var start = 0;
+    var end = 0;
+    var el = this.$el.querySelector('ul');
+    jQuery(el).sortable({
+      placeholder: 'chip-placeholder',
+      forcePlaceholderSize: true,
+      start: function(e, ui) {
+        start = ui.item.index();
+      },
+      stop: function(e, ui) {
+        end = ui.item.index();
+        cs.splice(end, 0, cs.splice(start, 1)[0]);
+      }
+    });
+  },
   methods: {
     searchBtn: function() {
       this.showSearch = true;
@@ -148,21 +181,5 @@ var mainVue = new Vue({
       };
       reader.readAsText(f);
     }
-  }
-});
-
-var start = 0;
-var end = 0;
-jQuery('.sortable').sortable({
-  axis: 'y',
-  handle: '.reorder',
-  placeholder: 'sortable-placeholder',
-  forcePlaceholderSize: true,
-  start: function(e, ui) {
-    start = ui.item.index();
-  },
-  stop: function(e, ui) {
-    end = ui.item.index();
-    mainVue.$children[0].$children[0].characters.splice(end, 0, mainVue.$children[0].$children[0].characters.splice(start, 1)[0]);
   }
 });
