@@ -4,6 +4,7 @@ var jsonClassData = {
     "desc": "A fierce warrior of primitive background who can enter a battle rage.",
     "hit_die": "d12",
     "primary_ability": "Strength",
+    "secondary_ability": "Constitution",
     "saving_throws": ["str", "con"],
     "spell_casting_ability": "",
     "proficiencies": [
@@ -56,6 +57,7 @@ var jsonClassData = {
     "desc": "An inspiring magician whose power echoes the music of creation.",
     "hit_die": "d8",
     "primary_ability": "Charisma",
+    "secondary_ability": "Dexterity",
     "saving_throws": ["dex", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
@@ -123,6 +125,7 @@ var jsonClassData = {
     "desc": "A priestly champion who wields divine magic in service of a higher power.",
     "hit_die": "d8",
     "primary_ability": "Wisdom",
+    "secondary_ability": "Strength or Constitution",
     "saving_throws": ["wis", "cha"],
     "spell_casting_ability": "wis",
     "proficiencies": [
@@ -175,6 +178,7 @@ var jsonClassData = {
     "desc": "A priest of the OldFaith, wielding the powers of nature--moonlight and pant growth, fire and lightning--and adoption animal forms.",
     "hit_die": "d8",
     "primary_ability": "Wisdom",
+    "secondary_ability": "Constitution",
     "saving_throws": ["int", "wis"],
     "spell_casting_ability": "wis",
     "proficiencies": [
@@ -239,6 +243,7 @@ var jsonClassData = {
     "desc": "A master of martial combat, skilled with a variety of weapons and armor.",
     "hit_die": "d10",
     "primary_ability": "Strength or Dexterity",
+    "secondary_ability": "Constitution or Intelligence",
     "saving_throws": ["str", "con"],
     "spell_casting_ability": "int",
     "proficiencies": [
@@ -290,7 +295,8 @@ var jsonClassData = {
     "type": "class",
     "desc": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
     "hit_die": "d8",
-    "primary_ability": "Dexterity & Wisdom",
+    "primary_ability": "Dexterity",
+    "secondary_ability": "Wisdom",
     "saving_throws": ["str", "dex"],
     "spell_casting_ability": "",
     "proficiencies": [
@@ -339,7 +345,8 @@ var jsonClassData = {
     "type": "class",
     "desc": "A holy warrior bound to a sacred oath.",
     "hit_die": "d10",
-    "primary_ability": "Strength & Charisma",
+    "primary_ability": "Strength",
+    "secondary_ability": "Charisma",
     "saving_throws": ["wis", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
@@ -391,7 +398,8 @@ var jsonClassData = {
     "type": "class",
     "desc": "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
     "hit_die": "d10",
-    "primary_ability": "Dexterity & Wisdom",
+    "primary_ability": "Dexterity",
+    "secondary_ability": "Wisdom or Strength",
     "saving_throws": ["str", "dex"],
     "spell_casting_ability": "wis",
     "proficiencies": [
@@ -447,6 +455,7 @@ var jsonClassData = {
     "desc": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
     "hit_die": "d8",
     "primary_ability": "Dexterity",
+    "secondary_ability": "Intelligence or Charisma",
     "saving_throws": ["dex", "int"],
     "spell_casting_ability": "int",
     "proficiencies": [
@@ -508,6 +517,7 @@ var jsonClassData = {
     "desc": "A spellcaster who draws on inherent magic from a gift or bloodline.",
     "hit_die": "d6",
     "primary_ability": "Charisma",
+    "secondary_ability": "Constitution",
     "saving_throws": ["con", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
@@ -560,6 +570,7 @@ var jsonClassData = {
     "desc": "A wielder of magic that is derived from a bargain with an extraplanar entity.",
     "hit_die": "d8",
     "primary_ability": "Charisma",
+    "secondary_ability": "Constitution",
     "saving_throws": ["wis", "cha"],
     "spell_casting_ability": "cha",
     "proficiencies": [
@@ -612,6 +623,7 @@ var jsonClassData = {
     "desc": "A scholarly magic-user capable of manipulating the structures of reality.",
     "hit_die": "d6",
     "primary_ability": "Intelligence",
+    "secondary_ability": "Constitution, Dexterity, or Charisma",
     "saving_throws": ["int", "wis"],
     "spell_casting_ability": "int",
     "proficiencies": [

@@ -1358,7 +1358,7 @@ Vue.component('player', {
               <label>Armor Class</label>\
               <input v-model="armorClass" type="number" readonly />\
             </div>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-4" title="Dexterity Check">\
               <label>Initiative</label>\
               <input v-model="c.initiative" type="number" />\
             </div>\
@@ -1377,11 +1377,11 @@ Vue.component('player', {
               <label>Ability</label>\
               <input v-model="spellAbility" type="text" readonly />\
             </div>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-4" title="Proficiency Bonus + Spellcasting Ability Modifier">\
               <label>Attack Modifier</label>\
               <input v-model="spellAttackMod" type="number" readonly />\
             </div>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-4" title="8 + Proficiency Bonus + Spellcasting Ability Modifier">\
               <label>Saving DC</label>\
               <input v-model="spellSavingDC" type="number" readonly />\
             </div>\

@@ -41,6 +41,7 @@
         <ul class="col-xs-12 tabs">
           <li @click="slide = 1" :class="slide == 1 ? 'current' : ''">C</li>
           <li @click="slide = 2" :class="slide == 2 ? 'current' : ''">W</li>
+          <li @click="slide = 3" :class="slide == 3 ? 'current' : ''">S</li>
         </ul>
       </div>
       <transition name="fade">
@@ -62,6 +63,9 @@
       <div v-show="slide == 2" key="2">
         <world id="world"></world>
       </div>
+      <div v-show="slide == 3" key="3">
+        <spellbook id="spellbook"></spellbook>
+      </div>
     </transition-group>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -74,8 +78,8 @@
   <script src="data/skills.json"></script>
   <script src="data/spells.json"></script>
   <script src="data/creatures.json"></script>
-  <!-- <script src="data/inventory.json"></script>
-  <script src="data/definitions.json"></script> -->
+  <script src="data/inventory.json"></script>
+  <script src="data/definitions.json"></script>
   <script src="lib/vue/dist/vue.js"></script>
   <!-- <script src="//d3js.org/d3.v4.min.js"></script> -->
   <script src="dist/js/main.min.js"></script>

@@ -108,6 +108,21 @@ Vue.component('add-character', {
       }
       return as;
     },
+    addPlayerPointsPool: function() {
+      var p = 17;
+      for (var i = 0; i < Object.keys(this.addPlayerBaseAbilities).length; i++) {
+        var a = Object.keys(this.addPlayerBaseAbilities)[i];
+        p -= this.addPlayerBaseAbilities[a] - 8;
+        if (this.addPlayerBaseAbilities[a] == 14) {
+          p -= 1;
+        }
+        else if (this.addPlayerBaseAbilities[a] == 15) {
+          p -= 2;
+        }
+      }
+      console.log(p);
+      return p;
+    },
     addPlayerTraits: function() {
       var rt = [];
       var ct = [];
@@ -469,7 +484,7 @@ Vue.component('add-character', {
       </div>\
     </div>\
     <transition-group :name="slideDirection" tag="div" class="step-slides">\
-      <div v-if="addPlayerScreen == 1" class="row no-padding" key="1">\
+      <div id="step-1" v-if="addPlayerScreen == 1" class="row no-padding" key="1">\
         <form @submit.prevent="addCreature()" class="col-xs-6 no-padding">\
           <div class="modal-content">\
             <div class="filter-sort">\
@@ -532,7 +547,7 @@ Vue.component('add-character', {
           </div>\
         </form>\
       </div>\
-      <form v-if="addPlayerScreen == 2" @submit.prevent="addPlayerScreen = 3" key="2">\
+      <form id="step-2" v-if="addPlayerScreen == 2" @submit.prevent="addPlayerScreen = 3" key="2">\
         <div class="modal-content">\
           <div class="row no-padding">\
             <div class="col-xs-4">\
@@ -633,15 +648,26 @@ Vue.component('add-character', {
           <input type="submit" value="Continue" />\
         </div>\
       </form>\
-      <form v-if="addPlayerScreen == 3" @submit.prevent="addPlayer()" key="3">\
+      <form id="step-3" v-if="addPlayerScreen == 3" @submit.prevent="addPlayer()" key="3">\
         <div class="modal-content">\
-          <div class="inputs">\
-            <div v-for="(value, key) in abilityData" class="stat">\
-              <h4 class="subtitle">{{key.toUpperCase()}}</h4>\
-              <input v-model.number="addPlayerBaseAbilities[key]" class="base" type="number" />\
-              <div class="perk">+{{addPlayerPerks[key] || 0}}</div>\
-              <div class="total">{{addPlayerAbilities[key]}}<span class="mod"> ({{addPlayerAbilities[key] | mod}})</span></div>\
+          <div class="inputs-recos">\
+            <div class="recommendations">\
+              <h4>Ability Recommendations ({{addPlayerData.class}})</h4>\
+              <p><b>Primary:</b> {{classData[addPlayerData.class].primary_ability}}</p>\
+              <p><b>Secondary:</b> {{classData[addPlayerData.class].secondary_ability}}</p>\
             </div>\
+            <div class="inputs">\
+              <div v-for="(value, key) in abilityData" class="stat">\
+                <h4 class="subtitle">{{key.toUpperCase()}}</h4>\
+                <input v-model.number="addPlayerBaseAbilities[key]" class="base" min="8" max="15" type="number" />\
+                <div class="perk">+{{addPlayerPerks[key] || 0}}</div>\
+                <div class="total">{{addPlayerAbilities[key]}}<span class="mod"> ({{addPlayerAbilities[key] | mod}})</span></div>\
+              </div>\
+            </div>\
+          </div>\
+          <div class="points-pool">\
+            <h4 class="subtitle">Points Left</h4>\
+            <span>{{addPlayerPointsPool}}</span>\
           </div>\
         </div>\
         <div class="modal-footer">\

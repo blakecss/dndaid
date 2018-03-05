@@ -14,7 +14,7 @@
   .step-slides {
     background-color: #fff;
     position: relative;
-    width: 700px;
+    min-width: 700px;
     height: 440px;
     & > * {
       position: absolute;
@@ -138,9 +138,30 @@
     }
   }
 }
+#step-3 {
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.inputs-recos {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.recommendations {
+  display: inline-block;
+  text-align: left;
+  padding-left: 10px;
+  p {
+    margin: 0;
+  }
+}
 .inputs {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
+  margin-top: 20px;
   .stat {
     padding: 0 10px 0 20px;
   }
@@ -168,5 +189,16 @@
   input {
     margin: 0;
     width: 36px;
+  }
+}
+.points-pool {
+  display: inline-block;
+  text-align: center;
+  margin: 20px 0 0 0;
+  h4 {
+    margin-left: 0;
+  }
+  span {
+    font-size: rem(24);
   }
 }

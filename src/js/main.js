@@ -86,6 +86,7 @@ function mod(value) {
 //=include _player.js
 //=include _creature.js
 //=include _characters.js
+//=include _spellbook.js
 //=include _world.js
 
 var mainVue = new Vue({
@@ -134,21 +135,6 @@ var mainVue = new Vue({
       stop: function(e, ui) {
         end = ui.item.index();
         characters.splice(end, 0, characters.splice(start, 1)[0]);
-      }
-    });
-    var cs = this.chips;
-    var start = 0;
-    var end = 0;
-    var el = this.$el.querySelector('ul');
-    jQuery(el).sortable({
-      placeholder: 'chip-placeholder',
-      forcePlaceholderSize: true,
-      start: function(e, ui) {
-        start = ui.item.index();
-      },
-      stop: function(e, ui) {
-        end = ui.item.index();
-        cs.splice(end, 0, cs.splice(start, 1)[0]);
       }
     });
   },
