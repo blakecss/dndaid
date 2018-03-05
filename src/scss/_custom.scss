@@ -1,25 +1,11 @@
 #main {
   height: 100%;
-  header ~ div {
+  header ~ div:not(.modal-bg) {
     position: absolute;
     left: 0;
     right: 0;
     min-height: calc(100vh - 120px);
     background-color: #eee;
-  }
-}
-
-.fixed-click {
-  display: block;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  & ~ * {
-    position: relative;
-    z-index: 101;
   }
 }
 
@@ -221,28 +207,6 @@
     position: relative;
     display: block;
     margin-bottom: 0;
-  }
-  .suggestions {
-    position: absolute;
-    z-index: 5;
-    left: 0;
-    right: 0;
-    top: 100%;
-    box-shadow: $shadow-2;
-    max-height: 206px;
-    overflow-y: scroll;
-    button {
-      text-align: left;
-      padding: 8px 12px;
-      width: 100%;
-      border-radius: 0;
-      background-color: #fff;
-      color: $text-color;
-      box-shadow: none;
-      &:hover, &.hover {
-        background-color: #eee;
-      }
-    }
   }
 }
 

@@ -34,11 +34,7 @@
   }
 }
 .character-list {
-  width: 100%;
-  max-width: 260px;
-  position: relative;
-  background-color: #fff;
-  border-left: 1px solid #ccc;
+  @extend %sidebar;
   ul {
     list-style: none;
     margin: 42px 0 0 0;

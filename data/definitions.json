@@ -1,262 +1,327 @@
-var jsonDefinitionData = {
-  "Ammunition": {
-    "type": "weapon property",
-    "desc": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.<br>If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
-  },
-  "Finesse": {
-    "type": "weapon property",
-    "desc": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
-  },
-  "Heavy": {
-    "type": "weapon property",
-    "desc": "Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon’s size and bulk make it too large for a Small creature to use effectively."
-  },
-  "Light": {
-    "type": "weapon property",
-    "desc": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
-  },
-  "Loading": {
-    "type": "weapon property",
-    "desc": "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
-  },
-  "Range": {
-    "type": "weapon property",
-    "desc": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
-  },
-  "Reach": {
-    "type": "weapon property",
-    "desc": "This weapon adds 5 feet to your reach when you attack with it, as well as when determining your reach for opportunity attacks with it."
-  },
-  "Special": {
-    "type": "weapon property",
-    "desc": "A weapon with the special property has unusual rules governing its use, explained in the weapon's description."
-  },
-  "Thrown": {
-    "type": "weapon property",
-    "desc": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
-  },
-  "Two-Handed": {
-    "type": "weapon property",
-    "desc": "This weapon requires two hands when you attack with it."
-  },
-  "Versatile": {
-    "type": "weapon property",
-    "desc": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
-  },
-  "Improvised Weapon": {
-    "type": "weapon property",
-    "desc": "In many cases, an improvised weapon is similar to an actual weapon and can be treated as such. For example, a table leg is akin to a club. At the DM’s option, a character proficient with a weapon can use a similar object as if it were that weapon and use his or her proficiency bonus.<br>An object that bears no resemblance to a weapon deals 1d4 damage (the DM assigns a damage type appropriate to the object). If a character uses a ranged weapon to make a melee attack, or throws a melee weapon that does not have the thrown property, it also deals 1d4 damage. An improvised thrown weapon has a normal range of 20 feet and a long range of 60 feet."
-  },
-  "Silvered Weapon": {
-    "type": "weapon property",
-    "desc": "Some monsters that have immunity or resistance to nonmagical weapons are susceptible to silver weapons, so cautious adventurers invest extra coin to plate their weapons with silver. You can silver a single weapon or ten pieces of ammunition for 100 gp. This cost represents not only the price of the silver, but the time and expertise needed to add silver to the weapon without making it less effective."
-  },
-  "Blinded": {
-    "type": "condition",
-    "desc": "A blinded creature can't see and automatically fails any ability check that requires sight. Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage."
-  },
-  "Charmed": {
-    "type": "condition",
-    "desc": "A charmed creature can't attack the charmer or target the charmer with harmful abilities or magical effects. The charmer has advantage on any ability check to interact socially with the creature."
-  },
-  "Deafened": {
-    "type": "condition",
-    "desc": "A deafened creature can't hear and automatically fails any ability check that requires hearing."
-  },
-  "Exhaustion": {
-    "type": "condition",
-    "desc": "Some special abilities and environmental hazards, such as starvation and the long-term effects of freezing or scorching temperatures, can lead to a special condition called exhaustion. Exhaustion is measured in six levels. An effect can give a creature one or more levels of exhaustion, as specified in the effect’s description.<br>Level 1: Disadvantage on ability checks<br>Level 2: Speed halved<br>Level 3: Disadvantage on attack rolls and saving throws<br>Level 4: Hit point maximum halved<br>Level 5: Speed reduced to 0<br>Level 6: Death<br>If an already exhausted creature suffers another effect that causes exhaustion, its current level of exhaustion increases by the amount specified in the effect’s description.<br>A creature suffers the effect of its current level of exhaustion as well as all lower levels. For example, a creature suffering level 2 exhaustion has its speed halved and has disadvantage on ability checks.<br>An effect that removes exhaustion reduces its level as specified in the effect’s description, with all exhaustion effects ending if a creature’s exhaustion level is reduced below 1.<br>Finishing a long rest reduces a creature's exhaustion level by 1, provided that the creature has also ingested some food and drink."
-  },
-  "Frightened": {
-    "type": "condition",
-    "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight. The creature can't willingly move closer to the source of its fear."
-  },
-  "Grappled": {
-    "type": "condition",
-    "desc": "A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed. The condition ends if the grappler is incapacitated. The condition also ends if an effect removes the grappled creature from the reach of the grappler or grappling effect, such as when a creature is hurled away by the thunderwave spell."
-  },
-  "Incapacitated": {
-    "type": "condition",
-    "desc": "An incapacitated creature can't take actions or reactions."
-  },
-  "Invisible": {
-    "type": "condition",
-    "desc": "An invisible creature is impossible to see without the aid of magic or a special sense. For the purpose of hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves. Attack rolls against the creature have disadvantage, and the creature's attack rolls have advantage."
-  },
-  "Paralyzed": {
-    "type": "condition",
-    "desc": "A paralyzed creature is incapacitated and can't move or speak. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
-  },
-  "Petrified": {
-    "type": "condition",
-    "desc": "A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging. The creature is incapacitated, can't move or speak, and is unaware of its surroundings. Attack rolls against the creature have advantage. The creature automatically fails Strength and Dexterity saving throws. The creature has resistance to all damage. The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized."
-  },
-  "Poisoned": {
-    "type": "condition",
-    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
-  },
-  "Prone": {
-    "type": "condition",
-    "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition. The creature has disadvantage on attack rolls. An attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the attack roll has disadvantage."
-  },
-  "Restrained": {
-    "type": "condition",
-    "desc": "A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed. Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage. The creature has disadvantage on Dexterity saving throws."
-  },
-  "Stunned": {
-    "type": "condition",
-    "desc": "A stunned creature is incapacitated, can't move, and can speak only falteringly. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage."
-  },
-  "Unconscious": {
-    "type": "condition",
-    "desc": "An unconscious creature is incapacitated, can't move or speak, and is unaware of its surroundings. The creature drops whatever it's holding and falls prone. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
-  },
-  "Darkvision": {
-    "type": "trait",
-    "desc": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-  },
-  "Dwarven Resilience": {
-    "type": "trait",
-    "desc": "You have advantage on saving throws against poison, and you have resistance against poison damage."
-  },
-  "Dwarven Combat Training": {
-    "type": "trait",
-    "desc": "You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer."
-  },
-  "Tool Proficiency": {
-    "type": "trait",
-    "desc": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
-  },
-  "Stonecunning": {
-    "type": "trait",
-    "desc": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
-  },
-  "Dwarven Toughness": {
-    "type": "trait",
-    "desc": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
-  },
-  "Dwarven Armor Training": {
-    "type": "trait",
-    "desc": "You have proficiency with light and medium armor."
-  },
-  "Keen Senses": {
-    "type": "trait",
-    "desc": "You have proficiency in the Perception skill."
-  },
-  "Fey Ancestry": {
-    "type": "trait",
-    "desc": "You have advantage on saviog throws against being charmed, and magic can't put you to sleep."
-  },
-  "Trance": {
-    "type": "trait",
-    "desc": "Elves don't need to sleep. Inslead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
-  },
-  "Elf Weapon Training": {
-    "type": "trait",
-    "desc": "You have proficiency with the longsword, shortsword, shortbox, and longbow."
-  },
-  "Cantrip": {
-    "type": "trait",
-    "desc": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
-  },
-  "Fleet of Foot": {
-    "type": "trait",
-    "desc": "Your base walking speed increases to 35 feet."
-  },
-  "Mask of the Wild": {
-    "type": "trait",
-    "desc": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
-  },
-  "Superior Darkvision": {
-    "type": "trait",
-    "desc": "Your darkvision has a radius of 120 feet."
-  },
-  "Sunlight Sensitivity": {
-    "type": "trait",
-    "desc": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
-  },
-  "Drow Magic": {
-    "type": "trait",
-    "desc": "You know the <i>dancing lights</i> cantrip. When you reach 3rd level, you can cast the <i>faerie fire</i> spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
-  },
-  "Drow Weapon Training": {
-    "type": "trait",
-    "desc": "You have proficiency with rapiers, shortswords, and hand crossbows."
-  },
-  "Lucky": {
-    "type": "trait",
-    "desc": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
-  },
-  "Brave": {
-    "type": "trait",
-    "desc": "You have advantage on saving throws against being frightened."
-  },
-  "Halfling Nimbleness": {
-    "type": "trait",
-    "desc": "You can move through the space of any creature that is of a size larger than yours."
-  },
-  "Naturally Stealthy": {
-    "type": "trait",
-    "desc": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
-  },
-  "Stout Resilience": {
-    "type": "trait",
-    "desc": "You have advantage on saving throws against poison, and you have resistance against poison damage."
-  },
-  "Draconic Ancestry": {
-    "type": "trait",
-    "desc": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table."
-  },
-  "Breath Weapon": {
-    "type": "trait",
-    "desc": "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.<br><br>When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level. 4d6 at 11th level, and 5d6 at 16th level.<br><br>After you use your breath weapon, you can't use it again until you complete a short or long rest."
-  },
-  "Damage Resistance": {
-    "type": "trait",
-    "desc": "You have resistance to the damage type associated with your draconic ancestry."
-  },
-  "Gnome Cunning": {
-    "type": "trait",
-    "desc": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
-  },
-  "Natural Illusionist": {
-    "type": "trait",
-    "desc": "You know the <i>minor illusion</i> cantrip. Intelligence is your spellcasting ability for it."
-  },
-  "Speak with Small Beasts": {
-    "type": "trait",
-    "desc": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets."
-  },
-  "Artificer's Lore": {
-    "type": "trait",
-    "desc": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
-  },
-  "Tinker": {
-    "type": "trait",
-    "desc": "You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.<br><br>When you create a device, choose one of the following options:<br><br><i>Clockwork Toy</i>: This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.<br><br><i>Fire Starter</i>: The device produces a miniature flame, which you can use to light a candle, torch, ar campfire. Using the device requires your action.<br><br><i>Music Box</i>: When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed."
-  },
-  "Skill Versatility": {
-    "type": "trait",
-    "desc": "You gain proficiency in two skills of your choice."
-  },
-  "Menacing": {
-    "type": "trait",
-    "desc": "You gain proficiency in the Intimidation skill."
-  },
-  "Relentless Endurance": {
-    "type": "trait",
-    "desc": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
-  },
-  "Savage Attacks": {
-    "type": "trait",
-    "desc": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
-  },
-  "Hellish Resistance": {
-    "type": "trait",
-    "desc": "You have resistance to fire damage."
-  },
-  "Infernal Legacy": {
-    "type": "trait",
-    "desc": "You know the <i>thaumaturgy</i> cantrip. Once you reach 3rd level, you can cast the <i>hellish rebuke</i> spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the <i>darkness</i> spell once per day. Charisma is your spellcasting ability for these spells."
+var jsonDefinitionData = [
+  {
+    "name": "Ammunition",
+    "type": "Weapon Property",
+    "desc": "<p>You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.<br>If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.</p>"
+  },
+  {
+    "name": "Finesse",
+    "type": "Weapon Property",
+    "desc": "<p>When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>"
+  },
+  {
+    "name": "Heavy",
+    "type": "Weapon Property",
+    "desc": "<p>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon’s size and bulk make it too large for a Small creature to use effectively.</p>"
+  },
+  {
+    "name": "Light",
+    "type": "Weapon Property",
+    "desc": "<p>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>"
+  },
+  {
+    "name": "Loading",
+    "type": "Weapon Property",
+    "desc": "<p>Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make.</p>"
+  },
+  {
+    "name": "Range",
+    "type": "Weapon Property",
+    "desc": "<p>A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range.</p>"
+  },
+  {
+    "name": "Reach",
+    "type": "Weapon Property",
+    "desc": "<p>This weapon adds 5 feet to your reach when you attack with it, as well as when determining your reach for opportunity attacks with it.</p>"
+  },
+  {
+    "name": "Special",
+    "type": "Weapon Property",
+    "desc": "<p>A weapon with the special property has unusual rules governing its use, explained in the weapon's description.</p>"
+  },
+  {
+    "name": "Thrown",
+    "type": "Weapon Property",
+    "desc": "<p>If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.</p>"
+  },
+  {
+    "name": "Two-Handed",
+    "type": "Weapon Property",
+    "desc": "<p>This weapon requires two hands when you attack with it.</p>"
+  },
+  {
+    "name": "Versatile",
+    "type": "Weapon Property",
+    "desc": "<p>This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.</p>"
+  },
+  {
+    "name": "Improvised Weapon",
+    "type": "Weapon Property",
+    "desc": "<p>In many cases, an improvised weapon is similar to an actual weapon and can be treated as such. For example, a table leg is akin to a club. At the DM’s option, a character proficient with a weapon can use a similar object as if it were that weapon and use his or her proficiency bonus.<br>An object that bears no resemblance to a weapon deals 1d4 damage (the DM assigns a damage type appropriate to the object). If a character uses a ranged weapon to make a melee attack, or throws a melee weapon that does not have the thrown property, it also deals 1d4 damage. An improvised thrown weapon has a normal range of 20 feet and a long range of 60 feet.</p>"
+  },
+  {
+    "name": "Silvered Weapon",
+    "type": "Weapon Property",
+    "desc": "<p>Some monsters that have immunity or resistance to nonmagical weapons are susceptible to silver weapons, so cautious adventurers invest extra coin to plate their weapons with silver. You can silver a single weapon or ten pieces of ammunition for 100 gp. This cost represents not only the price of the silver, but the time and expertise needed to add silver to the weapon without making it less effective.</p>"
+  },
+  {
+    "name": "Blinded",
+    "type": "Condition",
+    "desc": "<p>A blinded creature can't see and automatically fails any ability check that requires sight. Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage.</p>"
+  },
+  {
+    "name": "Charmed",
+    "type": "Condition",
+    "desc": "<p>A charmed creature can't attack the charmer or target the charmer with harmful abilities or magical effects. The charmer has advantage on any ability check to interact socially with the creature.</p>"
+  },
+  {
+    "name": "Deafened",
+    "type": "Condition",
+    "desc": "<p>A deafened creature can't hear and automatically fails any ability check that requires hearing.</p>"
+  },
+  {
+    "name": "Exhaustion",
+    "type": "Condition",
+    "desc": "<p>Some special abilities and environmental hazards, such as starvation and the long-term effects of freezing or scorching temperatures, can lead to a special condition called exhaustion. Exhaustion is measured in six levels. An effect can give a creature one or more levels of exhaustion, as specified in the effect’s description.<br>Level 1: Disadvantage on ability checks<br>Level 2: Speed halved<br>Level 3: Disadvantage on attack rolls and saving throws<br>Level 4: Hit point maximum halved<br>Level 5: Speed reduced to 0<br>Level 6: Death<br>If an already exhausted creature suffers another effect that causes exhaustion, its current level of exhaustion increases by the amount specified in the effect’s description.<br>A creature suffers the effect of its current level of exhaustion as well as all lower levels. For example, a creature suffering level 2 exhaustion has its speed halved and has disadvantage on ability checks.<br>An effect that removes exhaustion reduces its level as specified in the effect’s description, with all exhaustion effects ending if a creature’s exhaustion level is reduced below 1.<br>Finishing a long rest reduces a creature's exhaustion level by 1, provided that the creature has also ingested some food and drink.</p>"
+  },
+  {
+    "name": "Frightened",
+    "type": "Condition",
+    "desc": "<p>A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight. The creature can't willingly move closer to the source of its fear.</p>"
+  },
+  {
+    "name": "Grappled",
+    "type": "Condition",
+    "desc": "<p>A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed. The condition ends if the grappler is incapacitated. The condition also ends if an effect removes the grappled creature from the reach of the grappler or grappling effect, such as when a creature is hurled away by the thunderwave spell.</p>"
+  },
+  {
+    "name": "Incapacitated",
+    "type": "Condition",
+    "desc": "<p>An incapacitated creature can't take actions or reactions.</p>"
+  },
+  {
+    "name": "Invisible",
+    "type": "Condition",
+    "desc": "<p>An invisible creature is impossible to see without the aid of magic or a special sense. For the purpose of hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves. Attack rolls against the creature have disadvantage, and the creature's attack rolls have advantage.</p>"
+  },
+  {
+    "name": "Paralyzed",
+    "type": "Condition",
+    "desc": "<p>A paralyzed creature is incapacitated and can't move or speak. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</p>"
+  },
+  {
+    "name": "Petrified",
+    "type": "Condition",
+    "desc": "<p>A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging. The creature is incapacitated, can't move or speak, and is unaware of its surroundings. Attack rolls against the creature have advantage. The creature automatically fails Strength and Dexterity saving throws. The creature has resistance to all damage. The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized.</p>"
+  },
+  {
+    "name": "Poisoned",
+    "type": "Condition",
+    "desc": "<p>A poisoned creature has disadvantage on attack rolls and ability checks.</p>"
+  },
+  {
+    "name": "Prone",
+    "type": "Condition",
+    "desc": "<p>A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition. The creature has disadvantage on attack rolls. An attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the attack roll has disadvantage.</p>"
+  },
+  {
+    "name": "Restrained",
+    "type": "Condition",
+    "desc": "<p>A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed. Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage. The creature has disadvantage on Dexterity saving throws.</p>"
+  },
+  {
+    "name": "Stunned",
+    "type": "Condition",
+    "desc": "<p>A stunned creature is incapacitated, can't move, and can speak only falteringly. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage.</p>"
+  },
+  {
+    "name": "Unconscious",
+    "type": "Condition",
+    "desc": "<p>An unconscious creature is incapacitated, can't move or speak, and is unaware of its surroundings. The creature drops whatever it's holding and falls prone. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</p>"
+  },
+  {
+    "name": "Darkvision",
+    "type": "Trait",
+    "desc": "<p>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</p>"
+  },
+  {
+    "name": "Dwarven Resilience",
+    "type": "Trait",
+    "desc": "<p>You have advantage on saving throws against poison, and you have resistance against poison damage.</p>"
+  },
+  {
+    "name": "Dwarven Combat Training",
+    "type": "Trait",
+    "desc": "<p>You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.</p>"
+  },
+  {
+    "name": "Tool Proficiency",
+    "type": "Trait",
+    "desc": "<p>You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.</p>"
+  },
+  {
+    "name": "Stonecunning",
+    "type": "Trait",
+    "desc": "<p>Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>"
+  },
+  {
+    "name": "Dwarven Toughness",
+    "type": "Trait",
+    "desc": "<p>Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.</p>"
+  },
+  {
+    "name": "Dwarven Armor Training",
+    "type": "Trait",
+    "desc": "<p>You have proficiency with light and medium armor.</p>"
+  },
+  {
+    "name": "Keen Senses",
+    "type": "Trait",
+    "desc": "<p>You have proficiency in the Perception skill.</p>"
+  },
+  {
+    "name": "Fey Ancestry",
+    "type": "Trait",
+    "desc": "<p>You have advantage on saviog throws against being charmed, and magic can't put you to sleep.</p>"
+  },
+  {
+    "name": "Trance",
+    "type": "Trait",
+    "desc": "<p>Elves don't need to sleep. Inslead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.</p>"
+  },
+  {
+    "name": "Elf Weapon Training",
+    "type": "Trait",
+    "desc": "<p>You have proficiency with the longsword, shortsword, shortbox, and longbow.</p>"
+  },
+  {
+    "name": "Cantrip",
+    "type": "Trait",
+    "desc": "<p>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</p>"
+  },
+  {
+    "name": "Fleet of Foot",
+    "type": "Trait",
+    "desc": "<p>Your base walking speed increases to 35 feet.</p>"
+  },
+  {
+    "name": "Mask of the Wild",
+    "type": "Trait",
+    "desc": "<p>You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.</p>"
+  },
+  {
+    "name": "Superior Darkvision",
+    "type": "Trait",
+    "desc": "<p>Your darkvision has a radius of 120 feet.</p>"
+  },
+  {
+    "name": "Sunlight Sensitivity",
+    "type": "Trait",
+    "desc": "<p>You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</p>"
+  },
+  {
+    "name": "Drow Magic",
+    "type": "Trait",
+    "desc": "<p>You know the <i>dancing lights</i> cantrip. When you reach 3rd level, you can cast the <i>faerie fire</i> spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.</p>"
+  },
+  {
+    "name": "Drow Weapon Training",
+    "type": "Trait",
+    "desc": "<p>You have proficiency with rapiers, shortswords, and hand crossbows.</p>"
+  },
+  {
+    "name": "Lucky",
+    "type": "Trait",
+    "desc": "<p>When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p>"
+  },
+  {
+    "name": "Brave",
+    "type": "Trait",
+    "desc": "<p>You have advantage on saving throws against being frightened.</p>"
+  },
+  {
+    "name": "Halfling Nimbleness",
+    "type": "Trait",
+    "desc": "<p>You can move through the space of any creature that is of a size larger than yours.</p>"
+  },
+  {
+    "name": "Naturally Stealthy",
+    "type": "Trait",
+    "desc": "<p>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</p>"
+  },
+  {
+    "name": "Stout Resilience",
+    "type": "Trait",
+    "desc": "<p>You have advantage on saving throws against poison, and you have resistance against poison damage.</p>"
+  },
+  {
+    "name": "Draconic Ancestry",
+    "type": "Trait",
+    "desc": "<p>You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.</p>"
+  },
+  {
+    "name": "Breath Weapon",
+    "type": "Trait",
+    "desc": "<p>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.<br><br>When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level. 4d6 at 11th level, and 5d6 at 16th level.<br><br>After you use your breath weapon, you can't use it again until you complete a short or long rest.</p>"
+  },
+  {
+    "name": "Damage Resistance",
+    "type": "Trait",
+    "desc": "<p>You have resistance to the damage type associated with your draconic ancestry.</p>"
+  },
+  {
+    "name": "Gnome Cunning",
+    "type": "Trait",
+    "desc": "<p>You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.</p>"
+  },
+  {
+    "name": "Natural Illusionist",
+    "type": "Trait",
+    "desc": "<p>You know the <i>minor illusion</i> cantrip. Intelligence is your spellcasting ability for it.</p>"
+  },
+  {
+    "name": "Speak with Small Beasts",
+    "type": "Trait",
+    "desc": "<p>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.</p>"
+  },
+  {
+    "name": "Artificer's Lore",
+    "type": "Trait",
+    "desc": "<p>Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.</p>"
+  },
+  {
+    "name": "Tinker",
+    "type": "Trait",
+    "desc": "<p>You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.<br><br>When you create a device, choose one of the following options:<br><br><i>Clockwork Toy</i>: This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.<br><br><i>Fire Starter</i>: The device produces a miniature flame, which you can use to light a candle, torch, ar campfire. Using the device requires your action.<br><br><i>Music Box</i>: When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed.</p>"
+  },
+  {
+    "name": "Skill Versatility",
+    "type": "Trait",
+    "desc": "<p>You gain proficiency in two skills of your choice.</p>"
+  },
+  {
+    "name": "Menacing",
+    "type": "Trait",
+    "desc": "<p>You gain proficiency in the Intimidation skill.</p>"
+  },
+  {
+    "name": "Relentless Endurance",
+    "type": "Trait",
+    "desc": "<p>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.</p>"
+  },
+  {
+    "name": "Savage Attacks",
+    "type": "Trait",
+    "desc": "<p>When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit.</p>"
+  },
+  {
+    "name": "Hellish Resistance",
+    "type": "Trait",
+    "desc": "<p>You have resistance to fire damage.</p>"
+  },
+  {
+    "name": "Infernal Legacy",
+    "type": "Trait",
+    "desc": "<p>You know the <i>thaumaturgy</i> cantrip. Once you reach 3rd level, you can cast the <i>hellish rebuke</i> spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the <i>darkness</i> spell once per day. Charisma is your spellcasting ability for these spells."
   }
-};
+];

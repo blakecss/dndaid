@@ -1,0 +1,60 @@
+#spellbook {
+  display: flex;
+  .container {
+    align-items: flex-start;
+  }
+}
+.spells {
+  padding-top: $grid-padding * 2;
+}
+.spell-card {
+  margin-bottom: $grid-padding * 2;
+  h3 {
+    margin-bottom: 0;
+  }
+  .subtitle {
+    margin-bottom: $default-margin;
+  }
+  .higher-level {
+    &:before {
+      content: 'Higher Level:';
+      font-weight: $bold;
+      float: left;
+      margin-right: 5px;
+    }
+  }
+  .row {
+    margin-left: -$grid-padding;
+    margin-right: -$grid-padding;
+  }
+  svg.yes {
+    width: 18px;
+    height: 18px;
+    margin-bottom: -3px;
+  }
+  svg.no {
+    width: 12px;
+    height: 12px;
+    margin-left: 2px;
+  }
+}
+.spell-filters {
+  @extend %card;
+  margin-top: $grid-padding * 2;
+  ul {
+    list-style: none;
+    margin-left: 0;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  input {
+    margin: 0;
+  }
+  label {
+    padding: 1px 0 0 4px;
+  }
+  input, label {
+    cursor: pointer;
+  }
+}

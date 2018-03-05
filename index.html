@@ -19,20 +19,22 @@
             <button class="search-icon" @click="searchBtn()"><svg><use xlink:href="sprites.svg#search"></use></svg></button>
             <transition name="search">
               <div class="search-bar" v-show="showSearch">
-                <input v-model="search" ref="search" type="text" placeholder="Search" />
+                <input v-model="search" @input="getSuggestions()" @keyup.down="focusDown()" @keyup.up="focusUp()" ref="search" type="text" placeholder="Search" />
+                <ul v-show="suggestions" class="suggestions">
+                  <li v-for="(suggestion, index) in suggestions"><button :class="index+1 == focus ? 'hover' : ''" @keyup.down="focusDown()" @keyup.up="focusUp()" @keydown.enter.prevent="addChip()">{{suggestion.o.name}}</button></li>
+                </ul>
                 <button class="search-close" @click="showSearch = false"><svg><use xlink:href="sprites.svg#close"></use></svg></button>
               </div>
             </transition>
           </form>
-          <button class="menu-icon" @click="showMenu = !showMenu">
+          <button class="menu-icon" @click="showMenu = true" @blur="showMenu = false;">
             <svg><use xlink:href="sprites.svg#menu"></use></svg>
           </button>
           <transition name="menu">
             <div v-show="showMenu" class="header-menu">
-              <div @click="showMenu = false" class="fixed-click"></div>
-              <a :href="'data:text/json;charset=utf-8,' + saveData" :download="saveFile"><svg><use xlink:href="sprites.svg#save"></use></svg><span>Save</span></a>
+              <a :href="'data:text/json;charset=utf-8,' + saveData" :download="saveFile"><svg><use xlink:href="sprites.svg#save"></use></svg><span>Export</span></a>
               <input id="importer" ref="uploader" @change="load()" type="file" /><label for="importer"><svg><use xlink:href="sprites.svg#import"></use></svg><span>Import</span></label>
-              <button @click="help()"><svg><use xlink:href="sprites.svg#help"></use></svg><span>Help</span></button>
+              <button @mousedown="help()"><svg><use xlink:href="sprites.svg#help"></use></svg><span>Help</span></button>
             </div>
           </transition>
         </div>
@@ -44,17 +46,6 @@
           <li @click="slide = 3" :class="slide == 3 ? 'current' : ''">S</li>
         </ul>
       </div>
-      <transition name="fade">
-        <div v-if="showLoad" class="modal-bg">
-          <div class="modal">
-            <div class="modal-content">
-            </div>
-            <div class="modal-footer">
-              <button @click="showLoad = false">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </transition>
     </header>
     <transition-group :name="slideDirection" tag="div">\
       <div v-show="slide == 1" key="1">
@@ -67,6 +58,20 @@
         <spellbook id="spellbook"></spellbook>
       </div>
     </transition-group>
+    <transition name="fade">
+      <div v-if="modal" @click.self="modal = false" class="modal-bg">
+        <div class="modal">
+          <div class="modal-content">
+            <h3>{{search}}</h3>
+            <p class="subtitle">{{modal.type}}</p>
+            <p>{{modal.desc}}</p>
+          </div>
+          <div class="modal-footer">
+            <button @click="modal = false">Close</button>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

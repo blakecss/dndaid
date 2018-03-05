@@ -121,7 +121,7 @@ Vue.component('chips', {
     <form @submit.prevent="addChip()">\
       <input v-model="newChip" @blur="focused = false" @focus="focused = true" @input="changeSuggestions()" @keyup.down="focusDown()" @keyup.up="focusUp()" @keydown.enter.prevent="addChip()" ref="input" class="chip-input" type="text" placeholder="Add" />\
       <div v-show="focused" class="suggestions">\
-        <button v-for="(suggestion, index) in suggs" :class="[index+1 == focus ? \'hover\' : \'\']" @mousedown="addSuggestion(suggestion)">{{suggestion}}</button>\
+        <button v-for="(suggestion, index) in suggs" :class="index+1 == focus ? \'hover\' : \'\'" @mousedown="addSuggestion(suggestion)">{{suggestion}}</button>\
       </div>\
     </form>\
   </div>'

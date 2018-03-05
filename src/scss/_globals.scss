@@ -440,3 +440,38 @@ video.no-fullscreen {
     }
   }
 }
+
+%sidebar {
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+}
+
+.suggestions {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  top: 100%;
+  box-shadow: $shadow-2;
+  max-height: 206px;
+  overflow-y: scroll;
+  margin: 0;
+  li {
+    margin: 0;
+  }
+  button {
+    text-align: left;
+    padding: 8px 12px;
+    width: 100%;
+    border-radius: 0;
+    background-color: #fff;
+    color: $text-color;
+    box-shadow: none;
+    &:hover, &.hover {
+      background-color: #eee;
+    }
+  }
+}

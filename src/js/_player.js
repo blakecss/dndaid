@@ -254,10 +254,10 @@ Vue.component('player', {
     },
     filteredCantrips: function() {
       var cantrips = [];
-      for (var i = 0; i < Object.keys(jsonSpellData).length; i++) {
-        var s = Object.keys(jsonSpellData)[i];
-        if (jsonSpellData[s].level == 'Cantrip' && jsonSpellData[s].class.includes(this.c.klass)) {
-          cantrips.push(s);
+      for (var i = 0; i < jsonSpellData.length; i++) {
+        var s = jsonSpellData[i];
+        if (s.level == 'Cantrip' && s.class.includes(this.c.klass)) {
+          cantrips.push(s.name);
         }
       }
       return cantrips;
@@ -270,10 +270,10 @@ Vue.component('player', {
           maxLevel = i;
         }
       }
-      for (var i = 0; i < Object.keys(jsonSpellData).length; i++) {
-        var s = Object.keys(jsonSpellData)[i];
-        if (jsonSpellData[s].level.charAt(0) <= maxLevel && jsonSpellData[s].class.includes(this.c.klass)) {
-          spells.push(s + ' (' + jsonSpellData[s].level.charAt(0) + ')');
+      for (var i = 0; i < jsonSpellData.length; i++) {
+        var s = jsonSpellData[i];
+        if (s.level.charAt(0) <= maxLevel && s.class.includes(this.c.klass)) {
+          spells.push(s.name + ' (lvl ' + s.level.charAt(0) + ')');
         }
       }
       return spells;

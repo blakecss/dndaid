@@ -96,10 +96,13 @@ var mainVue = new Vue({
     showSearch: false,
     showMenu: false,
     search: '',
-    showLoad: false,
+    focus: 0,
+    suggestions: [],
     loadFile: '',
     slideDirection: 'slide-left',
-    characters: []
+    characters: [],
+    modal: false,
+    definitions: jsonDefinitionData.concat(jsonInventoryData)
   },
   computed: {
     saveData: function() {
@@ -146,10 +149,61 @@ var mainVue = new Vue({
         s.focus();
       }, 10);
     },
+    getSuggestions: function() {
+      this.suggestions = [];
+      for (var i = 0; i < this.definitions.length; i++) {
+        if (this.definitions[i].name.toLowerCase().includes(this.search)) {
+          this.suggestions.push({"o": this.definitions[i], "i": i});
+        }
+      }
+    },
     doSearch: function() {
       var s = this.search;
       if (/\d+d\d+/.test(s)) {
         this.search = roll(s);
+      }
+      else {
+        // for (var i = 0; i < defs.length; i++) {
+        //   this.modal = jsonDefinitionData[s];
+        // }
+      }
+    },
+    focusUp: function() {
+      this.focus--;
+      var cel = this.$el.querySelector('.search-bar .suggestions');
+      var el = this.$el.querySelector('.search-bar .suggestions li:nth-child(' + this.focus + ') button');
+      if (this.focus < 0) {
+        this.focus = this.suggestions.length;
+        setTimeout(function() {
+          cel.scrollTo(0, cel.scrollHeight - cel.offsetHeight);
+        }, 10);
+      }
+      if (this.focus == 0) {
+        // this.newChip = this.savedChip;
+      }
+      else {
+        // this.newChip = this.suggs[this.focus-1];
+        if (el && el.offsetTop < cel.scrollTop) {
+          cel.scrollTo(0, el.offsetTop);
+        }
+      }
+    },
+    focusDown: function() {
+      this.focus++;
+      var cel = this.$el.querySelector('.search-bar .suggestions');
+      var el = this.$el.querySelector('.search-bar .suggestions li:nth-child(' + this.focus + ') button');
+      if (this.focus > this.suggestions.length) {
+        this.focus = 0;
+        cel.scrollTo(0, 0);
+      }
+      if (this.focus == 0) {
+        // this.newChip = this.savedChip;
+      }
+      else {
+        // this.newChip = this.suggs[this.focus-1];
+        if (el && el.offsetTop + el.offsetHeight > cel.offsetHeight + cel.scrollTop) {
+          cel.scrollTo(0, (el.offsetTop + el.offsetHeight) - cel.offsetHeight);
+        }
       }
     },
     loadBtn: function() {

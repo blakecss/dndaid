@@ -28,7 +28,6 @@
     <path d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"/>
   </symbol>
 	<symbol id="checkmark" viewBox="0 0 24 24" rel="img">
-		<title>Checkmark</title>
 		<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
 	</symbol>
   <symbol id="menu" viewBox="0 0 24 24" rel="img">
@@ -40,7 +39,6 @@
     <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12.59L17.59 17 14 13.41 10.41 17 9 15.59 12.59 12 9 8.41 10.41 7 14 10.59 17.59 7 19 8.41 15.41 12 19 15.59z"/>
   </symbol>
 	<symbol id="close" viewBox="0 0 24 24" rel="img">
-		<title>Close</title>
 		<path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
 	</symbol>
   <symbol id="next" viewBox="0 0 24 24" rel="img">
