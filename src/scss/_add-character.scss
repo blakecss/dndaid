@@ -83,6 +83,7 @@
   margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   .creature-filter {
     width: auto;
     margin: 0;
@@ -92,6 +93,7 @@
     select {
       width: auto;
       font-size: rem(14);
+      margin: 0;
     }
   }
 }
@@ -145,6 +147,11 @@
     align-items: center;
   }
 }
+.player-create-start {
+  select, input {
+    margin-bottom: $input-margin * 2;
+  }
+}
 .inputs-recos {
   display: inline-flex;
   flex-direction: column;
@@ -164,9 +171,10 @@
   margin-top: 20px;
   .stat {
     padding: 0 10px 0 20px;
-  }
-  .subtitle {
-    margin-left: -9px;
+    .subtitle {
+      margin-left: -9px;
+      margin-bottom: 0;
+    }
   }
   .base {
     border-bottom: 0;

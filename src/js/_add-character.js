@@ -31,6 +31,12 @@ Vue.component('add-character', {
       return v >= 0 ? '+' + v : v;
     }
   },
+  created: function() {
+    document.body.classList.add('no-scroll');
+  },
+  destroyed: function() {
+    document.body.classList.remove('no-scroll');
+  },
   computed: {
     race: function() {
       var r = '';
@@ -120,7 +126,6 @@ Vue.component('add-character', {
           p -= 2;
         }
       }
-      console.log(p);
       return p;
     },
     addPlayerTraits: function() {
@@ -241,11 +246,6 @@ Vue.component('add-character', {
     }
   },
   watch: {
-    characterSelect: function(val) {
-      if (!val) {
-        this.addPlayerScreen = 1;
-      }
-    },
     addPlayerScreen: function(newVal, oldVal) {
       this.slideDirection = newVal > oldVal ? 'slide-right' : 'slide-left';
       if (newVal == 1) {
@@ -520,7 +520,7 @@ Vue.component('add-character', {
             <input type="submit" value="Create Creature" />\
           </div>\
         </form>\
-        <form @submit.prevent="addPlayerScreen = 2" class="col-xs-6 no-padding">\
+        <form @submit.prevent="addPlayerScreen = 2" class="col-xs-6 no-padding player-create-start">\
           <div class="modal-content">\
             <select v-model="addPlayerData.race" required>\
               <option value="" disabled>Race</option>\

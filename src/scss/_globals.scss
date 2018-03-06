@@ -69,6 +69,7 @@ p {
 
 b, strong {
   font-weight: $bold;
+  color: #000;
 }
 
 em, i {
@@ -474,4 +475,8 @@ video.no-fullscreen {
       background-color: #eee;
     }
   }
+}
+
+.no-scroll {
+  overflow-y: hidden;
 }

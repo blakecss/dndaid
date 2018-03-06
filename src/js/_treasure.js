@@ -625,7 +625,7 @@ function generateTreasure(lvl) {
   var coins = null;
   var treasure = null;
   if (lvl <= 4) {
-    coins = roll('6d6')*100 + ' CP\n' + roll('3d6')*100 + ' SP\n' + roll('2d6')*10 + ' GP';
+    coins = roll('6d6 * 100') + ' CP\n' + roll('3d6 * 100') + ' SP\n' + roll('2d6 * 10') + ' GP';
     treasure = roll([
       [1, 6, 'No Items'],
       [7, 16, function() {
@@ -816,7 +816,7 @@ function generateTreasure(lvl) {
     ]);
   }
   else if (lvl <= 10) {
-    coins = roll('2d6')*100 + ' CP\n' + roll('2d6')*1000 + ' SP\n' + roll('6d6')*100 + ' GP\n' + roll('3d6')*10 + ' PP';
+    coins = roll('2d6 * 100') + ' CP\n' + roll('2d6 * 1000') + ' SP\n' + roll('6d6 * 100') + ' GP\n' + roll('3d6 * 10') + ' PP';
     treasure = roll([
       [1, 4, 'No Items'],
       [5, 10, function() {
@@ -1142,7 +1142,7 @@ function generateTreasure(lvl) {
     ]);
   }
   else if (lvl <= 16) {
-    coins = roll('4d6')*1000 + ' GP\n' + roll('5d6')*100 + ' PP';
+    coins = roll('4d6 * 1000') + ' GP\n' + roll('5d6 * 100') + ' PP';
     treasure = roll([
       [1, 3, 'No Items'],
       [4, 6, function() {
@@ -1528,7 +1528,7 @@ function generateTreasure(lvl) {
     ]);
   }
   else {
-    coins = roll('12d6')*1000 + ' GP\n' + roll('8d6')*1000 + ' PP';
+    coins = roll('12d6 * 1000') + ' GP\n' + roll('8d6 * 1000') + ' PP';
     treasure = roll([
       [1, 2, 'No Items'],
       [3, 5, function() {
@@ -1845,5 +1845,5 @@ function generateTreasure(lvl) {
       }]
     ]);
   }
-  return coins + '\n' + treasure;
+  return coins + '<br>' + treasure;
 }

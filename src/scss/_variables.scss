@@ -20,8 +20,8 @@
   @return $pixels / $context * 1em;
 };
 
-$text-color: #333;
-$text-color-light: #999;
+$text-color: rgba(#000, 0.7);
+$text-color-light: rgba(#000, 0.4);
 
 $player: blue;
 $playerLight: lighten($player, 50%);

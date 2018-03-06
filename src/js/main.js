@@ -14,17 +14,6 @@ function roll(odds) {
   if (!isNaN(odds)) {
     return Math.floor(Math.random() * odds) + 1;
   }
-  // Dice
-  else if (/\d+d\d+/.test(odds)) {
-    return eval(odds.replace(/\d+d\d+/g, function(match) {
-      var d = match.split('d');
-      var r = 0;
-      for (var i = 0; i < Number(d[0]); i++) {
-        r += Math.floor(Math.random() * Number(d[1])) + 1;
-      }
-      return r;
-    }));
-  }
   // Dice Odds
   else if (Array.isArray(odds[0])) {
     var r = Math.floor(Math.random() * odds[odds.length - 1][1]) + 1;
@@ -38,6 +27,17 @@ function roll(odds) {
         }
       }
     }
+  }
+  // Dice
+  else if (/\d+d\d+/.test(odds)) {
+    return eval(odds.replace(/\d+d\d+/g, function(match) {
+      var d = match.split('d');
+      var r = 0;
+      for (var i = 0; i < Number(d[0]); i++) {
+        r += Math.floor(Math.random() * Number(d[1])) + 1;
+      }
+      return r;
+    }));
   }
   // Array
   else {
@@ -59,7 +59,7 @@ function itemize(arr) {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] != current) {
       if (cnt > 0) {
-        itemized += cnt + ' x ' + current + '\n';
+        itemized += cnt + ' x ' + current + '<br>';
       }
       current = arr[i];
       cnt = 1;
@@ -96,13 +96,15 @@ var mainVue = new Vue({
     showSearch: false,
     showMenu: false,
     search: '',
+    savedSearch: '',
     focus: 0,
+    focused: false,
     suggestions: [],
     loadFile: '',
     slideDirection: 'slide-left',
     characters: [],
     modal: false,
-    definitions: jsonDefinitionData.concat(jsonInventoryData)
+    definitions: jsonDefinitionData.concat(jsonInventoryData).concat(jsonSpellData)
   },
   computed: {
     saveData: function() {
@@ -120,6 +122,20 @@ var mainVue = new Vue({
       }
       else {
         this.slideDirection = 'slide-left';
+      }
+    },
+    showSearch: function(newVal) {
+      if (newVal == false) {
+        this.suggestions = [];
+        this.search = '';
+      }
+    },
+    modal: function(newVal) {
+      if (newVal) {
+        document.body.classList.add('no-scroll');
+      }
+      else {
+        document.body.classList.remove('no-scroll');
       }
     }
   },
@@ -143,6 +159,10 @@ var mainVue = new Vue({
   },
   methods: {
     searchBtn: function() {
+      if (this.showSearch) {
+        this.doSearch();
+        return;
+      }
       this.showSearch = true;
       var s = this.$refs.search;
       setTimeout(function() {
@@ -151,9 +171,14 @@ var mainVue = new Vue({
     },
     getSuggestions: function() {
       this.suggestions = [];
+      this.savedSearch = this.search;
+      this.focus = 0;
+      if (!this.search) {
+        return;
+      }
       for (var i = 0; i < this.definitions.length; i++) {
-        if (this.definitions[i].name.toLowerCase().includes(this.search)) {
-          this.suggestions.push({"o": this.definitions[i], "i": i});
+        if (this.definitions[i].name.toLowerCase().includes(this.search.toLowerCase())) {
+          this.suggestions.push(this.definitions[i]);
         }
       }
     },
@@ -162,11 +187,17 @@ var mainVue = new Vue({
       if (/\d+d\d+/.test(s)) {
         this.search = roll(s);
       }
-      else {
-        // for (var i = 0; i < defs.length; i++) {
-        //   this.modal = jsonDefinitionData[s];
-        // }
+      else if (this.focus) {
+        this.modal = this.suggestions[this.focus-1];
       }
+      else {
+        this.modal = this.suggestions[0];
+      }
+    },
+    suggestionClick: function(i) {
+      this.modal = this.suggestions[i];
+      this.search = this.suggestions[i].name;
+      this.focus = i + 1;
     },
     focusUp: function() {
       this.focus--;
@@ -179,10 +210,10 @@ var mainVue = new Vue({
         }, 10);
       }
       if (this.focus == 0) {
-        // this.newChip = this.savedChip;
+        this.search = this.savedSearch;
       }
       else {
-        // this.newChip = this.suggs[this.focus-1];
+        this.search = this.suggestions[this.focus-1].name;
         if (el && el.offsetTop < cel.scrollTop) {
           cel.scrollTo(0, el.offsetTop);
         }
@@ -197,10 +228,10 @@ var mainVue = new Vue({
         cel.scrollTo(0, 0);
       }
       if (this.focus == 0) {
-        // this.newChip = this.savedChip;
+        this.search = this.savedSearch;
       }
       else {
-        // this.newChip = this.suggs[this.focus-1];
+        this.search = this.suggestions[this.focus-1].name;
         if (el && el.offsetTop + el.offsetHeight > cel.offsetHeight + cel.scrollTop) {
           cel.scrollTo(0, (el.offsetTop + el.offsetHeight) - cel.offsetHeight);
         }
@@ -220,6 +251,13 @@ var mainVue = new Vue({
         c.showLoad = false;
       };
       reader.readAsText(f);
+    },
+    help: function() {
+      this.modal = {
+        "name": "",
+        "type": "",
+        "desc": "<h4>Dice Rolls</h4><p>You can type any dice roll into the search bar to roll it.<br /><i>Ex. 1d6, 2d20 + 5, 4d8 * 100</i></p>"
+      }
     }
   }
 });

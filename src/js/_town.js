@@ -1,3 +1,10 @@
+function generateName(race) {
+  if (!race) {
+    race = roll(Object.keys(jsonRaceData));
+  }
+  return race;
+}
+
 function generateInn(owner) {
   var name = null;
   var adjectives = [

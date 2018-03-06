@@ -86,30 +86,24 @@ Vue.component('spellbook', {
       </aside>\
       <main class="spells col-xl-8 col-xl-offset-1 col-md-9">\
         <div v-for="spell in filteredSpells">\
-          <div class="card spell-card">\
-            <div>\
-              <h3>{{spell.name}}</h3>\
-              <p class="subtitle">{{spell.level}} {{spell.school}} ({{spell.class}})</p>\
-            </div>\
-            <div>\
-              <span v-html="spell.desc"></span>\
-              <span v-if="spell.higher_level" class="higher-level" v-html="spell.higher_level"></span>\
-            </div>\
-            <div>\
-              <div class="row no-padding">\
-                <div class="col-sm-6">\
-                  <p><b>Casting Time: </b>{{spell.casting_time}}</p>\
-                  <p><b>Range: </b>{{spell.range}}</p>\
-                  <p><b>Ritual: </b>\
-                    <svg v-if="spell.ritual" class="yes"><title>Yes</title><use xlink:href="sprites.svg#checkmark"></use></svg>\
-                    <svg v-else class="no"><title>No</title><use xlink:href="sprites.svg#close"></use></svg>\
-                  </p>\
-                </div>\
-                <div class="col-sm-6">\
-                  <p><b>Duration: </b>{{spell.duration}}</p>\
-                  <p><b>Components: </b>{{spell.components}}</p>\
-                  <p v-if="spell.material"><b>Material: </b>{{spell.material}}</p>\
-                </div>\
+          <div class="card modal-spell">\
+            <h3 class="title">{{spell.name}}</h3>\
+            <p class="subtitle">{{spell.level}} {{spell.school}} ({{spell.class}})</p>\
+            <span v-html="spell.desc"></span>\
+            <span v-if="spell.higher_level" class="higher-level" v-html="spell.higher_level"></span>\
+            <div class="row no-padding">\
+              <div class="col-sm-6">\
+                <p><b>Casting Time: </b>{{spell.casting_time}}</p>\
+                <p><b>Range: </b>{{spell.range}}</p>\
+                <p><b>Ritual: </b>\
+                  <svg v-if="spell.ritual" class="yes"><title>Yes</title><use xlink:href="sprites.svg#checkmark"></use></svg>\
+                  <svg v-else class="no"><title>No</title><use xlink:href="sprites.svg#close"></use></svg>\
+                </p>\
+              </div>\
+              <div class="col-sm-6">\
+                <p><b>Duration: </b>{{spell.duration}}</p>\
+                <p><b>Components: </b>{{spell.components}}</p>\
+                <p v-if="spell.material"><b>Material: </b>{{spell.material}}</p>\
               </div>\
             </div>\
           </div>\

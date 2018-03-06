@@ -1393,7 +1393,7 @@ Vue.component('player', {
               <label>Spells Known (<span :class="c.spells.length > spellsKnown ? \'warning\' : \'\'">{{c.spells.length + \'/\' + spellsKnown}}</span>)</label>\
               <chips :chips="c.spells" :suggestions="filteredSpells"></chips>\
             </div>\
-            <div v-for="slot in [1, 2, 3, 4, 5, 6, 7, 8, 9]" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="col-xs-12">\
+            <div v-for="slot in [1, 2, 3, 4, 5, 6, 7, 8, 9]" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="input-group col-xs-12">\
               <label>Level {{slot}} Slots</label>\
               <input v-model="c.spellSlotsAvailable[\'level\' + slot + \'SlotsAvailable\']" type="range" min="0" :max="spellSlots[\'level\' + slot + \'Slots\']" step="1" />\
             </div>\
@@ -1445,14 +1445,14 @@ Vue.component('player', {
             </div>\
           </div>\
           <div class="row">\
-            <h4>Proficiencies</h4>\
             <div class="input-group col-xs-12">\
+              <label>Proficiencies</label>\
               <chips :chips="c.proficiencies"></chips>\
             </div>\
           </div>\
           <div class="row">\
-            <h4>Traits</h4>\
             <div class="input-group col-xs-12">\
+              <label>Traits</label>\
               <chips :chips="c.traits"></chips>\
             </div>\
           </div>\

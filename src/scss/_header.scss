@@ -102,7 +102,9 @@ header {
     padding: 8px 16px;
     height: auto;
     width: 100%;
+    background-color: #fff;
     cursor: pointer;
+    transition: 0.3s ease;
     &:hover {
       background-color: #eee;
     }
