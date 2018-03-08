@@ -1,3 +1,89 @@
+function isObject(grid, x, y) {
+  if (x < 0 || x >= grid.length) {
+    return true;
+  }
+  if (y < 0 || y >= grid[x].length) {
+    return true;
+  }
+  if (grid[x][y] > 0) {
+    return true;
+  }
+  return false;
+}
+
+function checkNeighbors(grid, x, y) {
+  var res = {'c': grid[x][y], 'n': 0, 'ne': 0, 'e': 0, 'se': 0, 's': 0, 'sw': 0, 'w': 0, 'nw': 0, 'numWalls': 0};
+  if (isObject(grid, x, y-1)) {
+    res.n = 1;
+  }
+  if (isObject(grid, x+1, y-1)) {
+    res.ne = 1;
+  }
+  if (isObject(grid, x+1, y)) {
+    res.e = 1;
+  }
+  if (isObject(grid, x+1, y+1)) {
+    res.se = 1;
+  }
+  if (isObject(grid, x, y+1)) {
+    res.s = 1;
+  }
+  if (isObject(grid, x-1, y+1)) {
+    res.sw = 1;
+  }
+  if (isObject(grid, x-1, y)) {
+    res.w = 1;
+  }
+  if (isObject(grid, x-1, y-1)) {
+    res.nw = 1;
+  }
+  res.numWalls = res.c + res.n + res.ne + res.e + res.se + res.s + res.sw + res.w + res.nw;
+  return res;
+}
+
+function printMap(grid) {
+  var output = '';
+  for (var x = 0; x < grid.length; x++) {
+    for (var y = 0; y < grid[x].length; y++) {
+      output += grid[x][y] > 0 ? '#' : '.';
+    }
+    output += '\n';
+  }
+  console.log(output);
+}
+
+function generateCave(x, y) {
+  var grid = new Array(y);
+  for (var i = 0; i < grid.length; i++) {
+    grid[i] = new Array(x);
+  }
+  for (var x = 0; x < grid.length; x++) {
+    for (var y = 0; y < grid[x].length; y++) {
+      grid[x][y] = roll(100) < 45 ? 1 : 0;
+    }
+  }
+  for (var i = 0; i < 5; i++) {
+    var oldGrid = grid;
+    for (var x = 0; x < grid.length; x++) {
+      for (var y = 0; y < grid[x].length; y++) {
+        if (checkNeighbors(oldGrid, x, y).numWalls >= 5) {
+          grid[x][y] = 1;
+        }
+        else {
+          grid[x][y] = 0;
+        }
+        // if (i == 4) {
+        // if (checkNeighbors(oldGrid, x, y).numWalls >= 5 || checkNeighbors(oldGrid, x, y).numWalls <= 1) {
+        //   grid[x][y] = 1;
+        // }
+        // }
+      }
+    }
+  }
+  printMap(grid);
+  return grid;
+}
+
 function generateTrick() {
   var o = roll([
     'Book',
