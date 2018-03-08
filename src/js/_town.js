@@ -1,8 +1,743 @@
-function generateName(race) {
+function generateName(sex, race) {
+  var fn = '';
+  var ln = '';
   if (!race) {
     race = roll(Object.keys(jsonRaceData));
   }
-  return race;
+  if (race == 'Dwarf') {
+    if (sex = 'f') {
+      fn = roll([
+        'Amber',
+        'Artin',
+        'Audhild',
+        'Bardryn',
+        'Dagnal',
+        'Diesa',
+        'Eldeth',
+        'Falkrunn',
+        'Finellen',
+        'Gunnloda',
+        'Gurdis',
+        'Helja',
+        'Hlin',
+        'Kathra',
+        'Kristryd',
+        'Ilde',
+        'Liftrasa',
+        'Mardred',
+        'Riswynn',
+        'Sannl',
+        'Torbera',
+        'Torgga',
+        'Vistra'
+      ]);
+    }
+    else {
+      fn = roll([
+        'Adrik',
+        'Alberich',
+        'Baern',
+        'Barendd',
+        'Brottor',
+        'Bruenor',
+        'Dain',
+        'Darrak',
+        'Delg',
+        'Eberk',
+        'Einkil',
+        'Fargrim',
+        'Flint',
+        'Gardain',
+        'Harbek',
+        'Kildrak',
+        'Morgran',
+        'Orsik',
+        'Oskar',
+        'Rangrim',
+        'Rurik',
+        'Taklinn',
+        'Thoradin',
+        'Thorin',
+        'Tordek',
+        'Traubon',
+        'Travok',
+        'Ulfgar',
+        'Veit',
+        'Vondal'
+      ]);
+    }
+    ln = roll([
+      'Balderk',
+      'Battlehammer',
+      'Brawnanvil',
+      'Dankil',
+      'Fireforge',
+      'Frostbeard',
+      'Gorunn',
+      'Holderhek',
+      'Ironfist',
+      'Loderr',
+      'Lutgehr',
+      'Rumnaheim',
+      'Strakeln',
+      'Torunn',
+      'Ungart'
+    ]);
+  }
+  else if (race == 'Elf') {
+    if (sex = 'f') {
+      fn = roll([
+        'Adrie',
+        'Althaea',
+        'Anastrianna',
+        'Andraste',
+        'Antinua',
+        'Bethrynna',
+        'Birel',
+        'Caelynn',
+        'Drusilia',
+        'Enna',
+        'Felosial',
+        'Ielenia',
+        'Jelenneth',
+        'Keyleth',
+        'Leshanna',
+        'Lia',
+        'Meriele',
+        'Mialee',
+        'Naivara',
+        'Quelenna',
+        'Quillathe',
+        'Sariel',
+        'Shanairra',
+        'Shava',
+        'Silaqui',
+        'Theirastra',
+        'Thia',
+        'Vadania',
+        'Valanthe',
+        'Xanaphia'
+      ]);
+    }
+    else {
+      fn = roll([
+        'Adran',
+        'Aelar',
+        'Aramil',
+        'Arannis',
+        'Aust',
+        'Beiro',
+        'Berrian',
+        'Carric ',
+        'Enialis',
+        'Erdan',
+        'Erevan',
+        'Galinndan',
+        'Hadarai',
+        'Heian',
+        'Himo',
+        'Immeral',
+        'Ivellios',
+        'Laucian',
+        'Mindartis',
+        'Paelias',
+        'Peren',
+        'Quarion',
+        'Riardon',
+        'Rolen',
+        'Soveliss',
+        'Thamior',
+        'Tharivol',
+        'Theren',
+        'Varis'
+      ]);
+    }
+    ln = roll([
+      'Amakiir',
+      'Amastacia',
+      'Galanodel',
+      'Holimion',
+      'Ilphelkiir',
+      'Liadon',
+      'Meliamne',
+      'Nai\'lo',
+      'Siannodel',
+      'Xiloscient'
+    ]);
+  }
+  else if (race == 'Halfling') {
+    if (sex = 'f') {
+      fn = roll([
+        'Andry',
+        'Bree',
+        'Callie',
+        'Cora',
+        'Euphemia',
+        'Jillian',
+        'Kithri',
+        'Lavinia',
+        'Lidda',
+        'Merla',
+        'Nedda',
+        'Paela',
+        'Portia',
+        'Seraphina',
+        'Shaena',
+        'Trym',
+        'Vani',
+        'Verna'
+      ]);
+    }
+    else {
+      fn = roll([
+        'Alton',
+        'Ander',
+        'Cade',
+        'Corrin',
+        'Eldon',
+        'Errich',
+        'Finnan',
+        'Garret',
+        'Lindal',
+        'Lyle',
+        'Merric',
+        'Milo',
+        'Osborn',
+        'Perrin',
+        'Reed',
+        'Roscoe',
+        'Wellby'
+      ]);
+    }
+    ln = roll([
+      'Brushgather',
+      'Goodbarrel',
+      'Greenbottle',
+      'High-hill',
+      'Hilltopple',
+      'Leagallow',
+      'Tealeaf',
+      'Thorngage',
+      'Tosscobble',
+      'Underbough'
+    ]);
+  }
+  else if (race == 'Dragonborn') {
+    if (sex = 'f') {
+      fn = roll([
+        'Akra',
+        'Biri',
+        'Daar',
+        'Farideh',
+        'Harann',
+        'Flavilar',
+        'Jheri',
+        'Kava',
+        'Korinn',
+        'Mishann',
+        'Nala',
+        'Perra',
+        'Raiann',
+        'Sora',
+        'Surina',
+        'Thava',
+        'Uadjit'
+      ]);
+    }
+    else {
+      fn = roll([
+        'Arjhan',
+        'Balasar',
+        'Bharash',
+        'Donaar',
+        'Ghesh. Heskan',
+        'Kriv',
+        'Medrash',
+        'Mehen',
+        'Nadarr',
+        'Pandjed',
+        'Patrin',
+        'Rhogar',
+        'Shamash',
+        'Shedinn',
+        'Tarhun',
+        'Torinn'
+      ]);
+    }
+    ln = roll([
+      'Clethtinthiallor',
+      'Daardendrian',
+      'Delmirev',
+      'Drachedandion',
+      'Fenkenkabradon',
+      'Kepeshkmolik',
+      'Kerrhylon',
+      'Kimbatuul',
+      'Linxakasendalor',
+      'Myastan',
+      'Nemmonis',
+      'Norixius',
+      'Ophinshtalajiir',
+      'Prexijandilin',
+      'Shestendeliath',
+      'Turnuroth',
+      'Verthisathurgiesh',
+      'Yarjerit'
+    ]);
+  }
+  else if (race == 'Gnome') {
+    if (sex = 'f') {
+      fn = roll([
+        'Bimpnottin',
+        'Breena',
+        'Caramip',
+        'Carlin',
+        'Donella',
+        'Duvamil',
+        'Ella',
+        'Ellyjobell',
+        'Ellywick',
+        'Lilli',
+        'Loopmottin',
+        'Lorilla',
+        'Mardnab',
+        'Nissa',
+        'Nyx',
+        'Oda',
+        'Orla',
+        'Roywyn',
+        'Shamil',
+        'Tana',
+        'Waywocket',
+        'Zanna',
+        // Nicknames
+        'Aleslosh',
+        'Ashhearth',
+        'Badger',
+        'Cloak',
+        'Doublelock',
+        'Filchbatter',
+        'Fnipper',
+        'Ku',
+        'Nim',
+        'Oneshoe',
+        'Pock',
+        'Sparklegem',
+        'Stumbleduck'
+      ]);
+    }
+    else {
+      fn = roll([
+        'Alston',
+        'Alvyn',
+        'Boddynock',
+        'Brocc',
+        'Burgell',
+        'Dimble',
+        'Eldon',
+        'Erky',
+        'Fonkin',
+        'Frug',
+        'Gerbo',
+        'Gimble',
+        'Glim',
+        'Jebeddo',
+        'Kellen',
+        'Namfoodle',
+        'Orryn',
+        'Roondar',
+        'Seebo',
+        'Sindri',
+        'Warryn',
+        'Wrenn',
+        'Zook',
+        // Nicknames
+        'Aleslosh',
+        'Ashhearth',
+        'Badger',
+        'Cloak',
+        'Doublelock',
+        'Filchbatter',
+        'Fnipper',
+        'Ku',
+        'Nim',
+        'Oneshoe',
+        'Pock',
+        'Sparklegem',
+        'Stumbleduck'
+      ]);
+    }
+    ln = roll([
+      'Beren',
+      'Daergel',
+      'Folkor',
+      'Garrick',
+      'Nackle',
+      'Murnig',
+      'Ningel',
+      'Raulnor',
+      'Scheppen',
+      'Timbers',
+      'Turen'
+    ]);
+  }
+  else if (race == 'Orc') {
+    if (sex = 'f') {
+      fn = roll([
+        'Baggi',
+        'Emen',
+        'Engong',
+        'Kansif',
+        'Myev',
+        'Neega',
+        'Ovak',
+        'Ownka',
+        'Shautha',
+        'Sutha',
+        'Vola',
+        'Volen',
+        'Yevelda'
+      ]);
+    }
+    else {
+      fn = roll([
+        'Dench',
+        'Feng',
+        'Gell',
+        'Henk',
+        'Holg',
+        'Imsh',
+        'Keth',
+        'Krusk',
+        'Mhurren',
+        'Ront',
+        'Shump',
+        'Thokk'
+      ]);
+    }
+  }
+  else if (race == 'Tiefling') {
+    if (sex = 'f') {
+      fn = roll([
+        'Akta',
+        'Anakis',
+        'Bryseis',
+        'Criella',
+        'Damaia',
+        'Ea',
+        'Kallista',
+        'Lerissa',
+        'Makaria',
+        'Nemeia',
+        'Orianna',
+        'Phelaia',
+        'Rieta',
+        // Virtue names
+        'Art',
+        'Carrion',
+        'Chant',
+        'Creed',
+        'Despair',
+        'Excellence',
+        'Fear',
+        'Glory',
+        'Hope',
+        'Ideal',
+        'Music',
+        'Nowhere',
+        'Open',
+        'Poetry',
+        'Quest',
+        'Random',
+        'Reverence',
+        'Sorrow',
+        'Temerity',
+        'Torment',
+        'Weary'
+      ]);
+    }
+    else {
+      fn = roll([
+        'Akmenos',
+        'Amnon',
+        'Barakas',
+        'Damakos',
+        'Ekemon',
+        'Iados',
+        'Kairon',
+        'Leucis',
+        'Melech',
+        'Mordai',
+        'Morthos',
+        'Pelaios',
+        'Skamos',
+        'Therai',
+        // Virtue names
+        'Art',
+        'Carrion',
+        'Chant',
+        'Creed',
+        'Despair',
+        'Excellence',
+        'Fear',
+        'Glory',
+        'Hope',
+        'Ideal',
+        'Music',
+        'Nowhere',
+        'Open',
+        'Poetry',
+        'Quest',
+        'Random',
+        'Reverence',
+        'Sorrow',
+        'Temerity',
+        'Torment',
+        'Weary'
+      ]);
+    }
+  }
+  else { // Human
+    if (sex = 'f') {
+      fn = roll([
+        // Calishite
+        'Atala',
+        'Ceidil',
+        'Hama',
+        'Jasmal',
+        'Meilil',
+        'Seipora',
+        'Yasheira',
+        'Zasheida',
+        // Chondathan & Tethyrian
+        'Arveene',
+        'Esvele',
+        'Jhessail',
+        'Kerri',
+        'Lureene',
+        'Miri',
+        'Rowan',
+        'Shandri',
+        'Tessele',
+        // Damaran
+        'Alethra',
+        'Kara',
+        'Katernin',
+        'Mara',
+        'Natali',
+        'Olma',
+        'Tana',
+        'Zora',
+        // Illuskan
+        'Amafrey',
+        'Betha',
+        'Cefrey',
+        'Kethra',
+        'Mara',
+        'Olga',
+        'Silifrey',
+        'Westra',
+        // Mulan
+        'Arizima',
+        'Chathi',
+        'Nephis',
+        'Nulara',
+        'Murithi',
+        'Sefris',
+        'Thola',
+        'Umara',
+        'Zolis',
+        // Rashemi
+        'Fyevarra',
+        'Hulmarra',
+        'Immith',
+        'Imzel',
+        'Navarra',
+        'Shevarra',
+        'Tammith',
+        'Yuldra',
+        // Shou
+        'Bai',
+        'Chao',
+        'Jia',
+        'Lei',
+        'Mei',
+        'Qiao',
+        'Shui',
+        'Tai',
+        // Turami
+        'Balama',
+        'Dona',
+        'Faila',
+        'Jalana',
+        'Luisa',
+        'Marta',
+        'Quara',
+        'Selise',
+        'Vonda'
+      ]);
+    }
+    else {
+      fn = roll([
+        // Calishite
+        'Aseir',
+        'Bardeid',
+        'Haseid',
+        'Khemed',
+        'Mehmen',
+        'Sudeiman',
+        'Zasheir',
+        // Chondathan & Tethyrian
+        'Darvin',
+        'Dorn',
+        'Evendur',
+        'Gorstag',
+        'Grim',
+        'Helm',
+        'Malark',
+        'Morn',
+        'Randal',
+        'Stedd',
+        // Damaran
+        'Bor',
+        'Fodel',
+        'Glar',
+        'Grigor',
+        'Igan',
+        'Ivor',
+        'Kosef',
+        'Mival',
+        'Orel',
+        'Pavel',
+        'Sergor',
+        // Illuskan
+        'Ander',
+        'Blath',
+        'Bran',
+        'Frath',
+        'Geth',
+        'Lander',
+        'Luth',
+        'Malcer',
+        'Stor',
+        'Taman',
+        'Urth',
+        // Mulan
+        'Aoth',
+        'Bareris',
+        'Ehput-Ki',
+        'Kethoth',
+        'Mumed',
+        'Ramas',
+        'So-Kehur',
+        'Thazar-De',
+        'Urhur',
+        // Rashemi
+        'Borivik',
+        'Faurgar',
+        'Jandar',
+        'Kanithar',
+        'Madislak',
+        'Ralmevik',
+        'Shaumar',
+        'Vladislak',
+        // Shou
+        'An',
+        'Chen',
+        'Chi',
+        'Fai',
+        'Jiang',
+        'Jun',
+        'Lian',
+        'Long',
+        'Meng',
+        'On',
+        'Shan',
+        'Shui',
+        'Wen',
+        // Turami
+        'Anton',
+        'Diero',
+        'Marcon',
+        'Pieron',
+        'Rimardo',
+        'Romero',
+        'Salazar',
+        'Umbero'
+      ]);
+    }
+    ln = roll([
+      // Calishite
+      'Basha',
+      'Dumein',
+      'Jassan',
+      'Khalid',
+      'Mostana',
+      'Pashar',
+      'Rein',
+      // Chondathan & Tethyrian
+      'Amblecrown',
+      'Buckman',
+      'Dundragon',
+      'Evenwood',
+      'Greycastle',
+      'Tallstag',
+      // Damaran
+      'Bersk',
+      'Chernin',
+      'Dotsk',
+      'Kulenov',
+      'Marsk',
+      'Nemetsk',
+      'Shemov',
+      'Starag',
+      // Illuskan
+      'Brightwood',
+      'Helder',
+      'Hornraven',
+      'Lackman',
+      'Stormwind',
+      'Windrivver',
+      // Mulan
+      'Ankhalab',
+      'Anskuld',
+      'Fezim',
+      'Hahpet',
+      'Nathandem',
+      'Sepret',
+      'Uuthrakt',
+      // Rashemi
+      'Chergoba',
+      'Dyernina',
+      'Iltazyara',
+      'Murnyethara',
+      'Stayanoga',
+      'Ulmokina',
+      // Shou
+      'Chien',
+      'Huang',
+      'Kao',
+      'Kung',
+      'Lao',
+      'Ling',
+      'Mei',
+      'Pin',
+      'Shin',
+      'Sum',
+      'Tan',
+      'Wan',
+      // Turami
+      'Agosto',
+      'Astorio',
+      'Calabra',
+      'Domine',
+      'Falone',
+      'Marivaldi',
+      'Pisacar',
+      'Ramondo'
+    ]);
+  }
+  return fn + ln ? '' + ln : '';
 }
 
 function generateInn(owner) {
