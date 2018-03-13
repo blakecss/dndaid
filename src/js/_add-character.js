@@ -411,7 +411,7 @@ Vue.component('add-character', {
           race: c.type,
           alignment: c.alignment,
           size: c.size,
-          languages: c.languages.split(','),
+          languages: c.languages ? c.languages.split(',') : [],
           notes: '',
           speed: c.speed,
           showCombat: true,

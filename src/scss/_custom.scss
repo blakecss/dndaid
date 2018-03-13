@@ -59,7 +59,12 @@
     margin-bottom: 0;
   }
   .subtitle {
-    margin-bottom: $default-margin;
+    margin-bottom: $default-margin * 2;
+  }
+}
+.modal-search {
+  h4 {
+    margin-top: $default-margin * 2;
   }
 }
 .modal-spell {

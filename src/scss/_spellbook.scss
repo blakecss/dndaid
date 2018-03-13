@@ -19,6 +19,9 @@
 .spell-filters {
   @extend %card;
   margin-top: $grid-padding * 2;
+  & > div {
+    margin-bottom: 20px;
+  }
   ul {
     list-style: none;
     margin-left: 0;
@@ -34,5 +37,24 @@
   }
   input, label {
     cursor: pointer;
+  }
+  input[type=text] {
+    padding-right: 24px;
+  }
+  button {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    padding: 4px;
+    background-color: transparent;
+    box-shadow: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $text-color;
+    }
   }
 }

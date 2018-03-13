@@ -16,6 +16,7 @@ Vue.component('spellbook', {
       schoolData: jsonSpellData.map(function(v) {
         return v.school;
       }).unique().sort(),
+      filterName: '',
       filterClass: [],
       filterLevel: [],
       filterSchool: []
@@ -31,20 +32,48 @@ Vue.component('spellbook', {
     filteredSpells: function() {
       var t = this;
       return jsonSpellData.filter(function(v) {
+        var matchedName = false;
+        var matchedClass = false;
+        var matchedLevel = false;
+        var matchedSchool = false;
+        if (t.filterName) {
+          if (v.name.toLowerCase().includes(t.filterName.toLowerCase())) {
+            matchedName = true;
+          }
+        }
+        else {
+          matchedName = true;
+        }
         if (t.filterClass.length) {
           for (var i = 0; i < t.filterClass.length; i++) {
             if (v.class.includes(t.filterClass[i])) {
-              return true;
+              matchedClass = true;
             }
           }
         }
-        if (t.filterLevel.length && t.filterLevel.includes(v.level)) {
+        else {
+          matchedClass = true;
+        }
+        if (t.filterLevel.length) {
+          if (t.filterLevel.includes(v.level)) {
+            matchedLevel = true;
+          }
+        }
+        else {
+          matchedLevel = true;
+        }
+        if (t.filterSchool.length) {
+          if (t.filterSchool.includes(v.school)) {
+            matchedSchool = true;
+          }
+        }
+        else {
+          matchedSchool = true;
+        }
+        if (matchedName && matchedClass && matchedLevel && matchedSchool) {
           return true;
         }
-        if (t.filterSchool.length && t.filterSchool.includes(v.school)) {
-          return true;
-        }
-        if (t.filterClass.length || t.filterLevel.length || t.filterSchool.length) {
+        if (t.filterName || t.filterClass.length || t.filterLevel.length || t.filterSchool.length) {
           return false;
         }
         return true;
@@ -55,6 +84,15 @@ Vue.component('spellbook', {
     <div class="container row">\
       <aside class="col-md-3">\
         <div class="spell-filters">\
+          <div>\
+            <h4>Filter</h4>\
+            <div class="input-group">\
+              <input v-model="filterName" type="text" />\
+              <transition name="fade">\
+                <button v-if="filterName" @click="filterName = \'\'"><svg><use xlink:href="sprites.svg#clear"></use>></use></svg></button>\
+              </transition>\
+            </div>\
+          </div>\
           <div>\
             <h4>Class</h4>\
             <ul>\

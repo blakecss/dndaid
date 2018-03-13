@@ -142,186 +142,223 @@ var jsonDefinitionData = [
   {
     "name": "Darkvision",
     "type": "Trait",
+    "subtype": "Dwarf, Elf, Half-Elf, Half-Orc, and Tiefling",
     "desc": "<p>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</p>"
   },
   {
     "name": "Dwarven Resilience",
     "type": "Trait",
+    "subtype": "Dwarf",
     "desc": "<p>You have advantage on saving throws against poison, and you have resistance against poison damage.</p>"
   },
   {
     "name": "Dwarven Combat Training",
     "type": "Trait",
+    "subtype": "Dwarf",
     "desc": "<p>You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.</p>"
   },
   {
     "name": "Tool Proficiency",
     "type": "Trait",
+    "subtype": "Dwarf",
     "desc": "<p>You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.</p>"
   },
   {
     "name": "Stonecunning",
     "type": "Trait",
+    "subtype": "Dwarf",
     "desc": "<p>Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>"
   },
   {
     "name": "Dwarven Toughness",
     "type": "Trait",
+    "subtype": "Hill Dwarf",
     "desc": "<p>Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.</p>"
   },
   {
     "name": "Dwarven Armor Training",
     "type": "Trait",
+    "subtype": "Mountain Dwarf",
     "desc": "<p>You have proficiency with light and medium armor.</p>"
   },
   {
     "name": "Keen Senses",
     "type": "Trait",
+    "subtype": "Elf",
     "desc": "<p>You have proficiency in the Perception skill.</p>"
   },
   {
     "name": "Fey Ancestry",
     "type": "Trait",
-    "desc": "<p>You have advantage on saviog throws against being charmed, and magic can't put you to sleep.</p>"
+    "subtype": "Elf and Half-Elf",
+    "desc": "<p>You have advantage on saving throws against being charmed, and magic can't put you to sleep.</p>"
   },
   {
     "name": "Trance",
     "type": "Trait",
+    "subtype": "Elf",
     "desc": "<p>Elves don't need to sleep. Inslead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.</p>"
   },
   {
     "name": "Elf Weapon Training",
     "type": "Trait",
+    "subtype": "High Elf and Wood Elf",
     "desc": "<p>You have proficiency with the longsword, shortsword, shortbox, and longbow.</p>"
   },
   {
     "name": "Cantrip",
     "type": "Trait",
+    "subtype": "High Elf",
     "desc": "<p>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</p>"
   },
   {
     "name": "Fleet of Foot",
     "type": "Trait",
+    "subtype": "Wood Elf",
     "desc": "<p>Your base walking speed increases to 35 feet.</p>"
   },
   {
     "name": "Mask of the Wild",
+    "subtype": "Wood Elf",
     "type": "Trait",
     "desc": "<p>You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.</p>"
   },
   {
     "name": "Superior Darkvision",
     "type": "Trait",
+    "subtype": "Dark Elf",
     "desc": "<p>Your darkvision has a radius of 120 feet.</p>"
   },
   {
     "name": "Sunlight Sensitivity",
     "type": "Trait",
+    "subtype": "Dark Elf",
     "desc": "<p>You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</p>"
   },
   {
     "name": "Drow Magic",
     "type": "Trait",
+    "subtype": "Dark Elf",
     "desc": "<p>You know the <i>dancing lights</i> cantrip. When you reach 3rd level, you can cast the <i>faerie fire</i> spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.</p>"
   },
   {
     "name": "Drow Weapon Training",
     "type": "Trait",
+    "subtype": "Dark Elf",
     "desc": "<p>You have proficiency with rapiers, shortswords, and hand crossbows.</p>"
   },
   {
     "name": "Lucky",
     "type": "Trait",
+    "subtype": "Halfling",
     "desc": "<p>When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p>"
   },
   {
     "name": "Brave",
     "type": "Trait",
+    "subtype": "Halfling",
     "desc": "<p>You have advantage on saving throws against being frightened.</p>"
   },
   {
     "name": "Halfling Nimbleness",
     "type": "Trait",
+    "subtype": "Halfling",
     "desc": "<p>You can move through the space of any creature that is of a size larger than yours.</p>"
   },
   {
     "name": "Naturally Stealthy",
     "type": "Trait",
+    "subtype": "Lightfoot Halfling",
     "desc": "<p>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</p>"
   },
   {
     "name": "Stout Resilience",
     "type": "Trait",
+    "subtype": "Stout Halfling",
     "desc": "<p>You have advantage on saving throws against poison, and you have resistance against poison damage.</p>"
   },
   {
     "name": "Draconic Ancestry",
     "type": "Trait",
+    "subtype": "Dragonborn",
     "desc": "<p>You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.</p>"
   },
   {
     "name": "Breath Weapon",
     "type": "Trait",
+    "subtype": "Dragonborn",
     "desc": "<p>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.<br><br>When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level. 4d6 at 11th level, and 5d6 at 16th level.<br><br>After you use your breath weapon, you can't use it again until you complete a short or long rest.</p>"
   },
   {
     "name": "Damage Resistance",
     "type": "Trait",
+    "subtype": "Dragonborn",
     "desc": "<p>You have resistance to the damage type associated with your draconic ancestry.</p>"
   },
   {
     "name": "Gnome Cunning",
     "type": "Trait",
+    "subtype": "Gnome",
     "desc": "<p>You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.</p>"
   },
   {
     "name": "Natural Illusionist",
     "type": "Trait",
+    "subtype": "Forest Gnome",
     "desc": "<p>You know the <i>minor illusion</i> cantrip. Intelligence is your spellcasting ability for it.</p>"
   },
   {
     "name": "Speak with Small Beasts",
     "type": "Trait",
+    "subtype": "Forest Gnome",
     "desc": "<p>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.</p>"
   },
   {
     "name": "Artificer's Lore",
     "type": "Trait",
+    "subtype": "Rock Gnome",
     "desc": "<p>Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.</p>"
   },
   {
     "name": "Tinker",
     "type": "Trait",
+    "subtype": "Rock Gnome",
     "desc": "<p>You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.<br><br>When you create a device, choose one of the following options:<br><br><i>Clockwork Toy</i>: This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.<br><br><i>Fire Starter</i>: The device produces a miniature flame, which you can use to light a candle, torch, ar campfire. Using the device requires your action.<br><br><i>Music Box</i>: When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed.</p>"
   },
   {
     "name": "Skill Versatility",
     "type": "Trait",
+    "subtype": "Half-Elf",
     "desc": "<p>You gain proficiency in two skills of your choice.</p>"
   },
   {
     "name": "Menacing",
     "type": "Trait",
+    "subtype": "Half-Orc",
     "desc": "<p>You gain proficiency in the Intimidation skill.</p>"
   },
   {
     "name": "Relentless Endurance",
     "type": "Trait",
+    "subtype": "Half-Orc",
     "desc": "<p>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.</p>"
   },
   {
     "name": "Savage Attacks",
     "type": "Trait",
+    "subtype": "Half-Orc",
     "desc": "<p>When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit.</p>"
   },
   {
     "name": "Hellish Resistance",
     "type": "Trait",
+    "subtype": "Tiefling",
     "desc": "<p>You have resistance to fire damage.</p>"
   },
   {
     "name": "Infernal Legacy",
     "type": "Trait",
+    "subtype": "Tiefling",
     "desc": "<p>You know the <i>thaumaturgy</i> cantrip. Once you reach 3rd level, you can cast the <i>hellish rebuke</i> spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the <i>darkness</i> spell once per day. Charisma is your spellcasting ability for these spells."
   },
   {

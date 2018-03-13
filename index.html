@@ -21,7 +21,7 @@
               <div class="search-bar" v-show="showSearch">
                 <input v-model="search" @input="getSuggestions()" @keyup.down="focusDown()" @keyup.up="focusUp()" ref="search" type="text" placeholder="Search or Roll" />
                 <ul v-show="suggestions.length" class="suggestions">
-                  <li v-for="(suggestion, index) in suggestions"><button :class="index+1 == focus ? 'hover' : ''" @click.prevent="suggestionClick(index)">{{suggestion.name}}</button></li>
+                  <li v-for="(suggestion, index) in suggestions"><button :class="index+1 == focus ? 'hover' : ''" @click.prevent="suggestionClick(index)"><small>{{suggestion.type}}</small>{{suggestion.name}}</button></li>
                 </ul>
                 <button class="search-close" @click.prevent="showSearch = false"><svg><use xlink:href="sprites.svg#close"></use></svg></button>
               </div>
@@ -60,7 +60,7 @@
     </transition-group>
     <transition name="fade">
       <div v-if="modal" @click.self="modal = false" class="modal-bg">
-        <div :class="'modal modal-' + modal.type.toLowerCase()">
+        <div :class="'modal modal-search modal-' + modal.type.toLowerCase()">
           <div class="modal-content">
             <template v-if="modal.type == 'Spell'">
               <h3 class="title">{{modal.name}}</h3>
@@ -84,7 +84,7 @@
                 </div>
               </div>
             </template>
-            <template v-else-if="modal.type == 'Weapon'">
+            <template v-else-if="modal.type == 'Weapon' && modal.rarity == 'Common'">
               <h3 class="title">{{modal.name}}</h3>
               <p class="subtitle">{{modal.type}} ({{modal.subtype}})</p>
               <span v-html="modal.desc"></span>
@@ -99,7 +99,7 @@
               <p><b>Cost: </b>{{modal.cost}}</p>
               <p><b>Weight: </b>{{modal.weight}}</p>
             </template>
-            <template v-else-if="modal.type == 'Armor'">
+            <template v-else-if="modal.type == 'Armor' && modal.rarity == 'Common'">
               <h3 class="title">{{modal.name}}</h3>
               <p class="subtitle">{{modal.type}} ({{modal.subtype}})</p>
               <span v-html="modal.desc"></span>
@@ -115,12 +115,17 @@
               <p><b>Cost: </b>{{modal.cost}}</p>
               <p><b>Weight: </b>{{modal.weight}}</p>
             </template>
-            <template v-else>
+            <template v-else-if="modal.type == 'Item'">
               <h3 class="title">{{modal.name}}</h3>
               <p class="subtitle">{{modal.type}}{{modal.subtype ? ' (' + modal.subtype + ')' : ''}}</p>
               <span v-html="modal.desc"></span>
               <p v-if="modal.cost"><b>Cost: </b>{{modal.cost}}</p>
               <p v-if="modal.weight"><b>Weight: </b>{{modal.weight}}</p>
+            </template>
+            <template v-else>
+              <h3 class="title">{{modal.name}}</h3>
+              <p class="subtitle">{{modal.type}}{{modal.subtype ? ' (' + modal.subtype + ')' : ''}}</p>
+              <span v-html="modal.desc"></span>
             </template>
           </div>
           <div class="modal-footer">

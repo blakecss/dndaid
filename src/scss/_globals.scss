@@ -465,7 +465,7 @@ video.no-fullscreen {
   }
   button {
     text-align: left;
-    padding: 8px 12px;
+    padding: 6px 12px;
     width: 100%;
     border-radius: 0;
     background-color: #fff;
@@ -473,6 +473,13 @@ video.no-fullscreen {
     box-shadow: none;
     &:hover, &.hover {
       background-color: #eee;
+    }
+    small {
+      display: block;
+      font-size: rem(10);
+      line-height: 1.2em;
+      margin-top: 3px;
+      color: $text-color-light;
     }
   }
 }
