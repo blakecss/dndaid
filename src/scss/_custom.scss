@@ -57,14 +57,35 @@
   overflow-y: scroll;
   .title {
     margin-bottom: 0;
+    margin-top: 0;
+    font-size: rem(20);
+    border: 0;
   }
   .subtitle {
     margin-bottom: $default-margin * 2;
   }
 }
 .modal-search {
+  h3 {
+    margin-top: $default-margin * 4;
+    margin-bottom: $default-margin / 2;
+    font-size: rem(24);
+    border-bottom: 1px solid $border-color;
+  }
   h4 {
+    font-size: rem(20);
+    margin-top: $default-margin * 3;
+    margin-bottom: $default-margin / 2;
+  }
+  h5 {
     margin-top: $default-margin * 2;
+    margin-bottom: 0;
+  }
+  ul {
+    margin-top: -8px;
+    li {
+      margin-bottom: 4px;
+    }
   }
 }
 .modal-spell {

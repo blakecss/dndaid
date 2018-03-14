@@ -20,7 +20,8 @@
   @return $pixels / $context * 1em;
 };
 
-$text-color: rgba(#000, 0.7);
+$text-color: rgba(#000, 0.75);
+$text-color-dark: rgba(#000, 0.85);
 $text-color-light: rgba(#000, 0.4);
 
 $player: blue;
@@ -53,7 +54,7 @@ $light: 300;
 $normal: 400;
 $bold: 700;
 
-$default-margin: 12px;
+$default-margin: 8px;
 $button-padding: 8px;
 $border-radius: 2px;
 $input-padding: 0;
