@@ -299,28 +299,21 @@ table {
   display: inline-block;
 }
 
+caption {
+  @extend .h5;
+  padding: 0;
+}
+
 th {
   font-weight: $bold;
 }
 
-caption, td, th {
+td, th {
+  font-size: rem(12);
   padding: 4px 8px;
 }
 
-caption {
-  @extend .h5;
-  padding-bottom: 0;
-}
-
-td, th {
-  font-size: rem(12);
-}
-
-tr:nth-child(even) td {
-  background-color: #eee;
-}
-
-caption ~ tr:nth-child(odd) td {
+tbody tr:nth-child(odd) td {
   background-color: #eee;
 }
 
