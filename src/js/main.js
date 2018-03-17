@@ -157,6 +157,16 @@ var mainVue = new Vue({
       }
     });
   },
+  updated: function() {
+    if (this.modal && this.modal.name != this.modal.searchName) {
+      var hs = document.querySelectorAll('.modal-content h3, .modal-content h4');
+      for (var i = 0; i < hs.length; i++) {
+        if (hs[i].innerHTML == this.modal.searchName) {
+          hs[i].scrollIntoView();
+        }
+      }
+    }
+  },
   methods: {
     searchBtn: function() {
       if (this.showSearch) {
@@ -176,9 +186,34 @@ var mainVue = new Vue({
       if (!this.search) {
         return;
       }
+      var search = this.search.toLowerCase();
       for (var i = 0; i < this.definitions.length; i++) {
-        if (this.definitions[i].name.toLowerCase().includes(this.search.toLowerCase())) {
-          this.suggestions.push(this.definitions[i]);
+        var def = this.definitions[i];
+        if (def.name.toLowerCase().includes(search)) {
+          var d = Vue.util.extend({}, def);
+          d.searchName = d.name;
+          d.searchType = d.type;
+          if (def.name.toLowerCase() == search) {
+            this.suggestions.unshift(d);
+          }
+          else {
+            this.suggestions.push(d);
+          }
+        }
+        if (def.sections && def.sections.join(',').toLowerCase().includes(search)) {
+          for (var ii = 0; ii < def.sections.length; ii++) {
+            if (def.sections[ii].toLowerCase().includes(search)) {
+              var d = Vue.util.extend({}, def);
+              d.searchName = d.sections[ii];
+              d.searchType = d.name;
+              if (def.sections[ii].toLowerCase() == search) {
+                this.suggestions.unshift(d);
+              }
+              else {
+                this.suggestions.push(d);
+              }
+            }
+          }
         }
       }
     },
@@ -196,7 +231,7 @@ var mainVue = new Vue({
     },
     suggestionClick: function(i) {
       this.modal = this.suggestions[i];
-      this.search = this.suggestions[i].name;
+      this.search = this.suggestions[i].searchName;
       this.focus = i + 1;
     },
     focusUp: function() {
@@ -213,7 +248,7 @@ var mainVue = new Vue({
         this.search = this.savedSearch;
       }
       else {
-        this.search = this.suggestions[this.focus-1].name;
+        this.search = this.suggestions[this.focus-1].searchName;
         if (el && el.offsetTop < cel.scrollTop) {
           cel.scrollTo(0, el.offsetTop);
         }
@@ -231,7 +266,7 @@ var mainVue = new Vue({
         this.search = this.savedSearch;
       }
       else {
-        this.search = this.suggestions[this.focus-1].name;
+        this.search = this.suggestions[this.focus-1].searchName;
         if (el && el.offsetTop + el.offsetHeight > cel.offsetHeight + cel.scrollTop) {
           cel.scrollTo(0, (el.offsetTop + el.offsetHeight) - cel.offsetHeight);
         }

@@ -21,7 +21,7 @@
               <div class="search-bar" v-show="showSearch">
                 <input v-model="search" @input="getSuggestions()" @keyup.down="focusDown()" @keyup.up="focusUp()" ref="search" type="text" placeholder="Search or Roll" />
                 <ul v-show="suggestions.length" class="suggestions">
-                  <li v-for="(suggestion, index) in suggestions"><button :class="index+1 == focus ? 'hover' : ''" @click.prevent="suggestionClick(index)"><small>{{suggestion.type}}</small>{{suggestion.name}}</button></li>
+                  <li v-for="(suggestion, index) in suggestions"><button :class="index+1 == focus ? 'hover' : ''" @click.prevent="suggestionClick(index)"><small>{{suggestion.searchType}}</small>{{suggestion.searchName}}</button></li>
                 </ul>
                 <button class="search-close" @click.prevent="showSearch = false"><svg><use xlink:href="sprites.svg#close"></use></svg></button>
               </div>
