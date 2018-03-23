@@ -271,6 +271,9 @@
 }
 .hp {
   width: 40px;
+  + span {
+    padding: 0 4px;
+  }
 }
 .input-group {
   position: relative;
@@ -278,7 +281,6 @@
   label {
     font-size: rem(12);
     color: rgba($text-color, 0.75);
-    margin: 0;
   }
   input, select, textarea {
     margin-bottom: 0;
@@ -294,4 +296,45 @@
 .mod {
   font-size: rem(12);
   color: rgba($text-color, 0.75);
+}
+.slider {
+  display: flex;
+  align-items: center;
+  .slide {
+    flex: 1;
+    display: flex;
+    position: relative;
+  }
+  .numbers {
+    display: flex;
+    margin-left: $grid-padding * 2;
+  }
+  input[type=number] {
+    width: 32px;
+  }
+  span {
+    padding: 0 4px;
+  }
+  .slider-fill {
+    position: absolute;
+    height: 2px;
+    background-color: $secondary;
+    pointer-events: none;
+    max-width: 100%;
+  }
+  .slider-ticks {
+    width: calc(100% - 12px);
+    position: absolute;
+    z-index: 2;
+  }
+  .slider-tick {
+    background-color: #fff;
+    width: 4px;
+    height: 2px;
+    position: absolute;
+    transform: translateX(4px);
+    &:first-child {
+      display: none;
+    }
+  }
 }

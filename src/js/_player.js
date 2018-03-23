@@ -7,7 +7,7 @@ Vue.component('player', {
       abilityData: jsonAbilityData,
       skillData: jsonSkillData,
       spellData: jsonSpellData,
-      languages: ['Common', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Orc', 'Abyssal', 'Celestial', 'Draconic', 'Deep Speech', 'Infernal', 'Primordial', 'Sylvan', 'Undercommon'],
+      languages: ['Common', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Orc', 'Abyssal', 'Celestial', 'Draconic', 'Deep Speech', 'Infernal', 'Primordial', 'Sylvan', 'Undercommon']
     }
   },
   filters: {
@@ -1281,6 +1281,17 @@ Vue.component('player', {
     },
     spellSlotsAvailable: function() {
       return 0;
+    },
+    sliderMax: function() {
+      var output = [];
+      for (var i = 1; i < 10; i++) {
+        var arr = [];
+        for (var ii = 0; ii < this.spellSlots['level' + i + 'Slots']; ii++) {
+          arr.push(ii);
+        }
+        output[i-1] = arr;
+      }
+      return output;
     }
   },
   watch: {
@@ -1332,6 +1343,18 @@ Vue.component('player', {
                 <option>Gargantuan</option>\
               </select>\
             </div>\
+            <div class="input-group col-xs-4">\
+              <label>Age</label>\
+              <input v-model="c.age" type="number">\
+            </div>\
+            <div class="input-group col-xs-4">\
+              <label>Height</label>\
+              <input v-model="c.height" type="text">\
+            </div>\
+            <div class="input-group col-xs-4">\
+              <label>Weight</label>\
+              <input v-model="c.weight" type="text">\
+            </div>\
             <div class="input-group col-xs-12">\
               <label>Languages</label>\
               <chips :chips="c.languages" :suggestions="languages"></chips>\
@@ -1370,6 +1393,10 @@ Vue.component('player', {
               <label>Speed</label>\
               <input v-model="c.speed" type="text" />\
             </div>\
+            <div class="input-group col-xs-12">\
+              <label>Resistances</label>\
+              <chips :chips="c.resistances" :suggestions="languages"></chips>\
+            </div>\
           </div>\
           <div class="row">\
             <h4>Spellcasting</h4>\
@@ -1393,9 +1420,20 @@ Vue.component('player', {
               <label>Spells Known (<span :class="c.spells.length > spellsKnown ? \'warning\' : \'\'">{{c.spells.length + \'/\' + spellsKnown}}</span>)</label>\
               <chips :chips="c.spells" :suggestions="filteredSpells"></chips>\
             </div>\
-            <div v-for="slot in [1, 2, 3, 4, 5, 6, 7, 8, 9]" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="input-group col-xs-12">\
+            <div v-for="slot in 9" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="input-group col-xs-12">\
               <label>Level {{slot}} Slots</label>\
-              <input v-model="c.spellSlotsAvailable[\'level\' + slot + \'SlotsAvailable\']" type="range" min="0" :max="spellSlots[\'level\' + slot + \'Slots\']" step="1" />\
+              <div class="slider">\
+                <div class="slide">\
+                  <input v-model="c.spellSlotsAvailable[\'level\' + slot + \'SlotsAvailable\']" type="range" min="0" :max="spellSlots[\'level\' + slot + \'Slots\']" step="1" />\
+                  <div class="slider-ticks">\
+                    <div v-for="step in sliderMax[slot-1]" class="slider-tick" :style="{left: step / sliderMax[slot-1].length * 100 + \'%\'}"></div>\
+                  </div>\
+                  <div class="slider-fill" :style="{width: c.spellSlotsAvailable[\'level\' + slot + \'SlotsAvailable\'] / spellSlots[\'level\' + slot + \'Slots\'] * 100 + \'%\'}"></div>\
+                </div>\
+                <div class="numbers">\
+                  <input v-model="c.spellSlotsAvailable[\'level\' + slot + \'SlotsAvailable\']" type="number" /><span>/</span><input v-model="spellSlots[\'level\' + slot + \'Slots\']" type="number" />\
+                </div>\
+              </div>\
             </div>\
           </div>\
         </div>\

@@ -106,7 +106,7 @@ Vue.component('creature', {
         </button>\
         <div v-show="c.showCombat" class="character-section-content">\
           <div class="row">\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-4" :title="c.hitDice">\
               <label>Hit Points</label>\
               <input class="hp" v-model="c.currentHP" type="number" /><span>/</span><input class="hp" v-model="c.maxHP" type="number" />\
             </div>\
@@ -114,7 +114,7 @@ Vue.component('creature', {
               <label>Armor Class</label>\
               <input v-model="c.armorClass" type="number" />\
             </div>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-4" title="Dexterity Check">\
               <label>Initiative</label>\
               <input v-model="c.initiative" type="number" />\
             </div>\

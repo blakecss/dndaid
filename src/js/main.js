@@ -81,6 +81,7 @@ function mod(value) {
 //=include _dungeon.js
 //=include _treasure.js
 //=include _chips.js
+//=include _slider.js
 //=include _character-preview.js
 //=include _add-character.js
 //=include _player.js

@@ -415,6 +415,7 @@ Vue.component('add-character', {
           notes: '',
           speed: c.speed,
           showCombat: true,
+          hitDice: c.hit_dice,
           currentHP: c.maxHP,
           maxHP: c.maxHP,
           armorClass: c.armor_class,
