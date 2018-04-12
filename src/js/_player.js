@@ -107,36 +107,32 @@ Vue.component('player', {
       }
     },
     armorClass: function() {
-      this.c.armorClass = 10 + mod(this.c.abilities.dex);
-      return this.c.armorClass;
+      return 10 + mod(this.c.abilities.dex);
     },
     spellAbility: function() {
-      if (this.c.klass) {
-        this.c.spellAbility = jsonClassData[this.c.klass].spell_casting_ability;
-        if (this.c.spellAbility) {
-          return jsonAbilityData[this.c.spellAbility].full;
-        }
-        else {
-          return '';
-        }
+      if (sca = jsonClassData[this.c.klass].spell_casting_ability) {
+        return jsonAbilityData[sca].full + '?';
+      }
+      else {
+        return '';
       }
     },
-    spellSavingDC: function() {
-      if (this.c.klass) {
-        var a = jsonClassData[this.c.klass].spell_casting_ability;
-        if (a) {
-          this.c.spellSavingDC = 8 + this.c.pb + mod(this.c.abilities[a]);
-        }
-        else {
-          this.c.spellSavingDC = '';
-        }
-        return this.c.spellSavingDC;
-      }
-    },
-    spellAttackMod: function() {
-      this.c.spellAttackMod = this.c.pb + mod(this.c.abilities[this.c.spellAbility]);
-      return this.c.spellAttackMod;
-    },
+    // spellSavingDC: function() {
+    //   if (this.c.klass) {
+    //     var a = jsonClassData[this.c.klass].spell_casting_ability;
+    //     if (a) {
+    //       this.c.spellSavingDC = 8 + this.c.pb + mod(this.c.abilities[a]);
+    //     }
+    //     else {
+    //       this.c.spellSavingDC = '';
+    //     }
+    //     return this.c.spellSavingDC;
+    //   }
+    // },
+    // spellAttackMod: function() {
+    //   this.c.spellAttackMod = this.c.pb + mod(this.c.abilities[this.c.spellAbility]);
+    //   return this.c.spellAttackMod;
+    // },
     saves: function() {
       var s = {}
       for (var i = 0; i < Object.keys(jsonAbilityData).length; i++) {
@@ -1296,13 +1292,13 @@ Vue.component('player', {
   },
   watch: {
     level: function(newVal, oldVal) {
-      if (newVal != oldVal) {
-        for (var i = oldVal; i < newVal; i++) {
-          for (var ii = 0; ii < jsonClassData[this.c.klass].features[i].length; ii++) {
-            this.c.traits.push(jsonClassData[this.c.klass].features[i][ii]);
-          }
-        }
-      }
+      // if (newVal != oldVal) {
+      //   for (var i = oldVal; i < newVal; i++) {
+      //     for (var ii = 0; ii < jsonClassData[this.c.klass].features[i].length; ii++) {
+      //       this.c.traits.push(jsonClassData[this.c.klass].features[i][ii]);
+      //     }
+      //   }
+      // }
     }
   },
   template: '<div class="character">\
@@ -1377,9 +1373,9 @@ Vue.component('player', {
               <label>Hit Points</label>\
               <input class="hp" v-model="c.currentHP" type="number" /><span>/</span><input class="hp" v-model="c.maxHP" type="number" />\
             </div>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-4" :title="armorClass">\
               <label>Armor Class</label>\
-              <input v-model="armorClass" type="number" readonly />\
+              <input v-model="c.armorClass" type="number" />\
             </div>\
             <div class="input-group col-xs-4" title="Dexterity Check">\
               <label>Initiative</label>\
@@ -1387,7 +1383,7 @@ Vue.component('player', {
             </div>\
             <div class="input-group col-xs-4">\
               <label>Hit Die</label>\
-              <input v-model="hitDie" type="text" readonly />\
+              <input v-model="hitDie" type="text" />\
             </div>\
             <div class="input-group col-xs-4">\
               <label>Speed</label>\
@@ -1400,17 +1396,17 @@ Vue.component('player', {
           </div>\
           <div class="row">\
             <h4>Spellcasting</h4>\
-            <div class="input-group col-xs-4">\
+            <div class="input-group col-xs-4" :title="spellAbility">\
               <label>Ability</label>\
-              <input v-model="spellAbility" type="text" readonly />\
+              <input v-model="c.spellAbility" type="text" />\
             </div>\
             <div class="input-group col-xs-4" title="Proficiency Bonus + Spellcasting Ability Modifier">\
               <label>Attack Modifier</label>\
-              <input v-model="spellAttackMod" type="number" readonly />\
+              <input v-model="c.spellAttackMod" type="number" />\
             </div>\
             <div class="input-group col-xs-4" title="8 + Proficiency Bonus + Spellcasting Ability Modifier">\
               <label>Saving DC</label>\
-              <input v-model="spellSavingDC" type="number" readonly />\
+              <input v-model="c.spellSavingDC" type="number" />\
             </div>\
             <div class="input-group col-xs-12">\
               <label>Cantrips Known (<span :class="c.cantrips.length > cantripsKnown ? \'warning\' : \'\'">{{c.cantrips.length + \'/\' + cantripsKnown}}</span>)</label>\
@@ -1420,7 +1416,7 @@ Vue.component('player', {
               <label>Spells Known (<span :class="c.spells.length > spellsKnown ? \'warning\' : \'\'">{{c.spells.length + \'/\' + spellsKnown}}</span>)</label>\
               <chips :chips="c.spells" :suggestions="filteredSpells"></chips>\
             </div>\
-            <div v-for="slot in 9" v-if="spellSlots[\'level\' + slot + \'Slots\']" class="input-group col-xs-12">\
+            <div v-for="slot in 9" class="input-group col-xs-12">\
               <label>Level {{slot}} Slots</label>\
               <div class="slider">\
                 <div class="slide">\

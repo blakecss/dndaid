@@ -303,6 +303,7 @@ Vue.component('add-character', {
           inventory.push(jsonClassData[this.addPlayerData.class].equipment[i]);
         }
       }
+      var sca = jsonClassData[this.addPlayerData.class].spell_casting_ability ? jsonClassData[this.addPlayerData.class].spell_casting_ability : '';
       this.characters.push({
         id: Math.random().toString(36).substr(2,9),
         name: this.addPlayerData.name,
@@ -323,8 +324,8 @@ Vue.component('add-character', {
         armorClass: 0,
         initiative: 0,
         hitDie: '',
-        spellAbility: '',
-        spellAttackMod: 0,
+        spellAbility: sca ? jsonAbilityData[sca].full : 'N/A',
+        spellAttackMod: sca ? 2 + mod(this.addPlayerAbilities[sca]) : 0,
         spellSavingDC: 0,
         cantripsKnown: 0,
         cantrips: [],
