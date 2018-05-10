@@ -324,7 +324,7 @@ Vue.component('add-character', {
         armorClass: 0,
         initiative: 0,
         hitDie: '',
-        spellAbility: sca ? jsonAbilityData[sca].full : 'N/A',
+        spellAbility: sca || 'N/A',
         spellAttackMod: sca ? 2 + mod(this.addPlayerAbilities[sca]) : 0,
         spellSavingDC: 0,
         cantripsKnown: 0,

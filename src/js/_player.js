@@ -16,89 +16,91 @@ Vue.component('player', {
       return v >= 0 ? '+' + v : v;
     }
   },
+  methods: {
+    mod: function(value) {
+      return Math.floor((value - 10) / 2);
+    }
+  },
   computed: {
     level: function() {
       if (this.c.exp < 300) {
-        this.c.pb = 2;
         this.c.level = 1;
       }
       else if (this.c.exp < 900) {
-        this.c.pb = 2;
         this.c.level = 2;
       }
       else if (this.c.exp < 2700) {
-        this.c.pb = 2;
         this.c.level = 3;
       }
       else if (this.c.exp < 6500) {
-        this.c.pb = 2;
         this.c.level = 4;
       }
       else if (this.c.exp < 14000) {
-        this.c.pb = 3;
         this.c.level = 5;
       }
       else if (this.c.exp < 23000) {
-        this.c.pb = 3;
         this.c.level = 6;
       }
       else if (this.c.exp < 34000) {
-        this.c.pb = 3;
         this.c.level = 7;
       }
       else if (this.c.exp < 48000) {
-        this.c.pb = 3;
         this.c.level = 8;
       }
       else if (this.c.exp < 64000) {
-        this.c.pb = 4;
         this.c.level = 9;
       }
       else if (this.c.exp < 85000) {
-        this.c.pb = 4;
         this.c.level = 10;
       }
       else if (this.c.exp < 100000) {
-        this.c.pb = 4;
         this.c.level = 11;
       }
       else if (this.c.exp < 120000) {
-        this.c.pb = 4;
         this.c.level = 12;
       }
       else if (this.c.exp < 140000) {
-        this.c.pb = 5;
         this.c.level = 13;
       }
       else if (this.c.exp < 165000) {
-        this.c.pb = 5;
         this.c.level = 14;
       }
       else if (this.c.exp < 195000) {
-        this.c.pb = 5;
         this.c.level = 15;
       }
       else if (this.c.exp < 225000) {
-        this.c.pb = 5;
         this.c.level = 16;
       }
       else if (this.c.exp < 265000) {
-        this.c.pb = 6;
         this.c.level = 17;
       }
       else if (this.c.exp < 305000) {
-        this.c.pb = 6;
         this.c.level = 18;
       }
       else if (this.c.exp < 335000) {
-        this.c.pb = 6;
         this.c.level = 19;
       }
       else {
-        this.c.pb = 6;
         this.c.level = 20;
       }
       return this.c.level;
+    },
+    pbH: function() {
+      if (this.c.level < 5) {
+        return 2;
+      }
+      else if (this.c.level < 9) {
+        return 3;
+      }
+      else if (this.c.level < 13) {
+        return 4;
+      }
+      else if (this.c.level < 17) {
+        return 5;
+      }
+      else {
+        return 6;
+      }
     },
     hitDie: function() {
       if (this.c.klass) {
@@ -106,12 +108,12 @@ Vue.component('player', {
         return this.c.hitDie;
       }
     },
-    armorClass: function() {
+    armorClassH: function() {
       return 10 + mod(this.c.abilities.dex);
     },
-    spellAbility: function() {
+    spellAbilityH: function() {
       if (sca = jsonClassData[this.c.klass].spell_casting_ability) {
-        return jsonAbilityData[sca].full + '?';
+        return jsonAbilityData[sca].full;
       }
       else {
         return '';
@@ -1290,17 +1292,6 @@ Vue.component('player', {
       return output;
     }
   },
-  watch: {
-    level: function(newVal, oldVal) {
-      // if (newVal != oldVal) {
-      //   for (var i = oldVal; i < newVal; i++) {
-      //     for (var ii = 0; ii < jsonClassData[this.c.klass].features[i].length; ii++) {
-      //       this.c.traits.push(jsonClassData[this.c.klass].features[i][ii]);
-      //     }
-      //   }
-      // }
-    }
-  },
   template: '<div class="character">\
     <div class="character-header">\
       <div class="class-icon">\
@@ -1373,7 +1364,7 @@ Vue.component('player', {
               <label>Hit Points</label>\
               <input class="hp" v-model="c.currentHP" type="number" /><span>/</span><input class="hp" v-model="c.maxHP" type="number" />\
             </div>\
-            <div class="input-group col-xs-4" :title="armorClass">\
+            <div class="input-group col-xs-4" :title="armorClassH">\
               <label>Armor Class</label>\
               <input v-model="c.armorClass" type="number" />\
             </div>\
@@ -1396,15 +1387,18 @@ Vue.component('player', {
           </div>\
           <div class="row">\
             <h4>Spellcasting</h4>\
-            <div class="input-group col-xs-4" :title="spellAbility">\
+            <div class="input-group col-xs-4" :title="spellAbilityH">\
               <label>Ability</label>\
-              <input v-model="c.spellAbility" type="text" />\
+              <select v-model="c.spellAbility">\
+                <option value="">N/A</option>\
+                <option v-for="(value, key) in abilityData" :value="key">{{value.full}}</option>\
+              </select>\
             </div>\
-            <div class="input-group col-xs-4" title="Proficiency Bonus + Spellcasting Ability Modifier">\
+            <div class="input-group col-xs-4" :title="\'Proficiency Bonus + Spellcasting Ability Modifier (\' + (c.spellAbility ? c.pb+(Math.floor((c.abilities[c.spellAbility] - 10) / 2)) : 0) + \')\'">\
               <label>Attack Modifier</label>\
               <input v-model="c.spellAttackMod" type="number" />\
             </div>\
-            <div class="input-group col-xs-4" title="8 + Proficiency Bonus + Spellcasting Ability Modifier">\
+            <div class="input-group col-xs-4" :title="\'8 + Proficiency Bonus + Spellcasting Ability Modifier (\' + (c.spellAbility ? 8+c.pb+(Math.floor((c.abilities[c.spellAbility] - 10) / 2)) : 0) + \')\'">\
               <label>Saving DC</label>\
               <input v-model="c.spellSavingDC" type="number" />\
             </div>\
@@ -1450,8 +1444,8 @@ Vue.component('player', {
               <input v-model="level" type="number" readonly />\
             </div>\
             <div class="input-group col-xs-4">\
-              <label>Proficiency Bonus</label>\
-              <input v-model="c.pb" type="number" readonly />\
+              <label :title="pbH">Proficiency Bonus</label>\
+              <input v-model="c.pb" type="number" />\
             </div>\
           </div>\
           <div class="row">\
